@@ -1,0 +1,154 @@
+# swagger.api.VersionsApi
+
+## Load the API package
+```dart
+import 'package:swagger/api.dart';
+```
+
+All URIs are relative to *https://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**apiV3ProjectsProjectIdVersionsGet**](VersionsApi.md#apiV3ProjectsProjectIdVersionsGet) | **GET** /api/v3/projects/{project_id}/versions | List versions available in a project
+[**apiV3VersionsGet**](VersionsApi.md#apiV3VersionsGet) | **GET** /api/v3/versions | List versions
+[**apiV3VersionsIdGet**](VersionsApi.md#apiV3VersionsIdGet) | **GET** /api/v3/versions/{id} | View version
+
+
+# **apiV3ProjectsProjectIdVersionsGet**
+> Versions apiV3ProjectsProjectIdVersionsGet(projectId)
+
+List versions available in a project
+
+This endpoint lists the versions that are *available* in a given project. Note that due to sharing this might be more than the versions *defined* by that project.
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//swagger.api.Configuration.username = 'YOUR_USERNAME';
+//swagger.api.Configuration.password = 'YOUR_PASSWORD';
+
+var api_instance = new VersionsApi();
+var projectId = 56; // int | ID of the project whoose versions will be listed
+
+try { 
+    var result = api_instance.apiV3ProjectsProjectIdVersionsGet(projectId);
+    print(result);
+} catch (e) {
+    print("Exception when calling VersionsApi->apiV3ProjectsProjectIdVersionsGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **int**| ID of the project whoose versions will be listed | 
+
+### Return type
+
+[**Versions**](Versions.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiV3VersionsGet**
+> Versions apiV3VersionsGet(filters)
+
+List versions
+
+Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//swagger.api.Configuration.username = 'YOUR_USERNAME';
+//swagger.api.Configuration.password = 'YOUR_PASSWORD';
+
+var api_instance = new VersionsApi();
+var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
+
+try { 
+    var result = api_instance.apiV3VersionsGet(filters);
+    print(result);
+} catch (e) {
+    print("Exception when calling VersionsApi->apiV3VersionsGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] 
+
+### Return type
+
+[**Versions**](Versions.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiV3VersionsIdGet**
+> Version apiV3VersionsIdGet(id)
+
+View version
+
+
+
+### Example 
+```dart
+import 'package:swagger/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//swagger.api.Configuration.username = 'YOUR_USERNAME';
+//swagger.api.Configuration.password = 'YOUR_PASSWORD';
+
+var api_instance = new VersionsApi();
+var id = 56; // int | version id
+
+try { 
+    var result = api_instance.apiV3VersionsIdGet(id);
+    print(result);
+} catch (e) {
+    print("Exception when calling VersionsApi->apiV3VersionsIdGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| version id | 
+
+### Return type
+
+[**Version**](Version.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

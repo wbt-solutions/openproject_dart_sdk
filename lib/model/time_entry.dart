@@ -1,90 +1,93 @@
-part of swagger.api;
+part of openapi.api;
 
-class Time entry {
+class TimeEntry {
   
   int id = null;
   
-
   String hours = null;
   
-
   String comment = null;
   
-
   DateTime spentOn = null;
   
-
   DateTime createdAt = null;
   
-
   DateTime updatedAt = null;
   
-
   TimeEntryEmbedded embedded = null;
   
-
-  Time entry Links links = null;
-  
-  Time entry();
+  TimeEntryLinks links = null;
+  TimeEntry();
 
   @override
   String toString() {
-    return 'Time entry[id=$id, hours=$hours, comment=$comment, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, links=$links, ]';
+    return 'TimeEntry[id=$id, hours=$hours, comment=$comment, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, links=$links, ]';
   }
 
-  Time entry.fromJson(Map<String, dynamic> json) {
+  TimeEntry.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    id =
-        json['id']
-    ;
-    hours =
-        json['hours']
-    ;
-    comment =
-        json['comment']
-    ;
-    spentOn =
-      
-      
-      new DateTime.fromJson(json['spentOn'])
-;
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
-    embedded =
-      
-      
-      new TimeEntryEmbedded.fromJson(json['_embedded'])
-;
-    links =
-      
-      
-      new Time entry Links.fromJson(json['_links'])
-;
+    id = json['id'];
+    hours = json['hours'];
+    comment = json['comment'];
+    spentOn = (json['spentOn'] == null) ?
+      null :
+      DateTime.parse(json['spentOn']);
+    createdAt = (json['createdAt'] == null) ?
+      null :
+      DateTime.parse(json['createdAt']);
+    updatedAt = (json['updatedAt'] == null) ?
+      null :
+      DateTime.parse(json['updatedAt']);
+    embedded = (json['_embedded'] == null) ?
+      null :
+      TimeEntryEmbedded.fromJson(json['_embedded']);
+    links = (json['_links'] == null) ?
+      null :
+      TimeEntryLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'hours': hours,
-      'comment': comment,
-      'spentOn': spentOn,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      '_embedded': embedded,
-      '_links': links
-     };
+    Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
+    if (hours != null)
+      json['hours'] = hours;
+    if (comment != null)
+      json['comment'] = comment;
+    if (spentOn != null)
+      json['spentOn'] = spentOn == null ? null : spentOn.toUtc().toIso8601String();
+    if (createdAt != null)
+      json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
+    if (updatedAt != null)
+      json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
+    if (embedded != null)
+      json['_embedded'] = embedded;
+    if (links != null)
+      json['_links'] = links;
+    return json;
   }
 
-  static List<Time entry> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Time entry>() : json.map((value) => new Time entry.fromJson(value)).toList();
+  static List<TimeEntry> listFromJson(List<dynamic> json) {
+    return json == null ? List<TimeEntry>() : json.map((value) => TimeEntry.fromJson(value)).toList();
   }
 
-  static Map<String, Time entry> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Time entry>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Time entry.fromJson(value));
+  static Map<String, TimeEntry> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TimeEntry>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TimeEntry.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of TimeEntry-objects as value to a dart map
+  static Map<String, List<TimeEntry>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TimeEntry>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TimeEntry.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

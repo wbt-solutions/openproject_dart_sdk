@@ -1,9 +1,8 @@
-part of swagger.api;
+part of openapi.api;
 
 class ProjectsEmbedded {
   
   List<Project> elements = [];
-  
   ProjectsEmbedded();
 
   @override
@@ -13,27 +12,39 @@ class ProjectsEmbedded {
 
   ProjectsEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    elements =
-      Project.listFromJson(json['elements'])
-;
+    elements = (json['elements'] == null) ?
+      null :
+      Project.listFromJson(json['elements']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'elements': elements
-     };
+    Map <String, dynamic> json = {};
+    if (elements != null)
+      json['elements'] = elements;
+    return json;
   }
 
   static List<ProjectsEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<ProjectsEmbedded>() : json.map((value) => new ProjectsEmbedded.fromJson(value)).toList();
+    return json == null ? List<ProjectsEmbedded>() : json.map((value) => ProjectsEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, ProjectsEmbedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, ProjectsEmbedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new ProjectsEmbedded.fromJson(value));
+  static Map<String, ProjectsEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ProjectsEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = ProjectsEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of ProjectsEmbedded-objects as value to a dart map
+  static Map<String, List<ProjectsEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<ProjectsEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = ProjectsEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

@@ -1,59 +1,64 @@
-part of swagger.api;
+part of openapi.api;
 
-class Version Links {
+class VersionLinks {
   
   Link self = null;
   
-
   Link definingProject = null;
   
-
   Link availableInProjects = null;
-  
-  Version Links();
+  VersionLinks();
 
   @override
   String toString() {
-    return 'Version Links[self=$self, definingProject=$definingProject, availableInProjects=$availableInProjects, ]';
+    return 'VersionLinks[self=$self, definingProject=$definingProject, availableInProjects=$availableInProjects, ]';
   }
 
-  Version Links.fromJson(Map<String, dynamic> json) {
+  VersionLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    self =
-      
-      
-      new Link.fromJson(json['self'])
-;
-    definingProject =
-      
-      
-      new Link.fromJson(json['definingProject'])
-;
-    availableInProjects =
-      
-      
-      new Link.fromJson(json['availableInProjects'])
-;
+    self = (json['self'] == null) ?
+      null :
+      Link.fromJson(json['self']);
+    definingProject = (json['definingProject'] == null) ?
+      null :
+      Link.fromJson(json['definingProject']);
+    availableInProjects = (json['availableInProjects'] == null) ?
+      null :
+      Link.fromJson(json['availableInProjects']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'self': self,
-      'definingProject': definingProject,
-      'availableInProjects': availableInProjects
-     };
+    Map <String, dynamic> json = {};
+    if (self != null)
+      json['self'] = self;
+    if (definingProject != null)
+      json['definingProject'] = definingProject;
+    if (availableInProjects != null)
+      json['availableInProjects'] = availableInProjects;
+    return json;
   }
 
-  static List<Version Links> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Version Links>() : json.map((value) => new Version Links.fromJson(value)).toList();
+  static List<VersionLinks> listFromJson(List<dynamic> json) {
+    return json == null ? List<VersionLinks>() : json.map((value) => VersionLinks.fromJson(value)).toList();
   }
 
-  static Map<String, Version Links> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Version Links>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Version Links.fromJson(value));
+  static Map<String, VersionLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, VersionLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = VersionLinks.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of VersionLinks-objects as value to a dart map
+  static Map<String, List<VersionLinks>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<VersionLinks>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = VersionLinks.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

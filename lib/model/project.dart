@@ -1,27 +1,20 @@
-part of swagger.api;
+part of openapi.api;
 
 class Project {
   
   int id = null;
   
-
   String name = null;
   
-
   String identifier = null;
   
-
   DateTime spentOn = null;
   
-
   DateTime createdAt = null;
   
-
   DateTime updatedAt = null;
   
-
   TimeEntryEmbedded embedded = null;
-  
   Project();
 
   @override
@@ -31,51 +24,63 @@ class Project {
 
   Project.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    id =
-        json['id']
-    ;
-    name =
-        json['name']
-    ;
-    identifier =
-        json['identifier']
-    ;
-    spentOn =
-      
-      
-      new DateTime.fromJson(json['spentOn'])
-;
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
-    embedded =
-      
-      
-      new TimeEntryEmbedded.fromJson(json['_embedded'])
-;
+    id = json['id'];
+    name = json['name'];
+    identifier = json['identifier'];
+    spentOn = (json['spentOn'] == null) ?
+      null :
+      DateTime.parse(json['spentOn']);
+    createdAt = (json['createdAt'] == null) ?
+      null :
+      DateTime.parse(json['createdAt']);
+    updatedAt = (json['updatedAt'] == null) ?
+      null :
+      DateTime.parse(json['updatedAt']);
+    embedded = (json['_embedded'] == null) ?
+      null :
+      TimeEntryEmbedded.fromJson(json['_embedded']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'identifier': identifier,
-      'spentOn': spentOn,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      '_embedded': embedded
-     };
+    Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
+    if (name != null)
+      json['name'] = name;
+    if (identifier != null)
+      json['identifier'] = identifier;
+    if (spentOn != null)
+      json['spentOn'] = spentOn == null ? null : spentOn.toUtc().toIso8601String();
+    if (createdAt != null)
+      json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
+    if (updatedAt != null)
+      json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
+    if (embedded != null)
+      json['_embedded'] = embedded;
+    return json;
   }
 
   static List<Project> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Project>() : json.map((value) => new Project.fromJson(value)).toList();
+    return json == null ? List<Project>() : json.map((value) => Project.fromJson(value)).toList();
   }
 
-  static Map<String, Project> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Project>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Project.fromJson(value));
+  static Map<String, Project> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Project>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = Project.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of Project-objects as value to a dart map
+  static Map<String, List<Project>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<Project>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = Project.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

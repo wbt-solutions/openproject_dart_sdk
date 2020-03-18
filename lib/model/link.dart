@@ -1,18 +1,15 @@
-part of swagger.api;
+part of openapi.api;
 
 class Link {
   
   String href = null;
   
-
   String title = null;
   
-
   String method = null;
-  //enum methodEnum {  patch,  post,  get,  };
-
-  String type = null;
+  //enum methodEnum {  patch,  post,  get,  };{
   
+  String type = null;
   Link();
 
   @override
@@ -22,39 +19,46 @@ class Link {
 
   Link.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    href =
-        json['href']
-    ;
-    title =
-        json['title']
-    ;
-    method =
-        json['method']
-    ;
-    type =
-        json['type']
-    ;
+    href = json['href'];
+    title = json['title'];
+    method = json['method'];
+    type = json['type'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'title': title,
-      'method': method,
-      'type': type
-     };
+    Map <String, dynamic> json = {};
+    if (href != null)
+      json['href'] = href;
+    if (title != null)
+      json['title'] = title;
+    if (method != null)
+      json['method'] = method;
+    if (type != null)
+      json['type'] = type;
+    return json;
   }
 
   static List<Link> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Link>() : json.map((value) => new Link.fromJson(value)).toList();
+    return json == null ? List<Link>() : json.map((value) => Link.fromJson(value)).toList();
   }
 
-  static Map<String, Link> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Link>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Link.fromJson(value));
+  static Map<String, Link> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Link>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = Link.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of Link-objects as value to a dart map
+  static Map<String, List<Link>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<Link>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = Link.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

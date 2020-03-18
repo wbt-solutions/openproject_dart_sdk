@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class RootApi {
 
   RootApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View root
+  /// View root with HTTP info returned
   ///
   /// 
-  Future apiV3Get() async {
-    Object postBody = null;
+  Future apiV3GetWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -22,21 +22,20 @@ class RootApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -46,14 +45,20 @@ class RootApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View root
+  ///
+  /// 
+  Future apiV3Get() async {
+    Response response = await apiV3GetWithHttpInfo();
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,15 +7,15 @@ class TypesApi {
 
   TypesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List types available in a project
+  /// List types available in a project with HTTP info returned
   ///
   /// This endpoint lists the types that are *available* in a given project.
-  Future<WPTypes> apiV3ProjectsProjectIdTypesGet(int projectId) async {
-    Object postBody = null;
+  Future<Response> apiV3ProjectsProjectIdTypesGetWithHttpInfo(int projectId) async {
+    Object postBody;
 
     // verify required params are set
     if(projectId == null) {
-     throw new ApiException(400, "Missing required param: projectId");
+     throw ApiException(400, "Missing required param: projectId");
     }
 
     // create path and map variables
@@ -25,21 +25,20 @@ class TypesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -49,21 +48,28 @@ class TypesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List types available in a project
+  ///
+  /// This endpoint lists the types that are *available* in a given project.
+  Future<WPTypes> apiV3ProjectsProjectIdTypesGet(int projectId) async {
+    Response response = await apiV3ProjectsProjectIdTypesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          apiClient.deserialize(response.body, 'WPTypes') as WPTypes ;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WPTypes') as WPTypes;
     } else {
       return null;
     }
   }
-  /// List all Types
+
+  /// List all Types with HTTP info returned
   ///
   /// 
-  Future<WPTypes> apiV3TypesGet() async {
-    Object postBody = null;
+  Future<Response> apiV3TypesGetWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -74,21 +80,20 @@ class TypesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -98,25 +103,32 @@ class TypesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List all Types
+  ///
+  /// 
+  Future<WPTypes> apiV3TypesGet() async {
+    Response response = await apiV3TypesGetWithHttpInfo();
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          apiClient.deserialize(response.body, 'WPTypes') as WPTypes ;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WPTypes') as WPTypes;
     } else {
       return null;
     }
   }
-  /// View Type
+
+  /// View Type with HTTP info returned
   ///
   /// 
-  Future<WPType> apiV3TypesIdGet(int id) async {
-    Object postBody = null;
+  Future<Response> apiV3TypesIdGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -126,21 +138,20 @@ class TypesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -150,14 +161,21 @@ class TypesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View Type
+  ///
+  /// 
+  Future<WPType> apiV3TypesIdGet(int id) async {
+    Response response = await apiV3TypesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          apiClient.deserialize(response.body, 'WPType') as WPType ;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WPType') as WPType;
     } else {
       return null;
     }
   }
+
 }

@@ -1,55 +1,60 @@
-part of swagger.api;
+part of openapi.api;
 
-class Work Packages {
+class WorkPackages {
   
   int total = null;
   
-
   int count = null;
   
-
-  Work Packages embedded embedded = null;
-  
-  Work Packages();
+  WorkPackagesEmbedded embedded = null;
+  WorkPackages();
 
   @override
   String toString() {
-    return 'Work Packages[total=$total, count=$count, embedded=$embedded, ]';
+    return 'WorkPackages[total=$total, count=$count, embedded=$embedded, ]';
   }
 
-  Work Packages.fromJson(Map<String, dynamic> json) {
+  WorkPackages.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    total =
-        json['total']
-    ;
-    count =
-        json['count']
-    ;
-    embedded =
-      
-      
-      new Work Packages embedded.fromJson(json['_embedded'])
-;
+    total = json['total'];
+    count = json['count'];
+    embedded = (json['_embedded'] == null) ?
+      null :
+      WorkPackagesEmbedded.fromJson(json['_embedded']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'total': total,
-      'count': count,
-      '_embedded': embedded
-     };
+    Map <String, dynamic> json = {};
+    if (total != null)
+      json['total'] = total;
+    if (count != null)
+      json['count'] = count;
+    if (embedded != null)
+      json['_embedded'] = embedded;
+    return json;
   }
 
-  static List<Work Packages> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Work Packages>() : json.map((value) => new Work Packages.fromJson(value)).toList();
+  static List<WorkPackages> listFromJson(List<dynamic> json) {
+    return json == null ? List<WorkPackages>() : json.map((value) => WorkPackages.fromJson(value)).toList();
   }
 
-  static Map<String, Work Packages> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Work Packages>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Work Packages.fromJson(value));
+  static Map<String, WorkPackages> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WorkPackages>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = WorkPackages.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of WorkPackages-objects as value to a dart map
+  static Map<String, List<WorkPackages>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<WorkPackages>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = WorkPackages.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

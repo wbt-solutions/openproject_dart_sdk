@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class ProjectsApi {
 
   ProjectsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List projects
+  /// List projects with HTTP info returned
   ///
   /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
-  Future<Projects> apiV3ProjectsGet({ String filters }) async {
-    Object postBody = null;
+  Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters }) async {
+    Object postBody;
 
     // verify required params are set
 
@@ -25,21 +25,20 @@ class ProjectsApi {
     if(filters != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
     }
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -49,25 +48,32 @@ class ProjectsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List projects
+  ///
+  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+  Future<Projects> apiV3ProjectsGet({ String filters }) async {
+    Response response = await apiV3ProjectsGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          apiClient.deserialize(response.body, 'Projects') as Projects ;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Projects') as Projects;
     } else {
       return null;
     }
   }
-  /// View project
+
+  /// View project with HTTP info returned
   ///
   /// 
-  Future<Project> apiV3ProjectsIdGet(int id) async {
-    Object postBody = null;
+  Future<Response> apiV3ProjectsIdGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -77,21 +83,20 @@ class ProjectsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -101,25 +106,32 @@ class ProjectsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View project
+  ///
+  /// 
+  Future<Project> apiV3ProjectsIdGet(int id) async {
+    Response response = await apiV3ProjectsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          apiClient.deserialize(response.body, 'Project') as Project ;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
     } else {
       return null;
     }
   }
-  /// List projects with version
+
+  /// List projects with version with HTTP info returned
   ///
   /// This endpoint lists the projects where the given version is available.  The projects returned depend on the sharing settings of the given version, but are also limited to the projects that the current user is allowed to see.
-  Future apiV3VersionsIdProjectsGet(int id) async {
-    Object postBody = null;
+  Future apiV3VersionsIdProjectsGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -129,21 +141,20 @@ class ProjectsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -153,14 +164,20 @@ class ProjectsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List projects with version
+  ///
+  /// This endpoint lists the projects where the given version is available.  The projects returned depend on the sharing settings of the given version, but are also limited to the projects that the current user is allowed to see.
+  Future apiV3VersionsIdProjectsGet(int id) async {
+    Response response = await apiV3VersionsIdProjectsGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

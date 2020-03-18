@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class CollectionsApi {
 
   CollectionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// view aggregated result
+  /// view aggregated result with HTTP info returned
   ///
   /// 
-  Future apiV3ExamplesGet({ String groupBy, String showSums }) async {
-    Object postBody = null;
+  Future apiV3ExamplesGetWithHttpInfo({ String groupBy, String showSums }) async {
+    Object postBody;
 
     // verify required params are set
 
@@ -28,21 +28,20 @@ class CollectionsApi {
     if(showSums != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "showSums", showSums));
     }
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -52,14 +51,20 @@ class CollectionsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// view aggregated result
+  ///
+  /// 
+  Future apiV3ExamplesGet({ String groupBy, String showSums }) async {
+    Response response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums );
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

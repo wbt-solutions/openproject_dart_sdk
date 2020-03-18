@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,15 +7,15 @@ class QueryColumnsApi {
 
   QueryColumnsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View Query Column
+  /// View Query Column with HTTP info returned
   ///
   /// Retreive an individual QueryColumn as identified by the &#x60;id&#x60; parameter.
-  Future apiV3QueriesColumnsIdGet(String id) async {
-    Object postBody = null;
+  Future apiV3QueriesColumnsIdGetWithHttpInfo(String id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -25,21 +25,20 @@ class QueryColumnsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -49,14 +48,20 @@ class QueryColumnsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View Query Column
+  ///
+  /// Retreive an individual QueryColumn as identified by the &#x60;id&#x60; parameter.
+  Future apiV3QueriesColumnsIdGet(String id) async {
+    Response response = await apiV3QueriesColumnsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

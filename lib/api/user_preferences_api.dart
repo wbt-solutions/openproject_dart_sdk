@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class UserPreferencesApi {
 
   UserPreferencesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// Show my preferences
+  /// Show my preferences with HTTP info returned
   ///
   /// 
-  Future apiV3MyPreferencesGet() async {
-    Object postBody = null;
+  Future apiV3MyPreferencesGetWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -22,21 +22,20 @@ class UserPreferencesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -46,20 +45,26 @@ class UserPreferencesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// Show my preferences
+  ///
+  /// 
+  Future apiV3MyPreferencesGet() async {
+    Response response = await apiV3MyPreferencesGetWithHttpInfo();
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// Update UserPreferences
+
+  /// Update UserPreferences with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
-  Future apiV3MyPreferencesPatch({ Body4 body }) async {
+  Future apiV3MyPreferencesPatchWithHttpInfo({ InlineObject4 body }) async {
     Object postBody = body;
 
     // verify required params are set
@@ -71,21 +76,20 @@ class UserPreferencesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'PATCH',
@@ -95,14 +99,20 @@ class UserPreferencesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// Update UserPreferences
+  ///
+  /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
+  Future apiV3MyPreferencesPatch({ InlineObject4 body }) async {
+    Response response = await apiV3MyPreferencesPatchWithHttpInfo( body: body );
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

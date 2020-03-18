@@ -1,39 +1,50 @@
-part of swagger.api;
+part of openapi.api;
 
-class Versions embedded {
+class VersionsEmbedded {
   
   List<Version> elements = [];
-  
-  Versions embedded();
+  VersionsEmbedded();
 
   @override
   String toString() {
-    return 'Versions embedded[elements=$elements, ]';
+    return 'VersionsEmbedded[elements=$elements, ]';
   }
 
-  Versions embedded.fromJson(Map<String, dynamic> json) {
+  VersionsEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    elements =
-      Version.listFromJson(json['elements'])
-;
+    elements = (json['elements'] == null) ?
+      null :
+      Version.listFromJson(json['elements']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'elements': elements
-     };
+    Map <String, dynamic> json = {};
+    if (elements != null)
+      json['elements'] = elements;
+    return json;
   }
 
-  static List<Versions embedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Versions embedded>() : json.map((value) => new Versions embedded.fromJson(value)).toList();
+  static List<VersionsEmbedded> listFromJson(List<dynamic> json) {
+    return json == null ? List<VersionsEmbedded>() : json.map((value) => VersionsEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, Versions embedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Versions embedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Versions embedded.fromJson(value));
+  static Map<String, VersionsEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, VersionsEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = VersionsEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of VersionsEmbedded-objects as value to a dart map
+  static Map<String, List<VersionsEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<VersionsEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = VersionsEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

@@ -1,9 +1,8 @@
-part of swagger.api;
+part of openapi.api;
 
 class WPTypesEmbedded {
   
   List<WPType> elements = [];
-  
   WPTypesEmbedded();
 
   @override
@@ -13,27 +12,39 @@ class WPTypesEmbedded {
 
   WPTypesEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    elements =
-      WPType.listFromJson(json['elements'])
-;
+    elements = (json['elements'] == null) ?
+      null :
+      WPType.listFromJson(json['elements']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'elements': elements
-     };
+    Map <String, dynamic> json = {};
+    if (elements != null)
+      json['elements'] = elements;
+    return json;
   }
 
   static List<WPTypesEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<WPTypesEmbedded>() : json.map((value) => new WPTypesEmbedded.fromJson(value)).toList();
+    return json == null ? List<WPTypesEmbedded>() : json.map((value) => WPTypesEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, WPTypesEmbedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, WPTypesEmbedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new WPTypesEmbedded.fromJson(value));
+  static Map<String, WPTypesEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WPTypesEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = WPTypesEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of WPTypesEmbedded-objects as value to a dart map
+  static Map<String, List<WPTypesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<WPTypesEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = WPTypesEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

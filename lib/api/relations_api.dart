@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class RelationsApi {
 
   RelationsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List Relations
+  /// List Relations with HTTP info returned
   ///
   /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
-  Future apiV3RelationsGet({ String filters, String sortBy }) async {
-    Object postBody = null;
+  Future apiV3RelationsGetWithHttpInfo({ String filters, String sortBy }) async {
+    Object postBody;
 
     // verify required params are set
 
@@ -28,21 +28,20 @@ class RelationsApi {
     if(sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
     }
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -52,25 +51,31 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List Relations
+  ///
+  /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
+  Future apiV3RelationsGet({ String filters, String sortBy }) async {
+    Response response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// Delete Relation
+
+  /// Delete Relation with HTTP info returned
   ///
   /// Deletes the relation.
-  Future apiV3RelationsIdDelete(int id) async {
-    Object postBody = null;
+  Future apiV3RelationsIdDeleteWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -80,21 +85,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'DELETE',
@@ -104,25 +108,31 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// Delete Relation
+  ///
+  /// Deletes the relation.
+  Future apiV3RelationsIdDelete(int id) async {
+    Response response = await apiV3RelationsIdDeleteWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// Relation edit form
+
+  /// Relation edit form with HTTP info returned
   ///
   /// 
-  Future apiV3RelationsIdFormPost(int id) async {
-    Object postBody = null;
+  Future apiV3RelationsIdFormPostWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -132,21 +142,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'POST',
@@ -156,25 +165,31 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
-
-    if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
-    } else if(response.body != null) {
-      return 
-          ;
-    } else {
-      return ;
-    }
+    return response;
   }
-  /// View Relation
+
+  /// Relation edit form
   ///
   /// 
-  Future apiV3RelationsIdGet(int id) async {
-    Object postBody = null;
+  Future apiV3RelationsIdFormPost(int id) async {
+    Response response = await apiV3RelationsIdFormPostWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+    } else {
+      return;
+    }
+  }
+
+  /// View Relation with HTTP info returned
+  ///
+  /// 
+  Future apiV3RelationsIdGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -184,21 +199,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -208,25 +222,31 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View Relation
+  ///
+  /// 
+  Future apiV3RelationsIdGet(int id) async {
+    Response response = await apiV3RelationsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// Edit Relation
+
+  /// Edit Relation with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. It is only allowed to provide properties or links supporting the **write** operation.  Note that changing the &#x60;type&#x60; of a relation invariably also changes the respective &#x60;reverseType&#x60; as well as the \&quot;name\&quot; of it. The returned Relation object will reflect that change. For instance if you change a Relation&#39;s &#x60;type&#x60; to \&quot;follows\&quot; then the &#x60;reverseType&#x60; will be changed to &#x60;precedes&#x60;.
-  Future apiV3RelationsIdPatch(int id) async {
-    Object postBody = null;
+  Future apiV3RelationsIdPatchWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -236,21 +256,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'PATCH',
@@ -260,21 +279,27 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// Edit Relation
+  ///
+  /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. It is only allowed to provide properties or links supporting the **write** operation.  Note that changing the &#x60;type&#x60; of a relation invariably also changes the respective &#x60;reverseType&#x60; as well as the \&quot;name\&quot; of it. The returned Relation object will reflect that change. For instance if you change a Relation&#39;s &#x60;type&#x60; to \&quot;follows\&quot; then the &#x60;reverseType&#x60; will be changed to &#x60;precedes&#x60;.
+  Future apiV3RelationsIdPatch(int id) async {
+    Response response = await apiV3RelationsIdPatchWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// View relation schema
+
+  /// View relation schema with HTTP info returned
   ///
   /// 
-  Future apiV3RelationsSchemaGet() async {
-    Object postBody = null;
+  Future apiV3RelationsSchemaGetWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -285,21 +310,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -309,25 +333,31 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
-
-    if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
-    } else if(response.body != null) {
-      return 
-          ;
-    } else {
-      return ;
-    }
+    return response;
   }
-  /// View relation schema for type
+
+  /// View relation schema
   ///
   /// 
-  Future apiV3RelationsSchemaTypeGet(String type) async {
-    Object postBody = null;
+  Future apiV3RelationsSchemaGet() async {
+    Response response = await apiV3RelationsSchemaGetWithHttpInfo();
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+    } else {
+      return;
+    }
+  }
+
+  /// View relation schema for type with HTTP info returned
+  ///
+  /// 
+  Future apiV3RelationsSchemaTypeGetWithHttpInfo(String type) async {
+    Object postBody;
 
     // verify required params are set
     if(type == null) {
-     throw new ApiException(400, "Missing required param: type");
+     throw ApiException(400, "Missing required param: type");
     }
 
     // create path and map variables
@@ -337,21 +367,20 @@ class RelationsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -361,14 +390,20 @@ class RelationsApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View relation schema for type
+  ///
+  /// 
+  Future apiV3RelationsSchemaTypeGet(String type) async {
+    Response response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

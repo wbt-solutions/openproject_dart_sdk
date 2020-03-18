@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class PreviewingApi {
 
   PreviewingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// Preview plain document
+  /// Preview plain document with HTTP info returned
   ///
   /// 
-  Future apiV3RenderPlainPost() async {
-    Object postBody = null;
+  Future apiV3RenderPlainPostWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -22,21 +22,20 @@ class PreviewingApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'POST',
@@ -46,21 +45,27 @@ class PreviewingApi {
                                              formParams,
                                              contentType,
                                              authNames);
-
-    if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
-    } else if(response.body != null) {
-      return 
-          ;
-    } else {
-      return ;
-    }
+    return response;
   }
-  /// Preview Textile document
+
+  /// Preview plain document
   ///
   /// 
-  Future apiV3RenderTextilePost({ String context }) async {
-    Object postBody = null;
+  Future apiV3RenderPlainPost() async {
+    Response response = await apiV3RenderPlainPostWithHttpInfo();
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+    } else {
+      return;
+    }
+  }
+
+  /// Preview Textile document with HTTP info returned
+  ///
+  /// 
+  Future apiV3RenderTextilePostWithHttpInfo({ String context }) async {
+    Object postBody;
 
     // verify required params are set
 
@@ -74,21 +79,20 @@ class PreviewingApi {
     if(context != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "context", context));
     }
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'POST',
@@ -98,14 +102,20 @@ class PreviewingApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// Preview Textile document
+  ///
+  /// 
+  Future apiV3RenderTextilePost({ String context }) async {
+    Response response = await apiV3RenderTextilePostWithHttpInfo( context: context );
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

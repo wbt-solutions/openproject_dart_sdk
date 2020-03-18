@@ -1,15 +1,13 @@
-part of swagger.api;
+part of openapi.api;
 
 class Description {
   
   String format = null;
-  //enum formatEnum {  textile,  };
-
+  //enum formatEnum {  textile,  };{
+  
   String raw = null;
   
-
   String html = null;
-  
   Description();
 
   @override
@@ -19,35 +17,43 @@ class Description {
 
   Description.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    format =
-        json['format']
-    ;
-    raw =
-        json['raw']
-    ;
-    html =
-        json['html']
-    ;
+    format = json['format'];
+    raw = json['raw'];
+    html = json['html'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'format': format,
-      'raw': raw,
-      'html': html
-     };
+    Map <String, dynamic> json = {};
+    if (format != null)
+      json['format'] = format;
+    if (raw != null)
+      json['raw'] = raw;
+    if (html != null)
+      json['html'] = html;
+    return json;
   }
 
   static List<Description> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Description>() : json.map((value) => new Description.fromJson(value)).toList();
+    return json == null ? List<Description>() : json.map((value) => Description.fromJson(value)).toList();
   }
 
-  static Map<String, Description> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Description>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Description.fromJson(value));
+  static Map<String, Description> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Description>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = Description.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of Description-objects as value to a dart map
+  static Map<String, List<Description>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<Description>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = Description.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

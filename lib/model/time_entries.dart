@@ -1,64 +1,67 @@
-part of swagger.api;
+part of openapi.api;
 
-class Time entries {
+class TimeEntries {
   
   int total = null;
   
-
   int count = null;
   
-
   TimeEntriesEmbedded embedded = null;
   
-
-  Time entries Links links = null;
-  
-  Time entries();
+  TimeEntriesLinks links = null;
+  TimeEntries();
 
   @override
   String toString() {
-    return 'Time entries[total=$total, count=$count, embedded=$embedded, links=$links, ]';
+    return 'TimeEntries[total=$total, count=$count, embedded=$embedded, links=$links, ]';
   }
 
-  Time entries.fromJson(Map<String, dynamic> json) {
+  TimeEntries.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    total =
-        json['total']
-    ;
-    count =
-        json['count']
-    ;
-    embedded =
-      
-      
-      new TimeEntriesEmbedded.fromJson(json['_embedded'])
-;
-    links =
-      
-      
-      new Time entries Links.fromJson(json['_links'])
-;
+    total = json['total'];
+    count = json['count'];
+    embedded = (json['_embedded'] == null) ?
+      null :
+      TimeEntriesEmbedded.fromJson(json['_embedded']);
+    links = (json['_links'] == null) ?
+      null :
+      TimeEntriesLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'total': total,
-      'count': count,
-      '_embedded': embedded,
-      '_links': links
-     };
+    Map <String, dynamic> json = {};
+    if (total != null)
+      json['total'] = total;
+    if (count != null)
+      json['count'] = count;
+    if (embedded != null)
+      json['_embedded'] = embedded;
+    if (links != null)
+      json['_links'] = links;
+    return json;
   }
 
-  static List<Time entries> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Time entries>() : json.map((value) => new Time entries.fromJson(value)).toList();
+  static List<TimeEntries> listFromJson(List<dynamic> json) {
+    return json == null ? List<TimeEntries>() : json.map((value) => TimeEntries.fromJson(value)).toList();
   }
 
-  static Map<String, Time entries> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Time entries>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Time entries.fromJson(value));
+  static Map<String, TimeEntries> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TimeEntries>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TimeEntries.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of TimeEntries-objects as value to a dart map
+  static Map<String, List<TimeEntries>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TimeEntries>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TimeEntries.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

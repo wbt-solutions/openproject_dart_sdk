@@ -1,33 +1,25 @@
-part of swagger.api;
+part of openapi.api;
 
 class Version {
   
   int id = null;
   
-
   String name = null;
   
-
   Description description = null;
   
-
   DateTime startDate = null;
   
-
   DateTime endDate = null;
   
-
   String status = null;
-  //enum statusEnum {  open,  };
-
+  //enum statusEnum {  open,  };{
+  
   DateTime createdAt = null;
   
-
   DateTime updatedAt = null;
   
-
-  Version Links links = null;
-  
+  VersionLinks links = null;
   Version();
 
   @override
@@ -37,63 +29,73 @@ class Version {
 
   Version.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    id =
-        json['id']
-    ;
-    name =
-        json['name']
-    ;
-    description =
-      
-      
-      new Description.fromJson(json['description'])
-;
-    startDate =
-      
-      
-      new DateTime.fromJson(json['startDate'])
-;
-    endDate =
-      
-      
-      new DateTime.fromJson(json['endDate'])
-;
-    status =
-        json['status']
-    ;
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
-    links =
-      
-      
-      new Version Links.fromJson(json['_links'])
-;
+    id = json['id'];
+    name = json['name'];
+    description = (json['description'] == null) ?
+      null :
+      Description.fromJson(json['description']);
+    startDate = (json['startDate'] == null) ?
+      null :
+      DateTime.parse(json['startDate']);
+    endDate = (json['endDate'] == null) ?
+      null :
+      DateTime.parse(json['endDate']);
+    status = json['status'];
+    createdAt = (json['createdAt'] == null) ?
+      null :
+      DateTime.parse(json['createdAt']);
+    updatedAt = (json['updatedAt'] == null) ?
+      null :
+      DateTime.parse(json['updatedAt']);
+    links = (json['_links'] == null) ?
+      null :
+      VersionLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'description': description,
-      'startDate': startDate,
-      'endDate': endDate,
-      'status': status,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      '_links': links
-     };
+    Map <String, dynamic> json = {};
+    if (id != null)
+      json['id'] = id;
+    if (name != null)
+      json['name'] = name;
+    if (description != null)
+      json['description'] = description;
+    if (startDate != null)
+      json['startDate'] = startDate == null ? null : startDate.toUtc().toIso8601String();
+    if (endDate != null)
+      json['endDate'] = endDate == null ? null : endDate.toUtc().toIso8601String();
+    if (status != null)
+      json['status'] = status;
+    if (createdAt != null)
+      json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
+    if (updatedAt != null)
+      json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
+    if (links != null)
+      json['_links'] = links;
+    return json;
   }
 
   static List<Version> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Version>() : json.map((value) => new Version.fromJson(value)).toList();
+    return json == null ? List<Version>() : json.map((value) => Version.fromJson(value)).toList();
   }
 
-  static Map<String, Version> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Version>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Version.fromJson(value));
+  static Map<String, Version> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Version>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = Version.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of Version-objects as value to a dart map
+  static Map<String, List<Version>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<Version>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = Version.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

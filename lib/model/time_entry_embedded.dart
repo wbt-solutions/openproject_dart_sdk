@@ -1,18 +1,14 @@
-part of swagger.api;
+part of openapi.api;
 
 class TimeEntryEmbedded {
   
   Project project = null;
   
-
-  Work Package workPackage = null;
+  WorkPackage workPackage = null;
   
-
   User user = null;
   
-
-  Activity activity = null;
-  
+  Object activity = null;
   TimeEntryEmbedded();
 
   @override
@@ -22,47 +18,52 @@ class TimeEntryEmbedded {
 
   TimeEntryEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    project =
-      
-      
-      new Project.fromJson(json['project'])
-;
-    workPackage =
-      
-      
-      new Work Package.fromJson(json['workPackage'])
-;
-    user =
-      
-      
-      new User.fromJson(json['user'])
-;
-    activity =
-      
-      
-      new Activity.fromJson(json['activity'])
-;
+    project = (json['project'] == null) ?
+      null :
+      Project.fromJson(json['project']);
+    workPackage = (json['workPackage'] == null) ?
+      null :
+      WorkPackage.fromJson(json['workPackage']);
+    user = (json['user'] == null) ?
+      null :
+      User.fromJson(json['user']);
+    activity = json['activity'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'project': project,
-      'workPackage': workPackage,
-      'user': user,
-      'activity': activity
-     };
+    Map <String, dynamic> json = {};
+    if (project != null)
+      json['project'] = project;
+    if (workPackage != null)
+      json['workPackage'] = workPackage;
+    if (user != null)
+      json['user'] = user;
+    if (activity != null)
+      json['activity'] = activity;
+    return json;
   }
 
   static List<TimeEntryEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TimeEntryEmbedded>() : json.map((value) => new TimeEntryEmbedded.fromJson(value)).toList();
+    return json == null ? List<TimeEntryEmbedded>() : json.map((value) => TimeEntryEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, TimeEntryEmbedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, TimeEntryEmbedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new TimeEntryEmbedded.fromJson(value));
+  static Map<String, TimeEntryEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TimeEntryEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TimeEntryEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of TimeEntryEmbedded-objects as value to a dart map
+  static Map<String, List<TimeEntryEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TimeEntryEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TimeEntryEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

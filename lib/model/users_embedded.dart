@@ -1,39 +1,50 @@
-part of swagger.api;
+part of openapi.api;
 
-class Users embedded {
+class UsersEmbedded {
   
   List<User> elements = [];
-  
-  Users embedded();
+  UsersEmbedded();
 
   @override
   String toString() {
-    return 'Users embedded[elements=$elements, ]';
+    return 'UsersEmbedded[elements=$elements, ]';
   }
 
-  Users embedded.fromJson(Map<String, dynamic> json) {
+  UsersEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    elements =
-      User.listFromJson(json['elements'])
-;
+    elements = (json['elements'] == null) ?
+      null :
+      User.listFromJson(json['elements']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'elements': elements
-     };
+    Map <String, dynamic> json = {};
+    if (elements != null)
+      json['elements'] = elements;
+    return json;
   }
 
-  static List<Users embedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Users embedded>() : json.map((value) => new Users embedded.fromJson(value)).toList();
+  static List<UsersEmbedded> listFromJson(List<dynamic> json) {
+    return json == null ? List<UsersEmbedded>() : json.map((value) => UsersEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, Users embedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Users embedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Users embedded.fromJson(value));
+  static Map<String, UsersEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, UsersEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = UsersEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of UsersEmbedded-objects as value to a dart map
+  static Map<String, List<UsersEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<UsersEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = UsersEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

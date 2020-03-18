@@ -1,9 +1,8 @@
-part of swagger.api;
+part of openapi.api;
 
 class TimeEntriesEmbedded {
   
-  List<Time entry> elements = [];
-  
+  List<TimeEntry> elements = [];
   TimeEntriesEmbedded();
 
   @override
@@ -13,27 +12,39 @@ class TimeEntriesEmbedded {
 
   TimeEntriesEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    elements =
-      Time entry.listFromJson(json['elements'])
-;
+    elements = (json['elements'] == null) ?
+      null :
+      TimeEntry.listFromJson(json['elements']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'elements': elements
-     };
+    Map <String, dynamic> json = {};
+    if (elements != null)
+      json['elements'] = elements;
+    return json;
   }
 
   static List<TimeEntriesEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? new List<TimeEntriesEmbedded>() : json.map((value) => new TimeEntriesEmbedded.fromJson(value)).toList();
+    return json == null ? List<TimeEntriesEmbedded>() : json.map((value) => TimeEntriesEmbedded.fromJson(value)).toList();
   }
 
-  static Map<String, TimeEntriesEmbedded> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, TimeEntriesEmbedded>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new TimeEntriesEmbedded.fromJson(value));
+  static Map<String, TimeEntriesEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TimeEntriesEmbedded>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TimeEntriesEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of TimeEntriesEmbedded-objects as value to a dart map
+  static Map<String, List<TimeEntriesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TimeEntriesEmbedded>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TimeEntriesEmbedded.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

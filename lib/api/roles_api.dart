@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,11 +7,11 @@ class RolesApi {
 
   RolesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List roles
+  /// List roles with HTTP info returned
   ///
   /// List all defined roles. This includes built in roles like &#39;Anonymous&#39; and &#39;Non member&#39;.
-  Future apiV3RolesGet() async {
-    Object postBody = null;
+  Future apiV3RolesGetWithHttpInfo() async {
+    Object postBody;
 
     // verify required params are set
 
@@ -22,21 +22,20 @@ class RolesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -46,25 +45,31 @@ class RolesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List roles
+  ///
+  /// List all defined roles. This includes built in roles like &#39;Anonymous&#39; and &#39;Non member&#39;.
+  Future apiV3RolesGet() async {
+    Response response = await apiV3RolesGetWithHttpInfo();
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
-  /// View role
+
+  /// View role with HTTP info returned
   ///
   /// Fetch an individual role.
-  Future apiV3RolesIdGet(int id) async {
-    Object postBody = null;
+  Future apiV3RolesIdGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -74,21 +79,20 @@ class RolesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -98,14 +102,20 @@ class RolesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// View role
+  ///
+  /// Fetch an individual role.
+  Future apiV3RolesIdGet(int id) async {
+    Response response = await apiV3RolesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

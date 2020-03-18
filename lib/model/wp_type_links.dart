@@ -1,41 +1,50 @@
-part of swagger.api;
+part of openapi.api;
 
-class WPType Links {
+class WPTypeLinks {
   
   Link self = null;
-  
-  WPType Links();
+  WPTypeLinks();
 
   @override
   String toString() {
-    return 'WPType Links[self=$self, ]';
+    return 'WPTypeLinks[self=$self, ]';
   }
 
-  WPType Links.fromJson(Map<String, dynamic> json) {
+  WPTypeLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    self =
-      
-      
-      new Link.fromJson(json['self'])
-;
+    self = (json['self'] == null) ?
+      null :
+      Link.fromJson(json['self']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'self': self
-     };
+    Map <String, dynamic> json = {};
+    if (self != null)
+      json['self'] = self;
+    return json;
   }
 
-  static List<WPType Links> listFromJson(List<dynamic> json) {
-    return json == null ? new List<WPType Links>() : json.map((value) => new WPType Links.fromJson(value)).toList();
+  static List<WPTypeLinks> listFromJson(List<dynamic> json) {
+    return json == null ? List<WPTypeLinks>() : json.map((value) => WPTypeLinks.fromJson(value)).toList();
   }
 
-  static Map<String, WPType Links> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, WPType Links>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new WPType Links.fromJson(value));
+  static Map<String, WPTypeLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WPTypeLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = WPTypeLinks.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of WPTypeLinks-objects as value to a dart map
+  static Map<String, List<WPTypeLinks>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<WPTypeLinks>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = WPTypeLinks.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

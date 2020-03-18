@@ -1,77 +1,78 @@
-part of swagger.api;
+part of openapi.api;
 
-class Time entry Links {
+class TimeEntryLinks {
   
   Link self = null;
   
-
   Link project = null;
   
-
   Link workPackage = null;
   
-
   Link user = null;
   
-
   Link activity = null;
-  
-  Time entry Links();
+  TimeEntryLinks();
 
   @override
   String toString() {
-    return 'Time entry Links[self=$self, project=$project, workPackage=$workPackage, user=$user, activity=$activity, ]';
+    return 'TimeEntryLinks[self=$self, project=$project, workPackage=$workPackage, user=$user, activity=$activity, ]';
   }
 
-  Time entry Links.fromJson(Map<String, dynamic> json) {
+  TimeEntryLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    self =
-      
-      
-      new Link.fromJson(json['self'])
-;
-    project =
-      
-      
-      new Link.fromJson(json['project'])
-;
-    workPackage =
-      
-      
-      new Link.fromJson(json['workPackage'])
-;
-    user =
-      
-      
-      new Link.fromJson(json['user'])
-;
-    activity =
-      
-      
-      new Link.fromJson(json['activity'])
-;
+    self = (json['self'] == null) ?
+      null :
+      Link.fromJson(json['self']);
+    project = (json['project'] == null) ?
+      null :
+      Link.fromJson(json['project']);
+    workPackage = (json['workPackage'] == null) ?
+      null :
+      Link.fromJson(json['workPackage']);
+    user = (json['user'] == null) ?
+      null :
+      Link.fromJson(json['user']);
+    activity = (json['activity'] == null) ?
+      null :
+      Link.fromJson(json['activity']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'self': self,
-      'project': project,
-      'workPackage': workPackage,
-      'user': user,
-      'activity': activity
-     };
+    Map <String, dynamic> json = {};
+    if (self != null)
+      json['self'] = self;
+    if (project != null)
+      json['project'] = project;
+    if (workPackage != null)
+      json['workPackage'] = workPackage;
+    if (user != null)
+      json['user'] = user;
+    if (activity != null)
+      json['activity'] = activity;
+    return json;
   }
 
-  static List<Time entry Links> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Time entry Links>() : json.map((value) => new Time entry Links.fromJson(value)).toList();
+  static List<TimeEntryLinks> listFromJson(List<dynamic> json) {
+    return json == null ? List<TimeEntryLinks>() : json.map((value) => TimeEntryLinks.fromJson(value)).toList();
   }
 
-  static Map<String, Time entry Links> mapFromJson(Map<String, Map<String, dynamic>> json) {
-    var map = new Map<String, Time entry Links>();
-    if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Time entry Links.fromJson(value));
+  static Map<String, TimeEntryLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, TimeEntryLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = TimeEntryLinks.fromJson(value));
     }
     return map;
+  }
+
+  // maps a json object with a list of TimeEntryLinks-objects as value to a dart map
+  static Map<String, List<TimeEntryLinks>> mapListFromJson(Map<String, dynamic> json) {
+    var map = Map<String, List<TimeEntryLinks>>();
+     if (json != null && json.isNotEmpty) {
+       json.forEach((String key, dynamic value) {
+         map[key] = TimeEntryLinks.listFromJson(value);
+       });
+     }
+     return map;
   }
 }
 

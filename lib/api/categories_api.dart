@@ -1,4 +1,4 @@
-part of swagger.api;
+part of openapi.api;
 
 
 
@@ -7,15 +7,15 @@ class CategoriesApi {
 
   CategoriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View Category
+  /// View Category with HTTP info returned
   ///
   /// 
-  Future apiV3CategoriesIdGet(int id) async {
-    Object postBody = null;
+  Future apiV3CategoriesIdGetWithHttpInfo(int id) async {
+    Object postBody;
 
     // verify required params are set
     if(id == null) {
-     throw new ApiException(400, "Missing required param: id");
+     throw ApiException(400, "Missing required param: id");
     }
 
     // create path and map variables
@@ -25,21 +25,20 @@ class CategoriesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -49,25 +48,31 @@ class CategoriesApi {
                                              formParams,
                                              contentType,
                                              authNames);
-
-    if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
-    } else if(response.body != null) {
-      return 
-          ;
-    } else {
-      return ;
-    }
+    return response;
   }
-  /// List categories of a project
+
+  /// View Category
   ///
   /// 
-  Future apiV3ProjectsProjectIdCategoriesGet(int projectId) async {
-    Object postBody = null;
+  Future apiV3CategoriesIdGet(int id) async {
+    Response response = await apiV3CategoriesIdGetWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+    } else {
+      return;
+    }
+  }
+
+  /// List categories of a project with HTTP info returned
+  ///
+  /// 
+  Future apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(int projectId) async {
+    Object postBody;
 
     // verify required params are set
     if(projectId == null) {
-     throw new ApiException(400, "Missing required param: projectId");
+     throw ApiException(400, "Missing required param: projectId");
     }
 
     // create path and map variables
@@ -77,21 +82,20 @@ class CategoriesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    
+
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
     List<String> authNames = ["basicAuth"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
-      
+      MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
         postBody = mp;
     }
     else {
-          }
+    }
 
     var response = await apiClient.invokeAPI(path,
                                              'GET',
@@ -101,14 +105,20 @@ class CategoriesApi {
                                              formParams,
                                              contentType,
                                              authNames);
+    return response;
+  }
 
+  /// List categories of a project
+  ///
+  /// 
+  Future apiV3ProjectsProjectIdCategoriesGet(int projectId) async {
+    Response response = await apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return 
-          ;
     } else {
-      return ;
+      return;
     }
   }
+
 }

@@ -1,0 +1,97 @@
+# openapi.api.StatusesApi
+
+## Load the API package
+```dart
+import 'package:openapi/api.dart';
+```
+
+All URIs are relative to *http://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**apiV3StatusesGet**](StatusesApi.md#apiV3StatusesGet) | **GET** /api/v3/statuses | List all Statuses
+[**apiV3StatusesIdGet**](StatusesApi.md#apiV3StatusesIdGet) | **GET** /api/v3/statuses/{id} | View Status
+
+
+# **apiV3StatusesGet**
+> apiV3StatusesGet()
+
+List all Statuses
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+
+var api_instance = StatusesApi();
+
+try { 
+    api_instance.apiV3StatusesGet();
+} catch (e) {
+    print("Exception when calling StatusesApi->apiV3StatusesGet: $e\n");
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiV3StatusesIdGet**
+> apiV3StatusesIdGet(id)
+
+View Status
+
+### Example 
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+
+var api_instance = StatusesApi();
+var id = 56; // int | status id
+
+try { 
+    api_instance.apiV3StatusesIdGet(id);
+} catch (e) {
+    print("Exception when calling StatusesApi->apiV3StatusesIdGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| status id | [default to null]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

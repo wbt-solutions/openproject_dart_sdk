@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -23,7 +23,7 @@ Returns the list of QueryFilterInstanceSchemas defined for a query of the specif
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -68,7 +68,7 @@ Returns the list of QueryFilterInstanceSchemas defined for a global query. That 
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -109,7 +109,7 @@ Retreive an individual QueryFilterInstanceSchema as identified by the id paramet
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';

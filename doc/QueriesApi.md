@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -33,7 +33,7 @@ Same as [viewing an existing, persisted Query](#queries-query-get) in its respon
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -94,7 +94,7 @@ Retrieve the schema for project queries.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -139,7 +139,7 @@ Gets a list of projects that are available as projects a query can be assigned t
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -180,7 +180,7 @@ Same as [viewing an existing, persisted Query](#queries-query-get) in its respon
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -239,7 +239,7 @@ Query Create Form
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -280,7 +280,7 @@ Returns a collection of queries. The collection can be filtered via query parame
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -325,7 +325,7 @@ Delete the query identified by the id parameter
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -370,7 +370,7 @@ Retreive an individual query as identified by the id parameter. Then end point a
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -433,7 +433,7 @@ When calling this endpoint the client provides a single object, containing the p
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -478,7 +478,7 @@ Star query
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -521,7 +521,7 @@ Unstar query
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -566,7 +566,7 @@ When calling this endpoint the client provides a single object, containing at le
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -607,7 +607,7 @@ Retrieve the schema for global queries, those, that are not assigned to a projec
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';

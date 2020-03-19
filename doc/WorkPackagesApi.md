@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -44,7 +44,7 @@ WorkPackage Create Form
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -87,7 +87,7 @@ List WorkPackages
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -145,7 +145,7 @@ When calling this endpoint the client provides a single object, containing at le
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -195,7 +195,7 @@ Gets a list of users that can be assigned to work packages in the given project.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -240,7 +240,7 @@ Gets a list of users that can be assigned as the responsible of a work package i
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -283,7 +283,7 @@ WorkPackage Create Form
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -322,7 +322,7 @@ List WorkPackages
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -376,7 +376,7 @@ List work package activities
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -421,7 +421,7 @@ Creates an activity for the selected work package and, on success, returns the u
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -470,7 +470,7 @@ Gets a list of projects that are available as projects to which the work package
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -513,7 +513,7 @@ Available relation candidates
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -566,7 +566,7 @@ Gets a list of users that are able to be watchers of the specified work package.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -611,7 +611,7 @@ Deletes the work package, as well as:  * all associated time entries  * its hier
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -654,7 +654,7 @@ WorkPackage Edit Form
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -697,7 +697,7 @@ View WorkPackage
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -743,7 +743,7 @@ When calling this endpoint the client provides a single object, containing the p
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -791,7 +791,7 @@ Relation create form
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -836,7 +836,7 @@ Gets a list of revisions that are linked to this work package, e.g., because it 
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -881,7 +881,7 @@ When calling this endpoint the client provides a single object, containing at le
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -929,7 +929,7 @@ List work package schemas.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -972,7 +972,7 @@ View WorkPackage Schema
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -1017,7 +1017,7 @@ Lists all relations this work package is involved in.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -1062,7 +1062,7 @@ When calling this endpoint the client provides a single object, containing at le
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -1105,7 +1105,7 @@ List watchers
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -1150,7 +1150,7 @@ Removes the specified user from the list of watchers for the given work package.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -1197,7 +1197,7 @@ Adds a watcher to the specified work package.  The request is expected to contai
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';

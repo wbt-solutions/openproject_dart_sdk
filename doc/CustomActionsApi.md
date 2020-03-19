@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,7 +22,7 @@ A POST to this end point executes the custom action on the work package provided
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -67,7 +67,7 @@ View custom action
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';

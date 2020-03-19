@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,7 +22,7 @@ List all defined roles. This includes built in roles like 'Anonymous' and 'Non m
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
@@ -63,7 +63,7 @@ Fetch an individual role.
 
 ### Example 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';

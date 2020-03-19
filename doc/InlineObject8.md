@@ -2,7 +2,7 @@
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openproject_dart_sdk/api.dart';
 ```
 
 ## Properties

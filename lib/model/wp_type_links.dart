@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class WPTypeLinks {
   
@@ -7,7 +7,7 @@ class WPTypeLinks {
 
   @override
   String toString() {
-    return 'WPTypeLinks[self=$self, ]';
+    return 'WPType Links[self=$self, ]';
   }
 
   WPTypeLinks.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class WPTypeLinks {
     return map;
   }
 
-  // maps a json object with a list of WPTypeLinks-objects as value to a dart map
+  // maps a json object with a list of WPType Links-objects as value to a dart map
   static Map<String, List<WPTypeLinks>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WPTypeLinks>>();
      if (json != null && json.isNotEmpty) {

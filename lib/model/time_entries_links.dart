@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class TimeEntriesLinks {
   
@@ -13,7 +13,7 @@ class TimeEntriesLinks {
 
   @override
   String toString() {
-    return 'TimeEntriesLinks[self=$self, jumpTo=$jumpTo, changeSize=$changeSize, nextByOffset=$nextByOffset, ]';
+    return 'Time entries Links[self=$self, jumpTo=$jumpTo, changeSize=$changeSize, nextByOffset=$nextByOffset, ]';
   }
 
   TimeEntriesLinks.fromJson(Map<String, dynamic> json) {
@@ -57,7 +57,7 @@ class TimeEntriesLinks {
     return map;
   }
 
-  // maps a json object with a list of TimeEntriesLinks-objects as value to a dart map
+  // maps a json object with a list of Time entries Links-objects as value to a dart map
   static Map<String, List<TimeEntriesLinks>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<TimeEntriesLinks>>();
      if (json != null && json.isNotEmpty) {

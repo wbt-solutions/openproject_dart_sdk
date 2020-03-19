@@ -1,4 +1,4 @@
-# openapi.model.ProjectsEmbedded
+# openproject_dart_sdk.model.ProjectsEmbedded
 
 ## Load the model package
 ```dart

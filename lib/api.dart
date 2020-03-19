@@ -1,4 +1,4 @@
-library openapi.api;
+library openproject_dart_sdk.api;
 
 import 'dart:async';
 import 'dart:convert';

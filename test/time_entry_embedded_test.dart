@@ -11,7 +11,7 @@ void main() {
       // TODO
     });
 
-    // WorkPackage workPackage (default value: null)
+    // Work Package workPackage (default value: null)
     test('to test the property `workPackage`', () async {
       // TODO
     });

@@ -1,4 +1,4 @@
-# openapi.model.WPTypesEmbedded
+# openproject_dart_sdk.model.WPTypesEmbedded
 
 ## Load the model package
 ```dart

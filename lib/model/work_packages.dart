@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class WorkPackages {
   
@@ -11,7 +11,7 @@ class WorkPackages {
 
   @override
   String toString() {
-    return 'WorkPackages[total=$total, count=$count, embedded=$embedded, ]';
+    return 'Work Packages[total=$total, count=$count, embedded=$embedded, ]';
   }
 
   WorkPackages.fromJson(Map<String, dynamic> json) {
@@ -46,7 +46,7 @@ class WorkPackages {
     return map;
   }
 
-  // maps a json object with a list of WorkPackages-objects as value to a dart map
+  // maps a json object with a list of Work Packages-objects as value to a dart map
   static Map<String, List<WorkPackages>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WorkPackages>>();
      if (json != null && json.isNotEmpty) {

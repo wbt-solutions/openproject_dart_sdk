@@ -1,4 +1,4 @@
-# openapi.api.PrioritiesApi
+# openproject_dart_sdk.api.PrioritiesApi
 
 ## Load the API package
 ```dart

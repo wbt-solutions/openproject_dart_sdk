@@ -1,4 +1,4 @@
-# openapi.model.WorkPackageLinks
+# openproject_dart_sdk.model.Work Package Links
 
 ## Load the model package
 ```dart

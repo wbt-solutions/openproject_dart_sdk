@@ -1,4 +1,4 @@
-# openapi.model.WorkPackage
+# openproject_dart_sdk.model.Work Package
 
 ## Load the model package
 ```dart
@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **estimatedTime** | **String** |  | [optional] [default to null]
-**embedded** | [**WorkPackageEmbedded**](WorkPackageEmbedded.md) |  | [optional] [default to null]
-**links** | [**WorkPackageLinks**](WorkPackageLinks.md) |  | [optional] [default to null]
+**embedded** | [**Work Package Embedded**](Work Package Embedded.md) |  | [optional] [default to null]
+**links** | [**Work Package Links**](Work Package Links.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

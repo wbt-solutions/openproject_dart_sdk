@@ -1,4 +1,4 @@
-# openapi.api.RelationsApi
+# openproject_dart_sdk.api.RelationsApi
 
 ## Load the API package
 ```dart

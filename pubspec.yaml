@@ -4,8 +4,6 @@ description: Dart SDK for the OpenProject Software
 authors:
   - Simon Bullik <sbu@wbt-solutions.de>
 homepage: https://code.wbt-solutions.de/sbu/openproject_dart_sdk
-issue_tracker: https://code.wbt-solutions.de/sbu/openproject_dart_sdk/issues
-repository: https://code.wbt-solutions.de/sbu/openproject_dart_sdk.git
 environment:
   sdk: '>=2.0.0 <3.0.0'
 dependencies:

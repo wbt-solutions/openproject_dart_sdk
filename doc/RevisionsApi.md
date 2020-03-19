@@ -1,4 +1,4 @@
-# openapi.api.RevisionsApi
+# openproject_dart_sdk.api.RevisionsApi
 
 ## Load the API package
 ```dart

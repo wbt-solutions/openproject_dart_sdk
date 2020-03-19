@@ -1,4 +1,4 @@
-# openapi.api.CustomActionsApi
+# openproject_dart_sdk.api.CustomActionsApi
 
 ## Load the API package
 ```dart

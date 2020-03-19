@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class VersionsEmbedded {
   
@@ -7,7 +7,7 @@ class VersionsEmbedded {
 
   @override
   String toString() {
-    return 'VersionsEmbedded[elements=$elements, ]';
+    return 'Versions embedded[elements=$elements, ]';
   }
 
   VersionsEmbedded.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class VersionsEmbedded {
     return map;
   }
 
-  // maps a json object with a list of VersionsEmbedded-objects as value to a dart map
+  // maps a json object with a list of Versions embedded-objects as value to a dart map
   static Map<String, List<VersionsEmbedded>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<VersionsEmbedded>>();
      if (json != null && json.isNotEmpty) {

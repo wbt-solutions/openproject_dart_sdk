@@ -1,4 +1,4 @@
-# openapi.api.FormsApi
+# openproject_dart_sdk.api.FormsApi
 
 ## Load the API package
 ```dart

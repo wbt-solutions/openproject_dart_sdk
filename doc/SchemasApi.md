@@ -1,4 +1,4 @@
-# openapi.api.SchemasApi
+# openproject_dart_sdk.api.SchemasApi
 
 ## Load the API package
 ```dart

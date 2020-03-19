@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 
 
@@ -7,7 +7,7 @@ class WorkPackagesApi {
 
   WorkPackagesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// WorkPackage Create Form with HTTP info returned
+  /// Work Package Create Form with HTTP info returned
   ///
   /// 
   Future apiV3ProjectsIdWorkPackagesFormPostWithHttpInfo(int id) async {
@@ -51,7 +51,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// WorkPackage Create Form
+  /// Work Package Create Form
   ///
   /// 
   Future apiV3ProjectsIdWorkPackagesFormPost(int id) async {
@@ -64,7 +64,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// List WorkPackages with HTTP info returned
+  /// List Work Packages with HTTP info returned
   ///
   /// 
   Future<Response> apiV3ProjectsIdWorkPackagesGetWithHttpInfo(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
@@ -126,7 +126,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// List WorkPackages
+  /// List Work Packages
   ///
   /// 
   Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
@@ -134,13 +134,13 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Packages') as WorkPackages;
     } else {
       return null;
     }
   }
 
-  /// Create WorkPackage with HTTP info returned
+  /// Create Work Package with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
   Future<Response> apiV3ProjectsIdWorkPackagesPostWithHttpInfo(int id, WorkPackage workPackage, { bool notify }) async {
@@ -190,7 +190,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// Create WorkPackage
+  /// Create Work Package
   ///
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
   Future<WorkPackage> apiV3ProjectsIdWorkPackagesPost(int id, WorkPackage workPackage, { bool notify }) async {
@@ -198,7 +198,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
     } else {
       return null;
     }
@@ -318,7 +318,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// WorkPackage Create Form with HTTP info returned
+  /// Work Package Create Form with HTTP info returned
   ///
   /// 
   Future apiV3WorkPackagesFormPostWithHttpInfo() async {
@@ -359,7 +359,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// WorkPackage Create Form
+  /// Work Package Create Form
   ///
   /// 
   Future apiV3WorkPackagesFormPost() async {
@@ -372,7 +372,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// List WorkPackages with HTTP info returned
+  /// List Work Packages with HTTP info returned
   ///
   /// 
   Future<Response> apiV3WorkPackagesGetWithHttpInfo({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
@@ -431,7 +431,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// List WorkPackages
+  /// List Work Packages
   ///
   /// 
   Future<WorkPackages> apiV3WorkPackagesGet({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
@@ -439,7 +439,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Packages') as WorkPackages;
     } else {
       return null;
     }
@@ -745,7 +745,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// Delete WorkPackage with HTTP info returned
+  /// Delete Work Package with HTTP info returned
   ///
   /// Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
   Future apiV3WorkPackagesIdDeleteWithHttpInfo(int id) async {
@@ -789,7 +789,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// Delete WorkPackage
+  /// Delete Work Package
   ///
   /// Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
   Future apiV3WorkPackagesIdDelete(int id) async {
@@ -802,7 +802,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// WorkPackage Edit Form with HTTP info returned
+  /// Work Package Edit Form with HTTP info returned
   ///
   /// 
   Future apiV3WorkPackagesIdFormPostWithHttpInfo(int id) async {
@@ -846,7 +846,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// WorkPackage Edit Form
+  /// Work Package Edit Form
   ///
   /// 
   Future apiV3WorkPackagesIdFormPost(int id) async {
@@ -859,7 +859,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// View WorkPackage with HTTP info returned
+  /// View Work Package with HTTP info returned
   ///
   /// 
   Future<Response> apiV3WorkPackagesIdGetWithHttpInfo(int id) async {
@@ -903,7 +903,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// View WorkPackage
+  /// View Work Package
   ///
   /// 
   Future<WorkPackage> apiV3WorkPackagesIdGet(int id) async {
@@ -911,13 +911,13 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
     } else {
       return null;
     }
   }
 
-  /// Edit WorkPackage with HTTP info returned
+  /// Edit Work Package with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of &#x60;lockVersion&#x60; which was received by the &#x60;GET&#x60; request this change originates from.  The value of &#x60;lockVersion&#x60; is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
   Future<Response> apiV3WorkPackagesIdPatchWithHttpInfo(int id, { bool notify, WorkPackage body }) async {
@@ -964,7 +964,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// Edit WorkPackage
+  /// Edit Work Package
   ///
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of &#x60;lockVersion&#x60; which was received by the &#x60;GET&#x60; request this change originates from.  The value of &#x60;lockVersion&#x60; is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
   Future<WorkPackage> apiV3WorkPackagesIdPatch(int id, { bool notify, WorkPackage body }) async {
@@ -972,7 +972,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
     } else {
       return null;
     }
@@ -1092,7 +1092,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// Create WorkPackage with HTTP info returned
+  /// Create Work Package with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
   Future<Response> apiV3WorkPackagesPostWithHttpInfo(WorkPackage workPackage, { bool notify }) async {
@@ -1139,7 +1139,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// Create WorkPackage
+  /// Create Work Package
   ///
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
   Future<WorkPackage> apiV3WorkPackagesPost(WorkPackage workPackage, { bool notify }) async {
@@ -1147,13 +1147,13 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
     } else {
       return null;
     }
   }
 
-  /// List WorkPackage Schemas with HTTP info returned
+  /// List Work Package Schemas with HTTP info returned
   ///
   /// List work package schemas.
   Future apiV3WorkPackagesSchemasGetWithHttpInfo(String filters) async {
@@ -1198,7 +1198,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// List WorkPackage Schemas
+  /// List Work Package Schemas
   ///
   /// List work package schemas.
   Future apiV3WorkPackagesSchemasGet(String filters) async {
@@ -1211,7 +1211,7 @@ class WorkPackagesApi {
     }
   }
 
-  /// View WorkPackage Schema with HTTP info returned
+  /// View Work Package Schema with HTTP info returned
   ///
   /// 
   Future apiV3WorkPackagesSchemasIdentifierGetWithHttpInfo(String identifier) async {
@@ -1255,7 +1255,7 @@ class WorkPackagesApi {
     return response;
   }
 
-  /// View WorkPackage Schema
+  /// View Work Package Schema
   ///
   /// 
   Future apiV3WorkPackagesSchemasIdentifierGet(String identifier) async {

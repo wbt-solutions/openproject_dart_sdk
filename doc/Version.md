@@ -1,4 +1,4 @@
-# openapi.model.Version
+# openproject_dart_sdk.model.Version
 
 ## Load the model package
 ```dart
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**links** | [**VersionLinks**](VersionLinks.md) |  | [optional] [default to null]
+**links** | [**Version Links**](Version Links.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class WorkPackageLinks {
   
@@ -87,7 +87,7 @@ class WorkPackageLinks {
 
   @override
   String toString() {
-    return 'WorkPackageLinks[self=$self, update=$update, schema=$schema, updateImmediately=$updateImmediately, logTime=$logTime, move=$move, copy=$copy, pdf=$pdf, atom=$atom, availableRelationCandidates=$availableRelationCandidates, activities=$activities, attachments=$attachments, addAttachment=$addAttachment, availableWatchers=$availableWatchers, relations=$relations, revisions=$revisions, watch=$watch, watchers=$watchers, addWatcher=$addWatcher, removeWatcher=$removeWatcher, addRelation=$addRelation, addChild=$addChild, changeParent=$changeParent, addComment=$addComment, previewMarkup=$previewMarkup, timeEntries=$timeEntries, ancestors=$ancestors, category=$category, type=$type, priority=$priority, project=$project, status=$status, author=$author, responsible=$responsible, assignee=$assignee, version=$version, parent=$parent, logCosts=$logCosts, showCosts=$showCosts, costObject=$costObject, costsByType=$costsByType, ]';
+    return 'Work Package Links[self=$self, update=$update, schema=$schema, updateImmediately=$updateImmediately, logTime=$logTime, move=$move, copy=$copy, pdf=$pdf, atom=$atom, availableRelationCandidates=$availableRelationCandidates, activities=$activities, attachments=$attachments, addAttachment=$addAttachment, availableWatchers=$availableWatchers, relations=$relations, revisions=$revisions, watch=$watch, watchers=$watchers, addWatcher=$addWatcher, removeWatcher=$removeWatcher, addRelation=$addRelation, addChild=$addChild, changeParent=$changeParent, addComment=$addComment, previewMarkup=$previewMarkup, timeEntries=$timeEntries, ancestors=$ancestors, category=$category, type=$type, priority=$priority, project=$project, status=$status, author=$author, responsible=$responsible, assignee=$assignee, version=$version, parent=$parent, logCosts=$logCosts, showCosts=$showCosts, costObject=$costObject, costsByType=$costsByType, ]';
   }
 
   WorkPackageLinks.fromJson(Map<String, dynamic> json) {
@@ -316,7 +316,7 @@ class WorkPackageLinks {
     return map;
   }
 
-  // maps a json object with a list of WorkPackageLinks-objects as value to a dart map
+  // maps a json object with a list of Work Package Links-objects as value to a dart map
   static Map<String, List<WorkPackageLinks>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WorkPackageLinks>>();
      if (json != null && json.isNotEmpty) {

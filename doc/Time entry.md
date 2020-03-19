@@ -1,4 +1,4 @@
-# openapi.model.TimeEntry
+# openproject_dart_sdk.model.Time entry
 
 ## Load the model package
 ```dart
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **embedded** | [**TimeEntryEmbedded**](TimeEntryEmbedded.md) |  | [optional] [default to null]
-**links** | [**TimeEntryLinks**](TimeEntryLinks.md) |  | [optional] [default to null]
+**links** | [**Time entry Links**](Time entry Links.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

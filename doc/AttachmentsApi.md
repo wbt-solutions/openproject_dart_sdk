@@ -1,4 +1,4 @@
-# openapi.api.AttachmentsApi
+# openproject_dart_sdk.api.AttachmentsApi
 
 ## Load the API package
 ```dart

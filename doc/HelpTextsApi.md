@@ -1,4 +1,4 @@
-# openapi.api.HelpTextsApi
+# openproject_dart_sdk.api.HelpTextsApi
 
 ## Load the API package
 ```dart

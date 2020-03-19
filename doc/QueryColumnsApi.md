@@ -1,4 +1,4 @@
-# openapi.api.QueryColumnsApi
+# openproject_dart_sdk.api.QueryColumnsApi
 
 ## Load the API package
 ```dart

@@ -16,7 +16,7 @@ void main() {
       // TODO
     });
 
-    // UsersEmbedded embedded (default value: null)
+    // Users embedded embedded (default value: null)
     test('to test the property `embedded`', () async {
       // TODO
     });

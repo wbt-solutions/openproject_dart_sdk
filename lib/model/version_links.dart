@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class VersionLinks {
   
@@ -11,7 +11,7 @@ class VersionLinks {
 
   @override
   String toString() {
-    return 'VersionLinks[self=$self, definingProject=$definingProject, availableInProjects=$availableInProjects, ]';
+    return 'Version Links[self=$self, definingProject=$definingProject, availableInProjects=$availableInProjects, ]';
   }
 
   VersionLinks.fromJson(Map<String, dynamic> json) {
@@ -50,7 +50,7 @@ class VersionLinks {
     return map;
   }
 
-  // maps a json object with a list of VersionLinks-objects as value to a dart map
+  // maps a json object with a list of Version Links-objects as value to a dart map
   static Map<String, List<VersionLinks>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<VersionLinks>>();
      if (json != null && json.isNotEmpty) {

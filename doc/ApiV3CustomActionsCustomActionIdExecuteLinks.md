@@ -1,4 +1,4 @@
-# openapi.model.ApiV3CustomActionsCustomActionIdExecuteLinks
+# openproject_dart_sdk.model.ApiV3CustomActionsCustomActionIdExecuteLinks
 
 ## Load the model package
 ```dart

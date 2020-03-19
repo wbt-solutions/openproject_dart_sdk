@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   

@@ -1,4 +1,4 @@
-# openapi.model.ApiV3ActivitiesIdComment
+# openproject_dart_sdk.model.ApiV3ActivitiesIdComment
 
 ## Load the model package
 ```dart

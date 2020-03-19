@@ -1,4 +1,4 @@
-# openapi.api.QueryFilterInstanceSchemaApi
+# openproject_dart_sdk.api.QueryFilterInstanceSchemaApi
 
 ## Load the API package
 ```dart

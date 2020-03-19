@@ -1,4 +1,4 @@
-# openapi.api.StringObjectsApi
+# openproject_dart_sdk.api.StringObjectsApi
 
 ## Load the API package
 ```dart

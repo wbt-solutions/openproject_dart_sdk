@@ -1,4 +1,4 @@
-# openapi.api.RolesApi
+# openproject_dart_sdk.api.RolesApi
 
 ## Load the API package
 ```dart

@@ -1,4 +1,4 @@
-# openapi.model.InlineObject
+# openproject_dart_sdk.model.InlineObject
 
 ## Load the model package
 ```dart

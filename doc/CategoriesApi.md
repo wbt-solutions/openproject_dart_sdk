@@ -1,4 +1,4 @@
-# openapi.api.CategoriesApi
+# openproject_dart_sdk.api.CategoriesApi
 
 ## Load the API package
 ```dart

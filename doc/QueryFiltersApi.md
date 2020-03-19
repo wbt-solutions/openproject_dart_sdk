@@ -1,4 +1,4 @@
-# openapi.api.QueryFiltersApi
+# openproject_dart_sdk.api.QueryFiltersApi
 
 ## Load the API package
 ```dart

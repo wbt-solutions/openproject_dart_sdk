@@ -1,4 +1,4 @@
-# openapi.api.TimeEntryActivitiesApi
+# openproject_dart_sdk.api.TimeEntryActivitiesApi
 
 ## Load the API package
 ```dart

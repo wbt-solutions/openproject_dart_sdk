@@ -1,4 +1,4 @@
-# openapi.api.WorkPackagesApi
+# openproject_dart_sdk.api.WorkPackagesApi
 
 ## Load the API package
 ```dart
@@ -9,27 +9,27 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ProjectsIdWorkPackagesFormPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesFormPost) | **POST** /api/v3/projects/{id}/work_packages/form | WorkPackage Create Form
-[**apiV3ProjectsIdWorkPackagesGet**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesGet) | **GET** /api/v3/projects/{id}/work_packages | List WorkPackages
-[**apiV3ProjectsIdWorkPackagesPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesPost) | **POST** /api/v3/projects/{id}/work_packages | Create WorkPackage
+[**apiV3ProjectsIdWorkPackagesFormPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesFormPost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
+[**apiV3ProjectsIdWorkPackagesGet**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesGet) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
+[**apiV3ProjectsIdWorkPackagesPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesPost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
 [**apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet) | **GET** /api/v3/projects/{project_id}/work_packages/available_assignees | Available assignees
 [**apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet) | **GET** /api/v3/projects/{project_id}/work_packages/available_responsibles | Available responsibles
-[**apiV3WorkPackagesFormPost**](WorkPackagesApi.md#apiV3WorkPackagesFormPost) | **POST** /api/v3/work_packages/form | WorkPackage Create Form
-[**apiV3WorkPackagesGet**](WorkPackagesApi.md#apiV3WorkPackagesGet) | **GET** /api/v3/work_packages | List WorkPackages
+[**apiV3WorkPackagesFormPost**](WorkPackagesApi.md#apiV3WorkPackagesFormPost) | **POST** /api/v3/work_packages/form | Work Package Create Form
+[**apiV3WorkPackagesGet**](WorkPackagesApi.md#apiV3WorkPackagesGet) | **GET** /api/v3/work_packages | List Work Packages
 [**apiV3WorkPackagesIdActivitiesGet**](WorkPackagesApi.md#apiV3WorkPackagesIdActivitiesGet) | **GET** /api/v3/work_packages/{id}/activities | List work package activities
 [**apiV3WorkPackagesIdActivitiesPost**](WorkPackagesApi.md#apiV3WorkPackagesIdActivitiesPost) | **POST** /api/v3/work_packages/{id}/activities | Comment work package
 [**apiV3WorkPackagesIdAvailableProjectsGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableProjectsGet) | **GET** /api/v3/work_packages/{id}/available_projects | Available projects
 [**apiV3WorkPackagesIdAvailableRelationCandidatesGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableRelationCandidatesGet) | **GET** /api/v3/work_packages/{id}/available_relation_candidates | Available relation candidates
 [**apiV3WorkPackagesIdAvailableWatchersGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableWatchersGet) | **GET** /api/v3/work_packages/{id}/available_watchers | Available watchers
-[**apiV3WorkPackagesIdDelete**](WorkPackagesApi.md#apiV3WorkPackagesIdDelete) | **DELETE** /api/v3/work_packages/{id} | Delete WorkPackage
-[**apiV3WorkPackagesIdFormPost**](WorkPackagesApi.md#apiV3WorkPackagesIdFormPost) | **POST** /api/v3/work_packages/{id}/form | WorkPackage Edit Form
-[**apiV3WorkPackagesIdGet**](WorkPackagesApi.md#apiV3WorkPackagesIdGet) | **GET** /api/v3/work_packages/{id} | View WorkPackage
-[**apiV3WorkPackagesIdPatch**](WorkPackagesApi.md#apiV3WorkPackagesIdPatch) | **PATCH** /api/v3/work_packages/{id} | Edit WorkPackage
+[**apiV3WorkPackagesIdDelete**](WorkPackagesApi.md#apiV3WorkPackagesIdDelete) | **DELETE** /api/v3/work_packages/{id} | Delete Work Package
+[**apiV3WorkPackagesIdFormPost**](WorkPackagesApi.md#apiV3WorkPackagesIdFormPost) | **POST** /api/v3/work_packages/{id}/form | Work Package Edit Form
+[**apiV3WorkPackagesIdGet**](WorkPackagesApi.md#apiV3WorkPackagesIdGet) | **GET** /api/v3/work_packages/{id} | View Work Package
+[**apiV3WorkPackagesIdPatch**](WorkPackagesApi.md#apiV3WorkPackagesIdPatch) | **PATCH** /api/v3/work_packages/{id} | Edit Work Package
 [**apiV3WorkPackagesIdRelationsFormPost**](WorkPackagesApi.md#apiV3WorkPackagesIdRelationsFormPost) | **POST** /api/v3/work_packages/{id}/relations/form | Relation create form
 [**apiV3WorkPackagesIdRevisionsGet**](WorkPackagesApi.md#apiV3WorkPackagesIdRevisionsGet) | **GET** /api/v3/work_packages/{id}/revisions | Revisions
-[**apiV3WorkPackagesPost**](WorkPackagesApi.md#apiV3WorkPackagesPost) | **POST** /api/v3/work_packages | Create WorkPackage
-[**apiV3WorkPackagesSchemasGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasGet) | **GET** /api/v3/work_packages/schemas/ | List WorkPackage Schemas
-[**apiV3WorkPackagesSchemasIdentifierGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasIdentifierGet) | **GET** /api/v3/work_packages/schemas/{identifier} | View WorkPackage Schema
+[**apiV3WorkPackagesPost**](WorkPackagesApi.md#apiV3WorkPackagesPost) | **POST** /api/v3/work_packages | Create Work Package
+[**apiV3WorkPackagesSchemasGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasGet) | **GET** /api/v3/work_packages/schemas/ | List Work Package Schemas
+[**apiV3WorkPackagesSchemasIdentifierGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasIdentifierGet) | **GET** /api/v3/work_packages/schemas/{identifier} | View Work Package Schema
 [**apiV3WorkPackagesWorkPackageIdRelationsGet**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdRelationsGet) | **GET** /api/v3/work_packages/{work_package_id}/relations | List relations
 [**apiV3WorkPackagesWorkPackageIdRelationsPost**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdRelationsPost) | **POST** /api/v3/work_packages/{work_package_id}/relations | Create Relation
 [**apiV3WorkPackagesWorkPackageIdWatchersGet**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdWatchersGet) | **GET** /api/v3/work_packages/{work_package_id}/watchers | List watchers
@@ -40,7 +40,7 @@ Method | HTTP request | Description
 # **apiV3ProjectsIdWorkPackagesFormPost**
 > apiV3ProjectsIdWorkPackagesFormPost(id)
 
-WorkPackage Create Form
+Work Package Create Form
 
 ### Example 
 ```dart
@@ -81,9 +81,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsIdWorkPackagesGet**
-> WorkPackages apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums)
+> Work Packages apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums)
 
-List WorkPackages
+List Work Packages
 
 ### Example 
 ```dart
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkPackages**](WorkPackages.md)
+[**Work Packages**](Work Packages.md)
 
 ### Authorization
 
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsIdWorkPackagesPost**
-> WorkPackage apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify)
+> Work Package apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify)
 
-Create WorkPackage
+Create Work Package
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
 
@@ -152,7 +152,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 var api_instance = WorkPackagesApi();
 var id = 56; // int | Project id
-var workPackage = WorkPackage(); // WorkPackage | Work package to add to the project
+var workPackage = Work Package(); // Work Package | Work package to add to the project
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
@@ -168,12 +168,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Project id | [default to null]
- **workPackage** | [**WorkPackage**](WorkPackage.md)| Work package to add to the project | 
+ **workPackage** | [**Work Package**](Work Package.md)| Work package to add to the project | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
 
 ### Return type
 
-[**WorkPackage**](WorkPackage.md)
+[**Work Package**](Work Package.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ void (empty response body)
 # **apiV3WorkPackagesFormPost**
 > apiV3WorkPackagesFormPost()
 
-WorkPackage Create Form
+Work Package Create Form
 
 ### Example 
 ```dart
@@ -316,9 +316,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesGet**
-> WorkPackages apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums)
+> Work Packages apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums)
 
-List WorkPackages
+List Work Packages
 
 ### Example 
 ```dart
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkPackages**](WorkPackages.md)
+[**Work Packages**](Work Packages.md)
 
 ### Authorization
 
@@ -605,7 +605,7 @@ void (empty response body)
 # **apiV3WorkPackagesIdDelete**
 > apiV3WorkPackagesIdDelete(id)
 
-Delete WorkPackage
+Delete Work Package
 
 Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
 
@@ -650,7 +650,7 @@ void (empty response body)
 # **apiV3WorkPackagesIdFormPost**
 > apiV3WorkPackagesIdFormPost(id)
 
-WorkPackage Edit Form
+Work Package Edit Form
 
 ### Example 
 ```dart
@@ -691,9 +691,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesIdGet**
-> WorkPackage apiV3WorkPackagesIdGet(id)
+> Work Package apiV3WorkPackagesIdGet(id)
 
-View WorkPackage
+View Work Package
 
 ### Example 
 ```dart
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkPackage**](WorkPackage.md)
+[**Work Package**](Work Package.md)
 
 ### Authorization
 
@@ -735,9 +735,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesIdPatch**
-> WorkPackage apiV3WorkPackagesIdPatch(id, notify, body)
+> Work Package apiV3WorkPackagesIdPatch(id, notify, body)
 
-Edit WorkPackage
+Edit Work Package
 
 When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of `lockVersion` which was received by the `GET` request this change originates from.  The value of `lockVersion` is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
 
@@ -751,7 +751,7 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = WorkPackagesApi();
 var id = 56; // int | Work package id
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-var body = WorkPackage(); // WorkPackage | 
+var body = Work Package(); // Work Package | 
 
 try { 
     var result = api_instance.apiV3WorkPackagesIdPatch(id, notify, body);
@@ -767,11 +767,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Work package id | [default to null]
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
- **body** | [**WorkPackage**](WorkPackage.md)|  | [optional] 
+ **body** | [**Work Package**](Work Package.md)|  | [optional] 
 
 ### Return type
 
-[**WorkPackage**](WorkPackage.md)
+[**Work Package**](Work Package.md)
 
 ### Authorization
 
@@ -873,9 +873,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesPost**
-> WorkPackage apiV3WorkPackagesPost(workPackage, notify)
+> Work Package apiV3WorkPackagesPost(workPackage, notify)
 
-Create WorkPackage
+Create Work Package
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
 
@@ -887,7 +887,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = WorkPackagesApi();
-var workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
+var workPackage = Work Package(); // Work Package | Work package to add (a project link ist requried)
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
@@ -902,12 +902,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workPackage** | [**WorkPackage**](WorkPackage.md)| Work package to add (a project link ist requried) | 
+ **workPackage** | [**Work Package**](Work Package.md)| Work package to add (a project link ist requried) | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
 
 ### Return type
 
-[**WorkPackage**](WorkPackage.md)
+[**Work Package**](Work Package.md)
 
 ### Authorization
 
@@ -923,7 +923,7 @@ Name | Type | Description  | Notes
 # **apiV3WorkPackagesSchemasGet**
 > apiV3WorkPackagesSchemasGet(filters)
 
-List WorkPackage Schemas
+List Work Package Schemas
 
 List work package schemas.
 
@@ -968,7 +968,7 @@ void (empty response body)
 # **apiV3WorkPackagesSchemasIdentifierGet**
 > apiV3WorkPackagesSchemasIdentifierGet(identifier)
 
-View WorkPackage Schema
+View Work Package Schema
 
 ### Example 
 ```dart

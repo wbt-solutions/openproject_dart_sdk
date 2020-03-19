@@ -1,4 +1,4 @@
-# openapi.model.Versions
+# openproject_dart_sdk.model.Versions
 
 ## Load the model package
 ```dart
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** |  | [optional] [default to null]
 **count** | **int** |  | [optional] [default to null]
-**embedded** | [**VersionsEmbedded**](VersionsEmbedded.md) |  | [optional] [default to null]
+**embedded** | [**Versions embedded**](Versions embedded.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

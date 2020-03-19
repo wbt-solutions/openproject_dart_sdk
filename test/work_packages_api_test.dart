@@ -7,25 +7,25 @@ void main() {
   var instance = WorkPackagesApi();
 
   group('tests for WorkPackagesApi', () {
-    // WorkPackage Create Form
+    // Work Package Create Form
     //
     //Future apiV3ProjectsIdWorkPackagesFormPost(int id) async 
     test('test apiV3ProjectsIdWorkPackagesFormPost', () async {
       // TODO
     });
 
-    // List WorkPackages
+    // List Work Packages
     //
-    //Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async
+    //Future<Work Packages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async 
     test('test apiV3ProjectsIdWorkPackagesGet', () async {
       // TODO
     });
 
-    // Create WorkPackage
+    // Create Work Package
     //
     // When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
     //
-    //Future<WorkPackage> apiV3ProjectsIdWorkPackagesPost(int id, WorkPackage workPackage, { bool notify }) async
+    //Future<Work Package> apiV3ProjectsIdWorkPackagesPost(int id, Work Package workPackage, { bool notify }) async 
     test('test apiV3ProjectsIdWorkPackagesPost', () async {
       // TODO
     });
@@ -48,16 +48,16 @@ void main() {
       // TODO
     });
 
-    // WorkPackage Create Form
+    // Work Package Create Form
     //
     //Future apiV3WorkPackagesFormPost() async 
     test('test apiV3WorkPackagesFormPost', () async {
       // TODO
     });
 
-    // List WorkPackages
+    // List Work Packages
     //
-    //Future<WorkPackages> apiV3WorkPackagesGet({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async
+    //Future<Work Packages> apiV3WorkPackagesGet({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async 
     test('test apiV3WorkPackagesGet', () async {
       // TODO
     });
@@ -103,7 +103,7 @@ void main() {
       // TODO
     });
 
-    // Delete WorkPackage
+    // Delete Work Package
     //
     // Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
     //
@@ -112,25 +112,25 @@ void main() {
       // TODO
     });
 
-    // WorkPackage Edit Form
+    // Work Package Edit Form
     //
     //Future apiV3WorkPackagesIdFormPost(int id) async 
     test('test apiV3WorkPackagesIdFormPost', () async {
       // TODO
     });
 
-    // View WorkPackage
+    // View Work Package
     //
-    //Future<WorkPackage> apiV3WorkPackagesIdGet(int id) async
+    //Future<Work Package> apiV3WorkPackagesIdGet(int id) async 
     test('test apiV3WorkPackagesIdGet', () async {
       // TODO
     });
 
-    // Edit WorkPackage
+    // Edit Work Package
     //
     // When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of `lockVersion` which was received by the `GET` request this change originates from.  The value of `lockVersion` is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
     //
-    //Future<WorkPackage> apiV3WorkPackagesIdPatch(int id, { bool notify, WorkPackage body }) async
+    //Future<Work Package> apiV3WorkPackagesIdPatch(int id, { bool notify, Work Package body }) async 
     test('test apiV3WorkPackagesIdPatch', () async {
       // TODO
     });
@@ -151,16 +151,16 @@ void main() {
       // TODO
     });
 
-    // Create WorkPackage
+    // Create Work Package
     //
     // When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
     //
-    //Future<WorkPackage> apiV3WorkPackagesPost(WorkPackage workPackage, { bool notify }) async
+    //Future<Work Package> apiV3WorkPackagesPost(Work Package workPackage, { bool notify }) async 
     test('test apiV3WorkPackagesPost', () async {
       // TODO
     });
 
-    // List WorkPackage Schemas
+    // List Work Package Schemas
     //
     // List work package schemas.
     //
@@ -169,7 +169,7 @@ void main() {
       // TODO
     });
 
-    // View WorkPackage Schema
+    // View Work Package Schema
     //
     //Future apiV3WorkPackagesSchemasIdentifierGet(String identifier) async 
     test('test apiV3WorkPackagesSchemasIdentifierGet', () async {

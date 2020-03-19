@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 class WorkPackage {
   
@@ -29,7 +29,7 @@ class WorkPackage {
 
   @override
   String toString() {
-    return 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links, ]';
+    return 'Work Package[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links, ]';
   }
 
   WorkPackage.fromJson(Map<String, dynamic> json) {
@@ -103,7 +103,7 @@ class WorkPackage {
     return map;
   }
 
-  // maps a json object with a list of WorkPackage-objects as value to a dart map
+  // maps a json object with a list of Work Package-objects as value to a dart map
   static Map<String, List<WorkPackage>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WorkPackage>>();
      if (json != null && json.isNotEmpty) {

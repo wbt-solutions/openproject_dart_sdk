@@ -1,4 +1,4 @@
-# openapi.api.CustomObjectsApi
+# openproject_dart_sdk.api.CustomObjectsApi
 
 ## Load the API package
 ```dart

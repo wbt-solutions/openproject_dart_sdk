@@ -1,4 +1,4 @@
-# openapi.api.TimeEntriesApi
+# openproject_dart_sdk.api.TimeEntriesApi
 
 ## Load the API package
 ```dart
@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiV3TimeEntriesGet) | **GET** /api/v3/time_entries | List TimeEntries
+[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiV3TimeEntriesGet) | **GET** /api/v3/time_entries | List Time entries
 [**apiV3TimeEntriesIdGet**](TimeEntriesApi.md#apiV3TimeEntriesIdGet) | **GET** /api/v3/time_entries/{id} | View time entry
 
 
 # **apiV3TimeEntriesGet**
-> TimeEntries apiV3TimeEntriesGet(offset, pageSize, filters)
+> Time entries apiV3TimeEntriesGet(offset, pageSize, filters)
 
-List TimeEntries
+List Time entries
 
 Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TimeEntries**](TimeEntries.md)
+[**Time entries**](Time entries.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3TimeEntriesIdGet**
-> TimeEntry apiV3TimeEntriesIdGet(id)
+> Time entry apiV3TimeEntriesIdGet(id)
 
 View time entry
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TimeEntry**](TimeEntry.md)
+[**Time entry**](Time entry.md)
 
 ### Authorization
 

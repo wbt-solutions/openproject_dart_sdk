@@ -1,4 +1,4 @@
-# openapi.api.UserPreferencesApi
+# openproject_dart_sdk.api.UserPreferencesApi
 
 ## Load the API package
 ```dart

@@ -1,4 +1,4 @@
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 
 
@@ -7,7 +7,7 @@ class TimeEntriesApi {
 
   TimeEntriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List TimeEntries with HTTP info returned
+  /// List Time entries with HTTP info returned
   ///
   /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
   Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, String filters }) async {
@@ -57,7 +57,7 @@ class TimeEntriesApi {
     return response;
   }
 
-  /// List TimeEntries
+  /// List Time entries
   ///
   /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
   Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
@@ -65,7 +65,7 @@ class TimeEntriesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntries') as TimeEntries;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Time entries') as TimeEntries;
     } else {
       return null;
     }
@@ -123,7 +123,7 @@ class TimeEntriesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Time entry') as TimeEntry;
     } else {
       return null;
     }

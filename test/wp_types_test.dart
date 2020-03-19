@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    // WPTypeLinks links (default value: null)
+    // WPType Links links (default value: null)
     test('to test the property `links`', () async {
       // TODO
     });

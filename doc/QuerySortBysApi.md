@@ -1,4 +1,4 @@
-# openapi.api.QuerySortBysApi
+# openproject_dart_sdk.api.QuerySortBysApi
 
 ## Load the API package
 ```dart

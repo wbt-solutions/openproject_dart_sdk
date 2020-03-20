@@ -8,6 +8,13 @@ class Project {
   
   String identifier = null;
   
+  bool active = null;
+  
+  String status = null;
+  //enum statusEnum {  on track,  at risk,  off track,  };{
+  
+  bool public = null;
+  
   DateTime spentOn = null;
   
   DateTime createdAt = null;
@@ -19,7 +26,7 @@ class Project {
 
   @override
   String toString() {
-    return 'Project[id=$id, name=$name, identifier=$identifier, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, ]';
+    return 'Project[id=$id, name=$name, identifier=$identifier, active=$active, status=$status, public=$public, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, ]';
   }
 
   Project.fromJson(Map<String, dynamic> json) {
@@ -27,6 +34,9 @@ class Project {
     id = json['id'];
     name = json['name'];
     identifier = json['identifier'];
+    active = json['active'];
+    status = json['status'];
+    public = json['public'];
     spentOn = (json['spentOn'] == null) ?
       null :
       DateTime.parse(json['spentOn']);
@@ -49,6 +59,12 @@ class Project {
       json['name'] = name;
     if (identifier != null)
       json['identifier'] = identifier;
+    if (active != null)
+      json['active'] = active;
+    if (status != null)
+      json['status'] = status;
+    if (public != null)
+      json['public'] = public;
     if (spentOn != null)
       json['spentOn'] = spentOn == null ? null : spentOn.toUtc().toIso8601String();
     if (createdAt != null)

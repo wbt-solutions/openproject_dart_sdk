@@ -86,6 +86,8 @@ class ApiClient {
           return TimeEntryEmbedded.fromJson(value);
         case 'User':
           return User.fromJson(value);
+        case 'UserPreferences':
+          return UserPreferences.fromJson(value);
         case 'Users':
           return Users.fromJson(value);
         case 'Users embedded':

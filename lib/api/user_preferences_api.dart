@@ -10,7 +10,7 @@ class UserPreferencesApi {
   /// Show my preferences with HTTP info returned
   ///
   /// 
-  Future apiV3MyPreferencesGetWithHttpInfo() async {
+  Future<Response> apiV3MyPreferencesGetWithHttpInfo() async {
     Object postBody;
 
     // verify required params are set
@@ -51,13 +51,14 @@ class UserPreferencesApi {
   /// Show my preferences
   ///
   /// 
-  Future apiV3MyPreferencesGet() async {
+  Future<UserPreferences> apiV3MyPreferencesGet() async {
     Response response = await apiV3MyPreferencesGetWithHttpInfo();
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'UserPreferences') as UserPreferences;
     } else {
-      return;
+      return null;
     }
   }
 

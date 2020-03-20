@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3MyPreferencesGet**
-> apiV3MyPreferencesGet()
+> UserPreferences apiV3MyPreferencesGet()
 
 Show my preferences
 
@@ -28,7 +28,8 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = UserPreferencesApi();
 
 try { 
-    api_instance.apiV3MyPreferencesGet();
+    var result = api_instance.apiV3MyPreferencesGet();
+    print(result);
 } catch (e) {
     print("Exception when calling UserPreferencesApi->apiV3MyPreferencesGet: $e\n");
 }
@@ -39,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**UserPreferences**](UserPreferences.md)
 
 ### Authorization
 

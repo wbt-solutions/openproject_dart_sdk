@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3TimeEntriesGet**
-> Time entries apiV3TimeEntriesGet(offset, pageSize, filters)
+> Time%20entries apiV3TimeEntriesGet(offset, pageSize, filters)
 
 List Time entries
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Time entries**](Time entries.md)
+[**Time%20entries**](Time%20entries.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3TimeEntriesIdGet**
-> Time entry apiV3TimeEntriesIdGet(id)
+> Time%20entry apiV3TimeEntriesIdGet(id)
 
 View time entry
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Time entry**](Time entry.md)
+[**Time%20entry**](Time%20entry.md)
 
 ### Authorization
 

@@ -70,6 +70,7 @@ part 'model/time_entry_links.dart';
 part 'model/time_entries_embedded.dart';
 part 'model/time_entry_embedded.dart';
 part 'model/user.dart';
+part 'model/user_preferences.dart';
 part 'model/users.dart';
 part 'model/users_embedded.dart';
 part 'model/version.dart';

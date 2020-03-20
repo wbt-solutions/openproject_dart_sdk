@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **startDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **dueDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **estimatedTime** | **String** |  | [optional] [default to null]
-**links** | [**Work Package Links**](Work Package Links.md) |  | [optional] [default to null]
+**links** | [**Work%20Package%20Links**](Work%20Package%20Links.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

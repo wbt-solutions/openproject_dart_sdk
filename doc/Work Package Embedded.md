@@ -8,7 +8,7 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parent** | [**Work Package**](Work Package.md) |  | [optional] [default to null]
+**parent** | [**Work%20Package**](Work%20Package.md) |  | [optional] [default to null]
 **project** | [**Project**](Project.md) |  | [optional] [default to null]
 **type** | [**WPType**](WPType.md) |  | [optional] [default to null]
 **version** | [**Version**](Version.md) |  | [optional] [default to null]

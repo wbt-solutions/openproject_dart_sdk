@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
   title: OpenProject API v3
-  version: ''
+  version: "1.0.0"
   description: ''
-securityDefinitions :
-    basicAuth:     # <-- arbitrary name for the security scheme
-      type: basic
+securityDefinitions:
+  basicAuth:     # <-- arbitrary name for the security scheme
+    type: basic
 
 security:
   - basicAuth: []  # <-- use the same name here
@@ -3314,13 +3314,13 @@ paths:
       description: Retrieve the schema for project queries.
       tags:
         - Queries
-      parameters:       
-      - name: "id"
-        in: "path"
-        description: "ID of project to return"
-        required: true
-        type: "integer"
-        format: "int64"
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "ID of project to return"
+          required: true
+          type: "integer"
+          format: "int64"
       produces:
         - application/hal+json
   /api/v3/queries/available_projects:
@@ -4885,7 +4885,7 @@ paths:
           headers: {}
           examples: {}
           schema:
-            $ref: "#/definitions/Time entry"
+            $ref: "#/definitions/Time%20entry"
         '404':
           description: >-
             Returned if the time entry does not exist or if the user does not
@@ -4919,7 +4919,7 @@ paths:
           description: OK
           headers: {}
           schema:
-            $ref: "#/definitions/Time entries"
+            $ref: "#/definitions/Time%20entries"
           examples:
             application/hal+json:
               _type: Collection
@@ -5265,6 +5265,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/UserPreferences"
           examples: {}
         '401':
           description: Returned if no user is currently authenticated
@@ -6061,7 +6063,7 @@ paths:
           headers: {}
           examples: {}
           schema:
-            $ref: "#/definitions/Work Package"
+            $ref: "#/definitions/Work%20Package"
         '404':
           description: >-
             Returned if the work package does not exist or the client does not
@@ -6094,7 +6096,7 @@ paths:
           headers: {}
           examples: {}
           schema:
-            $ref: '#/definitions/Work Package'
+            $ref: '#/definitions/Work%20Package'
         '400':
           description: >-
             Occurs when the client did not send a valid JSON object in the
@@ -6207,7 +6209,7 @@ paths:
         - name: body
           in: body
           schema:
-            $ref: '#/definitions/Work Package'
+            $ref: '#/definitions/Work%20Package'
       produces:
         - application/hal+json
     delete:
@@ -6532,7 +6534,7 @@ paths:
           description: OK
           headers: {}
           schema:
-            $ref: "#/definitions/Work Packages"
+            $ref: "#/definitions/Work%20Packages"
           examples:
             application/hal+json:
               _links:
@@ -6634,7 +6636,7 @@ paths:
           headers: {}
           examples: {}
           schema:
-            $ref: "#/definitions/Work Package"
+            $ref: "#/definitions/Work%20Package"
         '400':
           description: >-
             Occurs when the client did not send a valid JSON object in the
@@ -6737,7 +6739,7 @@ paths:
           description: Work package to add (a project link ist requried)
           required: true
           schema:
-            $ref: '#/definitions/Work Package'
+            $ref: '#/definitions/Work%20Package'
       produces:
         - application/hal+json
   /api/v3/work_packages/form:
@@ -6837,7 +6839,7 @@ paths:
           description: OK
           headers: {}
           schema:
-            $ref: "#/definitions/Work Packages"
+            $ref: "#/definitions/Work%20Packages"
           examples:
             application/hal+json:
               _links:
@@ -6960,7 +6962,7 @@ paths:
           headers: {}
           examples: {}
           schema:
-            $ref: "#/definitions/Work Package"
+            $ref: "#/definitions/Work%20Package"
         '400':
           description: >-
             Occurs when the client did not send a valid JSON object in the
@@ -7064,7 +7066,7 @@ paths:
           description: Work package to add to the project
           required: true
           schema:
-            $ref: '#/definitions/Work Package'
+            $ref: '#/definitions/Work%20Package'
       produces:
         - application/hal+json
   '/api/v3/projects/{id}/work_packages/form':
@@ -8192,7 +8194,7 @@ definitions:
   PrioritiesModel: {}
   Priority: {}
   PriorityModel: {}
-  
+
   Project:
     type: "object"
     properties:
@@ -8203,6 +8205,16 @@ definitions:
         type: "string"
       identifier:
         type: "string"
+      active:
+        type: "boolean"
+      status:
+        type: "string"
+        enum:
+          - "on track"
+          - "at risk"
+          - "off track"
+      public:
+        type: "boolean"
       spentOn:
         type: "string"
         format: "date"
@@ -8216,10 +8228,10 @@ definitions:
         $ref: "#/definitions/Time_entry_embedded"
     xml:
       name: "Project"
-      
+
   ProjectModel: {}
 
-  Projects: 
+  Projects:
     type: "object"
     properties:
       total:
@@ -8232,8 +8244,8 @@ definitions:
         $ref: "#/definitions/Projects_embedded"
     xml:
       name: "Project"
-      
-  Projects_embedded: 
+
+  Projects_embedded:
     type: "object"
     properties:
       elements:
@@ -8242,7 +8254,7 @@ definitions:
           $ref: "#/definitions/Project"
     xml:
       name: "Projects"
-      
+
   ProjectsModel: {}
   Projects by version: {}
   Projects by versionModel: {}
@@ -8309,9 +8321,9 @@ definitions:
   String Object: {}
   String ObjectModel: {}
 
-###############
+  ###############
 
-  Time entry: 
+  Time entry:
     type: "object"
     properties:
       id:
@@ -8333,11 +8345,11 @@ definitions:
       _embedded:
         $ref: "#/definitions/Time_entry_embedded"
       _links:
-        $ref: "#/definitions/Time entry Links"
+        $ref: "#/definitions/Time%20entry%20Links"
     xml:
       name: "time_entry"
 
-      
+
   Time entry Links:
     type: "object"
     properties:
@@ -8348,21 +8360,21 @@ definitions:
       workPackage:
         $ref: "#/definitions/Link"
       user:
-         $ref: "#/definitions/Link"
+        $ref: "#/definitions/Link"
       activity:
-         $ref: "#/definitions/Link"
-  
+        $ref: "#/definitions/Link"
+
   Time_entry_embedded:
     type: "object"
     properties:
       project:
-         $ref: "#/definitions/Project"
+        $ref: "#/definitions/Project"
       workPackage:
-         $ref: "#/definitions/Work Package"
+        $ref: "#/definitions/Work%20Package"
       user:
-         $ref: "#/definitions/User"
+        $ref: "#/definitions/User"
       activity:
-         $ref: "#/definitions/Activity"
+        $ref: "#/definitions/Activity"
     xml:
       name: "_embedded"
 
@@ -8380,20 +8392,20 @@ definitions:
       _embedded:
         $ref: "#/definitions/Time_entries_embedded"
       _links:
-        $ref: "#/definitions/Time entries Links"
+        $ref: "#/definitions/Time%20entries%20Links"
     xml:
       name: "Type"
 
-  Time_entries_embedded: 
+  Time_entries_embedded:
     type: "object"
     properties:
       elements:
         type: "array"
         items:
-          $ref: "#/definitions/Time entry"
+          $ref: "#/definitions/Time%20entry"
     xml:
       name: "time_entry"
-      
+
   Time entries Links:
     type: "object"
     properties:
@@ -8404,8 +8416,8 @@ definitions:
       changeSize:
         $ref: "#/definitions/Link"
       nextByOffset:
-         $ref: "#/definitions/Link"
-      
+        $ref: "#/definitions/Link"
+
   Link:
     type: "object"
     properties:
@@ -8416,16 +8428,16 @@ definitions:
       method:
         type: "string"
         enum:
-        - "patch"
-        - "post"
-        - "get"
+          - "patch"
+          - "post"
+          - "get"
       type:
         type: "string"
 
   Time entriesModel: {}
   Time entries activity: {}
   Time entries activityModel: {}
-  
+
   WPType:
     type: "object"
     properties:
@@ -8452,18 +8464,18 @@ definitions:
         type: "string"
         format: "date-time"
       _links:
-        $ref: "#/definitions/WPType Links"
+        $ref: "#/definitions/WPType%20Links"
     xml:
       name: "Type"
 
-      
+
   WPType Links:
     type: "object"
     properties:
       self:
         $ref: "#/definitions/Link"
 
-  WPTypes: 
+  WPTypes:
     type: "object"
     properties:
       total:
@@ -8475,11 +8487,11 @@ definitions:
       _embedded:
         $ref: "#/definitions/WPTypes_embedded"
       _links:
-        $ref: "#/definitions/WPType Links"
+        $ref: "#/definitions/WPType%20Links"
     xml:
       name: "Type"
 
-  WPTypes_embedded: 
+  WPTypes_embedded:
     type: "object"
     properties:
       elements:
@@ -8493,36 +8505,75 @@ definitions:
   Types by Project: {}
   Types by ProjectModel: {}
   TypeModel: {}
-  UserPreferences: {}
+  UserPreferences:
+    type: object
+    properties:
+      hideMail:
+        type: "boolean"
+      timeZone:
+        type: "string"
+      commentSortDescending:
+        type: "boolean"
+      warnOnLeavingUnsaved:
+        type: "boolean"
+      accessibilityMode:
+        type: "boolean"
+
   UserPreferencesModel: {}
-  
-  User: 
+
+  User:
     type: "object"
     properties:
       id:
         type: "integer"
         format: "int32"
+        readOnly: true
       login:
         type: "string"
+        maxLength: 256
+        uniqueItems: true
       firstName:
         type: "string"
+        maxLength: 30
       lastName:
         type: "string"
+        maxLength: 30
+      name:
+        type: "string"
+        readOnly: true
       email:
         type: "string"
+        maxLength: 60
+      admin:
+        type: "boolean"
+      avatar:
+        type: "string"
+        readOnly: true
       createdAt:
         type: "string"
         format: "date-time"
+        readOnly: true
       updatedAt:
         type: "string"
         format: "date-time"
+        readOnly: true
       status:
         type: "string"
         enum:
-        - "active"
+          - "active"
+          - "registered"
+          - "locked"
+          - "invited"
+        readOnly: true
+      language:
+        type: "string"
+      password:
+        type: "string"
+      identity_url:
+        type: "string"
     xml:
       name: "User"
-      
+
   UserModel: {}
   User Account Locking: {}
 
@@ -8536,9 +8587,9 @@ definitions:
         type: "integer"
         format: "int32"
       _embedded:
-        $ref: "#/definitions/Users embedded"
+        $ref: "#/definitions/Users%20embedded"
 
-  Users embedded: 
+  Users embedded:
     type: "object"
     properties:
       elements:
@@ -8547,7 +8598,7 @@ definitions:
           $ref: "#/definitions/User"
 
   UsersModel: {}
-  
+
   Version:
     type: "object"
     properties:
@@ -8567,7 +8618,7 @@ definitions:
       status:
         type: "string"
         enum:
-        - "open"
+          - "open"
       createdAt:
         type: "string"
         format: "date-time"
@@ -8575,7 +8626,7 @@ definitions:
         type: "string"
         format: "date-time"
       _links:
-        $ref: "#/definitions/Version Links"
+        $ref: "#/definitions/Version%20Links"
 
   Version Links:
     type: "object"
@@ -8599,11 +8650,11 @@ definitions:
         type: "integer"
         format: "int32"
       _embedded:
-        $ref: "#/definitions/Versions embedded"
+        $ref: "#/definitions/Versions%20embedded"
     xml:
       name: "Type"
 
-  Versions embedded: 
+  Versions embedded:
     type: "object"
     properties:
       elements:
@@ -8614,14 +8665,14 @@ definitions:
   VersionsModel: {}
   Versions by Project: {}
   Versions by ProjectModel: {}
-  
+
   Description:
     type: "object"
     properties:
       format:
         type: "string"
         enum:
-        - "textile"
+          - "textile"
       raw:
         type: "string"
       html:
@@ -8649,7 +8700,7 @@ definitions:
       estimatedTime:
         type: "string"
       _links:
-        $ref: "#/definitions/Work Package Links"
+        $ref: "#/definitions/Work%20Package%20Links"
 
   Work Package:
     type: "object"
@@ -8682,16 +8733,16 @@ definitions:
       estimatedTime:
         type: "string"
       _embedded:
-        $ref: "#/definitions/Work Package Embedded"
+        $ref: "#/definitions/Work%20Package%20Embedded"
       _links:
-        $ref: "#/definitions/Work Package Links"
+        $ref: "#/definitions/Work%20Package%20Links"
 
   Work Package Embedded:
     type: "object"
     properties:
       # incomplete
       parent:
-        $ref: "#/definitions/Work Package"
+        $ref: "#/definitions/Work%20Package"
       project:
         $ref: "#/definitions/Project"
       type:
@@ -8797,15 +8848,15 @@ definitions:
         type: "integer"
         format: "int32"
       _embedded:
-        $ref: "#/definitions/Work Packages embedded"
+        $ref: "#/definitions/Work%20Packages%20embedded"
 
-  Work Packages embedded: 
+  Work Packages embedded:
     type: "object"
     properties:
       elements:
         type: "array"
         items:
-          $ref: "#/definitions/Work Package"
+          $ref: "#/definitions/Work%20Package"
 
 
   Work PackageModel: {}

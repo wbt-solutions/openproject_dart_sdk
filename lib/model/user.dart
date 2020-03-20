@@ -10,19 +10,31 @@ class User {
   
   String lastName = null;
   
+  String name = null;
+  
   String email = null;
+  
+  bool admin = null;
+  
+  String avatar = null;
   
   DateTime createdAt = null;
   
   DateTime updatedAt = null;
   
   String status = null;
-  //enum statusEnum {  active,  };{
+  //enum statusEnum {  active,  registered,  locked,  invited,  };{
+  
+  String language = null;
+  
+  String password = null;
+  
+  String identityUrl = null;
   User();
 
   @override
   String toString() {
-    return 'User[id=$id, login=$login, firstName=$firstName, lastName=$lastName, email=$email, createdAt=$createdAt, updatedAt=$updatedAt, status=$status, ]';
+    return 'User[id=$id, login=$login, firstName=$firstName, lastName=$lastName, name=$name, email=$email, admin=$admin, avatar=$avatar, createdAt=$createdAt, updatedAt=$updatedAt, status=$status, language=$language, password=$password, identityUrl=$identityUrl, ]';
   }
 
   User.fromJson(Map<String, dynamic> json) {
@@ -31,7 +43,10 @@ class User {
     login = json['login'];
     firstName = json['firstName'];
     lastName = json['lastName'];
+    name = json['name'];
     email = json['email'];
+    admin = json['admin'];
+    avatar = json['avatar'];
     createdAt = (json['createdAt'] == null) ?
       null :
       DateTime.parse(json['createdAt']);
@@ -39,6 +54,9 @@ class User {
       null :
       DateTime.parse(json['updatedAt']);
     status = json['status'];
+    language = json['language'];
+    password = json['password'];
+    identityUrl = json['identity_url'];
   }
 
   Map<String, dynamic> toJson() {
@@ -51,14 +69,26 @@ class User {
       json['firstName'] = firstName;
     if (lastName != null)
       json['lastName'] = lastName;
+    if (name != null)
+      json['name'] = name;
     if (email != null)
       json['email'] = email;
+    if (admin != null)
+      json['admin'] = admin;
+    if (avatar != null)
+      json['avatar'] = avatar;
     if (createdAt != null)
       json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
     if (updatedAt != null)
       json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
     if (status != null)
       json['status'] = status;
+    if (language != null)
+      json['language'] = language;
+    if (password != null)
+      json['password'] = password;
+    if (identityUrl != null)
+      json['identity_url'] = identityUrl;
     return json;
   }
 

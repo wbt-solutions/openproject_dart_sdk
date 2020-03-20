@@ -9,7 +9,7 @@ import 'package:openproject_dart_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **project** | [**Project**](Project.md) |  | [optional] [default to null]
-**workPackage** | [**Work Package**](Work Package.md) |  | [optional] [default to null]
+**workPackage** | [**Work%20Package**](Work%20Package.md) |  | [optional] [default to null]
 **user** | [**User**](User.md) |  | [optional] [default to null]
 **activity** | [**Object**](.md) |  | [optional] [default to null]
 

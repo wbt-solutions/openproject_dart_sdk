@@ -46,6 +46,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Activity"
           examples:
             application/hal+json:
               _type: 'Activity::Comment'
@@ -170,6 +172,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Attachment"
           examples: {}
         '404':
           description: >-
@@ -553,6 +557,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Configuration"
           examples:
             application/hal+json:
               _type: Configuration
@@ -4645,6 +4651,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Root"
           examples: {}
       summary: View root
       description: ''
@@ -8175,7 +8183,17 @@ definitions:
   Categories by ProjectModel: {}
   Category: {}
   CategoryModel: {}
-  Configuration: {}
+  Configuration:
+    type: "object"
+    properties:
+      maximumAttachmentFileSize:
+        type: "integer"
+        readOnly: true
+      perPageOptions:
+        type: "array"
+        readOnly : true
+        items:
+          type: "integer"
   ConfigurationModel: {}
   Custom Action: {}
   Custom ActionModel: {}
@@ -8310,7 +8328,15 @@ definitions:
   RoleModel: {}
   Roles: {}
   RolesModel: {}
-  Root: {}
+  Root:
+    type: "object"
+    properties:
+      instanceName:
+        type: "string"
+        readOnly: true
+      coreVersion:
+        type: "string"
+        readOnly: true
   RootModel: {}
   Example Schema: {}
   Example SchemaModel: {}

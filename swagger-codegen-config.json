@@ -8,8 +8,6 @@
   "developerOrganizationUrl":"https://www.kaneo-gmbh.de/",
   "licenseName":"Apache License 2.0",
   "licenseUrl":"https://www.apache.org/licenses/LICENSE-2.0",
-  "apiPackage":"org.openproject.client.api",
-  "modelPackage":"org.openproject.client.model",
   "invokerPackage":"org.openproject.client",
   "pubName": "openproject_dart_sdk",
   "pubDescription": "Dart SDK for the OpenProject Software",

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **isMilestone** | **bool** |  | [optional] [default to false]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**links** | [**WPType%20Links**](WPType%20Links.md) |  | [optional] [default to null]
+**links** | [**WPTypeLinks**](WPTypeLinks.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

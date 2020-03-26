@@ -44,6 +44,8 @@ class ApiClient {
           return ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage':
           return ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value);
+        case 'Configuration':
+          return Configuration.fromJson(value);
         case 'Description':
           return Description.fromJson(value);
         case 'InlineObject':
@@ -72,53 +74,55 @@ class ApiClient {
           return Projects.fromJson(value);
         case 'ProjectsEmbedded':
           return ProjectsEmbedded.fromJson(value);
-        case 'Time entries':
+        case 'Root':
+          return Root.fromJson(value);
+        case 'TimeEntries':
           return TimeEntries.fromJson(value);
-        case 'Time entries Links':
-          return TimeEntriesLinks.fromJson(value);
-        case 'Time entry':
-          return TimeEntry.fromJson(value);
-        case 'Time entry Links':
-          return TimeEntryLinks.fromJson(value);
         case 'TimeEntriesEmbedded':
           return TimeEntriesEmbedded.fromJson(value);
+        case 'TimeEntriesLinks':
+          return TimeEntriesLinks.fromJson(value);
+        case 'TimeEntry':
+          return TimeEntry.fromJson(value);
         case 'TimeEntryEmbedded':
           return TimeEntryEmbedded.fromJson(value);
+        case 'TimeEntryLinks':
+          return TimeEntryLinks.fromJson(value);
         case 'User':
           return User.fromJson(value);
         case 'UserPreferences':
           return UserPreferences.fromJson(value);
         case 'Users':
           return Users.fromJson(value);
-        case 'Users embedded':
+        case 'UsersEmbedded':
           return UsersEmbedded.fromJson(value);
         case 'Version':
           return Version.fromJson(value);
-        case 'Version Links':
+        case 'VersionLinks':
           return VersionLinks.fromJson(value);
         case 'Versions':
           return Versions.fromJson(value);
-        case 'Versions embedded':
+        case 'VersionsEmbedded':
           return VersionsEmbedded.fromJson(value);
         case 'WPType':
           return WPType.fromJson(value);
-        case 'WPType Links':
+        case 'WPTypeLinks':
           return WPTypeLinks.fromJson(value);
         case 'WPTypes':
           return WPTypes.fromJson(value);
         case 'WPTypesEmbedded':
           return WPTypesEmbedded.fromJson(value);
-        case 'Work Package':
+        case 'WorkPackage':
           return WorkPackage.fromJson(value);
-        case 'Work Package Embedded':
+        case 'WorkPackageEmbedded':
           return WorkPackageEmbedded.fromJson(value);
-        case 'Work Package Links':
+        case 'WorkPackageLinks':
           return WorkPackageLinks.fromJson(value);
-        case 'Work Package Patch':
+        case 'WorkPackagePatch':
           return WorkPackagePatch.fromJson(value);
-        case 'Work Packages':
+        case 'WorkPackages':
           return WorkPackages.fromJson(value);
-        case 'Work Packages embedded':
+        case 'WorkPackagesEmbedded':
           return WorkPackagesEmbedded.fromJson(value);
         default:
           {

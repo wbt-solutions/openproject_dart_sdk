@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3AttachmentsIdGet**
-> apiV3AttachmentsIdGet(id)
+> Object apiV3AttachmentsIdGet(id)
 
 View attachment
 
@@ -76,7 +76,8 @@ var api_instance = AttachmentsApi();
 var id = 56; // int | Attachment id
 
 try { 
-    api_instance.apiV3AttachmentsIdGet(id);
+    var result = api_instance.apiV3AttachmentsIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling AttachmentsApi->apiV3AttachmentsIdGet: $e\n");
 }
@@ -90,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 

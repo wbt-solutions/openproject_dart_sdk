@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiV3Get**
-> apiV3Get()
+> Root apiV3Get()
 
 View root
 
@@ -27,7 +27,8 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = RootApi();
 
 try { 
-    api_instance.apiV3Get();
+    var result = api_instance.apiV3Get();
+    print(result);
 } catch (e) {
     print("Exception when calling RootApi->apiV3Get: $e\n");
 }
@@ -38,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Root**](Root.md)
 
 ### Authorization
 
@@ -47,7 +48,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

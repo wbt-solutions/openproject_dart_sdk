@@ -134,7 +134,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Packages') as WorkPackages;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
     } else {
       return null;
     }
@@ -198,7 +198,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
     } else {
       return null;
     }
@@ -439,7 +439,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Packages') as WorkPackages;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
     } else {
       return null;
     }
@@ -911,7 +911,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
     } else {
       return null;
     }
@@ -972,7 +972,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
     } else {
       return null;
     }
@@ -1147,7 +1147,7 @@ class WorkPackagesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Work Package') as WorkPackage;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
     } else {
       return null;
     }

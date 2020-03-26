@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3ActivitiesIdGet**
-> apiV3ActivitiesIdGet(id)
+> Object apiV3ActivitiesIdGet(id)
 
 View activity
 
@@ -29,7 +29,8 @@ var api_instance = ActivitiesApi();
 var id = 56; // int | Activity id
 
 try { 
-    api_instance.apiV3ActivitiesIdGet(id);
+    var result = api_instance.apiV3ActivitiesIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling ActivitiesApi->apiV3ActivitiesIdGet: $e\n");
 }
@@ -43,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 

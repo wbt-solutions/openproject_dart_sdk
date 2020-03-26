@@ -10,7 +10,7 @@ class RootApi {
   /// View root with HTTP info returned
   ///
   /// 
-  Future apiV3GetWithHttpInfo() async {
+  Future<Response> apiV3GetWithHttpInfo() async {
     Object postBody;
 
     // verify required params are set
@@ -51,13 +51,14 @@ class RootApi {
   /// View root
   ///
   /// 
-  Future apiV3Get() async {
+  Future<Root> apiV3Get() async {
     Response response = await apiV3GetWithHttpInfo();
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Root') as Root;
     } else {
-      return;
+      return null;
     }
   }
 

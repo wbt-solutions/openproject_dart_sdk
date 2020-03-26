@@ -81,7 +81,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsIdWorkPackagesGet**
-> Work%20Packages apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums)
+> WorkPackages apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums)
 
 List Work Packages
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Work%20Packages**](Work%20Packages.md)
+[**WorkPackages**](WorkPackages.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsIdWorkPackagesPost**
-> Work%20Package apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify)
+> WorkPackage apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify)
 
 Create Work Package
 
@@ -152,7 +152,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 var api_instance = WorkPackagesApi();
 var id = 56; // int | Project id
-var workPackage = Work%20Package(); // Work%20Package | Work package to add to the project
+var workPackage = WorkPackage(); // WorkPackage | Work package to add to the project
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
@@ -168,12 +168,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Project id | [default to null]
- **workPackage** | **Work%20Package**| Work package to add to the project | 
+ **workPackage** | **WorkPackage**| Work package to add to the project | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
 
 ### Return type
 
-[**Work%20Package**](Work%20Package.md)
+[**WorkPackage**](WorkPackage.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesGet**
-> Work%20Packages apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums)
+> WorkPackages apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums)
 
 List Work Packages
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Work%20Packages**](Work%20Packages.md)
+[**WorkPackages**](WorkPackages.md)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesIdGet**
-> Work%20Package apiV3WorkPackagesIdGet(id)
+> WorkPackage apiV3WorkPackagesIdGet(id)
 
 View Work Package
 
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Work%20Package**](Work%20Package.md)
+[**WorkPackage**](WorkPackage.md)
 
 ### Authorization
 
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesIdPatch**
-> Work%20Package apiV3WorkPackagesIdPatch(id, notify, body)
+> WorkPackage apiV3WorkPackagesIdPatch(id, notify, body)
 
 Edit Work Package
 
@@ -751,7 +751,7 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = WorkPackagesApi();
 var id = 56; // int | Work package id
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-var body = Work%20Package(); // Work%20Package | 
+var body = WorkPackage(); // WorkPackage | 
 
 try { 
     var result = api_instance.apiV3WorkPackagesIdPatch(id, notify, body);
@@ -767,11 +767,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Work package id | [default to null]
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
- **body** | **Work%20Package**|  | [optional] 
+ **body** | **WorkPackage**|  | [optional] 
 
 ### Return type
 
-[**Work%20Package**](Work%20Package.md)
+[**WorkPackage**](WorkPackage.md)
 
 ### Authorization
 
@@ -873,7 +873,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesPost**
-> Work%20Package apiV3WorkPackagesPost(workPackage, notify)
+> WorkPackage apiV3WorkPackagesPost(workPackage, notify)
 
 Create Work Package
 
@@ -887,7 +887,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = WorkPackagesApi();
-var workPackage = Work%20Package(); // Work%20Package | Work package to add (a project link ist requried)
+var workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
 var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
@@ -902,12 +902,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workPackage** | **Work%20Package**| Work package to add (a project link ist requried) | 
+ **workPackage** | **WorkPackage**| Work package to add (a project link ist requried) | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
 
 ### Return type
 
-[**Work%20Package**](Work%20Package.md)
+[**WorkPackage**](WorkPackage.md)
 
 ### Authorization
 

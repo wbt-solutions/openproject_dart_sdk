@@ -7,7 +7,7 @@ class WorkPackagesEmbedded {
 
   @override
   String toString() {
-    return 'Work Packages embedded[elements=$elements, ]';
+    return 'WorkPackagesEmbedded[elements=$elements, ]';
   }
 
   WorkPackagesEmbedded.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class WorkPackagesEmbedded {
     return map;
   }
 
-  // maps a json object with a list of Work Packages embedded-objects as value to a dart map
+  // maps a json object with a list of WorkPackagesEmbedded-objects as value to a dart map
   static Map<String, List<WorkPackagesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WorkPackagesEmbedded>>();
      if (json != null && json.isNotEmpty) {

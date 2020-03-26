@@ -21,7 +21,7 @@ class TimeEntry {
 
   @override
   String toString() {
-    return 'Time entry[id=$id, hours=$hours, comment=$comment, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, links=$links, ]';
+    return 'TimeEntry[id=$id, hours=$hours, comment=$comment, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, links=$links, ]';
   }
 
   TimeEntry.fromJson(Map<String, dynamic> json) {
@@ -79,7 +79,7 @@ class TimeEntry {
     return map;
   }
 
-  // maps a json object with a list of Time entry-objects as value to a dart map
+  // maps a json object with a list of TimeEntry-objects as value to a dart map
   static Map<String, List<TimeEntry>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<TimeEntry>>();
      if (json != null && json.isNotEmpty) {

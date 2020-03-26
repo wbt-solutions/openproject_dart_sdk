@@ -1,4 +1,4 @@
-# openproject_dart_sdk.model.Time entries Links
+# openproject_dart_sdk.model.TimeEntriesLinks
 
 ## Load the model package
 ```dart

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiV3ConfigurationGet**
-> apiV3ConfigurationGet()
+> Configuration apiV3ConfigurationGet()
 
 View configuration
 
@@ -27,7 +27,8 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = ConfigurationApi();
 
 try { 
-    api_instance.apiV3ConfigurationGet();
+    var result = api_instance.apiV3ConfigurationGet();
+    print(result);
 } catch (e) {
     print("Exception when calling ConfigurationApi->apiV3ConfigurationGet: $e\n");
 }
@@ -38,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Configuration**](Configuration.md)
 
 ### Authorization
 

@@ -65,7 +65,7 @@ class TimeEntriesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Time entries') as TimeEntries;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntries') as TimeEntries;
     } else {
       return null;
     }
@@ -123,7 +123,7 @@ class TimeEntriesApi {
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Time entry') as TimeEntry;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
     } else {
       return null;
     }

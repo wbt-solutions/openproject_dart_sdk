@@ -1,4 +1,4 @@
-# openproject_dart_sdk.model.Users embedded
+# openproject_dart_sdk.model.Root
 
 ## Load the model package
 ```dart
@@ -8,7 +8,8 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**List&lt;User&gt;**](User.md) |  | [optional] [default to []]
+**instanceName** | **String** |  | [optional] [readonly] [default to null]
+**coreVersion** | **String** |  | [optional] [readonly] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

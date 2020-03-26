@@ -10,7 +10,7 @@ class ConfigurationApi {
   /// View configuration with HTTP info returned
   ///
   /// 
-  Future apiV3ConfigurationGetWithHttpInfo() async {
+  Future<Response> apiV3ConfigurationGetWithHttpInfo() async {
     Object postBody;
 
     // verify required params are set
@@ -51,13 +51,14 @@ class ConfigurationApi {
   /// View configuration
   ///
   /// 
-  Future apiV3ConfigurationGet() async {
+  Future<Configuration> apiV3ConfigurationGet() async {
     Response response = await apiV3ConfigurationGetWithHttpInfo();
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Configuration') as Configuration;
     } else {
-      return;
+      return null;
     }
   }
 

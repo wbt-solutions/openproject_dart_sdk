@@ -7,7 +7,7 @@ class UsersEmbedded {
 
   @override
   String toString() {
-    return 'Users embedded[elements=$elements, ]';
+    return 'UsersEmbedded[elements=$elements, ]';
   }
 
   UsersEmbedded.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class UsersEmbedded {
     return map;
   }
 
-  // maps a json object with a list of Users embedded-objects as value to a dart map
+  // maps a json object with a list of UsersEmbedded-objects as value to a dart map
   static Map<String, List<UsersEmbedded>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<UsersEmbedded>>();
      if (json != null && json.isNotEmpty) {

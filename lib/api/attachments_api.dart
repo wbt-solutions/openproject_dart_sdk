@@ -67,7 +67,7 @@ class AttachmentsApi {
   /// View attachment with HTTP info returned
   ///
   /// 
-  Future apiV3AttachmentsIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3AttachmentsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -111,13 +111,14 @@ class AttachmentsApi {
   /// View attachment
   ///
   /// 
-  Future apiV3AttachmentsIdGet(int id) async {
+  Future<Object> apiV3AttachmentsIdGet(int id) async {
     Response response = await apiV3AttachmentsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
     } else {
-      return;
+      return null;
     }
   }
 

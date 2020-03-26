@@ -48,7 +48,8 @@ var api_instance = ActivitiesApi();
 var id = 56; // int | Activity id
 
 try {
-    api_instance.apiV3ActivitiesIdGet(id);
+    var result = api_instance.apiV3ActivitiesIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling ActivitiesApi->apiV3ActivitiesIdGet: $e\n");
 }
@@ -171,6 +172,7 @@ Class | Method | HTTP request | Description
  - [ApiV3ActivitiesIdComment](doc\/ApiV3ActivitiesIdComment.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinks](doc\/ApiV3CustomActionsCustomActionIdExecuteLinks.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage](doc\/ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.md)
+ - [Configuration](doc\/Configuration.md)
  - [Description](doc\/Description.md)
  - [InlineObject](doc\/InlineObject.md)
  - [InlineObject1](doc\/InlineObject1.md)
@@ -185,30 +187,31 @@ Class | Method | HTTP request | Description
  - [Project](doc\/Project.md)
  - [Projects](doc\/Projects.md)
  - [ProjectsEmbedded](doc\/ProjectsEmbedded.md)
- - [Time entries](doc\/Time entries.md)
- - [Time entries Links](doc\/Time entries Links.md)
- - [Time entry](doc\/Time entry.md)
- - [Time entry Links](doc\/Time entry Links.md)
+ - [Root](doc\/Root.md)
+ - [TimeEntries](doc\/TimeEntries.md)
  - [TimeEntriesEmbedded](doc\/TimeEntriesEmbedded.md)
+ - [TimeEntriesLinks](doc\/TimeEntriesLinks.md)
+ - [TimeEntry](doc\/TimeEntry.md)
  - [TimeEntryEmbedded](doc\/TimeEntryEmbedded.md)
+ - [TimeEntryLinks](doc\/TimeEntryLinks.md)
  - [User](doc\/User.md)
  - [UserPreferences](doc\/UserPreferences.md)
  - [Users](doc\/Users.md)
- - [Users embedded](doc\/Users embedded.md)
+ - [UsersEmbedded](doc\/UsersEmbedded.md)
  - [Version](doc\/Version.md)
- - [Version Links](doc\/Version Links.md)
+ - [VersionLinks](doc\/VersionLinks.md)
  - [Versions](doc\/Versions.md)
- - [Versions embedded](doc\/Versions embedded.md)
+ - [VersionsEmbedded](doc\/VersionsEmbedded.md)
  - [WPType](doc\/WPType.md)
- - [WPType Links](doc\/WPType Links.md)
+ - [WPTypeLinks](doc\/WPTypeLinks.md)
  - [WPTypes](doc\/WPTypes.md)
  - [WPTypesEmbedded](doc\/WPTypesEmbedded.md)
- - [Work Package](doc\/Work Package.md)
- - [Work Package Embedded](doc\/Work Package Embedded.md)
- - [Work Package Links](doc\/Work Package Links.md)
- - [Work Package Patch](doc\/Work Package Patch.md)
- - [Work Packages](doc\/Work Packages.md)
- - [Work Packages embedded](doc\/Work Packages embedded.md)
+ - [WorkPackage](doc\/WorkPackage.md)
+ - [WorkPackageEmbedded](doc\/WorkPackageEmbedded.md)
+ - [WorkPackageLinks](doc\/WorkPackageLinks.md)
+ - [WorkPackagePatch](doc\/WorkPackagePatch.md)
+ - [WorkPackages](doc\/WorkPackages.md)
+ - [WorkPackagesEmbedded](doc\/WorkPackagesEmbedded.md)
 
 
 ## Documentation For Authorization

@@ -7,7 +7,7 @@ class WPTypeLinks {
 
   @override
   String toString() {
-    return 'WPType Links[self=$self, ]';
+    return 'WPTypeLinks[self=$self, ]';
   }
 
   WPTypeLinks.fromJson(Map<String, dynamic> json) {
@@ -36,7 +36,7 @@ class WPTypeLinks {
     return map;
   }
 
-  // maps a json object with a list of WPType Links-objects as value to a dart map
+  // maps a json object with a list of WPTypeLinks-objects as value to a dart map
   static Map<String, List<WPTypeLinks>> mapListFromJson(Map<String, dynamic> json) {
     var map = Map<String, List<WPTypeLinks>>();
      if (json != null && json.isNotEmpty) {

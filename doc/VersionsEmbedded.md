@@ -1,4 +1,4 @@
-# openproject_dart_sdk.model.Work Packages
+# openproject_dart_sdk.model.VersionsEmbedded
 
 ## Load the model package
 ```dart
@@ -8,9 +8,7 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **int** |  | [optional] [default to null]
-**count** | **int** |  | [optional] [default to null]
-**embedded** | [**Work%20Packages%20embedded**](Work%20Packages%20embedded.md) |  | [optional] [default to null]
+**elements** | [**List&lt;Version&gt;**](Version.md) |  | [optional] [default to []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

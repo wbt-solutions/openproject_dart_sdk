@@ -10,7 +10,7 @@ class ActivitiesApi {
   /// View activity with HTTP info returned
   ///
   /// 
-  Future apiV3ActivitiesIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3ActivitiesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -54,13 +54,14 @@ class ActivitiesApi {
   /// View activity
   ///
   /// 
-  Future apiV3ActivitiesIdGet(int id) async {
+  Future<Object> apiV3ActivitiesIdGet(int id) async {
     Response response = await apiV3ActivitiesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
     } else {
-      return;
+      return null;
     }
   }
 

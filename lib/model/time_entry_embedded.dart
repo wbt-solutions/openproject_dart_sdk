@@ -8,7 +8,7 @@ class TimeEntryEmbedded {
   
   User user = null;
   
-  Object activity = null;
+  Activity activity = null;
   TimeEntryEmbedded();
 
   @override
@@ -27,7 +27,9 @@ class TimeEntryEmbedded {
     user = (json['user'] == null) ?
       null :
       User.fromJson(json['user']);
-    activity = json['activity'];
+    activity = (json['activity'] == null) ?
+      null :
+      Activity.fromJson(json['activity']);
   }
 
   Map<String, dynamic> toJson() {

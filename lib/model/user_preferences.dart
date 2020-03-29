@@ -11,11 +11,13 @@ class UserPreferences {
   bool warnOnLeavingUnsaved = null;
   
   bool accessibilityMode = null;
+  
+  UserPreferencesLinks links = null;
   UserPreferences();
 
   @override
   String toString() {
-    return 'UserPreferences[hideMail=$hideMail, timeZone=$timeZone, commentSortDescending=$commentSortDescending, warnOnLeavingUnsaved=$warnOnLeavingUnsaved, accessibilityMode=$accessibilityMode, ]';
+    return 'UserPreferences[hideMail=$hideMail, timeZone=$timeZone, commentSortDescending=$commentSortDescending, warnOnLeavingUnsaved=$warnOnLeavingUnsaved, accessibilityMode=$accessibilityMode, links=$links, ]';
   }
 
   UserPreferences.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,9 @@ class UserPreferences {
     commentSortDescending = json['commentSortDescending'];
     warnOnLeavingUnsaved = json['warnOnLeavingUnsaved'];
     accessibilityMode = json['accessibilityMode'];
+    links = (json['_links'] == null) ?
+      null :
+      UserPreferencesLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +44,8 @@ class UserPreferences {
       json['warnOnLeavingUnsaved'] = warnOnLeavingUnsaved;
     if (accessibilityMode != null)
       json['accessibilityMode'] = accessibilityMode;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

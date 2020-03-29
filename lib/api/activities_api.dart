@@ -54,12 +54,12 @@ class ActivitiesApi {
   /// View activity
   ///
   /// 
-  Future<Object> apiV3ActivitiesIdGet(int id) async {
+  Future<Activity> apiV3ActivitiesIdGet(int id) async {
     Response response = await apiV3ActivitiesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Activity') as Activity;
     } else {
       return null;
     }

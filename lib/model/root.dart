@@ -5,17 +5,22 @@ class Root {
   String instanceName = null;
   
   String coreVersion = null;
+  
+  RootLinks links = null;
   Root();
 
   @override
   String toString() {
-    return 'Root[instanceName=$instanceName, coreVersion=$coreVersion, ]';
+    return 'Root[instanceName=$instanceName, coreVersion=$coreVersion, links=$links, ]';
   }
 
   Root.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     instanceName = json['instanceName'];
     coreVersion = json['coreVersion'];
+    links = (json['_links'] == null) ?
+      null :
+      RootLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -24,6 +29,8 @@ class Root {
       json['instanceName'] = instanceName;
     if (coreVersion != null)
       json['coreVersion'] = coreVersion;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **commentSortDescending** | **bool** |  | [optional] [default to null]
 **warnOnLeavingUnsaved** | **bool** |  | [optional] [default to null]
 **accessibilityMode** | **bool** |  | [optional] [default to null]
+**links** | [**UserPreferencesLinks**](UserPreferencesLinks.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

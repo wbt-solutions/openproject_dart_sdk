@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3ActivitiesIdGet**
-> Object apiV3ActivitiesIdGet(id)
+> Activity apiV3ActivitiesIdGet(id)
 
 View activity
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**Activity**](Activity.md)
 
 ### Authorization
 

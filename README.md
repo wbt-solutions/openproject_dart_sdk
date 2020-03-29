@@ -169,6 +169,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Activity](doc\/Activity.md)
+ - [ActivityLinks](doc\/ActivityLinks.md)
  - [ApiV3ActivitiesIdComment](doc\/ApiV3ActivitiesIdComment.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinks](doc\/ApiV3CustomActionsCustomActionIdExecuteLinks.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage](doc\/ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.md)
@@ -188,6 +190,7 @@ Class | Method | HTTP request | Description
  - [Projects](doc\/Projects.md)
  - [ProjectsEmbedded](doc\/ProjectsEmbedded.md)
  - [Root](doc\/Root.md)
+ - [RootLinks](doc\/RootLinks.md)
  - [TimeEntries](doc\/TimeEntries.md)
  - [TimeEntriesEmbedded](doc\/TimeEntriesEmbedded.md)
  - [TimeEntriesLinks](doc\/TimeEntriesLinks.md)
@@ -195,7 +198,9 @@ Class | Method | HTTP request | Description
  - [TimeEntryEmbedded](doc\/TimeEntryEmbedded.md)
  - [TimeEntryLinks](doc\/TimeEntryLinks.md)
  - [User](doc\/User.md)
+ - [UserLinks](doc\/UserLinks.md)
  - [UserPreferences](doc\/UserPreferences.md)
+ - [UserPreferencesLinks](doc\/UserPreferencesLinks.md)
  - [Users](doc\/Users.md)
  - [UsersEmbedded](doc\/UsersEmbedded.md)
  - [Version](doc\/Version.md)

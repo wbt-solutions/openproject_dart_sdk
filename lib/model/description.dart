@@ -3,7 +3,7 @@ part of openproject_dart_sdk.api;
 class Description {
   
   String format = null;
-  //enum formatEnum {  textile,  };{
+  //enum formatEnum {  plain,  markdown,  custom,  };{
   
   String raw = null;
   

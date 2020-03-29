@@ -30,11 +30,13 @@ class User {
   String password = null;
   
   String identityUrl = null;
+  
+  UserLinks links = null;
   User();
 
   @override
   String toString() {
-    return 'User[id=$id, login=$login, firstName=$firstName, lastName=$lastName, name=$name, email=$email, admin=$admin, avatar=$avatar, createdAt=$createdAt, updatedAt=$updatedAt, status=$status, language=$language, password=$password, identityUrl=$identityUrl, ]';
+    return 'User[id=$id, login=$login, firstName=$firstName, lastName=$lastName, name=$name, email=$email, admin=$admin, avatar=$avatar, createdAt=$createdAt, updatedAt=$updatedAt, status=$status, language=$language, password=$password, identityUrl=$identityUrl, links=$links, ]';
   }
 
   User.fromJson(Map<String, dynamic> json) {
@@ -57,6 +59,9 @@ class User {
     language = json['language'];
     password = json['password'];
     identityUrl = json['identity_url'];
+    links = (json['_links'] == null) ?
+      null :
+      UserLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -89,6 +94,8 @@ class User {
       json['password'] = password;
     if (identityUrl != null)
       json['identity_url'] = identityUrl;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

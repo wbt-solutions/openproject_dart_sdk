@@ -38,6 +38,10 @@ class ApiClient {
           return value is bool ? value : '$value'.toLowerCase() == 'true';
         case 'double':
           return value is double ? value : double.parse('$value');
+        case 'Activity':
+          return Activity.fromJson(value);
+        case 'ActivityLinks':
+          return ActivityLinks.fromJson(value);
         case 'ApiV3ActivitiesIdComment':
           return ApiV3ActivitiesIdComment.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinks':
@@ -76,6 +80,8 @@ class ApiClient {
           return ProjectsEmbedded.fromJson(value);
         case 'Root':
           return Root.fromJson(value);
+        case 'RootLinks':
+          return RootLinks.fromJson(value);
         case 'TimeEntries':
           return TimeEntries.fromJson(value);
         case 'TimeEntriesEmbedded':
@@ -90,8 +96,12 @@ class ApiClient {
           return TimeEntryLinks.fromJson(value);
         case 'User':
           return User.fromJson(value);
+        case 'UserLinks':
+          return UserLinks.fromJson(value);
         case 'UserPreferences':
           return UserPreferences.fromJson(value);
+        case 'UserPreferencesLinks':
+          return UserPreferencesLinks.fromJson(value);
         case 'Users':
           return Users.fromJson(value);
         case 'UsersEmbedded':

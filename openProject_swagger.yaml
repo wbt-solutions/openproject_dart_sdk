@@ -8261,21 +8261,48 @@ definitions:
           - "on track"
           - "at risk"
           - "off track"
+      statusExplanation:
+        $ref: "#/definitions/Description"
       public:
         type: "boolean"
-      spentOn:
-        type: "string"
-        format: "date"
+      description:
+        $ref: "#/definitions/Description"
       createdAt:
         type: "string"
         format: "date-time"
       updatedAt:
         type: "string"
         format: "date-time"
-      _embedded:
-        $ref: "#/definitions/Time_entry_embedded"
+      _links:
+        $ref: "#/definitions/ProjectLinks"
     xml:
       name: "Project"
+
+  ProjectLinks:
+    type: "object"
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+      createWorkPackage:
+        $ref: "#/definitions/Link"
+      createWorkPackageImmediate:
+        $ref: "#/definitions/Link"
+      categories:
+        $ref: "#/definitions/Link"
+      types:
+        $ref: "#/definitions/Link"
+      versions:
+        $ref: "#/definitions/Link"
+      workPackages:
+        $ref: "#/definitions/Link"
+      memberships:
+        $ref: "#/definitions/Link"
+      delete:
+        $ref: "#/definitions/Link"
+      schema:
+        $ref: "#/definitions/Link"
+      parent:
+        $ref: "#/definitions/Link"
 
   ProjectModel: {}
 
@@ -8290,8 +8317,16 @@ definitions:
         format: "int32"
       _embedded:
         $ref: "#/definitions/Projects_embedded"
+      _links:
+        $ref: "#/definitions/ProjectsLinks"
     xml:
       name: "Project"
+
+  ProjectsLinks:
+    type: "object"
+    properties:
+      self:
+        $ref: "#/definitions/Link"
 
   Projects_embedded:
     type: "object"

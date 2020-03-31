@@ -13,11 +13,12 @@ Name | Type | Description | Notes
 **identifier** | **String** |  | [optional] [default to null]
 **active** | **bool** |  | [optional] [default to null]
 **status** | **String** |  | [optional] [default to null]
+**statusExplanation** | [**Description**](Description.md) |  | [optional] [default to null]
 **public** | **bool** |  | [optional] [default to null]
-**spentOn** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
+**description** | [**Description**](Description.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**embedded** | [**TimeEntryEmbedded**](TimeEntryEmbedded.md) |  | [optional] [default to null]
+**links** | [**ProjectLinks**](ProjectLinks.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

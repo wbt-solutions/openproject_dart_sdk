@@ -13,20 +13,22 @@ class Project {
   String status = null;
   //enum statusEnum {  on track,  at risk,  off track,  };{
   
+  Description statusExplanation = null;
+  
   bool public = null;
   
-  DateTime spentOn = null;
+  Description description = null;
   
   DateTime createdAt = null;
   
   DateTime updatedAt = null;
   
-  TimeEntryEmbedded embedded = null;
+  ProjectLinks links = null;
   Project();
 
   @override
   String toString() {
-    return 'Project[id=$id, name=$name, identifier=$identifier, active=$active, status=$status, public=$public, spentOn=$spentOn, createdAt=$createdAt, updatedAt=$updatedAt, embedded=$embedded, ]';
+    return 'Project[id=$id, name=$name, identifier=$identifier, active=$active, status=$status, statusExplanation=$statusExplanation, public=$public, description=$description, createdAt=$createdAt, updatedAt=$updatedAt, links=$links, ]';
   }
 
   Project.fromJson(Map<String, dynamic> json) {
@@ -36,19 +38,22 @@ class Project {
     identifier = json['identifier'];
     active = json['active'];
     status = json['status'];
-    public = json['public'];
-    spentOn = (json['spentOn'] == null) ?
+    statusExplanation = (json['statusExplanation'] == null) ?
       null :
-      DateTime.parse(json['spentOn']);
+      Description.fromJson(json['statusExplanation']);
+    public = json['public'];
+    description = (json['description'] == null) ?
+      null :
+      Description.fromJson(json['description']);
     createdAt = (json['createdAt'] == null) ?
       null :
       DateTime.parse(json['createdAt']);
     updatedAt = (json['updatedAt'] == null) ?
       null :
       DateTime.parse(json['updatedAt']);
-    embedded = (json['_embedded'] == null) ?
+    links = (json['_links'] == null) ?
       null :
-      TimeEntryEmbedded.fromJson(json['_embedded']);
+      ProjectLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -63,16 +68,18 @@ class Project {
       json['active'] = active;
     if (status != null)
       json['status'] = status;
+    if (statusExplanation != null)
+      json['statusExplanation'] = statusExplanation;
     if (public != null)
       json['public'] = public;
-    if (spentOn != null)
-      json['spentOn'] = spentOn == null ? null : spentOn.toUtc().toIso8601String();
+    if (description != null)
+      json['description'] = description;
     if (createdAt != null)
       json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
     if (updatedAt != null)
       json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
-    if (embedded != null)
-      json['_embedded'] = embedded;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

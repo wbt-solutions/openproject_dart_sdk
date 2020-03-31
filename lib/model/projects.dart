@@ -7,11 +7,13 @@ class Projects {
   int count = null;
   
   ProjectsEmbedded embedded = null;
+  
+  ProjectsLinks links = null;
   Projects();
 
   @override
   String toString() {
-    return 'Projects[total=$total, count=$count, embedded=$embedded, ]';
+    return 'Projects[total=$total, count=$count, embedded=$embedded, links=$links, ]';
   }
 
   Projects.fromJson(Map<String, dynamic> json) {
@@ -21,6 +23,9 @@ class Projects {
     embedded = (json['_embedded'] == null) ?
       null :
       ProjectsEmbedded.fromJson(json['_embedded']);
+    links = (json['_links'] == null) ?
+      null :
+      ProjectsLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -31,6 +36,8 @@ class Projects {
       json['count'] = count;
     if (embedded != null)
       json['_embedded'] = embedded;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

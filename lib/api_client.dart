@@ -74,10 +74,14 @@ class ApiClient {
           return Link.fromJson(value);
         case 'Project':
           return Project.fromJson(value);
+        case 'ProjectLinks':
+          return ProjectLinks.fromJson(value);
         case 'Projects':
           return Projects.fromJson(value);
         case 'ProjectsEmbedded':
           return ProjectsEmbedded.fromJson(value);
+        case 'ProjectsLinks':
+          return ProjectsLinks.fromJson(value);
         case 'Root':
           return Root.fromJson(value);
         case 'RootLinks':

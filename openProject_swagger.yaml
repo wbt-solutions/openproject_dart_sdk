@@ -4730,6 +4730,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Statuses"
           examples:
             application/hal+json:
               _links:
@@ -4824,6 +4826,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Status"
           examples:
             application/hal+json:
               _links:
@@ -8428,9 +8432,62 @@ definitions:
   RootModel: {}
   Example Schema: {}
   Example SchemaModel: {}
-  Statuses: {}
+  Statuses:
+    type: "object"
+    properties:
+      total:
+        type: integer
+      count:
+        type: integer
+      _embedded:
+        $ref: "#/definitions/StatusesEmbedded"
+      _links:
+        $ref: "#/definitions/StatusesLinks"
+  StatusesEmbedded:
+    type: object
+    properties:
+      elements:
+        type: array
+        items:
+          $ref: "#/definitions/Status"
+  StatusesLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
   StatusesModel: {}
-  Status: {}
+  Status:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      position:
+        type: integer
+        readOnly: true
+      isDefault:
+        type: boolean
+        readOnly: true
+      isClosed:
+        type: boolean
+        readOnly: true
+      isReadonly:
+        type: boolean
+        readOnly: true
+      defaultDoneRatio:
+        type: integer
+        readOnly: true
+      _links:
+        $ref: "#/definitions/StatusLinks"
+  StatusLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
   StatusModel: {}
   String Object: {}
   String ObjectModel: {}

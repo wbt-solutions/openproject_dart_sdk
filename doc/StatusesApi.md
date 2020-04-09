@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3StatusesGet**
-> apiV3StatusesGet()
+> Statuses apiV3StatusesGet()
 
 List all Statuses
 
@@ -28,7 +28,8 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = StatusesApi();
 
 try { 
-    api_instance.apiV3StatusesGet();
+    var result = api_instance.apiV3StatusesGet();
+    print(result);
 } catch (e) {
     print("Exception when calling StatusesApi->apiV3StatusesGet: $e\n");
 }
@@ -39,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Statuses**](Statuses.md)
 
 ### Authorization
 
@@ -53,7 +54,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3StatusesIdGet**
-> apiV3StatusesIdGet(id)
+> Status apiV3StatusesIdGet(id)
 
 View Status
 
@@ -68,7 +69,8 @@ var api_instance = StatusesApi();
 var id = 56; // int | status id
 
 try { 
-    api_instance.apiV3StatusesIdGet(id);
+    var result = api_instance.apiV3StatusesIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling StatusesApi->apiV3StatusesIdGet: $e\n");
 }
@@ -82,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Status**](Status.md)
 
 ### Authorization
 

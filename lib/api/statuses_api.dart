@@ -10,7 +10,7 @@ class StatusesApi {
   /// List all Statuses with HTTP info returned
   ///
   /// 
-  Future apiV3StatusesGetWithHttpInfo() async {
+  Future<Response> apiV3StatusesGetWithHttpInfo() async {
     Object postBody;
 
     // verify required params are set
@@ -51,20 +51,21 @@ class StatusesApi {
   /// List all Statuses
   ///
   /// 
-  Future apiV3StatusesGet() async {
+  Future<Statuses> apiV3StatusesGet() async {
     Response response = await apiV3StatusesGetWithHttpInfo();
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Statuses') as Statuses;
     } else {
-      return;
+      return null;
     }
   }
 
   /// View Status with HTTP info returned
   ///
   /// 
-  Future apiV3StatusesIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3StatusesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -108,13 +109,14 @@ class StatusesApi {
   /// View Status
   ///
   /// 
-  Future apiV3StatusesIdGet(int id) async {
+  Future<Status> apiV3StatusesIdGet(int id) async {
     Response response = await apiV3StatusesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Status') as Status;
     } else {
-      return;
+      return null;
     }
   }
 

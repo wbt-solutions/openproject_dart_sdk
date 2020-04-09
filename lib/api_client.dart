@@ -86,6 +86,16 @@ class ApiClient {
           return Root.fromJson(value);
         case 'RootLinks':
           return RootLinks.fromJson(value);
+        case 'Status':
+          return Status.fromJson(value);
+        case 'StatusLinks':
+          return StatusLinks.fromJson(value);
+        case 'Statuses':
+          return Statuses.fromJson(value);
+        case 'StatusesEmbedded':
+          return StatusesEmbedded.fromJson(value);
+        case 'StatusesLinks':
+          return StatusesLinks.fromJson(value);
         case 'TimeEntries':
           return TimeEntries.fromJson(value);
         case 'TimeEntriesEmbedded':

@@ -1287,6 +1287,102 @@ paths:
             considered to be it's own ancestor.
           required: false
           type: string
+        - name: sortBy
+          in: query
+          description: >-
+            JSON specifying sort criteria. Currently supported orders are:
+            + id
+            + name
+            + created_on
+            + public
+            + latest_activity_at
+            + required_disk_space: There might also be additional orders based
+            on the custom fields that have been configured.
+          required: false
+          type: string
+    post:
+      responses:
+        '201':
+          description: OK
+          headers: {}
+          schema:
+            $ref: "#/definitions/Project"
+          examples: {}
+        '400':
+          description: >-
+            Occurs when the client did not send a valid JSON object in the request body.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:InvalidRequestBody'
+              message: The request body was not a single JSON object.
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions.
+            *Required permission*: add project which is a global permission
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+              message: You are not authorized to access this resource.
+        '422':
+          description: >-
+            Returned if:
+            + a constraint for a property was violated (PropertyConstraintViolation)
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:PropertyConstraintViolation'
+              message: Name can't be blank.
+              _embedded:
+                details:
+                  attribute: name
+      summary: create project
+      description: >-
+        Creates a new project, applying the attributes provided in the body.
+
+        You can use the form and schema to be retrieve the valid attribute values and by that
+        be guided towards successful creation.
+      tags:
+        - Projects
+      parameters:
+        - name: project
+          in: body
+          description: New project attributes
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+        - name: filters
+          in: query
+          description: >-
+            JSON specifying filter conditions.
+
+            Accepts the same format as returned by the [queries](#queries)
+            endpoint.
+
+            Currently supported filters are:
+
+
+            + ancestor: filters projects by their ancestor. A project is not
+            considered to be it's own ancestor.
+          required: false
+          type: string
+        - name: sortBy
+          in: query
+          description: >-
+            JSON specifying sort criteria. Currently supported orders are:
+            + id
+            + name
+            + created_on
+            + public
+            + latest_activity_at
+            + required_disk_space: There might also be additional orders based
+            on the custom fields that have been configured.
+          required: false
+          type: string
   '/api/v3/projects/available_parent_projects':
     get:
       responses:

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**apiV3ProjectsAvailableParentProjectsGet**](ProjectsApi.md#apiV3ProjectsAvailableParentProjectsGet) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
 [**apiV3ProjectsGet**](ProjectsApi.md#apiV3ProjectsGet) | **GET** /api/v3/projects | List projects
 [**apiV3ProjectsIdGet**](ProjectsApi.md#apiV3ProjectsIdGet) | **GET** /api/v3/projects/{id} | View project
+[**apiV3ProjectsPost**](ProjectsApi.md#apiV3ProjectsPost) | **POST** /api/v3/projects | create project
 [**apiV3VersionsIdProjectsGet**](ProjectsApi.md#apiV3VersionsIdProjectsGet) | **GET** /api/v3/versions/{id}/projects | List projects with version
 
 
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsGet**
-> Projects apiV3ProjectsGet(filters)
+> Projects apiV3ProjectsGet(filters, sortBy)
 
 List projects
 
@@ -81,9 +82,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 var api_instance = ProjectsApi();
 var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+var sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
 
 try { 
-    var result = api_instance.apiV3ProjectsGet(filters);
+    var result = api_instance.apiV3ProjectsGet(filters, sortBy);
     print(result);
 } catch (e) {
     print("Exception when calling ProjectsApi->apiV3ProjectsGet: $e\n");
@@ -95,6 +97,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] [default to null]
+ **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] [default to null]
 
 ### Return type
 
@@ -152,6 +155,56 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiV3ProjectsPost**
+> Project apiV3ProjectsPost(project, filters, sortBy)
+
+create project
+
+Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
+
+### Example 
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+
+var api_instance = ProjectsApi();
+var project = Project(); // Project | New project attributes
+var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+var sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
+
+try { 
+    var result = api_instance.apiV3ProjectsPost(project, filters, sortBy);
+    print(result);
+} catch (e) {
+    print("Exception when calling ProjectsApi->apiV3ProjectsPost: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project** | [**Project**](Project.md)| New project attributes | 
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] [default to null]
+ **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] [default to null]
+
+### Return type
+
+[**Project**](Project.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*, application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

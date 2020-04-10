@@ -74,7 +74,7 @@ class ProjectsApi {
   /// List projects with HTTP info returned
   ///
   /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
-  Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters }) async {
+  Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters, String sortBy }) async {
     Object postBody;
 
     // verify required params are set
@@ -88,6 +88,9 @@ class ProjectsApi {
     Map<String, String> formParams = {};
     if(filters != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+    }
+    if(sortBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
     }
 
     List<String> contentTypes = [];
@@ -118,8 +121,8 @@ class ProjectsApi {
   /// List projects
   ///
   /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
-  Future<Projects> apiV3ProjectsGet({ String filters }) async {
-    Response response = await apiV3ProjectsGetWithHttpInfo( filters: filters );
+  Future<Projects> apiV3ProjectsGet({ String filters, String sortBy }) async {
+    Response response = await apiV3ProjectsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
@@ -178,6 +181,70 @@ class ProjectsApi {
   /// 
   Future<Project> apiV3ProjectsIdGet(int id) async {
     Response response = await apiV3ProjectsIdGetWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
+    } else {
+      return null;
+    }
+  }
+
+  /// create project with HTTP info returned
+  ///
+  /// Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
+  Future<Response> apiV3ProjectsPostWithHttpInfo(Project project, { String filters, String sortBy }) async {
+    Object postBody = project;
+
+    // verify required params are set
+    if(project == null) {
+     throw ApiException(400, "Missing required param: project");
+    }
+
+    // create path and map variables
+    String path = "/api/v3/projects".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(filters != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+    }
+    if(sortBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
+    }
+
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = ["basicAuth"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+    return response;
+  }
+
+  /// create project
+  ///
+  /// Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
+  Future<Project> apiV3ProjectsPost(Project project, { String filters, String sortBy }) async {
+    Response response = await apiV3ProjectsPostWithHttpInfo(project,  filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

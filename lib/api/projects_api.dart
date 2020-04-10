@@ -132,6 +132,63 @@ class ProjectsApi {
     }
   }
 
+  /// delete project with HTTP info returned
+  ///
+  /// Deletes the project permanently. As this is a lengthy process, the actual deletion is carried out asynchronously. So the project might exist well after the request has returned successfully. To prevent unwanted changes to the project scheduled for deletion, it is archived at once.
+  Future apiV3ProjectsIdDeleteWithHttpInfo(int id) async {
+    Object postBody;
+
+    // verify required params are set
+    if(id == null) {
+     throw ApiException(400, "Missing required param: id");
+    }
+
+    // create path and map variables
+    String path = "/api/v3/projects/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = ["basicAuth"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'DELETE',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+    return response;
+  }
+
+  /// delete project
+  ///
+  /// Deletes the project permanently. As this is a lengthy process, the actual deletion is carried out asynchronously. So the project might exist well after the request has returned successfully. To prevent unwanted changes to the project scheduled for deletion, it is archived at once.
+  Future apiV3ProjectsIdDelete(int id) async {
+    Response response = await apiV3ProjectsIdDeleteWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+    } else {
+      return;
+    }
+  }
+
   /// View project with HTTP info returned
   ///
   /// 
@@ -181,6 +238,67 @@ class ProjectsApi {
   /// 
   Future<Project> apiV3ProjectsIdGet(int id) async {
     Response response = await apiV3ProjectsIdGetWithHttpInfo(id);
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
+    } else {
+      return null;
+    }
+  }
+
+  /// update project with HTTP info returned
+  ///
+  /// Updates the given project by applying the attributes provided in the body.
+  Future<Response> apiV3ProjectsIdPatchWithHttpInfo(int id, Project project) async {
+    Object postBody = project;
+
+    // verify required params are set
+    if(id == null) {
+     throw ApiException(400, "Missing required param: id");
+    }
+    if(project == null) {
+     throw ApiException(400, "Missing required param: project");
+    }
+
+    // create path and map variables
+    String path = "/api/v3/projects/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = ["basicAuth"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'PATCH',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+    return response;
+  }
+
+  /// update project
+  ///
+  /// Updates the given project by applying the attributes provided in the body.
+  Future<Project> apiV3ProjectsIdPatch(int id, Project project) async {
+    Response response = await apiV3ProjectsIdPatchWithHttpInfo(id, project);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

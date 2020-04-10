@@ -85,7 +85,9 @@ Class | Method | HTTP request | Description
 *PrioritiesApi* | [**apiV3PrioritiesIdGet**](doc\/PrioritiesApi.md#apiv3prioritiesidget) | **GET** /api/v3/priorities/{id} | View Priority
 *ProjectsApi* | [**apiV3ProjectsAvailableParentProjectsGet**](doc\/ProjectsApi.md#apiv3projectsavailableparentprojectsget) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
 *ProjectsApi* | [**apiV3ProjectsGet**](doc\/ProjectsApi.md#apiv3projectsget) | **GET** /api/v3/projects | List projects
+*ProjectsApi* | [**apiV3ProjectsIdDelete**](doc\/ProjectsApi.md#apiv3projectsiddelete) | **DELETE** /api/v3/projects/{id} | delete project
 *ProjectsApi* | [**apiV3ProjectsIdGet**](doc\/ProjectsApi.md#apiv3projectsidget) | **GET** /api/v3/projects/{id} | View project
+*ProjectsApi* | [**apiV3ProjectsIdPatch**](doc\/ProjectsApi.md#apiv3projectsidpatch) | **PATCH** /api/v3/projects/{id} | update project
 *ProjectsApi* | [**apiV3ProjectsPost**](doc\/ProjectsApi.md#apiv3projectspost) | **POST** /api/v3/projects | create project
 *ProjectsApi* | [**apiV3VersionsIdProjectsGet**](doc\/ProjectsApi.md#apiv3versionsidprojectsget) | **GET** /api/v3/versions/{id}/projects | List projects with version
 *QueriesApi* | [**apiV3ProjectsIdQueriesDefaultGet**](doc\/QueriesApi.md#apiv3projectsidqueriesdefaultget) | **GET** /api/v3/projects/{id}/queries/default | View default query for project

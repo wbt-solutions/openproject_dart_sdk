@@ -1254,6 +1254,138 @@ paths:
           type: integer
       produces:
         - application/hal+json
+    patch:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          schema:
+            $ref: "#/definitions/Project"
+          examples: {}
+        '400':
+          description: >-
+            Occurs when the client did not send a valid JSON object in the request body.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:InvalidRequestBody'
+              message: The request body was not a single JSON object.
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions.
+            *Required permission*: edit project for the project to be altered
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+              message: You are not authorized to access this resource.
+        '404':
+          description: >-
+            Returned if the project does not exist or the client does not have
+            sufficient permissions to see it.
+            *Required permission*: view project
+            Note: A client without sufficient permissions shall not be able to
+            test for the existence of a version.
+            That’s why a 404 is returned here, even if a 403 might be more
+            appropriate.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:NotFound'
+              message: The requested resource could not be found.
+        '422':
+          description: >-
+            Returned if:
+            + a constraint for a property was violated (PropertyConstraintViolation)
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:PropertyConstraintViolation'
+              message: Name can't be blank.
+              _embedded:
+                details:
+                  attribute: name
+      summary: update project
+      description: >-
+        Updates the given project by applying the attributes provided in the body.
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          description: Project id
+          required: true
+          type: integer
+        - name: project
+          in: body
+          description: Project changes
+          required: true
+          schema:
+            $ref: "#/definitions/Project"
+    delete:
+      responses:
+        '204':
+          description: OK
+          headers: {}
+          examples: {}
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions.
+            *Required permission*: admin
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+              message: You are not authorized to access this resource.
+        '404':
+          description: >-
+            Returned if the project does not exist or the client does not have
+            sufficient permissions to see it.
+            *Required permission*: view project
+            Note: A client without sufficient permissions shall not be able to
+            test for the existence of a version.
+            That’s why a 404 is returned here, even if a 403 might be more
+            appropriate.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:NotFound'
+              message: The requested resource could not be found.
+        '422':
+          description: >-
+            Returned if the project cannot be deleted. This can happen when
+            there are still references to the project in other projects that
+            need to be severed at first.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:PropertyConstraintViolation'
+              message: Work packages in non descendant projects reference versions of the project or its descendants.
+              _embedded:
+                details:
+                  attribute: base
+      summary: delete project
+      description: >-
+        Deletes the project permanently. As this is a lengthy process, the
+        actual deletion is carried out asynchronously. So the project might
+        exist well after the request has returned successfully. To prevent
+        unwanted changes to the project scheduled for deletion, it is archived
+        at once.
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          description: Project id
+          required: true
+          type: integer
   /api/v3/projects:
     get:
       responses:

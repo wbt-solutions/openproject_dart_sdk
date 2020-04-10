@@ -9,10 +9,61 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiV3ProjectsAvailableParentProjectsGet**](ProjectsApi.md#apiV3ProjectsAvailableParentProjectsGet) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
 [**apiV3ProjectsGet**](ProjectsApi.md#apiV3ProjectsGet) | **GET** /api/v3/projects | List projects
 [**apiV3ProjectsIdGet**](ProjectsApi.md#apiV3ProjectsIdGet) | **GET** /api/v3/projects/{id} | View project
 [**apiV3VersionsIdProjectsGet**](ProjectsApi.md#apiV3VersionsIdProjectsGet) | **GET** /api/v3/versions/{id}/projects | List projects with version
 
+
+# **apiV3ProjectsAvailableParentProjectsGet**
+> Projects apiV3ProjectsAvailableParentProjectsGet(filters, of_, sortBy)
+
+list available parent project candidates
+
+Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
+
+### Example 
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: basicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+
+var api_instance = ProjectsApi();
+var filters = filters_example; // String | JSON specifying filter conditions.
+var of_ = of__example; // String | The id or identifier of the project the parent candidate is determined for
+var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point.
+
+try { 
+    var result = api_instance.apiV3ProjectsAvailableParentProjectsGet(filters, of_, sortBy);
+    print(result);
+} catch (e) {
+    print("Exception when calling ProjectsApi->apiV3ProjectsAvailableParentProjectsGet: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **String**| JSON specifying filter conditions. | [optional] [default to null]
+ **of_** | **String**| The id or identifier of the project the parent candidate is determined for | [optional] [default to null]
+ **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point. | [optional] [default to null]
+
+### Return type
+
+[**Projects**](Projects.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*, application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsGet**
 > Projects apiV3ProjectsGet(filters)

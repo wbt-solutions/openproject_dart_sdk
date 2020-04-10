@@ -1287,6 +1287,55 @@ paths:
             considered to be it's own ancestor.
           required: false
           type: string
+  '/api/v3/projects/available_parent_projects':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          schema:
+            $ref: "#/definitions/Projects"
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions.
+
+            *Required permission*: edit project in a project or the global add
+            project permission
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+              message: You are not authorized to access this resource.
+      summary: list available parent project candidates
+      description: >-
+        Lists projects which can become parent to another project. Only sound
+        candidates are returned. For instance a project cannot become parent of
+        itself or it’s children.
+      tags:
+        - Projects
+      parameters:
+        - name: filters
+          in: query
+          description: >-
+            JSON specifying filter conditions.
+          required: false
+          type: string
+        - name: of
+          in: query
+          description: >-
+            The id or identifier of the project the parent candidate is determined
+            for
+          required: false
+          type: string
+        - name: sortBy
+          in: query
+          description: >-
+            JSON specifying sort criteria. Accepts the same format as returned by
+            the queries endpoint and allows all the filters and sortBy supported
+            by the project list end point.
+          required: false
+          type: string
   '/api/v3/versions/{id}/projects':
     get:
       responses:

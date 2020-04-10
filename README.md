@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *PrincipalsApi* | [**apiV3PrincipalsGet**](doc\/PrincipalsApi.md#apiv3principalsget) | **GET** /api/v3/principals | List principals
 *PrioritiesApi* | [**apiV3PrioritiesGet**](doc\/PrioritiesApi.md#apiv3prioritiesget) | **GET** /api/v3/priorities | List all Priorities
 *PrioritiesApi* | [**apiV3PrioritiesIdGet**](doc\/PrioritiesApi.md#apiv3prioritiesidget) | **GET** /api/v3/priorities/{id} | View Priority
+*ProjectsApi* | [**apiV3ProjectsAvailableParentProjectsGet**](doc\/ProjectsApi.md#apiv3projectsavailableparentprojectsget) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
 *ProjectsApi* | [**apiV3ProjectsGet**](doc\/ProjectsApi.md#apiv3projectsget) | **GET** /api/v3/projects | List projects
 *ProjectsApi* | [**apiV3ProjectsIdGet**](doc\/ProjectsApi.md#apiv3projectsidget) | **GET** /api/v3/projects/{id} | View project
 *ProjectsApi* | [**apiV3VersionsIdProjectsGet**](doc\/ProjectsApi.md#apiv3versionsidprojectsget) | **GET** /api/v3/versions/{id}/projects | List projects with version

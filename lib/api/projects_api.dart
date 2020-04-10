@@ -7,6 +7,70 @@ class ProjectsApi {
 
   ProjectsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
+  /// list available parent project candidates with HTTP info returned
+  ///
+  /// Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
+  Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ String filters, String of_, String sortBy }) async {
+    Object postBody;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/api/v3/projects/available_parent_projects".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(filters != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+    }
+    if(of_ != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "of", of_));
+    }
+    if(sortBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
+    }
+
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = ["basicAuth"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+    }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+    return response;
+  }
+
+  /// list available parent project candidates
+  ///
+  /// Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
+  Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ String filters, String of_, String sortBy }) async {
+    Response response = await apiV3ProjectsAvailableParentProjectsGetWithHttpInfo( filters: filters, of_: of_, sortBy: sortBy );
+    if(response.statusCode >= 400) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Projects') as Projects;
+    } else {
+      return null;
+    }
+  }
+
   /// List projects with HTTP info returned
   ///
   /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.

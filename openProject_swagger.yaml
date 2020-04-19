@@ -8352,6 +8352,8 @@ paths:
           description: OK
           headers: {}
           examples: {}
+          schema:
+            $ref: "#/definitions/Users"
         '403':
           description: >-
             Returned if the client does not have sufficient permissions.
@@ -8404,6 +8406,8 @@ paths:
           description: OK
           headers: {}
           examples: {}
+          schema:
+            $ref: "#/definitions/Users"
         '403':
           description: >-
             Returned if the client does not have sufficient permissions.

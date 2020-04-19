@@ -28,10 +28,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -46,7 +46,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -103,10 +103,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -121,7 +121,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -167,10 +167,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -185,7 +185,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -207,7 +207,7 @@ class WorkPackagesApi {
   /// Available assignees with HTTP info returned
   ///
   /// Gets a list of users that can be assigned to work packages in the given project.
-  Future apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(int projectId) async {
+  Future<Response> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(int projectId) async {
     Object postBody;
 
     // verify required params are set
@@ -225,10 +225,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -243,7 +243,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -251,20 +251,21 @@ class WorkPackagesApi {
   /// Available assignees
   ///
   /// Gets a list of users that can be assigned to work packages in the given project.
-  Future apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(int projectId) async {
+  Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Users') as Users;
     } else {
-      return;
+      return null;
     }
   }
 
   /// Available responsibles with HTTP info returned
   ///
   /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  Future apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(int projectId) async {
+  Future<Response> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(int projectId) async {
     Object postBody;
 
     // verify required params are set
@@ -282,10 +283,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -300,7 +301,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -308,13 +309,14 @@ class WorkPackagesApi {
   /// Available responsibles
   ///
   /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  Future apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(int projectId) async {
+  Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Users') as Users;
     } else {
-      return;
+      return null;
     }
   }
 
@@ -336,10 +338,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -354,7 +356,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -408,10 +410,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -426,7 +428,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -466,10 +468,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -484,7 +486,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -526,10 +528,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -544,7 +546,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -583,10 +585,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -601,7 +603,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -652,10 +654,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -670,7 +672,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -709,10 +711,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -727,7 +729,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -766,10 +768,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -784,7 +786,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -823,10 +825,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -841,7 +843,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -880,10 +882,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -898,7 +900,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -941,10 +943,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -959,7 +961,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -999,10 +1001,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1017,7 +1019,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1056,10 +1058,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1074,7 +1076,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1116,10 +1118,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1134,7 +1136,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1175,10 +1177,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1193,7 +1195,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1232,10 +1234,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1250,7 +1252,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1289,10 +1291,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1307,7 +1309,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1346,10 +1348,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1364,7 +1366,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1403,10 +1405,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1421,7 +1423,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1463,10 +1465,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1481,7 +1483,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }
@@ -1520,10 +1522,10 @@ class WorkPackagesApi {
 
     List<String> contentTypes = [];
 
-    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
 
-    if(contentType.startsWith("multipart/form-data")) {
+    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -1538,7 +1540,7 @@ class WorkPackagesApi {
                                              postBody,
                                              headerParams,
                                              formParams,
-                                             contentType,
+                                             nullableContentType,
                                              authNames);
     return response;
   }

@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**
-> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId)
+> Users apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId)
 
 Available assignees
 
@@ -204,7 +204,8 @@ var api_instance = WorkPackagesApi();
 var projectId = 56; // int | Project id
 
 try { 
-    api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId);
+    var result = api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId);
+    print(result);
 } catch (e) {
     print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet: $e\n");
 }
@@ -218,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Users**](Users.md)
 
 ### Authorization
 
@@ -232,7 +233,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**
-> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId)
+> Users apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId)
 
 Available responsibles
 
@@ -249,7 +250,8 @@ var api_instance = WorkPackagesApi();
 var projectId = 56; // int | Project id
 
 try { 
-    api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId);
+    var result = api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId);
+    print(result);
 } catch (e) {
     print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet: $e\n");
 }
@@ -263,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Users**](Users.md)
 
 ### Authorization
 

@@ -1,9 +1,9 @@
 name: openproject_dart_sdk
-version: 1.0.0
+version: 0.2.1
 description: Dart SDK for the OpenProject Software
 authors:
-  - Simon Bullik <sbu@wbt-solutions.de>
-homepage: https://code.wbt-solutions.de/sbu/openproject_dart_sdk
+  - WBT-Solutions <info@wbt-solutions.de>
+homepage: https://github.com/wbt-solutions/openproject_dart_sdk
 environment:
   sdk: '>=2.0.0 <3.0.0'
 dependencies:

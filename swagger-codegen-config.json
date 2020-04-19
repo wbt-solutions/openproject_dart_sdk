@@ -1,17 +1,8 @@
 {
-  "groupId":"org.openproject.client",
-  "artifactId":"openproject-api-client",
-  "artifactVersion":"0.2.1",
-  "hideGenerationTimestamp":true,
-  "dateLibrary":"java8",
-  "developerOrganization":"kaneo GmbH",
-  "developerOrganizationUrl":"https://www.kaneo-gmbh.de/",
-  "licenseName":"Apache License 2.0",
-  "licenseUrl":"https://www.apache.org/licenses/LICENSE-2.0",
-  "invokerPackage":"org.openproject.client",
+  "pubVersion": "0.2.1",
   "pubName": "openproject_dart_sdk",
   "pubDescription": "Dart SDK for the OpenProject Software",
-  "pubAuthor": "Simon Bullik",
-  "pubAuthorEmail": "sbu@wbt-solutions.de",
-  "pubHomepage": "https://code.wbt-solutions.de/sbu/openproject_dart_sdk"
+  "pubAuthor": "WBT-Solutions",
+  "pubAuthorEmail": "info@wbt-solutions.de",
+  "pubHomepage": "https://github.com/wbt-solutions/openproject_dart_sdk"
 }

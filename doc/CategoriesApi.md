@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3CategoriesIdGet**
-> apiV3CategoriesIdGet(id)
+> Category apiV3CategoriesIdGet(id)
 
 View Category
 
@@ -29,7 +29,8 @@ var api_instance = CategoriesApi();
 var id = 56; // int | category id
 
 try { 
-    api_instance.apiV3CategoriesIdGet(id);
+    var result = api_instance.apiV3CategoriesIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling CategoriesApi->apiV3CategoriesIdGet: $e\n");
 }
@@ -43,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Category**](Category.md)
 
 ### Authorization
 
@@ -57,7 +58,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ProjectsProjectIdCategoriesGet**
-> apiV3ProjectsProjectIdCategoriesGet(projectId)
+> Categories apiV3ProjectsProjectIdCategoriesGet(projectId)
 
 List categories of a project
 
@@ -72,7 +73,8 @@ var api_instance = CategoriesApi();
 var projectId = 56; // int | ID of the project whoose categories will be listed
 
 try { 
-    api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
+    var result = api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
+    print(result);
 } catch (e) {
     print("Exception when calling CategoriesApi->apiV3ProjectsProjectIdCategoriesGet: $e\n");
 }
@@ -86,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Categories**](Categories.md)
 
 ### Authorization
 

@@ -48,6 +48,14 @@ class ApiClient {
           return ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage':
           return ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value);
+        case 'Categories':
+          return Categories.fromJson(value);
+        case 'CategoriesEmbedded':
+          return CategoriesEmbedded.fromJson(value);
+        case 'Category':
+          return Category.fromJson(value);
+        case 'CategoryLinks':
+          return CategoryLinks.fromJson(value);
         case 'Configuration':
           return Configuration.fromJson(value);
         case 'Description':

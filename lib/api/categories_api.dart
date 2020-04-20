@@ -10,7 +10,7 @@ class CategoriesApi {
   /// View Category with HTTP info returned
   ///
   /// 
-  Future apiV3CategoriesIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3CategoriesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -54,20 +54,21 @@ class CategoriesApi {
   /// View Category
   ///
   /// 
-  Future apiV3CategoriesIdGet(int id) async {
+  Future<Category> apiV3CategoriesIdGet(int id) async {
     Response response = await apiV3CategoriesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Category') as Category;
     } else {
-      return;
+      return null;
     }
   }
 
   /// List categories of a project with HTTP info returned
   ///
   /// 
-  Future apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(int projectId) async {
+  Future<Response> apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(int projectId) async {
     Object postBody;
 
     // verify required params are set
@@ -111,13 +112,14 @@ class CategoriesApi {
   /// List categories of a project
   ///
   /// 
-  Future apiV3ProjectsProjectIdCategoriesGet(int projectId) async {
+  Future<Categories> apiV3ProjectsProjectIdCategoriesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Categories') as Categories;
     } else {
-      return;
+      return null;
     }
   }
 

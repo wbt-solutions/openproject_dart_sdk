@@ -430,6 +430,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Categories"
           examples:
             application/hal+json:
               _links:
@@ -501,6 +503,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Category"
           examples:
             application/hal+json:
               _links:
@@ -8496,7 +8500,45 @@ definitions:
   Attachments by work packageModel: {}
   Categories by Project: {}
   Categories by ProjectModel: {}
-  Category: {}
+  Categories:
+    type: object
+    properties:
+      total:
+        type: "integer"
+        format: "int32"
+      count:
+        type: "integer"
+        format: "int32"
+      _embedded:
+        $ref: "#/definitions/Categories_embedded"
+  Categories_embedded:
+    type: object
+    properties:
+      elements:
+        type: "array"
+        items:
+          $ref: "#/definitions/Category"
+  Category:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      links:
+        $ref: "#/definitions/CategoryLinks"
+  CategoryLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+      project:
+        $ref: "#/definitions/Link"
+      defaultAssignee:
+        $ref: "#/definitions/Link"
   CategoryModel: {}
   Configuration:
     type: "object"

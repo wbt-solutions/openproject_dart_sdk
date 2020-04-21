@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiV3PrioritiesGet**
-> apiV3PrioritiesGet()
+> Priorities apiV3PrioritiesGet()
 
 List all Priorities
 
@@ -28,7 +28,8 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = PrioritiesApi();
 
 try { 
-    api_instance.apiV3PrioritiesGet();
+    var result = api_instance.apiV3PrioritiesGet();
+    print(result);
 } catch (e) {
     print("Exception when calling PrioritiesApi->apiV3PrioritiesGet: $e\n");
 }
@@ -39,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Priorities**](Priorities.md)
 
 ### Authorization
 
@@ -53,7 +54,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3PrioritiesIdGet**
-> apiV3PrioritiesIdGet(id)
+> Priority apiV3PrioritiesIdGet(id)
 
 View Priority
 
@@ -68,7 +69,8 @@ var api_instance = PrioritiesApi();
 var id = 56; // int | Priority id
 
 try { 
-    api_instance.apiV3PrioritiesIdGet(id);
+    var result = api_instance.apiV3PrioritiesIdGet(id);
+    print(result);
 } catch (e) {
     print("Exception when calling PrioritiesApi->apiV3PrioritiesIdGet: $e\n");
 }
@@ -82,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Priority**](Priority.md)
 
 ### Authorization
 

@@ -1080,6 +1080,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Priorities"
           examples:
             application/hal+json:
               _links:
@@ -1154,6 +1156,8 @@ paths:
         '200':
           description: OK
           headers: {}
+          schema:
+            $ref: "#/definitions/Priority"
           examples:
             application/hal+json:
               _type: Priority
@@ -8565,9 +8569,61 @@ definitions:
   Help textModel: {}
   Principals: {}
   PrincipalsModel: {}
-  Priorities: {}
+  Priorities:
+    type: "object"
+    properties:
+      total:
+        type: "integer"
+        format: "int32"
+      count:
+        type: "integer"
+        format: "int32"
+      _embedded:
+        $ref: "#/definitions/Priorities_embedded"
+      _links:
+        $ref: "#/definitions/PrioritiesLinks"
+  PrioritiesLinks:
+    type: "object"
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+
+  Priorities_embedded:
+    type: "object"
+    properties:
+      elements:
+        type: "array"
+        items:
+          $ref: "#/definitions/Priority"
   PrioritiesModel: {}
-  Priority: {}
+  Priority:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+        readOnly: true
+      name:
+        type: string
+        readOnly: true
+      position:
+        type: integer
+        format: int32
+        readOnly: true
+      isDefault:
+        type: boolean
+        readOnly: true
+      isActive:
+        type: boolean
+        readOnly: true
+      links:
+        $ref: "#/definitions/PriorityLinks"
+  PriorityLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+
   PriorityModel: {}
 
   Project:

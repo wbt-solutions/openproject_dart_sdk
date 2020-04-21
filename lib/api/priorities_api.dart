@@ -10,7 +10,7 @@ class PrioritiesApi {
   /// List all Priorities with HTTP info returned
   ///
   /// 
-  Future apiV3PrioritiesGetWithHttpInfo() async {
+  Future<Response> apiV3PrioritiesGetWithHttpInfo() async {
     Object postBody;
 
     // verify required params are set
@@ -51,20 +51,21 @@ class PrioritiesApi {
   /// List all Priorities
   ///
   /// 
-  Future apiV3PrioritiesGet() async {
+  Future<Priorities> apiV3PrioritiesGet() async {
     Response response = await apiV3PrioritiesGetWithHttpInfo();
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Priorities') as Priorities;
     } else {
-      return;
+      return null;
     }
   }
 
   /// View Priority with HTTP info returned
   ///
   /// 
-  Future apiV3PrioritiesIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3PrioritiesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -108,13 +109,14 @@ class PrioritiesApi {
   /// View Priority
   ///
   /// 
-  Future apiV3PrioritiesIdGet(int id) async {
+  Future<Priority> apiV3PrioritiesIdGet(int id) async {
     Response response = await apiV3PrioritiesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Priority') as Priority;
     } else {
-      return;
+      return null;
     }
   }
 

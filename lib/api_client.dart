@@ -80,6 +80,16 @@ class ApiClient {
           return InlineObject8.fromJson(value);
         case 'Link':
           return Link.fromJson(value);
+        case 'Priorities':
+          return Priorities.fromJson(value);
+        case 'PrioritiesEmbedded':
+          return PrioritiesEmbedded.fromJson(value);
+        case 'PrioritiesLinks':
+          return PrioritiesLinks.fromJson(value);
+        case 'Priority':
+          return Priority.fromJson(value);
+        case 'PriorityLinks':
+          return PriorityLinks.fromJson(value);
         case 'Project':
           return Project.fromJson(value);
         case 'ProjectLinks':

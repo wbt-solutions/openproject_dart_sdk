@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 *AttachmentsApi* | [**apiV3AttachmentsIdGet**](doc\/AttachmentsApi.md#apiv3attachmentsidget) | **GET** /api/v3/attachments/{id} | View attachment
 *AttachmentsApi* | [**apiV3WorkPackagesIdAttachmentsGet**](doc\/AttachmentsApi.md#apiv3workpackagesidattachmentsget) | **GET** /api/v3/work_packages/{id}/attachments | List attachments
 *AttachmentsApi* | [**apiV3WorkPackagesIdAttachmentsPost**](doc\/AttachmentsApi.md#apiv3workpackagesidattachmentspost) | **POST** /api/v3/work_packages/{id}/attachments | Add attachment
+*BudgetsApi* | [**apiV3BudgetsIdGet**](doc\/BudgetsApi.md#apiv3budgetsidget) | **GET** /api/v3/budgets/{id} | 
 *CategoriesApi* | [**apiV3CategoriesIdGet**](doc\/CategoriesApi.md#apiv3categoriesidget) | **GET** /api/v3/categories/{id} | View Category
 *CategoriesApi* | [**apiV3ProjectsProjectIdCategoriesGet**](doc\/CategoriesApi.md#apiv3projectsprojectidcategoriesget) | **GET** /api/v3/projects/{project_id}/categories | List categories of a project
 *CollectionsApi* | [**apiV3ExamplesGet**](doc\/CollectionsApi.md#apiv3examplesget) | **GET** /api/v3/examples | view aggregated result
@@ -77,6 +78,8 @@ Class | Method | HTTP request | Description
 *FormsApi* | [**apiV3ExampleFormPost**](doc\/FormsApi.md#apiv3exampleformpost) | **POST** /api/v3/example/form | show or validate form
 *HelpTextsApi* | [**apiV3HelpTextsGet**](doc\/HelpTextsApi.md#apiv3helptextsget) | **GET** /api/v3/help_texts | List all help texts
 *HelpTextsApi* | [**apiV3HelpTextsIdGet**](doc\/HelpTextsApi.md#apiv3helptextsidget) | **GET** /api/v3/help_texts/{id} | View help text
+*NewsApi* | [**apiV3NewsGet**](doc\/NewsApi.md#apiv3newsget) | **GET** /api/v3/news | list news
+*NewsApi* | [**apiV3NewsIdGet**](doc\/NewsApi.md#apiv3newsidget) | **GET** /api/v3/news/{id} | view news
 *PreviewingApi* | [**apiV3RenderPlainPost**](doc\/PreviewingApi.md#apiv3renderplainpost) | **POST** /api/v3/render/plain | Preview plain document
 *PreviewingApi* | [**apiV3RenderTextilePost**](doc\/PreviewingApi.md#apiv3rendertextilepost) | **POST** /api/v3/render/textile | Preview Textile document
 *PrincipalsApi* | [**apiV3PrincipalsGet**](doc\/PrincipalsApi.md#apiv3principalsget) | **GET** /api/v3/principals | List principals
@@ -177,6 +180,8 @@ Class | Method | HTTP request | Description
  - [ApiV3ActivitiesIdComment](doc\/ApiV3ActivitiesIdComment.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinks](doc\/ApiV3CustomActionsCustomActionIdExecuteLinks.md)
  - [ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage](doc\/ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.md)
+ - [Budget](doc\/Budget.md)
+ - [BudgetLinks](doc\/BudgetLinks.md)
  - [Categories](doc\/Categories.md)
  - [CategoriesEmbedded](doc\/CategoriesEmbedded.md)
  - [Category](doc\/Category.md)
@@ -193,6 +198,12 @@ Class | Method | HTTP request | Description
  - [InlineObject7](doc\/InlineObject7.md)
  - [InlineObject8](doc\/InlineObject8.md)
  - [Link](doc\/Link.md)
+ - [News](doc\/News.md)
+ - [NewsEmbedded](doc\/NewsEmbedded.md)
+ - [NewsLinks](doc\/NewsLinks.md)
+ - [NewsList](doc\/NewsList.md)
+ - [NewsListEmbedded](doc\/NewsListEmbedded.md)
+ - [NewsListLinks](doc\/NewsListLinks.md)
  - [Priorities](doc\/Priorities.md)
  - [PrioritiesEmbedded](doc\/PrioritiesEmbedded.md)
  - [PrioritiesLinks](doc\/PrioritiesLinks.md)

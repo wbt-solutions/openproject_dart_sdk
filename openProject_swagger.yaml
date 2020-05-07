@@ -8461,6 +8461,101 @@ paths:
           type: integer
       produces:
         - application/hal+json
+  '/api/v3/budgets/{id}':
+    get:
+      responses:
+        200:
+          description: OK
+          headers: {}
+          examples: {}
+          schema:
+            $ref: "#/definitions/Budget"
+      tags:
+        - Budgets
+      parameters:
+        - name: id
+          in: path
+          description: Budget id
+          required: true
+          type: integer
+  '/api/v3/news/{id}':
+    get:
+      responses:
+        200:
+          description: OK
+          headers: {}
+          examples: {}
+          schema:
+            $ref: "#/definitions/News"
+        404:
+          description: >-
+            Returned if the news does not exist or if the user does not have
+            permission to view it.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              message: The requested resource could not be found.
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:NotFound'
+      summary: view news
+      tags:
+        - News
+      parameters:
+        - name: id
+          in: path
+          description: news id
+          required: true
+          type: integer
+  '/api/v3/news':
+    get:
+      responses:
+        200:
+          description: OK
+          headers: {}
+          examples: {}
+          schema:
+            $ref: "#/definitions/NewsList"
+        400:
+          description: >-
+            Returned if the client sends invalid request parameters e.g. filters
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:InvalidQuery'
+              message: Filters Invalid filter does not exist.
+        403:
+          description: >-
+            Returned if the client is not logged in and login is required.
+          headers: {}
+          examples:
+            application/hal+json:
+              _type: Error
+              errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+              message: You are not authorized to view this resource.
+      summary: list news
+      description: >-
+        Lists news. The news returned depend on the provided parameters and also
+        on the requesting user’s permissions.
+      tags:
+        - News
+      parameters:
+        - name: offset
+          in: query
+          description: Page number inside the requested collection.
+          type: integer
+        - name: pageSize
+          in: query
+          description: Number of elements to display per page.
+          type: integer
+        - name: sortBy
+          in: query
+          description: JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+          type: string
+        - name: filters
+          in: query
+          description: JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
+          type: string
 definitions:
   Offset based pagination: {}
   Cursor based pagination: {}
@@ -9469,3 +9564,105 @@ definitions:
   Available AssigneesModel: {}
   Available Responsibles: {}
   Available ResponsiblesModel: {}
+
+  Budget:
+    type: object
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+      subject:
+        type: string
+      _links:
+        $ref: "#/definitions/BudgetLinks"
+
+  BudgetLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+      attachments:
+        $ref: "#/definitions/Link"
+      addAttachment:
+        $ref: "#/definitions/Link"
+      staticPath:
+        $ref: "#/definitions/Link"
+
+  NewsList:
+    type: object
+    properties:
+      total:
+        type: integer
+      count:
+        type: integer
+      pageSize:
+        type: integer
+      offset:
+        type: integer
+      _embedded:
+        $ref: "#/definitions/NewsList_embedded"
+      _links:
+        $ref: "#/definitions/NewsList_links"
+
+  NewsList_embedded:
+    type: object
+    properties:
+      elements:
+        type: array
+        items:
+          $ref: "#/definitions/News"
+
+  NewsList_links:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+      jumpTo:
+        $ref: "#/definitions/Link"
+      changeSize:
+        $ref: "#/definitions/Link"
+      nextByOffset:
+        $ref: "#/definitions/Link"
+
+  News:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      title:
+        type: string
+        maxLength: 60
+      summary:
+        type: string
+        maxLength: 255
+      description:
+        $ref: "#/definitions/Description"
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+      _links:
+        $ref: "#/definitions/NewsLinks"
+      _embedded:
+        $ref: "#/definitions/News_embedded"
+
+  NewsLinks:
+    type: object
+    properties:
+      self:
+        $ref: "#/definitions/Link"
+      project:
+        $ref: "#/definitions/Link"
+      author:
+        $ref: "#/definitions/Link"
+
+  News_embedded:
+    type: object
+    properties:
+      project:
+        $ref: "#/definitions/Project"
+      author:
+        $ref: "#/definitions/User"

@@ -48,6 +48,10 @@ class ApiClient {
           return ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage':
           return ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value);
+        case 'Budget':
+          return Budget.fromJson(value);
+        case 'BudgetLinks':
+          return BudgetLinks.fromJson(value);
         case 'Categories':
           return Categories.fromJson(value);
         case 'CategoriesEmbedded':
@@ -80,6 +84,18 @@ class ApiClient {
           return InlineObject8.fromJson(value);
         case 'Link':
           return Link.fromJson(value);
+        case 'News':
+          return News.fromJson(value);
+        case 'NewsEmbedded':
+          return NewsEmbedded.fromJson(value);
+        case 'NewsLinks':
+          return NewsLinks.fromJson(value);
+        case 'NewsList':
+          return NewsList.fromJson(value);
+        case 'NewsListEmbedded':
+          return NewsListEmbedded.fromJson(value);
+        case 'NewsListLinks':
+          return NewsListLinks.fromJson(value);
         case 'Priorities':
           return Priorities.fromJson(value);
         case 'PrioritiesEmbedded':

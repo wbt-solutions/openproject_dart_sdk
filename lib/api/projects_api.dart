@@ -269,7 +269,7 @@ class ProjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
-    List<String> contentTypes = [];
+    List<String> contentTypes = ["application/json"];
 
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
@@ -333,7 +333,7 @@ class ProjectsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
     }
 
-    List<String> contentTypes = [];
+    List<String> contentTypes = ["application/json"];
 
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];

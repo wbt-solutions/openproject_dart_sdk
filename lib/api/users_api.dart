@@ -322,7 +322,7 @@ class UsersApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
-    List<String> contentTypes = [];
+    List<String> contentTypes = ["application/json"];
 
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];
@@ -376,7 +376,7 @@ class UsersApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
-    List<String> contentTypes = [];
+    List<String> contentTypes = ["application/json"];
 
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = ["basicAuth"];

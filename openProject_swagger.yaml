@@ -9,6 +9,10 @@ securityDefinitions :
 
 security:
   - basicAuth: []  # <-- use the same name here
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
   /api/v3/examples:
     get:

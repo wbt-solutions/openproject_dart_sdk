@@ -53,6 +53,8 @@ class TimeEntryActivitiesApi {
 
   /// View time entries activity
   ///
+  ///int id  (required):
+  ///     time entries activity id
   /// 
   Future apiV3TimeEntriesActivityIdGet(int id) async {
     Response response = await apiV3TimeEntriesActivityIdGetWithHttpInfo(id);

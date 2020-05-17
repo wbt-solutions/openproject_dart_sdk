@@ -53,6 +53,8 @@ class QuerySortBysApi {
 
   /// View Query Sort By
   ///
+  ///String id  (required):
+  ///     QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
   /// Retreive an individual QuerySortBy as identified by the id parameter.
   Future apiV3QueriesSortBysIdGet(String id) async {
     Response response = await apiV3QueriesSortBysIdGetWithHttpInfo(id);

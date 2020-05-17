@@ -56,6 +56,10 @@ class RelationsApi {
 
   /// List Relations
   ///
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
+  ///String sortBy :
+  ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
   /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
   Future apiV3RelationsGet({ String filters, String sortBy }) async {
     Response response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
@@ -113,6 +117,8 @@ class RelationsApi {
 
   /// Delete Relation
   ///
+  ///int id  (required):
+  ///     Relation ID
   /// Deletes the relation.
   Future apiV3RelationsIdDelete(int id) async {
     Response response = await apiV3RelationsIdDeleteWithHttpInfo(id);
@@ -170,6 +176,8 @@ class RelationsApi {
 
   /// Relation edit form
   ///
+  ///int id  (required):
+  ///     ID of the relation being modified
   /// 
   Future apiV3RelationsIdFormPost(int id) async {
     Response response = await apiV3RelationsIdFormPostWithHttpInfo(id);
@@ -227,6 +235,8 @@ class RelationsApi {
 
   /// View Relation
   ///
+  ///int id  (required):
+  ///     Relation id
   /// 
   Future apiV3RelationsIdGet(int id) async {
     Response response = await apiV3RelationsIdGetWithHttpInfo(id);
@@ -284,6 +294,8 @@ class RelationsApi {
 
   /// Edit Relation
   ///
+  ///int id  (required):
+  ///     Relation ID
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. It is only allowed to provide properties or links supporting the **write** operation.  Note that changing the &#x60;type&#x60; of a relation invariably also changes the respective &#x60;reverseType&#x60; as well as the \&quot;name\&quot; of it. The returned Relation object will reflect that change. For instance if you change a Relation&#39;s &#x60;type&#x60; to \&quot;follows\&quot; then the &#x60;reverseType&#x60; will be changed to &#x60;precedes&#x60;.
   Future apiV3RelationsIdPatch(int id) async {
     Response response = await apiV3RelationsIdPatchWithHttpInfo(id);
@@ -395,6 +407,8 @@ class RelationsApi {
 
   /// View relation schema for type
   ///
+  ///String type  (required):
+  ///     Type of the schema
   /// 
   Future apiV3RelationsSchemaTypeGet(String type) async {
     Response response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type);

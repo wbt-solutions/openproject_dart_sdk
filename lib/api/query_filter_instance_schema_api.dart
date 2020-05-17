@@ -53,6 +53,8 @@ class QueryFilterInstanceSchemaApi {
 
   /// List Query Filter Instance Schemas for Project
   ///
+  ///int id  (required):
+  ///     Id of the project.
   /// Returns the list of QueryFilterInstanceSchemas defined for a query of the specified project.
   Future apiV3ProjectsIdQueriesFilterInstanceSchemasGet(int id) async {
     Response response = await apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(id);
@@ -164,6 +166,8 @@ class QueryFilterInstanceSchemaApi {
 
   /// View Query Filter Instance Schema
   ///
+  ///String identifier  (required):
+  ///     QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
   /// Retreive an individual QueryFilterInstanceSchema as identified by the id parameter.
   Future apiV3QueriesFilterInstanceSchemasIdentifierGet(String identifier) async {
     Response response = await apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(identifier);

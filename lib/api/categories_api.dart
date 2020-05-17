@@ -53,6 +53,8 @@ class CategoriesApi {
 
   /// View Category
   ///
+  ///int id  (required):
+  ///     category id
   /// 
   Future<Category> apiV3CategoriesIdGet(int id) async {
     Response response = await apiV3CategoriesIdGetWithHttpInfo(id);
@@ -111,6 +113,8 @@ class CategoriesApi {
 
   /// List categories of a project
   ///
+  ///int projectId  (required):
+  ///     ID of the project whoose categories will be listed
   /// 
   Future<Categories> apiV3ProjectsProjectIdCategoriesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdCategoriesGetWithHttpInfo(projectId);

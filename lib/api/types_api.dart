@@ -53,6 +53,8 @@ class TypesApi {
 
   /// List types available in a project
   ///
+  ///int projectId  (required):
+  ///     ID of the project whoose types will be listed
   /// This endpoint lists the types that are *available* in a given project.
   Future<WPTypes> apiV3ProjectsProjectIdTypesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdTypesGetWithHttpInfo(projectId);
@@ -166,6 +168,8 @@ class TypesApi {
 
   /// View Type
   ///
+  ///int id  (required):
+  ///     type id
   /// 
   Future<WPType> apiV3TypesIdGet(int id) async {
     Response response = await apiV3TypesIdGetWithHttpInfo(id);

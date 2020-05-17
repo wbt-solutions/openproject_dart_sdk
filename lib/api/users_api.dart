@@ -62,6 +62,14 @@ class UsersApi {
 
   /// List Users
   ///
+  ///int offset :
+  ///     Page number inside the requested collection.
+  ///int pageSize :
+  ///     Number of elements to display per page.
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+  ///String sortBy :
+  ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
   /// Lists users. Only administrators have permission to do this.
   Future<Users> apiV3UsersGet({ int offset, int pageSize, String filters, String sortBy }) async {
     Response response = await apiV3UsersGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy );
@@ -120,6 +128,8 @@ class UsersApi {
 
   /// Delete user
   ///
+  ///int id  (required):
+  ///     User id
   /// Permanently deletes the specified user account.
   Future apiV3UsersIdDelete(int id) async {
     Response response = await apiV3UsersIdDeleteWithHttpInfo(id);
@@ -177,6 +187,8 @@ class UsersApi {
 
   /// View user
   ///
+  ///String id  (required):
+  ///     User id. Use `me` to reference current user, if any.
   /// 
   Future<User> apiV3UsersIdGet(String id) async {
     Response response = await apiV3UsersIdGetWithHttpInfo(id);
@@ -235,6 +247,8 @@ class UsersApi {
 
   /// Remove Lock
   ///
+  ///int id  (required):
+  ///     User id
   /// 
   Future apiV3UsersIdLockDelete(int id) async {
     Response response = await apiV3UsersIdLockDeleteWithHttpInfo(id);
@@ -292,6 +306,8 @@ class UsersApi {
 
   /// Set Lock
   ///
+  ///int id  (required):
+  ///     User id
   /// 
   Future apiV3UsersIdLockPost(int id) async {
     Response response = await apiV3UsersIdLockPostWithHttpInfo(id);
@@ -349,6 +365,10 @@ class UsersApi {
 
   /// Update user
   ///
+  ///int id  (required):
+  ///     User id
+  ///InlineObject5 body :
+  ///    
   /// Updates the user&#39;s writable attributes. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.
   Future apiV3UsersIdPatch(int id, { InlineObject5 body }) async {
     Response response = await apiV3UsersIdPatchWithHttpInfo(id,  body: body );
@@ -403,6 +423,8 @@ class UsersApi {
 
   /// Create User
   ///
+  ///InlineObject6 body :
+  ///    
   /// Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for &#x60;status&#x60;:  1) \&quot;active\&quot; - In this case a password has to be provided in addition to the other attributes. 2) \&quot;invited\&quot; - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
   Future apiV3UsersPost({ InlineObject6 body }) async {
     Response response = await apiV3UsersPostWithHttpInfo( body: body );

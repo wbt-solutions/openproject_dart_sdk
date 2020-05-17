@@ -53,6 +53,8 @@ class QueryFiltersApi {
 
   /// View Query Filter
   ///
+  ///String id  (required):
+  ///     QueryFilter identifier.
   /// Retreive an individual QueryFilter as identified by the id parameter.
   Future apiV3QueriesFiltersIdGet(String id) async {
     Response response = await apiV3QueriesFiltersIdGetWithHttpInfo(id);

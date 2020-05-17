@@ -53,6 +53,8 @@ class CustomObjectsApi {
 
   /// View Custom Object
   ///
+  ///int id  (required):
+  ///     The custom object's identifier
   /// 
   Future apiV3CustomObjectsIdGet(int id) async {
     Response response = await apiV3CustomObjectsIdGetWithHttpInfo(id);

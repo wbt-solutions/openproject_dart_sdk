@@ -53,6 +53,10 @@ class CustomActionsApi {
 
   /// Execute custom action
   ///
+  ///int customActionId  (required):
+  ///     The id of the custom action to execute
+  ///InlineObject1 body :
+  ///    
   /// A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package&#39;s current lockVersion.
   Future apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject1 body }) async {
     Response response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  body: body );
@@ -110,6 +114,8 @@ class CustomActionsApi {
 
   /// View custom action
   ///
+  ///int customActionId  (required):
+  ///     The id of the custom action to fetch
   /// 
   Future apiV3CustomActionsCustomActionIdGet(int customActionId) async {
     Response response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId);

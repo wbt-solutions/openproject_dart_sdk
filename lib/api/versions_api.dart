@@ -53,6 +53,8 @@ class VersionsApi {
 
   /// List versions available in a project
   ///
+  ///int projectId  (required):
+  ///     ID of the project whoose versions will be listed
   /// This endpoint lists the versions that are *available* in a given project. Note that due to sharing this might be more than the versions *defined* by that project.
   Future<Versions> apiV3ProjectsProjectIdVersionsGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdVersionsGetWithHttpInfo(projectId);
@@ -111,6 +113,8 @@ class VersionsApi {
 
   /// List versions
   ///
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
   /// Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
   Future<Versions> apiV3VersionsGet({ String filters }) async {
     Response response = await apiV3VersionsGetWithHttpInfo( filters: filters );
@@ -169,6 +173,8 @@ class VersionsApi {
 
   /// View version
   ///
+  ///int id  (required):
+  ///     version id
   /// 
   Future<Version> apiV3VersionsIdGet(int id) async {
     Response response = await apiV3VersionsIdGetWithHttpInfo(id);

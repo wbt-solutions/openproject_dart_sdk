@@ -54,6 +54,8 @@ class StringObjectsApi {
 
   /// View String Object
   ///
+  ///String value  (required):
+  ///     The string value being resolved
   /// 
   Future apiV3StringObjectsGet(String value) async {
     Response response = await apiV3StringObjectsGetWithHttpInfo(value);

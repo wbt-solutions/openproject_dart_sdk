@@ -53,6 +53,8 @@ class BudgetsApi {
 
   /// 
   ///
+  ///int id  (required):
+  ///     Budget id
   /// 
   Future<Budget> apiV3BudgetsIdGet(int id) async {
     Response response = await apiV3BudgetsIdGetWithHttpInfo(id);

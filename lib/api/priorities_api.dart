@@ -108,6 +108,8 @@ class PrioritiesApi {
 
   /// View Priority
   ///
+  ///int id  (required):
+  ///     Priority id
   /// 
   Future<Priority> apiV3PrioritiesIdGet(int id) async {
     Response response = await apiV3PrioritiesIdGetWithHttpInfo(id);

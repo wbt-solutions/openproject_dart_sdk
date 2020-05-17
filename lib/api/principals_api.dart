@@ -53,6 +53,8 @@ class PrincipalsApi {
 
   /// List principals
   ///
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
   /// List all principals. The client can choose to filter the principals similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain principals who are members in projects the client is allowed to see.
   Future apiV3PrincipalsGet({ String filters }) async {
     Response response = await apiV3PrincipalsGetWithHttpInfo( filters: filters );

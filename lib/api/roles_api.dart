@@ -107,6 +107,8 @@ class RolesApi {
 
   /// View role
   ///
+  ///int id  (required):
+  ///     role id
   /// Fetch an individual role.
   Future apiV3RolesIdGet(int id) async {
     Response response = await apiV3RolesIdGetWithHttpInfo(id);

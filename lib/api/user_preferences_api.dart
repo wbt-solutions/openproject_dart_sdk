@@ -105,6 +105,8 @@ class UserPreferencesApi {
 
   /// Update UserPreferences
   ///
+  ///InlineObject4 body :
+  ///    
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
   Future apiV3MyPreferencesPatch({ InlineObject4 body }) async {
     Response response = await apiV3MyPreferencesPatchWithHttpInfo( body: body );

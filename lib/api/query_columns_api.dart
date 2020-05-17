@@ -53,6 +53,8 @@ class QueryColumnsApi {
 
   /// View Query Column
   ///
+  ///String id  (required):
+  ///     QueryColumn id
   /// Retreive an individual QueryColumn as identified by the &#x60;id&#x60; parameter.
   Future apiV3QueriesColumnsIdGet(String id) async {
     Response response = await apiV3QueriesColumnsIdGetWithHttpInfo(id);

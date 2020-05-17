@@ -108,6 +108,8 @@ class StatusesApi {
 
   /// View Status
   ///
+  ///int id  (required):
+  ///     status id
   /// 
   Future<Status> apiV3StatusesIdGet(int id) async {
     Response response = await apiV3StatusesIdGetWithHttpInfo(id);

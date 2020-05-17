@@ -53,6 +53,8 @@ class ActivitiesApi {
 
   /// View activity
   ///
+  ///int id  (required):
+  ///     Activity id
   /// 
   Future<Activity> apiV3ActivitiesIdGet(int id) async {
     Response response = await apiV3ActivitiesIdGetWithHttpInfo(id);
@@ -111,6 +113,10 @@ class ActivitiesApi {
 
   /// Update activity
   ///
+  ///int id  (required):
+  ///     Activity id
+  ///InlineObject body :
+  ///    
   /// Updates an activity&#39;s comment and, on success, returns the updated activity.
   Future apiV3ActivitiesIdPatch(int id, { InlineObject body }) async {
     Response response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  body: body );

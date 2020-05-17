@@ -62,6 +62,14 @@ class NewsApi {
 
   /// list news
   ///
+  ///int offset :
+  ///     Page number inside the requested collection.
+  ///int pageSize :
+  ///     Number of elements to display per page.
+  ///String sortBy :
+  ///     JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
   /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
   Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, String filters }) async {
     Response response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters );
@@ -120,6 +128,8 @@ class NewsApi {
 
   /// view news
   ///
+  ///int id  (required):
+  ///     news id
   /// 
   Future<News> apiV3NewsIdGet(int id) async {
     Response response = await apiV3NewsIdGetWithHttpInfo(id);

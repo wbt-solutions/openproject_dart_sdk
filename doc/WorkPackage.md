@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **description** | [**Description**](Description.md) |  | [optional] [default to null]
 **startDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **dueDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
+**date** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **estimatedTime** | **String** |  | [optional] [default to null]

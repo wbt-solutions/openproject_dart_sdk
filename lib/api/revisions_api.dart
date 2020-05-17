@@ -53,6 +53,8 @@ class RevisionsApi {
 
   /// View revision
   ///
+  ///int id  (required):
+  ///     Revision id
   /// 
   Future apiV3RevisionsIdGet(int id) async {
     Response response = await apiV3RevisionsIdGetWithHttpInfo(id);

@@ -107,6 +107,8 @@ class HelpTextsApi {
 
   /// View help text
   ///
+  ///int id  (required):
+  ///     Help text id
   /// 
   Future apiV3HelpTextsIdGet(int id) async {
     Response response = await apiV3HelpTextsIdGetWithHttpInfo(id);

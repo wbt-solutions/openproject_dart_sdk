@@ -59,6 +59,12 @@ class TimeEntriesApi {
 
   /// List Time entries
   ///
+  ///int offset :
+  ///     Page number inside the requested collection.
+  ///int pageSize :
+  ///     Number of elements to display per page.
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
   /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
   Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
     Response response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
@@ -117,6 +123,8 @@ class TimeEntriesApi {
 
   /// View time entry
   ///
+  ///int id  (required):
+  ///     time entry id
   /// 
   Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
     Response response = await apiV3TimeEntriesIdGetWithHttpInfo(id);

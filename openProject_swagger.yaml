@@ -9401,10 +9401,13 @@ definitions:
         $ref: "#/definitions/Description"
       startDate:
         type: "string"
-        format: "date-time"
+        format: "date"
       dueDate:
         type: "string"
-        format: "date-time"
+        format: "date"
+      date:
+        type: "string"
+        format: "date"
       createdAt:
         type: "string"
         format: "date-time"

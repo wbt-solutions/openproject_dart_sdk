@@ -107,6 +107,8 @@ class PreviewingApi {
 
   /// Preview Textile document
   ///
+  ///String context :
+  ///     API-Link to the context in which the rendering occurs, for example a specific work package.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing work package
   /// 
   Future apiV3RenderTextilePost({ String context }) async {
     Response response = await apiV3RenderTextilePostWithHttpInfo( context: context );

@@ -53,6 +53,8 @@ class WorkPackagesApi {
 
   /// Work Package Create Form
   ///
+  ///int id  (required):
+  ///     ID of the project in which the work package will be created
   /// 
   Future apiV3ProjectsIdWorkPackagesFormPost(int id) async {
     Response response = await apiV3ProjectsIdWorkPackagesFormPostWithHttpInfo(id);
@@ -128,6 +130,20 @@ class WorkPackagesApi {
 
   /// List Work Packages
   ///
+  ///int id  (required):
+  ///     Project id
+  ///int offset :
+  ///     Page number inside the requested collection.
+  ///int pageSize :
+  ///     Number of elements to display per page.
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+  ///String sortBy :
+  ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+  ///String groupBy :
+  ///     The column to group by.
+  ///bool showSums :
+  ///     Indicates whether properties should be summed up if they support it.
   /// 
   Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     Response response = await apiV3ProjectsIdWorkPackagesGetWithHttpInfo(id,  offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, groupBy: groupBy, showSums: showSums );
@@ -192,6 +208,12 @@ class WorkPackagesApi {
 
   /// Create Work Package
   ///
+  ///int id  (required):
+  ///     Project id
+  ///WorkPackage workPackage  (required):
+  ///     Work package to add to the project
+  ///bool notify :
+  ///     Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
   Future<WorkPackage> apiV3ProjectsIdWorkPackagesPost(int id, WorkPackage workPackage, { bool notify }) async {
     Response response = await apiV3ProjectsIdWorkPackagesPostWithHttpInfo(id, workPackage,  notify: notify );
@@ -250,6 +272,8 @@ class WorkPackagesApi {
 
   /// Available assignees
   ///
+  ///int projectId  (required):
+  ///     Project id
   /// Gets a list of users that can be assigned to work packages in the given project.
   Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(projectId);
@@ -308,6 +332,8 @@ class WorkPackagesApi {
 
   /// Available responsibles
   ///
+  ///int projectId  (required):
+  ///     Project id
   /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
   Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(int projectId) async {
     Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(projectId);
@@ -435,6 +461,18 @@ class WorkPackagesApi {
 
   /// List Work Packages
   ///
+  ///int offset :
+  ///     Page number inside the requested collection.
+  ///int pageSize :
+  ///     Number of elements to display per page.
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+  ///String sortBy :
+  ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+  ///String groupBy :
+  ///     The column to group by.
+  ///bool showSums :
+  ///     Indicates whether properties should be summed up if they support it.
   /// 
   Future<WorkPackages> apiV3WorkPackagesGet({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     Response response = await apiV3WorkPackagesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, groupBy: groupBy, showSums: showSums );
@@ -493,6 +531,8 @@ class WorkPackagesApi {
 
   /// List work package activities
   ///
+  ///int id  (required):
+  ///     Work package id
   /// 
   Future apiV3WorkPackagesIdActivitiesGet(int id) async {
     Response response = await apiV3WorkPackagesIdActivitiesGetWithHttpInfo(id);
@@ -553,6 +593,12 @@ class WorkPackagesApi {
 
   /// Comment work package
   ///
+  ///int id  (required):
+  ///     Work package id
+  ///bool notify :
+  ///     Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+  ///InlineObject8 body :
+  ///    
   /// Creates an activity for the selected work package and, on success, returns the updated activity.
   Future apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, InlineObject8 body }) async {
     Response response = await apiV3WorkPackagesIdActivitiesPostWithHttpInfo(id,  notify: notify, body: body );
@@ -610,6 +656,8 @@ class WorkPackagesApi {
 
   /// Available projects
   ///
+  ///int id  (required):
+  ///     work package id
   /// Gets a list of projects that are available as projects to which the work package can be moved.
   Future apiV3WorkPackagesIdAvailableProjectsGet(int id) async {
     Response response = await apiV3WorkPackagesIdAvailableProjectsGetWithHttpInfo(id);
@@ -679,6 +727,16 @@ class WorkPackagesApi {
 
   /// Available relation candidates
   ///
+  ///int id  (required):
+  ///     ID of workpackage to return
+  ///int pageSize :
+  ///     Maximum number of candidates to list (default 10)
+  ///String filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+  ///String query :
+  ///     Shortcut for filtering by ID or subject
+  ///String type :
+  ///     Type of relation to find candidates for (default \"relates\")
   /// 
   Future apiV3WorkPackagesIdAvailableRelationCandidatesGet(int id, { int pageSize, String filters, String query, String type }) async {
     Response response = await apiV3WorkPackagesIdAvailableRelationCandidatesGetWithHttpInfo(id,  pageSize: pageSize, filters: filters, query: query, type: type );
@@ -736,6 +794,8 @@ class WorkPackagesApi {
 
   /// Available watchers
   ///
+  ///int id  (required):
+  ///     work package id
   /// Gets a list of users that are able to be watchers of the specified work package.
   Future apiV3WorkPackagesIdAvailableWatchersGet(int id) async {
     Response response = await apiV3WorkPackagesIdAvailableWatchersGetWithHttpInfo(id);
@@ -793,6 +853,8 @@ class WorkPackagesApi {
 
   /// Delete Work Package
   ///
+  ///int id  (required):
+  ///     Work package id
   /// Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
   Future apiV3WorkPackagesIdDelete(int id) async {
     Response response = await apiV3WorkPackagesIdDeleteWithHttpInfo(id);
@@ -850,6 +912,8 @@ class WorkPackagesApi {
 
   /// Work Package Edit Form
   ///
+  ///int id  (required):
+  ///     ID of the work package being modified
   /// 
   Future apiV3WorkPackagesIdFormPost(int id) async {
     Response response = await apiV3WorkPackagesIdFormPostWithHttpInfo(id);
@@ -907,6 +971,8 @@ class WorkPackagesApi {
 
   /// View Work Package
   ///
+  ///int id  (required):
+  ///     Work package id
   /// 
   Future<WorkPackage> apiV3WorkPackagesIdGet(int id) async {
     Response response = await apiV3WorkPackagesIdGetWithHttpInfo(id);
@@ -968,6 +1034,12 @@ class WorkPackagesApi {
 
   /// Edit Work Package
   ///
+  ///int id  (required):
+  ///     Work package id
+  ///bool notify :
+  ///     Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+  ///WorkPackage body :
+  ///    
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of &#x60;lockVersion&#x60; which was received by the &#x60;GET&#x60; request this change originates from.  The value of &#x60;lockVersion&#x60; is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
   Future<WorkPackage> apiV3WorkPackagesIdPatch(int id, { bool notify, WorkPackage body }) async {
     Response response = await apiV3WorkPackagesIdPatchWithHttpInfo(id,  notify: notify, body: body );
@@ -1026,6 +1098,8 @@ class WorkPackagesApi {
 
   /// Relation create form
   ///
+  ///int id  (required):
+  ///     ID of the relation being modified
   /// 
   Future apiV3WorkPackagesIdRelationsFormPost(int id) async {
     Response response = await apiV3WorkPackagesIdRelationsFormPostWithHttpInfo(id);
@@ -1083,6 +1157,8 @@ class WorkPackagesApi {
 
   /// Revisions
   ///
+  ///int id  (required):
+  ///     work package id
   /// Gets a list of revisions that are linked to this work package, e.g., because it is referenced in the commit message of the revision. Only linked revisions from repositories are shown if the user has the view changesets permission in the defining project.
   Future apiV3WorkPackagesIdRevisionsGet(int id) async {
     Response response = await apiV3WorkPackagesIdRevisionsGetWithHttpInfo(id);
@@ -1143,6 +1219,10 @@ class WorkPackagesApi {
 
   /// Create Work Package
   ///
+  ///WorkPackage workPackage  (required):
+  ///     Work package to add (a project link ist requried)
+  ///bool notify :
+  ///     Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
   Future<WorkPackage> apiV3WorkPackagesPost(WorkPackage workPackage, { bool notify }) async {
     Response response = await apiV3WorkPackagesPostWithHttpInfo(workPackage,  notify: notify );
@@ -1202,6 +1282,8 @@ class WorkPackagesApi {
 
   /// List Work Package Schemas
   ///
+  ///String filters  (required):
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
   /// List work package schemas.
   Future apiV3WorkPackagesSchemasGet(String filters) async {
     Response response = await apiV3WorkPackagesSchemasGetWithHttpInfo(filters);
@@ -1259,6 +1341,8 @@ class WorkPackagesApi {
 
   /// View Work Package Schema
   ///
+  ///String identifier  (required):
+  ///     Identifier of the schema
   /// 
   Future apiV3WorkPackagesSchemasIdentifierGet(String identifier) async {
     Response response = await apiV3WorkPackagesSchemasIdentifierGetWithHttpInfo(identifier);
@@ -1316,6 +1400,8 @@ class WorkPackagesApi {
 
   /// List relations
   ///
+  ///int workPackageId  (required):
+  ///     Work package id
   /// Lists all relations this work package is involved in.
   Future apiV3WorkPackagesWorkPackageIdRelationsGet(int workPackageId) async {
     Response response = await apiV3WorkPackagesWorkPackageIdRelationsGetWithHttpInfo(workPackageId);
@@ -1373,6 +1459,8 @@ class WorkPackagesApi {
 
   /// Create Relation
   ///
+  ///int workPackageId  (required):
+  ///     Work package id
   /// When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a Relation can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
   Future apiV3WorkPackagesWorkPackageIdRelationsPost(int workPackageId) async {
     Response response = await apiV3WorkPackagesWorkPackageIdRelationsPostWithHttpInfo(workPackageId);
@@ -1430,6 +1518,8 @@ class WorkPackagesApi {
 
   /// List watchers
   ///
+  ///int workPackageId  (required):
+  ///     Work package id
   /// 
   Future apiV3WorkPackagesWorkPackageIdWatchersGet(int workPackageId) async {
     Response response = await apiV3WorkPackagesWorkPackageIdWatchersGetWithHttpInfo(workPackageId);
@@ -1490,6 +1580,10 @@ class WorkPackagesApi {
 
   /// Remove watcher
   ///
+  ///int workPackageId  (required):
+  ///     Work package id
+  ///int id  (required):
+  ///     User id
   /// Removes the specified user from the list of watchers for the given work package.  If the request succeeds, the specified user is not watching the work package anymore.  *Note: This might also be the case, if the specified user did not watch the work package prior to the request.*
   Future apiV3WorkPackagesWorkPackageIdWatchersIdDelete(int workPackageId, int id) async {
     Response response = await apiV3WorkPackagesWorkPackageIdWatchersIdDeleteWithHttpInfo(workPackageId, id);
@@ -1547,6 +1641,10 @@ class WorkPackagesApi {
 
   /// Add watcher
   ///
+  ///int workPackageId  (required):
+  ///     Work package id
+  ///InlineObject7 body :
+  ///    
   /// Adds a watcher to the specified work package.  The request is expected to contain a single JSON object, that contains a link object under the &#x60;user&#x60; key.  The response will be user added as watcher. In case the user was already watching the work package an &#x60;HTTP 200&#x60; is returned, an &#x60;HTTP 201&#x60; if the user was added as a new watcher.
   Future apiV3WorkPackagesWorkPackageIdWatchersPost(int workPackageId, { InlineObject7 body }) async {
     Response response = await apiV3WorkPackagesWorkPackageIdWatchersPostWithHttpInfo(workPackageId,  body: body );

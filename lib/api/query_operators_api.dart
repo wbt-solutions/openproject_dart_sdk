@@ -53,6 +53,8 @@ class QueryOperatorsApi {
 
   /// View Query Operator
   ///
+  ///String id  (required):
+  ///     QueryOperator id
   /// Retreive an individual QueryOperator as identified by the &#x60;id&#x60; parameter.
   Future apiV3QueriesOperatorsIdGet(String id) async {
     Response response = await apiV3QueriesOperatorsIdGetWithHttpInfo(id);

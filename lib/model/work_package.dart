@@ -16,6 +16,8 @@ class WorkPackage {
   
   DateTime dueDate = null;
   
+  DateTime date = null;
+  
   DateTime createdAt = null;
   
   DateTime updatedAt = null;
@@ -29,7 +31,7 @@ class WorkPackage {
 
   @override
   String toString() {
-    return 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links, ]';
+    return 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, date=$date, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links, ]';
   }
 
   WorkPackage.fromJson(Map<String, dynamic> json) {
@@ -47,6 +49,9 @@ class WorkPackage {
     dueDate = (json['dueDate'] == null) ?
       null :
       DateTime.parse(json['dueDate']);
+    date = (json['date'] == null) ?
+      null :
+      DateTime.parse(json['date']);
     createdAt = (json['createdAt'] == null) ?
       null :
       DateTime.parse(json['createdAt']);
@@ -78,6 +83,8 @@ class WorkPackage {
       json['startDate'] = startDate == null ? null : startDate.toUtc().toIso8601String();
     if (dueDate != null)
       json['dueDate'] = dueDate == null ? null : dueDate.toUtc().toIso8601String();
+    if (date != null)
+      json['date'] = date == null ? null : date.toUtc().toIso8601String();
     if (createdAt != null)
       json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
     if (updatedAt != null)

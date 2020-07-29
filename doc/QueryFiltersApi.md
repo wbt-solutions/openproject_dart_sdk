@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| QueryFilter identifier. | [default to null]
+ **id** | **String**| QueryFilter identifier. | 
 
 ### Return type
 

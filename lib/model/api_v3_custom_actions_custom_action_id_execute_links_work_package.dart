@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   
-  String href = null;
-  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage();
+  String href;
+
+  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage({
+    this.href,
+  });
 
   @override
   String toString() {
@@ -16,7 +19,7 @@ class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (href != null)
       json['href'] = href;
     return json;
@@ -27,7 +30,7 @@ class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   }
 
   static Map<String, ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>();
+    final map = Map<String, ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value));
     }
@@ -36,13 +39,13 @@ class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
 
   // maps a json object with a list of ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage-objects as value to a dart map
   static Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

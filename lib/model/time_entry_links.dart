@@ -1,17 +1,24 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntryLinks {
-  
-  Link self = null;
-  
-  Link project = null;
-  
-  Link workPackage = null;
-  
-  Link user = null;
-  
-  Link activity = null;
-  TimeEntryLinks();
+
+  Link self;
+
+  Link project;
+
+  Link workPackage;
+
+  Link user;
+
+  Link activity;
+
+  TimeEntryLinks({
+    this.self,
+    this.project,
+    this.workPackage,
+    this.user,
+    this.activity,
+  });
 
   @override
   String toString() {
@@ -38,7 +45,7 @@ class TimeEntryLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (project != null)
@@ -57,7 +64,7 @@ class TimeEntryLinks {
   }
 
   static Map<String, TimeEntryLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, TimeEntryLinks>();
+    final map = Map<String, TimeEntryLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = TimeEntryLinks.fromJson(value));
     }
@@ -66,13 +73,13 @@ class TimeEntryLinks {
 
   // maps a json object with a list of TimeEntryLinks-objects as value to a dart map
   static Map<String, List<TimeEntryLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<TimeEntryLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = TimeEntryLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<TimeEntryLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = TimeEntryLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

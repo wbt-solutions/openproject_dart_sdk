@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **int**| ID of the project whoose types will be listed | [default to null]
+ **projectId** | **int**| ID of the project whoose types will be listed | 
 
 ### Return type
 
@@ -127,7 +127,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| type id | [default to null]
+ **id** | **int**| type id | 
 
 ### Return type
 

@@ -69,7 +69,7 @@ class VersionsApi {
 
   /// List versions with HTTP info returned
   ///
-  /// Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+  /// Returns a collection of versions. The client can choose to filter the versions similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
   Future<Response> apiV3VersionsGetWithHttpInfo({ String filters }) async {
     Object postBody;
 
@@ -115,7 +115,7 @@ class VersionsApi {
   ///
   ///String filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
-  /// Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+  /// Returns a collection of versions. The client can choose to filter the versions similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
   Future<Versions> apiV3VersionsGet({ String filters }) async {
     Response response = await apiV3VersionsGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
@@ -129,7 +129,7 @@ class VersionsApi {
 
   /// View version with HTTP info returned
   ///
-  /// 
+  ///
   Future<Response> apiV3VersionsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -175,7 +175,7 @@ class VersionsApi {
   ///
   ///int id  (required):
   ///     version id
-  /// 
+  ///
   Future<Version> apiV3VersionsIdGet(int id) async {
     Response response = await apiV3VersionsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

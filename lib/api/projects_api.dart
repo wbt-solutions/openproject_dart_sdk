@@ -79,7 +79,7 @@ class ProjectsApi {
 
   /// List projects with HTTP info returned
   ///
-  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how WorkPackages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
   Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters, String sortBy }) async {
     Object postBody;
 
@@ -130,7 +130,7 @@ class ProjectsApi {
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///String sortBy :
   ///     JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how WorkPackages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
   Future<Projects> apiV3ProjectsGet({ String filters, String sortBy }) async {
     Response response = await apiV3ProjectsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
@@ -203,7 +203,7 @@ class ProjectsApi {
 
   /// View project with HTTP info returned
   ///
-  /// 
+  ///
   Future<Response> apiV3ProjectsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -249,7 +249,7 @@ class ProjectsApi {
   ///
   ///int id  (required):
   ///     Project id
-  /// 
+  ///
   Future<Project> apiV3ProjectsIdGet(int id) async {
     Response response = await apiV3ProjectsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

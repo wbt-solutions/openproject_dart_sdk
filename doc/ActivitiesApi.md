@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Activity id | [default to null]
+ **id** | **int**| Activity id | 
 
 ### Return type
 
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Activity id | [default to null]
+ **id** | **int**| Activity id | 
  **body** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
 ### Return type

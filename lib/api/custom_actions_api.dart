@@ -9,7 +9,7 @@ class CustomActionsApi {
 
   /// Execute custom action with HTTP info returned
   ///
-  /// A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package&#39;s current lockVersion.
+  /// A POST to this end point executes the custom action on the WorkPackage provided in the payload. The altered WorkPackage will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the WorkPackage&#39;s current lockVersion.
   Future apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(int customActionId, { InlineObject1 body }) async {
     Object postBody = body;
 
@@ -56,8 +56,8 @@ class CustomActionsApi {
   ///int customActionId  (required):
   ///     The id of the custom action to execute
   ///InlineObject1 body :
-  ///    
-  /// A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package&#39;s current lockVersion.
+  ///
+  /// A POST to this end point executes the custom action on the WorkPackage provided in the payload. The altered WorkPackage will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the WorkPackage&#39;s current lockVersion.
   Future apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject1 body }) async {
     Response response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  body: body );
     if(response.statusCode >= 400) {
@@ -70,7 +70,7 @@ class CustomActionsApi {
 
   /// View custom action with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3CustomActionsCustomActionIdGetWithHttpInfo(int customActionId) async {
     Object postBody;
 
@@ -116,7 +116,7 @@ class CustomActionsApi {
   ///
   ///int customActionId  (required):
   ///     The id of the custom action to fetch
-  /// 
+  ///
   Future apiV3CustomActionsCustomActionIdGet(int customActionId) async {
     Response response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId);
     if(response.statusCode >= 400) {

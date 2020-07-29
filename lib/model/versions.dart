@@ -1,13 +1,18 @@
 part of openproject_dart_sdk.api;
 
 class Versions {
-  
-  int total = null;
-  
-  int count = null;
-  
-  VersionsEmbedded embedded = null;
-  Versions();
+
+  int total;
+
+  int count;
+
+  VersionsEmbedded embedded;
+
+  Versions({
+    this.total,
+    this.count,
+    this.embedded,
+  });
 
   @override
   String toString() {
@@ -24,7 +29,7 @@ class Versions {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (total != null)
       json['total'] = total;
     if (count != null)
@@ -39,7 +44,7 @@ class Versions {
   }
 
   static Map<String, Versions> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Versions>();
+    final map = Map<String, Versions>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Versions.fromJson(value));
     }
@@ -48,13 +53,13 @@ class Versions {
 
   // maps a json object with a list of Versions-objects as value to a dart map
   static Map<String, List<Versions>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Versions>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Versions.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Versions>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Versions.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

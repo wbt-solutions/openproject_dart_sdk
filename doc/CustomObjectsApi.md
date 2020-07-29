@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The custom object&#39;s identifier | [default to null]
+ **id** | **int**| The custom object&#39;s identifier | 
 
 ### Return type
 

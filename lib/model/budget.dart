@@ -2,12 +2,17 @@ part of openproject_dart_sdk.api;
 
 class Budget {
   
-  int id = null;
+  int id;
   
-  String subject = null;
+  String subject;
   
-  BudgetLinks links = null;
-  Budget();
+  BudgetLinks links;
+
+  Budget({
+    this.id,
+    this.subject,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -24,7 +29,7 @@ class Budget {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (subject != null)
@@ -39,7 +44,7 @@ class Budget {
   }
 
   static Map<String, Budget> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Budget>();
+    final map = Map<String, Budget>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Budget.fromJson(value));
     }
@@ -48,13 +53,13 @@ class Budget {
 
   // maps a json object with a list of Budget-objects as value to a dart map
   static Map<String, List<Budget>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Budget>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Budget.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Budget>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Budget.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

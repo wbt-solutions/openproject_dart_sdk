@@ -1,26 +1,36 @@
 part of openproject_dart_sdk.api;
 
 class Version {
-  
-  int id = null;
-  
-  String name = null;
-  
-  Description description = null;
-  
-  DateTime startDate = null;
-  
-  DateTime endDate = null;
-  
-  String status = null;
-  //enum statusEnum {  open,  };{
-  
-  DateTime createdAt = null;
-  
-  DateTime updatedAt = null;
-  
-  VersionLinks links = null;
-  Version();
+
+  int id;
+
+  String name;
+
+  Description description;
+
+  DateTime startDate;
+
+  DateTime endDate;
+
+  VersionStatusEnum status;
+
+  DateTime createdAt;
+
+  DateTime updatedAt;
+
+  VersionLinks links;
+
+  Version({
+    this.id,
+    this.name,
+    this.description,
+    this.startDate,
+    this.endDate,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -40,7 +50,7 @@ class Version {
     endDate = (json['endDate'] == null) ?
       null :
       DateTime.parse(json['endDate']);
-    status = json['status'];
+    status = VersionStatusEnum.fromJson(json['status']);
     createdAt = (json['createdAt'] == null) ?
       null :
       DateTime.parse(json['createdAt']);
@@ -53,7 +63,7 @@ class Version {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -61,11 +71,11 @@ class Version {
     if (description != null)
       json['description'] = description;
     if (startDate != null)
-      json['startDate'] = startDate == null ? null : startDate.toUtc().toIso8601String();
+      json['startDate'] = startDate == null ? null : _dateFormatter.format(startDate.toUtc());
     if (endDate != null)
-      json['endDate'] = endDate == null ? null : endDate.toUtc().toIso8601String();
+      json['endDate'] = endDate == null ? null : _dateFormatter.format(endDate.toUtc());
     if (status != null)
-      json['status'] = status;
+      json['status'] = status.value;
     if (createdAt != null)
       json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
     if (updatedAt != null)
@@ -80,7 +90,7 @@ class Version {
   }
 
   static Map<String, Version> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Version>();
+    final map = Map<String, Version>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Version.fromJson(value));
     }
@@ -89,13 +99,55 @@ class Version {
 
   // maps a json object with a list of Version-objects as value to a dart map
   static Map<String, List<Version>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Version>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Version.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Version>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Version.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
+class VersionStatusEnum {
+  /// The underlying value of this enum member.
+  final String value;
+
+  const VersionStatusEnum._internal(this.value);
+
+  static const VersionStatusEnum open_ = VersionStatusEnum._internal("open");
+
+  String toJson () {
+    return value;
+  }
+
+  @override
+  String toString () {
+    return value;
+  }
+
+  static VersionStatusEnum fromJson(String value) {
+    return VersionStatusEnumTypeTransformer().decode(value);
+  }
+
+  static List<VersionStatusEnum> listFromJson(List<dynamic> json) {
+    return json == null
+      ? List<VersionStatusEnum>()
+      : json.map((value) => VersionStatusEnum.fromJson(value)).toList();
+  }
+}
+
+class VersionStatusEnumTypeTransformer {
+
+  dynamic encode(VersionStatusEnum data) {
+    return data.value;
+  }
+
+  VersionStatusEnum decode(dynamic data) {
+    switch (data) {
+      case "open": return VersionStatusEnum.open_;
+      default: return null;
+    }
+  }
+}
+
 

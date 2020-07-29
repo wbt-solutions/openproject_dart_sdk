@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| QueryOperator id | [default to null]
+ **id** | **String**| QueryOperator id | 
 
 ### Return type
 

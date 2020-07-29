@@ -1,25 +1,36 @@
 part of openproject_dart_sdk.api;
 
 class WPType {
-  
-  int id = null;
-  
-  String name = null;
-  
-  String color = null;
-  
-  int position = null;
-  
+
+  int id;
+
+  String name;
+
+  String color;
+
+  int position;
+
   bool isDefault = false;
-  
+
   bool isMilestone = false;
-  
-  DateTime createdAt = null;
-  
-  DateTime updatedAt = null;
-  
-  WPTypeLinks links = null;
-  WPType();
+
+  DateTime createdAt;
+
+  DateTime updatedAt;
+
+  WPTypeLinks links;
+
+  WPType({
+    this.id,
+    this.name,
+    this.color,
+    this.position,
+    this.isDefault = false,
+    this.isMilestone = false,
+    this.createdAt,
+    this.updatedAt,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -46,7 +57,7 @@ class WPType {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -73,7 +84,7 @@ class WPType {
   }
 
   static Map<String, WPType> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WPType>();
+    final map = Map<String, WPType>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WPType.fromJson(value));
     }
@@ -82,13 +93,13 @@ class WPType {
 
   // maps a json object with a list of WPType-objects as value to a dart map
   static Map<String, List<WPType>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WPType>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WPType.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WPType>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WPType.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

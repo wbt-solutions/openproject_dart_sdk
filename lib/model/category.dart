@@ -2,12 +2,17 @@ part of openproject_dart_sdk.api;
 
 class Category {
   
-  int id = null;
+  int id;
   
-  String name = null;
+  String name;
   
-  CategoryLinks links = null;
-  Category();
+  CategoryLinks links;
+
+  Category({
+    this.id,
+    this.name,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -24,7 +29,7 @@ class Category {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -39,7 +44,7 @@ class Category {
   }
 
   static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Category>();
+    final map = Map<String, Category>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Category.fromJson(value));
     }
@@ -48,13 +53,13 @@ class Category {
 
   // maps a json object with a list of Category-objects as value to a dart map
   static Map<String, List<Category>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Category>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Category.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Category>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Category.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -1,33 +1,48 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackage {
-  
-  int id = null;
-  
-  int lockVersion = null;
-  
-  int percentageDone = null;
-  
-  String subject = null;
-  
-  Description description = null;
-  
-  DateTime startDate = null;
-  
-  DateTime dueDate = null;
-  
-  DateTime date = null;
-  
-  DateTime createdAt = null;
-  
-  DateTime updatedAt = null;
-  
-  String estimatedTime = null;
-  
-  WorkPackageEmbedded embedded = null;
-  
-  WorkPackageLinks links = null;
-  WorkPackage();
+
+  int id;
+
+  int lockVersion;
+
+  int percentageDone;
+
+  String subject;
+
+  Description description;
+
+  DateTime startDate;
+
+  DateTime dueDate;
+
+  DateTime date;
+
+  DateTime createdAt;
+
+  DateTime updatedAt;
+
+  String estimatedTime;
+
+  WorkPackageEmbedded embedded;
+
+  WorkPackageLinks links;
+
+  WorkPackage({
+    this.id,
+    this.lockVersion,
+    this.percentageDone,
+    this.subject,
+    this.description,
+    this.startDate,
+    this.dueDate,
+    this.date,
+    this.createdAt,
+    this.updatedAt,
+    this.estimatedTime,
+    this.embedded,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -68,7 +83,7 @@ class WorkPackage {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (lockVersion != null)
@@ -80,11 +95,11 @@ class WorkPackage {
     if (description != null)
       json['description'] = description;
     if (startDate != null)
-      json['startDate'] = startDate == null ? null : startDate.toUtc().toIso8601String();
+      json['startDate'] = startDate == null ? null : _dateFormatter.format(startDate.toUtc());
     if (dueDate != null)
-      json['dueDate'] = dueDate == null ? null : dueDate.toUtc().toIso8601String();
+      json['dueDate'] = dueDate == null ? null : _dateFormatter.format(dueDate.toUtc());
     if (date != null)
-      json['date'] = date == null ? null : date.toUtc().toIso8601String();
+      json['date'] = date == null ? null : _dateFormatter.format(date.toUtc());
     if (createdAt != null)
       json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
     if (updatedAt != null)
@@ -103,7 +118,7 @@ class WorkPackage {
   }
 
   static Map<String, WorkPackage> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkPackage>();
+    final map = Map<String, WorkPackage>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WorkPackage.fromJson(value));
     }
@@ -112,13 +127,13 @@ class WorkPackage {
 
   // maps a json object with a list of WorkPackage-objects as value to a dart map
   static Map<String, List<WorkPackage>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WorkPackage>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WorkPackage.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WorkPackage>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WorkPackage.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Id of the project. | [default to null]
+ **id** | **int**| Id of the project. | 
 
 ### Return type
 
@@ -128,7 +128,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **String**| QueryFilterInstanceSchema identifier. The identifier is the filter identifier. | [default to null]
+ **identifier** | **String**| QueryFilterInstanceSchema identifier. The identifier is the filter identifier. | 
 
 ### Return type
 

@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **value** | **String**| The string value being resolved | [default to null]
+ **value** | **String**| The string value being resolved | 
 
 ### Return type
 

@@ -1,11 +1,11 @@
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for Work Package Patch
+// tests for WorkPackagePatch
 void main() {
     var instance = new WorkPackagePatch();
 
-  group('test Work Package Patch', () {
+  group('test WorkPackagePatch', () {
     // int lockVersion (default value: null)
     test('to test the property `lockVersion`', () async {
       // TODO
@@ -41,7 +41,7 @@ void main() {
       // TODO
     });
 
-    // Work Package Links links (default value: null)
+    // WorkPackageLinks links (default value: null)
     test('to test the property `links`', () async {
       // TODO
     });

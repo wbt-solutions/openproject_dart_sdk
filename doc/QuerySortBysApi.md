@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| QuerySortBy identifier. The identifier is a combination of the column identifier and the direction. | [default to null]
+ **id** | **String**| QuerySortBy identifier. The identifier is a combination of the column identifier and the direction. | 
 
 ### Return type
 

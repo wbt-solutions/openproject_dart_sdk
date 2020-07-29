@@ -7,9 +7,9 @@ class TimeEntryActivitiesApi {
 
   TimeEntryActivitiesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View time entries activity with HTTP info returned
+  /// View TimeEntries activity with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3TimeEntriesActivityIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -51,11 +51,11 @@ class TimeEntryActivitiesApi {
     return response;
   }
 
-  /// View time entries activity
+  /// View TimeEntries activity
   ///
   ///int id  (required):
-  ///     time entries activity id
-  /// 
+  ///     TimeEntries activity id
+  ///
   Future apiV3TimeEntriesActivityIdGet(int id) async {
     Response response = await apiV3TimeEntriesActivityIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

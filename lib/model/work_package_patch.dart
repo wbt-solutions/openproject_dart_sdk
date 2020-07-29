@@ -1,23 +1,33 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackagePatch {
-  
-  int lockVersion = null;
-  
-  int percentageDone = null;
-  
-  String subject = null;
-  
-  Description description = null;
-  
-  DateTime startDate = null;
-  
-  DateTime dueDate = null;
-  
-  String estimatedTime = null;
-  
-  WorkPackageLinks links = null;
-  WorkPackagePatch();
+
+  int lockVersion;
+
+  int percentageDone;
+
+  String subject;
+
+  Description description;
+
+  DateTime startDate;
+
+  DateTime dueDate;
+
+  String estimatedTime;
+
+  WorkPackageLinks links;
+
+  WorkPackagePatch({
+    this.lockVersion,
+    this.percentageDone,
+    this.subject,
+    this.description,
+    this.startDate,
+    this.dueDate,
+    this.estimatedTime,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -45,7 +55,7 @@ class WorkPackagePatch {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (lockVersion != null)
       json['lockVersion'] = lockVersion;
     if (percentageDone != null)
@@ -70,7 +80,7 @@ class WorkPackagePatch {
   }
 
   static Map<String, WorkPackagePatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkPackagePatch>();
+    final map = Map<String, WorkPackagePatch>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WorkPackagePatch.fromJson(value));
     }
@@ -79,13 +89,13 @@ class WorkPackagePatch {
 
   // maps a json object with a list of WorkPackagePatch-objects as value to a dart map
   static Map<String, List<WorkPackagePatch>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WorkPackagePatch>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WorkPackagePatch.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WorkPackagePatch>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WorkPackagePatch.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

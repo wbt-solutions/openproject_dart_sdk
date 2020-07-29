@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Budget id | [default to null]
+ **id** | **int**| Budget id | 
 
 ### Return type
 

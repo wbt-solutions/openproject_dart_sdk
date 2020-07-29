@@ -2,10 +2,14 @@ part of openproject_dart_sdk.api;
 
 class NewsEmbedded {
   
-  Project project = null;
+  Project project;
   
-  User author = null;
-  NewsEmbedded();
+  User author;
+
+  NewsEmbedded({
+    this.project,
+    this.author,
+  });
 
   @override
   String toString() {
@@ -23,7 +27,7 @@ class NewsEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (project != null)
       json['project'] = project;
     if (author != null)
@@ -36,7 +40,7 @@ class NewsEmbedded {
   }
 
   static Map<String, NewsEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, NewsEmbedded>();
+    final map = Map<String, NewsEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = NewsEmbedded.fromJson(value));
     }
@@ -45,13 +49,13 @@ class NewsEmbedded {
 
   // maps a json object with a list of NewsEmbedded-objects as value to a dart map
   static Map<String, List<NewsEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<NewsEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = NewsEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<NewsEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = NewsEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

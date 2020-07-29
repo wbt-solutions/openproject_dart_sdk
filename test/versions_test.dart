@@ -16,7 +16,7 @@ void main() {
       // TODO
     });
 
-    // Versions embedded embedded (default value: null)
+    // VersionsEmbedded embedded (default value: null)
     test('to test the property `embedded`', () async {
       // TODO
     });

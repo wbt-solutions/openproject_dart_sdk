@@ -6,7 +6,7 @@ void main() {
     var instance = new TimeEntriesEmbedded();
 
   group('test TimeEntriesEmbedded', () {
-    // List<Time entry> elements (default value: [])
+    // List<TimeEntry> elements (default value: [])
     test('to test the property `elements`', () async {
       // TODO
     });

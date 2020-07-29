@@ -2,24 +2,35 @@ part of openproject_dart_sdk.api;
 
 class RootLinks {
   
-  Link configuration = null;
+  Link configuration;
   
-  Link user = null;
+  Link user;
   
-  Link userPreferences = null;
+  Link userPreferences;
   
-  Link priorities = null;
+  Link priorities;
   
-  Link relations = null;
+  Link relations;
   
-  Link statuses = null;
+  Link statuses;
   
-  Link types = null;
+  Link types;
   
-  Link workPackages = null;
+  Link workPackages;
   
-  Link users = null;
-  RootLinks();
+  Link users;
+
+  RootLinks({
+    this.configuration,
+    this.user,
+    this.userPreferences,
+    this.priorities,
+    this.relations,
+    this.statuses,
+    this.types,
+    this.workPackages,
+    this.users,
+  });
 
   @override
   String toString() {
@@ -58,7 +69,7 @@ class RootLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (configuration != null)
       json['configuration'] = configuration;
     if (user != null)
@@ -85,7 +96,7 @@ class RootLinks {
   }
 
   static Map<String, RootLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, RootLinks>();
+    final map = Map<String, RootLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = RootLinks.fromJson(value));
     }
@@ -94,13 +105,13 @@ class RootLinks {
 
   // maps a json object with a list of RootLinks-objects as value to a dart map
   static Map<String, List<RootLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<RootLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = RootLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<RootLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = RootLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -2,18 +2,26 @@ part of openproject_dart_sdk.api;
 
 class InlineObject5 {
   
-  String login = null;
+  String login;
   
-  String email = null;
+  String email;
   
-  String firstName = null;
+  String firstName;
   
-  String lastName = null;
+  String lastName;
   
-  bool admin = null;
+  bool admin;
   
-  String language = null;
-  InlineObject5();
+  String language;
+
+  InlineObject5({
+    this.login,
+    this.email,
+    this.firstName,
+    this.lastName,
+    this.admin,
+    this.language,
+  });
 
   @override
   String toString() {
@@ -31,7 +39,7 @@ class InlineObject5 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (login != null)
       json['login'] = login;
     if (email != null)
@@ -52,7 +60,7 @@ class InlineObject5 {
   }
 
   static Map<String, InlineObject5> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InlineObject5>();
+    final map = Map<String, InlineObject5>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = InlineObject5.fromJson(value));
     }
@@ -61,13 +69,13 @@ class InlineObject5 {
 
   // maps a json object with a list of InlineObject5-objects as value to a dart map
   static Map<String, List<InlineObject5>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<InlineObject5>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = InlineObject5.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<InlineObject5>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = InlineObject5.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class ApiV3CustomActionsCustomActionIdExecuteLinks {
   
-  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage workPackage = null;
-  ApiV3CustomActionsCustomActionIdExecuteLinks();
+  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage workPackage;
+
+  ApiV3CustomActionsCustomActionIdExecuteLinks({
+    this.workPackage,
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class ApiV3CustomActionsCustomActionIdExecuteLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (workPackage != null)
       json['workPackage'] = workPackage;
     return json;
@@ -29,7 +32,7 @@ class ApiV3CustomActionsCustomActionIdExecuteLinks {
   }
 
   static Map<String, ApiV3CustomActionsCustomActionIdExecuteLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ApiV3CustomActionsCustomActionIdExecuteLinks>();
+    final map = Map<String, ApiV3CustomActionsCustomActionIdExecuteLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(value));
     }
@@ -38,13 +41,13 @@ class ApiV3CustomActionsCustomActionIdExecuteLinks {
 
   // maps a json object with a list of ApiV3CustomActionsCustomActionIdExecuteLinks-objects as value to a dart map
   static Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = ApiV3CustomActionsCustomActionIdExecuteLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = ApiV3CustomActionsCustomActionIdExecuteLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

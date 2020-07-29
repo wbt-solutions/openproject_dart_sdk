@@ -8,15 +8,15 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
-**description** | [**Description**](Description.md) |  | [optional] [default to null]
-**startDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**endDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**status** | **String** |  | [optional] [default to null]
-**createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**links** | [**VersionLinks**](VersionLinks.md) |  | [optional] [default to null]
+**id** | **int** |  | [optional] 
+**name** | **String** |  | [optional] 
+**description** | [**Description**](Description.md) |  | [optional] 
+**startDate** | [**DateTime**](DateTime.md) |  | [optional] 
+**endDate** | [**DateTime**](DateTime.md) |  | [optional] 
+**status** | **String** |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**links** | [**VersionLinks**](VersionLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

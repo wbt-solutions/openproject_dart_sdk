@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| QueryColumn id | [default to null]
+ **id** | **String**| QueryColumn id | 
 
 ### Return type
 

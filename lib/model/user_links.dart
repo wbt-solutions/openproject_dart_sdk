@@ -2,16 +2,23 @@ part of openproject_dart_sdk.api;
 
 class UserLinks {
   
-  Link self = null;
+  Link self;
   
-  Link show_ = null;
+  Link show_;
   
-  Link lock = null;
+  Link lock;
   
-  Link updateImmediately = null;
+  Link updateImmediately;
   
-  Link delete = null;
-  UserLinks();
+  Link delete;
+
+  UserLinks({
+    this.self,
+    this.show_,
+    this.lock,
+    this.updateImmediately,
+    this.delete,
+  });
 
   @override
   String toString() {
@@ -38,7 +45,7 @@ class UserLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (show_ != null)
@@ -57,7 +64,7 @@ class UserLinks {
   }
 
   static Map<String, UserLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, UserLinks>();
+    final map = Map<String, UserLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = UserLinks.fromJson(value));
     }
@@ -66,13 +73,13 @@ class UserLinks {
 
   // maps a json object with a list of UserLinks-objects as value to a dart map
   static Map<String, List<UserLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<UserLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = UserLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<UserLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = UserLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

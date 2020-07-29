@@ -82,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| role id | [default to null]
+ **id** | **int**| role id | 
 
 ### Return type
 

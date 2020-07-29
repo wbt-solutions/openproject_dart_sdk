@@ -7,9 +7,9 @@ class TimeEntriesApi {
 
   TimeEntriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List Time entries with HTTP info returned
+  /// List TimeEntries with HTTP info returned
   ///
-  /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
+  /// Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
   Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, String filters }) async {
     Object postBody;
 
@@ -57,15 +57,15 @@ class TimeEntriesApi {
     return response;
   }
 
-  /// List Time entries
+  /// List TimeEntries
   ///
   ///int offset :
   ///     Page number inside the requested collection.
   ///int pageSize :
   ///     Number of elements to display per page.
   ///String filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
-  /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter TimeEntries by WorkPackage  + project: Filter TimeEntries by project  + user: Filter TimeEntries by users
+  /// Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
   Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
     Response response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
     if(response.statusCode >= 400) {
@@ -77,9 +77,9 @@ class TimeEntriesApi {
     }
   }
 
-  /// View time entry with HTTP info returned
+  /// View TimeEntry with HTTP info returned
   ///
-  /// 
+  ///
   Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -121,11 +121,11 @@ class TimeEntriesApi {
     return response;
   }
 
-  /// View time entry
+  /// View TimeEntry
   ///
   ///int id  (required):
-  ///     time entry id
-  /// 
+  ///     TimeEntry id
+  ///
   Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
     Response response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

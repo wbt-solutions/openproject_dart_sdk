@@ -8,17 +8,17 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
-**identifier** | **String** |  | [optional] [default to null]
-**active** | **bool** |  | [optional] [default to null]
-**status** | **String** |  | [optional] [default to null]
-**statusExplanation** | [**Description**](Description.md) |  | [optional] [default to null]
-**public** | **bool** |  | [optional] [default to null]
-**description** | [**Description**](Description.md) |  | [optional] [default to null]
-**createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**links** | [**ProjectLinks**](ProjectLinks.md) |  | [optional] [default to null]
+**id** | **int** |  | [optional] 
+**name** | **String** |  | [optional] 
+**identifier** | **String** |  | [optional] 
+**active** | **bool** |  | [optional] 
+**status** | **String** |  | [optional] 
+**statusExplanation** | [**Description**](Description.md) |  | [optional] 
+**public** | **bool** |  | [optional] 
+**description** | [**Description**](Description.md) |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**links** | [**ProjectLinks**](ProjectLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

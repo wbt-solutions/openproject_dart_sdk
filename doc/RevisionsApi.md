@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Revision id | [default to null]
+ **id** | **int**| Revision id | 
 
 ### Return type
 

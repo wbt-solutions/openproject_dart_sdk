@@ -2,12 +2,17 @@ part of openproject_dart_sdk.api;
 
 class InlineObject2 {
   
-  num lockVersion = null;
+  num lockVersion;
   
-  String type = null;
+  String type;
   
-  String subject = null;
-  InlineObject2();
+  String subject;
+
+  InlineObject2({
+    this.lockVersion,
+    this.type,
+    this.subject,
+  });
 
   @override
   String toString() {
@@ -22,7 +27,7 @@ class InlineObject2 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (lockVersion != null)
       json['lockVersion'] = lockVersion;
     if (type != null)
@@ -37,7 +42,7 @@ class InlineObject2 {
   }
 
   static Map<String, InlineObject2> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InlineObject2>();
+    final map = Map<String, InlineObject2>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = InlineObject2.fromJson(value));
     }
@@ -46,13 +51,13 @@ class InlineObject2 {
 
   // maps a json object with a list of InlineObject2-objects as value to a dart map
   static Map<String, List<InlineObject2>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<InlineObject2>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = InlineObject2.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<InlineObject2>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = InlineObject2.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

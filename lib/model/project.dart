@@ -2,29 +2,41 @@ part of openproject_dart_sdk.api;
 
 class Project {
   
-  int id = null;
+  int id;
   
-  String name = null;
+  String name;
   
-  String identifier = null;
+  String identifier;
   
-  bool active = null;
+  bool active;
   
-  String status = null;
-  //enum statusEnum {  on track,  at risk,  off track,  };{
+  ProjectStatusEnum status;
   
-  Description statusExplanation = null;
+  Description statusExplanation;
   
-  bool public = null;
+  bool public;
   
-  Description description = null;
+  Description description;
   
-  DateTime createdAt = null;
+  DateTime createdAt;
   
-  DateTime updatedAt = null;
+  DateTime updatedAt;
   
-  ProjectLinks links = null;
-  Project();
+  ProjectLinks links;
+
+  Project({
+    this.id,
+    this.name,
+    this.identifier,
+    this.active,
+    this.status,
+    this.statusExplanation,
+    this.public,
+    this.description,
+    this.createdAt,
+    this.updatedAt,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -37,7 +49,7 @@ class Project {
     name = json['name'];
     identifier = json['identifier'];
     active = json['active'];
-    status = json['status'];
+    status = ProjectStatusEnum.fromJson(json['status']);
     statusExplanation = (json['statusExplanation'] == null) ?
       null :
       Description.fromJson(json['statusExplanation']);
@@ -57,7 +69,7 @@ class Project {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -67,7 +79,7 @@ class Project {
     if (active != null)
       json['active'] = active;
     if (status != null)
-      json['status'] = status;
+      json['status'] = status.value;
     if (statusExplanation != null)
       json['statusExplanation'] = statusExplanation;
     if (public != null)
@@ -88,7 +100,7 @@ class Project {
   }
 
   static Map<String, Project> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Project>();
+    final map = Map<String, Project>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Project.fromJson(value));
     }
@@ -97,13 +109,59 @@ class Project {
 
   // maps a json object with a list of Project-objects as value to a dart map
   static Map<String, List<Project>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Project>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Project.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Project>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Project.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
+class ProjectStatusEnum {
+  /// The underlying value of this enum member.
+  final String value;
+
+  const ProjectStatusEnum._internal(this.value);
+
+  static const ProjectStatusEnum onTrack_ = ProjectStatusEnum._internal("on track");
+  static const ProjectStatusEnum atRisk_ = ProjectStatusEnum._internal("at risk");
+  static const ProjectStatusEnum offTrack_ = ProjectStatusEnum._internal("off track");
+
+  String toJson () {
+    return value;
+  }
+
+  @override
+  String toString () {
+    return value;
+  }
+
+  static ProjectStatusEnum fromJson(String value) {
+    return ProjectStatusEnumTypeTransformer().decode(value);
+  }
+
+  static List<ProjectStatusEnum> listFromJson(List<dynamic> json) {
+    return json == null
+      ? List<ProjectStatusEnum>()
+      : json.map((value) => ProjectStatusEnum.fromJson(value)).toList();
+  }
+}
+
+class ProjectStatusEnumTypeTransformer {
+
+  dynamic encode(ProjectStatusEnum data) {
+    return data.value;
+  }
+
+  ProjectStatusEnum decode(dynamic data) {
+    switch (data) {
+      case "on track": return ProjectStatusEnum.onTrack_;
+      case "at risk": return ProjectStatusEnum.atRisk_;
+      case "off track": return ProjectStatusEnum.offTrack_;
+      default: return null;
+    }
+  }
+}
+
 

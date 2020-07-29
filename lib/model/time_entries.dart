@@ -1,15 +1,21 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntries {
-  
-  int total = null;
-  
-  int count = null;
-  
-  TimeEntriesEmbedded embedded = null;
-  
-  TimeEntriesLinks links = null;
-  TimeEntries();
+
+  int total;
+
+  int count;
+
+  TimeEntriesEmbedded embedded;
+
+  TimeEntriesLinks links;
+
+  TimeEntries({
+    this.total,
+    this.count,
+    this.embedded,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -29,7 +35,7 @@ class TimeEntries {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (total != null)
       json['total'] = total;
     if (count != null)
@@ -46,7 +52,7 @@ class TimeEntries {
   }
 
   static Map<String, TimeEntries> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, TimeEntries>();
+    final map = Map<String, TimeEntries>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = TimeEntries.fromJson(value));
     }
@@ -55,13 +61,13 @@ class TimeEntries {
 
   // maps a json object with a list of TimeEntries-objects as value to a dart map
   static Map<String, List<TimeEntries>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<TimeEntries>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = TimeEntries.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<TimeEntries>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = TimeEntries.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

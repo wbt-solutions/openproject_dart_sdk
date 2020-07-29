@@ -2,12 +2,17 @@ part of openproject_dart_sdk.api;
 
 class Root {
   
-  String instanceName = null;
+  String instanceName;
   
-  String coreVersion = null;
+  String coreVersion;
   
-  RootLinks links = null;
-  Root();
+  RootLinks links;
+
+  Root({
+    this.instanceName,
+    this.coreVersion,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -24,7 +29,7 @@ class Root {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (instanceName != null)
       json['instanceName'] = instanceName;
     if (coreVersion != null)
@@ -39,7 +44,7 @@ class Root {
   }
 
   static Map<String, Root> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Root>();
+    final map = Map<String, Root>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Root.fromJson(value));
     }
@@ -48,13 +53,13 @@ class Root {
 
   // maps a json object with a list of Root-objects as value to a dart map
   static Map<String, List<Root>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Root>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Root.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Root>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Root.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

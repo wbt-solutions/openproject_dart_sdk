@@ -1,15 +1,21 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackageEmbedded {
-  
-  WorkPackage parent = null;
-  
-  Project project = null;
-  
-  WPType type = null;
-  
-  Version version = null;
-  WorkPackageEmbedded();
+
+  WorkPackage parent;
+
+  Project project;
+
+  WPType type;
+
+  Version version;
+
+  WorkPackageEmbedded({
+    this.parent,
+    this.project,
+    this.type,
+    this.version,
+  });
 
   @override
   String toString() {
@@ -33,7 +39,7 @@ class WorkPackageEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (parent != null)
       json['parent'] = parent;
     if (project != null)
@@ -50,7 +56,7 @@ class WorkPackageEmbedded {
   }
 
   static Map<String, WorkPackageEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkPackageEmbedded>();
+    final map = Map<String, WorkPackageEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WorkPackageEmbedded.fromJson(value));
     }
@@ -59,13 +65,13 @@ class WorkPackageEmbedded {
 
   // maps a json object with a list of WorkPackageEmbedded-objects as value to a dart map
   static Map<String, List<WorkPackageEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WorkPackageEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WorkPackageEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WorkPackageEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WorkPackageEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

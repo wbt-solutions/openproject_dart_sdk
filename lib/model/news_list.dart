@@ -2,18 +2,26 @@ part of openproject_dart_sdk.api;
 
 class NewsList {
   
-  int total = null;
+  int total;
   
-  int count = null;
+  int count;
   
-  int pageSize = null;
+  int pageSize;
   
-  int offset = null;
+  int offset;
   
-  NewsListEmbedded embedded = null;
+  NewsListEmbedded embedded;
   
-  NewsListLinks links = null;
-  NewsList();
+  NewsListLinks links;
+
+  NewsList({
+    this.total,
+    this.count,
+    this.pageSize,
+    this.offset,
+    this.embedded,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -35,7 +43,7 @@ class NewsList {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (total != null)
       json['total'] = total;
     if (count != null)
@@ -56,7 +64,7 @@ class NewsList {
   }
 
   static Map<String, NewsList> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, NewsList>();
+    final map = Map<String, NewsList>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = NewsList.fromJson(value));
     }
@@ -65,13 +73,13 @@ class NewsList {
 
   // maps a json object with a list of NewsList-objects as value to a dart map
   static Map<String, List<NewsList>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<NewsList>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = NewsList.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<NewsList>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = NewsList.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

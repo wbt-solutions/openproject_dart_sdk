@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Priority id | [default to null]
+ **id** | **int**| Priority id | 
 
 ### Return type
 

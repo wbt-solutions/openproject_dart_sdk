@@ -1,9 +1,12 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackagesEmbedded {
-  
-  List<WorkPackage> elements = [];
-  WorkPackagesEmbedded();
+
+  List<WorkPackage> elements = const [];
+
+  WorkPackagesEmbedded({
+    this.elements = const [],
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class WorkPackagesEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (elements != null)
       json['elements'] = elements;
     return json;
@@ -29,7 +32,7 @@ class WorkPackagesEmbedded {
   }
 
   static Map<String, WorkPackagesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkPackagesEmbedded>();
+    final map = Map<String, WorkPackagesEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WorkPackagesEmbedded.fromJson(value));
     }
@@ -38,13 +41,13 @@ class WorkPackagesEmbedded {
 
   // maps a json object with a list of WorkPackagesEmbedded-objects as value to a dart map
   static Map<String, List<WorkPackagesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WorkPackagesEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WorkPackagesEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WorkPackagesEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WorkPackagesEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -2,14 +2,20 @@ part of openproject_dart_sdk.api;
 
 class Statuses {
   
-  int total = null;
+  int total;
   
-  int count = null;
+  int count;
   
-  StatusesEmbedded embedded = null;
+  StatusesEmbedded embedded;
   
-  StatusesLinks links = null;
-  Statuses();
+  StatusesLinks links;
+
+  Statuses({
+    this.total,
+    this.count,
+    this.embedded,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -29,7 +35,7 @@ class Statuses {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (total != null)
       json['total'] = total;
     if (count != null)
@@ -46,7 +52,7 @@ class Statuses {
   }
 
   static Map<String, Statuses> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Statuses>();
+    final map = Map<String, Statuses>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Statuses.fromJson(value));
     }
@@ -55,13 +61,13 @@ class Statuses {
 
   // maps a json object with a list of Statuses-objects as value to a dart map
   static Map<String, List<Statuses>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Statuses>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Statuses.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Statuses>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Statuses.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

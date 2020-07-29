@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| category id | [default to null]
+ **id** | **int**| category id | 
 
 ### Return type
 
@@ -84,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **int**| ID of the project whoose categories will be listed | [default to null]
+ **projectId** | **int**| ID of the project whoose categories will be listed | 
 
 ### Return type
 

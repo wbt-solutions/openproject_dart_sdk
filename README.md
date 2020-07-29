@@ -127,9 +127,9 @@ Class | Method | HTTP request | Description
 *StatusesApi* | [**apiV3StatusesGet**](doc\/StatusesApi.md#apiv3statusesget) | **GET** /api/v3/statuses | List all Statuses
 *StatusesApi* | [**apiV3StatusesIdGet**](doc\/StatusesApi.md#apiv3statusesidget) | **GET** /api/v3/statuses/{id} | View Status
 *StringObjectsApi* | [**apiV3StringObjectsGet**](doc\/StringObjectsApi.md#apiv3stringobjectsget) | **GET** /api/v3/string_objects | View String Object
-*TimeEntriesApi* | [**apiV3TimeEntriesGet**](doc\/TimeEntriesApi.md#apiv3timeentriesget) | **GET** /api/v3/time_entries | List Time entries
-*TimeEntriesApi* | [**apiV3TimeEntriesIdGet**](doc\/TimeEntriesApi.md#apiv3timeentriesidget) | **GET** /api/v3/time_entries/{id} | View time entry
-*TimeEntryActivitiesApi* | [**apiV3TimeEntriesActivityIdGet**](doc\/TimeEntryActivitiesApi.md#apiv3timeentriesactivityidget) | **GET** /api/v3/time_entries/activity/{id} | View time entries activity
+*TimeEntriesApi* | [**apiV3TimeEntriesGet**](doc\/TimeEntriesApi.md#apiv3timeentriesget) | **GET** /api/v3/time_entries | List TimeEntries
+*TimeEntriesApi* | [**apiV3TimeEntriesIdGet**](doc\/TimeEntriesApi.md#apiv3timeentriesidget) | **GET** /api/v3/time_entries/{id} | View TimeEntry
+*TimeEntryActivitiesApi* | [**apiV3TimeEntriesActivityIdGet**](doc\/TimeEntryActivitiesApi.md#apiv3timeentriesactivityidget) | **GET** /api/v3/time_entries/activity/{id} | View TimeEntries activity
 *TypesApi* | [**apiV3ProjectsProjectIdTypesGet**](doc\/TypesApi.md#apiv3projectsprojectidtypesget) | **GET** /api/v3/projects/{project_id}/types | List types available in a project
 *TypesApi* | [**apiV3TypesGet**](doc\/TypesApi.md#apiv3typesget) | **GET** /api/v3/types | List all Types
 *TypesApi* | [**apiV3TypesIdGet**](doc\/TypesApi.md#apiv3typesidget) | **GET** /api/v3/types/{id} | View Type
@@ -145,27 +145,27 @@ Class | Method | HTTP request | Description
 *VersionsApi* | [**apiV3ProjectsProjectIdVersionsGet**](doc\/VersionsApi.md#apiv3projectsprojectidversionsget) | **GET** /api/v3/projects/{project_id}/versions | List versions available in a project
 *VersionsApi* | [**apiV3VersionsGet**](doc\/VersionsApi.md#apiv3versionsget) | **GET** /api/v3/versions | List versions
 *VersionsApi* | [**apiV3VersionsIdGet**](doc\/VersionsApi.md#apiv3versionsidget) | **GET** /api/v3/versions/{id} | View version
-*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesformpost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
-*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesget) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
-*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagespost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
+*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesformpost) | **POST** /api/v3/projects/{id}/work_packages/form | WorkPackage Create Form
+*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesget) | **GET** /api/v3/projects/{id}/work_packages | List WorkPackages
+*WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagespost) | **POST** /api/v3/projects/{id}/work_packages | Create WorkPackage
 *WorkPackagesApi* | [**apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidworkpackagesavailableassigneesget) | **GET** /api/v3/projects/{project_id}/work_packages/available_assignees | Available assignees
 *WorkPackagesApi* | [**apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidworkpackagesavailableresponsiblesget) | **GET** /api/v3/projects/{project_id}/work_packages/available_responsibles | Available responsibles
-*WorkPackagesApi* | [**apiV3WorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesformpost) | **POST** /api/v3/work_packages/form | Work Package Create Form
-*WorkPackagesApi* | [**apiV3WorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesget) | **GET** /api/v3/work_packages | List Work Packages
-*WorkPackagesApi* | [**apiV3WorkPackagesIdActivitiesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidactivitiesget) | **GET** /api/v3/work_packages/{id}/activities | List work package activities
-*WorkPackagesApi* | [**apiV3WorkPackagesIdActivitiesPost**](doc\/WorkPackagesApi.md#apiv3workpackagesidactivitiespost) | **POST** /api/v3/work_packages/{id}/activities | Comment work package
+*WorkPackagesApi* | [**apiV3WorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesformpost) | **POST** /api/v3/work_packages/form | WorkPackage Create Form
+*WorkPackagesApi* | [**apiV3WorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesget) | **GET** /api/v3/work_packages | List WorkPackages
+*WorkPackagesApi* | [**apiV3WorkPackagesIdActivitiesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidactivitiesget) | **GET** /api/v3/work_packages/{id}/activities | List WorkPackage activities
+*WorkPackagesApi* | [**apiV3WorkPackagesIdActivitiesPost**](doc\/WorkPackagesApi.md#apiv3workpackagesidactivitiespost) | **POST** /api/v3/work_packages/{id}/activities | Comment WorkPackage
 *WorkPackagesApi* | [**apiV3WorkPackagesIdAvailableProjectsGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidavailableprojectsget) | **GET** /api/v3/work_packages/{id}/available_projects | Available projects
 *WorkPackagesApi* | [**apiV3WorkPackagesIdAvailableRelationCandidatesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidavailablerelationcandidatesget) | **GET** /api/v3/work_packages/{id}/available_relation_candidates | Available relation candidates
 *WorkPackagesApi* | [**apiV3WorkPackagesIdAvailableWatchersGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidavailablewatchersget) | **GET** /api/v3/work_packages/{id}/available_watchers | Available watchers
-*WorkPackagesApi* | [**apiV3WorkPackagesIdDelete**](doc\/WorkPackagesApi.md#apiv3workpackagesiddelete) | **DELETE** /api/v3/work_packages/{id} | Delete Work Package
-*WorkPackagesApi* | [**apiV3WorkPackagesIdFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesidformpost) | **POST** /api/v3/work_packages/{id}/form | Work Package Edit Form
-*WorkPackagesApi* | [**apiV3WorkPackagesIdGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidget) | **GET** /api/v3/work_packages/{id} | View Work Package
-*WorkPackagesApi* | [**apiV3WorkPackagesIdPatch**](doc\/WorkPackagesApi.md#apiv3workpackagesidpatch) | **PATCH** /api/v3/work_packages/{id} | Edit Work Package
+*WorkPackagesApi* | [**apiV3WorkPackagesIdDelete**](doc\/WorkPackagesApi.md#apiv3workpackagesiddelete) | **DELETE** /api/v3/work_packages/{id} | Delete WorkPackage
+*WorkPackagesApi* | [**apiV3WorkPackagesIdFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesidformpost) | **POST** /api/v3/work_packages/{id}/form | WorkPackage Edit Form
+*WorkPackagesApi* | [**apiV3WorkPackagesIdGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidget) | **GET** /api/v3/work_packages/{id} | View WorkPackage
+*WorkPackagesApi* | [**apiV3WorkPackagesIdPatch**](doc\/WorkPackagesApi.md#apiv3workpackagesidpatch) | **PATCH** /api/v3/work_packages/{id} | Edit WorkPackage
 *WorkPackagesApi* | [**apiV3WorkPackagesIdRelationsFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesidrelationsformpost) | **POST** /api/v3/work_packages/{id}/relations/form | Relation create form
 *WorkPackagesApi* | [**apiV3WorkPackagesIdRevisionsGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidrevisionsget) | **GET** /api/v3/work_packages/{id}/revisions | Revisions
-*WorkPackagesApi* | [**apiV3WorkPackagesPost**](doc\/WorkPackagesApi.md#apiv3workpackagespost) | **POST** /api/v3/work_packages | Create Work Package
-*WorkPackagesApi* | [**apiV3WorkPackagesSchemasGet**](doc\/WorkPackagesApi.md#apiv3workpackagesschemasget) | **GET** /api/v3/work_packages/schemas/ | List Work Package Schemas
-*WorkPackagesApi* | [**apiV3WorkPackagesSchemasIdentifierGet**](doc\/WorkPackagesApi.md#apiv3workpackagesschemasidentifierget) | **GET** /api/v3/work_packages/schemas/{identifier} | View Work Package Schema
+*WorkPackagesApi* | [**apiV3WorkPackagesPost**](doc\/WorkPackagesApi.md#apiv3workpackagespost) | **POST** /api/v3/work_packages | Create WorkPackage
+*WorkPackagesApi* | [**apiV3WorkPackagesSchemasGet**](doc\/WorkPackagesApi.md#apiv3workpackagesschemasget) | **GET** /api/v3/work_packages/schemas/ | List WorkPackage Schemas
+*WorkPackagesApi* | [**apiV3WorkPackagesSchemasIdentifierGet**](doc\/WorkPackagesApi.md#apiv3workpackagesschemasidentifierget) | **GET** /api/v3/work_packages/schemas/{identifier} | View WorkPackage Schema
 *WorkPackagesApi* | [**apiV3WorkPackagesWorkPackageIdRelationsGet**](doc\/WorkPackagesApi.md#apiv3workpackagesworkpackageidrelationsget) | **GET** /api/v3/work_packages/{work_package_id}/relations | List relations
 *WorkPackagesApi* | [**apiV3WorkPackagesWorkPackageIdRelationsPost**](doc\/WorkPackagesApi.md#apiv3workpackagesworkpackageidrelationspost) | **POST** /api/v3/work_packages/{work_package_id}/relations | Create Relation
 *WorkPackagesApi* | [**apiV3WorkPackagesWorkPackageIdWatchersGet**](doc\/WorkPackagesApi.md#apiv3workpackagesworkpackageidwatchersget) | **GET** /api/v3/work_packages/{work_package_id}/watchers | List watchers
@@ -222,11 +222,11 @@ Class | Method | HTTP request | Description
  - [StatusesEmbedded](doc\/StatusesEmbedded.md)
  - [StatusesLinks](doc\/StatusesLinks.md)
  - [TimeEntries](doc\/TimeEntries.md)
- - [TimeEntriesEmbedded](doc\/TimeEntriesEmbedded.md)
  - [TimeEntriesLinks](doc\/TimeEntriesLinks.md)
  - [TimeEntry](doc\/TimeEntry.md)
- - [TimeEntryEmbedded](doc\/TimeEntryEmbedded.md)
  - [TimeEntryLinks](doc\/TimeEntryLinks.md)
+ - [TimeEntriesEmbedded](doc\/TimeEntriesEmbedded.md)
+ - [TimeEntryEmbedded](doc\/TimeEntryEmbedded.md)
  - [User](doc\/User.md)
  - [UserLinks](doc\/UserLinks.md)
  - [UserPreferences](doc\/UserPreferences.md)

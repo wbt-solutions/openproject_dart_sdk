@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **int**| ID of the project whoose versions will be listed | [default to null]
+ **projectId** | **int**| ID of the project whoose versions will be listed | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 List versions
 
-Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+Returns a collection of versions. The client can choose to filter the versions similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
 
 ### Example 
 ```dart
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] [default to null]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] 
 
 ### Return type
 
@@ -133,7 +133,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| version id | [default to null]
+ **id** | **int**| version id | 
 
 ### Return type
 

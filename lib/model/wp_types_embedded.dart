@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class WPTypesEmbedded {
   
-  List<WPType> elements = [];
-  WPTypesEmbedded();
+  List<WPType> elements = const [];
+
+  WPTypesEmbedded({
+    this.elements = const [],
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class WPTypesEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (elements != null)
       json['elements'] = elements;
     return json;
@@ -29,7 +32,7 @@ class WPTypesEmbedded {
   }
 
   static Map<String, WPTypesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WPTypesEmbedded>();
+    final map = Map<String, WPTypesEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WPTypesEmbedded.fromJson(value));
     }
@@ -38,13 +41,13 @@ class WPTypesEmbedded {
 
   // maps a json object with a list of WPTypesEmbedded-objects as value to a dart map
   static Map<String, List<WPTypesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WPTypesEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WPTypesEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WPTypesEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WPTypesEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

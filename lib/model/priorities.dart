@@ -2,14 +2,20 @@ part of openproject_dart_sdk.api;
 
 class Priorities {
   
-  int total = null;
+  int total;
   
-  int count = null;
+  int count;
   
-  PrioritiesEmbedded embedded = null;
+  PrioritiesEmbedded embedded;
   
-  PrioritiesLinks links = null;
-  Priorities();
+  PrioritiesLinks links;
+
+  Priorities({
+    this.total,
+    this.count,
+    this.embedded,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -29,7 +35,7 @@ class Priorities {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (total != null)
       json['total'] = total;
     if (count != null)
@@ -46,7 +52,7 @@ class Priorities {
   }
 
   static Map<String, Priorities> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Priorities>();
+    final map = Map<String, Priorities>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Priorities.fromJson(value));
     }
@@ -55,13 +61,13 @@ class Priorities {
 
   // maps a json object with a list of Priorities-objects as value to a dart map
   static Map<String, List<Priorities>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Priorities>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Priorities.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Priorities>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Priorities.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

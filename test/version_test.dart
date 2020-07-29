@@ -46,7 +46,7 @@ void main() {
       // TODO
     });
 
-    // Version Links links (default value: null)
+    // VersionLinks links (default value: null)
     test('to test the property `links`', () async {
       // TODO
     });

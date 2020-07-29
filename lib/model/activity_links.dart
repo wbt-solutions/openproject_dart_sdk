@@ -2,12 +2,17 @@ part of openproject_dart_sdk.api;
 
 class ActivityLinks {
   
-  Link self = null;
+  Link self;
   
-  Link workPackage = null;
+  Link workPackage;
   
-  Link user = null;
-  ActivityLinks();
+  Link user;
+
+  ActivityLinks({
+    this.self,
+    this.workPackage,
+    this.user,
+  });
 
   @override
   String toString() {
@@ -28,7 +33,7 @@ class ActivityLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (workPackage != null)
@@ -43,7 +48,7 @@ class ActivityLinks {
   }
 
   static Map<String, ActivityLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ActivityLinks>();
+    final map = Map<String, ActivityLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = ActivityLinks.fromJson(value));
     }
@@ -52,13 +57,13 @@ class ActivityLinks {
 
   // maps a json object with a list of ActivityLinks-objects as value to a dart map
   static Map<String, List<ActivityLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<ActivityLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = ActivityLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<ActivityLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = ActivityLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -51,9 +51,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
- **pageSize** | **int**| Number of elements to display per page. | [optional] [default to null]
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User&#39;s login | [optional] [default to null]
- **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to null]
+ **pageSize** | **int**| Number of elements to display per page. | [optional] 
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User&#39;s login | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type
 
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| User id | [default to null]
+ **id** | **int**| User id | 
 
 ### Return type
 
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| User id. Use &#x60;me&#x60; to reference current user, if any. | [default to null]
+ **id** | **String**| User id. Use &#x60;me&#x60; to reference current user, if any. | 
 
 ### Return type
 
@@ -185,7 +185,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| User id | [default to null]
+ **id** | **int**| User id | 
 
 ### Return type
 
@@ -228,7 +228,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| User id | [default to null]
+ **id** | **int**| User id | 
 
 ### Return type
 
@@ -274,7 +274,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| User id | [default to null]
+ **id** | **int**| User id | 
  **body** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
 
 ### Return type

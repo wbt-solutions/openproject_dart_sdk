@@ -1,9 +1,12 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntriesEmbedded {
-  
-  List<TimeEntry> elements = [];
-  TimeEntriesEmbedded();
+
+  List<TimeEntry> elements = const [];
+
+  TimeEntriesEmbedded({
+    this.elements = const [],
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class TimeEntriesEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (elements != null)
       json['elements'] = elements;
     return json;
@@ -29,7 +32,7 @@ class TimeEntriesEmbedded {
   }
 
   static Map<String, TimeEntriesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, TimeEntriesEmbedded>();
+    final map = Map<String, TimeEntriesEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = TimeEntriesEmbedded.fromJson(value));
     }
@@ -38,13 +41,13 @@ class TimeEntriesEmbedded {
 
   // maps a json object with a list of TimeEntriesEmbedded-objects as value to a dart map
   static Map<String, List<TimeEntriesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<TimeEntriesEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = TimeEntriesEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<TimeEntriesEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = TimeEntriesEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

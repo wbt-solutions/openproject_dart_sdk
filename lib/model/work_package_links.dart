@@ -1,89 +1,132 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackageLinks {
-  
-  Link self = null;
-  
-  Link update = null;
-  
-  Link schema = null;
-  
-  Link updateImmediately = null;
-  
-  Link logTime = null;
-  
-  Link move = null;
-  
-  Link copy = null;
-  
-  Link pdf = null;
-  
-  Link atom = null;
-  
-  Link availableRelationCandidates = null;
-  
-  Link activities = null;
-  
-  Link attachments = null;
-  
-  Link addAttachment = null;
-  
-  Link availableWatchers = null;
-  
-  Link relations = null;
-  
-  Link revisions = null;
-  
-  Link watch = null;
-  
-  Link watchers = null;
-  
-  Link addWatcher = null;
-  
-  Link removeWatcher = null;
-  
-  Link addRelation = null;
-  
-  Link addChild = null;
-  
-  Link changeParent = null;
-  
-  Link addComment = null;
-  
-  Link previewMarkup = null;
-  
-  Link timeEntries = null;
-  
-  List<Link> ancestors = [];
-  
-  Link category = null;
-  
-  Link type = null;
-  
-  Link priority = null;
-  
-  Link project = null;
-  
-  Link status = null;
-  
-  Link author = null;
-  
-  Link responsible = null;
-  
-  Link assignee = null;
-  
-  Link version = null;
-  
-  Link parent = null;
-  
-  Link logCosts = null;
-  
-  Link showCosts = null;
-  
-  Link costObject = null;
-  
-  Link costsByType = null;
-  WorkPackageLinks();
+
+  Link self;
+
+  Link update;
+
+  Link schema;
+
+  Link updateImmediately;
+
+  Link logTime;
+
+  Link move;
+
+  Link copy;
+
+  Link pdf;
+
+  Link atom;
+
+  Link availableRelationCandidates;
+
+  Link activities;
+
+  Link attachments;
+
+  Link addAttachment;
+
+  Link availableWatchers;
+
+  Link relations;
+
+  Link revisions;
+
+  Link watch;
+
+  Link watchers;
+
+  Link addWatcher;
+
+  Link removeWatcher;
+
+  Link addRelation;
+
+  Link addChild;
+
+  Link changeParent;
+
+  Link addComment;
+
+  Link previewMarkup;
+
+  Link timeEntries;
+
+  List<Link> ancestors = const [];
+
+  Link category;
+
+  Link type;
+
+  Link priority;
+
+  Link project;
+
+  Link status;
+
+  Link author;
+
+  Link responsible;
+
+  Link assignee;
+
+  Link version;
+
+  Link parent;
+
+  Link logCosts;
+
+  Link showCosts;
+
+  Link costObject;
+
+  Link costsByType;
+
+  WorkPackageLinks({
+    this.self,
+    this.update,
+    this.schema,
+    this.updateImmediately,
+    this.logTime,
+    this.move,
+    this.copy,
+    this.pdf,
+    this.atom,
+    this.availableRelationCandidates,
+    this.activities,
+    this.attachments,
+    this.addAttachment,
+    this.availableWatchers,
+    this.relations,
+    this.revisions,
+    this.watch,
+    this.watchers,
+    this.addWatcher,
+    this.removeWatcher,
+    this.addRelation,
+    this.addChild,
+    this.changeParent,
+    this.addComment,
+    this.previewMarkup,
+    this.timeEntries,
+    this.ancestors = const [],
+    this.category,
+    this.type,
+    this.priority,
+    this.project,
+    this.status,
+    this.author,
+    this.responsible,
+    this.assignee,
+    this.version,
+    this.parent,
+    this.logCosts,
+    this.showCosts,
+    this.costObject,
+    this.costsByType,
+  });
 
   @override
   String toString() {
@@ -218,7 +261,7 @@ class WorkPackageLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (update != null)
@@ -309,7 +352,7 @@ class WorkPackageLinks {
   }
 
   static Map<String, WorkPackageLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkPackageLinks>();
+    final map = Map<String, WorkPackageLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = WorkPackageLinks.fromJson(value));
     }
@@ -318,13 +361,13 @@ class WorkPackageLinks {
 
   // maps a json object with a list of WorkPackageLinks-objects as value to a dart map
   static Map<String, List<WorkPackageLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<WorkPackageLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = WorkPackageLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<WorkPackageLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = WorkPackageLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

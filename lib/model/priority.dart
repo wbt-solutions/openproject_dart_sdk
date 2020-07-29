@@ -2,18 +2,26 @@ part of openproject_dart_sdk.api;
 
 class Priority {
   
-  int id = null;
+  int id;
   
-  String name = null;
+  String name;
   
-  int position = null;
+  int position;
   
-  bool isDefault = null;
+  bool isDefault;
   
-  bool isActive = null;
+  bool isActive;
   
-  PriorityLinks links = null;
-  Priority();
+  PriorityLinks links;
+
+  Priority({
+    this.id,
+    this.name,
+    this.position,
+    this.isDefault,
+    this.isActive,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -33,7 +41,7 @@ class Priority {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -54,7 +62,7 @@ class Priority {
   }
 
   static Map<String, Priority> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Priority>();
+    final map = Map<String, Priority>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Priority.fromJson(value));
     }
@@ -63,13 +71,13 @@ class Priority {
 
   // maps a json object with a list of Priority-objects as value to a dart map
   static Map<String, List<Priority>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Priority>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Priority.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Priority>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Priority.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Execute custom action
 
-A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package's current lockVersion.
+A POST to this end point executes the custom action on the WorkPackage provided in the payload. The altered WorkPackage will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the WorkPackage's current lockVersion.
 
 ### Example 
 ```dart
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customActionId** | **int**| The id of the custom action to execute | [default to null]
+ **customActionId** | **int**| The id of the custom action to execute | 
  **body** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
 
 ### Return type
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customActionId** | **int**| The id of the custom action to fetch | [default to null]
+ **customActionId** | **int**| The id of the custom action to fetch | 
 
 ### Return type
 

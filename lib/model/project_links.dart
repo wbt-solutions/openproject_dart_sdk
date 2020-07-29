@@ -2,28 +2,41 @@ part of openproject_dart_sdk.api;
 
 class ProjectLinks {
   
-  Link self = null;
+  Link self;
   
-  Link createWorkPackage = null;
+  Link createWorkPackage;
   
-  Link createWorkPackageImmediate = null;
+  Link createWorkPackageImmediate;
   
-  Link categories = null;
+  Link categories;
   
-  Link types = null;
+  Link types;
   
-  Link versions = null;
+  Link versions;
   
-  Link workPackages = null;
+  Link workPackages;
   
-  Link memberships = null;
+  Link memberships;
   
-  Link delete = null;
+  Link delete;
   
-  Link schema = null;
+  Link schema;
   
-  Link parent = null;
-  ProjectLinks();
+  Link parent;
+
+  ProjectLinks({
+    this.self,
+    this.createWorkPackage,
+    this.createWorkPackageImmediate,
+    this.categories,
+    this.types,
+    this.versions,
+    this.workPackages,
+    this.memberships,
+    this.delete,
+    this.schema,
+    this.parent,
+  });
 
   @override
   String toString() {
@@ -68,7 +81,7 @@ class ProjectLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (createWorkPackage != null)
@@ -99,7 +112,7 @@ class ProjectLinks {
   }
 
   static Map<String, ProjectLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ProjectLinks>();
+    final map = Map<String, ProjectLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = ProjectLinks.fromJson(value));
     }
@@ -108,13 +121,13 @@ class ProjectLinks {
 
   // maps a json object with a list of ProjectLinks-objects as value to a dart map
   static Map<String, List<ProjectLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<ProjectLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = ProjectLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<ProjectLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = ProjectLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

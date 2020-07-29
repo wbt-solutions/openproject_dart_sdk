@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class InlineObject8 {
   
-  ApiV3ActivitiesIdComment comment = null;
-  InlineObject8();
+  ApiV3ActivitiesIdComment comment;
+
+  InlineObject8({
+    this.comment,
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class InlineObject8 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (comment != null)
       json['comment'] = comment;
     return json;
@@ -29,7 +32,7 @@ class InlineObject8 {
   }
 
   static Map<String, InlineObject8> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InlineObject8>();
+    final map = Map<String, InlineObject8>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = InlineObject8.fromJson(value));
     }
@@ -38,13 +41,13 @@ class InlineObject8 {
 
   // maps a json object with a list of InlineObject8-objects as value to a dart map
   static Map<String, List<InlineObject8>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<InlineObject8>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = InlineObject8.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<InlineObject8>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = InlineObject8.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

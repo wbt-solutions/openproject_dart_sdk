@@ -2,22 +2,32 @@ part of openproject_dart_sdk.api;
 
 class Status {
   
-  int id = null;
+  int id;
   
-  String name = null;
+  String name;
   
-  int position = null;
+  int position;
   
-  bool isDefault = null;
+  bool isDefault;
   
-  bool isClosed = null;
+  bool isClosed;
   
-  bool isReadonly = null;
+  bool isReadonly;
   
-  int defaultDoneRatio = null;
+  int defaultDoneRatio;
   
-  StatusLinks links = null;
-  Status();
+  StatusLinks links;
+
+  Status({
+    this.id,
+    this.name,
+    this.position,
+    this.isDefault,
+    this.isClosed,
+    this.isReadonly,
+    this.defaultDoneRatio,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -39,7 +49,7 @@ class Status {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (name != null)
@@ -64,7 +74,7 @@ class Status {
   }
 
   static Map<String, Status> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Status>();
+    final map = Map<String, Status>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = Status.fromJson(value));
     }
@@ -73,13 +83,13 @@ class Status {
 
   // maps a json object with a list of Status-objects as value to a dart map
   static Map<String, List<Status>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<Status>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = Status.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<Status>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = Status.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

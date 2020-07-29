@@ -9,7 +9,7 @@ class PreviewingApi {
 
   /// Preview plain document with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3RenderPlainPostWithHttpInfo() async {
     Object postBody;
 
@@ -50,7 +50,7 @@ class PreviewingApi {
 
   /// Preview plain document
   ///
-  /// 
+  ///
   Future apiV3RenderPlainPost() async {
     Response response = await apiV3RenderPlainPostWithHttpInfo();
     if(response.statusCode >= 400) {
@@ -63,7 +63,7 @@ class PreviewingApi {
 
   /// Preview Textile document with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3RenderTextilePostWithHttpInfo({ String context }) async {
     Object postBody;
 
@@ -108,8 +108,8 @@ class PreviewingApi {
   /// Preview Textile document
   ///
   ///String context :
-  ///     API-Link to the context in which the rendering occurs, for example a specific work package.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing work package
-  /// 
+  ///     API-Link to the context in which the rendering occurs, for example a specific WorkPackage.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing WorkPackage
+  ///
   Future apiV3RenderTextilePost({ String context }) async {
     Response response = await apiV3RenderTextilePostWithHttpInfo( context: context );
     if(response.statusCode >= 400) {

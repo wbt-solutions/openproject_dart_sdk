@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class PrioritiesEmbedded {
   
-  List<Priority> elements = [];
-  PrioritiesEmbedded();
+  List<Priority> elements = const [];
+
+  PrioritiesEmbedded({
+    this.elements = const [],
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class PrioritiesEmbedded {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (elements != null)
       json['elements'] = elements;
     return json;
@@ -29,7 +32,7 @@ class PrioritiesEmbedded {
   }
 
   static Map<String, PrioritiesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PrioritiesEmbedded>();
+    final map = Map<String, PrioritiesEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = PrioritiesEmbedded.fromJson(value));
     }
@@ -38,13 +41,13 @@ class PrioritiesEmbedded {
 
   // maps a json object with a list of PrioritiesEmbedded-objects as value to a dart map
   static Map<String, List<PrioritiesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<PrioritiesEmbedded>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = PrioritiesEmbedded.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<PrioritiesEmbedded>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = PrioritiesEmbedded.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

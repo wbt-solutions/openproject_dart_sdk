@@ -2,14 +2,20 @@ part of openproject_dart_sdk.api;
 
 class BudgetLinks {
   
-  Link self = null;
+  Link self;
   
-  Link attachments = null;
+  Link attachments;
   
-  Link addAttachment = null;
+  Link addAttachment;
   
-  Link staticPath = null;
-  BudgetLinks();
+  Link staticPath;
+
+  BudgetLinks({
+    this.self,
+    this.attachments,
+    this.addAttachment,
+    this.staticPath,
+  });
 
   @override
   String toString() {
@@ -33,7 +39,7 @@ class BudgetLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (attachments != null)
@@ -50,7 +56,7 @@ class BudgetLinks {
   }
 
   static Map<String, BudgetLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, BudgetLinks>();
+    final map = Map<String, BudgetLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = BudgetLinks.fromJson(value));
     }
@@ -59,13 +65,13 @@ class BudgetLinks {
 
   // maps a json object with a list of BudgetLinks-objects as value to a dart map
   static Map<String, List<BudgetLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<BudgetLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = BudgetLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<BudgetLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = BudgetLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

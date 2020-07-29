@@ -8,10 +8,10 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  | [optional] [default to null]
-**title** | **String** |  | [optional] [default to null]
-**method** | **String** |  | [optional] [default to null]
-**type** | **String** |  | [optional] [default to null]
+**href** | **String** |  | [optional] 
+**title** | **String** |  | [optional] 
+**method** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -2,18 +2,26 @@ part of openproject_dart_sdk.api;
 
 class UserPreferences {
   
-  bool hideMail = null;
+  bool hideMail;
   
-  String timeZone = null;
+  String timeZone;
   
-  bool commentSortDescending = null;
+  bool commentSortDescending;
   
-  bool warnOnLeavingUnsaved = null;
+  bool warnOnLeavingUnsaved;
   
-  bool accessibilityMode = null;
+  bool accessibilityMode;
   
-  UserPreferencesLinks links = null;
-  UserPreferences();
+  UserPreferencesLinks links;
+
+  UserPreferences({
+    this.hideMail,
+    this.timeZone,
+    this.commentSortDescending,
+    this.warnOnLeavingUnsaved,
+    this.accessibilityMode,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -33,7 +41,7 @@ class UserPreferences {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (hideMail != null)
       json['hideMail'] = hideMail;
     if (timeZone != null)
@@ -54,7 +62,7 @@ class UserPreferences {
   }
 
   static Map<String, UserPreferences> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, UserPreferences>();
+    final map = Map<String, UserPreferences>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = UserPreferences.fromJson(value));
     }
@@ -63,13 +71,13 @@ class UserPreferences {
 
   // maps a json object with a list of UserPreferences-objects as value to a dart map
   static Map<String, List<UserPreferences>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<UserPreferences>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = UserPreferences.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<UserPreferences>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = UserPreferences.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

@@ -45,10 +45,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **int**| Page number inside the requested collection. | [optional] [default to null]
- **pageSize** | **int**| Number of elements to display per page. | [optional] [default to null]
- **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint. | [optional] [default to null]
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] [default to null]
+ **offset** | **int**| Page number inside the requested collection. | [optional] 
+ **pageSize** | **int**| Number of elements to display per page. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint. | [optional] 
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] 
 
 ### Return type
 
@@ -92,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| news id | [default to null]
+ **id** | **int**| news id | 
 
 ### Return type
 

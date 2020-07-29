@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class InlineObject7 {
   
-  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage user = null;
-  InlineObject7();
+  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage user;
+
+  InlineObject7({
+    this.user,
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class InlineObject7 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (user != null)
       json['user'] = user;
     return json;
@@ -29,7 +32,7 @@ class InlineObject7 {
   }
 
   static Map<String, InlineObject7> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InlineObject7>();
+    final map = Map<String, InlineObject7>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = InlineObject7.fromJson(value));
     }
@@ -38,13 +41,13 @@ class InlineObject7 {
 
   // maps a json object with a list of InlineObject7-objects as value to a dart map
   static Map<String, List<InlineObject7>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<InlineObject7>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = InlineObject7.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<InlineObject7>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = InlineObject7.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

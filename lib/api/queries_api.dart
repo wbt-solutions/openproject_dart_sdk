@@ -80,17 +80,17 @@ class QueriesApi {
   ///int id  (required):
   ///     Id of the project the default query is requested for
   ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of work packages.
+  ///     Page number inside the queries' result collection of WorkPackages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of work packages.
+  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///bool showHierarchies :
@@ -290,17 +290,17 @@ class QueriesApi {
   /// View default query
   ///
   ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of work packages.
+  ///     Page number inside the queries' result collection of WorkPackages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of work packages.
+  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///String timelineZoomLevel :
@@ -320,7 +320,7 @@ class QueriesApi {
 
   /// Query Create Form with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3QueriesFormPostWithHttpInfo() async {
     Object postBody;
 
@@ -361,7 +361,7 @@ class QueriesApi {
 
   /// Query Create Form
   ///
-  /// 
+  ///
   Future apiV3QueriesFormPost() async {
     Response response = await apiV3QueriesFormPostWithHttpInfo();
     if(response.statusCode >= 400) {
@@ -374,7 +374,7 @@ class QueriesApi {
 
   /// List queries with HTTP info returned
   ///
-  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how work packages are filtered. Please note however, that the filters are applied to the queries and not to the work packages the queries in turn might return.
+  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how WorkPackages are filtered. Please note however, that the filters are applied to the queries and not to the WorkPackages the queries in turn might return.
   Future apiV3QueriesGetWithHttpInfo({ String filters }) async {
     Object postBody;
 
@@ -420,7 +420,7 @@ class QueriesApi {
   ///
   ///String filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how work packages are filtered. Please note however, that the filters are applied to the queries and not to the work packages the queries in turn might return.
+  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how WorkPackages are filtered. Please note however, that the filters are applied to the queries and not to the WorkPackages the queries in turn might return.
   Future apiV3QueriesGet({ String filters }) async {
     Response response = await apiV3QueriesGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
@@ -566,17 +566,17 @@ class QueriesApi {
   ///int id  (required):
   ///     Query id
   ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of work packages.
+  ///     Page number inside the queries' result collection of WorkPackages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of work packages.
+  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///String timelineLabels :
@@ -643,7 +643,7 @@ class QueriesApi {
   ///int id  (required):
   ///     Query id
   ///InlineObject3 body :
-  ///    
+  ///
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.
   Future apiV3QueriesIdPatch(int id, { InlineObject3 body }) async {
     Response response = await apiV3QueriesIdPatchWithHttpInfo(id,  body: body );
@@ -657,7 +657,7 @@ class QueriesApi {
 
   /// Star query with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3QueriesIdStarPatchWithHttpInfo(int id) async {
     Object postBody;
 
@@ -703,7 +703,7 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  /// 
+  ///
   Future apiV3QueriesIdStarPatch(int id) async {
     Response response = await apiV3QueriesIdStarPatchWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -716,7 +716,7 @@ class QueriesApi {
 
   /// Unstar query with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3QueriesIdUnstarPatchWithHttpInfo(int id) async {
     Object postBody;
 
@@ -762,7 +762,7 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  /// 
+  ///
   Future apiV3QueriesIdUnstarPatch(int id) async {
     Response response = await apiV3QueriesIdUnstarPatchWithHttpInfo(id);
     if(response.statusCode >= 400) {

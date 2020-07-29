@@ -1,13 +1,18 @@
 part of openproject_dart_sdk.api;
 
 class VersionLinks {
-  
-  Link self = null;
-  
-  Link definingProject = null;
-  
-  Link availableInProjects = null;
-  VersionLinks();
+
+  Link self;
+
+  Link definingProject;
+
+  Link availableInProjects;
+
+  VersionLinks({
+    this.self,
+    this.definingProject,
+    this.availableInProjects,
+  });
 
   @override
   String toString() {
@@ -28,7 +33,7 @@ class VersionLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     if (definingProject != null)
@@ -43,7 +48,7 @@ class VersionLinks {
   }
 
   static Map<String, VersionLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, VersionLinks>();
+    final map = Map<String, VersionLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = VersionLinks.fromJson(value));
     }
@@ -52,13 +57,13 @@ class VersionLinks {
 
   // maps a json object with a list of VersionLinks-objects as value to a dart map
   static Map<String, List<VersionLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<VersionLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = VersionLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<VersionLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = VersionLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

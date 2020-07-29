@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class PriorityLinks {
   
-  Link self = null;
-  PriorityLinks();
+  Link self;
+
+  PriorityLinks({
+    this.self,
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class PriorityLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     return json;
@@ -29,7 +32,7 @@ class PriorityLinks {
   }
 
   static Map<String, PriorityLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PriorityLinks>();
+    final map = Map<String, PriorityLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = PriorityLinks.fromJson(value));
     }
@@ -38,13 +41,13 @@ class PriorityLinks {
 
   // maps a json object with a list of PriorityLinks-objects as value to a dart map
   static Map<String, List<PriorityLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<PriorityLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = PriorityLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<PriorityLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = PriorityLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

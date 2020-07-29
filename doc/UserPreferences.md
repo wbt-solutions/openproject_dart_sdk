@@ -8,12 +8,12 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hideMail** | **bool** |  | [optional] [default to null]
-**timeZone** | **String** |  | [optional] [default to null]
-**commentSortDescending** | **bool** |  | [optional] [default to null]
-**warnOnLeavingUnsaved** | **bool** |  | [optional] [default to null]
-**accessibilityMode** | **bool** |  | [optional] [default to null]
-**links** | [**UserPreferencesLinks**](UserPreferencesLinks.md) |  | [optional] [default to null]
+**hideMail** | **bool** |  | [optional] 
+**timeZone** | **String** |  | [optional] 
+**commentSortDescending** | **bool** |  | [optional] 
+**warnOnLeavingUnsaved** | **bool** |  | [optional] 
+**accessibilityMode** | **bool** |  | [optional] 
+**links** | [**UserPreferencesLinks**](UserPreferencesLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

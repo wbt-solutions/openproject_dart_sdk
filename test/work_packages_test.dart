@@ -1,11 +1,11 @@
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for Work Packages
+// tests for WorkPackages
 void main() {
     var instance = new WorkPackages();
 
-  group('test Work Packages', () {
+  group('test WorkPackages', () {
     // int total (default value: null)
     test('to test the property `total`', () async {
       // TODO
@@ -16,7 +16,7 @@ void main() {
       // TODO
     });
 
-    // Work Packages embedded embedded (default value: null)
+    // WorkPackagesEmbedded embedded (default value: null)
     test('to test the property `embedded`', () async {
       // TODO
     });

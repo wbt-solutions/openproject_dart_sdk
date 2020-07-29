@@ -2,8 +2,11 @@ part of openproject_dart_sdk.api;
 
 class StatusLinks {
   
-  Link self = null;
-  StatusLinks();
+  Link self;
+
+  StatusLinks({
+    this.self,
+  });
 
   @override
   String toString() {
@@ -18,7 +21,7 @@ class StatusLinks {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (self != null)
       json['self'] = self;
     return json;
@@ -29,7 +32,7 @@ class StatusLinks {
   }
 
   static Map<String, StatusLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, StatusLinks>();
+    final map = Map<String, StatusLinks>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = StatusLinks.fromJson(value));
     }
@@ -38,13 +41,13 @@ class StatusLinks {
 
   // maps a json object with a list of StatusLinks-objects as value to a dart map
   static Map<String, List<StatusLinks>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<StatusLinks>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = StatusLinks.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<StatusLinks>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = StatusLinks.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

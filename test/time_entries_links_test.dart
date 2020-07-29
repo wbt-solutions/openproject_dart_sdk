@@ -1,11 +1,11 @@
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
-// tests for Time entries Links
+// tests for TimeEntriesLinks
 void main() {
     var instance = new TimeEntriesLinks();
 
-  group('test Time entries Links', () {
+  group('test TimeEntriesLinks', () {
     // Link self (default value: null)
     test('to test the property `self`', () async {
       // TODO

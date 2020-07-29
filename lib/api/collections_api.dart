@@ -9,7 +9,7 @@ class CollectionsApi {
 
   /// view aggregated result with HTTP info returned
   ///
-  /// 
+  ///
   Future apiV3ExamplesGetWithHttpInfo({ String groupBy, String showSums }) async {
     Object postBody;
 
@@ -57,10 +57,10 @@ class CollectionsApi {
   /// view aggregated result
   ///
   ///String groupBy :
-  ///     The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+  ///     The column to group by. Note: Aggregation is as of now only supported by the WorkPackage collection. You can pass any column name as returned by the [queries](#queries) endpoint.
   ///String showSums :
-  ///    
-  /// 
+  ///
+  ///
   Future apiV3ExamplesGet({ String groupBy, String showSums }) async {
     Response response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums );
     if(response.statusCode >= 400) {

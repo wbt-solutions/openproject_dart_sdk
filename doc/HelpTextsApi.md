@@ -78,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Help text id | [default to null]
+ **id** | **int**| Help text id | 
 
 ### Return type
 

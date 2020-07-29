@@ -2,37 +2,53 @@ part of openproject_dart_sdk.api;
 
 class User {
   
-  int id = null;
+  int id;
   
-  String login = null;
+  String login;
   
-  String firstName = null;
+  String firstName;
   
-  String lastName = null;
+  String lastName;
   
-  String name = null;
+  String name;
   
-  String email = null;
+  String email;
   
-  bool admin = null;
+  bool admin;
   
-  String avatar = null;
+  String avatar;
   
-  DateTime createdAt = null;
+  DateTime createdAt;
   
-  DateTime updatedAt = null;
+  DateTime updatedAt;
   
-  String status = null;
-  //enum statusEnum {  active,  registered,  locked,  invited,  };{
+  UserStatusEnum status;
   
-  String language = null;
+  String language;
   
-  String password = null;
+  String password;
   
-  String identityUrl = null;
+  String identityUrl;
   
-  UserLinks links = null;
-  User();
+  UserLinks links;
+
+  User({
+    this.id,
+    this.login,
+    this.firstName,
+    this.lastName,
+    this.name,
+    this.email,
+    this.admin,
+    this.avatar,
+    this.createdAt,
+    this.updatedAt,
+    this.status,
+    this.language,
+    this.password,
+    this.identityUrl,
+    this.links,
+  });
 
   @override
   String toString() {
@@ -55,7 +71,7 @@ class User {
     updatedAt = (json['updatedAt'] == null) ?
       null :
       DateTime.parse(json['updatedAt']);
-    status = json['status'];
+    status = UserStatusEnum.fromJson(json['status']);
     language = json['language'];
     password = json['password'];
     identityUrl = json['identity_url'];
@@ -65,7 +81,7 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (id != null)
       json['id'] = id;
     if (login != null)
@@ -87,7 +103,7 @@ class User {
     if (updatedAt != null)
       json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
     if (status != null)
-      json['status'] = status;
+      json['status'] = status.value;
     if (language != null)
       json['language'] = language;
     if (password != null)
@@ -104,7 +120,7 @@ class User {
   }
 
   static Map<String, User> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, User>();
+    final map = Map<String, User>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = User.fromJson(value));
     }
@@ -113,13 +129,61 @@ class User {
 
   // maps a json object with a list of User-objects as value to a dart map
   static Map<String, List<User>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<User>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = User.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<User>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = User.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
+class UserStatusEnum {
+  /// The underlying value of this enum member.
+  final String value;
+
+  const UserStatusEnum._internal(this.value);
+
+  static const UserStatusEnum active_ = UserStatusEnum._internal("active");
+  static const UserStatusEnum registered_ = UserStatusEnum._internal("registered");
+  static const UserStatusEnum locked_ = UserStatusEnum._internal("locked");
+  static const UserStatusEnum invited_ = UserStatusEnum._internal("invited");
+
+  String toJson () {
+    return value;
+  }
+
+  @override
+  String toString () {
+    return value;
+  }
+
+  static UserStatusEnum fromJson(String value) {
+    return UserStatusEnumTypeTransformer().decode(value);
+  }
+
+  static List<UserStatusEnum> listFromJson(List<dynamic> json) {
+    return json == null
+      ? List<UserStatusEnum>()
+      : json.map((value) => UserStatusEnum.fromJson(value)).toList();
+  }
+}
+
+class UserStatusEnumTypeTransformer {
+
+  dynamic encode(UserStatusEnum data) {
+    return data.value;
+  }
+
+  UserStatusEnum decode(dynamic data) {
+    switch (data) {
+      case "active": return UserStatusEnum.active_;
+      case "registered": return UserStatusEnum.registered_;
+      case "locked": return UserStatusEnum.locked_;
+      case "invited": return UserStatusEnum.invited_;
+      default: return null;
+    }
+  }
+}
+
 

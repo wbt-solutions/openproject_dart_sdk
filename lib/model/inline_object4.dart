@@ -2,10 +2,14 @@ part of openproject_dart_sdk.api;
 
 class InlineObject4 {
   
-  bool accessibilityMode = null;
+  bool accessibilityMode;
   
-  String timeZone = null;
-  InlineObject4();
+  String timeZone;
+
+  InlineObject4({
+    this.accessibilityMode,
+    this.timeZone,
+  });
 
   @override
   String toString() {
@@ -19,7 +23,7 @@ class InlineObject4 {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
+    Map<String, dynamic> json = {};
     if (accessibilityMode != null)
       json['accessibilityMode'] = accessibilityMode;
     if (timeZone != null)
@@ -32,7 +36,7 @@ class InlineObject4 {
   }
 
   static Map<String, InlineObject4> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InlineObject4>();
+    final map = Map<String, InlineObject4>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) => map[key] = InlineObject4.fromJson(value));
     }
@@ -41,13 +45,13 @@ class InlineObject4 {
 
   // maps a json object with a list of InlineObject4-objects as value to a dart map
   static Map<String, List<InlineObject4>> mapListFromJson(Map<String, dynamic> json) {
-    var map = Map<String, List<InlineObject4>>();
-     if (json != null && json.isNotEmpty) {
-       json.forEach((String key, dynamic value) {
-         map[key] = InlineObject4.listFromJson(value);
-       });
-     }
-     return map;
+    final map = Map<String, List<InlineObject4>>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) {
+        map[key] = InlineObject4.listFromJson(value);
+      });
+    }
+    return map;
   }
 }
 

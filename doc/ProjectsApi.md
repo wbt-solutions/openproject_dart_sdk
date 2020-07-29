@@ -49,9 +49,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. | [optional] [default to null]
- **of_** | **String**| The id or identifier of the project the parent candidate is determined for | [optional] [default to null]
- **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point. | [optional] [default to null]
+ **filters** | **String**| JSON specifying filter conditions. | [optional] 
+ **of_** | **String**| The id or identifier of the project the parent candidate is determined for | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point. | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 List projects
 
-Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+Returns a collection of projects. The collection can be filtered via query parameters similar to how WorkPackages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
 
 ### Example 
 ```dart
@@ -98,8 +98,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] [default to null]
- **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] [default to null]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] 
 
 ### Return type
 
@@ -144,7 +144,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Project id | [default to null]
+ **id** | **int**| Project id | 
 
 ### Return type
 
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Project id | [default to null]
+ **id** | **int**| Project id | 
 
 ### Return type
 
@@ -235,7 +235,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Project id | [default to null]
+ **id** | **int**| Project id | 
  **project** | [**Project**](Project.md)| Project changes | 
 
 ### Return type
@@ -285,8 +285,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project** | [**Project**](Project.md)| New project attributes | 
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] [default to null]
- **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] [default to null]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] 
 
 ### Return type
 
@@ -331,7 +331,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| Version id | [default to null]
+ **id** | **int**| Version id | 
 
 ### Return type
 

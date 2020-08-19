@@ -7,9 +7,9 @@ void main() {
   var instance = TimeEntryActivitiesApi();
 
   group('tests for TimeEntryActivitiesApi', () {
-    // View TimeEntries activity
+    // View time entries activity
     //
-    //Future apiV3TimeEntriesActivityIdGet(int id) async
+    //Future apiV3TimeEntriesActivityIdGet(int id) async 
     test('test apiV3TimeEntriesActivityIdGet', () async {
       // TODO
     });

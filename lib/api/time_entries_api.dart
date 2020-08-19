@@ -7,10 +7,10 @@ class TimeEntriesApi {
 
   TimeEntriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List TimeEntries with HTTP info returned
+  /// List Time entries with HTTP info returned
   ///
-  /// Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
-  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, String filters }) async {
+  /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
+  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
     Object postBody;
 
     // verify required params are set
@@ -29,7 +29,7 @@ class TimeEntriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "pageSize", pageSize));
     }
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
 
     List<String> contentTypes = [];
@@ -57,16 +57,16 @@ class TimeEntriesApi {
     return response;
   }
 
-  /// List TimeEntries
+  /// List Time entries
   ///
   ///int offset :
   ///     Page number inside the requested collection.
   ///int pageSize :
   ///     Number of elements to display per page.
-  ///String filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter TimeEntries by WorkPackage  + project: Filter TimeEntries by project  + user: Filter TimeEntries by users
-  /// Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
-  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
+  /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
+  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
     Response response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -77,9 +77,9 @@ class TimeEntriesApi {
     }
   }
 
-  /// View TimeEntry with HTTP info returned
+  /// View time entry with HTTP info returned
   ///
-  ///
+  /// 
   Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -121,11 +121,11 @@ class TimeEntriesApi {
     return response;
   }
 
-  /// View TimeEntry
+  /// View time entry
   ///
   ///int id  (required):
-  ///     TimeEntry id
-  ///
+  ///     time entry id
+  /// 
   Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
     Response response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

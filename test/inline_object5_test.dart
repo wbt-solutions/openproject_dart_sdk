@@ -6,33 +6,43 @@ void main() {
     var instance = new InlineObject5();
 
   group('test InlineObject5', () {
-    // String login (default value: null)
+    // String login
     test('to test the property `login`', () async {
       // TODO
     });
 
-    // String email (default value: null)
+    // String email
     test('to test the property `email`', () async {
       // TODO
     });
 
-    // String firstName (default value: null)
+    // String firstName
     test('to test the property `firstName`', () async {
       // TODO
     });
 
-    // String lastName (default value: null)
+    // String lastName
     test('to test the property `lastName`', () async {
       // TODO
     });
 
-    // bool admin (default value: null)
+    // bool admin
     test('to test the property `admin`', () async {
       // TODO
     });
 
-    // String language (default value: null)
+    // String language
     test('to test the property `language`', () async {
+      // TODO
+    });
+
+    // String status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // String password
+    test('to test the property `password`', () async {
       // TODO
     });
 

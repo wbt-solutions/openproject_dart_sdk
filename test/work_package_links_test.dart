@@ -6,207 +6,207 @@ void main() {
     var instance = new WorkPackageLinks();
 
   group('test WorkPackageLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link update (default value: null)
+    // Link update
     test('to test the property `update`', () async {
       // TODO
     });
 
-    // Link schema (default value: null)
+    // Link schema
     test('to test the property `schema`', () async {
       // TODO
     });
 
-    // Link updateImmediately (default value: null)
+    // Link updateImmediately
     test('to test the property `updateImmediately`', () async {
       // TODO
     });
 
-    // Link logTime (default value: null)
+    // Link logTime
     test('to test the property `logTime`', () async {
       // TODO
     });
 
-    // Link move (default value: null)
+    // Link move
     test('to test the property `move`', () async {
       // TODO
     });
 
-    // Link copy (default value: null)
+    // Link copy
     test('to test the property `copy`', () async {
       // TODO
     });
 
-    // Link pdf (default value: null)
+    // Link pdf
     test('to test the property `pdf`', () async {
       // TODO
     });
 
-    // Link atom (default value: null)
+    // Link atom
     test('to test the property `atom`', () async {
       // TODO
     });
 
-    // Link availableRelationCandidates (default value: null)
+    // Link availableRelationCandidates
     test('to test the property `availableRelationCandidates`', () async {
       // TODO
     });
 
-    // Link activities (default value: null)
+    // Link activities
     test('to test the property `activities`', () async {
       // TODO
     });
 
-    // Link attachments (default value: null)
+    // Link attachments
     test('to test the property `attachments`', () async {
       // TODO
     });
 
-    // Link addAttachment (default value: null)
+    // Link addAttachment
     test('to test the property `addAttachment`', () async {
       // TODO
     });
 
-    // Link availableWatchers (default value: null)
+    // Link availableWatchers
     test('to test the property `availableWatchers`', () async {
       // TODO
     });
 
-    // Link relations (default value: null)
+    // Link relations
     test('to test the property `relations`', () async {
       // TODO
     });
 
-    // Link revisions (default value: null)
+    // Link revisions
     test('to test the property `revisions`', () async {
       // TODO
     });
 
-    // Link watch (default value: null)
+    // Link watch
     test('to test the property `watch`', () async {
       // TODO
     });
 
-    // Link watchers (default value: null)
+    // Link watchers
     test('to test the property `watchers`', () async {
       // TODO
     });
 
-    // Link addWatcher (default value: null)
+    // Link addWatcher
     test('to test the property `addWatcher`', () async {
       // TODO
     });
 
-    // Link removeWatcher (default value: null)
+    // Link removeWatcher
     test('to test the property `removeWatcher`', () async {
       // TODO
     });
 
-    // Link addRelation (default value: null)
+    // Link addRelation
     test('to test the property `addRelation`', () async {
       // TODO
     });
 
-    // Link addChild (default value: null)
+    // Link addChild
     test('to test the property `addChild`', () async {
       // TODO
     });
 
-    // Link changeParent (default value: null)
+    // Link changeParent
     test('to test the property `changeParent`', () async {
       // TODO
     });
 
-    // Link addComment (default value: null)
+    // Link addComment
     test('to test the property `addComment`', () async {
       // TODO
     });
 
-    // Link previewMarkup (default value: null)
+    // Link previewMarkup
     test('to test the property `previewMarkup`', () async {
       // TODO
     });
 
-    // Link timeEntries (default value: null)
+    // Link timeEntries
     test('to test the property `timeEntries`', () async {
       // TODO
     });
 
-    // List<Link> ancestors (default value: [])
+    // List<Link> ancestors (default value: const [])
     test('to test the property `ancestors`', () async {
       // TODO
     });
 
-    // Link category (default value: null)
+    // Link category
     test('to test the property `category`', () async {
       // TODO
     });
 
-    // Link type (default value: null)
+    // Link type
     test('to test the property `type`', () async {
       // TODO
     });
 
-    // Link priority (default value: null)
+    // Link priority
     test('to test the property `priority`', () async {
       // TODO
     });
 
-    // Link project (default value: null)
+    // Link project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // Link status (default value: null)
+    // Link status
     test('to test the property `status`', () async {
       // TODO
     });
 
-    // Link author (default value: null)
+    // Link author
     test('to test the property `author`', () async {
       // TODO
     });
 
-    // Link responsible (default value: null)
+    // Link responsible
     test('to test the property `responsible`', () async {
       // TODO
     });
 
-    // Link assignee (default value: null)
+    // Link assignee
     test('to test the property `assignee`', () async {
       // TODO
     });
 
-    // Link version (default value: null)
+    // Link version
     test('to test the property `version`', () async {
       // TODO
     });
 
-    // Link parent (default value: null)
+    // Link parent
     test('to test the property `parent`', () async {
       // TODO
     });
 
-    // Link logCosts (default value: null)
+    // Link logCosts
     test('to test the property `logCosts`', () async {
       // TODO
     });
 
-    // Link showCosts (default value: null)
+    // Link showCosts
     test('to test the property `showCosts`', () async {
       // TODO
     });
 
-    // Link costObject (default value: null)
+    // Link costObject
     test('to test the property `costObject`', () async {
       // TODO
     });
 
-    // Link costsByType (default value: null)
+    // Link costsByType
     test('to test the property `costsByType`', () async {
       // TODO
     });

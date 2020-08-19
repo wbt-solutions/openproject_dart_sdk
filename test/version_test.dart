@@ -6,47 +6,47 @@ void main() {
     var instance = new Version();
 
   group('test Version', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String name (default value: null)
+    // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // Description description (default value: null)
+    // Description description
     test('to test the property `description`', () async {
       // TODO
     });
 
-    // DateTime startDate (default value: null)
+    // DateTime startDate
     test('to test the property `startDate`', () async {
       // TODO
     });
 
-    // DateTime endDate (default value: null)
+    // DateTime endDate
     test('to test the property `endDate`', () async {
       // TODO
     });
 
-    // String status (default value: null)
+    // String status
     test('to test the property `status`', () async {
       // TODO
     });
 
-    // DateTime createdAt (default value: null)
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // DateTime updatedAt (default value: null)
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // VersionLinks links (default value: null)
+    // VersionLinks links
     test('to test the property `links`', () async {
       // TODO
     });

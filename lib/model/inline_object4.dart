@@ -2,32 +2,56 @@ part of openproject_dart_sdk.api;
 
 class InlineObject4 {
   
-  bool accessibilityMode;
+  String login;
   
-  String timeZone;
+  String email;
+  
+  String firstName;
+  
+  String lastName;
+  
+  bool admin;
+  
+  String language;
 
   InlineObject4({
-    this.accessibilityMode,
-    this.timeZone,
+    this.login,
+    this.email,
+    this.firstName,
+    this.lastName,
+    this.admin,
+    this.language,
   });
 
   @override
   String toString() {
-    return 'InlineObject4[accessibilityMode=$accessibilityMode, timeZone=$timeZone, ]';
+    return 'InlineObject4[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language, ]';
   }
 
   InlineObject4.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    accessibilityMode = json['accessibilityMode'];
-    timeZone = json['timeZone'];
+    login = json['login'];
+    email = json['email'];
+    firstName = json['firstName'];
+    lastName = json['lastName'];
+    admin = json['admin'];
+    language = json['language'];
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (accessibilityMode != null)
-      json['accessibilityMode'] = accessibilityMode;
-    if (timeZone != null)
-      json['timeZone'] = timeZone;
+    if (login != null)
+      json['login'] = login;
+    if (email != null)
+      json['email'] = email;
+    if (firstName != null)
+      json['firstName'] = firstName;
+    if (lastName != null)
+      json['lastName'] = lastName;
+    if (admin != null)
+      json['admin'] = admin;
+    if (language != null)
+      json['language'] = language;
     return json;
   }
 

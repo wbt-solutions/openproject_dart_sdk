@@ -6,7 +6,7 @@ void main() {
     var instance = new StatusesEmbedded();
 
   group('test StatusesEmbedded', () {
-    // List<Status> elements (default value: [])
+    // List<Status> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

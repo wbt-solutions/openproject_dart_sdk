@@ -6,8 +6,13 @@ void main() {
     var instance = new InlineObject3();
 
   group('test InlineObject3', () {
-    // String name (default value: null)
-    test('to test the property `name`', () async {
+    // bool accessibilityMode
+    test('to test the property `accessibilityMode`', () async {
+      // TODO
+    });
+
+    // String timeZone
+    test('to test the property `timeZone`', () async {
       // TODO
     });
 

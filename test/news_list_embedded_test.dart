@@ -6,7 +6,7 @@ void main() {
     var instance = new NewsListEmbedded();
 
   group('test NewsListEmbedded', () {
-    // List<News> elements (default value: [])
+    // List<News> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

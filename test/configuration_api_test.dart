@@ -9,7 +9,7 @@ void main() {
   group('tests for ConfigurationApi', () {
     // View configuration
     //
-    //Future apiV3ConfigurationGet() async 
+    //Future<Configuration> apiV3ConfigurationGet() async 
     test('test apiV3ConfigurationGet', () async {
       // TODO
     });

@@ -10,7 +10,7 @@ class QueriesApi {
   /// View default query for project with HTTP info returned
   ///
   /// Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query. The query will already be scoped for the project.
-  Future apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
+  Future apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
     Object postBody;
 
     // verify required params are set
@@ -26,7 +26,7 @@ class QueriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "offset", offset));
@@ -79,24 +79,24 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Id of the project the default query is requested for
-  ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of WorkPackages.
+  ///     Page number inside the queries' result collection of work packages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
+  ///     Number of elements to display per page for the queries' result collection of work packages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///bool showHierarchies :
   ///     Indicates whether the hierarchy mode should be enabled.
   /// Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query. The query will already be scoped for the project.
-  Future apiV3ProjectsIdQueriesDefaultGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
+  Future apiV3ProjectsIdQueriesDefaultGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
     Response response = await apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, showHierarchies: showHierarchies );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -222,7 +222,7 @@ class QueriesApi {
   /// View default query with HTTP info returned
   ///
   /// Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query.
-  Future apiV3QueriesDefaultGetWithHttpInfo({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
+  Future apiV3QueriesDefaultGetWithHttpInfo({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     Object postBody;
 
     // verify required params are set
@@ -235,7 +235,7 @@ class QueriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "offset", offset));
@@ -289,18 +289,18 @@ class QueriesApi {
 
   /// View default query
   ///
-  ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of WorkPackages.
+  ///     Page number inside the queries' result collection of work packages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
+  ///     Number of elements to display per page for the queries' result collection of work packages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///String timelineZoomLevel :
@@ -308,7 +308,7 @@ class QueriesApi {
   ///bool showHierarchies :
   ///     Indicates whether the hierarchy mode should be enabled.
   /// Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query.
-  Future apiV3QueriesDefaultGet({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
+  Future apiV3QueriesDefaultGet({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     Response response = await apiV3QueriesDefaultGetWithHttpInfo( filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineZoomLevel: timelineZoomLevel, showHierarchies: showHierarchies );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -320,7 +320,7 @@ class QueriesApi {
 
   /// Query Create Form with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3QueriesFormPostWithHttpInfo() async {
     Object postBody;
 
@@ -361,7 +361,7 @@ class QueriesApi {
 
   /// Query Create Form
   ///
-  ///
+  /// 
   Future apiV3QueriesFormPost() async {
     Response response = await apiV3QueriesFormPostWithHttpInfo();
     if(response.statusCode >= 400) {
@@ -374,8 +374,8 @@ class QueriesApi {
 
   /// List queries with HTTP info returned
   ///
-  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how WorkPackages are filtered. Please note however, that the filters are applied to the queries and not to the WorkPackages the queries in turn might return.
-  Future apiV3QueriesGetWithHttpInfo({ String filters }) async {
+  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how work packages are filtered. Please note however, that the filters are applied to the queries and not to the work packages the queries in turn might return.
+  Future apiV3QueriesGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
     Object postBody;
 
     // verify required params are set
@@ -388,7 +388,7 @@ class QueriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
 
     List<String> contentTypes = [];
@@ -418,10 +418,10 @@ class QueriesApi {
 
   /// List queries
   ///
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how WorkPackages are filtered. Please note however, that the filters are applied to the queries and not to the WorkPackages the queries in turn might return.
-  Future apiV3QueriesGet({ String filters }) async {
+  /// Returns a collection of queries. The collection can be filtered via query parameters similar to how work packages are filtered. Please note however, that the filters are applied to the queries and not to the work packages the queries in turn might return.
+  Future apiV3QueriesGet({ List<Map<String, Object>> filters }) async {
     Response response = await apiV3QueriesGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -493,7 +493,7 @@ class QueriesApi {
   /// View query with HTTP info returned
   ///
   /// Retreive an individual query as identified by the id parameter. Then end point accepts a number of parameters that can be used to override the resources&#39; persisted parameters.
-  Future apiV3QueriesIdGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
+  Future apiV3QueriesIdGetWithHttpInfo(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
     Object postBody;
 
     // verify required params are set
@@ -509,7 +509,7 @@ class QueriesApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "offset", offset));
@@ -565,18 +565,18 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  ///String filters :
-  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the WorkPackages endpoint are accepted.
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
+  ///     JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///int offset :
-  ///     Page number inside the queries' result collection of WorkPackages.
+  ///     Page number inside the queries' result collection of work packages.
   ///int pageSize :
-  ///     Number of elements to display per page for the queries' result collection of WorkPackages.
+  ///     Number of elements to display per page for the queries' result collection of work packages.
   ///String sortBy :
-  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of WorkPackages overriding the query's persisted sort criteria.
+  ///     JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
   ///String groupBy :
-  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of WorkPackages overriding the query's persisted group criteria.
+  ///     The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
   ///bool showSums :
-  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of WorkPackages overriding the query's persisted sums property.
+  ///     Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
   ///bool timelineVisible :
   ///     Indicates whether the timeline should be shown.
   ///String timelineLabels :
@@ -584,7 +584,7 @@ class QueriesApi {
   ///bool showHierarchies :
   ///     Indicates whether the hierarchy mode should be enabled.
   /// Retreive an individual query as identified by the id parameter. Then end point accepts a number of parameters that can be used to override the resources&#39; persisted parameters.
-  Future apiV3QueriesIdGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
+  Future apiV3QueriesIdGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
     Response response = await apiV3QueriesIdGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineLabels: timelineLabels, showHierarchies: showHierarchies );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -597,8 +597,8 @@ class QueriesApi {
   /// Edit Query with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.
-  Future apiV3QueriesIdPatchWithHttpInfo(int id, { InlineObject3 body }) async {
-    Object postBody = body;
+  Future apiV3QueriesIdPatchWithHttpInfo(int id, { InlineObject2 inlineObject2 }) async {
+    Object postBody = inlineObject2;
 
     // verify required params are set
     if(id == null) {
@@ -642,11 +642,11 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  ///InlineObject3 body :
-  ///
+  ///InlineObject2 inlineObject2 :
+  ///    
   /// When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.
-  Future apiV3QueriesIdPatch(int id, { InlineObject3 body }) async {
-    Response response = await apiV3QueriesIdPatchWithHttpInfo(id,  body: body );
+  Future apiV3QueriesIdPatch(int id, { InlineObject2 inlineObject2 }) async {
+    Response response = await apiV3QueriesIdPatchWithHttpInfo(id,  inlineObject2: inlineObject2 );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
@@ -657,7 +657,7 @@ class QueriesApi {
 
   /// Star query with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3QueriesIdStarPatchWithHttpInfo(int id) async {
     Object postBody;
 
@@ -703,7 +703,7 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  ///
+  /// 
   Future apiV3QueriesIdStarPatch(int id) async {
     Response response = await apiV3QueriesIdStarPatchWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -716,7 +716,7 @@ class QueriesApi {
 
   /// Unstar query with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3QueriesIdUnstarPatchWithHttpInfo(int id) async {
     Object postBody;
 
@@ -762,7 +762,7 @@ class QueriesApi {
   ///
   ///int id  (required):
   ///     Query id
-  ///
+  /// 
   Future apiV3QueriesIdUnstarPatch(int id) async {
     Response response = await apiV3QueriesIdUnstarPatchWithHttpInfo(id);
     if(response.statusCode >= 400) {

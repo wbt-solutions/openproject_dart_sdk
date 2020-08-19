@@ -9,16 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiV3TimeEntriesGet) | **GET** /api/v3/time_entries | List TimeEntries
-[**apiV3TimeEntriesIdGet**](TimeEntriesApi.md#apiV3TimeEntriesIdGet) | **GET** /api/v3/time_entries/{id} | View TimeEntry
+[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiV3TimeEntriesGet) | **GET** /api/v3/time_entries | List Time entries
+[**apiV3TimeEntriesIdGet**](TimeEntriesApi.md#apiV3TimeEntriesIdGet) | **GET** /api/v3/time_entries/{id} | View time entry
 
 
 # **apiV3TimeEntriesGet**
 > TimeEntries apiV3TimeEntriesGet(offset, pageSize, filters)
 
-List TimeEntries
+List Time entries
 
-Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
+Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
 
 ### Example 
 ```dart
@@ -30,7 +30,7 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = TimeEntriesApi();
 var offset = 56; // int | Page number inside the requested collection.
 var pageSize = 56; // int | Number of elements to display per page.
-var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter TimeEntries by WorkPackage  + project: Filter TimeEntries by project  + user: Filter TimeEntries by users
+var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
 
 try { 
     var result = api_instance.apiV3TimeEntriesGet(offset, pageSize, filters);
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter TimeEntries by WorkPackage  + project: Filter TimeEntries by project  + user: Filter TimeEntries by users | [optional] 
+ **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users | [optional] [default to const []]
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 # **apiV3TimeEntriesIdGet**
 > TimeEntry apiV3TimeEntriesIdGet(id)
 
-View TimeEntry
+View time entry
 
 ### Example 
 ```dart
@@ -76,7 +76,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = TimeEntriesApi();
-var id = 56; // int | TimeEntry id
+var id = 56; // int | time entry id
 
 try { 
     var result = api_instance.apiV3TimeEntriesIdGet(id);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| TimeEntry id | 
+ **id** | **int**| time entry id | 
 
 ### Return type
 

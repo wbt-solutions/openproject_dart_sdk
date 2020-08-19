@@ -6,22 +6,22 @@ void main() {
     var instance = new WorkPackageEmbedded();
 
   group('test WorkPackageEmbedded', () {
-    // WorkPackage parent (default value: null)
+    // WorkPackage parent
     test('to test the property `parent`', () async {
       // TODO
     });
 
-    // Project project (default value: null)
+    // Project project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // WPType type (default value: null)
+    // WPType type
     test('to test the property `type`', () async {
       // TODO
     });
 
-    // Version version (default value: null)
+    // Version version
     test('to test the property `version`', () async {
       // TODO
     });

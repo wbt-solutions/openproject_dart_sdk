@@ -6,12 +6,12 @@ void main() {
     var instance = new UserPreferencesLinks();
 
   group('test UserPreferencesLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link user (default value: null)
+    // Link user
     test('to test the property `user`', () async {
       // TODO
     });

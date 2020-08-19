@@ -6,7 +6,7 @@ void main() {
     var instance = new WPTypeLinks();
 
   group('test WPTypeLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });

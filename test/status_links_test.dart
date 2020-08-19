@@ -6,7 +6,7 @@ void main() {
     var instance = new StatusLinks();
 
   group('test StatusLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });

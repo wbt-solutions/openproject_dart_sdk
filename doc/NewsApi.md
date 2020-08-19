@@ -31,7 +31,7 @@ var api_instance = NewsApi();
 var offset = 56; // int | Page number inside the requested collection.
 var pageSize = 56; // int | Number of elements to display per page.
 var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
-var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
+var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
 
 try { 
     var result = api_instance.apiV3NewsGet(offset, pageSize, sortBy, filters);
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Page number inside the requested collection. | [optional] 
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint. | [optional] 
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] 
+ **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] [default to const []]
 
 ### Return type
 

@@ -6,18 +6,23 @@ void main() {
     var instance = new Projects();
 
   group('test Projects', () {
-    // int total (default value: null)
+    // int total
     test('to test the property `total`', () async {
       // TODO
     });
 
-    // int count (default value: null)
+    // int count
     test('to test the property `count`', () async {
       // TODO
     });
 
-    // ProjectsEmbedded embedded (default value: null)
+    // ProjectsEmbedded embedded
     test('to test the property `embedded`', () async {
+      // TODO
+    });
+
+    // ProjectsLinks links
+    test('to test the property `links`', () async {
       // TODO
     });
 

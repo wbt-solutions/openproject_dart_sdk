@@ -1,23 +1,23 @@
 part of openproject_dart_sdk.api;
 
 class Version {
-
+  
   int id;
-
+  
   String name;
-
+  
   Description description;
-
+  
   DateTime startDate;
-
+  
   DateTime endDate;
-
+  
   VersionStatusEnum status;
-
+  
   DateTime createdAt;
-
+  
   DateTime updatedAt;
-
+  
   VersionLinks links;
 
   Version({
@@ -115,6 +115,10 @@ class VersionStatusEnum {
   const VersionStatusEnum._internal(this.value);
 
   static const VersionStatusEnum open_ = VersionStatusEnum._internal("open");
+
+  static List<VersionStatusEnum> get values => const [
+        open_,
+      ];
 
   String toJson () {
     return value;

@@ -6,7 +6,7 @@ void main() {
     var instance = new WorkPackagesEmbedded();
 
   group('test WorkPackagesEmbedded', () {
-    // List<WorkPackage> elements (default value: [])
+    // List<WorkPackage> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

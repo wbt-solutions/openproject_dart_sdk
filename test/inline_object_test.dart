@@ -6,8 +6,13 @@ void main() {
     var instance = new InlineObject();
 
   group('test InlineObject', () {
-    // ApiV3ActivitiesIdComment comment (default value: null)
-    test('to test the property `comment`', () async {
+    // String lockVersion
+    test('to test the property `lockVersion`', () async {
+      // TODO
+    });
+
+    // ApiV3CustomActionsCustomActionIdExecuteLinks links
+    test('to test the property `links`', () async {
       // TODO
     });
 

@@ -6,7 +6,7 @@ void main() {
     var instance = new PrioritiesEmbedded();
 
   group('test PrioritiesEmbedded', () {
-    // List<Priority> elements (default value: [])
+    // List<Priority> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

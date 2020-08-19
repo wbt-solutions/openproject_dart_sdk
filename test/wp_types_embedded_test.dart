@@ -6,7 +6,7 @@ void main() {
     var instance = new WPTypesEmbedded();
 
   group('test WPTypesEmbedded', () {
-    // List<WPType> elements (default value: [])
+    // List<WPType> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

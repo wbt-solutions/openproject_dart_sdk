@@ -10,8 +10,8 @@ class FormsApi {
   /// show or validate form with HTTP info returned
   ///
   /// This is an example of how a form might look like. Note that this endpoint does not exist in the actual implementation.
-  Future apiV3ExampleFormPostWithHttpInfo({ InlineObject2 body }) async {
-    Object postBody = body;
+  Future apiV3ExampleFormPostWithHttpInfo({ InlineObject1 inlineObject1 }) async {
+    Object postBody = inlineObject1;
 
     // verify required params are set
 
@@ -50,11 +50,11 @@ class FormsApi {
 
   /// show or validate form
   ///
-  ///InlineObject2 body :
+  ///InlineObject1 inlineObject1 :
   ///    
   /// This is an example of how a form might look like. Note that this endpoint does not exist in the actual implementation.
-  Future apiV3ExampleFormPost({ InlineObject2 body }) async {
-    Response response = await apiV3ExampleFormPostWithHttpInfo( body: body );
+  Future apiV3ExampleFormPost({ InlineObject1 inlineObject1 }) async {
+    Response response = await apiV3ExampleFormPostWithHttpInfo( inlineObject1: inlineObject1 );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

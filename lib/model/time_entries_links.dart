@@ -1,13 +1,13 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntriesLinks {
-
+  
   Link self;
-
+  
   Link jumpTo;
-
+  
   Link changeSize;
-
+  
   Link nextByOffset;
 
   TimeEntriesLinks({

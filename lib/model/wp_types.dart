@@ -1,13 +1,13 @@
 part of openproject_dart_sdk.api;
 
 class WPTypes {
-
+  
   int total;
-
+  
   int count;
-
+  
   WPTypesEmbedded embedded;
-
+  
   WPTypeLinks links;
 
   WPTypes({

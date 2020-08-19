@@ -70,6 +70,12 @@ class DescriptionFormatEnum {
   static const DescriptionFormatEnum markdown_ = DescriptionFormatEnum._internal("markdown");
   static const DescriptionFormatEnum custom_ = DescriptionFormatEnum._internal("custom");
 
+  static List<DescriptionFormatEnum> get values => const [
+        plain_,
+        markdown_,
+        custom_,
+      ];
+
   String toJson () {
     return value;
   }

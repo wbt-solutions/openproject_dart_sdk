@@ -6,28 +6,33 @@ void main() {
     var instance = new UserPreferences();
 
   group('test UserPreferences', () {
-    // bool hideMail (default value: null)
+    // bool hideMail
     test('to test the property `hideMail`', () async {
       // TODO
     });
 
-    // String timeZone (default value: null)
+    // String timeZone
     test('to test the property `timeZone`', () async {
       // TODO
     });
 
-    // bool commentSortDescending (default value: null)
+    // bool commentSortDescending
     test('to test the property `commentSortDescending`', () async {
       // TODO
     });
 
-    // bool warnOnLeavingUnsaved (default value: null)
+    // bool warnOnLeavingUnsaved
     test('to test the property `warnOnLeavingUnsaved`', () async {
       // TODO
     });
 
-    // bool accessibilityMode (default value: null)
+    // bool accessibilityMode
     test('to test the property `accessibilityMode`', () async {
+      // TODO
+    });
+
+    // UserPreferencesLinks links
+    test('to test the property `links`', () async {
       // TODO
     });
 

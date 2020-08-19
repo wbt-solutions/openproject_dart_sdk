@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 
 # **apiV3CustomActionsCustomActionIdExecutePost**
-> apiV3CustomActionsCustomActionIdExecutePost(customActionId, body)
+> apiV3CustomActionsCustomActionIdExecutePost(customActionId, inlineObject)
 
 Execute custom action
 
-A POST to this end point executes the custom action on the WorkPackage provided in the payload. The altered WorkPackage will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the WorkPackage's current lockVersion.
+A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package's current lockVersion.
 
 ### Example 
 ```dart
@@ -29,10 +29,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 var api_instance = CustomActionsApi();
 var customActionId = 56; // int | The id of the custom action to execute
-var body = InlineObject1(); // InlineObject1 | 
+var inlineObject = InlineObject(); // InlineObject | 
 
 try { 
-    api_instance.apiV3CustomActionsCustomActionIdExecutePost(customActionId, body);
+    api_instance.apiV3CustomActionsCustomActionIdExecutePost(customActionId, inlineObject);
 } catch (e) {
     print("Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdExecutePost: $e\n");
 }
@@ -43,7 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customActionId** | **int**| The id of the custom action to execute | 
- **body** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
+ **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
 ### Return type
 

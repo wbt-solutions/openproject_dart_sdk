@@ -6,7 +6,7 @@ void main() {
     var instance = new ApiV3CustomActionsCustomActionIdExecuteLinks();
 
   group('test ApiV3CustomActionsCustomActionIdExecuteLinks', () {
-    // ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage workPackage (default value: null)
+    // ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage workPackage
     test('to test the property `workPackage`', () async {
       // TODO
     });

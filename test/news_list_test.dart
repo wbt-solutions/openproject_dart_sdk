@@ -6,32 +6,32 @@ void main() {
     var instance = new NewsList();
 
   group('test NewsList', () {
-    // int total (default value: null)
+    // int total
     test('to test the property `total`', () async {
       // TODO
     });
 
-    // int count (default value: null)
+    // int count
     test('to test the property `count`', () async {
       // TODO
     });
 
-    // int pageSize (default value: null)
+    // int pageSize
     test('to test the property `pageSize`', () async {
       // TODO
     });
 
-    // int offset (default value: null)
+    // int offset
     test('to test the property `offset`', () async {
       // TODO
     });
 
-    // NewsListEmbedded embedded (default value: null)
+    // NewsListEmbedded embedded
     test('to test the property `embedded`', () async {
       // TODO
     });
 
-    // NewsListLinks links (default value: null)
+    // NewsListLinks links
     test('to test the property `links`', () async {
       // TODO
     });

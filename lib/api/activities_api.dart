@@ -9,7 +9,7 @@ class ActivitiesApi {
 
   /// View activity with HTTP info returned
   ///
-  /// 
+  ///
   Future<Response> apiV3ActivitiesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -55,7 +55,7 @@ class ActivitiesApi {
   ///
   ///int id  (required):
   ///     Activity id
-  /// 
+  ///
   Future<Activity> apiV3ActivitiesIdGet(int id) async {
     Response response = await apiV3ActivitiesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -70,8 +70,8 @@ class ActivitiesApi {
   /// Update activity with HTTP info returned
   ///
   /// Updates an activity&#39;s comment and, on success, returns the updated activity.
-  Future apiV3ActivitiesIdPatchWithHttpInfo(int id, { InlineObject body }) async {
-    Object postBody = body;
+  Future apiV3ActivitiesIdPatchWithHttpInfo(int id, { dynamic UNKNOWN_BASE_TYPE }) async {
+    Object postBody = UNKNOWN_BASE_TYPE;
 
     // verify required params are set
     if(id == null) {
@@ -115,11 +115,11 @@ class ActivitiesApi {
   ///
   ///int id  (required):
   ///     Activity id
-  ///InlineObject body :
-  ///    
+  ///dynamic UNKNOWN_BASE_TYPE :
+  ///
   /// Updates an activity&#39;s comment and, on success, returns the updated activity.
-  Future apiV3ActivitiesIdPatch(int id, { InlineObject body }) async {
-    Response response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  body: body );
+  Future apiV3ActivitiesIdPatch(int id, { dynamic UNKNOWN_BASE_TYPE }) async {
+    Response response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  UNKNOWN_BASE_TYPE: UNKNOWN_BASE_TYPE );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

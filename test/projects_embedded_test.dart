@@ -6,7 +6,7 @@ void main() {
     var instance = new ProjectsEmbedded();
 
   group('test ProjectsEmbedded', () {
-    // List<Project> elements (default value: [])
+    // List<Project> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

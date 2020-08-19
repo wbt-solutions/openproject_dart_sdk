@@ -1,15 +1,15 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntryLinks {
-
+  
   Link self;
-
+  
   Link project;
-
+  
   Link workPackage;
-
+  
   Link user;
-
+  
   Link activity;
 
   TimeEntryLinks({

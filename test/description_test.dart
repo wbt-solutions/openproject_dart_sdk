@@ -6,17 +6,17 @@ void main() {
     var instance = new Description();
 
   group('test Description', () {
-    // String format (default value: null)
+    // String format
     test('to test the property `format`', () async {
       // TODO
     });
 
-    // String raw (default value: null)
+    // String raw
     test('to test the property `raw`', () async {
       // TODO
     });
 
-    // String html (default value: null)
+    // String html
     test('to test the property `html`', () async {
       // TODO
     });

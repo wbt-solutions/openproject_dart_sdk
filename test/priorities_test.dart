@@ -6,22 +6,22 @@ void main() {
     var instance = new Priorities();
 
   group('test Priorities', () {
-    // int total (default value: null)
+    // int total
     test('to test the property `total`', () async {
       // TODO
     });
 
-    // int count (default value: null)
+    // int count
     test('to test the property `count`', () async {
       // TODO
     });
 
-    // PrioritiesEmbedded embedded (default value: null)
+    // PrioritiesEmbedded embedded
     test('to test the property `embedded`', () async {
       // TODO
     });
 
-    // PrioritiesLinks links (default value: null)
+    // PrioritiesLinks links
     test('to test the property `links`', () async {
       // TODO
     });

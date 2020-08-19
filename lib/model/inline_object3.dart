@@ -2,26 +2,32 @@ part of openproject_dart_sdk.api;
 
 class InlineObject3 {
   
-  String name;
+  bool accessibilityMode;
+  
+  String timeZone;
 
   InlineObject3({
-    this.name,
+    this.accessibilityMode,
+    this.timeZone,
   });
 
   @override
   String toString() {
-    return 'InlineObject3[name=$name, ]';
+    return 'InlineObject3[accessibilityMode=$accessibilityMode, timeZone=$timeZone, ]';
   }
 
   InlineObject3.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    name = json['name'];
+    accessibilityMode = json['accessibilityMode'];
+    timeZone = json['timeZone'];
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (name != null)
-      json['name'] = name;
+    if (accessibilityMode != null)
+      json['accessibilityMode'] = accessibilityMode;
+    if (timeZone != null)
+      json['timeZone'] = timeZone;
     return json;
   }
 

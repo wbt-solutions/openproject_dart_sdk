@@ -6,7 +6,7 @@ void main() {
     var instance = new UsersEmbedded();
 
   group('test UsersEmbedded', () {
-    // List<User> elements (default value: [])
+    // List<User> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

@@ -6,38 +6,58 @@ void main() {
     var instance = new Project();
 
   group('test Project', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String name (default value: null)
+    // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // String identifier (default value: null)
+    // String identifier
     test('to test the property `identifier`', () async {
       // TODO
     });
 
-    // DateTime spentOn (default value: null)
-    test('to test the property `spentOn`', () async {
+    // bool active
+    test('to test the property `active`', () async {
       // TODO
     });
 
-    // DateTime createdAt (default value: null)
+    // String status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // Description statusExplanation
+    test('to test the property `statusExplanation`', () async {
+      // TODO
+    });
+
+    // bool public
+    test('to test the property `public`', () async {
+      // TODO
+    });
+
+    // Description description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // DateTime updatedAt (default value: null)
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // TimeEntryEmbedded embedded (default value: null)
-    test('to test the property `embedded`', () async {
+    // ProjectLinks links
+    test('to test the property `links`', () async {
       // TODO
     });
 

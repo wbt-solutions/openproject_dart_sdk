@@ -1,21 +1,21 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackagePatch {
-
+  
   int lockVersion;
-
+  
   int percentageDone;
-
+  
   String subject;
-
+  
   Description description;
-
+  
   DateTime startDate;
-
+  
   DateTime dueDate;
-
+  
   String estimatedTime;
-
+  
   WorkPackageLinks links;
 
   WorkPackagePatch({

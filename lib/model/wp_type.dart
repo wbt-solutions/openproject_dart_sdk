@@ -1,23 +1,23 @@
 part of openproject_dart_sdk.api;
 
 class WPType {
-
+  
   int id;
-
+  
   String name;
-
+  
   String color;
-
+  
   int position;
-
+  
   bool isDefault = false;
-
+  
   bool isMilestone = false;
-
+  
   DateTime createdAt;
-
+  
   DateTime updatedAt;
-
+  
   WPTypeLinks links;
 
   WPType({

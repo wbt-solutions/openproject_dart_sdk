@@ -1,7 +1,7 @@
 part of openproject_dart_sdk.api;
 
 class VersionsEmbedded {
-
+  
   List<Version> elements = const [];
 
   VersionsEmbedded({

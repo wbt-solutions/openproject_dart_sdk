@@ -6,17 +6,17 @@ void main() {
     var instance = new ActivityLinks();
 
   group('test ActivityLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link workPackage (default value: null)
+    // Link workPackage
     test('to test the property `workPackage`', () async {
       // TODO
     });
 
-    // Link user (default value: null)
+    // Link user
     test('to test the property `user`', () async {
       // TODO
     });

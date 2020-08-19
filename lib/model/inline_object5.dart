@@ -13,6 +13,10 @@ class InlineObject5 {
   bool admin;
   
   String language;
+  
+  String status;
+  
+  String password;
 
   InlineObject5({
     this.login,
@@ -21,11 +25,13 @@ class InlineObject5 {
     this.lastName,
     this.admin,
     this.language,
+    this.status,
+    this.password,
   });
 
   @override
   String toString() {
-    return 'InlineObject5[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language, ]';
+    return 'InlineObject5[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language, status=$status, password=$password, ]';
   }
 
   InlineObject5.fromJson(Map<String, dynamic> json) {
@@ -36,6 +42,8 @@ class InlineObject5 {
     lastName = json['lastName'];
     admin = json['admin'];
     language = json['language'];
+    status = json['status'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
@@ -52,6 +60,10 @@ class InlineObject5 {
       json['admin'] = admin;
     if (language != null)
       json['language'] = language;
+    if (status != null)
+      json['status'] = status;
+    if (password != null)
+      json['password'] = password;
     return json;
   }
 

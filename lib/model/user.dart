@@ -149,6 +149,13 @@ class UserStatusEnum {
   static const UserStatusEnum locked_ = UserStatusEnum._internal("locked");
   static const UserStatusEnum invited_ = UserStatusEnum._internal("invited");
 
+  static List<UserStatusEnum> get values => const [
+        active_,
+        registered_,
+        locked_,
+        invited_,
+      ];
+
   String toJson () {
     return value;
   }

@@ -6,7 +6,7 @@ void main() {
     var instance = new VersionsEmbedded();
 
   group('test VersionsEmbedded', () {
-    // List<Version> elements (default value: [])
+    // List<Version> elements (default value: const [])
     test('to test the property `elements`', () async {
       // TODO
     });

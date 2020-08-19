@@ -10,7 +10,7 @@ class ProjectsApi {
   /// list available parent project candidates with HTTP info returned
   ///
   /// Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
-  Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ String filters, String of_, String sortBy }) async {
+  Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
     Object postBody;
 
     // verify required params are set
@@ -23,7 +23,7 @@ class ProjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(of_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "of", of_));
@@ -59,14 +59,14 @@ class ProjectsApi {
 
   /// list available parent project candidates
   ///
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions.
   ///String of_ :
   ///     The id or identifier of the project the parent candidate is determined for
   ///String sortBy :
   ///     JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point.
   /// Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
-  Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ String filters, String of_, String sortBy }) async {
+  Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
     Response response = await apiV3ProjectsAvailableParentProjectsGetWithHttpInfo( filters: filters, of_: of_, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -79,8 +79,8 @@ class ProjectsApi {
 
   /// List projects with HTTP info returned
   ///
-  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how WorkPackages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
-  Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters, String sortBy }) async {
+  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+  Future<Response> apiV3ProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
     Object postBody;
 
     // verify required params are set
@@ -93,7 +93,7 @@ class ProjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
@@ -126,12 +126,12 @@ class ProjectsApi {
 
   /// List projects
   ///
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///String sortBy :
   ///     JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how WorkPackages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
-  Future<Projects> apiV3ProjectsGet({ String filters, String sortBy }) async {
+  /// Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
+  Future<Projects> apiV3ProjectsGet({ List<Map<String, Object>> filters, String sortBy }) async {
     Response response = await apiV3ProjectsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -203,7 +203,7 @@ class ProjectsApi {
 
   /// View project with HTTP info returned
   ///
-  ///
+  /// 
   Future<Response> apiV3ProjectsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -249,7 +249,7 @@ class ProjectsApi {
   ///
   ///int id  (required):
   ///     Project id
-  ///
+  /// 
   Future<Project> apiV3ProjectsIdGet(int id) async {
     Response response = await apiV3ProjectsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -329,7 +329,7 @@ class ProjectsApi {
   /// create project with HTTP info returned
   ///
   /// Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
-  Future<Response> apiV3ProjectsPostWithHttpInfo(Project project, { String filters, String sortBy }) async {
+  Future<Response> apiV3ProjectsPostWithHttpInfo(Project project, { List<Map<String, Object>> filters, String sortBy }) async {
     Object postBody = project;
 
     // verify required params are set
@@ -345,7 +345,7 @@ class ProjectsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
@@ -380,12 +380,12 @@ class ProjectsApi {
   ///
   ///Project project  (required):
   ///     New project attributes
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///String sortBy :
   ///     JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
   /// Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
-  Future<Project> apiV3ProjectsPost(Project project, { String filters, String sortBy }) async {
+  Future<Project> apiV3ProjectsPost(Project project, { List<Map<String, Object>> filters, String sortBy }) async {
     Response response = await apiV3ProjectsPostWithHttpInfo(project,  filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

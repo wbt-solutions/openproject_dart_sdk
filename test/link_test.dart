@@ -6,22 +6,22 @@ void main() {
     var instance = new Link();
 
   group('test Link', () {
-    // String href (default value: null)
+    // String href
     test('to test the property `href`', () async {
       // TODO
     });
 
-    // String title (default value: null)
+    // String title
     test('to test the property `title`', () async {
       // TODO
     });
 
-    // String method (default value: null)
+    // String method
     test('to test the property `method`', () async {
       // TODO
     });
 
-    // String type (default value: null)
+    // String type
     test('to test the property `type`', () async {
       // TODO
     });

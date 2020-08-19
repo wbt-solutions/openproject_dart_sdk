@@ -50,7 +50,7 @@ void main() {
     //
     // Updates the user's writable attributes. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.
     //
-    //Future apiV3UsersIdPatch(int id, { InlineObject5 body }) async 
+    //Future apiV3UsersIdPatch(int id, { InlineObject4 inlineObject4 }) async 
     test('test apiV3UsersIdPatch', () async {
       // TODO
     });
@@ -59,7 +59,7 @@ void main() {
     //
     // Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes. 2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
     //
-    //Future apiV3UsersPost({ InlineObject6 body }) async 
+    //Future apiV3UsersPost({ InlineObject5 inlineObject5 }) async 
     test('test apiV3UsersPost', () async {
       // TODO
     });

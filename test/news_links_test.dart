@@ -6,17 +6,17 @@ void main() {
     var instance = new NewsLinks();
 
   group('test NewsLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link project (default value: null)
+    // Link project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // Link author (default value: null)
+    // Link author
     test('to test the property `author`', () async {
       // TODO
     });

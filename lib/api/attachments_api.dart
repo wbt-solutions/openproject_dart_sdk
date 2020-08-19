@@ -68,7 +68,7 @@ class AttachmentsApi {
 
   /// View attachment with HTTP info returned
   ///
-  ///
+  /// 
   Future<Response> apiV3AttachmentsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -114,13 +114,13 @@ class AttachmentsApi {
   ///
   ///int id  (required):
   ///     Attachment id
-  ///
-  Future<Object> apiV3AttachmentsIdGet(int id) async {
+  /// 
+  Future<Attachment> apiV3AttachmentsIdGet(int id) async {
     Response response = await apiV3AttachmentsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Attachment') as Attachment;
     } else {
       return null;
     }
@@ -128,7 +128,7 @@ class AttachmentsApi {
 
   /// List attachments with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3WorkPackagesIdAttachmentsGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -173,8 +173,8 @@ class AttachmentsApi {
   /// List attachments
   ///
   ///int id  (required):
-  ///     ID of the WorkPackage whose attachments will be listed
-  ///
+  ///     ID of the work package whose attachments will be listed
+  /// 
   Future apiV3WorkPackagesIdAttachmentsGet(int id) async {
     Response response = await apiV3WorkPackagesIdAttachmentsGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -187,7 +187,7 @@ class AttachmentsApi {
 
   /// Add attachment with HTTP info returned
   ///
-  /// To add an attachment to a WorkPackage, a client needs to issue a request of type &#x60;multipart/form-data&#x60; with exactly two parts.  The first part *must* be called &#x60;metadata&#x60;. Its content type is expected to be &#x60;application/json&#x60;, the body *must* be a single JSON object, containing at least the &#x60;fileName&#x60; and optionally the attachments &#x60;description&#x60;.  The second part *must* be called &#x60;file&#x60;, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a &#x60;filename&#x60; must be indicated in the &#x60;Content-Disposition&#x60; of this part, however it will be ignored. Instead the &#x60;fileName&#x60; inside the JSON of the metadata part will be used.
+  /// To add an attachment to a work package, a client needs to issue a request of type &#x60;multipart/form-data&#x60; with exactly two parts.  The first part *must* be called &#x60;metadata&#x60;. Its content type is expected to be &#x60;application/json&#x60;, the body *must* be a single JSON object, containing at least the &#x60;fileName&#x60; and optionally the attachments &#x60;description&#x60;.  The second part *must* be called &#x60;file&#x60;, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a &#x60;filename&#x60; must be indicated in the &#x60;Content-Disposition&#x60; of this part, however it will be ignored. Instead the &#x60;fileName&#x60; inside the JSON of the metadata part will be used.
   Future apiV3WorkPackagesIdAttachmentsPostWithHttpInfo(int id) async {
     Object postBody;
 
@@ -232,8 +232,8 @@ class AttachmentsApi {
   /// Add attachment
   ///
   ///int id  (required):
-  ///     ID of the WorkPackage to receive the attachment
-  /// To add an attachment to a WorkPackage, a client needs to issue a request of type &#x60;multipart/form-data&#x60; with exactly two parts.  The first part *must* be called &#x60;metadata&#x60;. Its content type is expected to be &#x60;application/json&#x60;, the body *must* be a single JSON object, containing at least the &#x60;fileName&#x60; and optionally the attachments &#x60;description&#x60;.  The second part *must* be called &#x60;file&#x60;, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a &#x60;filename&#x60; must be indicated in the &#x60;Content-Disposition&#x60; of this part, however it will be ignored. Instead the &#x60;fileName&#x60; inside the JSON of the metadata part will be used.
+  ///     ID of the work package to receive the attachment
+  /// To add an attachment to a work package, a client needs to issue a request of type &#x60;multipart/form-data&#x60; with exactly two parts.  The first part *must* be called &#x60;metadata&#x60;. Its content type is expected to be &#x60;application/json&#x60;, the body *must* be a single JSON object, containing at least the &#x60;fileName&#x60; and optionally the attachments &#x60;description&#x60;.  The second part *must* be called &#x60;file&#x60;, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a &#x60;filename&#x60; must be indicated in the &#x60;Content-Disposition&#x60; of this part, however it will be ignored. Instead the &#x60;fileName&#x60; inside the JSON of the metadata part will be used.
   Future apiV3WorkPackagesIdAttachmentsPost(int id) async {
     Response response = await apiV3WorkPackagesIdAttachmentsPostWithHttpInfo(id);
     if(response.statusCode >= 400) {

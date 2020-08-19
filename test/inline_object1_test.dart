@@ -6,13 +6,18 @@ void main() {
     var instance = new InlineObject1();
 
   group('test InlineObject1', () {
-    // String lockVersion (default value: null)
+    // num lockVersion
     test('to test the property `lockVersion`', () async {
       // TODO
     });
 
-    // ApiV3CustomActionsCustomActionIdExecuteLinks links (default value: null)
-    test('to test the property `links`', () async {
+    // String type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
+    // String subject
+    test('to test the property `subject`', () async {
       // TODO
     });
 

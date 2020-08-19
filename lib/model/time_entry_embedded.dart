@@ -1,13 +1,13 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntryEmbedded {
-
+  
   Project project;
-
+  
   WorkPackage workPackage;
-
+  
   User user;
-
+  
   Activity activity;
 
   TimeEntryEmbedded({

@@ -10,7 +10,7 @@ class NewsApi {
   /// list news with HTTP info returned
   ///
   /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
-  Future<Response> apiV3NewsGetWithHttpInfo({ int offset, int pageSize, String sortBy, String filters }) async {
+  Future<Response> apiV3NewsGetWithHttpInfo({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
     Object postBody;
 
     // verify required params are set
@@ -32,7 +32,7 @@ class NewsApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
     }
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
 
     List<String> contentTypes = [];
@@ -68,10 +68,10 @@ class NewsApi {
   ///     Number of elements to display per page.
   ///String sortBy :
   ///     JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
   /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
-  Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, String filters }) async {
+  Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
     Response response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

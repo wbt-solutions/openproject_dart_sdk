@@ -6,22 +6,22 @@ void main() {
     var instance = new TimeEntriesLinks();
 
   group('test TimeEntriesLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link jumpTo (default value: null)
+    // Link jumpTo
     test('to test the property `jumpTo`', () async {
       // TODO
     });
 
-    // Link changeSize (default value: null)
+    // Link changeSize
     test('to test the property `changeSize`', () async {
       // TODO
     });
 
-    // Link nextByOffset (default value: null)
+    // Link nextByOffset
     test('to test the property `nextByOffset`', () async {
       // TODO
     });

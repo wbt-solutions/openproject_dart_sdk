@@ -6,62 +6,67 @@ void main() {
     var instance = new WorkPackage();
 
   group('test WorkPackage', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // int lockVersion (default value: null)
+    // int lockVersion
     test('to test the property `lockVersion`', () async {
       // TODO
     });
 
-    // int percentageDone (default value: null)
+    // int percentageDone
     test('to test the property `percentageDone`', () async {
       // TODO
     });
 
-    // String subject (default value: null)
+    // String subject
     test('to test the property `subject`', () async {
       // TODO
     });
 
-    // Description description (default value: null)
+    // Description description
     test('to test the property `description`', () async {
       // TODO
     });
 
-    // DateTime startDate (default value: null)
+    // DateTime startDate
     test('to test the property `startDate`', () async {
       // TODO
     });
 
-    // DateTime dueDate (default value: null)
+    // DateTime dueDate
     test('to test the property `dueDate`', () async {
       // TODO
     });
 
-    // DateTime createdAt (default value: null)
+    // DateTime date
+    test('to test the property `date`', () async {
+      // TODO
+    });
+
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // DateTime updatedAt (default value: null)
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // String estimatedTime (default value: null)
+    // String estimatedTime
     test('to test the property `estimatedTime`', () async {
       // TODO
     });
 
-    // WorkPackageEmbedded embedded (default value: null)
+    // WorkPackageEmbedded embedded
     test('to test the property `embedded`', () async {
       // TODO
     });
 
-    // WorkPackageLinks links (default value: null)
+    // WorkPackageLinks links
     test('to test the property `links`', () async {
       // TODO
     });

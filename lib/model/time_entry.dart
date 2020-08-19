@@ -1,21 +1,21 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntry {
-
+  
   int id;
-
+  
   String hours;
-
+  
   String comment;
-
+  
   DateTime spentOn;
-
+  
   DateTime createdAt;
-
+  
   DateTime updatedAt;
-
+  
   TimeEntryEmbedded embedded;
-
+  
   TimeEntryLinks links;
 
   TimeEntry({

@@ -9,7 +9,7 @@ void main() {
   group('tests for UserPreferencesApi', () {
     // Show my preferences
     //
-    //Future apiV3MyPreferencesGet() async 
+    //Future<UserPreferences> apiV3MyPreferencesGet() async 
     test('test apiV3MyPreferencesGet', () async {
       // TODO
     });
@@ -18,7 +18,7 @@ void main() {
     //
     // When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
     //
-    //Future apiV3MyPreferencesPatch({ InlineObject4 body }) async 
+    //Future apiV3MyPreferencesPatch({ InlineObject3 inlineObject3 }) async 
     test('test apiV3MyPreferencesPatch', () async {
       // TODO
     });

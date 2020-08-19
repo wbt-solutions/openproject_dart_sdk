@@ -2,38 +2,26 @@ part of openproject_dart_sdk.api;
 
 class InlineObject2 {
   
-  num lockVersion;
-  
-  String type;
-  
-  String subject;
+  String name;
 
   InlineObject2({
-    this.lockVersion,
-    this.type,
-    this.subject,
+    this.name,
   });
 
   @override
   String toString() {
-    return 'InlineObject2[lockVersion=$lockVersion, type=$type, subject=$subject, ]';
+    return 'InlineObject2[name=$name, ]';
   }
 
   InlineObject2.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    lockVersion = json['lockVersion'];
-    type = json['_type'];
-    subject = json['subject'];
+    name = json['name'];
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (lockVersion != null)
-      json['lockVersion'] = lockVersion;
-    if (type != null)
-      json['_type'] = type;
-    if (subject != null)
-      json['subject'] = subject;
+    if (name != null)
+      json['name'] = name;
     return json;
   }
 

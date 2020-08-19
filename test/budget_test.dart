@@ -6,17 +6,17 @@ void main() {
     var instance = new Budget();
 
   group('test Budget', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String subject (default value: null)
+    // String subject
     test('to test the property `subject`', () async {
       // TODO
     });
 
-    // BudgetLinks links (default value: null)
+    // BudgetLinks links
     test('to test the property `links`', () async {
       // TODO
     });

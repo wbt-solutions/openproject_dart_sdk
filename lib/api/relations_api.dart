@@ -9,8 +9,8 @@ class RelationsApi {
 
   /// List Relations with HTTP info returned
   ///
-  /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between WorkPackages which the user is allowed to see.
-  Future apiV3RelationsGetWithHttpInfo({ String filters, String sortBy }) async {
+  /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
+  Future apiV3RelationsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
     Object postBody;
 
     // verify required params are set
@@ -23,7 +23,7 @@ class RelationsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
@@ -56,12 +56,12 @@ class RelationsApi {
 
   /// List Relations
   ///
-  ///String filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of WorkPackage from which the filtered relations emanates.  + to - ID of WorkPackage to which this related points.  + involved - ID of either the `from` or the `to` WorkPackage.  + type - The type of relation to filter by, e.g. \"follows\".
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
+  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
   ///String sortBy :
   ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between WorkPackages which the user is allowed to see.
-  Future apiV3RelationsGet({ String filters, String sortBy }) async {
+  /// Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
+  Future apiV3RelationsGet({ List<Map<String, Object>> filters, String sortBy }) async {
     Response response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -132,7 +132,7 @@ class RelationsApi {
 
   /// Relation edit form with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3RelationsIdFormPostWithHttpInfo(int id) async {
     Object postBody;
 
@@ -178,7 +178,7 @@ class RelationsApi {
   ///
   ///int id  (required):
   ///     ID of the relation being modified
-  ///
+  /// 
   Future apiV3RelationsIdFormPost(int id) async {
     Response response = await apiV3RelationsIdFormPostWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -191,7 +191,7 @@ class RelationsApi {
 
   /// View Relation with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3RelationsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -237,7 +237,7 @@ class RelationsApi {
   ///
   ///int id  (required):
   ///     Relation id
-  ///
+  /// 
   Future apiV3RelationsIdGet(int id) async {
     Response response = await apiV3RelationsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
@@ -309,7 +309,7 @@ class RelationsApi {
 
   /// View relation schema with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3RelationsSchemaGetWithHttpInfo() async {
     Object postBody;
 
@@ -350,7 +350,7 @@ class RelationsApi {
 
   /// View relation schema
   ///
-  ///
+  /// 
   Future apiV3RelationsSchemaGet() async {
     Response response = await apiV3RelationsSchemaGetWithHttpInfo();
     if(response.statusCode >= 400) {
@@ -363,7 +363,7 @@ class RelationsApi {
 
   /// View relation schema for type with HTTP info returned
   ///
-  ///
+  /// 
   Future apiV3RelationsSchemaTypeGetWithHttpInfo(String type) async {
     Object postBody;
 
@@ -409,7 +409,7 @@ class RelationsApi {
   ///
   ///String type  (required):
   ///     Type of the schema
-  ///
+  /// 
   Future apiV3RelationsSchemaTypeGet(String type) async {
     Response response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type);
     if(response.statusCode >= 400) {

@@ -1,7 +1,7 @@
 part of openproject_dart_sdk.api;
 
 const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
-final _dateFormatter = DateFormat('yyyy-MM-dd');
+var _dateFormatter = DateFormat('yyyy-MM-dd');
 
 // port from Java version
 Iterable<QueryParam> _convertParametersForCollectionFormat(

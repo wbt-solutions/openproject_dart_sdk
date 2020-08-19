@@ -1,11 +1,11 @@
 part of openproject_dart_sdk.api;
 
 class Users {
-
+  
   int total;
-
+  
   int count;
-
+  
   UsersEmbedded embedded;
 
   Users({

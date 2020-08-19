@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesActivityIdGet**](TimeEntryActivitiesApi.md#apiV3TimeEntriesActivityIdGet) | **GET** /api/v3/time_entries/activity/{id} | View TimeEntries activity
+[**apiV3TimeEntriesActivityIdGet**](TimeEntryActivitiesApi.md#apiV3TimeEntriesActivityIdGet) | **GET** /api/v3/time_entries/activity/{id} | View time entries activity
 
 
 # **apiV3TimeEntriesActivityIdGet**
 > apiV3TimeEntriesActivityIdGet(id)
 
-View TimeEntries activity
+View time entries activity
 
 ### Example 
 ```dart
@@ -25,7 +25,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = TimeEntryActivitiesApi();
-var id = 56; // int | TimeEntries activity id
+var id = 56; // int | time entries activity id
 
 try { 
     api_instance.apiV3TimeEntriesActivityIdGet(id);
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| TimeEntries activity id | 
+ **id** | **int**| time entries activity id | 
 
 ### Return type
 

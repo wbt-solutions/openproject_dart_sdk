@@ -6,13 +6,33 @@ void main() {
     var instance = new InlineObject4();
 
   group('test InlineObject4', () {
-    // bool accessibilityMode (default value: null)
-    test('to test the property `accessibilityMode`', () async {
+    // String login
+    test('to test the property `login`', () async {
       // TODO
     });
 
-    // String timeZone (default value: null)
-    test('to test the property `timeZone`', () async {
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
+    // String firstName
+    test('to test the property `firstName`', () async {
+      // TODO
+    });
+
+    // String lastName
+    test('to test the property `lastName`', () async {
+      // TODO
+    });
+
+    // bool admin
+    test('to test the property `admin`', () async {
+      // TODO
+    });
+
+    // String language
+    test('to test the property `language`', () async {
       // TODO
     });
 

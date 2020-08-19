@@ -8,7 +8,8 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comment** | [**ApiV3ActivitiesIdComment**](ApiV3ActivitiesIdComment.md) |  | [optional] 
+**lockVersion** | **String** |  | [optional] 
+**links** | [**ApiV3CustomActionsCustomActionIdExecuteLinks**](ApiV3CustomActionsCustomActionIdExecuteLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,13 +6,18 @@ void main() {
     var instance = new Root();
 
   group('test Root', () {
-    // String instanceName (default value: null)
+    // String instanceName
     test('to test the property `instanceName`', () async {
       // TODO
     });
 
-    // String coreVersion (default value: null)
+    // String coreVersion
     test('to test the property `coreVersion`', () async {
+      // TODO
+    });
+
+    // RootLinks links
+    test('to test the property `links`', () async {
       // TODO
     });
 

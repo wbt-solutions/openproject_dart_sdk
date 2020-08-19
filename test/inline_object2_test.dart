@@ -6,18 +6,8 @@ void main() {
     var instance = new InlineObject2();
 
   group('test InlineObject2', () {
-    // num lockVersion (default value: null)
-    test('to test the property `lockVersion`', () async {
-      // TODO
-    });
-
-    // String type (default value: null)
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // String subject (default value: null)
-    test('to test the property `subject`', () async {
+    // String name
+    test('to test the property `name`', () async {
       // TODO
     });
 

@@ -1,87 +1,87 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackageLinks {
-
+  
   Link self;
-
+  
   Link update;
-
+  
   Link schema;
-
+  
   Link updateImmediately;
-
+  
   Link logTime;
-
+  
   Link move;
-
+  
   Link copy;
-
+  
   Link pdf;
-
+  
   Link atom;
-
+  
   Link availableRelationCandidates;
-
+  
   Link activities;
-
+  
   Link attachments;
-
+  
   Link addAttachment;
-
+  
   Link availableWatchers;
-
+  
   Link relations;
-
+  
   Link revisions;
-
+  
   Link watch;
-
+  
   Link watchers;
-
+  
   Link addWatcher;
-
+  
   Link removeWatcher;
-
+  
   Link addRelation;
-
+  
   Link addChild;
-
+  
   Link changeParent;
-
+  
   Link addComment;
-
+  
   Link previewMarkup;
-
+  
   Link timeEntries;
-
+  
   List<Link> ancestors = const [];
-
+  
   Link category;
-
+  
   Link type;
-
+  
   Link priority;
-
+  
   Link project;
-
+  
   Link status;
-
+  
   Link author;
-
+  
   Link responsible;
-
+  
   Link assignee;
-
+  
   Link version;
-
+  
   Link parent;
-
+  
   Link logCosts;
-
+  
   Link showCosts;
-
+  
   Link costObject;
-
+  
   Link costsByType;
 
   WorkPackageLinks({

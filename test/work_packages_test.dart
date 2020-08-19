@@ -6,17 +6,17 @@ void main() {
     var instance = new WorkPackages();
 
   group('test WorkPackages', () {
-    // int total (default value: null)
+    // int total
     test('to test the property `total`', () async {
       // TODO
     });
 
-    // int count (default value: null)
+    // int count
     test('to test the property `count`', () async {
       // TODO
     });
 
-    // WorkPackagesEmbedded embedded (default value: null)
+    // WorkPackagesEmbedded embedded
     test('to test the property `embedded`', () async {
       // TODO
     });

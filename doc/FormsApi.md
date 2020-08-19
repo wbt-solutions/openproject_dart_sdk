@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiV3ExampleFormPost**
-> apiV3ExampleFormPost(body)
+> apiV3ExampleFormPost(inlineObject1)
 
 show or validate form
 
@@ -27,10 +27,10 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = FormsApi();
-var body = InlineObject2(); // InlineObject2 | 
+var inlineObject1 = InlineObject1(); // InlineObject1 | 
 
 try { 
-    api_instance.apiV3ExampleFormPost(body);
+    api_instance.apiV3ExampleFormPost(inlineObject1);
 } catch (e) {
     print("Exception when calling FormsApi->apiV3ExampleFormPost: $e\n");
 }
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
+ **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
 
 ### Return type
 

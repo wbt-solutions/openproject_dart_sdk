@@ -6,12 +6,12 @@ void main() {
     var instance = new Configuration();
 
   group('test Configuration', () {
-    // int maximumAttachmentFileSize (default value: null)
+    // int maximumAttachmentFileSize
     test('to test the property `maximumAttachmentFileSize`', () async {
       // TODO
     });
 
-    // List<int> perPageOptions (default value: [])
+    // List<int> perPageOptions (default value: const [])
     test('to test the property `perPageOptions`', () async {
       // TODO
     });

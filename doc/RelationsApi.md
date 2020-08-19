@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 List Relations
 
-Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between WorkPackages which the user is allowed to see.
+Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
 
 ### Example 
 ```dart
@@ -33,7 +33,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = RelationsApi();
-var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of WorkPackage from which the filtered relations emanates.  + to - ID of WorkPackage to which this related points.  + involved - ID of either the `from` or the `to` WorkPackage.  + type - The type of relation to filter by, e.g. \"follows\".
+var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
 var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 
 try { 
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of WorkPackage from which the filtered relations emanates.  + to - ID of WorkPackage to which this related points.  + involved - ID of either the &#x60;from&#x60; or the &#x60;to&#x60; WorkPackage.  + type - The type of relation to filter by, e.g. \&quot;follows\&quot;. | [optional] 
+ **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the &#x60;from&#x60; or the &#x60;to&#x60; work package.  + type - The type of relation to filter by, e.g. \&quot;follows\&quot;. | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type

@@ -6,7 +6,7 @@ void main() {
     var instance = new PrioritiesLinks();
 
   group('test PrioritiesLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });

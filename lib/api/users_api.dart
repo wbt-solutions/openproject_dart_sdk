@@ -10,7 +10,7 @@ class UsersApi {
   /// List Users with HTTP info returned
   ///
   /// Lists users. Only administrators have permission to do this.
-  Future<Response> apiV3UsersGetWithHttpInfo({ int offset, int pageSize, String filters, String sortBy }) async {
+  Future<Response> apiV3UsersGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
     Object postBody;
 
     // verify required params are set
@@ -29,7 +29,7 @@ class UsersApi {
       queryParams.addAll(_convertParametersForCollectionFormat("", "pageSize", pageSize));
     }
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
     if(sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
@@ -66,12 +66,12 @@ class UsersApi {
   ///     Page number inside the requested collection.
   ///int pageSize :
   ///     Number of elements to display per page.
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
   ///String sortBy :
   ///     JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
   /// Lists users. Only administrators have permission to do this.
-  Future<Users> apiV3UsersGet({ int offset, int pageSize, String filters, String sortBy }) async {
+  Future<Users> apiV3UsersGet({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
     Response response = await apiV3UsersGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -322,8 +322,8 @@ class UsersApi {
   /// Update user with HTTP info returned
   ///
   /// Updates the user&#39;s writable attributes. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.
-  Future apiV3UsersIdPatchWithHttpInfo(int id, { InlineObject5 body }) async {
-    Object postBody = body;
+  Future apiV3UsersIdPatchWithHttpInfo(int id, { InlineObject4 inlineObject4 }) async {
+    Object postBody = inlineObject4;
 
     // verify required params are set
     if(id == null) {
@@ -367,11 +367,11 @@ class UsersApi {
   ///
   ///int id  (required):
   ///     User id
-  ///InlineObject5 body :
+  ///InlineObject4 inlineObject4 :
   ///    
   /// Updates the user&#39;s writable attributes. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.
-  Future apiV3UsersIdPatch(int id, { InlineObject5 body }) async {
-    Response response = await apiV3UsersIdPatchWithHttpInfo(id,  body: body );
+  Future apiV3UsersIdPatch(int id, { InlineObject4 inlineObject4 }) async {
+    Response response = await apiV3UsersIdPatchWithHttpInfo(id,  inlineObject4: inlineObject4 );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
@@ -383,8 +383,8 @@ class UsersApi {
   /// Create User with HTTP info returned
   ///
   /// Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for &#x60;status&#x60;:  1) \&quot;active\&quot; - In this case a password has to be provided in addition to the other attributes. 2) \&quot;invited\&quot; - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
-  Future apiV3UsersPostWithHttpInfo({ InlineObject6 body }) async {
-    Object postBody = body;
+  Future apiV3UsersPostWithHttpInfo({ InlineObject5 inlineObject5 }) async {
+    Object postBody = inlineObject5;
 
     // verify required params are set
 
@@ -423,11 +423,11 @@ class UsersApi {
 
   /// Create User
   ///
-  ///InlineObject6 body :
+  ///InlineObject5 inlineObject5 :
   ///    
   /// Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for &#x60;status&#x60;:  1) \&quot;active\&quot; - In this case a password has to be provided in addition to the other attributes. 2) \&quot;invited\&quot; - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
-  Future apiV3UsersPost({ InlineObject6 body }) async {
-    Response response = await apiV3UsersPostWithHttpInfo( body: body );
+  Future apiV3UsersPost({ InlineObject5 inlineObject5 }) async {
+    Response response = await apiV3UsersPostWithHttpInfo( inlineObject5: inlineObject5 );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

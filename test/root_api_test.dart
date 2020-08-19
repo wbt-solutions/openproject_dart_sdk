@@ -9,7 +9,7 @@ void main() {
   group('tests for RootApi', () {
     // View root
     //
-    //Future apiV3Get() async 
+    //Future<Root> apiV3Get() async 
     test('test apiV3Get', () async {
       // TODO
     });

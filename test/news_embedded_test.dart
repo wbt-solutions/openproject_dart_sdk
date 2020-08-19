@@ -6,12 +6,12 @@ void main() {
     var instance = new NewsEmbedded();
 
   group('test NewsEmbedded', () {
-    // Project project (default value: null)
+    // Project project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // User author (default value: null)
+    // User author
     test('to test the property `author`', () async {
       // TODO
     });

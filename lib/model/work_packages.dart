@@ -1,11 +1,11 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackages {
-
+  
   int total;
-
+  
   int count;
-
+  
   WorkPackagesEmbedded embedded;
 
   WorkPackages({

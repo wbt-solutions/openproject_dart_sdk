@@ -76,6 +76,12 @@ class LinkMethodEnum {
   static const LinkMethodEnum post_ = LinkMethodEnum._internal("post");
   static const LinkMethodEnum get_ = LinkMethodEnum._internal("get");
 
+  static List<LinkMethodEnum> get values => const [
+        patch_,
+        post_,
+        get_,
+      ];
+
   String toJson () {
     return value;
   }

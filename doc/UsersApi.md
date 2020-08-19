@@ -35,7 +35,7 @@ import 'package:openproject_dart_sdk/api.dart';
 var api_instance = UsersApi();
 var offset = 56; // int | Page number inside the requested collection.
 var pageSize = 56; // int | Number of elements to display per page.
-var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
 var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 
 try { 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User&#39;s login | [optional] 
+ **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User&#39;s login | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type
@@ -246,7 +246,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3UsersIdPatch**
-> apiV3UsersIdPatch(id, body)
+> apiV3UsersIdPatch(id, inlineObject4)
 
 Update user
 
@@ -261,10 +261,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 var api_instance = UsersApi();
 var id = 56; // int | User id
-var body = InlineObject5(); // InlineObject5 | 
+var inlineObject4 = InlineObject4(); // InlineObject4 | 
 
 try { 
-    api_instance.apiV3UsersIdPatch(id, body);
+    api_instance.apiV3UsersIdPatch(id, inlineObject4);
 } catch (e) {
     print("Exception when calling UsersApi->apiV3UsersIdPatch: $e\n");
 }
@@ -275,7 +275,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| User id | 
- **body** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
 
 ### Return type
 
@@ -293,7 +293,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3UsersPost**
-> apiV3UsersPost(body)
+> apiV3UsersPost(inlineObject5)
 
 Create User
 
@@ -307,10 +307,10 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = UsersApi();
-var body = InlineObject6(); // InlineObject6 | 
+var inlineObject5 = InlineObject5(); // InlineObject5 | 
 
 try { 
-    api_instance.apiV3UsersPost(body);
+    api_instance.apiV3UsersPost(inlineObject5);
 } catch (e) {
     print("Exception when calling UsersApi->apiV3UsersPost: $e\n");
 }
@@ -320,7 +320,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
 
 ### Return type
 

@@ -1,7 +1,7 @@
 part of openproject_dart_sdk.api;
 
 class UsersEmbedded {
-
+  
   List<User> elements = const [];
 
   UsersEmbedded({

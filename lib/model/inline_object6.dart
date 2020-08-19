@@ -2,68 +2,28 @@ part of openproject_dart_sdk.api;
 
 class InlineObject6 {
   
-  String login;
-  
-  String email;
-  
-  String firstName;
-  
-  String lastName;
-  
-  bool admin;
-  
-  String language;
-  
-  String status;
-  
-  String password;
+  ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage user;
 
   InlineObject6({
-    this.login,
-    this.email,
-    this.firstName,
-    this.lastName,
-    this.admin,
-    this.language,
-    this.status,
-    this.password,
+    this.user,
   });
 
   @override
   String toString() {
-    return 'InlineObject6[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language, status=$status, password=$password, ]';
+    return 'InlineObject6[user=$user, ]';
   }
 
   InlineObject6.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    login = json['login'];
-    email = json['email'];
-    firstName = json['firstName'];
-    lastName = json['lastName'];
-    admin = json['admin'];
-    language = json['language'];
-    status = json['status'];
-    password = json['password'];
+    user = (json['user'] == null) ?
+      null :
+      ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(json['user']);
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (login != null)
-      json['login'] = login;
-    if (email != null)
-      json['email'] = email;
-    if (firstName != null)
-      json['firstName'] = firstName;
-    if (lastName != null)
-      json['lastName'] = lastName;
-    if (admin != null)
-      json['admin'] = admin;
-    if (language != null)
-      json['language'] = language;
-    if (status != null)
-      json['status'] = status;
-    if (password != null)
-      json['password'] = password;
+    if (user != null)
+      json['user'] = user;
     return json;
   }
 

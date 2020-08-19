@@ -1,11 +1,11 @@
 part of openproject_dart_sdk.api;
 
 class Versions {
-
+  
   int total;
-
+  
   int count;
-
+  
   VersionsEmbedded embedded;
 
   Versions({

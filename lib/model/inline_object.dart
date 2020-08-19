@@ -2,28 +2,34 @@ part of openproject_dart_sdk.api;
 
 class InlineObject {
   
-  ApiV3ActivitiesIdComment comment;
+  String lockVersion;
+  
+  ApiV3CustomActionsCustomActionIdExecuteLinks links;
 
   InlineObject({
-    this.comment,
+    this.lockVersion,
+    this.links,
   });
 
   @override
   String toString() {
-    return 'InlineObject[comment=$comment, ]';
+    return 'InlineObject[lockVersion=$lockVersion, links=$links, ]';
   }
 
   InlineObject.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    comment = (json['comment'] == null) ?
+    lockVersion = json['lockVersion'];
+    links = (json['_links'] == null) ?
       null :
-      ApiV3ActivitiesIdComment.fromJson(json['comment']);
+      ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (comment != null)
-      json['comment'] = comment;
+    if (lockVersion != null)
+      json['lockVersion'] = lockVersion;
+    if (links != null)
+      json['_links'] = links;
     return json;
   }
 

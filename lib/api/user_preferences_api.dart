@@ -65,8 +65,8 @@ class UserPreferencesApi {
   /// Update UserPreferences with HTTP info returned
   ///
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
-  Future apiV3MyPreferencesPatchWithHttpInfo({ InlineObject4 body }) async {
-    Object postBody = body;
+  Future apiV3MyPreferencesPatchWithHttpInfo({ InlineObject3 inlineObject3 }) async {
+    Object postBody = inlineObject3;
 
     // verify required params are set
 
@@ -105,11 +105,11 @@ class UserPreferencesApi {
 
   /// Update UserPreferences
   ///
-  ///InlineObject4 body :
+  ///InlineObject3 inlineObject3 :
   ///    
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
-  Future apiV3MyPreferencesPatch({ InlineObject4 body }) async {
-    Response response = await apiV3MyPreferencesPatchWithHttpInfo( body: body );
+  Future apiV3MyPreferencesPatch({ InlineObject3 inlineObject3 }) async {
+    Response response = await apiV3MyPreferencesPatchWithHttpInfo( inlineObject3: inlineObject3 );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

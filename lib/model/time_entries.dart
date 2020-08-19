@@ -1,13 +1,13 @@
 part of openproject_dart_sdk.api;
 
 class TimeEntries {
-
+  
   int total;
-
+  
   int count;
-
+  
   TimeEntriesEmbedded embedded;
-
+  
   TimeEntriesLinks links;
 
   TimeEntries({

@@ -9,8 +9,8 @@ class PrincipalsApi {
 
   /// List principals with HTTP info returned
   ///
-  /// List all principals. The client can choose to filter the principals similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain principals who are members in projects the client is allowed to see.
-  Future apiV3PrincipalsGetWithHttpInfo({ String filters }) async {
+  /// List all principals. The client can choose to filter the principals similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain principals who are members in projects the client is allowed to see.
+  Future apiV3PrincipalsGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
     Object postBody;
 
     // verify required params are set
@@ -23,7 +23,7 @@ class PrincipalsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
 
     List<String> contentTypes = [];
@@ -53,10 +53,10 @@ class PrincipalsApi {
 
   /// List principals
   ///
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
-  /// List all principals. The client can choose to filter the principals similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain principals who are members in projects the client is allowed to see.
-  Future apiV3PrincipalsGet({ String filters }) async {
+  /// List all principals. The client can choose to filter the principals similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain principals who are members in projects the client is allowed to see.
+  Future apiV3PrincipalsGet({ List<Map<String, Object>> filters }) async {
     Response response = await apiV3PrincipalsGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

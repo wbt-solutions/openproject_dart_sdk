@@ -9,7 +9,7 @@ void main() {
   group('tests for ActivitiesApi', () {
     // View activity
     //
-    //Future apiV3ActivitiesIdGet(int id) async 
+    //Future<Activity> apiV3ActivitiesIdGet(int id) async
     test('test apiV3ActivitiesIdGet', () async {
       // TODO
     });
@@ -18,7 +18,7 @@ void main() {
     //
     // Updates an activity's comment and, on success, returns the updated activity.
     //
-    //Future apiV3ActivitiesIdPatch(int id, { InlineObject body }) async 
+    //Future apiV3ActivitiesIdPatch(int id, { dynamic UNKNOWN_BASE_TYPE }) async
     test('test apiV3ActivitiesIdPatch', () async {
       // TODO
     });

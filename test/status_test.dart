@@ -6,42 +6,42 @@ void main() {
     var instance = new Status();
 
   group('test Status', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String name (default value: null)
+    // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // int position (default value: null)
+    // int position
     test('to test the property `position`', () async {
       // TODO
     });
 
-    // bool isDefault (default value: null)
+    // bool isDefault
     test('to test the property `isDefault`', () async {
       // TODO
     });
 
-    // bool isClosed (default value: null)
+    // bool isClosed
     test('to test the property `isClosed`', () async {
       // TODO
     });
 
-    // bool isReadonly (default value: null)
+    // bool isReadonly
     test('to test the property `isReadonly`', () async {
       // TODO
     });
 
-    // int defaultDoneRatio (default value: null)
+    // int defaultDoneRatio
     test('to test the property `defaultDoneRatio`', () async {
       // TODO
     });
 
-    // StatusLinks links (default value: null)
+    // StatusLinks links
     test('to test the property `links`', () async {
       // TODO
     });

@@ -6,22 +6,22 @@ void main() {
     var instance = new TimeEntryEmbedded();
 
   group('test TimeEntryEmbedded', () {
-    // Project project (default value: null)
+    // Project project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // WorkPackage workPackage (default value: null)
+    // WorkPackage workPackage
     test('to test the property `workPackage`', () async {
       // TODO
     });
 
-    // User user (default value: null)
+    // User user
     test('to test the property `user`', () async {
       // TODO
     });
 
-    // Object activity (default value: null)
+    // Activity activity
     test('to test the property `activity`', () async {
       // TODO
     });

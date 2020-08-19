@@ -1,13 +1,13 @@
 part of openproject_dart_sdk.api;
 
 class WorkPackageEmbedded {
-
+  
   WorkPackage parent;
-
+  
   Project project;
-
+  
   WPType type;
-
+  
   Version version;
 
   WorkPackageEmbedded({

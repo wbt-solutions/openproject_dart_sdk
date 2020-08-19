@@ -6,17 +6,17 @@ void main() {
     var instance = new CategoryLinks();
 
   group('test CategoryLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link project (default value: null)
+    // Link project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // Link defaultAssignee (default value: null)
+    // Link defaultAssignee
     test('to test the property `defaultAssignee`', () async {
       // TODO
     });

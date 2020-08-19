@@ -6,27 +6,27 @@ void main() {
     var instance = new TimeEntryLinks();
 
   group('test TimeEntryLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link project (default value: null)
+    // Link project
     test('to test the property `project`', () async {
       // TODO
     });
 
-    // Link workPackage (default value: null)
+    // Link workPackage
     test('to test the property `workPackage`', () async {
       // TODO
     });
 
-    // Link user (default value: null)
+    // Link user
     test('to test the property `user`', () async {
       // TODO
     });
 
-    // Link activity (default value: null)
+    // Link activity
     test('to test the property `activity`', () async {
       // TODO
     });

@@ -9,14 +9,14 @@ void main() {
   group('tests for PrioritiesApi', () {
     // List all Priorities
     //
-    //Future apiV3PrioritiesGet() async 
+    //Future<Priorities> apiV3PrioritiesGet() async 
     test('test apiV3PrioritiesGet', () async {
       // TODO
     });
 
     // View Priority
     //
-    //Future apiV3PrioritiesIdGet(int id) async 
+    //Future<Priority> apiV3PrioritiesIdGet(int id) async 
     test('test apiV3PrioritiesIdGet', () async {
       // TODO
     });

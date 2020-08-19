@@ -6,32 +6,32 @@ void main() {
     var instance = new Priority();
 
   group('test Priority', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String name (default value: null)
+    // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // int position (default value: null)
+    // int position
     test('to test the property `position`', () async {
       // TODO
     });
 
-    // bool isDefault (default value: null)
+    // bool isDefault
     test('to test the property `isDefault`', () async {
       // TODO
     });
 
-    // bool isActive (default value: null)
+    // bool isActive
     test('to test the property `isActive`', () async {
       // TODO
     });
 
-    // PriorityLinks links (default value: null)
+    // PriorityLinks links
     test('to test the property `links`', () async {
       // TODO
     });

@@ -6,42 +6,42 @@ void main() {
     var instance = new WorkPackagePatch();
 
   group('test WorkPackagePatch', () {
-    // int lockVersion (default value: null)
+    // int lockVersion
     test('to test the property `lockVersion`', () async {
       // TODO
     });
 
-    // int percentageDone (default value: null)
+    // int percentageDone
     test('to test the property `percentageDone`', () async {
       // TODO
     });
 
-    // String subject (default value: null)
+    // String subject
     test('to test the property `subject`', () async {
       // TODO
     });
 
-    // Description description (default value: null)
+    // Description description
     test('to test the property `description`', () async {
       // TODO
     });
 
-    // DateTime startDate (default value: null)
+    // DateTime startDate
     test('to test the property `startDate`', () async {
       // TODO
     });
 
-    // DateTime dueDate (default value: null)
+    // DateTime dueDate
     test('to test the property `dueDate`', () async {
       // TODO
     });
 
-    // String estimatedTime (default value: null)
+    // String estimatedTime
     test('to test the property `estimatedTime`', () async {
       // TODO
     });
 
-    // WorkPackageLinks links (default value: null)
+    // WorkPackageLinks links
     test('to test the property `links`', () async {
       // TODO
     });

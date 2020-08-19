@@ -69,8 +69,8 @@ class VersionsApi {
 
   /// List versions with HTTP info returned
   ///
-  /// Returns a collection of versions. The client can choose to filter the versions similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
-  Future<Response> apiV3VersionsGetWithHttpInfo({ String filters }) async {
+  /// Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+  Future<Response> apiV3VersionsGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
     Object postBody;
 
     // verify required params are set
@@ -83,7 +83,7 @@ class VersionsApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "filters", filters));
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
     }
 
     List<String> contentTypes = [];
@@ -113,10 +113,10 @@ class VersionsApi {
 
   /// List versions
   ///
-  ///String filters :
+  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
   ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
-  /// Returns a collection of versions. The client can choose to filter the versions similar to how WorkPackages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
-  Future<Versions> apiV3VersionsGet({ String filters }) async {
+  /// Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
+  Future<Versions> apiV3VersionsGet({ List<Map<String, Object>> filters }) async {
     Response response = await apiV3VersionsGetWithHttpInfo( filters: filters );
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -129,7 +129,7 @@ class VersionsApi {
 
   /// View version with HTTP info returned
   ///
-  ///
+  /// 
   Future<Response> apiV3VersionsIdGetWithHttpInfo(int id) async {
     Object postBody;
 
@@ -175,7 +175,7 @@ class VersionsApi {
   ///
   ///int id  (required):
   ///     version id
-  ///
+  /// 
   Future<Version> apiV3VersionsIdGet(int id) async {
     Response response = await apiV3VersionsIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {

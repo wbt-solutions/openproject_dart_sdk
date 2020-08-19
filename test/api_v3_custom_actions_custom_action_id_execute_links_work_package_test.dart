@@ -6,7 +6,7 @@ void main() {
     var instance = new ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage();
 
   group('test ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage', () {
-    // String href (default value: null)
+    // String href
     test('to test the property `href`', () async {
       // TODO
     });

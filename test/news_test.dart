@@ -6,42 +6,42 @@ void main() {
     var instance = new News();
 
   group('test News', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String title (default value: null)
+    // String title
     test('to test the property `title`', () async {
       // TODO
     });
 
-    // String summary (default value: null)
+    // String summary
     test('to test the property `summary`', () async {
       // TODO
     });
 
-    // Description description (default value: null)
+    // Description description
     test('to test the property `description`', () async {
       // TODO
     });
 
-    // DateTime createdAt (default value: null)
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // DateTime updatedAt (default value: null)
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // NewsLinks links (default value: null)
+    // NewsLinks links
     test('to test the property `links`', () async {
       // TODO
     });
 
-    // NewsEmbedded embedded (default value: null)
+    // NewsEmbedded embedded
     test('to test the property `embedded`', () async {
       // TODO
     });

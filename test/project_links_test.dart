@@ -6,57 +6,57 @@ void main() {
     var instance = new ProjectLinks();
 
   group('test ProjectLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link createWorkPackage (default value: null)
+    // Link createWorkPackage
     test('to test the property `createWorkPackage`', () async {
       // TODO
     });
 
-    // Link createWorkPackageImmediate (default value: null)
+    // Link createWorkPackageImmediate
     test('to test the property `createWorkPackageImmediate`', () async {
       // TODO
     });
 
-    // Link categories (default value: null)
+    // Link categories
     test('to test the property `categories`', () async {
       // TODO
     });
 
-    // Link types (default value: null)
+    // Link types
     test('to test the property `types`', () async {
       // TODO
     });
 
-    // Link versions (default value: null)
+    // Link versions
     test('to test the property `versions`', () async {
       // TODO
     });
 
-    // Link workPackages (default value: null)
+    // Link workPackages
     test('to test the property `workPackages`', () async {
       // TODO
     });
 
-    // Link memberships (default value: null)
+    // Link memberships
     test('to test the property `memberships`', () async {
       // TODO
     });
 
-    // Link delete (default value: null)
+    // Link delete
     test('to test the property `delete`', () async {
       // TODO
     });
 
-    // Link schema (default value: null)
+    // Link schema
     test('to test the property `schema`', () async {
       // TODO
     });
 
-    // Link parent (default value: null)
+    // Link parent
     test('to test the property `parent`', () async {
       // TODO
     });

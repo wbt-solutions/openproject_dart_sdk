@@ -7,18 +7,18 @@ void main() {
   var instance = TimeEntriesApi();
 
   group('tests for TimeEntriesApi', () {
-    // List TimeEntries
+    // List Time entries
     //
-    // Lists TimeEntries. The TimeEntries returned depend on the filters provided and also on the permission of the requesting user.
+    // Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
     //
-    //Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async
+    //Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async 
     test('test apiV3TimeEntriesGet', () async {
       // TODO
     });
 
-    // View TimeEntry
+    // View time entry
     //
-    //Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async
+    //Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async 
     test('test apiV3TimeEntriesIdGet', () async {
       // TODO
     });

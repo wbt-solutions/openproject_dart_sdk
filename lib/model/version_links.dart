@@ -1,11 +1,11 @@
 part of openproject_dart_sdk.api;
 
 class VersionLinks {
-
+  
   Link self;
-
+  
   Link definingProject;
-
+  
   Link availableInProjects;
 
   VersionLinks({

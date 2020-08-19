@@ -8,8 +8,12 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessibilityMode** | **bool** |  | [optional] 
-**timeZone** | **String** |  | [optional] 
+**login** | **String** |  | [optional] 
+**email** | **String** |  | [optional] 
+**firstName** | **String** |  | [optional] 
+**lastName** | **String** |  | [optional] 
+**admin** | **bool** |  | [optional] 
+**language** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,47 +6,47 @@ void main() {
     var instance = new RootLinks();
 
   group('test RootLinks', () {
-    // Link configuration (default value: null)
+    // Link configuration
     test('to test the property `configuration`', () async {
       // TODO
     });
 
-    // Link user (default value: null)
+    // Link user
     test('to test the property `user`', () async {
       // TODO
     });
 
-    // Link userPreferences (default value: null)
+    // Link userPreferences
     test('to test the property `userPreferences`', () async {
       // TODO
     });
 
-    // Link priorities (default value: null)
+    // Link priorities
     test('to test the property `priorities`', () async {
       // TODO
     });
 
-    // Link relations (default value: null)
+    // Link relations
     test('to test the property `relations`', () async {
       // TODO
     });
 
-    // Link statuses (default value: null)
+    // Link statuses
     test('to test the property `statuses`', () async {
       // TODO
     });
 
-    // Link types (default value: null)
+    // Link types
     test('to test the property `types`', () async {
       // TODO
     });
 
-    // Link workPackages (default value: null)
+    // Link workPackages
     test('to test the property `workPackages`', () async {
       // TODO
     });
 
-    // Link users (default value: null)
+    // Link users
     test('to test the property `users`', () async {
       // TODO
     });

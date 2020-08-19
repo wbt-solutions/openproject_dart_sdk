@@ -128,6 +128,12 @@ class ProjectStatusEnum {
   static const ProjectStatusEnum atRisk_ = ProjectStatusEnum._internal("at risk");
   static const ProjectStatusEnum offTrack_ = ProjectStatusEnum._internal("off track");
 
+  static List<ProjectStatusEnum> get values => const [
+        onTrack_,
+        atRisk_,
+        offTrack_,
+      ];
+
   String toJson () {
     return value;
   }

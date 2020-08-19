@@ -61,7 +61,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3AttachmentsIdGet**
-> Object apiV3AttachmentsIdGet(id)
+> Attachment apiV3AttachmentsIdGet(id)
 
 View attachment
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**Attachment**](Attachment.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = AttachmentsApi();
-var id = 56; // int | ID of the WorkPackage whose attachments will be listed
+var id = 56; // int | ID of the work package whose attachments will be listed
 
 try { 
     api_instance.apiV3WorkPackagesIdAttachmentsGet(id);
@@ -130,7 +130,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of the WorkPackage whose attachments will be listed | 
+ **id** | **int**| ID of the work package whose attachments will be listed | 
 
 ### Return type
 
@@ -152,7 +152,7 @@ void (empty response body)
 
 Add attachment
 
-To add an attachment to a WorkPackage, a client needs to issue a request of type `multipart/form-data` with exactly two parts.  The first part *must* be called `metadata`. Its content type is expected to be `application/json`, the body *must* be a single JSON object, containing at least the `fileName` and optionally the attachments `description`.  The second part *must* be called `file`, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a `filename` must be indicated in the `Content-Disposition` of this part, however it will be ignored. Instead the `fileName` inside the JSON of the metadata part will be used.
+To add an attachment to a work package, a client needs to issue a request of type `multipart/form-data` with exactly two parts.  The first part *must* be called `metadata`. Its content type is expected to be `application/json`, the body *must* be a single JSON object, containing at least the `fileName` and optionally the attachments `description`.  The second part *must* be called `file`, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a `filename` must be indicated in the `Content-Disposition` of this part, however it will be ignored. Instead the `fileName` inside the JSON of the metadata part will be used.
 
 ### Example 
 ```dart
@@ -162,7 +162,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
 var api_instance = AttachmentsApi();
-var id = 56; // int | ID of the WorkPackage to receive the attachment
+var id = 56; // int | ID of the work package to receive the attachment
 
 try { 
     api_instance.apiV3WorkPackagesIdAttachmentsPost(id);
@@ -175,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of the WorkPackage to receive the attachment | 
+ **id** | **int**| ID of the work package to receive the attachment | 
 
 ### Return type
 

@@ -6,22 +6,22 @@ void main() {
     var instance = new BudgetLinks();
 
   group('test BudgetLinks', () {
-    // Link self (default value: null)
+    // Link self
     test('to test the property `self`', () async {
       // TODO
     });
 
-    // Link attachments (default value: null)
+    // Link attachments
     test('to test the property `attachments`', () async {
       // TODO
     });
 
-    // Link addAttachment (default value: null)
+    // Link addAttachment
     test('to test the property `addAttachment`', () async {
       // TODO
     });
 
-    // Link staticPath (default value: null)
+    // Link staticPath
     test('to test the property `staticPath`', () async {
       // TODO
     });

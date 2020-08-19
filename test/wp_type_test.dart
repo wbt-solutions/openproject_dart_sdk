@@ -6,22 +6,22 @@ void main() {
     var instance = new WPType();
 
   group('test WPType', () {
-    // int id (default value: null)
+    // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // String name (default value: null)
+    // String name
     test('to test the property `name`', () async {
       // TODO
     });
 
-    // String color (default value: null)
+    // String color
     test('to test the property `color`', () async {
       // TODO
     });
 
-    // int position (default value: null)
+    // int position
     test('to test the property `position`', () async {
       // TODO
     });
@@ -36,17 +36,17 @@ void main() {
       // TODO
     });
 
-    // DateTime createdAt (default value: null)
+    // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO
     });
 
-    // DateTime updatedAt (default value: null)
+    // DateTime updatedAt
     test('to test the property `updatedAt`', () async {
       // TODO
     });
 
-    // WPTypeLinks links (default value: null)
+    // WPTypeLinks links
     test('to test the property `links`', () async {
       // TODO
     });

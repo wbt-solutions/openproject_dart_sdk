@@ -42,12 +42,12 @@ class ApiClient {
           return Activity.fromJson(value);
         case 'ActivityLinks':
           return ActivityLinks.fromJson(value);
-        case 'ApiV3ActivitiesIdComment':
-          return ApiV3ActivitiesIdComment.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinks':
           return ApiV3CustomActionsCustomActionIdExecuteLinks.fromJson(value);
         case 'ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage':
           return ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value);
+        case 'Attachment':
+          return Attachment.fromJson(value);
         case 'Budget':
           return Budget.fromJson(value);
         case 'BudgetLinks':
@@ -64,6 +64,8 @@ class ApiClient {
           return Configuration.fromJson(value);
         case 'Description':
           return Description.fromJson(value);
+        case 'Digest':
+          return Digest.fromJson(value);
         case 'InlineObject':
           return InlineObject.fromJson(value);
         case 'InlineObject1':
@@ -78,10 +80,6 @@ class ApiClient {
           return InlineObject5.fromJson(value);
         case 'InlineObject6':
           return InlineObject6.fromJson(value);
-        case 'InlineObject7':
-          return InlineObject7.fromJson(value);
-        case 'InlineObject8':
-          return InlineObject8.fromJson(value);
         case 'Link':
           return Link.fromJson(value);
         case 'News':
@@ -132,16 +130,16 @@ class ApiClient {
           return StatusesLinks.fromJson(value);
         case 'TimeEntries':
           return TimeEntries.fromJson(value);
+        case 'TimeEntriesEmbedded':
+          return TimeEntriesEmbedded.fromJson(value);
         case 'TimeEntriesLinks':
           return TimeEntriesLinks.fromJson(value);
         case 'TimeEntry':
           return TimeEntry.fromJson(value);
-        case 'TimeEntryLinks':
-          return TimeEntryLinks.fromJson(value);
-        case 'TimeEntriesEmbedded':
-          return TimeEntriesEmbedded.fromJson(value);
         case 'TimeEntryEmbedded':
           return TimeEntryEmbedded.fromJson(value);
+        case 'TimeEntryLinks':
+          return TimeEntryLinks.fromJson(value);
         case 'User':
           return User.fromJson(value);
         case 'UserLinks':

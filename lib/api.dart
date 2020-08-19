@@ -65,6 +65,7 @@ part 'model/category_links.dart';
 part 'model/configuration.dart';
 part 'model/description.dart';
 part 'model/digest.dart';
+part 'model/filter.dart';
 part 'model/inline_object.dart';
 part 'model/inline_object1.dart';
 part 'model/inline_object2.dart';

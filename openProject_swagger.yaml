@@ -9941,34 +9941,36 @@ components:
             filterName:
               type: string
             filter:
-              type: object
-              properties:
-                operator:
-                  type: string
-                  enum:
-                    - =
-                    - '!'
-                    - '>='
-                    - <=
-                    - t-
-                    - t+
-                    - <t+
-                    - '>t+'
-                    - '>t-'
-                    - <t-
-                    - '*'
-                    - '!*'
-                    - '**'
-                    - =d
-                    - <>d
-                    - w
-                    - t
-                    - '~'
-                    - '!~'
-                values:
-                  type: array
-                  items:
-                    type: string
+              $ref: "#/components/schemas/Filter"
+    Filter:
+      type: object
+      properties:
+        operator:
+          type: string
+          #enum:
+          #  - =
+          #  - '!'
+          #  - '>='
+          #  - <=
+          #  - t-
+          #  - t+
+          #  - <t+
+          #  - '>t+'
+          #  - '>t-'
+          #  - <t-
+          #  - '*'
+          #  - '!*'
+          #  - '**'
+          #  - =d
+          #  - <>d
+          #  - w
+          #  - t
+          #  - '~'
+          #  - '!~'
+        values:
+          type: array
+          items:
+            type: string
     Time_entry:
       type: object
       properties:

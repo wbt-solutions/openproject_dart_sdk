@@ -148,8 +148,8 @@ Class | Method | HTTP request | Description
 *WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesformpost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
 *WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagesget) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
 *WorkPackagesApi* | [**apiV3ProjectsIdWorkPackagesPost**](doc\/WorkPackagesApi.md#apiv3projectsidworkpackagespost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
-*WorkPackagesApi* | [**apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidworkpackagesavailableassigneesget) | **GET** /api/v3/projects/{project_id}/work_packages/available_assignees | Available assignees
-*WorkPackagesApi* | [**apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidworkpackagesavailableresponsiblesget) | **GET** /api/v3/projects/{project_id}/work_packages/available_responsibles | Available responsibles
+*WorkPackagesApi* | [**apiV3ProjectsProjectIdAvailableAssigneesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidavailableassigneesget) | **GET** /api/v3/projects/{project_id}/available_assignees | Available assignees
+*WorkPackagesApi* | [**apiV3ProjectsProjectIdAvailableResponsiblesGet**](doc\/WorkPackagesApi.md#apiv3projectsprojectidavailableresponsiblesget) | **GET** /api/v3/projects/{project_id}/available_responsibles | Available responsibles
 *WorkPackagesApi* | [**apiV3WorkPackagesFormPost**](doc\/WorkPackagesApi.md#apiv3workpackagesformpost) | **POST** /api/v3/work_packages/form | Work Package Create Form
 *WorkPackagesApi* | [**apiV3WorkPackagesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesget) | **GET** /api/v3/work_packages | List Work Packages
 *WorkPackagesApi* | [**apiV3WorkPackagesIdActivitiesGet**](doc\/WorkPackagesApi.md#apiv3workpackagesidactivitiesget) | **GET** /api/v3/work_packages/{id}/activities | List work package activities

@@ -229,7 +229,7 @@ class WorkPackagesApi {
   /// Available assignees with HTTP info returned
   ///
   /// Gets a list of users that can be assigned to work packages in the given project.
-  Future<Response> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(int projectId) async {
+  Future<Response> apiV3ProjectsProjectIdAvailableAssigneesGetWithHttpInfo(int projectId) async {
     Object postBody;
 
     // verify required params are set
@@ -238,7 +238,7 @@ class WorkPackagesApi {
     }
 
     // create path and map variables
-    String path = "/api/v3/projects/{project_id}/work_packages/available_assignees".replaceAll("{format}","json").replaceAll("{" + "project_id" + "}", projectId.toString());
+    String path = "/api/v3/projects/{project_id}/available_assignees".replaceAll("{format}","json").replaceAll("{" + "project_id" + "}", projectId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -275,8 +275,8 @@ class WorkPackagesApi {
   ///int projectId  (required):
   ///     Project id
   /// Gets a list of users that can be assigned to work packages in the given project.
-  Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(int projectId) async {
-    Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGetWithHttpInfo(projectId);
+  Future<Users> apiV3ProjectsProjectIdAvailableAssigneesGet(int projectId) async {
+    Response response = await apiV3ProjectsProjectIdAvailableAssigneesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
@@ -289,7 +289,7 @@ class WorkPackagesApi {
   /// Available responsibles with HTTP info returned
   ///
   /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  Future<Response> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(int projectId) async {
+  Future<Response> apiV3ProjectsProjectIdAvailableResponsiblesGetWithHttpInfo(int projectId) async {
     Object postBody;
 
     // verify required params are set
@@ -298,7 +298,7 @@ class WorkPackagesApi {
     }
 
     // create path and map variables
-    String path = "/api/v3/projects/{project_id}/work_packages/available_responsibles".replaceAll("{format}","json").replaceAll("{" + "project_id" + "}", projectId.toString());
+    String path = "/api/v3/projects/{project_id}/available_responsibles".replaceAll("{format}","json").replaceAll("{" + "project_id" + "}", projectId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -335,8 +335,8 @@ class WorkPackagesApi {
   ///int projectId  (required):
   ///     Project id
   /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  Future<Users> apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(int projectId) async {
-    Response response = await apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGetWithHttpInfo(projectId);
+  Future<Users> apiV3ProjectsProjectIdAvailableResponsiblesGet(int projectId) async {
+    Response response = await apiV3ProjectsProjectIdAvailableResponsiblesGetWithHttpInfo(projectId);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {

@@ -12,8 +12,8 @@ Method | HTTP request | Description
 [**apiV3ProjectsIdWorkPackagesFormPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesFormPost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
 [**apiV3ProjectsIdWorkPackagesGet**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesGet) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
 [**apiV3ProjectsIdWorkPackagesPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesPost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
-[**apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet) | **GET** /api/v3/projects/{project_id}/work_packages/available_assignees | Available assignees
-[**apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet) | **GET** /api/v3/projects/{project_id}/work_packages/available_responsibles | Available responsibles
+[**apiV3ProjectsProjectIdAvailableAssigneesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdAvailableAssigneesGet) | **GET** /api/v3/projects/{project_id}/available_assignees | Available assignees
+[**apiV3ProjectsProjectIdAvailableResponsiblesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdAvailableResponsiblesGet) | **GET** /api/v3/projects/{project_id}/available_responsibles | Available responsibles
 [**apiV3WorkPackagesFormPost**](WorkPackagesApi.md#apiV3WorkPackagesFormPost) | **POST** /api/v3/work_packages/form | Work Package Create Form
 [**apiV3WorkPackagesGet**](WorkPackagesApi.md#apiV3WorkPackagesGet) | **GET** /api/v3/work_packages | List Work Packages
 [**apiV3WorkPackagesIdActivitiesGet**](WorkPackagesApi.md#apiV3WorkPackagesIdActivitiesGet) | **GET** /api/v3/work_packages/{id}/activities | List work package activities
@@ -186,8 +186,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet**
-> Users apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId)
+# **apiV3ProjectsProjectIdAvailableAssigneesGet**
+> Users apiV3ProjectsProjectIdAvailableAssigneesGet(projectId)
 
 Available assignees
 
@@ -204,10 +204,10 @@ var api_instance = WorkPackagesApi();
 var projectId = 56; // int | Project id
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet(projectId);
+    var result = api_instance.apiV3ProjectsProjectIdAvailableAssigneesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdWorkPackagesAvailableAssigneesGet: $e\n");
+    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableAssigneesGet: $e\n");
 }
 ```
 
@@ -232,8 +232,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet**
-> Users apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId)
+# **apiV3ProjectsProjectIdAvailableResponsiblesGet**
+> Users apiV3ProjectsProjectIdAvailableResponsiblesGet(projectId)
 
 Available responsibles
 
@@ -250,10 +250,10 @@ var api_instance = WorkPackagesApi();
 var projectId = 56; // int | Project id
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet(projectId);
+    var result = api_instance.apiV3ProjectsProjectIdAvailableResponsiblesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdWorkPackagesAvailableResponsiblesGet: $e\n");
+    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableResponsiblesGet: $e\n");
 }
 ```
 

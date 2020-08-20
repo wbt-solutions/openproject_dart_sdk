@@ -9408,7 +9408,7 @@ components:
         isActive:
           type: boolean
           readOnly: true
-        links:
+        _links:
           $ref: '#/components/schemas/PriorityLinks'
     PriorityLinks:
       type: object

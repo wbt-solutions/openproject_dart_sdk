@@ -35,9 +35,9 @@ class Priority {
     position = json['position'];
     isDefault = json['isDefault'];
     isActive = json['isActive'];
-    links = (json['links'] == null) ?
+    links = (json['_links'] == null) ?
       null :
-      PriorityLinks.fromJson(json['links']);
+      PriorityLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -53,7 +53,7 @@ class Priority {
     if (isActive != null)
       json['isActive'] = isActive;
     if (links != null)
-      json['links'] = links;
+      json['_links'] = links;
     return json;
   }
 

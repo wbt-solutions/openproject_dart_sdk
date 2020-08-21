@@ -5569,6 +5569,51 @@ paths:
           required: true
           schema:
             type: integer
+    delete:
+      responses:
+        '204':
+          description: Returned if the time entry was deleted successfully.
+          headers: {}
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions
+          headers: {}
+          content:
+            application/hal+json:
+              examples:
+                response:
+                  value:
+                    _type: Error
+                    errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+                    message: You are not authorized to access this resource.
+        '404':
+          description: >-
+            Returned if the time entry does not exist or if the user does not
+            have sufficient permissions to see the time entry.
+
+            Required permission view time entries in the project the time entry
+            is assigned to or view own time entries for time entries belonging
+            to the user
+          headers: {}
+          content:
+            application/hal+json:
+              examples:
+                response:
+                  value:
+                    _type: Error
+                    errorIdentifier: 'urn:openproject-org:api:v3:errors:errors:NotFound'
+                    message: The requested resource could not be found.
+      summary: delete time entry
+      description: Permanently deletes the specified time entry.
+      tags:
+        - Time Entries
+      parameters:
+        - name: id
+          in: path
+          description: time entry id
+          required: true
+          schema:
+            type: integer
   /api/v3/time_entries:
     get:
       responses:
@@ -5706,6 +5751,99 @@ paths:
           required: false
           schema:
             $ref: "#/components/schemas/Filters"
+    post:
+      responses:
+        '201':
+          description: Created
+          headers: {}
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/Time_entry'
+        '400':
+          description: >-
+            Occurs when the client did not send a valid JSON object in the
+            request body.
+          headers: {}
+          content:
+            application/hal+json:
+              examples:
+                response:
+                  value:
+                    _type: Error
+                    errorIdentifier: 'urn:openproject-org:api:v3:errors:InvalidRequestBody'
+                    message: The request body was not a single JSON object.
+        '403':
+          description: >-
+            Returned if the client does not have sufficient permissions.
+            *Required permission*: add project which is a global permission
+          headers: {}
+          content:
+            application/hal+json:
+              examples:
+                response:
+                  value:
+                    _type: Error
+                    errorIdentifier: 'urn:openproject-org:api:v3:errors:MissingPermission'
+                    message: You are not authorized to access this resource.
+        '422':
+          description: >-
+            Returned if: + a constraint for a property was violated
+            (PropertyConstraintViolation)
+          headers: {}
+          content:
+            application/hal+json:
+              examples:
+                response:
+                  value:
+                    _type: Error
+                    errorIdentifier: >-
+                      urn:openproject-org:api:v3:errors:PropertyConstraintViolation
+                    message: Work package is invalid.
+                    _embedded:
+                      details:
+                        attribute: workPackage
+      summary: create time entry
+      description: >-
+        Creates a new time entry applying the attributes provided in the body.
+        Please note that while there is a fixed set of attributes, custom fields
+        can extend a time entries’ attributes and are accepted by the endpoint.
+      tags:
+        - Time Entries
+      parameters:
+        - name: filters
+          in: query
+          description: >-
+            JSON specifying filter conditions.
+
+            Accepts the same format as returned by the [queries](#queries)
+            endpoint.
+
+            Currently supported filters are:
+
+
+            + ancestor: filters projects by their ancestor. A project is not
+            considered to be it's own ancestor.
+          required: false
+          schema:
+            $ref: "#/components/schemas/Filters"
+        - name: sortBy
+          in: query
+          description: >-
+            JSON specifying sort criteria. Currently supported orders are: + id
+            + name + created_on + public + latest_activity_at +
+            required_disk_space: There might also be additional orders based on
+            the custom fields that have been configured.
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Time_entry'
+        description: New time entry
+        required: true
   '/api/v3/time_entries/activity/{id}':
     get:
       responses:
@@ -9977,19 +10115,23 @@ components:
         id:
           type: integer
           format: int32
+          readOnly: true
         hours:
           type: string
         comment:
           type: string
+          maxLength: 255
         spentOn:
           type: string
           format: date
         createdAt:
           type: string
           format: date-time
+          readOnly: true
         updatedAt:
           type: string
           format: date-time
+          readOnly: true
         _embedded:
           $ref: '#/components/schemas/Time_entry_embedded'
         _links:

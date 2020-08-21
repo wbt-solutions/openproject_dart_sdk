@@ -128,7 +128,9 @@ Class | Method | HTTP request | Description
 *StatusesApi* | [**apiV3StatusesIdGet**](doc\/StatusesApi.md#apiv3statusesidget) | **GET** /api/v3/statuses/{id} | View Status
 *StringObjectsApi* | [**apiV3StringObjectsGet**](doc\/StringObjectsApi.md#apiv3stringobjectsget) | **GET** /api/v3/string_objects | View String Object
 *TimeEntriesApi* | [**apiV3TimeEntriesGet**](doc\/TimeEntriesApi.md#apiv3timeentriesget) | **GET** /api/v3/time_entries | List Time entries
+*TimeEntriesApi* | [**apiV3TimeEntriesIdDelete**](doc\/TimeEntriesApi.md#apiv3timeentriesiddelete) | **DELETE** /api/v3/time_entries/{id} | delete time entry
 *TimeEntriesApi* | [**apiV3TimeEntriesIdGet**](doc\/TimeEntriesApi.md#apiv3timeentriesidget) | **GET** /api/v3/time_entries/{id} | View time entry
+*TimeEntriesApi* | [**apiV3TimeEntriesPost**](doc\/TimeEntriesApi.md#apiv3timeentriespost) | **POST** /api/v3/time_entries | create time entry
 *TimeEntryActivitiesApi* | [**apiV3TimeEntriesActivityIdGet**](doc\/TimeEntryActivitiesApi.md#apiv3timeentriesactivityidget) | **GET** /api/v3/time_entries/activity/{id} | View time entries activity
 *TypesApi* | [**apiV3ProjectsProjectIdTypesGet**](doc\/TypesApi.md#apiv3projectsprojectidtypesget) | **GET** /api/v3/projects/{project_id}/types | List types available in a project
 *TypesApi* | [**apiV3TypesGet**](doc\/TypesApi.md#apiv3typesget) | **GET** /api/v3/types | List all Types

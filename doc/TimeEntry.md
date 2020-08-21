@@ -8,12 +8,12 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
 **hours** | **String** |  | [optional] 
 **comment** | **String** |  | [optional] 
 **spentOn** | [**DateTime**](DateTime.md) |  | [optional] 
-**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 
 **embedded** | [**TimeEntryEmbedded**](TimeEntryEmbedded.md) |  | [optional] 
 **links** | [**TimeEntryLinks**](TimeEntryLinks.md) |  | [optional] 
 

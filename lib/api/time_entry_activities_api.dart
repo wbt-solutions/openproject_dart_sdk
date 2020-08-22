@@ -10,7 +10,7 @@ class TimeEntryActivitiesApi {
   /// View time entries activity with HTTP info returned
   ///
   /// 
-  Future apiV3TimeEntriesActivityIdGetWithHttpInfo(int id) async {
+  Future<Response> apiV3TimeEntriesActivitiesIdGetWithHttpInfo(int id) async {
     Object postBody;
 
     // verify required params are set
@@ -19,7 +19,7 @@ class TimeEntryActivitiesApi {
     }
 
     // create path and map variables
-    String path = "/api/v3/time_entries/activity/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+    String path = "/api/v3/time_entries/activities/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -56,13 +56,14 @@ class TimeEntryActivitiesApi {
   ///int id  (required):
   ///     time entries activity id
   /// 
-  Future apiV3TimeEntriesActivityIdGet(int id) async {
-    Response response = await apiV3TimeEntriesActivityIdGetWithHttpInfo(id);
+  Future<TimeEntriesActivity> apiV3TimeEntriesActivitiesIdGet(int id) async {
+    Response response = await apiV3TimeEntriesActivitiesIdGetWithHttpInfo(id);
     if(response.statusCode >= 400) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntriesActivity') as TimeEntriesActivity;
     } else {
-      return;
+      return null;
     }
   }
 

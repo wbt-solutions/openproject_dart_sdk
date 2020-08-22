@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesActivityIdGet**](TimeEntryActivitiesApi.md#apiV3TimeEntriesActivityIdGet) | **GET** /api/v3/time_entries/activity/{id} | View time entries activity
+[**apiV3TimeEntriesActivitiesIdGet**](TimeEntryActivitiesApi.md#apiV3TimeEntriesActivitiesIdGet) | **GET** /api/v3/time_entries/activities/{id} | View time entries activity
 
 
-# **apiV3TimeEntriesActivityIdGet**
-> apiV3TimeEntriesActivityIdGet(id)
+# **apiV3TimeEntriesActivitiesIdGet**
+> TimeEntriesActivity apiV3TimeEntriesActivitiesIdGet(id)
 
 View time entries activity
 
@@ -28,9 +28,10 @@ var api_instance = TimeEntryActivitiesApi();
 var id = 56; // int | time entries activity id
 
 try { 
-    api_instance.apiV3TimeEntriesActivityIdGet(id);
+    var result = api_instance.apiV3TimeEntriesActivitiesIdGet(id);
+    print(result);
 } catch (e) {
-    print("Exception when calling TimeEntryActivitiesApi->apiV3TimeEntriesActivityIdGet: $e\n");
+    print("Exception when calling TimeEntryActivitiesApi->apiV3TimeEntriesActivitiesIdGet: $e\n");
 }
 ```
 
@@ -42,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TimeEntriesActivity**](TimeEntriesActivity.md)
 
 ### Authorization
 

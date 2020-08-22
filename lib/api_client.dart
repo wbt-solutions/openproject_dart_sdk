@@ -132,6 +132,12 @@ class ApiClient {
           return StatusesLinks.fromJson(value);
         case 'TimeEntries':
           return TimeEntries.fromJson(value);
+        case 'TimeEntriesActivity':
+          return TimeEntriesActivity.fromJson(value);
+        case 'TimeEntriesActivityEmbedded':
+          return TimeEntriesActivityEmbedded.fromJson(value);
+        case 'TimeEntriesActivityLinks':
+          return TimeEntriesActivityLinks.fromJson(value);
         case 'TimeEntriesEmbedded':
           return TimeEntriesEmbedded.fromJson(value);
         case 'TimeEntriesLinks':

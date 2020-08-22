@@ -5844,12 +5844,16 @@ paths:
               $ref: '#/components/schemas/Time_entry'
         description: New time entry
         required: true
-  '/api/v3/time_entries/activity/{id}':
+  '/api/v3/time_entries/activities/{id}':
     get:
       responses:
         '200':
           description: OK
           headers: {}
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/TimeEntriesActivity"
         '404':
           description: >-
             Returned if the activity does not exist or if the user does not have
@@ -10381,3 +10385,35 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Work_Package'
+    TimeEntriesActivity:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        position:
+          type: integer
+        default:
+          type: boolean
+        _embedded:
+          $ref: '#/components/schemas/TimeEntriesActivity_embedded'
+        _links:
+          $ref: '#/components/schemas/TimeEntriesActivity_links'
+    TimeEntriesActivity_embedded:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Project'
+    TimeEntriesActivity_links:
+      type: object
+      properties:
+        self:
+          $ref: '#/components/schemas/Link'
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'

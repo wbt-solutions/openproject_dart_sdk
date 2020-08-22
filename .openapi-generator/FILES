@@ -76,6 +76,9 @@ doc\StatusesEmbedded.md
 doc\StatusesLinks.md
 doc\StringObjectsApi.md
 doc\TimeEntries.md
+doc\TimeEntriesActivity.md
+doc\TimeEntriesActivityEmbedded.md
+doc\TimeEntriesActivityLinks.md
 doc\TimeEntriesApi.md
 doc\TimeEntriesEmbedded.md
 doc\TimeEntriesLinks.md
@@ -200,6 +203,9 @@ lib\model\statuses.dart
 lib\model\statuses_embedded.dart
 lib\model\statuses_links.dart
 lib\model\time_entries.dart
+lib\model\time_entries_activity.dart
+lib\model\time_entries_activity_embedded.dart
+lib\model\time_entries_activity_links.dart
 lib\model\time_entries_embedded.dart
 lib\model\time_entries_links.dart
 lib\model\time_entry.dart
@@ -226,3 +232,6 @@ lib\model\wp_type_links.dart
 lib\model\wp_types.dart
 lib\model\wp_types_embedded.dart
 pubspec.yaml
+test\time_entries_activity_embedded_test.dart
+test\time_entries_activity_links_test.dart
+test\time_entries_activity_test.dart

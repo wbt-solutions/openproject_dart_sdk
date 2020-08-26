@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **hours** | **String** |  | [optional] 
-**comment** | **String** |  | [optional] 
+**comment** | [**Description**](Description.md) |  | [optional] 
 **spentOn** | [**DateTime**](DateTime.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [readonly] 

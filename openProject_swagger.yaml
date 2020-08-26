@@ -10123,8 +10123,7 @@ components:
         hours:
           type: string
         comment:
-          type: string
-          maxLength: 255
+          $ref: '#/components/schemas/Description'
         spentOn:
           type: string
           format: date

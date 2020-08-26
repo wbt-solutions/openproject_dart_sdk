@@ -6,7 +6,7 @@ class TimeEntry {
   
   String hours;
   
-  String comment;
+  Description comment;
   
   DateTime spentOn;
   
@@ -38,7 +38,9 @@ class TimeEntry {
     if (json == null) return;
     id = json['id'];
     hours = json['hours'];
-    comment = json['comment'];
+    comment = (json['comment'] == null) ?
+      null :
+      Description.fromJson(json['comment']);
     spentOn = (json['spentOn'] == null) ?
       null :
       DateTime.parse(json['spentOn']);

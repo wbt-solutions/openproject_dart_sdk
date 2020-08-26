@@ -9483,7 +9483,7 @@ components:
         name:
           type: string
           readOnly: true
-        links:
+        _links:
           $ref: '#/components/schemas/CategoryLinks'
     CategoryLinks:
       type: object

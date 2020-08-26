@@ -23,9 +23,9 @@ class Category {
     if (json == null) return;
     id = json['id'];
     name = json['name'];
-    links = (json['links'] == null) ?
+    links = (json['_links'] == null) ?
       null :
-      CategoryLinks.fromJson(json['links']);
+      CategoryLinks.fromJson(json['_links']);
   }
 
   Map<String, dynamic> toJson() {
@@ -35,7 +35,7 @@ class Category {
     if (name != null)
       json['name'] = name;
     if (links != null)
-      json['links'] = links;
+      json['_links'] = links;
     return json;
   }
 

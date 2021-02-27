@@ -32,14 +32,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+final api_instance = RelationsApi();
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 
 try { 
     api_instance.apiV3RelationsGet(filters, sortBy);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsGet: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsGet: $e\n');
 }
 ```
 
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the &#x60;from&#x60; or the &#x60;to&#x60; work package.  + type - The type of relation to filter by, e.g. \&quot;follows\&quot;. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\". | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type
@@ -79,13 +79,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var id = 56; // int | Relation ID
+final api_instance = RelationsApi();
+final id = 56; // int | Relation ID
 
 try { 
     api_instance.apiV3RelationsIdDelete(id);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsIdDelete: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsIdDelete: $e\n');
 }
 ```
 
@@ -122,13 +122,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var id = 56; // int | ID of the relation being modified
+final api_instance = RelationsApi();
+final id = 56; // int | ID of the relation being modified
 
 try { 
     api_instance.apiV3RelationsIdFormPost(id);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsIdFormPost: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsIdFormPost: $e\n');
 }
 ```
 
@@ -165,13 +165,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var id = 56; // int | Relation id
+final api_instance = RelationsApi();
+final id = 56; // int | Relation id
 
 try { 
     api_instance.apiV3RelationsIdGet(id);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsIdGet: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsIdGet: $e\n');
 }
 ```
 
@@ -210,13 +210,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var id = 56; // int | Relation ID
+final api_instance = RelationsApi();
+final id = 56; // int | Relation ID
 
 try { 
     api_instance.apiV3RelationsIdPatch(id);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsIdPatch: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsIdPatch: $e\n');
 }
 ```
 
@@ -253,12 +253,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
+final api_instance = RelationsApi();
 
 try { 
     api_instance.apiV3RelationsSchemaGet();
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsSchemaGet: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsSchemaGet: $e\n');
 }
 ```
 
@@ -292,13 +292,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RelationsApi();
-var type = type_example; // String | Type of the schema
+final api_instance = RelationsApi();
+final type = type_example; // String | Type of the schema
 
 try { 
     api_instance.apiV3RelationsSchemaTypeGet(type);
 } catch (e) {
-    print("Exception when calling RelationsApi->apiV3RelationsSchemaTypeGet: $e\n");
+    print('Exception when calling RelationsApi->apiV3RelationsSchemaTypeGet: $e\n');
 }
 ```
 

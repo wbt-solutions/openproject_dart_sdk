@@ -26,13 +26,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QuerySortBysApi();
-var id = id_example; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
+final api_instance = QuerySortBysApi();
+final id = id_example; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
 
 try { 
     api_instance.apiV3QueriesSortBysIdGet(id);
 } catch (e) {
-    print("Exception when calling QuerySortBysApi->apiV3QueriesSortBysIdGet: $e\n");
+    print('Exception when calling QuerySortBysApi->apiV3QueriesSortBysIdGet: $e\n');
 }
 ```
 

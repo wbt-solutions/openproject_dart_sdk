@@ -26,13 +26,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueryColumnsApi();
-var id = id_example; // String | QueryColumn id
+final api_instance = QueryColumnsApi();
+final id = id_example; // String | QueryColumn id
 
 try { 
     api_instance.apiV3QueriesColumnsIdGet(id);
 } catch (e) {
-    print("Exception when calling QueryColumnsApi->apiV3QueriesColumnsIdGet: $e\n");
+    print('Exception when calling QueryColumnsApi->apiV3QueriesColumnsIdGet: $e\n');
 }
 ```
 

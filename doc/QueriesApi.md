@@ -38,21 +38,21 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Id of the project the default query is requested for
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
-var offset = 56; // int | Page number inside the queries' result collection of work packages.
-var pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
-var groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
-var showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
-var timelineVisible = true; // bool | Indicates whether the timeline should be shown.
-var showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
+final api_instance = QueriesApi();
+final id = 56; // int | Id of the project the default query is requested for
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final offset = 56; // int | Page number inside the queries' result collection of work packages.
+final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+final groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+final showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+final timelineVisible = true; // bool | Indicates whether the timeline should be shown.
+final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
 try { 
     api_instance.apiV3ProjectsIdQueriesDefaultGet(id, filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, showHierarchies);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3ProjectsIdQueriesDefaultGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3ProjectsIdQueriesDefaultGet: $e\n');
 }
 ```
 
@@ -61,12 +61,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Id of the project the default query is requested for | 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query&#39;s persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
- **offset** | **int**| Page number inside the queries&#39; result collection of work packages. | [optional] [default to 1]
- **pageSize** | **int**| Number of elements to display per page for the queries&#39; result collection of work packages. | [optional] 
- **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sort criteria. | [optional] 
- **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted group criteria. | [optional] 
- **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sums property. | [optional] [default to false]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
+ **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
+ **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria. | [optional] 
+ **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property. | [optional] [default to false]
  **timelineVisible** | **bool**| Indicates whether the timeline should be shown. | [optional] [default to false]
  **showHierarchies** | **bool**| Indicates whether the hierarchy mode should be enabled. | [optional] [default to true]
 
@@ -99,13 +99,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 789; // int | ID of project to return
+final api_instance = QueriesApi();
+final id = 789; // int | ID of project to return
 
 try { 
     api_instance.apiV3ProjectsIdQueriesSchemaGet(id);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3ProjectsIdQueriesSchemaGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3ProjectsIdQueriesSchemaGet: $e\n');
 }
 ```
 
@@ -144,12 +144,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
+final api_instance = QueriesApi();
 
 try { 
     api_instance.apiV3QueriesAvailableProjectsGet();
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesAvailableProjectsGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesAvailableProjectsGet: $e\n');
 }
 ```
 
@@ -185,21 +185,21 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
-var offset = 56; // int | Page number inside the queries' result collection of work packages.
-var pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
-var groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
-var showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
-var timelineVisible = true; // bool | Indicates whether the timeline should be shown.
-var timelineZoomLevel = timelineZoomLevel_example; // String | Indicates in what zoom level the timeline should be shown. Valid values are  `days`, `weeks`, `months`, `quarters`, and `years`.
-var showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
+final api_instance = QueriesApi();
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final offset = 56; // int | Page number inside the queries' result collection of work packages.
+final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+final groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+final showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+final timelineVisible = true; // bool | Indicates whether the timeline should be shown.
+final timelineZoomLevel = timelineZoomLevel_example; // String | Indicates in what zoom level the timeline should be shown. Valid values are  `days`, `weeks`, `months`, `quarters`, and `years`.
+final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
 try { 
     api_instance.apiV3QueriesDefaultGet(filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, timelineZoomLevel, showHierarchies);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesDefaultGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesDefaultGet: $e\n');
 }
 ```
 
@@ -207,14 +207,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query&#39;s persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
- **offset** | **int**| Page number inside the queries&#39; result collection of work packages. | [optional] [default to 1]
- **pageSize** | **int**| Number of elements to display per page for the queries&#39; result collection of work packages. | [optional] 
- **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sort criteria. | [optional] 
- **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted group criteria. | [optional] 
- **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sums property. | [optional] [default to false]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
+ **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
+ **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria. | [optional] 
+ **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property. | [optional] [default to false]
  **timelineVisible** | **bool**| Indicates whether the timeline should be shown. | [optional] [default to false]
- **timelineZoomLevel** | **String**| Indicates in what zoom level the timeline should be shown. Valid values are  &#x60;days&#x60;, &#x60;weeks&#x60;, &#x60;months&#x60;, &#x60;quarters&#x60;, and &#x60;years&#x60;. | [optional] [default to &quot;days&quot;]
+ **timelineZoomLevel** | **String**| Indicates in what zoom level the timeline should be shown. Valid values are  `days`, `weeks`, `months`, `quarters`, and `years`. | [optional] [default to 'days']
  **showHierarchies** | **bool**| Indicates whether the hierarchy mode should be enabled. | [optional] [default to true]
 
 ### Return type
@@ -244,12 +244,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
+final api_instance = QueriesApi();
 
 try { 
     api_instance.apiV3QueriesFormPost();
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesFormPost: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesFormPost: $e\n');
 }
 ```
 
@@ -285,13 +285,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
+final api_instance = QueriesApi();
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
 
 try { 
     api_instance.apiV3QueriesGet(filters);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesGet: $e\n');
 }
 ```
 
@@ -299,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the &#x60;!*&#x60; (not any) operator, global queries are returned. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned. | [optional] [default to const []]
 
 ### Return type
 
@@ -330,13 +330,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Query id
+final api_instance = QueriesApi();
+final id = 56; // int | Query id
 
 try { 
     api_instance.apiV3QueriesIdDelete(id);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesIdDelete: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesIdDelete: $e\n');
 }
 ```
 
@@ -375,22 +375,22 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Query id
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
-var offset = 56; // int | Page number inside the queries' result collection of work packages.
-var pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
-var groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
-var showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
-var timelineVisible = true; // bool | Indicates whether the timeline should be shown.
-var timelineLabels = timelineLabels_example; // String | Overridden labels in the timeline view
-var showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
+final api_instance = QueriesApi();
+final id = 56; // int | Query id
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final offset = 56; // int | Page number inside the queries' result collection of work packages.
+final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
+final groupBy = groupBy_example; // String | The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria.
+final showSums = true; // bool | Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property.
+final timelineVisible = true; // bool | Indicates whether the timeline should be shown.
+final timelineLabels = timelineLabels_example; // String | Overridden labels in the timeline view
+final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
 try { 
     api_instance.apiV3QueriesIdGet(id, filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, timelineLabels, showHierarchies);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesIdGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesIdGet: $e\n');
 }
 ```
 
@@ -399,14 +399,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Query id | 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query&#39;s persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
- **offset** | **int**| Page number inside the queries&#39; result collection of work packages. | [optional] [default to 1]
- **pageSize** | **int**| Number of elements to display per page for the queries&#39; result collection of work packages. | [optional] 
- **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sort criteria. | [optional] 
- **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted group criteria. | [optional] 
- **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie&#39;s result collection of work packages overriding the query&#39;s persisted sums property. | [optional] [default to false]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
+ **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
+ **groupBy** | **String**| The column to group by. The grouping criteria is applied to the to the querie's result collection of work packages overriding the query's persisted group criteria. | [optional] 
+ **showSums** | **bool**| Indicates whether properties should be summed up if they support it. The showSums parameter is applied to the to the querie's result collection of work packages overriding the query's persisted sums property. | [optional] [default to false]
  **timelineVisible** | **bool**| Indicates whether the timeline should be shown. | [optional] [default to false]
- **timelineLabels** | **String**| Overridden labels in the timeline view | [optional] [default to &quot;{}&quot;]
+ **timelineLabels** | **String**| Overridden labels in the timeline view | [optional] [default to '{}']
  **showHierarchies** | **bool**| Indicates whether the hierarchy mode should be enabled. | [optional] [default to true]
 
 ### Return type
@@ -438,14 +438,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Query id
-var inlineObject2 = InlineObject2(); // InlineObject2 | 
+final api_instance = QueriesApi();
+final id = 56; // int | Query id
+final inlineObject2 = InlineObject2(); // InlineObject2 | 
 
 try { 
     api_instance.apiV3QueriesIdPatch(id, inlineObject2);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesIdPatch: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesIdPatch: $e\n');
 }
 ```
 
@@ -483,13 +483,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Query id
+final api_instance = QueriesApi();
+final id = 56; // int | Query id
 
 try { 
     api_instance.apiV3QueriesIdStarPatch(id);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesIdStarPatch: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesIdStarPatch: $e\n');
 }
 ```
 
@@ -526,13 +526,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
-var id = 56; // int | Query id
+final api_instance = QueriesApi();
+final id = 56; // int | Query id
 
 try { 
     api_instance.apiV3QueriesIdUnstarPatch(id);
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesIdUnstarPatch: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesIdUnstarPatch: $e\n');
 }
 ```
 
@@ -571,12 +571,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
+final api_instance = QueriesApi();
 
 try { 
     api_instance.apiV3QueriesPost();
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesPost: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesPost: $e\n');
 }
 ```
 
@@ -612,12 +612,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueriesApi();
+final api_instance = QueriesApi();
 
 try { 
     api_instance.apiV3QueriesSchemaGet();
 } catch (e) {
-    print("Exception when calling QueriesApi->apiV3QueriesSchemaGet: $e\n");
+    print('Exception when calling QueriesApi->apiV3QueriesSchemaGet: $e\n');
 }
 ```
 

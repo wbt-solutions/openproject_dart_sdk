@@ -1,33 +1,16 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class WorkPackage {
-  
-  int id;
-  
-  int lockVersion;
-  
-  int percentageDone;
-  
-  String subject;
-  
-  Description description;
-  
-  DateTime startDate;
-  
-  DateTime dueDate;
-  
-  DateTime date;
-  
-  DateTime createdAt;
-  
-  DateTime updatedAt;
-  
-  String estimatedTime;
-  
-  WorkPackageEmbedded embedded;
-  
-  WorkPackageLinks links;
-
+  /// Returns a new [WorkPackage] instance.
   WorkPackage({
     this.id,
     this.lockVersion,
@@ -44,93 +27,160 @@ class WorkPackage {
     this.links,
   });
 
-  @override
-  String toString() {
-    return 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, date=$date, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links, ]';
-  }
+  int id;
 
-  WorkPackage.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    id = json['id'];
-    lockVersion = json['lockVersion'];
-    percentageDone = json['percentageDone'];
-    subject = json['subject'];
-    description = (json['description'] == null) ?
-      null :
-      Description.fromJson(json['description']);
-    startDate = (json['startDate'] == null) ?
-      null :
-      DateTime.parse(json['startDate']);
-    dueDate = (json['dueDate'] == null) ?
-      null :
-      DateTime.parse(json['dueDate']);
-    date = (json['date'] == null) ?
-      null :
-      DateTime.parse(json['date']);
-    createdAt = (json['createdAt'] == null) ?
-      null :
-      DateTime.parse(json['createdAt']);
-    updatedAt = (json['updatedAt'] == null) ?
-      null :
-      DateTime.parse(json['updatedAt']);
-    estimatedTime = json['estimatedTime'];
-    embedded = (json['_embedded'] == null) ?
-      null :
-      WorkPackageEmbedded.fromJson(json['_embedded']);
-    links = (json['_links'] == null) ?
-      null :
-      WorkPackageLinks.fromJson(json['_links']);
-  }
+  int lockVersion;
+
+  int percentageDone;
+
+  String subject;
+
+  Description description;
+
+  DateTime startDate;
+
+  DateTime dueDate;
+
+  DateTime date;
+
+  DateTime createdAt;
+
+  DateTime updatedAt;
+
+  String estimatedTime;
+
+  WorkPackageEmbedded embedded;
+
+  WorkPackageLinks links;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is WorkPackage &&
+     other.id == id &&
+     other.lockVersion == lockVersion &&
+     other.percentageDone == percentageDone &&
+     other.subject == subject &&
+     other.description == description &&
+     other.startDate == startDate &&
+     other.dueDate == dueDate &&
+     other.date == date &&
+     other.createdAt == createdAt &&
+     other.updatedAt == updatedAt &&
+     other.estimatedTime == estimatedTime &&
+     other.embedded == embedded &&
+     other.links == links;
+
+  @override
+  int get hashCode =>
+    (id == null ? 0 : id.hashCode) +
+    (lockVersion == null ? 0 : lockVersion.hashCode) +
+    (percentageDone == null ? 0 : percentageDone.hashCode) +
+    (subject == null ? 0 : subject.hashCode) +
+    (description == null ? 0 : description.hashCode) +
+    (startDate == null ? 0 : startDate.hashCode) +
+    (dueDate == null ? 0 : dueDate.hashCode) +
+    (date == null ? 0 : date.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode) +
+    (updatedAt == null ? 0 : updatedAt.hashCode) +
+    (estimatedTime == null ? 0 : estimatedTime.hashCode) +
+    (embedded == null ? 0 : embedded.hashCode) +
+    (links == null ? 0 : links.hashCode);
+
+  @override
+  String toString() => 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, date=$date, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (id != null)
-      json['id'] = id;
-    if (lockVersion != null)
-      json['lockVersion'] = lockVersion;
-    if (percentageDone != null)
-      json['percentageDone'] = percentageDone;
-    if (subject != null)
-      json['subject'] = subject;
-    if (description != null)
-      json['description'] = description;
-    if (startDate != null)
-      json['startDate'] = startDate == null ? null : _dateFormatter.format(startDate.toUtc());
-    if (dueDate != null)
-      json['dueDate'] = dueDate == null ? null : _dateFormatter.format(dueDate.toUtc());
-    if (date != null)
-      json['date'] = date == null ? null : _dateFormatter.format(date.toUtc());
-    if (createdAt != null)
-      json['createdAt'] = createdAt == null ? null : createdAt.toUtc().toIso8601String();
-    if (updatedAt != null)
-      json['updatedAt'] = updatedAt == null ? null : updatedAt.toUtc().toIso8601String();
-    if (estimatedTime != null)
-      json['estimatedTime'] = estimatedTime;
-    if (embedded != null)
-      json['_embedded'] = embedded;
-    if (links != null)
-      json['_links'] = links;
+    final json = <String, dynamic>{};
+    if (id != null) {
+      json[r'id'] = id;
+    }
+    if (lockVersion != null) {
+      json[r'lockVersion'] = lockVersion;
+    }
+    if (percentageDone != null) {
+      json[r'percentageDone'] = percentageDone;
+    }
+    if (subject != null) {
+      json[r'subject'] = subject;
+    }
+    if (description != null) {
+      json[r'description'] = description;
+    }
+    if (startDate != null) {
+      json[r'startDate'] = _dateFormatter.format(startDate.toUtc());
+    }
+    if (dueDate != null) {
+      json[r'dueDate'] = _dateFormatter.format(dueDate.toUtc());
+    }
+    if (date != null) {
+      json[r'date'] = _dateFormatter.format(date.toUtc());
+    }
+    if (createdAt != null) {
+      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
+    }
+    if (updatedAt != null) {
+      json[r'updatedAt'] = updatedAt.toUtc().toIso8601String();
+    }
+    if (estimatedTime != null) {
+      json[r'estimatedTime'] = estimatedTime;
+    }
+    if (embedded != null) {
+      json[r'_embedded'] = embedded;
+    }
+    if (links != null) {
+      json[r'_links'] = links;
+    }
     return json;
   }
 
-  static List<WorkPackage> listFromJson(List<dynamic> json) {
-    return json == null ? List<WorkPackage>() : json.map((value) => WorkPackage.fromJson(value)).toList();
-  }
+  /// Returns a new [WorkPackage] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static WorkPackage fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : WorkPackage(
+        id: json[r'id'],
+        lockVersion: json[r'lockVersion'],
+        percentageDone: json[r'percentageDone'],
+        subject: json[r'subject'],
+        description: Description.fromJson(json[r'description']),
+        startDate: json[r'startDate'] == null
+          ? null
+          : DateTime.parse(json[r'startDate']),
+        dueDate: json[r'dueDate'] == null
+          ? null
+          : DateTime.parse(json[r'dueDate']),
+        date: json[r'date'] == null
+          ? null
+          : DateTime.parse(json[r'date']),
+        createdAt: json[r'createdAt'] == null
+          ? null
+          : DateTime.parse(json[r'createdAt']),
+        updatedAt: json[r'updatedAt'] == null
+          ? null
+          : DateTime.parse(json[r'updatedAt']),
+        estimatedTime: json[r'estimatedTime'],
+        embedded: WorkPackageEmbedded.fromJson(json[r'_embedded']),
+        links: WorkPackageLinks.fromJson(json[r'_links']),
+    );
+
+  static List<WorkPackage> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <WorkPackage>[]
+      : json.map((v) => WorkPackage.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, WorkPackage> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, WorkPackage>();
+    final map = <String, WorkPackage>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = WorkPackage.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = WorkPackage.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of WorkPackage-objects as value to a dart map
-  static Map<String, List<WorkPackage>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<WorkPackage>>();
+  static Map<String, List<WorkPackage>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<WorkPackage>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = WorkPackage.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = WorkPackage.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

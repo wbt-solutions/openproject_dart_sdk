@@ -1,50 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class WorkPackagesEmbedded {
-  
-  List<WorkPackage> elements = const [];
-
+  /// Returns a new [WorkPackagesEmbedded] instance.
   WorkPackagesEmbedded({
     this.elements = const [],
   });
 
-  @override
-  String toString() {
-    return 'WorkPackagesEmbedded[elements=$elements, ]';
-  }
+  List<WorkPackage> elements;
 
-  WorkPackagesEmbedded.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    elements = (json['elements'] == null) ?
-      null :
-      WorkPackage.listFromJson(json['elements']);
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is WorkPackagesEmbedded &&
+     other.elements == elements;
+
+  @override
+  int get hashCode =>
+    (elements == null ? 0 : elements.hashCode);
+
+  @override
+  String toString() => 'WorkPackagesEmbedded[elements=$elements]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (elements != null)
-      json['elements'] = elements;
+    final json = <String, dynamic>{};
+    if (elements != null) {
+      json[r'elements'] = elements;
+    }
     return json;
   }
 
-  static List<WorkPackagesEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? List<WorkPackagesEmbedded>() : json.map((value) => WorkPackagesEmbedded.fromJson(value)).toList();
-  }
+  /// Returns a new [WorkPackagesEmbedded] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static WorkPackagesEmbedded fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : WorkPackagesEmbedded(
+        elements: WorkPackage.listFromJson(json[r'elements']),
+    );
+
+  static List<WorkPackagesEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <WorkPackagesEmbedded>[]
+      : json.map((v) => WorkPackagesEmbedded.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, WorkPackagesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, WorkPackagesEmbedded>();
+    final map = <String, WorkPackagesEmbedded>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = WorkPackagesEmbedded.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = WorkPackagesEmbedded.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of WorkPackagesEmbedded-objects as value to a dart map
-  static Map<String, List<WorkPackagesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<WorkPackagesEmbedded>>();
+  static Map<String, List<WorkPackagesEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<WorkPackagesEmbedded>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = WorkPackagesEmbedded.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = WorkPackagesEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

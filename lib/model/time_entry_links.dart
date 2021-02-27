@@ -1,17 +1,16 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class TimeEntryLinks {
-  
-  Link self;
-  
-  Link project;
-  
-  Link workPackage;
-  
-  Link user;
-  
-  Link activity;
-
+  /// Returns a new [TimeEntryLinks] instance.
   TimeEntryLinks({
     this.self,
     this.project,
@@ -20,63 +19,86 @@ class TimeEntryLinks {
     this.activity,
   });
 
-  @override
-  String toString() {
-    return 'TimeEntryLinks[self=$self, project=$project, workPackage=$workPackage, user=$user, activity=$activity, ]';
-  }
+  Link self;
 
-  TimeEntryLinks.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    self = (json['self'] == null) ?
-      null :
-      Link.fromJson(json['self']);
-    project = (json['project'] == null) ?
-      null :
-      Link.fromJson(json['project']);
-    workPackage = (json['workPackage'] == null) ?
-      null :
-      Link.fromJson(json['workPackage']);
-    user = (json['user'] == null) ?
-      null :
-      Link.fromJson(json['user']);
-    activity = (json['activity'] == null) ?
-      null :
-      Link.fromJson(json['activity']);
-  }
+  Link project;
+
+  Link workPackage;
+
+  Link user;
+
+  Link activity;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is TimeEntryLinks &&
+     other.self == self &&
+     other.project == project &&
+     other.workPackage == workPackage &&
+     other.user == user &&
+     other.activity == activity;
+
+  @override
+  int get hashCode =>
+    (self == null ? 0 : self.hashCode) +
+    (project == null ? 0 : project.hashCode) +
+    (workPackage == null ? 0 : workPackage.hashCode) +
+    (user == null ? 0 : user.hashCode) +
+    (activity == null ? 0 : activity.hashCode);
+
+  @override
+  String toString() => 'TimeEntryLinks[self=$self, project=$project, workPackage=$workPackage, user=$user, activity=$activity]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (self != null)
-      json['self'] = self;
-    if (project != null)
-      json['project'] = project;
-    if (workPackage != null)
-      json['workPackage'] = workPackage;
-    if (user != null)
-      json['user'] = user;
-    if (activity != null)
-      json['activity'] = activity;
+    final json = <String, dynamic>{};
+    if (self != null) {
+      json[r'self'] = self;
+    }
+    if (project != null) {
+      json[r'project'] = project;
+    }
+    if (workPackage != null) {
+      json[r'workPackage'] = workPackage;
+    }
+    if (user != null) {
+      json[r'user'] = user;
+    }
+    if (activity != null) {
+      json[r'activity'] = activity;
+    }
     return json;
   }
 
-  static List<TimeEntryLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<TimeEntryLinks>() : json.map((value) => TimeEntryLinks.fromJson(value)).toList();
-  }
+  /// Returns a new [TimeEntryLinks] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static TimeEntryLinks fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : TimeEntryLinks(
+        self: Link.fromJson(json[r'self']),
+        project: Link.fromJson(json[r'project']),
+        workPackage: Link.fromJson(json[r'workPackage']),
+        user: Link.fromJson(json[r'user']),
+        activity: Link.fromJson(json[r'activity']),
+    );
+
+  static List<TimeEntryLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <TimeEntryLinks>[]
+      : json.map((v) => TimeEntryLinks.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, TimeEntryLinks> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, TimeEntryLinks>();
+    final map = <String, TimeEntryLinks>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = TimeEntryLinks.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = TimeEntryLinks.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of TimeEntryLinks-objects as value to a dart map
-  static Map<String, List<TimeEntryLinks>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<TimeEntryLinks>>();
+  static Map<String, List<TimeEntryLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<TimeEntryLinks>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = TimeEntryLinks.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = TimeEntryLinks.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

@@ -1,115 +1,158 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class Description {
-  
-  DescriptionFormatEnum format;
-  
-  String raw;
-  
-  String html;
-
+  /// Returns a new [Description] instance.
   Description({
     this.format,
     this.raw,
     this.html,
   });
 
-  @override
-  String toString() {
-    return 'Description[format=$format, raw=$raw, html=$html, ]';
-  }
+  DescriptionFormatEnum format;
 
-  Description.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    format = DescriptionFormatEnum.fromJson(json['format']);
-    raw = json['raw'];
-    html = json['html'];
-  }
+  String raw;
+
+  String html;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is Description &&
+     other.format == format &&
+     other.raw == raw &&
+     other.html == html;
+
+  @override
+  int get hashCode =>
+    (format == null ? 0 : format.hashCode) +
+    (raw == null ? 0 : raw.hashCode) +
+    (html == null ? 0 : html.hashCode);
+
+  @override
+  String toString() => 'Description[format=$format, raw=$raw, html=$html]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (format != null)
-      json['format'] = format.value;
-    if (raw != null)
-      json['raw'] = raw;
-    if (html != null)
-      json['html'] = html;
+    final json = <String, dynamic>{};
+    if (format != null) {
+      json[r'format'] = format;
+    }
+    if (raw != null) {
+      json[r'raw'] = raw;
+    }
+    if (html != null) {
+      json[r'html'] = html;
+    }
     return json;
   }
 
-  static List<Description> listFromJson(List<dynamic> json) {
-    return json == null ? List<Description>() : json.map((value) => Description.fromJson(value)).toList();
-  }
+  /// Returns a new [Description] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static Description fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : Description(
+        format: DescriptionFormatEnum.fromJson(json[r'format']),
+        raw: json[r'raw'],
+        html: json[r'html'],
+    );
+
+  static List<Description> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <Description>[]
+      : json.map((v) => Description.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, Description> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, Description>();
+    final map = <String, Description>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Description.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = Description.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of Description-objects as value to a dart map
-  static Map<String, List<Description>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<Description>>();
+  static Map<String, List<Description>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<Description>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = Description.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = Description.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;
   }
 }
+
+
 class DescriptionFormatEnum {
+  /// Instantiate a new enum with the provided [value].
+  const DescriptionFormatEnum._(this.value);
+
   /// The underlying value of this enum member.
   final String value;
 
-  const DescriptionFormatEnum._internal(this.value);
-
-  static const DescriptionFormatEnum plain_ = DescriptionFormatEnum._internal("plain");
-  static const DescriptionFormatEnum markdown_ = DescriptionFormatEnum._internal("markdown");
-  static const DescriptionFormatEnum custom_ = DescriptionFormatEnum._internal("custom");
-
-  static List<DescriptionFormatEnum> get values => const [
-        plain_,
-        markdown_,
-        custom_,
-      ];
-
-  String toJson () {
-    return value;
-  }
-
   @override
-  String toString () {
-    return value;
-  }
+  String toString() => value;
 
-  static DescriptionFormatEnum fromJson(String value) {
-    return DescriptionFormatEnumTypeTransformer().decode(value);
-  }
+  String toJson() => value;
 
-  static List<DescriptionFormatEnum> listFromJson(List<dynamic> json) {
-    return json == null
-      ? List<DescriptionFormatEnum>()
-      : json.map((value) => DescriptionFormatEnum.fromJson(value)).toList();
-  }
+  static const plain = DescriptionFormatEnum._(r'plain');
+  static const markdown = DescriptionFormatEnum._(r'markdown');
+  static const custom = DescriptionFormatEnum._(r'custom');
+
+  /// List of all possible values in this [enum][DescriptionFormatEnum].
+  static const values = <DescriptionFormatEnum>[
+    plain,
+    markdown,
+    custom,
+  ];
+
+  static DescriptionFormatEnum fromJson(dynamic value) =>
+    DescriptionFormatEnumTypeTransformer().decode(value);
+
+  static List<DescriptionFormatEnum> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <DescriptionFormatEnum>[]
+      : json
+          .map((value) => DescriptionFormatEnum.fromJson(value))
+          .toList(growable: true == growable);
 }
 
+/// Transformation class that can [encode] an instance of [DescriptionFormatEnum] to String,
+/// and [decode] dynamic data back to [DescriptionFormatEnum].
 class DescriptionFormatEnumTypeTransformer {
+  const DescriptionFormatEnumTypeTransformer._();
 
-  dynamic encode(DescriptionFormatEnum data) {
-    return data.value;
-  }
+  factory DescriptionFormatEnumTypeTransformer() => _instance ??= DescriptionFormatEnumTypeTransformer._();
 
-  DescriptionFormatEnum decode(dynamic data) {
+  String encode(DescriptionFormatEnum data) => data.value;
+
+  /// Decodes a [dynamic value][data] to a DescriptionFormatEnum.
+  ///
+  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
+  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
+  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
+  ///
+  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
+  /// and users are still using an old app with the old code.
+  DescriptionFormatEnum decode(dynamic data, {bool allowNull}) {
     switch (data) {
-      case "plain": return DescriptionFormatEnum.plain_;
-      case "markdown": return DescriptionFormatEnum.markdown_;
-      case "custom": return DescriptionFormatEnum.custom_;
-      default: return null;
+      case r'plain': return DescriptionFormatEnum.plain;
+      case r'markdown': return DescriptionFormatEnum.markdown;
+      case r'custom': return DescriptionFormatEnum.custom;
+      default:
+        if (allowNull == false) {
+          throw ArgumentError('Unknown enum value to decode: $data');
+        }
     }
+    return null;
   }
-}
 
+  /// Singleton [DescriptionFormatEnumTypeTransformer] instance.
+  static DescriptionFormatEnumTypeTransformer _instance;
+}
 

@@ -24,13 +24,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = StringObjectsApi();
-var value = value_example; // String | The string value being resolved
+final api_instance = StringObjectsApi();
+final value = value_example; // String | The string value being resolved
 
 try { 
     api_instance.apiV3StringObjectsGet(value);
 } catch (e) {
-    print("Exception when calling StringObjectsApi->apiV3StringObjectsGet: $e\n");
+    print('Exception when calling StringObjectsApi->apiV3StringObjectsGet: $e\n');
 }
 ```
 

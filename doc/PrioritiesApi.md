@@ -25,13 +25,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = PrioritiesApi();
+final api_instance = PrioritiesApi();
 
 try { 
-    var result = api_instance.apiV3PrioritiesGet();
+    final result = api_instance.apiV3PrioritiesGet();
     print(result);
 } catch (e) {
-    print("Exception when calling PrioritiesApi->apiV3PrioritiesGet: $e\n");
+    print('Exception when calling PrioritiesApi->apiV3PrioritiesGet: $e\n');
 }
 ```
 
@@ -65,14 +65,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = PrioritiesApi();
-var id = 56; // int | Priority id
+final api_instance = PrioritiesApi();
+final id = 56; // int | Priority id
 
 try { 
-    var result = api_instance.apiV3PrioritiesIdGet(id);
+    final result = api_instance.apiV3PrioritiesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling PrioritiesApi->apiV3PrioritiesIdGet: $e\n");
+    print('Exception when calling PrioritiesApi->apiV3PrioritiesIdGet: $e\n');
 }
 ```
 

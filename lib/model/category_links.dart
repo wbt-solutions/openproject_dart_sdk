@@ -1,66 +1,86 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class CategoryLinks {
-  
-  Link self;
-  
-  Link project;
-  
-  Link defaultAssignee;
-
+  /// Returns a new [CategoryLinks] instance.
   CategoryLinks({
     this.self,
     this.project,
     this.defaultAssignee,
   });
 
-  @override
-  String toString() {
-    return 'CategoryLinks[self=$self, project=$project, defaultAssignee=$defaultAssignee, ]';
-  }
+  Link self;
 
-  CategoryLinks.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    self = (json['self'] == null) ?
-      null :
-      Link.fromJson(json['self']);
-    project = (json['project'] == null) ?
-      null :
-      Link.fromJson(json['project']);
-    defaultAssignee = (json['defaultAssignee'] == null) ?
-      null :
-      Link.fromJson(json['defaultAssignee']);
-  }
+  Link project;
+
+  Link defaultAssignee;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is CategoryLinks &&
+     other.self == self &&
+     other.project == project &&
+     other.defaultAssignee == defaultAssignee;
+
+  @override
+  int get hashCode =>
+    (self == null ? 0 : self.hashCode) +
+    (project == null ? 0 : project.hashCode) +
+    (defaultAssignee == null ? 0 : defaultAssignee.hashCode);
+
+  @override
+  String toString() => 'CategoryLinks[self=$self, project=$project, defaultAssignee=$defaultAssignee]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (self != null)
-      json['self'] = self;
-    if (project != null)
-      json['project'] = project;
-    if (defaultAssignee != null)
-      json['defaultAssignee'] = defaultAssignee;
+    final json = <String, dynamic>{};
+    if (self != null) {
+      json[r'self'] = self;
+    }
+    if (project != null) {
+      json[r'project'] = project;
+    }
+    if (defaultAssignee != null) {
+      json[r'defaultAssignee'] = defaultAssignee;
+    }
     return json;
   }
 
-  static List<CategoryLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<CategoryLinks>() : json.map((value) => CategoryLinks.fromJson(value)).toList();
-  }
+  /// Returns a new [CategoryLinks] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static CategoryLinks fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : CategoryLinks(
+        self: Link.fromJson(json[r'self']),
+        project: Link.fromJson(json[r'project']),
+        defaultAssignee: Link.fromJson(json[r'defaultAssignee']),
+    );
+
+  static List<CategoryLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <CategoryLinks>[]
+      : json.map((v) => CategoryLinks.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, CategoryLinks> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, CategoryLinks>();
+    final map = <String, CategoryLinks>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CategoryLinks.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = CategoryLinks.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of CategoryLinks-objects as value to a dart map
-  static Map<String, List<CategoryLinks>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<CategoryLinks>>();
+  static Map<String, List<CategoryLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<CategoryLinks>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = CategoryLinks.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = CategoryLinks.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

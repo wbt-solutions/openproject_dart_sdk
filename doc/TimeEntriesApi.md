@@ -29,16 +29,16 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TimeEntriesApi();
-var offset = 56; // int | Page number inside the requested collection.
-var pageSize = 56; // int | Number of elements to display per page.
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
+final api_instance = TimeEntriesApi();
+final offset = 56; // int | Page number inside the requested collection.
+final pageSize = 56; // int | Number of elements to display per page.
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
 
 try { 
-    var result = api_instance.apiV3TimeEntriesGet(offset, pageSize, filters);
+    final result = api_instance.apiV3TimeEntriesGet(offset, pageSize, filters);
     print(result);
 } catch (e) {
-    print("Exception when calling TimeEntriesApi->apiV3TimeEntriesGet: $e\n");
+    print('Exception when calling TimeEntriesApi->apiV3TimeEntriesGet: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users | [optional] [default to const []]
 
 ### Return type
 
@@ -79,13 +79,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TimeEntriesApi();
-var id = 56; // int | time entry id
+final api_instance = TimeEntriesApi();
+final id = 56; // int | time entry id
 
 try { 
     api_instance.apiV3TimeEntriesIdDelete(id);
 } catch (e) {
-    print("Exception when calling TimeEntriesApi->apiV3TimeEntriesIdDelete: $e\n");
+    print('Exception when calling TimeEntriesApi->apiV3TimeEntriesIdDelete: $e\n');
 }
 ```
 
@@ -122,14 +122,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TimeEntriesApi();
-var id = 56; // int | time entry id
+final api_instance = TimeEntriesApi();
+final id = 56; // int | time entry id
 
 try { 
-    var result = api_instance.apiV3TimeEntriesIdGet(id);
+    final result = api_instance.apiV3TimeEntriesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling TimeEntriesApi->apiV3TimeEntriesIdGet: $e\n");
+    print('Exception when calling TimeEntriesApi->apiV3TimeEntriesIdGet: $e\n');
 }
 ```
 
@@ -168,16 +168,16 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TimeEntriesApi();
-var timeEntry = TimeEntry(); // TimeEntry | New time entry
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
+final api_instance = TimeEntriesApi();
+final timeEntry = TimeEntry(); // TimeEntry | New time entry
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
 
 try { 
-    var result = api_instance.apiV3TimeEntriesPost(timeEntry, filters, sortBy);
+    final result = api_instance.apiV3TimeEntriesPost(timeEntry, filters, sortBy);
     print(result);
 } catch (e) {
-    print("Exception when calling TimeEntriesApi->apiV3TimeEntriesPost: $e\n");
+    print('Exception when calling TimeEntriesApi->apiV3TimeEntriesPost: $e\n');
 }
 ```
 
@@ -186,7 +186,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timeEntry** | [**TimeEntry**](TimeEntry.md)| New time entry | 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it&#39;s own ancestor. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor. | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] 
 
 ### Return type

@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **addComment** | [**Link**](Link.md) |  | [optional] 
 **previewMarkup** | [**Link**](Link.md) |  | [optional] 
 **timeEntries** | [**Link**](Link.md) |  | [optional] 
-**ancestors** | [**List&lt;Link&gt;**](Link.md) |  | [optional] [default to const []]
+**ancestors** | [**List<Link>**](Link.md) |  | [optional] [default to const []]
 **category** | [**Link**](Link.md) |  | [optional] 
 **type** | [**Link**](Link.md) |  | [optional] 
 **priority** | [**Link**](Link.md) |  | [optional] 

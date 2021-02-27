@@ -27,14 +27,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CustomActionsApi();
-var customActionId = 56; // int | The id of the custom action to execute
-var inlineObject = InlineObject(); // InlineObject | 
+final api_instance = CustomActionsApi();
+final customActionId = 56; // int | The id of the custom action to execute
+final inlineObject = InlineObject(); // InlineObject | 
 
 try { 
     api_instance.apiV3CustomActionsCustomActionIdExecutePost(customActionId, inlineObject);
 } catch (e) {
-    print("Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdExecutePost: $e\n");
+    print('Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdExecutePost: $e\n');
 }
 ```
 
@@ -72,13 +72,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CustomActionsApi();
-var customActionId = 56; // int | The id of the custom action to fetch
+final api_instance = CustomActionsApi();
+final customActionId = 56; // int | The id of the custom action to fetch
 
 try { 
     api_instance.apiV3CustomActionsCustomActionIdGet(customActionId);
 } catch (e) {
-    print("Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdGet: $e\n");
+    print('Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdGet: $e\n');
 }
 ```
 

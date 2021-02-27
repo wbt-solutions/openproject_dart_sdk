@@ -28,14 +28,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TypesApi();
-var projectId = 56; // int | ID of the project whoose types will be listed
+final api_instance = TypesApi();
+final projectId = 56; // int | ID of the project whoose types will be listed
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdTypesGet(projectId);
+    final result = api_instance.apiV3ProjectsProjectIdTypesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling TypesApi->apiV3ProjectsProjectIdTypesGet: $e\n");
+    print('Exception when calling TypesApi->apiV3ProjectsProjectIdTypesGet: $e\n');
 }
 ```
 
@@ -72,13 +72,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TypesApi();
+final api_instance = TypesApi();
 
 try { 
-    var result = api_instance.apiV3TypesGet();
+    final result = api_instance.apiV3TypesGet();
     print(result);
 } catch (e) {
-    print("Exception when calling TypesApi->apiV3TypesGet: $e\n");
+    print('Exception when calling TypesApi->apiV3TypesGet: $e\n');
 }
 ```
 
@@ -112,14 +112,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TypesApi();
-var id = 56; // int | type id
+final api_instance = TypesApi();
+final id = 56; // int | type id
 
 try { 
-    var result = api_instance.apiV3TypesIdGet(id);
+    final result = api_instance.apiV3TypesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling TypesApi->apiV3TypesIdGet: $e\n");
+    print('Exception when calling TypesApi->apiV3TypesIdGet: $e\n');
 }
 ```
 

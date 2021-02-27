@@ -25,13 +25,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = StatusesApi();
+final api_instance = StatusesApi();
 
 try { 
-    var result = api_instance.apiV3StatusesGet();
+    final result = api_instance.apiV3StatusesGet();
     print(result);
 } catch (e) {
-    print("Exception when calling StatusesApi->apiV3StatusesGet: $e\n");
+    print('Exception when calling StatusesApi->apiV3StatusesGet: $e\n');
 }
 ```
 
@@ -65,14 +65,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = StatusesApi();
-var id = 56; // int | status id
+final api_instance = StatusesApi();
+final id = 56; // int | status id
 
 try { 
-    var result = api_instance.apiV3StatusesIdGet(id);
+    final result = api_instance.apiV3StatusesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling StatusesApi->apiV3StatusesIdGet: $e\n");
+    print('Exception when calling StatusesApi->apiV3StatusesIdGet: $e\n');
 }
 ```
 

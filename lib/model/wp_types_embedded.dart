@@ -1,50 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class WPTypesEmbedded {
-  
-  List<WPType> elements = const [];
-
+  /// Returns a new [WPTypesEmbedded] instance.
   WPTypesEmbedded({
     this.elements = const [],
   });
 
-  @override
-  String toString() {
-    return 'WPTypesEmbedded[elements=$elements, ]';
-  }
+  List<WPType> elements;
 
-  WPTypesEmbedded.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    elements = (json['elements'] == null) ?
-      null :
-      WPType.listFromJson(json['elements']);
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is WPTypesEmbedded &&
+     other.elements == elements;
+
+  @override
+  int get hashCode =>
+    (elements == null ? 0 : elements.hashCode);
+
+  @override
+  String toString() => 'WPTypesEmbedded[elements=$elements]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (elements != null)
-      json['elements'] = elements;
+    final json = <String, dynamic>{};
+    if (elements != null) {
+      json[r'elements'] = elements;
+    }
     return json;
   }
 
-  static List<WPTypesEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? List<WPTypesEmbedded>() : json.map((value) => WPTypesEmbedded.fromJson(value)).toList();
-  }
+  /// Returns a new [WPTypesEmbedded] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static WPTypesEmbedded fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : WPTypesEmbedded(
+        elements: WPType.listFromJson(json[r'elements']),
+    );
+
+  static List<WPTypesEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <WPTypesEmbedded>[]
+      : json.map((v) => WPTypesEmbedded.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, WPTypesEmbedded> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, WPTypesEmbedded>();
+    final map = <String, WPTypesEmbedded>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = WPTypesEmbedded.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = WPTypesEmbedded.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of WPTypesEmbedded-objects as value to a dart map
-  static Map<String, List<WPTypesEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<WPTypesEmbedded>>();
+  static Map<String, List<WPTypesEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<WPTypesEmbedded>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = WPTypesEmbedded.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = WPTypesEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

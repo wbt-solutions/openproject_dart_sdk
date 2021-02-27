@@ -29,13 +29,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = AttachmentsApi();
-var id = 56; // int | Attachment id
+final api_instance = AttachmentsApi();
+final id = 56; // int | Attachment id
 
 try { 
     api_instance.apiV3AttachmentsIdDelete(id);
 } catch (e) {
-    print("Exception when calling AttachmentsApi->apiV3AttachmentsIdDelete: $e\n");
+    print('Exception when calling AttachmentsApi->apiV3AttachmentsIdDelete: $e\n');
 }
 ```
 
@@ -72,14 +72,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = AttachmentsApi();
-var id = 56; // int | Attachment id
+final api_instance = AttachmentsApi();
+final id = 56; // int | Attachment id
 
 try { 
-    var result = api_instance.apiV3AttachmentsIdGet(id);
+    final result = api_instance.apiV3AttachmentsIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling AttachmentsApi->apiV3AttachmentsIdGet: $e\n");
+    print('Exception when calling AttachmentsApi->apiV3AttachmentsIdGet: $e\n');
 }
 ```
 
@@ -116,13 +116,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = AttachmentsApi();
-var id = 56; // int | ID of the work package whose attachments will be listed
+final api_instance = AttachmentsApi();
+final id = 56; // int | ID of the work package whose attachments will be listed
 
 try { 
     api_instance.apiV3WorkPackagesIdAttachmentsGet(id);
 } catch (e) {
-    print("Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsGet: $e\n");
+    print('Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsGet: $e\n');
 }
 ```
 
@@ -161,13 +161,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = AttachmentsApi();
-var id = 56; // int | ID of the work package to receive the attachment
+final api_instance = AttachmentsApi();
+final id = 56; // int | ID of the work package to receive the attachment
 
 try { 
     api_instance.apiV3WorkPackagesIdAttachmentsPost(id);
 } catch (e) {
-    print("Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsPost: $e\n");
+    print('Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsPost: $e\n');
 }
 ```
 

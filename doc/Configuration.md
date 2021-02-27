@@ -9,7 +9,7 @@ import 'package:openproject_dart_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **maximumAttachmentFileSize** | **int** |  | [optional] [readonly] 
-**perPageOptions** | **List&lt;int&gt;** |  | [optional] [readonly] [default to const []]
+**perPageOptions** | **List<int>** |  | [optional] [readonly] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

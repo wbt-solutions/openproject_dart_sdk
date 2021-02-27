@@ -1,269 +1,342 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class TimeEntriesApi {
-  final ApiClient apiClient;
-
   TimeEntriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// List Time entries with HTTP info returned
+  final ApiClient apiClient;
+
+  /// List Time entries
   ///
   /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] offset:
+  ///   Page number inside the requested collection.
+  ///
+  /// * [int] pageSize:
+  ///   Number of elements to display per page.
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
   Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
+    // Verify required params are set.
+
+    final path = '/api/v3/time_entries';
+
     Object postBody;
 
-    // verify required params are set
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/time_entries".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if(offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "offset", offset));
+    if (offset != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
     }
-    if(pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "pageSize", pageSize));
+    if (pageSize != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
-    if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
+    if (filters != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
     }
 
-    List<String> contentTypes = [];
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// List Time entries
   ///
-  ///int offset :
-  ///     Page number inside the requested collection.
-  ///int pageSize :
-  ///     Number of elements to display per page.
-  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
   /// Lists time entries. The time entries returned depend on the filters provided and also on the permission of the requesting user.
-  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
-    Response response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntries') as TimeEntries;
-    } else {
-      return null;
-    }
-  }
-
-  /// delete time entry with HTTP info returned
   ///
-  /// Permanently deletes the specified time entry.
-  Future apiV3TimeEntriesIdDeleteWithHttpInfo(int id) async {
-    Object postBody;
-
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
+  /// Parameters:
+  ///
+  /// * [int] offset:
+  ///   Page number inside the requested collection.
+  ///
+  /// * [int] pageSize:
+  ///   Number of elements to display per page.
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
+  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
+    final response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/api/v3/time_entries/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntries') as TimeEntries;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'DELETE',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// delete time entry
   ///
-  ///int id  (required):
-  ///     time entry id
   /// Permanently deletes the specified time entry.
-  Future apiV3TimeEntriesIdDelete(int id) async {
-    Response response = await apiV3TimeEntriesIdDeleteWithHttpInfo(id);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-    } else {
-      return;
-    }
-  }
-
-  /// View time entry with HTTP info returned
   ///
-  /// 
-  Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id) async {
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   time entry id
+  Future<Response> apiV3TimeEntriesIdDeleteWithHttpInfo(int id) async {
+    // Verify required params are set.
+    if (id == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+    }
+
+    final path = '/api/v3/time_entries/{id}'
+      .replaceAll('{' + 'id' + '}', id.toString());
+
     Object postBody;
 
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
-    }
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/time_entries/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
+  }
+
+  /// delete time entry
+  ///
+  /// Permanently deletes the specified time entry.
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   time entry id
+  Future<void> apiV3TimeEntriesIdDelete(int id) async {
+    final response = await apiV3TimeEntriesIdDeleteWithHttpInfo(id);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    }
   }
 
   /// View time entry
   ///
-  ///int id  (required):
-  ///     time entry id
-  /// 
-  Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
-    Response response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
-    } else {
-      return null;
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   time entry id
+  Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id) async {
+    // Verify required params are set.
+    if (id == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
+
+    final path = '/api/v3/time_entries/{id}'
+      .replaceAll('{' + 'id' + '}', id.toString());
+
+    Object postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
+
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
+      bool hasFields = false;
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
+        postBody = mp;
+      }
+    } else {
+    }
+
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
-  /// create time entry with HTTP info returned
+  /// View time entry
   ///
-  /// Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries’ attributes and are accepted by the endpoint.
-  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
-    Object postBody = timeEntry;
-
-    // verify required params are set
-    if(timeEntry == null) {
-     throw ApiException(400, "Missing required param: timeEntry");
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   time entry id
+  Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
+    final response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/api/v3/time_entries".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
     }
-    if(sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
-    }
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
-    }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// create time entry
   ///
-  ///TimeEntry timeEntry  (required):
-  ///     New time entry
-  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
-  ///String sortBy :
-  ///     JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
   /// Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries’ attributes and are accepted by the endpoint.
-  Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
-    Response response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy );
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
-    } else {
-      return null;
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [TimeEntry] timeEntry (required):
+  ///   New time entry
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+  ///
+  /// * [String] sortBy:
+  ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
+  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
+    // Verify required params are set.
+    if (timeEntry == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: timeEntry');
     }
+
+    final path = '/api/v3/time_entries';
+
+    Object postBody = timeEntry;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (filters != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+    }
+    if (sortBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+    }
+
+    final contentTypes = <String>['application/json'];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
+
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
+      bool hasFields = false;
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
+        postBody = mp;
+      }
+    } else {
+    }
+
+    return await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
+  /// create time entry
+  ///
+  /// Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries’ attributes and are accepted by the endpoint.
+  ///
+  /// Parameters:
+  ///
+  /// * [TimeEntry] timeEntry (required):
+  ///   New time entry
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+  ///
+  /// * [String] sortBy:
+  ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
+  Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
+    final response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
+    }
+    return null;
+  }
 }

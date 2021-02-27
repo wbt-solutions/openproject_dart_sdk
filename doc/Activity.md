@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **version** | **int** |  | [optional] [readonly] 
 **comment** | [**Description**](Description.md) |  | [optional] 
-**details** | [**List&lt;Description&gt;**](Description.md) |  | [optional] [readonly] [default to const []]
+**details** | [**List<Description>**](Description.md) |  | [optional] [readonly] [default to const []]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **links** | [**ActivityLinks**](ActivityLinks.md) |  | [optional] 
 

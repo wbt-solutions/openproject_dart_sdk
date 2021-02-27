@@ -28,14 +28,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = VersionsApi();
-var projectId = 56; // int | ID of the project whoose versions will be listed
+final api_instance = VersionsApi();
+final projectId = 56; // int | ID of the project whoose versions will be listed
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdVersionsGet(projectId);
+    final result = api_instance.apiV3ProjectsProjectIdVersionsGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling VersionsApi->apiV3ProjectsProjectIdVersionsGet: $e\n");
+    print('Exception when calling VersionsApi->apiV3ProjectsProjectIdVersionsGet: $e\n');
 }
 ```
 
@@ -74,14 +74,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = VersionsApi();
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
+final api_instance = VersionsApi();
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
 
 try { 
-    var result = api_instance.apiV3VersionsGet(filters);
+    final result = api_instance.apiV3VersionsGet(filters);
     print(result);
 } catch (e) {
-    print("Exception when calling VersionsApi->apiV3VersionsGet: $e\n");
+    print('Exception when calling VersionsApi->apiV3VersionsGet: $e\n');
 }
 ```
 
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] [default to const []]
 
 ### Return type
 
@@ -118,14 +118,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = VersionsApi();
-var id = 56; // int | version id
+final api_instance = VersionsApi();
+final id = 56; // int | version id
 
 try { 
-    var result = api_instance.apiV3VersionsIdGet(id);
+    final result = api_instance.apiV3VersionsIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling VersionsApi->apiV3VersionsIdGet: $e\n");
+    print('Exception when calling VersionsApi->apiV3VersionsIdGet: $e\n');
 }
 ```
 

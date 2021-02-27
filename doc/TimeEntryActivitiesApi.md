@@ -24,14 +24,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = TimeEntryActivitiesApi();
-var id = 56; // int | time entries activity id
+final api_instance = TimeEntryActivitiesApi();
+final id = 56; // int | time entries activity id
 
 try { 
-    var result = api_instance.apiV3TimeEntriesActivitiesIdGet(id);
+    final result = api_instance.apiV3TimeEntriesActivitiesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling TimeEntryActivitiesApi->apiV3TimeEntriesActivitiesIdGet: $e\n");
+    print('Exception when calling TimeEntryActivitiesApi->apiV3TimeEntriesActivitiesIdGet: $e\n');
 }
 ```
 

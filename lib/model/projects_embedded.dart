@@ -1,50 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class ProjectsEmbedded {
-  
-  List<Project> elements = const [];
-
+  /// Returns a new [ProjectsEmbedded] instance.
   ProjectsEmbedded({
     this.elements = const [],
   });
 
-  @override
-  String toString() {
-    return 'ProjectsEmbedded[elements=$elements, ]';
-  }
+  List<Project> elements;
 
-  ProjectsEmbedded.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    elements = (json['elements'] == null) ?
-      null :
-      Project.listFromJson(json['elements']);
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is ProjectsEmbedded &&
+     other.elements == elements;
+
+  @override
+  int get hashCode =>
+    (elements == null ? 0 : elements.hashCode);
+
+  @override
+  String toString() => 'ProjectsEmbedded[elements=$elements]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (elements != null)
-      json['elements'] = elements;
+    final json = <String, dynamic>{};
+    if (elements != null) {
+      json[r'elements'] = elements;
+    }
     return json;
   }
 
-  static List<ProjectsEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? List<ProjectsEmbedded>() : json.map((value) => ProjectsEmbedded.fromJson(value)).toList();
-  }
+  /// Returns a new [ProjectsEmbedded] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static ProjectsEmbedded fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : ProjectsEmbedded(
+        elements: Project.listFromJson(json[r'elements']),
+    );
+
+  static List<ProjectsEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <ProjectsEmbedded>[]
+      : json.map((v) => ProjectsEmbedded.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, ProjectsEmbedded> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, ProjectsEmbedded>();
+    final map = <String, ProjectsEmbedded>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ProjectsEmbedded.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = ProjectsEmbedded.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of ProjectsEmbedded-objects as value to a dart map
-  static Map<String, List<ProjectsEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<ProjectsEmbedded>>();
+  static Map<String, List<ProjectsEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<ProjectsEmbedded>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = ProjectsEmbedded.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = ProjectsEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

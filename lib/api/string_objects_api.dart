@@ -1,70 +1,82 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class StringObjectsApi {
-  final ApiClient apiClient;
-
   StringObjectsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View String Object with HTTP info returned
+  final ApiClient apiClient;
+
+  /// View String Object
   ///
-  /// 
-  Future apiV3StringObjectsGetWithHttpInfo(String value) async {
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] value (required):
+  ///   The string value being resolved
+  Future<Response> apiV3StringObjectsGetWithHttpInfo(String value) async {
+    // Verify required params are set.
+    if (value == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: value');
+    }
+
+    final path = '/api/v3/string_objects';
+
     Object postBody;
 
-    // verify required params are set
-    if(value == null) {
-     throw ApiException(400, "Missing required param: value");
-    }
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/string_objects".replaceAll("{format}","json");
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'value', value));
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-      queryParams.addAll(_convertParametersForCollectionFormat("", "value", value));
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// View String Object
   ///
-  ///String value  (required):
-  ///     The string value being resolved
-  /// 
-  Future apiV3StringObjectsGet(String value) async {
-    Response response = await apiV3StringObjectsGetWithHttpInfo(value);
-    if(response.statusCode >= 400) {
+  /// Parameters:
+  ///
+  /// * [String] value (required):
+  ///   The string value being resolved
+  Future<void> apiV3StringObjectsGet(String value) async {
+    final response = await apiV3StringObjectsGetWithHttpInfo(value);
+    if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-    } else {
-      return;
     }
   }
-
 }

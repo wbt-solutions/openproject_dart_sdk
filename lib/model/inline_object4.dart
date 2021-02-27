@@ -1,19 +1,16 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class InlineObject4 {
-  
-  String login;
-  
-  String email;
-  
-  String firstName;
-  
-  String lastName;
-  
-  bool admin;
-  
-  String language;
-
+  /// Returns a new [InlineObject4] instance.
   InlineObject4({
     this.login,
     this.email,
@@ -23,56 +20,94 @@ class InlineObject4 {
     this.language,
   });
 
-  @override
-  String toString() {
-    return 'InlineObject4[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language, ]';
-  }
+  String login;
 
-  InlineObject4.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    login = json['login'];
-    email = json['email'];
-    firstName = json['firstName'];
-    lastName = json['lastName'];
-    admin = json['admin'];
-    language = json['language'];
-  }
+  String email;
+
+  String firstName;
+
+  String lastName;
+
+  bool admin;
+
+  String language;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is InlineObject4 &&
+     other.login == login &&
+     other.email == email &&
+     other.firstName == firstName &&
+     other.lastName == lastName &&
+     other.admin == admin &&
+     other.language == language;
+
+  @override
+  int get hashCode =>
+    (login == null ? 0 : login.hashCode) +
+    (email == null ? 0 : email.hashCode) +
+    (firstName == null ? 0 : firstName.hashCode) +
+    (lastName == null ? 0 : lastName.hashCode) +
+    (admin == null ? 0 : admin.hashCode) +
+    (language == null ? 0 : language.hashCode);
+
+  @override
+  String toString() => 'InlineObject4[login=$login, email=$email, firstName=$firstName, lastName=$lastName, admin=$admin, language=$language]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (login != null)
-      json['login'] = login;
-    if (email != null)
-      json['email'] = email;
-    if (firstName != null)
-      json['firstName'] = firstName;
-    if (lastName != null)
-      json['lastName'] = lastName;
-    if (admin != null)
-      json['admin'] = admin;
-    if (language != null)
-      json['language'] = language;
+    final json = <String, dynamic>{};
+    if (login != null) {
+      json[r'login'] = login;
+    }
+    if (email != null) {
+      json[r'email'] = email;
+    }
+    if (firstName != null) {
+      json[r'firstName'] = firstName;
+    }
+    if (lastName != null) {
+      json[r'lastName'] = lastName;
+    }
+    if (admin != null) {
+      json[r'admin'] = admin;
+    }
+    if (language != null) {
+      json[r'language'] = language;
+    }
     return json;
   }
 
-  static List<InlineObject4> listFromJson(List<dynamic> json) {
-    return json == null ? List<InlineObject4>() : json.map((value) => InlineObject4.fromJson(value)).toList();
-  }
+  /// Returns a new [InlineObject4] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static InlineObject4 fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : InlineObject4(
+        login: json[r'login'],
+        email: json[r'email'],
+        firstName: json[r'firstName'],
+        lastName: json[r'lastName'],
+        admin: json[r'admin'],
+        language: json[r'language'],
+    );
+
+  static List<InlineObject4> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <InlineObject4>[]
+      : json.map((v) => InlineObject4.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, InlineObject4> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, InlineObject4>();
+    final map = <String, InlineObject4>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = InlineObject4.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = InlineObject4.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of InlineObject4-objects as value to a dart map
-  static Map<String, List<InlineObject4>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<InlineObject4>>();
+  static Map<String, List<InlineObject4>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<InlineObject4>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = InlineObject4.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = InlineObject4.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

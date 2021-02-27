@@ -49,13 +49,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | ID of the project in which the work package will be created
+final api_instance = WorkPackagesApi();
+final id = 56; // int | ID of the project in which the work package will be created
 
 try { 
     api_instance.apiV3ProjectsIdWorkPackagesFormPost(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesFormPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesFormPost: $e\n');
 }
 ```
 
@@ -92,20 +92,20 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Project id
-var offset = 56; // int | Page number inside the requested collection.
-var pageSize = 56; // int | Number of elements to display per page.
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-var groupBy = groupBy_example; // String | The column to group by.
-var showSums = true; // bool | Indicates whether properties should be summed up if they support it.
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Project id
+final offset = 56; // int | Page number inside the requested collection.
+final pageSize = 56; // int | Number of elements to display per page.
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+final groupBy = groupBy_example; // String | The column to group by.
+final showSums = true; // bool | Indicates whether properties should be summed up if they support it.
 
 try { 
-    var result = api_instance.apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums);
+    final result = api_instance.apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesGet: $e\n');
 }
 ```
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
  **id** | **int**| Project id | 
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
  **groupBy** | **String**| The column to group by. | [optional] 
  **showSums** | **bool**| Indicates whether properties should be summed up if they support it. | [optional] [default to false]
@@ -150,16 +150,16 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Project id
-var workPackage = WorkPackage(); // WorkPackage | Work package to add to the project
-var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Project id
+final workPackage = WorkPackage(); // WorkPackage | Work package to add to the project
+final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
-    var result = api_instance.apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify);
+    final result = api_instance.apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesPost: $e\n');
 }
 ```
 
@@ -200,14 +200,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var projectId = 56; // int | Project id
+final api_instance = WorkPackagesApi();
+final projectId = 56; // int | Project id
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdAvailableAssigneesGet(projectId);
+    final result = api_instance.apiV3ProjectsProjectIdAvailableAssigneesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableAssigneesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableAssigneesGet: $e\n');
 }
 ```
 
@@ -246,14 +246,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var projectId = 56; // int | Project id
+final api_instance = WorkPackagesApi();
+final projectId = 56; // int | Project id
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdAvailableResponsiblesGet(projectId);
+    final result = api_instance.apiV3ProjectsProjectIdAvailableResponsiblesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableResponsiblesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3ProjectsProjectIdAvailableResponsiblesGet: $e\n');
 }
 ```
 
@@ -290,12 +290,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
+final api_instance = WorkPackagesApi();
 
 try { 
     api_instance.apiV3WorkPackagesFormPost();
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesFormPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesFormPost: $e\n');
 }
 ```
 
@@ -329,19 +329,19 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var offset = 56; // int | Page number inside the requested collection.
-var pageSize = 56; // int | Number of elements to display per page.
-var filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-var groupBy = groupBy_example; // String | The column to group by.
-var showSums = true; // bool | Indicates whether properties should be summed up if they support it.
+final api_instance = WorkPackagesApi();
+final offset = 56; // int | Page number inside the requested collection.
+final pageSize = 56; // int | Number of elements to display per page.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+final groupBy = groupBy_example; // String | The column to group by.
+final showSums = true; // bool | Indicates whether properties should be summed up if they support it.
 
 try { 
-    var result = api_instance.apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums);
+    final result = api_instance.apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesGet: $e\n');
 }
 ```
 
@@ -383,13 +383,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Work package id
 
 try { 
     api_instance.apiV3WorkPackagesIdActivitiesGet(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesGet: $e\n');
 }
 ```
 
@@ -428,15 +428,15 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Work package id
-var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-var UNKNOWN_BASE_TYPE = UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Work package id
+final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+final UNKNOWN_BASE_TYPE = UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
 
 try { 
     api_instance.apiV3WorkPackagesIdActivitiesPost(id, notify, UNKNOWN_BASE_TYPE);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesPost: $e\n');
 }
 ```
 
@@ -477,13 +477,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | work package id
 
 try { 
     api_instance.apiV3WorkPackagesIdAvailableProjectsGet(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableProjectsGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableProjectsGet: $e\n');
 }
 ```
 
@@ -520,17 +520,17 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 789; // int | ID of workpackage to return
-var pageSize = 56; // int | Maximum number of candidates to list (default 10)
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
-var query = query_example; // String | Shortcut for filtering by ID or subject
-var type = type_example; // String | Type of relation to find candidates for (default \"relates\")
+final api_instance = WorkPackagesApi();
+final id = 789; // int | ID of workpackage to return
+final pageSize = 56; // int | Maximum number of candidates to list (default 10)
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+final query = query_example; // String | Shortcut for filtering by ID or subject
+final type = type_example; // String | Type of relation to find candidates for (default \"relates\")
 
 try { 
     api_instance.apiV3WorkPackagesIdAvailableRelationCandidatesGet(id, pageSize, filters, query, type);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableRelationCandidatesGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableRelationCandidatesGet: $e\n');
 }
 ```
 
@@ -540,9 +540,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of workpackage to return | 
  **pageSize** | **int**| Maximum number of candidates to list (default 10) | [optional] 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
  **query** | **String**| Shortcut for filtering by ID or subject | [optional] 
- **type** | **String**| Type of relation to find candidates for (default \&quot;relates\&quot;) | [optional] 
+ **type** | **String**| Type of relation to find candidates for (default \"relates\") | [optional] 
 
 ### Return type
 
@@ -573,13 +573,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | work package id
 
 try { 
     api_instance.apiV3WorkPackagesIdAvailableWatchersGet(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableWatchersGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableWatchersGet: $e\n');
 }
 ```
 
@@ -618,13 +618,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Work package id
 
 try { 
     api_instance.apiV3WorkPackagesIdDelete(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdDelete: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdDelete: $e\n');
 }
 ```
 
@@ -661,13 +661,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | ID of the work package being modified
+final api_instance = WorkPackagesApi();
+final id = 56; // int | ID of the work package being modified
 
 try { 
     api_instance.apiV3WorkPackagesIdFormPost(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdFormPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdFormPost: $e\n');
 }
 ```
 
@@ -704,14 +704,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Work package id
 
 try { 
-    var result = api_instance.apiV3WorkPackagesIdGet(id);
+    final result = api_instance.apiV3WorkPackagesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdGet: $e\n');
 }
 ```
 
@@ -750,16 +750,16 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | Work package id
-var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-var workPackage = WorkPackage(); // WorkPackage | 
+final api_instance = WorkPackagesApi();
+final id = 56; // int | Work package id
+final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+final workPackage = WorkPackage(); // WorkPackage | 
 
 try { 
-    var result = api_instance.apiV3WorkPackagesIdPatch(id, notify, workPackage);
+    final result = api_instance.apiV3WorkPackagesIdPatch(id, notify, workPackage);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdPatch: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdPatch: $e\n');
 }
 ```
 
@@ -798,13 +798,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | ID of the relation being modified
+final api_instance = WorkPackagesApi();
+final id = 56; // int | ID of the relation being modified
 
 try { 
     api_instance.apiV3WorkPackagesIdRelationsFormPost(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRelationsFormPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRelationsFormPost: $e\n');
 }
 ```
 
@@ -843,13 +843,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var id = 56; // int | work package id
+final api_instance = WorkPackagesApi();
+final id = 56; // int | work package id
 
 try { 
     api_instance.apiV3WorkPackagesIdRevisionsGet(id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRevisionsGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRevisionsGet: $e\n');
 }
 ```
 
@@ -888,15 +888,15 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
-var notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+final api_instance = WorkPackagesApi();
+final workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
+final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
 try { 
-    var result = api_instance.apiV3WorkPackagesPost(workPackage, notify);
+    final result = api_instance.apiV3WorkPackagesPost(workPackage, notify);
     print(result);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesPost: $e\n');
 }
 ```
 
@@ -936,13 +936,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
+final api_instance = WorkPackagesApi();
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
 
 try { 
     api_instance.apiV3WorkPackagesSchemasGet(filters);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasGet: $e\n');
 }
 ```
 
@@ -950,7 +950,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema&#39;s id | [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id | [default to const []]
 
 ### Return type
 
@@ -979,13 +979,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var identifier = identifier_example; // String | Identifier of the schema
+final api_instance = WorkPackagesApi();
+final identifier = identifier_example; // String | Identifier of the schema
 
 try { 
     api_instance.apiV3WorkPackagesSchemasIdentifierGet(identifier);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasIdentifierGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasIdentifierGet: $e\n');
 }
 ```
 
@@ -1024,13 +1024,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackageId = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final workPackageId = 56; // int | Work package id
 
 try { 
     api_instance.apiV3WorkPackagesWorkPackageIdRelationsGet(workPackageId);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsGet: $e\n');
 }
 ```
 
@@ -1069,13 +1069,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackageId = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final workPackageId = 56; // int | Work package id
 
 try { 
     api_instance.apiV3WorkPackagesWorkPackageIdRelationsPost(workPackageId);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsPost: $e\n');
 }
 ```
 
@@ -1112,13 +1112,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackageId = 56; // int | Work package id
+final api_instance = WorkPackagesApi();
+final workPackageId = 56; // int | Work package id
 
 try { 
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersGet(workPackageId);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersGet: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersGet: $e\n');
 }
 ```
 
@@ -1157,14 +1157,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackageId = 56; // int | Work package id
-var id = 56; // int | User id
+final api_instance = WorkPackagesApi();
+final workPackageId = 56; // int | Work package id
+final id = 56; // int | User id
 
 try { 
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersIdDelete(workPackageId, id);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersIdDelete: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersIdDelete: $e\n');
 }
 ```
 
@@ -1204,14 +1204,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = WorkPackagesApi();
-var workPackageId = 56; // int | Work package id
-var inlineObject6 = InlineObject6(); // InlineObject6 | 
+final api_instance = WorkPackagesApi();
+final workPackageId = 56; // int | Work package id
+final inlineObject6 = InlineObject6(); // InlineObject6 | 
 
 try { 
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersPost(workPackageId, inlineObject6);
 } catch (e) {
-    print("Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersPost: $e\n");
+    print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersPost: $e\n');
 }
 ```
 

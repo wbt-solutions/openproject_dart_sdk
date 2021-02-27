@@ -27,17 +27,17 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = NewsApi();
-var offset = 56; // int | Page number inside the requested collection.
-var pageSize = 56; // int | Number of elements to display per page.
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
+final api_instance = NewsApi();
+final offset = 56; // int | Page number inside the requested collection.
+final pageSize = 56; // int | Number of elements to display per page.
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
 
 try { 
-    var result = api_instance.apiV3NewsGet(offset, pageSize, sortBy, filters);
+    final result = api_instance.apiV3NewsGet(offset, pageSize, sortBy, filters);
     print(result);
 } catch (e) {
-    print("Exception when calling NewsApi->apiV3NewsGet: $e\n");
+    print('Exception when calling NewsApi->apiV3NewsGet: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Page number inside the requested collection. | [optional] 
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint. | [optional] 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] [default to const []]
 
 ### Return type
 
@@ -77,14 +77,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = NewsApi();
-var id = 56; // int | news id
+final api_instance = NewsApi();
+final id = 56; // int | news id
 
 try { 
-    var result = api_instance.apiV3NewsIdGet(id);
+    final result = api_instance.apiV3NewsIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling NewsApi->apiV3NewsIdGet: $e\n");
+    print('Exception when calling NewsApi->apiV3NewsIdGet: $e\n');
 }
 ```
 

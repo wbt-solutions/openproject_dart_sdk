@@ -25,14 +25,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CategoriesApi();
-var id = 56; // int | category id
+final api_instance = CategoriesApi();
+final id = 56; // int | category id
 
 try { 
-    var result = api_instance.apiV3CategoriesIdGet(id);
+    final result = api_instance.apiV3CategoriesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling CategoriesApi->apiV3CategoriesIdGet: $e\n");
+    print('Exception when calling CategoriesApi->apiV3CategoriesIdGet: $e\n');
 }
 ```
 
@@ -69,14 +69,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CategoriesApi();
-var projectId = 56; // int | ID of the project whoose categories will be listed
+final api_instance = CategoriesApi();
+final projectId = 56; // int | ID of the project whoose categories will be listed
 
 try { 
-    var result = api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
+    final result = api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
     print(result);
 } catch (e) {
-    print("Exception when calling CategoriesApi->apiV3ProjectsProjectIdCategoriesGet: $e\n");
+    print('Exception when calling CategoriesApi->apiV3ProjectsProjectIdCategoriesGet: $e\n');
 }
 ```
 

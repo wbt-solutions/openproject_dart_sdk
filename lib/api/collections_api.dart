@@ -1,74 +1,88 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class CollectionsApi {
-  final ApiClient apiClient;
-
   CollectionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// view aggregated result with HTTP info returned
+  final ApiClient apiClient;
+
+  /// view aggregated result
   ///
-  /// 
-  Future apiV3ExamplesGetWithHttpInfo({ String groupBy, String showSums }) async {
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] groupBy:
+  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+  ///
+  /// * [String] showSums:
+  Future<Response> apiV3ExamplesGetWithHttpInfo({ String groupBy, String showSums }) async {
+    // Verify required params are set.
+
+    final path = '/api/v3/examples';
+
     Object postBody;
 
-    // verify required params are set
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/examples".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if(groupBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "groupBy", groupBy));
+    if (groupBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'groupBy', groupBy));
     }
-    if(showSums != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "showSums", showSums));
+    if (showSums != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'showSums', showSums));
     }
 
-    List<String> contentTypes = [];
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// view aggregated result
   ///
-  ///String groupBy :
-  ///     The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
-  ///String showSums :
-  ///    
-  /// 
-  Future apiV3ExamplesGet({ String groupBy, String showSums }) async {
-    Response response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums );
-    if(response.statusCode >= 400) {
+  /// Parameters:
+  ///
+  /// * [String] groupBy:
+  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+  ///
+  /// * [String] showSums:
+  Future<void> apiV3ExamplesGet({ String groupBy, String showSums }) async {
+    final response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums );
+    if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-    } else {
-      return;
     }
   }
-
 }

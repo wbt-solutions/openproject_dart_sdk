@@ -28,13 +28,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueryFilterInstanceSchemaApi();
-var id = 56; // int | Id of the project.
+final api_instance = QueryFilterInstanceSchemaApi();
+final id = 56; // int | Id of the project.
 
 try { 
     api_instance.apiV3ProjectsIdQueriesFilterInstanceSchemasGet(id);
 } catch (e) {
-    print("Exception when calling QueryFilterInstanceSchemaApi->apiV3ProjectsIdQueriesFilterInstanceSchemasGet: $e\n");
+    print('Exception when calling QueryFilterInstanceSchemaApi->apiV3ProjectsIdQueriesFilterInstanceSchemasGet: $e\n');
 }
 ```
 
@@ -73,12 +73,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueryFilterInstanceSchemaApi();
+final api_instance = QueryFilterInstanceSchemaApi();
 
 try { 
     api_instance.apiV3QueriesFilterInstanceSchemasGet();
 } catch (e) {
-    print("Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasGet: $e\n");
+    print('Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasGet: $e\n');
 }
 ```
 
@@ -114,13 +114,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueryFilterInstanceSchemaApi();
-var identifier = identifier_example; // String | QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
+final api_instance = QueryFilterInstanceSchemaApi();
+final identifier = identifier_example; // String | QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
 
 try { 
     api_instance.apiV3QueriesFilterInstanceSchemasIdentifierGet(identifier);
 } catch (e) {
-    print("Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasIdentifierGet: $e\n");
+    print('Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasIdentifierGet: $e\n');
 }
 ```
 

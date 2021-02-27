@@ -25,13 +25,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UserPreferencesApi();
+final api_instance = UserPreferencesApi();
 
 try { 
-    var result = api_instance.apiV3MyPreferencesGet();
+    final result = api_instance.apiV3MyPreferencesGet();
     print(result);
 } catch (e) {
-    print("Exception when calling UserPreferencesApi->apiV3MyPreferencesGet: $e\n");
+    print('Exception when calling UserPreferencesApi->apiV3MyPreferencesGet: $e\n');
 }
 ```
 
@@ -67,13 +67,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UserPreferencesApi();
-var inlineObject3 = InlineObject3(); // InlineObject3 | 
+final api_instance = UserPreferencesApi();
+final inlineObject3 = InlineObject3(); // InlineObject3 | 
 
 try { 
     api_instance.apiV3MyPreferencesPatch(inlineObject3);
 } catch (e) {
-    print("Exception when calling UserPreferencesApi->apiV3MyPreferencesPatch: $e\n");
+    print('Exception when calling UserPreferencesApi->apiV3MyPreferencesPatch: $e\n');
 }
 ```
 

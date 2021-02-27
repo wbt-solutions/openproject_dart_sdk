@@ -1,48 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class InlineObject2 {
-  
-  String name;
-
+  /// Returns a new [InlineObject2] instance.
   InlineObject2({
     this.name,
   });
 
-  @override
-  String toString() {
-    return 'InlineObject2[name=$name, ]';
-  }
+  String name;
 
-  InlineObject2.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    name = json['name'];
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is InlineObject2 &&
+     other.name == name;
+
+  @override
+  int get hashCode =>
+    (name == null ? 0 : name.hashCode);
+
+  @override
+  String toString() => 'InlineObject2[name=$name]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (name != null)
-      json['name'] = name;
+    final json = <String, dynamic>{};
+    if (name != null) {
+      json[r'name'] = name;
+    }
     return json;
   }
 
-  static List<InlineObject2> listFromJson(List<dynamic> json) {
-    return json == null ? List<InlineObject2>() : json.map((value) => InlineObject2.fromJson(value)).toList();
-  }
+  /// Returns a new [InlineObject2] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static InlineObject2 fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : InlineObject2(
+        name: json[r'name'],
+    );
+
+  static List<InlineObject2> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <InlineObject2>[]
+      : json.map((v) => InlineObject2.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, InlineObject2> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, InlineObject2>();
+    final map = <String, InlineObject2>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = InlineObject2.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = InlineObject2.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of InlineObject2-objects as value to a dart map
-  static Map<String, List<InlineObject2>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<InlineObject2>>();
+  static Map<String, List<InlineObject2>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<InlineObject2>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = InlineObject2.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = InlineObject2.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

@@ -24,13 +24,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CustomObjectsApi();
-var id = 56; // int | The custom object's identifier
+final api_instance = CustomObjectsApi();
+final id = 56; // int | The custom object's identifier
 
 try { 
     api_instance.apiV3CustomObjectsIdGet(id);
 } catch (e) {
-    print("Exception when calling CustomObjectsApi->apiV3CustomObjectsIdGet: $e\n");
+    print('Exception when calling CustomObjectsApi->apiV3CustomObjectsIdGet: $e\n');
 }
 ```
 
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The custom object&#39;s identifier | 
+ **id** | **int**| The custom object's identifier | 
 
 ### Return type
 

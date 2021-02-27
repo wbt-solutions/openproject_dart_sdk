@@ -1,50 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class PriorityLinks {
-  
-  Link self;
-
+  /// Returns a new [PriorityLinks] instance.
   PriorityLinks({
     this.self,
   });
 
-  @override
-  String toString() {
-    return 'PriorityLinks[self=$self, ]';
-  }
+  Link self;
 
-  PriorityLinks.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    self = (json['self'] == null) ?
-      null :
-      Link.fromJson(json['self']);
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is PriorityLinks &&
+     other.self == self;
+
+  @override
+  int get hashCode =>
+    (self == null ? 0 : self.hashCode);
+
+  @override
+  String toString() => 'PriorityLinks[self=$self]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (self != null)
-      json['self'] = self;
+    final json = <String, dynamic>{};
+    if (self != null) {
+      json[r'self'] = self;
+    }
     return json;
   }
 
-  static List<PriorityLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<PriorityLinks>() : json.map((value) => PriorityLinks.fromJson(value)).toList();
-  }
+  /// Returns a new [PriorityLinks] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static PriorityLinks fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : PriorityLinks(
+        self: Link.fromJson(json[r'self']),
+    );
+
+  static List<PriorityLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <PriorityLinks>[]
+      : json.map((v) => PriorityLinks.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, PriorityLinks> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, PriorityLinks>();
+    final map = <String, PriorityLinks>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PriorityLinks.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = PriorityLinks.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of PriorityLinks-objects as value to a dart map
-  static Map<String, List<PriorityLinks>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<PriorityLinks>>();
+  static Map<String, List<PriorityLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<PriorityLinks>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = PriorityLinks.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = PriorityLinks.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

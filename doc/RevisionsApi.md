@@ -24,13 +24,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RevisionsApi();
-var id = 56; // int | Revision id
+final api_instance = RevisionsApi();
+final id = 56; // int | Revision id
 
 try { 
     api_instance.apiV3RevisionsIdGet(id);
 } catch (e) {
-    print("Exception when calling RevisionsApi->apiV3RevisionsIdGet: $e\n");
+    print('Exception when calling RevisionsApi->apiV3RevisionsIdGet: $e\n');
 }
 ```
 

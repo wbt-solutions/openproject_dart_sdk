@@ -24,13 +24,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = ConfigurationApi();
+final api_instance = ConfigurationApi();
 
 try { 
-    var result = api_instance.apiV3ConfigurationGet();
+    final result = api_instance.apiV3ConfigurationGet();
     print(result);
 } catch (e) {
-    print("Exception when calling ConfigurationApi->apiV3ConfigurationGet: $e\n");
+    print('Exception when calling ConfigurationApi->apiV3ConfigurationGet: $e\n');
 }
 ```
 

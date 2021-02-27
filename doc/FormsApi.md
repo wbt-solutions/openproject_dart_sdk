@@ -26,13 +26,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = FormsApi();
-var inlineObject1 = InlineObject1(); // InlineObject1 | 
+final api_instance = FormsApi();
+final inlineObject1 = InlineObject1(); // InlineObject1 | 
 
 try { 
     api_instance.apiV3ExampleFormPost(inlineObject1);
 } catch (e) {
-    print("Exception when calling FormsApi->apiV3ExampleFormPost: $e\n");
+    print('Exception when calling FormsApi->apiV3ExampleFormPost: $e\n');
 }
 ```
 

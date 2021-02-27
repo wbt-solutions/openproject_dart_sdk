@@ -1,69 +1,85 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class QueryFiltersApi {
-  final ApiClient apiClient;
-
   QueryFiltersApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// View Query Filter with HTTP info returned
+  final ApiClient apiClient;
+
+  /// View Query Filter
   ///
   /// Retreive an individual QueryFilter as identified by the id parameter.
-  Future apiV3QueriesFiltersIdGetWithHttpInfo(String id) async {
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   QueryFilter identifier.
+  Future<Response> apiV3QueriesFiltersIdGetWithHttpInfo(String id) async {
+    // Verify required params are set.
+    if (id == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
+    }
+
+    final path = '/api/v3/queries/filters/{id}'
+      .replaceAll('{' + 'id' + '}', id.toString());
+
     Object postBody;
 
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
-    }
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/queries/filters/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// View Query Filter
   ///
-  ///String id  (required):
-  ///     QueryFilter identifier.
   /// Retreive an individual QueryFilter as identified by the id parameter.
-  Future apiV3QueriesFiltersIdGet(String id) async {
-    Response response = await apiV3QueriesFiltersIdGetWithHttpInfo(id);
-    if(response.statusCode >= 400) {
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   QueryFilter identifier.
+  Future<void> apiV3QueriesFiltersIdGet(String id) async {
+    final response = await apiV3QueriesFiltersIdGetWithHttpInfo(id);
+    if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-    } else {
-      return;
     }
   }
-
 }

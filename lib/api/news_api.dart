@@ -1,145 +1,190 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class NewsApi {
-  final ApiClient apiClient;
-
   NewsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// list news with HTTP info returned
+  final ApiClient apiClient;
+
+  /// list news
   ///
   /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] offset:
+  ///   Page number inside the requested collection.
+  ///
+  /// * [int] pageSize:
+  ///   Number of elements to display per page.
+  ///
+  /// * [String] sortBy:
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
   Future<Response> apiV3NewsGetWithHttpInfo({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
+    // Verify required params are set.
+
+    final path = '/api/v3/news';
+
     Object postBody;
 
-    // verify required params are set
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/news".replaceAll("{format}","json");
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-    if(offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "offset", offset));
+    if (offset != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
     }
-    if(pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "pageSize", pageSize));
+    if (pageSize != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
-    if(sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "sortBy", sortBy));
+    if (sortBy != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
     }
-    if(filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("multi", "filters", filters));
+    if (filters != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
     }
 
-    List<String> contentTypes = [];
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// list news
   ///
-  ///int offset :
-  ///     Page number inside the requested collection.
-  ///int pageSize :
-  ///     Number of elements to display per page.
-  ///String sortBy :
-  ///     JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
-  ///List&lt;Map&lt;String, Object&gt;&gt; filters :
-  ///     JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
   /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
-  Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
-    Response response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters );
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'NewsList') as NewsList;
-    } else {
-      return null;
-    }
-  }
-
-  /// view news with HTTP info returned
   ///
-  /// 
-  Future<Response> apiV3NewsIdGetWithHttpInfo(int id) async {
-    Object postBody;
-
-    // verify required params are set
-    if(id == null) {
-     throw ApiException(400, "Missing required param: id");
+  /// Parameters:
+  ///
+  /// * [int] offset:
+  ///   Page number inside the requested collection.
+  ///
+  /// * [int] pageSize:
+  ///   Number of elements to display per page.
+  ///
+  /// * [String] sortBy:
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+  ///
+  /// * [List<Map<String, Object>>] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
+  Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
+    final response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
-
-    // create path and map variables
-    String path = "/api/v3/news/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
-
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = [];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
-        postBody = mp;
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'NewsList') as NewsList;
     }
-    else {
-    }
-
-    var response = await apiClient.invokeAPI(path,
-                                             'GET',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return null;
   }
 
   /// view news
   ///
-  ///int id  (required):
-  ///     news id
-  /// 
-  Future<News> apiV3NewsIdGet(int id) async {
-    Response response = await apiV3NewsIdGetWithHttpInfo(id);
-    if(response.statusCode >= 400) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'News') as News;
-    } else {
-      return null;
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   news id
+  Future<Response> apiV3NewsIdGetWithHttpInfo(int id) async {
+    // Verify required params are set.
+    if (id == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
+
+    final path = '/api/v3/news/{id}'
+      .replaceAll('{' + 'id' + '}', id.toString());
+
+    Object postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    final contentTypes = <String>[];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
+
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
+      bool hasFields = false;
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
+        postBody = mp;
+      }
+    } else {
+    }
+
+    return await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
+  /// view news
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   news id
+  Future<News> apiV3NewsIdGet(int id) async {
+    final response = await apiV3NewsIdGetWithHttpInfo(id);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return apiClient.deserialize(_decodeBodyBytes(response), 'News') as News;
+    }
+    return null;
+  }
 }

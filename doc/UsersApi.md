@@ -32,17 +32,17 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var offset = 56; // int | Page number inside the requested collection.
-var pageSize = 56; // int | Number of elements to display per page.
-var filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
-var sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
+final api_instance = UsersApi();
+final offset = 56; // int | Page number inside the requested collection.
+final pageSize = 56; // int | Number of elements to display per page.
+final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 
 try { 
-    var result = api_instance.apiV3UsersGet(offset, pageSize, filters, sortBy);
+    final result = api_instance.apiV3UsersGet(offset, pageSize, filters, sortBy);
     print(result);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersGet: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersGet: $e\n');
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | [**List&lt;Map&lt;String, Object&gt;&gt;**](Map&lt;String, Object&gt;.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User&#39;s login | [optional] [default to const []]
+ **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login | [optional] [default to const []]
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type
@@ -84,13 +84,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var id = 56; // int | User id
+final api_instance = UsersApi();
+final id = 56; // int | User id
 
 try { 
     api_instance.apiV3UsersIdDelete(id);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersIdDelete: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersIdDelete: $e\n');
 }
 ```
 
@@ -127,14 +127,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var id = id_example; // String | User id. Use `me` to reference current user, if any.
+final api_instance = UsersApi();
+final id = id_example; // String | User id. Use `me` to reference current user, if any.
 
 try { 
-    var result = api_instance.apiV3UsersIdGet(id);
+    final result = api_instance.apiV3UsersIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersIdGet: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersIdGet: $e\n');
 }
 ```
 
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| User id. Use &#x60;me&#x60; to reference current user, if any. | 
+ **id** | **String**| User id. Use `me` to reference current user, if any. | 
 
 ### Return type
 
@@ -171,13 +171,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var id = 56; // int | User id
+final api_instance = UsersApi();
+final id = 56; // int | User id
 
 try { 
     api_instance.apiV3UsersIdLockDelete(id);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersIdLockDelete: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersIdLockDelete: $e\n');
 }
 ```
 
@@ -214,13 +214,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var id = 56; // int | User id
+final api_instance = UsersApi();
+final id = 56; // int | User id
 
 try { 
     api_instance.apiV3UsersIdLockPost(id);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersIdLockPost: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersIdLockPost: $e\n');
 }
 ```
 
@@ -259,14 +259,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var id = 56; // int | User id
-var inlineObject4 = InlineObject4(); // InlineObject4 | 
+final api_instance = UsersApi();
+final id = 56; // int | User id
+final inlineObject4 = InlineObject4(); // InlineObject4 | 
 
 try { 
     api_instance.apiV3UsersIdPatch(id, inlineObject4);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersIdPatch: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersIdPatch: $e\n');
 }
 ```
 
@@ -306,13 +306,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = UsersApi();
-var inlineObject5 = InlineObject5(); // InlineObject5 | 
+final api_instance = UsersApi();
+final inlineObject5 = InlineObject5(); // InlineObject5 | 
 
 try { 
     api_instance.apiV3UsersPost(inlineObject5);
 } catch (e) {
-    print("Exception when calling UsersApi->apiV3UsersPost: $e\n");
+    print('Exception when calling UsersApi->apiV3UsersPost: $e\n');
 }
 ```
 

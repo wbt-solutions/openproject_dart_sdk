@@ -43,14 +43,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = ActivitiesApi();
-var id = 56; // int | Activity id
+final api_instance = ActivitiesApi();
+final id = 56; // int | Activity id
 
 try {
-    var result = api_instance.apiV3ActivitiesIdGet(id);
+    final result = api_instance.apiV3ActivitiesIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling ActivitiesApi->apiV3ActivitiesIdGet: $e\n");
+    print('Exception when calling ActivitiesApi->apiV3ActivitiesIdGet: $e\n');
 }
 
 ```
@@ -259,7 +259,7 @@ Class | Method | HTTP request | Description
 
 ## basicAuth
 
-- **Type**: HTTP basicc authentication
+- **Type**: HTTP Basic authentication
 
 
 ## Author

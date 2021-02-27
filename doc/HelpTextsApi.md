@@ -25,12 +25,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = HelpTextsApi();
+final api_instance = HelpTextsApi();
 
 try { 
     api_instance.apiV3HelpTextsGet();
 } catch (e) {
-    print("Exception when calling HelpTextsApi->apiV3HelpTextsGet: $e\n");
+    print('Exception when calling HelpTextsApi->apiV3HelpTextsGet: $e\n');
 }
 ```
 
@@ -64,13 +64,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = HelpTextsApi();
-var id = 56; // int | Help text id
+final api_instance = HelpTextsApi();
+final id = 56; // int | Help text id
 
 try { 
     api_instance.apiV3HelpTextsIdGet(id);
 } catch (e) {
-    print("Exception when calling HelpTextsApi->apiV3HelpTextsIdGet: $e\n");
+    print('Exception when calling HelpTextsApi->apiV3HelpTextsIdGet: $e\n');
 }
 ```
 

@@ -1,15 +1,16 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class Link {
-  
-  String href;
-  
-  String title;
-  
-  LinkMethodEnum method;
-  
-  String type;
-
+  /// Returns a new [Link] instance.
   Link({
     this.href,
     this.title,
@@ -17,105 +18,150 @@ class Link {
     this.type,
   });
 
-  @override
-  String toString() {
-    return 'Link[href=$href, title=$title, method=$method, type=$type, ]';
-  }
+  String href;
 
-  Link.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    href = json['href'];
-    title = json['title'];
-    method = LinkMethodEnum.fromJson(json['method']);
-    type = json['type'];
-  }
+  String title;
+
+  LinkMethodEnum method;
+
+  String type;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is Link &&
+     other.href == href &&
+     other.title == title &&
+     other.method == method &&
+     other.type == type;
+
+  @override
+  int get hashCode =>
+    (href == null ? 0 : href.hashCode) +
+    (title == null ? 0 : title.hashCode) +
+    (method == null ? 0 : method.hashCode) +
+    (type == null ? 0 : type.hashCode);
+
+  @override
+  String toString() => 'Link[href=$href, title=$title, method=$method, type=$type]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (href != null)
-      json['href'] = href;
-    if (title != null)
-      json['title'] = title;
-    if (method != null)
-      json['method'] = method.value;
-    if (type != null)
-      json['type'] = type;
+    final json = <String, dynamic>{};
+    if (href != null) {
+      json[r'href'] = href;
+    }
+    if (title != null) {
+      json[r'title'] = title;
+    }
+    if (method != null) {
+      json[r'method'] = method;
+    }
+    if (type != null) {
+      json[r'type'] = type;
+    }
     return json;
   }
 
-  static List<Link> listFromJson(List<dynamic> json) {
-    return json == null ? List<Link>() : json.map((value) => Link.fromJson(value)).toList();
-  }
+  /// Returns a new [Link] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static Link fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : Link(
+        href: json[r'href'],
+        title: json[r'title'],
+        method: LinkMethodEnum.fromJson(json[r'method']),
+        type: json[r'type'],
+    );
+
+  static List<Link> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <Link>[]
+      : json.map((v) => Link.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, Link> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, Link>();
+    final map = <String, Link>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Link.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = Link.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of Link-objects as value to a dart map
-  static Map<String, List<Link>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<Link>>();
+  static Map<String, List<Link>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<Link>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = Link.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = Link.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;
   }
 }
+
+
 class LinkMethodEnum {
+  /// Instantiate a new enum with the provided [value].
+  const LinkMethodEnum._(this.value);
+
   /// The underlying value of this enum member.
   final String value;
 
-  const LinkMethodEnum._internal(this.value);
-
-  static const LinkMethodEnum patch_ = LinkMethodEnum._internal("patch");
-  static const LinkMethodEnum post_ = LinkMethodEnum._internal("post");
-  static const LinkMethodEnum get_ = LinkMethodEnum._internal("get");
-
-  static List<LinkMethodEnum> get values => const [
-        patch_,
-        post_,
-        get_,
-      ];
-
-  String toJson () {
-    return value;
-  }
-
   @override
-  String toString () {
-    return value;
-  }
+  String toString() => value;
 
-  static LinkMethodEnum fromJson(String value) {
-    return LinkMethodEnumTypeTransformer().decode(value);
-  }
+  String toJson() => value;
 
-  static List<LinkMethodEnum> listFromJson(List<dynamic> json) {
-    return json == null
-      ? List<LinkMethodEnum>()
-      : json.map((value) => LinkMethodEnum.fromJson(value)).toList();
-  }
+  static const patch_ = LinkMethodEnum._(r'patch');
+  static const post = LinkMethodEnum._(r'post');
+  static const get_ = LinkMethodEnum._(r'get');
+
+  /// List of all possible values in this [enum][LinkMethodEnum].
+  static const values = <LinkMethodEnum>[
+    patch_,
+    post,
+    get_,
+  ];
+
+  static LinkMethodEnum fromJson(dynamic value) =>
+    LinkMethodEnumTypeTransformer().decode(value);
+
+  static List<LinkMethodEnum> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <LinkMethodEnum>[]
+      : json
+          .map((value) => LinkMethodEnum.fromJson(value))
+          .toList(growable: true == growable);
 }
 
+/// Transformation class that can [encode] an instance of [LinkMethodEnum] to String,
+/// and [decode] dynamic data back to [LinkMethodEnum].
 class LinkMethodEnumTypeTransformer {
+  const LinkMethodEnumTypeTransformer._();
 
-  dynamic encode(LinkMethodEnum data) {
-    return data.value;
-  }
+  factory LinkMethodEnumTypeTransformer() => _instance ??= LinkMethodEnumTypeTransformer._();
 
-  LinkMethodEnum decode(dynamic data) {
+  String encode(LinkMethodEnum data) => data.value;
+
+  /// Decodes a [dynamic value][data] to a LinkMethodEnum.
+  ///
+  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
+  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
+  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
+  ///
+  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
+  /// and users are still using an old app with the old code.
+  LinkMethodEnum decode(dynamic data, {bool allowNull}) {
     switch (data) {
-      case "patch": return LinkMethodEnum.patch_;
-      case "post": return LinkMethodEnum.post_;
-      case "get": return LinkMethodEnum.get_;
-      default: return null;
+      case r'patch': return LinkMethodEnum.patch_;
+      case r'post': return LinkMethodEnum.post;
+      case r'get': return LinkMethodEnum.get_;
+      default:
+        if (allowNull == false) {
+          throw ArgumentError('Unknown enum value to decode: $data');
+        }
     }
+    return null;
   }
-}
 
+  /// Singleton [LinkMethodEnumTypeTransformer] instance.
+  static LinkMethodEnumTypeTransformer _instance;
+}
 

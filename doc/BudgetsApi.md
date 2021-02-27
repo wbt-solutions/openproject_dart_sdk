@@ -24,14 +24,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = BudgetsApi();
-var id = 56; // int | Budget id
+final api_instance = BudgetsApi();
+final id = 56; // int | Budget id
 
 try { 
-    var result = api_instance.apiV3BudgetsIdGet(id);
+    final result = api_instance.apiV3BudgetsIdGet(id);
     print(result);
 } catch (e) {
-    print("Exception when calling BudgetsApi->apiV3BudgetsIdGet: $e\n");
+    print('Exception when calling BudgetsApi->apiV3BudgetsIdGet: $e\n');
 }
 ```
 

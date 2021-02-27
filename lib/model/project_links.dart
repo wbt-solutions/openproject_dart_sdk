@@ -1,29 +1,16 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class ProjectLinks {
-  
-  Link self;
-  
-  Link createWorkPackage;
-  
-  Link createWorkPackageImmediate;
-  
-  Link categories;
-  
-  Link types;
-  
-  Link versions;
-  
-  Link workPackages;
-  
-  Link memberships;
-  
-  Link delete;
-  
-  Link schema;
-  
-  Link parent;
-
+  /// Returns a new [ProjectLinks] instance.
   ProjectLinks({
     this.self,
     this.createWorkPackage,
@@ -38,93 +25,134 @@ class ProjectLinks {
     this.parent,
   });
 
-  @override
-  String toString() {
-    return 'ProjectLinks[self=$self, createWorkPackage=$createWorkPackage, createWorkPackageImmediate=$createWorkPackageImmediate, categories=$categories, types=$types, versions=$versions, workPackages=$workPackages, memberships=$memberships, delete=$delete, schema=$schema, parent=$parent, ]';
-  }
+  Link self;
 
-  ProjectLinks.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    self = (json['self'] == null) ?
-      null :
-      Link.fromJson(json['self']);
-    createWorkPackage = (json['createWorkPackage'] == null) ?
-      null :
-      Link.fromJson(json['createWorkPackage']);
-    createWorkPackageImmediate = (json['createWorkPackageImmediate'] == null) ?
-      null :
-      Link.fromJson(json['createWorkPackageImmediate']);
-    categories = (json['categories'] == null) ?
-      null :
-      Link.fromJson(json['categories']);
-    types = (json['types'] == null) ?
-      null :
-      Link.fromJson(json['types']);
-    versions = (json['versions'] == null) ?
-      null :
-      Link.fromJson(json['versions']);
-    workPackages = (json['workPackages'] == null) ?
-      null :
-      Link.fromJson(json['workPackages']);
-    memberships = (json['memberships'] == null) ?
-      null :
-      Link.fromJson(json['memberships']);
-    delete = (json['delete'] == null) ?
-      null :
-      Link.fromJson(json['delete']);
-    schema = (json['schema'] == null) ?
-      null :
-      Link.fromJson(json['schema']);
-    parent = (json['parent'] == null) ?
-      null :
-      Link.fromJson(json['parent']);
-  }
+  Link createWorkPackage;
+
+  Link createWorkPackageImmediate;
+
+  Link categories;
+
+  Link types;
+
+  Link versions;
+
+  Link workPackages;
+
+  Link memberships;
+
+  Link delete;
+
+  Link schema;
+
+  Link parent;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is ProjectLinks &&
+     other.self == self &&
+     other.createWorkPackage == createWorkPackage &&
+     other.createWorkPackageImmediate == createWorkPackageImmediate &&
+     other.categories == categories &&
+     other.types == types &&
+     other.versions == versions &&
+     other.workPackages == workPackages &&
+     other.memberships == memberships &&
+     other.delete == delete &&
+     other.schema == schema &&
+     other.parent == parent;
+
+  @override
+  int get hashCode =>
+    (self == null ? 0 : self.hashCode) +
+    (createWorkPackage == null ? 0 : createWorkPackage.hashCode) +
+    (createWorkPackageImmediate == null ? 0 : createWorkPackageImmediate.hashCode) +
+    (categories == null ? 0 : categories.hashCode) +
+    (types == null ? 0 : types.hashCode) +
+    (versions == null ? 0 : versions.hashCode) +
+    (workPackages == null ? 0 : workPackages.hashCode) +
+    (memberships == null ? 0 : memberships.hashCode) +
+    (delete == null ? 0 : delete.hashCode) +
+    (schema == null ? 0 : schema.hashCode) +
+    (parent == null ? 0 : parent.hashCode);
+
+  @override
+  String toString() => 'ProjectLinks[self=$self, createWorkPackage=$createWorkPackage, createWorkPackageImmediate=$createWorkPackageImmediate, categories=$categories, types=$types, versions=$versions, workPackages=$workPackages, memberships=$memberships, delete=$delete, schema=$schema, parent=$parent]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (self != null)
-      json['self'] = self;
-    if (createWorkPackage != null)
-      json['createWorkPackage'] = createWorkPackage;
-    if (createWorkPackageImmediate != null)
-      json['createWorkPackageImmediate'] = createWorkPackageImmediate;
-    if (categories != null)
-      json['categories'] = categories;
-    if (types != null)
-      json['types'] = types;
-    if (versions != null)
-      json['versions'] = versions;
-    if (workPackages != null)
-      json['workPackages'] = workPackages;
-    if (memberships != null)
-      json['memberships'] = memberships;
-    if (delete != null)
-      json['delete'] = delete;
-    if (schema != null)
-      json['schema'] = schema;
-    if (parent != null)
-      json['parent'] = parent;
+    final json = <String, dynamic>{};
+    if (self != null) {
+      json[r'self'] = self;
+    }
+    if (createWorkPackage != null) {
+      json[r'createWorkPackage'] = createWorkPackage;
+    }
+    if (createWorkPackageImmediate != null) {
+      json[r'createWorkPackageImmediate'] = createWorkPackageImmediate;
+    }
+    if (categories != null) {
+      json[r'categories'] = categories;
+    }
+    if (types != null) {
+      json[r'types'] = types;
+    }
+    if (versions != null) {
+      json[r'versions'] = versions;
+    }
+    if (workPackages != null) {
+      json[r'workPackages'] = workPackages;
+    }
+    if (memberships != null) {
+      json[r'memberships'] = memberships;
+    }
+    if (delete != null) {
+      json[r'delete'] = delete;
+    }
+    if (schema != null) {
+      json[r'schema'] = schema;
+    }
+    if (parent != null) {
+      json[r'parent'] = parent;
+    }
     return json;
   }
 
-  static List<ProjectLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<ProjectLinks>() : json.map((value) => ProjectLinks.fromJson(value)).toList();
-  }
+  /// Returns a new [ProjectLinks] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static ProjectLinks fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : ProjectLinks(
+        self: Link.fromJson(json[r'self']),
+        createWorkPackage: Link.fromJson(json[r'createWorkPackage']),
+        createWorkPackageImmediate: Link.fromJson(json[r'createWorkPackageImmediate']),
+        categories: Link.fromJson(json[r'categories']),
+        types: Link.fromJson(json[r'types']),
+        versions: Link.fromJson(json[r'versions']),
+        workPackages: Link.fromJson(json[r'workPackages']),
+        memberships: Link.fromJson(json[r'memberships']),
+        delete: Link.fromJson(json[r'delete']),
+        schema: Link.fromJson(json[r'schema']),
+        parent: Link.fromJson(json[r'parent']),
+    );
+
+  static List<ProjectLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <ProjectLinks>[]
+      : json.map((v) => ProjectLinks.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, ProjectLinks> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, ProjectLinks>();
+    final map = <String, ProjectLinks>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ProjectLinks.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = ProjectLinks.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of ProjectLinks-objects as value to a dart map
-  static Map<String, List<ProjectLinks>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<ProjectLinks>>();
+  static Map<String, List<ProjectLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<ProjectLinks>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = ProjectLinks.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = ProjectLinks.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

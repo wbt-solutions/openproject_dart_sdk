@@ -1,66 +1,79 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
 
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 
 class FormsApi {
-  final ApiClient apiClient;
-
   FormsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  /// show or validate form with HTTP info returned
+  final ApiClient apiClient;
+
+  /// show or validate form
   ///
   /// This is an example of how a form might look like. Note that this endpoint does not exist in the actual implementation.
-  Future apiV3ExampleFormPostWithHttpInfo({ InlineObject1 inlineObject1 }) async {
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [InlineObject1] inlineObject1:
+  Future<Response> apiV3ExampleFormPostWithHttpInfo({ InlineObject1 inlineObject1 }) async {
+    // Verify required params are set.
+
+    final path = '/api/v3/example/form';
+
     Object postBody = inlineObject1;
 
-    // verify required params are set
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    // create path and map variables
-    String path = "/api/v3/example/form".replaceAll("{format}","json");
+    final contentTypes = <String>['application/json'];
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final authNames = <String>['basicAuth'];
 
-    // query params
-    List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
-
-    List<String> contentTypes = ["application/json"];
-
-    String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    List<String> authNames = ["basicAuth"];
-
-    if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-      if(hasFields)
+      final mp = MultipartRequest(null, null);
+      if (hasFields) {
         postBody = mp;
-    }
-    else {
+      }
+    } else {
     }
 
-    var response = await apiClient.invokeAPI(path,
-                                             'POST',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             formParams,
-                                             nullableContentType,
-                                             authNames);
-    return response;
+    return await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      nullableContentType,
+      authNames,
+    );
   }
 
   /// show or validate form
   ///
-  ///InlineObject1 inlineObject1 :
-  ///    
   /// This is an example of how a form might look like. Note that this endpoint does not exist in the actual implementation.
-  Future apiV3ExampleFormPost({ InlineObject1 inlineObject1 }) async {
-    Response response = await apiV3ExampleFormPostWithHttpInfo( inlineObject1: inlineObject1 );
-    if(response.statusCode >= 400) {
+  ///
+  /// Parameters:
+  ///
+  /// * [InlineObject1] inlineObject1:
+  Future<void> apiV3ExampleFormPost({ InlineObject1 inlineObject1 }) async {
+    final response = await apiV3ExampleFormPostWithHttpInfo( inlineObject1: inlineObject1 );
+    if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
-    } else if(response.body != null) {
-    } else {
-      return;
     }
   }
-
 }

@@ -1,50 +1,68 @@
-part of openproject_dart_sdk.api;
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.0
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars
+
+part of openapi.api;
 
 class TimeEntriesActivityEmbedded {
-  
-  List<Project> projects = const [];
-
+  /// Returns a new [TimeEntriesActivityEmbedded] instance.
   TimeEntriesActivityEmbedded({
     this.projects = const [],
   });
 
-  @override
-  String toString() {
-    return 'TimeEntriesActivityEmbedded[projects=$projects, ]';
-  }
+  List<Project> projects;
 
-  TimeEntriesActivityEmbedded.fromJson(Map<String, dynamic> json) {
-    if (json == null) return;
-    projects = (json['projects'] == null) ?
-      null :
-      Project.listFromJson(json['projects']);
-  }
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is TimeEntriesActivityEmbedded &&
+     other.projects == projects;
+
+  @override
+  int get hashCode =>
+    (projects == null ? 0 : projects.hashCode);
+
+  @override
+  String toString() => 'TimeEntriesActivityEmbedded[projects=$projects]';
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> json = {};
-    if (projects != null)
-      json['projects'] = projects;
+    final json = <String, dynamic>{};
+    if (projects != null) {
+      json[r'projects'] = projects;
+    }
     return json;
   }
 
-  static List<TimeEntriesActivityEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? List<TimeEntriesActivityEmbedded>() : json.map((value) => TimeEntriesActivityEmbedded.fromJson(value)).toList();
-  }
+  /// Returns a new [TimeEntriesActivityEmbedded] instance and imports its values from
+  /// [json] if it's non-null, null if [json] is null.
+  static TimeEntriesActivityEmbedded fromJson(Map<String, dynamic> json) => json == null
+    ? null
+    : TimeEntriesActivityEmbedded(
+        projects: Project.listFromJson(json[r'projects']),
+    );
+
+  static List<TimeEntriesActivityEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
+    json == null || json.isEmpty
+      ? true == emptyIsNull ? null : <TimeEntriesActivityEmbedded>[]
+      : json.map((v) => TimeEntriesActivityEmbedded.fromJson(v)).toList(growable: true == growable);
 
   static Map<String, TimeEntriesActivityEmbedded> mapFromJson(Map<String, dynamic> json) {
-    final map = Map<String, TimeEntriesActivityEmbedded>();
+    final map = <String, TimeEntriesActivityEmbedded>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = TimeEntriesActivityEmbedded.fromJson(value));
+      json.forEach((String key, dynamic v) => map[key] = TimeEntriesActivityEmbedded.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of TimeEntriesActivityEmbedded-objects as value to a dart map
-  static Map<String, List<TimeEntriesActivityEmbedded>> mapListFromJson(Map<String, dynamic> json) {
-    final map = Map<String, List<TimeEntriesActivityEmbedded>>();
+  static Map<String, List<TimeEntriesActivityEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+    final map = <String, List<TimeEntriesActivityEmbedded>>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) {
-        map[key] = TimeEntriesActivityEmbedded.listFromJson(value);
+      json.forEach((String key, dynamic v) {
+        map[key] = TimeEntriesActivityEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;

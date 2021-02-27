@@ -24,13 +24,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RootApi();
+final api_instance = RootApi();
 
 try { 
-    var result = api_instance.apiV3Get();
+    final result = api_instance.apiV3Get();
     print(result);
 } catch (e) {
-    print("Exception when calling RootApi->apiV3Get: $e\n");
+    print('Exception when calling RootApi->apiV3Get: $e\n');
 }
 ```
 

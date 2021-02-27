@@ -27,12 +27,12 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RolesApi();
+final api_instance = RolesApi();
 
 try { 
     api_instance.apiV3RolesGet();
 } catch (e) {
-    print("Exception when calling RolesApi->apiV3RolesGet: $e\n");
+    print('Exception when calling RolesApi->apiV3RolesGet: $e\n');
 }
 ```
 
@@ -68,13 +68,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = RolesApi();
-var id = 56; // int | role id
+final api_instance = RolesApi();
+final id = 56; // int | role id
 
 try { 
     api_instance.apiV3RolesIdGet(id);
 } catch (e) {
-    print("Exception when calling RolesApi->apiV3RolesIdGet: $e\n");
+    print('Exception when calling RolesApi->apiV3RolesIdGet: $e\n');
 }
 ```
 

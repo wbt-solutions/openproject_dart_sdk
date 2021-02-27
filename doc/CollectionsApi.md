@@ -24,14 +24,14 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = CollectionsApi();
-var groupBy = groupBy_example; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
-var showSums = showSums_example; // String | 
+final api_instance = CollectionsApi();
+final groupBy = groupBy_example; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+final showSums = showSums_example; // String | 
 
 try { 
     api_instance.apiV3ExamplesGet(groupBy, showSums);
 } catch (e) {
-    print("Exception when calling CollectionsApi->apiV3ExamplesGet: $e\n");
+    print('Exception when calling CollectionsApi->apiV3ExamplesGet: $e\n');
 }
 ```
 
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupBy** | **String**| The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint. | [optional] 
- **showSums** | **String**|  | [optional] [default to &quot;false&quot;]
+ **showSums** | **String**|  | [optional] [default to 'false']
 
 ### Return type
 

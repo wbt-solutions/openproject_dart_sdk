@@ -26,13 +26,13 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
 
-var api_instance = QueryFiltersApi();
-var id = id_example; // String | QueryFilter identifier.
+final api_instance = QueryFiltersApi();
+final id = id_example; // String | QueryFilter identifier.
 
 try { 
     api_instance.apiV3QueriesFiltersIdGet(id);
 } catch (e) {
-    print("Exception when calling QueryFiltersApi->apiV3QueriesFiltersIdGet: $e\n");
+    print('Exception when calling QueryFiltersApi->apiV3QueriesFiltersIdGet: $e\n');
 }
 ```
 

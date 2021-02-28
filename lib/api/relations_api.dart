@@ -7,7 +7,7 @@
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 
 class RelationsApi {

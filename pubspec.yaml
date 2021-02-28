@@ -6,7 +6,7 @@ name: 'openproject_dart_sdk'
 version: '0.2.1'
 description: 'Dart SDK for the OpenProject Software'
 authors:
-  - 'WBT-Solutions <info@wbt-solutions.de>'
+  - 'wbt-solutions <info@wbt-solutions.de>'
 homepage: 'https://github.com/wbt-solutions/openproject_dart_sdk'
 environment:
   sdk: '>=2.0.0 <3.0.0'

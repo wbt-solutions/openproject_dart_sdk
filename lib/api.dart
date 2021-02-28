@@ -7,7 +7,7 @@
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: lines_longer_than_80_chars
 
-library openapi.api;
+library openproject_dart_sdk.api;
 
 import 'dart:async';
 import 'dart:convert';

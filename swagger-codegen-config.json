@@ -2,7 +2,8 @@
   "pubVersion": "0.2.1",
   "pubName": "openproject_dart_sdk",
   "pubDescription": "Dart SDK for the OpenProject Software",
-  "pubAuthor": "WBT-Solutions",
+  "pubAuthor": "wbt-solutions",
   "pubAuthorEmail": "info@wbt-solutions.de",
-  "pubHomepage": "https://github.com/wbt-solutions/openproject_dart_sdk"
+  "pubHomepage": "https://github.com/wbt-solutions/openproject_dart_sdk",
+  "pubLibrary": "openproject_dart_sdk.api"
 }

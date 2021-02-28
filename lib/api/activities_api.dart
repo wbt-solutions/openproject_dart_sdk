@@ -7,7 +7,7 @@
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 
 class ActivitiesApi {
@@ -98,7 +98,7 @@ class ActivitiesApi {
   ///   Activity id
   ///
   /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<Response> apiV3ActivitiesIdPatchWithHttpInfo(int id, { dynamic UNKNOWN_BASE_TYPE }) async {
+  Future<Response> apiV3ActivitiesIdPatchWithHttpInfo(int id, { UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -151,7 +151,7 @@ class ActivitiesApi {
   ///   Activity id
   ///
   /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<void> apiV3ActivitiesIdPatch(int id, { dynamic UNKNOWN_BASE_TYPE }) async {
+  Future<void> apiV3ActivitiesIdPatch(int id, { UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
     final response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  UNKNOWN_BASE_TYPE: UNKNOWN_BASE_TYPE );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

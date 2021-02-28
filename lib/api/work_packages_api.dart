@@ -7,7 +7,7 @@
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of openproject_dart_sdk.api;
 
 
 class WorkPackagesApi {
@@ -692,7 +692,7 @@ class WorkPackagesApi {
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   ///
   /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<Response> apiV3WorkPackagesIdActivitiesPostWithHttpInfo(int id, { bool notify, dynamic UNKNOWN_BASE_TYPE }) async {
+  Future<Response> apiV3WorkPackagesIdActivitiesPostWithHttpInfo(int id, { bool notify, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -752,7 +752,7 @@ class WorkPackagesApi {
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   ///
   /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<void> apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, dynamic UNKNOWN_BASE_TYPE }) async {
+  Future<void> apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
     final response = await apiV3WorkPackagesIdActivitiesPostWithHttpInfo(id,  notify: notify, UNKNOWN_BASE_TYPE: UNKNOWN_BASE_TYPE );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

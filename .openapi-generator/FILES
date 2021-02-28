@@ -17,6 +17,7 @@ doc/CategoriesEmbedded.md
 doc/Category.md
 doc/CategoryLinks.md
 doc/CollectionsApi.md
+doc/Comment.md
 doc/Configuration.md
 doc/ConfigurationApi.md
 doc/CustomActionsApi.md
@@ -167,6 +168,7 @@ lib/model/categories.dart
 lib/model/categories_embedded.dart
 lib/model/category.dart
 lib/model/category_links.dart
+lib/model/comment.dart
 lib/model/configuration.dart
 lib/model/description.dart
 lib/model/digest.dart
@@ -232,3 +234,4 @@ lib/model/wp_type_links.dart
 lib/model/wp_types.dart
 lib/model/wp_types_embedded.dart
 pubspec.yaml
+test/comment_test.dart

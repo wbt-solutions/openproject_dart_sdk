@@ -97,8 +97,8 @@ class ActivitiesApi {
   /// * [int] id (required):
   ///   Activity id
   ///
-  /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<Response> apiV3ActivitiesIdPatchWithHttpInfo(int id, { UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
+  /// * [Comment] comment:
+  Future<Response> apiV3ActivitiesIdPatchWithHttpInfo(int id, { Comment comment }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -107,7 +107,7 @@ class ActivitiesApi {
     final path = '/api/v3/activities/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
-    Object postBody = UNKNOWN_BASE_TYPE;
+    Object postBody = comment;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -150,9 +150,9 @@ class ActivitiesApi {
   /// * [int] id (required):
   ///   Activity id
   ///
-  /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<void> apiV3ActivitiesIdPatch(int id, { UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
-    final response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  UNKNOWN_BASE_TYPE: UNKNOWN_BASE_TYPE );
+  /// * [Comment] comment:
+  Future<void> apiV3ActivitiesIdPatch(int id, { Comment comment }) async {
+    final response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  comment: comment );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }

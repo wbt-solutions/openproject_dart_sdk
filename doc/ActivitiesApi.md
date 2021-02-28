@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3ActivitiesIdPatch**
-> apiV3ActivitiesIdPatch(id, UNKNOWN_BASE_TYPE)
+> apiV3ActivitiesIdPatch(id, comment)
 
 Update activity
 
@@ -73,10 +73,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = ActivitiesApi();
 final id = 56; // int | Activity id
-final UNKNOWN_BASE_TYPE = UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+final comment = Comment(); // Comment | 
 
 try { 
-    api_instance.apiV3ActivitiesIdPatch(id, UNKNOWN_BASE_TYPE);
+    api_instance.apiV3ActivitiesIdPatch(id, comment);
 } catch (e) {
     print('Exception when calling ActivitiesApi->apiV3ActivitiesIdPatch: $e\n');
 }
@@ -87,7 +87,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Activity id | 
- **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
+ **comment** | [**Comment**](Comment.md)|  | [optional] 
 
 ### Return type
 

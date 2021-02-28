@@ -9379,17 +9379,18 @@ components:
         application/json:
           schema:
             type: object
-            properties:
-              comment:
-                type: object
-                properties:
-                  raw:
-                    type: string
+            $ref: "#/components/schemas/Comment"
   securitySchemes:
     basicAuth:
       type: http
       scheme: basic
   schemas:
+    Comment:
+      type: object
+      properties:
+        comment:
+          type: object
+          $ref: "#/components/schemas/Description"
     Activity:
       type: object
       properties:

@@ -415,7 +415,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiV3WorkPackagesIdActivitiesPost**
-> apiV3WorkPackagesIdActivitiesPost(id, notify, UNKNOWN_BASE_TYPE)
+> apiV3WorkPackagesIdActivitiesPost(id, notify, comment)
 
 Comment work package
 
@@ -431,10 +431,10 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
 final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-final UNKNOWN_BASE_TYPE = UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+final comment = Comment(); // Comment | 
 
 try { 
-    api_instance.apiV3WorkPackagesIdActivitiesPost(id, notify, UNKNOWN_BASE_TYPE);
+    api_instance.apiV3WorkPackagesIdActivitiesPost(id, notify, comment);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesPost: $e\n');
 }
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Work package id | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
- **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
+ **comment** | [**Comment**](Comment.md)|  | [optional] 
 
 ### Return type
 

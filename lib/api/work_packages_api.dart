@@ -691,8 +691,8 @@ class WorkPackagesApi {
   /// * [bool] notify:
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   ///
-  /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<Response> apiV3WorkPackagesIdActivitiesPostWithHttpInfo(int id, { bool notify, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
+  /// * [Comment] comment:
+  Future<Response> apiV3WorkPackagesIdActivitiesPostWithHttpInfo(int id, { bool notify, Comment comment }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -701,7 +701,7 @@ class WorkPackagesApi {
     final path = '/api/v3/work_packages/{id}/activities'
       .replaceAll('{' + 'id' + '}', id.toString());
 
-    Object postBody = UNKNOWN_BASE_TYPE;
+    Object postBody = comment;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -751,9 +751,9 @@ class WorkPackagesApi {
   /// * [bool] notify:
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
   ///
-  /// * [UNKNOWN_BASE_TYPE] UNKNOWN_BASE_TYPE:
-  Future<void> apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE }) async {
-    final response = await apiV3WorkPackagesIdActivitiesPostWithHttpInfo(id,  notify: notify, UNKNOWN_BASE_TYPE: UNKNOWN_BASE_TYPE );
+  /// * [Comment] comment:
+  Future<void> apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, Comment comment }) async {
+    final response = await apiV3WorkPackagesIdActivitiesPostWithHttpInfo(id,  notify: notify, comment: comment );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }

@@ -188,6 +188,7 @@ Class | Method | HTTP request | Description
  - [CategoriesEmbedded](doc\/CategoriesEmbedded.md)
  - [Category](doc\/Category.md)
  - [CategoryLinks](doc\/CategoryLinks.md)
+ - [Comment](doc\/Comment.md)
  - [Configuration](doc\/Configuration.md)
  - [Description](doc\/Description.md)
  - [Digest](doc\/Digest.md)

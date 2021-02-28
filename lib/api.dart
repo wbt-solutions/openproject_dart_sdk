@@ -74,6 +74,7 @@ part 'model/categories.dart';
 part 'model/categories_embedded.dart';
 part 'model/category.dart';
 part 'model/category_links.dart';
+part 'model/comment.dart';
 part 'model/configuration.dart';
 part 'model/description.dart';
 part 'model/digest.dart';

@@ -189,6 +189,8 @@ class ApiClient {
           return Category.fromJson(value);
         case 'CategoryLinks':
           return CategoryLinks.fromJson(value);
+        case 'Comment':
+          return Comment.fromJson(value);
         case 'Configuration':
           return Configuration.fromJson(value);
         case 'Description':

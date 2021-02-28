@@ -1,9 +1,9 @@
-import 'package:openproject_dart_sdk/api.dart';
+import 'package:openproject_dart_sdk/api.dart' as op;
 import 'package:test/test.dart';
 
 // tests for Description
 void main() {
-    var instance = new Description();
+    var instance = new op.Description();
 
   group('test Description', () {
     // String format

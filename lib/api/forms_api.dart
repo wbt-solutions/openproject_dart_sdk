@@ -27,7 +27,7 @@ class FormsApi {
   Future<Response> apiV3ExampleFormPostWithHttpInfo({ InlineObject1 inlineObject1 }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/example/form';
+    final path = r'/api/v3/example/form';
 
     Object postBody = inlineObject1;
 
@@ -37,7 +37,7 @@ class FormsApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -73,7 +73,7 @@ class FormsApi {
   Future<void> apiV3ExampleFormPost({ InlineObject1 inlineObject1 }) async {
     final response = await apiV3ExampleFormPostWithHttpInfo( inlineObject1: inlineObject1 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

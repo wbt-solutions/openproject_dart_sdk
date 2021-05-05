@@ -9,8 +9,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3PrioritiesGet**](PrioritiesApi.md#apiV3PrioritiesGet) | **GET** /api/v3/priorities | List all Priorities
-[**apiV3PrioritiesIdGet**](PrioritiesApi.md#apiV3PrioritiesIdGet) | **GET** /api/v3/priorities/{id} | View Priority
+[**apiV3PrioritiesGet**](PrioritiesApi.md#apiv3prioritiesget) | **GET** /api/v3/priorities | List all Priorities
+[**apiV3PrioritiesIdGet**](PrioritiesApi.md#apiv3prioritiesidget) | **GET** /api/v3/priorities/{id} | View Priority
 
 
 # **apiV3PrioritiesGet**
@@ -24,6 +24,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = PrioritiesApi();
 
@@ -44,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -64,6 +66,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = PrioritiesApi();
 final id = 56; // int | Priority id
@@ -88,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

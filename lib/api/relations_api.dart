@@ -31,7 +31,7 @@ class RelationsApi {
   Future<Response> apiV3RelationsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/relations';
+    final path = r'/api/v3/relations';
 
     Object postBody;
 
@@ -48,7 +48,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -88,7 +88,7 @@ class RelationsApi {
   Future<void> apiV3RelationsGet({ List<Map<String, Object>> filters, String sortBy }) async {
     final response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -108,7 +108,7 @@ class RelationsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/relations/{id}'
+    final path = r'/api/v3/relations/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -119,7 +119,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -156,7 +156,7 @@ class RelationsApi {
   Future<void> apiV3RelationsIdDelete(int id) async {
     final response = await apiV3RelationsIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -174,7 +174,7 @@ class RelationsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/relations/{id}/form'
+    final path = r'/api/v3/relations/{id}/form'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -185,7 +185,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -220,7 +220,7 @@ class RelationsApi {
   Future<void> apiV3RelationsIdFormPost(int id) async {
     final response = await apiV3RelationsIdFormPostWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -238,7 +238,7 @@ class RelationsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/relations/{id}'
+    final path = r'/api/v3/relations/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -249,7 +249,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -284,7 +284,7 @@ class RelationsApi {
   Future<void> apiV3RelationsIdGet(int id) async {
     final response = await apiV3RelationsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -304,7 +304,7 @@ class RelationsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/relations/{id}'
+    final path = r'/api/v3/relations/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -315,7 +315,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -352,7 +352,7 @@ class RelationsApi {
   Future<void> apiV3RelationsIdPatch(int id) async {
     final response = await apiV3RelationsIdPatchWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -360,7 +360,7 @@ class RelationsApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3RelationsSchemaGetWithHttpInfo() async {
-    final path = '/api/v3/relations/schema';
+    final path = r'/api/v3/relations/schema';
 
     Object postBody;
 
@@ -370,7 +370,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -400,7 +400,7 @@ class RelationsApi {
   Future<void> apiV3RelationsSchemaGet() async {
     final response = await apiV3RelationsSchemaGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -418,7 +418,7 @@ class RelationsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: type');
     }
 
-    final path = '/api/v3/relations/schema/{type}'
+    final path = r'/api/v3/relations/schema/{type}'
       .replaceAll('{' + 'type' + '}', type.toString());
 
     Object postBody;
@@ -429,7 +429,7 @@ class RelationsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -464,7 +464,7 @@ class RelationsApi {
   Future<void> apiV3RelationsSchemaTypeGet(String type) async {
     final response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

@@ -33,7 +33,7 @@ class CustomActionsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: customActionId');
     }
 
-    final path = '/api/v3/custom_actions/{custom_action_id}/execute'
+    final path = r'/api/v3/custom_actions/{custom_action_id}/execute'
       .replaceAll('{' + 'custom_action_id' + '}', customActionId.toString());
 
     Object postBody = inlineObject;
@@ -44,7 +44,7 @@ class CustomActionsApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -83,7 +83,7 @@ class CustomActionsApi {
   Future<void> apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject inlineObject }) async {
     final response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  inlineObject: inlineObject );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -101,7 +101,7 @@ class CustomActionsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: customActionId');
     }
 
-    final path = '/api/v3/custom_actions/{custom_action_id}'
+    final path = r'/api/v3/custom_actions/{custom_action_id}'
       .replaceAll('{' + 'custom_action_id' + '}', customActionId.toString());
 
     Object postBody;
@@ -112,7 +112,7 @@ class CustomActionsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -147,7 +147,7 @@ class CustomActionsApi {
   Future<void> apiV3CustomActionsCustomActionIdGet(int customActionId) async {
     final response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

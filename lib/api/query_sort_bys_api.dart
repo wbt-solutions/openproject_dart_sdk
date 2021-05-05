@@ -31,7 +31,7 @@ class QuerySortBysApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/sort_bys/{id}'
+    final path = r'/api/v3/queries/sort_bys/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -42,7 +42,7 @@ class QuerySortBysApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -79,7 +79,7 @@ class QuerySortBysApi {
   Future<void> apiV3QueriesSortBysIdGet(String id) async {
     final response = await apiV3QueriesSortBysIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

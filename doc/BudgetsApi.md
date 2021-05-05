@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3BudgetsIdGet**](BudgetsApi.md#apiV3BudgetsIdGet) | **GET** /api/v3/budgets/{id} | 
+[**apiV3BudgetsIdGet**](BudgetsApi.md#apiv3budgetsidget) | **GET** /api/v3/budgets/{id} | 
 
 
 # **apiV3BudgetsIdGet**
@@ -23,6 +23,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = BudgetsApi();
 final id = 56; // int | Budget id
@@ -47,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

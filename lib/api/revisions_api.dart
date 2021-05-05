@@ -29,7 +29,7 @@ class RevisionsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/revisions/{id}'
+    final path = r'/api/v3/revisions/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -40,7 +40,7 @@ class RevisionsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -75,7 +75,7 @@ class RevisionsApi {
   Future<void> apiV3RevisionsIdGet(int id) async {
     final response = await apiV3RevisionsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

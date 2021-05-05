@@ -21,7 +21,7 @@ class RolesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3RolesGetWithHttpInfo() async {
-    final path = '/api/v3/roles';
+    final path = r'/api/v3/roles';
 
     Object postBody;
 
@@ -31,7 +31,7 @@ class RolesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -63,7 +63,7 @@ class RolesApi {
   Future<void> apiV3RolesGet() async {
     final response = await apiV3RolesGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -83,7 +83,7 @@ class RolesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/roles/{id}'
+    final path = r'/api/v3/roles/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -94,7 +94,7 @@ class RolesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -131,7 +131,7 @@ class RolesApi {
   Future<void> apiV3RolesIdGet(int id) async {
     final response = await apiV3RolesIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

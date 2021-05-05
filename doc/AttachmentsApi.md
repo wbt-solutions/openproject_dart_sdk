@@ -9,10 +9,10 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3AttachmentsIdDelete**](AttachmentsApi.md#apiV3AttachmentsIdDelete) | **DELETE** /api/v3/attachments/{id} | Delete attachment
-[**apiV3AttachmentsIdGet**](AttachmentsApi.md#apiV3AttachmentsIdGet) | **GET** /api/v3/attachments/{id} | View attachment
-[**apiV3WorkPackagesIdAttachmentsGet**](AttachmentsApi.md#apiV3WorkPackagesIdAttachmentsGet) | **GET** /api/v3/work_packages/{id}/attachments | List attachments
-[**apiV3WorkPackagesIdAttachmentsPost**](AttachmentsApi.md#apiV3WorkPackagesIdAttachmentsPost) | **POST** /api/v3/work_packages/{id}/attachments | Add attachment
+[**apiV3AttachmentsIdDelete**](AttachmentsApi.md#apiv3attachmentsiddelete) | **DELETE** /api/v3/attachments/{id} | Delete attachment
+[**apiV3AttachmentsIdGet**](AttachmentsApi.md#apiv3attachmentsidget) | **GET** /api/v3/attachments/{id} | View attachment
+[**apiV3WorkPackagesIdAttachmentsGet**](AttachmentsApi.md#apiv3workpackagesidattachmentsget) | **GET** /api/v3/work_packages/{id}/attachments | List attachments
+[**apiV3WorkPackagesIdAttachmentsPost**](AttachmentsApi.md#apiv3workpackagesidattachmentspost) | **POST** /api/v3/work_packages/{id}/attachments | Add attachment
 
 
 # **apiV3AttachmentsIdDelete**
@@ -28,6 +28,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AttachmentsApi();
 final id = 56; // int | Attachment id
@@ -51,7 +53,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -71,6 +73,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AttachmentsApi();
 final id = 56; // int | Attachment id
@@ -95,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -115,6 +119,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AttachmentsApi();
 final id = 56; // int | ID of the work package whose attachments will be listed
@@ -138,7 +144,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -160,6 +166,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AttachmentsApi();
 final id = 56; // int | ID of the work package to receive the attachment
@@ -183,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

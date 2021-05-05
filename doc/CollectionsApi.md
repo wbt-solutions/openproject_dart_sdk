@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ExamplesGet**](CollectionsApi.md#apiV3ExamplesGet) | **GET** /api/v3/examples | view aggregated result
+[**apiV3ExamplesGet**](CollectionsApi.md#apiv3examplesget) | **GET** /api/v3/examples | view aggregated result
 
 
 # **apiV3ExamplesGet**
@@ -23,6 +23,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = CollectionsApi();
 final groupBy = groupBy_example; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
@@ -48,7 +50,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

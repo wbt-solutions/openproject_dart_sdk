@@ -9,9 +9,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ProjectsIdQueriesFilterInstanceSchemasGet**](QueryFilterInstanceSchemaApi.md#apiV3ProjectsIdQueriesFilterInstanceSchemasGet) | **GET** /api/v3/projects/{id}/queries/filter_instance_schemas | List Query Filter Instance Schemas for Project
-[**apiV3QueriesFilterInstanceSchemasGet**](QueryFilterInstanceSchemaApi.md#apiV3QueriesFilterInstanceSchemasGet) | **GET** /api/v3/queries/filter_instance_schemas | List Query Filter Instance Schemas
-[**apiV3QueriesFilterInstanceSchemasIdentifierGet**](QueryFilterInstanceSchemaApi.md#apiV3QueriesFilterInstanceSchemasIdentifierGet) | **GET** /api/v3/queries/filter_instance_schemas/{identifier} | View Query Filter Instance Schema
+[**apiV3ProjectsIdQueriesFilterInstanceSchemasGet**](QueryFilterInstanceSchemaApi.md#apiv3projectsidqueriesfilterinstanceschemasget) | **GET** /api/v3/projects/{id}/queries/filter_instance_schemas | List Query Filter Instance Schemas for Project
+[**apiV3QueriesFilterInstanceSchemasGet**](QueryFilterInstanceSchemaApi.md#apiv3queriesfilterinstanceschemasget) | **GET** /api/v3/queries/filter_instance_schemas | List Query Filter Instance Schemas
+[**apiV3QueriesFilterInstanceSchemasIdentifierGet**](QueryFilterInstanceSchemaApi.md#apiv3queriesfilterinstanceschemasidentifierget) | **GET** /api/v3/queries/filter_instance_schemas/{identifier} | View Query Filter Instance Schema
 
 
 # **apiV3ProjectsIdQueriesFilterInstanceSchemasGet**
@@ -27,6 +27,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QueryFilterInstanceSchemaApi();
 final id = 56; // int | Id of the project.
@@ -50,7 +52,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -72,6 +74,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QueryFilterInstanceSchemaApi();
 
@@ -91,7 +95,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -113,6 +117,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QueryFilterInstanceSchemaApi();
 final identifier = identifier_example; // String | QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
@@ -136,7 +142,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

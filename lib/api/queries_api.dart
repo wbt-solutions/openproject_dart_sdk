@@ -55,7 +55,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}/queries/default'
+    final path = r'/api/v3/projects/{id}/queries/default'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -91,7 +91,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -152,7 +152,7 @@ class QueriesApi {
   Future<void> apiV3ProjectsIdQueriesDefaultGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
     final response = await apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -172,7 +172,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}/queries/schema'
+    final path = r'/api/v3/projects/{id}/queries/schema'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -183,7 +183,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -220,7 +220,7 @@ class QueriesApi {
   Future<void> apiV3ProjectsIdQueriesSchemaGet(int id) async {
     final response = await apiV3ProjectsIdQueriesSchemaGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -230,7 +230,7 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesAvailableProjectsGetWithHttpInfo() async {
-    final path = '/api/v3/queries/available_projects';
+    final path = r'/api/v3/queries/available_projects';
 
     Object postBody;
 
@@ -240,7 +240,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -272,7 +272,7 @@ class QueriesApi {
   Future<void> apiV3QueriesAvailableProjectsGet() async {
     final response = await apiV3QueriesAvailableProjectsGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -313,7 +313,7 @@ class QueriesApi {
   Future<Response> apiV3QueriesDefaultGetWithHttpInfo({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/queries/default';
+    final path = r'/api/v3/queries/default';
 
     Object postBody;
 
@@ -351,7 +351,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -412,7 +412,7 @@ class QueriesApi {
   Future<void> apiV3QueriesDefaultGet({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     final response = await apiV3QueriesDefaultGetWithHttpInfo( filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineZoomLevel: timelineZoomLevel, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -420,7 +420,7 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesFormPostWithHttpInfo() async {
-    final path = '/api/v3/queries/form';
+    final path = r'/api/v3/queries/form';
 
     Object postBody;
 
@@ -430,7 +430,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -460,7 +460,7 @@ class QueriesApi {
   Future<void> apiV3QueriesFormPost() async {
     final response = await apiV3QueriesFormPostWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -477,7 +477,7 @@ class QueriesApi {
   Future<Response> apiV3QueriesGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/queries';
+    final path = r'/api/v3/queries';
 
     Object postBody;
 
@@ -491,7 +491,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -528,7 +528,7 @@ class QueriesApi {
   Future<void> apiV3QueriesGet({ List<Map<String, Object>> filters }) async {
     final response = await apiV3QueriesGetWithHttpInfo( filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -548,7 +548,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/{id}'
+    final path = r'/api/v3/queries/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -559,7 +559,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -596,7 +596,7 @@ class QueriesApi {
   Future<void> apiV3QueriesIdDelete(int id) async {
     final response = await apiV3QueriesIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -643,7 +643,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/{id}'
+    final path = r'/api/v3/queries/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -682,7 +682,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -746,7 +746,7 @@ class QueriesApi {
   Future<void> apiV3QueriesIdGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
     final response = await apiV3QueriesIdGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineLabels: timelineLabels, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -768,7 +768,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/{id}'
+    final path = r'/api/v3/queries/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = inlineObject2;
@@ -779,7 +779,7 @@ class QueriesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -818,7 +818,7 @@ class QueriesApi {
   Future<void> apiV3QueriesIdPatch(int id, { InlineObject2 inlineObject2 }) async {
     final response = await apiV3QueriesIdPatchWithHttpInfo(id,  inlineObject2: inlineObject2 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -836,7 +836,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/{id}/star'
+    final path = r'/api/v3/queries/{id}/star'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -847,7 +847,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -882,7 +882,7 @@ class QueriesApi {
   Future<void> apiV3QueriesIdStarPatch(int id) async {
     final response = await apiV3QueriesIdStarPatchWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -900,7 +900,7 @@ class QueriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/{id}/unstar'
+    final path = r'/api/v3/queries/{id}/unstar'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -911,7 +911,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -946,7 +946,7 @@ class QueriesApi {
   Future<void> apiV3QueriesIdUnstarPatch(int id) async {
     final response = await apiV3QueriesIdUnstarPatchWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -956,7 +956,7 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesPostWithHttpInfo() async {
-    final path = '/api/v3/queries';
+    final path = r'/api/v3/queries';
 
     Object postBody;
 
@@ -966,7 +966,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -998,7 +998,7 @@ class QueriesApi {
   Future<void> apiV3QueriesPost() async {
     final response = await apiV3QueriesPostWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1008,7 +1008,7 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesSchemaGetWithHttpInfo() async {
-    final path = '/api/v3/queries/schema';
+    final path = r'/api/v3/queries/schema';
 
     Object postBody;
 
@@ -1018,7 +1018,7 @@ class QueriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1050,7 +1050,7 @@ class QueriesApi {
   Future<void> apiV3QueriesSchemaGet() async {
     final response = await apiV3QueriesSchemaGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

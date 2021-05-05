@@ -9,8 +9,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3MyPreferencesGet**](UserPreferencesApi.md#apiV3MyPreferencesGet) | **GET** /api/v3/my_preferences | Show my preferences
-[**apiV3MyPreferencesPatch**](UserPreferencesApi.md#apiV3MyPreferencesPatch) | **PATCH** /api/v3/my_preferences | Update UserPreferences
+[**apiV3MyPreferencesGet**](UserPreferencesApi.md#apiv3mypreferencesget) | **GET** /api/v3/my_preferences | Show my preferences
+[**apiV3MyPreferencesPatch**](UserPreferencesApi.md#apiv3mypreferencespatch) | **PATCH** /api/v3/my_preferences | Update UserPreferences
 
 
 # **apiV3MyPreferencesGet**
@@ -24,6 +24,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = UserPreferencesApi();
 
@@ -44,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -66,6 +68,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = UserPreferencesApi();
 final inlineObject3 = InlineObject3(); // InlineObject3 | 
@@ -89,7 +93,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

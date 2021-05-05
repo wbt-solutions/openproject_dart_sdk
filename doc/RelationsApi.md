@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3RelationsGet**](RelationsApi.md#apiV3RelationsGet) | **GET** /api/v3/relations | List Relations
-[**apiV3RelationsIdDelete**](RelationsApi.md#apiV3RelationsIdDelete) | **DELETE** /api/v3/relations/{id} | Delete Relation
-[**apiV3RelationsIdFormPost**](RelationsApi.md#apiV3RelationsIdFormPost) | **POST** /api/v3/relations/{id}/form | Relation edit form
-[**apiV3RelationsIdGet**](RelationsApi.md#apiV3RelationsIdGet) | **GET** /api/v3/relations/{id} | View Relation
-[**apiV3RelationsIdPatch**](RelationsApi.md#apiV3RelationsIdPatch) | **PATCH** /api/v3/relations/{id} | Edit Relation
-[**apiV3RelationsSchemaGet**](RelationsApi.md#apiV3RelationsSchemaGet) | **GET** /api/v3/relations/schema | View relation schema
-[**apiV3RelationsSchemaTypeGet**](RelationsApi.md#apiV3RelationsSchemaTypeGet) | **GET** /api/v3/relations/schema/{type} | View relation schema for type
+[**apiV3RelationsGet**](RelationsApi.md#apiv3relationsget) | **GET** /api/v3/relations | List Relations
+[**apiV3RelationsIdDelete**](RelationsApi.md#apiv3relationsiddelete) | **DELETE** /api/v3/relations/{id} | Delete Relation
+[**apiV3RelationsIdFormPost**](RelationsApi.md#apiv3relationsidformpost) | **POST** /api/v3/relations/{id}/form | Relation edit form
+[**apiV3RelationsIdGet**](RelationsApi.md#apiv3relationsidget) | **GET** /api/v3/relations/{id} | View Relation
+[**apiV3RelationsIdPatch**](RelationsApi.md#apiv3relationsidpatch) | **PATCH** /api/v3/relations/{id} | Edit Relation
+[**apiV3RelationsSchemaGet**](RelationsApi.md#apiv3relationsschemaget) | **GET** /api/v3/relations/schema | View relation schema
+[**apiV3RelationsSchemaTypeGet**](RelationsApi.md#apiv3relationsschematypeget) | **GET** /api/v3/relations/schema/{type} | View relation schema for type
 
 
 # **apiV3RelationsGet**
@@ -31,6 +31,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
@@ -56,7 +58,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -78,6 +80,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final id = 56; // int | Relation ID
@@ -101,7 +105,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -121,6 +125,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final id = 56; // int | ID of the relation being modified
@@ -144,7 +150,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -164,6 +170,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final id = 56; // int | Relation id
@@ -187,7 +195,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -209,6 +217,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final id = 56; // int | Relation ID
@@ -232,7 +242,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -252,6 +262,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 
@@ -271,7 +283,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -291,6 +303,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RelationsApi();
 final type = type_example; // String | Type of the schema
@@ -314,7 +328,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

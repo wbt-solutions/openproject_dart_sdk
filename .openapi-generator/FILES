@@ -234,4 +234,3 @@ lib/model/wp_type_links.dart
 lib/model/wp_types.dart
 lib/model/wp_types_embedded.dart
 pubspec.yaml
-test/comment_test.dart

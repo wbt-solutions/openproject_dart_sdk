@@ -31,7 +31,7 @@ class QueryFiltersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/filters/{id}'
+    final path = r'/api/v3/queries/filters/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -42,7 +42,7 @@ class QueryFiltersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -79,7 +79,7 @@ class QueryFiltersApi {
   Future<void> apiV3QueriesFiltersIdGet(String id) async {
     final response = await apiV3QueriesFiltersIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

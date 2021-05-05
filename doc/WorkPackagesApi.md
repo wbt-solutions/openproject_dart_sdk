@@ -9,32 +9,32 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ProjectsIdWorkPackagesFormPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesFormPost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
-[**apiV3ProjectsIdWorkPackagesGet**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesGet) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
-[**apiV3ProjectsIdWorkPackagesPost**](WorkPackagesApi.md#apiV3ProjectsIdWorkPackagesPost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
-[**apiV3ProjectsProjectIdAvailableAssigneesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdAvailableAssigneesGet) | **GET** /api/v3/projects/{project_id}/available_assignees | Available assignees
-[**apiV3ProjectsProjectIdAvailableResponsiblesGet**](WorkPackagesApi.md#apiV3ProjectsProjectIdAvailableResponsiblesGet) | **GET** /api/v3/projects/{project_id}/available_responsibles | Available responsibles
-[**apiV3WorkPackagesFormPost**](WorkPackagesApi.md#apiV3WorkPackagesFormPost) | **POST** /api/v3/work_packages/form | Work Package Create Form
-[**apiV3WorkPackagesGet**](WorkPackagesApi.md#apiV3WorkPackagesGet) | **GET** /api/v3/work_packages | List Work Packages
-[**apiV3WorkPackagesIdActivitiesGet**](WorkPackagesApi.md#apiV3WorkPackagesIdActivitiesGet) | **GET** /api/v3/work_packages/{id}/activities | List work package activities
-[**apiV3WorkPackagesIdActivitiesPost**](WorkPackagesApi.md#apiV3WorkPackagesIdActivitiesPost) | **POST** /api/v3/work_packages/{id}/activities | Comment work package
-[**apiV3WorkPackagesIdAvailableProjectsGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableProjectsGet) | **GET** /api/v3/work_packages/{id}/available_projects | Available projects
-[**apiV3WorkPackagesIdAvailableRelationCandidatesGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableRelationCandidatesGet) | **GET** /api/v3/work_packages/{id}/available_relation_candidates | Available relation candidates
-[**apiV3WorkPackagesIdAvailableWatchersGet**](WorkPackagesApi.md#apiV3WorkPackagesIdAvailableWatchersGet) | **GET** /api/v3/work_packages/{id}/available_watchers | Available watchers
-[**apiV3WorkPackagesIdDelete**](WorkPackagesApi.md#apiV3WorkPackagesIdDelete) | **DELETE** /api/v3/work_packages/{id} | Delete Work Package
-[**apiV3WorkPackagesIdFormPost**](WorkPackagesApi.md#apiV3WorkPackagesIdFormPost) | **POST** /api/v3/work_packages/{id}/form | Work Package Edit Form
-[**apiV3WorkPackagesIdGet**](WorkPackagesApi.md#apiV3WorkPackagesIdGet) | **GET** /api/v3/work_packages/{id} | View Work Package
-[**apiV3WorkPackagesIdPatch**](WorkPackagesApi.md#apiV3WorkPackagesIdPatch) | **PATCH** /api/v3/work_packages/{id} | Edit Work Package
-[**apiV3WorkPackagesIdRelationsFormPost**](WorkPackagesApi.md#apiV3WorkPackagesIdRelationsFormPost) | **POST** /api/v3/work_packages/{id}/relations/form | Relation create form
-[**apiV3WorkPackagesIdRevisionsGet**](WorkPackagesApi.md#apiV3WorkPackagesIdRevisionsGet) | **GET** /api/v3/work_packages/{id}/revisions | Revisions
-[**apiV3WorkPackagesPost**](WorkPackagesApi.md#apiV3WorkPackagesPost) | **POST** /api/v3/work_packages | Create Work Package
-[**apiV3WorkPackagesSchemasGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasGet) | **GET** /api/v3/work_packages/schemas/ | List Work Package Schemas
-[**apiV3WorkPackagesSchemasIdentifierGet**](WorkPackagesApi.md#apiV3WorkPackagesSchemasIdentifierGet) | **GET** /api/v3/work_packages/schemas/{identifier} | View Work Package Schema
-[**apiV3WorkPackagesWorkPackageIdRelationsGet**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdRelationsGet) | **GET** /api/v3/work_packages/{work_package_id}/relations | List relations
-[**apiV3WorkPackagesWorkPackageIdRelationsPost**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdRelationsPost) | **POST** /api/v3/work_packages/{work_package_id}/relations | Create Relation
-[**apiV3WorkPackagesWorkPackageIdWatchersGet**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdWatchersGet) | **GET** /api/v3/work_packages/{work_package_id}/watchers | List watchers
-[**apiV3WorkPackagesWorkPackageIdWatchersIdDelete**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdWatchersIdDelete) | **DELETE** /api/v3/work_packages/{work_package_id}/watchers/{id} | Remove watcher
-[**apiV3WorkPackagesWorkPackageIdWatchersPost**](WorkPackagesApi.md#apiV3WorkPackagesWorkPackageIdWatchersPost) | **POST** /api/v3/work_packages/{work_package_id}/watchers | Add watcher
+[**apiV3ProjectsIdWorkPackagesFormPost**](WorkPackagesApi.md#apiv3projectsidworkpackagesformpost) | **POST** /api/v3/projects/{id}/work_packages/form | Work Package Create Form
+[**apiV3ProjectsIdWorkPackagesGet**](WorkPackagesApi.md#apiv3projectsidworkpackagesget) | **GET** /api/v3/projects/{id}/work_packages | List Work Packages
+[**apiV3ProjectsIdWorkPackagesPost**](WorkPackagesApi.md#apiv3projectsidworkpackagespost) | **POST** /api/v3/projects/{id}/work_packages | Create Work Package
+[**apiV3ProjectsProjectIdAvailableAssigneesGet**](WorkPackagesApi.md#apiv3projectsprojectidavailableassigneesget) | **GET** /api/v3/projects/{project_id}/available_assignees | Available assignees
+[**apiV3ProjectsProjectIdAvailableResponsiblesGet**](WorkPackagesApi.md#apiv3projectsprojectidavailableresponsiblesget) | **GET** /api/v3/projects/{project_id}/available_responsibles | Available responsibles
+[**apiV3WorkPackagesFormPost**](WorkPackagesApi.md#apiv3workpackagesformpost) | **POST** /api/v3/work_packages/form | Work Package Create Form
+[**apiV3WorkPackagesGet**](WorkPackagesApi.md#apiv3workpackagesget) | **GET** /api/v3/work_packages | List Work Packages
+[**apiV3WorkPackagesIdActivitiesGet**](WorkPackagesApi.md#apiv3workpackagesidactivitiesget) | **GET** /api/v3/work_packages/{id}/activities | List work package activities
+[**apiV3WorkPackagesIdActivitiesPost**](WorkPackagesApi.md#apiv3workpackagesidactivitiespost) | **POST** /api/v3/work_packages/{id}/activities | Comment work package
+[**apiV3WorkPackagesIdAvailableProjectsGet**](WorkPackagesApi.md#apiv3workpackagesidavailableprojectsget) | **GET** /api/v3/work_packages/{id}/available_projects | Available projects
+[**apiV3WorkPackagesIdAvailableRelationCandidatesGet**](WorkPackagesApi.md#apiv3workpackagesidavailablerelationcandidatesget) | **GET** /api/v3/work_packages/{id}/available_relation_candidates | Available relation candidates
+[**apiV3WorkPackagesIdAvailableWatchersGet**](WorkPackagesApi.md#apiv3workpackagesidavailablewatchersget) | **GET** /api/v3/work_packages/{id}/available_watchers | Available watchers
+[**apiV3WorkPackagesIdDelete**](WorkPackagesApi.md#apiv3workpackagesiddelete) | **DELETE** /api/v3/work_packages/{id} | Delete Work Package
+[**apiV3WorkPackagesIdFormPost**](WorkPackagesApi.md#apiv3workpackagesidformpost) | **POST** /api/v3/work_packages/{id}/form | Work Package Edit Form
+[**apiV3WorkPackagesIdGet**](WorkPackagesApi.md#apiv3workpackagesidget) | **GET** /api/v3/work_packages/{id} | View Work Package
+[**apiV3WorkPackagesIdPatch**](WorkPackagesApi.md#apiv3workpackagesidpatch) | **PATCH** /api/v3/work_packages/{id} | Edit Work Package
+[**apiV3WorkPackagesIdRelationsFormPost**](WorkPackagesApi.md#apiv3workpackagesidrelationsformpost) | **POST** /api/v3/work_packages/{id}/relations/form | Relation create form
+[**apiV3WorkPackagesIdRevisionsGet**](WorkPackagesApi.md#apiv3workpackagesidrevisionsget) | **GET** /api/v3/work_packages/{id}/revisions | Revisions
+[**apiV3WorkPackagesPost**](WorkPackagesApi.md#apiv3workpackagespost) | **POST** /api/v3/work_packages | Create Work Package
+[**apiV3WorkPackagesSchemasGet**](WorkPackagesApi.md#apiv3workpackagesschemasget) | **GET** /api/v3/work_packages/schemas/ | List Work Package Schemas
+[**apiV3WorkPackagesSchemasIdentifierGet**](WorkPackagesApi.md#apiv3workpackagesschemasidentifierget) | **GET** /api/v3/work_packages/schemas/{identifier} | View Work Package Schema
+[**apiV3WorkPackagesWorkPackageIdRelationsGet**](WorkPackagesApi.md#apiv3workpackagesworkpackageidrelationsget) | **GET** /api/v3/work_packages/{work_package_id}/relations | List relations
+[**apiV3WorkPackagesWorkPackageIdRelationsPost**](WorkPackagesApi.md#apiv3workpackagesworkpackageidrelationspost) | **POST** /api/v3/work_packages/{work_package_id}/relations | Create Relation
+[**apiV3WorkPackagesWorkPackageIdWatchersGet**](WorkPackagesApi.md#apiv3workpackagesworkpackageidwatchersget) | **GET** /api/v3/work_packages/{work_package_id}/watchers | List watchers
+[**apiV3WorkPackagesWorkPackageIdWatchersIdDelete**](WorkPackagesApi.md#apiv3workpackagesworkpackageidwatchersiddelete) | **DELETE** /api/v3/work_packages/{work_package_id}/watchers/{id} | Remove watcher
+[**apiV3WorkPackagesWorkPackageIdWatchersPost**](WorkPackagesApi.md#apiv3workpackagesworkpackageidwatcherspost) | **POST** /api/v3/work_packages/{work_package_id}/watchers | Add watcher
 
 
 # **apiV3ProjectsIdWorkPackagesFormPost**
@@ -48,6 +48,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the project in which the work package will be created
@@ -71,7 +73,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -91,6 +93,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Project id
@@ -127,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -149,6 +153,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Project id
@@ -177,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -199,6 +205,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final projectId = 56; // int | Project id
@@ -223,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -245,6 +253,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final projectId = 56; // int | Project id
@@ -269,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -289,6 +299,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 
@@ -308,7 +320,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -328,6 +340,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final offset = 56; // int | Page number inside the requested collection.
@@ -362,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -382,6 +396,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
@@ -405,7 +421,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -427,6 +443,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
@@ -454,7 +472,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -476,6 +494,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
@@ -499,7 +519,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -519,6 +539,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 789; // int | ID of workpackage to return
@@ -550,7 +572,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -572,6 +594,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
@@ -595,7 +619,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -617,6 +641,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
@@ -640,7 +666,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -660,6 +686,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the work package being modified
@@ -683,7 +711,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -703,6 +731,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
@@ -727,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -749,6 +779,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
@@ -777,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -797,6 +829,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the relation being modified
@@ -820,7 +854,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -842,6 +876,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
@@ -865,7 +901,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -887,6 +923,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
@@ -913,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -935,6 +973,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
@@ -958,7 +998,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -978,6 +1018,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final identifier = identifier_example; // String | Identifier of the schema
@@ -1001,7 +1043,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -1023,6 +1065,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
@@ -1046,7 +1090,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -1068,6 +1112,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
@@ -1091,7 +1137,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -1111,6 +1157,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
@@ -1134,7 +1182,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -1156,6 +1204,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
@@ -1181,7 +1231,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -1203,6 +1253,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
@@ -1228,7 +1280,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

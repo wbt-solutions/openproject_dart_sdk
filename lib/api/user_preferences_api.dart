@@ -19,7 +19,7 @@ class UserPreferencesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3MyPreferencesGetWithHttpInfo() async {
-    final path = '/api/v3/my_preferences';
+    final path = r'/api/v3/my_preferences';
 
     Object postBody;
 
@@ -29,7 +29,7 @@ class UserPreferencesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -59,15 +59,15 @@ class UserPreferencesApi {
   Future<UserPreferences> apiV3MyPreferencesGet() async {
     final response = await apiV3MyPreferencesGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UserPreferences') as UserPreferences;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserPreferences',) as UserPreferences;
+        }
+    return Future<UserPreferences>.value(null);
   }
 
   /// Update UserPreferences
@@ -82,7 +82,7 @@ class UserPreferencesApi {
   Future<Response> apiV3MyPreferencesPatchWithHttpInfo({ InlineObject3 inlineObject3 }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/my_preferences';
+    final path = r'/api/v3/my_preferences';
 
     Object postBody = inlineObject3;
 
@@ -92,7 +92,7 @@ class UserPreferencesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -128,7 +128,7 @@ class UserPreferencesApi {
   Future<void> apiV3MyPreferencesPatch({ InlineObject3 inlineObject3 }) async {
     final response = await apiV3MyPreferencesPatchWithHttpInfo( inlineObject3: inlineObject3 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

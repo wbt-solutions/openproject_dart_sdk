@@ -9,10 +9,10 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiV3TimeEntriesGet) | **GET** /api/v3/time_entries | List Time entries
-[**apiV3TimeEntriesIdDelete**](TimeEntriesApi.md#apiV3TimeEntriesIdDelete) | **DELETE** /api/v3/time_entries/{id} | delete time entry
-[**apiV3TimeEntriesIdGet**](TimeEntriesApi.md#apiV3TimeEntriesIdGet) | **GET** /api/v3/time_entries/{id} | View time entry
-[**apiV3TimeEntriesPost**](TimeEntriesApi.md#apiV3TimeEntriesPost) | **POST** /api/v3/time_entries | create time entry
+[**apiV3TimeEntriesGet**](TimeEntriesApi.md#apiv3timeentriesget) | **GET** /api/v3/time_entries | List Time entries
+[**apiV3TimeEntriesIdDelete**](TimeEntriesApi.md#apiv3timeentriesiddelete) | **DELETE** /api/v3/time_entries/{id} | delete time entry
+[**apiV3TimeEntriesIdGet**](TimeEntriesApi.md#apiv3timeentriesidget) | **GET** /api/v3/time_entries/{id} | View time entry
+[**apiV3TimeEntriesPost**](TimeEntriesApi.md#apiv3timeentriespost) | **POST** /api/v3/time_entries | create time entry
 
 
 # **apiV3TimeEntriesGet**
@@ -28,6 +28,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = TimeEntriesApi();
 final offset = 56; // int | Page number inside the requested collection.
@@ -56,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -78,6 +80,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = TimeEntriesApi();
 final id = 56; // int | time entry id
@@ -101,7 +105,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -121,6 +125,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = TimeEntriesApi();
 final id = 56; // int | time entry id
@@ -145,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -167,6 +173,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = TimeEntriesApi();
 final timeEntry = TimeEntry(); // TimeEntry | New time entry
@@ -195,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

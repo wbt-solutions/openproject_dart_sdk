@@ -19,7 +19,7 @@ class RootApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3GetWithHttpInfo() async {
-    final path = '/api/v3';
+    final path = r'/api/v3';
 
     Object postBody;
 
@@ -29,7 +29,7 @@ class RootApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -59,14 +59,14 @@ class RootApi {
   Future<Root> apiV3Get() async {
     final response = await apiV3GetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Root') as Root;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Root',) as Root;
+        }
+    return Future<Root>.value(null);
   }
 }

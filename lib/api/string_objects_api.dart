@@ -29,7 +29,7 @@ class StringObjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: value');
     }
 
-    final path = '/api/v3/string_objects';
+    final path = r'/api/v3/string_objects';
 
     Object postBody;
 
@@ -41,7 +41,7 @@ class StringObjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -76,7 +76,7 @@ class StringObjectsApi {
   Future<void> apiV3StringObjectsGet(String value) async {
     final response = await apiV3StringObjectsGetWithHttpInfo(value);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

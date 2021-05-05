@@ -31,7 +31,7 @@ class QueryOperatorsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/queries/operators/{id}'
+    final path = r'/api/v3/queries/operators/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -42,7 +42,7 @@ class QueryOperatorsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -79,7 +79,7 @@ class QueryOperatorsApi {
   Future<void> apiV3QueriesOperatorsIdGet(String id) async {
     final response = await apiV3QueriesOperatorsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

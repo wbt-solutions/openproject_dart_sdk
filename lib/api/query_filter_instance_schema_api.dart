@@ -31,7 +31,7 @@ class QueryFilterInstanceSchemaApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}/queries/filter_instance_schemas'
+    final path = r'/api/v3/projects/{id}/queries/filter_instance_schemas'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -42,7 +42,7 @@ class QueryFilterInstanceSchemaApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -79,7 +79,7 @@ class QueryFilterInstanceSchemaApi {
   Future<void> apiV3ProjectsIdQueriesFilterInstanceSchemasGet(int id) async {
     final response = await apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -89,7 +89,7 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesFilterInstanceSchemasGetWithHttpInfo() async {
-    final path = '/api/v3/queries/filter_instance_schemas';
+    final path = r'/api/v3/queries/filter_instance_schemas';
 
     Object postBody;
 
@@ -99,7 +99,7 @@ class QueryFilterInstanceSchemaApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -131,7 +131,7 @@ class QueryFilterInstanceSchemaApi {
   Future<void> apiV3QueriesFilterInstanceSchemasGet() async {
     final response = await apiV3QueriesFilterInstanceSchemasGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -151,7 +151,7 @@ class QueryFilterInstanceSchemaApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: identifier');
     }
 
-    final path = '/api/v3/queries/filter_instance_schemas/{identifier}'
+    final path = r'/api/v3/queries/filter_instance_schemas/{identifier}'
       .replaceAll('{' + 'identifier' + '}', identifier.toString());
 
     Object postBody;
@@ -162,7 +162,7 @@ class QueryFilterInstanceSchemaApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -199,7 +199,7 @@ class QueryFilterInstanceSchemaApi {
   Future<void> apiV3QueriesFilterInstanceSchemasIdentifierGet(String identifier) async {
     final response = await apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(identifier);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

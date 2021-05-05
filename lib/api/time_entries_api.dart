@@ -34,7 +34,7 @@ class TimeEntriesApi {
   Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/time_entries';
+    final path = r'/api/v3/time_entries';
 
     Object postBody;
 
@@ -54,7 +54,7 @@ class TimeEntriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -97,15 +97,15 @@ class TimeEntriesApi {
   Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
     final response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntries') as TimeEntries;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntries',) as TimeEntries;
+        }
+    return Future<TimeEntries>.value(null);
   }
 
   /// delete time entry
@@ -124,7 +124,7 @@ class TimeEntriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/time_entries/{id}'
+    final path = r'/api/v3/time_entries/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -135,7 +135,7 @@ class TimeEntriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -172,7 +172,7 @@ class TimeEntriesApi {
   Future<void> apiV3TimeEntriesIdDelete(int id) async {
     final response = await apiV3TimeEntriesIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -190,7 +190,7 @@ class TimeEntriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/time_entries/{id}'
+    final path = r'/api/v3/time_entries/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -201,7 +201,7 @@ class TimeEntriesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -236,15 +236,15 @@ class TimeEntriesApi {
   Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
     final response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntry',) as TimeEntry;
+        }
+    return Future<TimeEntry>.value(null);
   }
 
   /// create time entry
@@ -269,7 +269,7 @@ class TimeEntriesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: timeEntry');
     }
 
-    final path = '/api/v3/time_entries';
+    final path = r'/api/v3/time_entries';
 
     Object postBody = timeEntry;
 
@@ -286,7 +286,7 @@ class TimeEntriesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -329,14 +329,14 @@ class TimeEntriesApi {
   Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
     final response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TimeEntry') as TimeEntry;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntry',) as TimeEntry;
+        }
+    return Future<TimeEntry>.value(null);
   }
 }

@@ -37,7 +37,7 @@ class NewsApi {
   Future<Response> apiV3NewsGetWithHttpInfo({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/news';
+    final path = r'/api/v3/news';
 
     Object postBody;
 
@@ -60,7 +60,7 @@ class NewsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -106,15 +106,15 @@ class NewsApi {
   Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, List<Map<String, Object>> filters }) async {
     final response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'NewsList') as NewsList;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NewsList',) as NewsList;
+        }
+    return Future<NewsList>.value(null);
   }
 
   /// view news
@@ -131,7 +131,7 @@ class NewsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/news/{id}'
+    final path = r'/api/v3/news/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -142,7 +142,7 @@ class NewsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -177,14 +177,14 @@ class NewsApi {
   Future<News> apiV3NewsIdGet(int id) async {
     final response = await apiV3NewsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'News') as News;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'News',) as News;
+        }
+    return Future<News>.value(null);
   }
 }

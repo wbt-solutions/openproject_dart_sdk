@@ -9,8 +9,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3CustomActionsCustomActionIdExecutePost**](CustomActionsApi.md#apiV3CustomActionsCustomActionIdExecutePost) | **POST** /api/v3/custom_actions/{custom_action_id}/execute | Execute custom action
-[**apiV3CustomActionsCustomActionIdGet**](CustomActionsApi.md#apiV3CustomActionsCustomActionIdGet) | **GET** /api/v3/custom_actions/{custom_action_id} | View custom action
+[**apiV3CustomActionsCustomActionIdExecutePost**](CustomActionsApi.md#apiv3customactionscustomactionidexecutepost) | **POST** /api/v3/custom_actions/{custom_action_id}/execute | Execute custom action
+[**apiV3CustomActionsCustomActionIdGet**](CustomActionsApi.md#apiv3customactionscustomactionidget) | **GET** /api/v3/custom_actions/{custom_action_id} | View custom action
 
 
 # **apiV3CustomActionsCustomActionIdExecutePost**
@@ -26,6 +26,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = CustomActionsApi();
 final customActionId = 56; // int | The id of the custom action to execute
@@ -51,7 +53,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -71,6 +73,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = CustomActionsApi();
 final customActionId = 56; // int | The id of the custom action to fetch
@@ -94,7 +98,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

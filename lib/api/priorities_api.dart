@@ -19,7 +19,7 @@ class PrioritiesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3PrioritiesGetWithHttpInfo() async {
-    final path = '/api/v3/priorities';
+    final path = r'/api/v3/priorities';
 
     Object postBody;
 
@@ -29,7 +29,7 @@ class PrioritiesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -59,15 +59,15 @@ class PrioritiesApi {
   Future<Priorities> apiV3PrioritiesGet() async {
     final response = await apiV3PrioritiesGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Priorities') as Priorities;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Priorities',) as Priorities;
+        }
+    return Future<Priorities>.value(null);
   }
 
   /// View Priority
@@ -84,7 +84,7 @@ class PrioritiesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/priorities/{id}'
+    final path = r'/api/v3/priorities/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -95,7 +95,7 @@ class PrioritiesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -130,14 +130,14 @@ class PrioritiesApi {
   Future<Priority> apiV3PrioritiesIdGet(int id) async {
     final response = await apiV3PrioritiesIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Priority') as Priority;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Priority',) as Priority;
+        }
+    return Future<Priority>.value(null);
   }
 }

@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3CustomObjectsIdGet**](CustomObjectsApi.md#apiV3CustomObjectsIdGet) | **GET** /api/v3/custom_objects/{id} | View Custom Object
+[**apiV3CustomObjectsIdGet**](CustomObjectsApi.md#apiv3customobjectsidget) | **GET** /api/v3/custom_objects/{id} | View Custom Object
 
 
 # **apiV3CustomObjectsIdGet**
@@ -23,6 +23,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = CustomObjectsApi();
 final id = 56; // int | The custom object's identifier
@@ -46,7 +48,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

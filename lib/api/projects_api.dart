@@ -34,7 +34,7 @@ class ProjectsApi {
   Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/projects/available_parent_projects';
+    final path = r'/api/v3/projects/available_parent_projects';
 
     Object postBody;
 
@@ -54,7 +54,7 @@ class ProjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -97,15 +97,15 @@ class ProjectsApi {
   Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
     final response = await apiV3ProjectsAvailableParentProjectsGetWithHttpInfo( filters: filters, of_: of_, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Projects') as Projects;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Projects',) as Projects;
+        }
+    return Future<Projects>.value(null);
   }
 
   /// List projects
@@ -124,7 +124,7 @@ class ProjectsApi {
   Future<Response> apiV3ProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/projects';
+    final path = r'/api/v3/projects';
 
     Object postBody;
 
@@ -141,7 +141,7 @@ class ProjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -181,15 +181,15 @@ class ProjectsApi {
   Future<Projects> apiV3ProjectsGet({ List<Map<String, Object>> filters, String sortBy }) async {
     final response = await apiV3ProjectsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Projects') as Projects;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Projects',) as Projects;
+        }
+    return Future<Projects>.value(null);
   }
 
   /// delete project
@@ -208,7 +208,7 @@ class ProjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}'
+    final path = r'/api/v3/projects/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -219,7 +219,7 @@ class ProjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -256,7 +256,7 @@ class ProjectsApi {
   Future<void> apiV3ProjectsIdDelete(int id) async {
     final response = await apiV3ProjectsIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -274,7 +274,7 @@ class ProjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}'
+    final path = r'/api/v3/projects/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -285,7 +285,7 @@ class ProjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -320,15 +320,15 @@ class ProjectsApi {
   Future<Project> apiV3ProjectsIdGet(int id) async {
     final response = await apiV3ProjectsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Project',) as Project;
+        }
+    return Future<Project>.value(null);
   }
 
   /// update project
@@ -353,7 +353,7 @@ class ProjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: project');
     }
 
-    final path = '/api/v3/projects/{id}'
+    final path = r'/api/v3/projects/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = project;
@@ -364,7 +364,7 @@ class ProjectsApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -404,15 +404,15 @@ class ProjectsApi {
   Future<Project> apiV3ProjectsIdPatch(int id, Project project) async {
     final response = await apiV3ProjectsIdPatchWithHttpInfo(id, project);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Project',) as Project;
+        }
+    return Future<Project>.value(null);
   }
 
   /// create project
@@ -437,7 +437,7 @@ class ProjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: project');
     }
 
-    final path = '/api/v3/projects';
+    final path = r'/api/v3/projects';
 
     Object postBody = project;
 
@@ -454,7 +454,7 @@ class ProjectsApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -497,15 +497,15 @@ class ProjectsApi {
   Future<Project> apiV3ProjectsPost(Project project, { List<Map<String, Object>> filters, String sortBy }) async {
     final response = await apiV3ProjectsPostWithHttpInfo(project,  filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Project') as Project;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Project',) as Project;
+        }
+    return Future<Project>.value(null);
   }
 
   /// List projects with version
@@ -524,7 +524,7 @@ class ProjectsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/versions/{id}/projects'
+    final path = r'/api/v3/versions/{id}/projects'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -535,7 +535,7 @@ class ProjectsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -572,7 +572,7 @@ class ProjectsApi {
   Future<void> apiV3VersionsIdProjectsGet(int id) async {
     final response = await apiV3VersionsIdProjectsGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

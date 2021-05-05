@@ -21,7 +21,7 @@ class SchemasApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3ExampleSchemaGetWithHttpInfo() async {
-    final path = '/api/v3/example/schema';
+    final path = r'/api/v3/example/schema';
 
     Object postBody;
 
@@ -31,7 +31,7 @@ class SchemasApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -63,7 +63,7 @@ class SchemasApi {
   Future<void> apiV3ExampleSchemaGet() async {
     final response = await apiV3ExampleSchemaGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

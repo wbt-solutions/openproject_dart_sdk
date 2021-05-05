@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3QueriesSortBysIdGet**](QuerySortBysApi.md#apiV3QueriesSortBysIdGet) | **GET** /api/v3/queries/sort_bys/{id} | View Query Sort By
+[**apiV3QueriesSortBysIdGet**](QuerySortBysApi.md#apiv3queriessortbysidget) | **GET** /api/v3/queries/sort_bys/{id} | View Query Sort By
 
 
 # **apiV3QueriesSortBysIdGet**
@@ -25,6 +25,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QuerySortBysApi();
 final id = id_example; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
@@ -48,7 +50,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

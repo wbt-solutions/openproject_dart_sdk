@@ -19,7 +19,7 @@ class HelpTextsApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3HelpTextsGetWithHttpInfo() async {
-    final path = '/api/v3/help_texts';
+    final path = r'/api/v3/help_texts';
 
     Object postBody;
 
@@ -29,7 +29,7 @@ class HelpTextsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -59,7 +59,7 @@ class HelpTextsApi {
   Future<void> apiV3HelpTextsGet() async {
     final response = await apiV3HelpTextsGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -77,7 +77,7 @@ class HelpTextsApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/help_texts/{id}'
+    final path = r'/api/v3/help_texts/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -88,7 +88,7 @@ class HelpTextsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -123,7 +123,7 @@ class HelpTextsApi {
   Future<void> apiV3HelpTextsIdGet(int id) async {
     final response = await apiV3HelpTextsIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

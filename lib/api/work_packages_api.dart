@@ -29,7 +29,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}/work_packages/form'
+    final path = r'/api/v3/projects/{id}/work_packages/form'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -40,7 +40,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -75,7 +75,7 @@ class WorkPackagesApi {
   Future<void> apiV3ProjectsIdWorkPackagesFormPost(int id) async {
     final response = await apiV3ProjectsIdWorkPackagesFormPostWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -111,7 +111,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/projects/{id}/work_packages'
+    final path = r'/api/v3/projects/{id}/work_packages'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -141,7 +141,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -194,15 +194,15 @@ class WorkPackagesApi {
   Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, List<Map<String, Object>> filters, String sortBy, String groupBy, bool showSums }) async {
     final response = await apiV3ProjectsIdWorkPackagesGetWithHttpInfo(id,  offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, groupBy: groupBy, showSums: showSums );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackages',) as WorkPackages;
+        }
+    return Future<WorkPackages>.value(null);
   }
 
   /// Create Work Package
@@ -230,7 +230,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackage');
     }
 
-    final path = '/api/v3/projects/{id}/work_packages'
+    final path = r'/api/v3/projects/{id}/work_packages'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = workPackage;
@@ -245,7 +245,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -288,15 +288,15 @@ class WorkPackagesApi {
   Future<WorkPackage> apiV3ProjectsIdWorkPackagesPost(int id, WorkPackage workPackage, { bool notify }) async {
     final response = await apiV3ProjectsIdWorkPackagesPostWithHttpInfo(id, workPackage,  notify: notify );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackage',) as WorkPackage;
+        }
+    return Future<WorkPackage>.value(null);
   }
 
   /// Available assignees
@@ -315,7 +315,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: projectId');
     }
 
-    final path = '/api/v3/projects/{project_id}/available_assignees'
+    final path = r'/api/v3/projects/{project_id}/available_assignees'
       .replaceAll('{' + 'project_id' + '}', projectId.toString());
 
     Object postBody;
@@ -326,7 +326,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -363,15 +363,15 @@ class WorkPackagesApi {
   Future<Users> apiV3ProjectsProjectIdAvailableAssigneesGet(int projectId) async {
     final response = await apiV3ProjectsProjectIdAvailableAssigneesGetWithHttpInfo(projectId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Users') as Users;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Users',) as Users;
+        }
+    return Future<Users>.value(null);
   }
 
   /// Available responsibles
@@ -390,7 +390,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: projectId');
     }
 
-    final path = '/api/v3/projects/{project_id}/available_responsibles'
+    final path = r'/api/v3/projects/{project_id}/available_responsibles'
       .replaceAll('{' + 'project_id' + '}', projectId.toString());
 
     Object postBody;
@@ -401,7 +401,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -438,22 +438,22 @@ class WorkPackagesApi {
   Future<Users> apiV3ProjectsProjectIdAvailableResponsiblesGet(int projectId) async {
     final response = await apiV3ProjectsProjectIdAvailableResponsiblesGetWithHttpInfo(projectId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Users') as Users;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Users',) as Users;
+        }
+    return Future<Users>.value(null);
   }
 
   /// Work Package Create Form
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3WorkPackagesFormPostWithHttpInfo() async {
-    final path = '/api/v3/work_packages/form';
+    final path = r'/api/v3/work_packages/form';
 
     Object postBody;
 
@@ -463,7 +463,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -493,7 +493,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesFormPost() async {
     final response = await apiV3WorkPackagesFormPostWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -523,7 +523,7 @@ class WorkPackagesApi {
   Future<Response> apiV3WorkPackagesGetWithHttpInfo({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/work_packages';
+    final path = r'/api/v3/work_packages';
 
     Object postBody;
 
@@ -552,7 +552,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -602,15 +602,15 @@ class WorkPackagesApi {
   Future<WorkPackages> apiV3WorkPackagesGet({ int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     final response = await apiV3WorkPackagesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, groupBy: groupBy, showSums: showSums );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackages') as WorkPackages;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackages',) as WorkPackages;
+        }
+    return Future<WorkPackages>.value(null);
   }
 
   /// List work package activities
@@ -627,7 +627,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/activities'
+    final path = r'/api/v3/work_packages/{id}/activities'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -638,7 +638,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -673,7 +673,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdActivitiesGet(int id) async {
     final response = await apiV3WorkPackagesIdActivitiesGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -698,7 +698,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/activities'
+    final path = r'/api/v3/work_packages/{id}/activities'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = comment;
@@ -713,7 +713,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -755,7 +755,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdActivitiesPost(int id, { bool notify, Comment comment }) async {
     final response = await apiV3WorkPackagesIdActivitiesPostWithHttpInfo(id,  notify: notify, comment: comment );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -775,7 +775,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/available_projects'
+    final path = r'/api/v3/work_packages/{id}/available_projects'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -786,7 +786,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -823,7 +823,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdAvailableProjectsGet(int id) async {
     final response = await apiV3WorkPackagesIdAvailableProjectsGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -853,7 +853,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/available_relation_candidates'
+    final path = r'/api/v3/work_packages/{id}/available_relation_candidates'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -877,7 +877,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -924,7 +924,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdAvailableRelationCandidatesGet(int id, { int pageSize, List<Map<String, Object>> filters, String query, String type }) async {
     final response = await apiV3WorkPackagesIdAvailableRelationCandidatesGetWithHttpInfo(id,  pageSize: pageSize, filters: filters, query: query, type: type );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -944,7 +944,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/available_watchers'
+    final path = r'/api/v3/work_packages/{id}/available_watchers'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -955,7 +955,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -992,7 +992,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdAvailableWatchersGet(int id) async {
     final response = await apiV3WorkPackagesIdAvailableWatchersGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1012,7 +1012,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}'
+    final path = r'/api/v3/work_packages/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -1023,7 +1023,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1060,7 +1060,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdDelete(int id) async {
     final response = await apiV3WorkPackagesIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1078,7 +1078,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/form'
+    final path = r'/api/v3/work_packages/{id}/form'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -1089,7 +1089,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1124,7 +1124,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdFormPost(int id) async {
     final response = await apiV3WorkPackagesIdFormPostWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1142,7 +1142,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}'
+    final path = r'/api/v3/work_packages/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -1153,7 +1153,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1188,15 +1188,15 @@ class WorkPackagesApi {
   Future<WorkPackage> apiV3WorkPackagesIdGet(int id) async {
     final response = await apiV3WorkPackagesIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackage',) as WorkPackage;
+        }
+    return Future<WorkPackage>.value(null);
   }
 
   /// Edit Work Package
@@ -1220,7 +1220,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}'
+    final path = r'/api/v3/work_packages/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = workPackage;
@@ -1235,7 +1235,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1277,15 +1277,15 @@ class WorkPackagesApi {
   Future<WorkPackage> apiV3WorkPackagesIdPatch(int id, { bool notify, WorkPackage workPackage }) async {
     final response = await apiV3WorkPackagesIdPatchWithHttpInfo(id,  notify: notify, workPackage: workPackage );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackage',) as WorkPackage;
+        }
+    return Future<WorkPackage>.value(null);
   }
 
   /// Relation create form
@@ -1302,7 +1302,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/relations/form'
+    final path = r'/api/v3/work_packages/{id}/relations/form'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -1313,7 +1313,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1348,7 +1348,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdRelationsFormPost(int id) async {
     final response = await apiV3WorkPackagesIdRelationsFormPostWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1368,7 +1368,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{id}/revisions'
+    final path = r'/api/v3/work_packages/{id}/revisions'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -1379,7 +1379,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1416,7 +1416,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesIdRevisionsGet(int id) async {
     final response = await apiV3WorkPackagesIdRevisionsGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1439,7 +1439,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackage');
     }
 
-    final path = '/api/v3/work_packages';
+    final path = r'/api/v3/work_packages';
 
     Object postBody = workPackage;
 
@@ -1453,7 +1453,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1493,15 +1493,15 @@ class WorkPackagesApi {
   Future<WorkPackage> apiV3WorkPackagesPost(WorkPackage workPackage, { bool notify }) async {
     final response = await apiV3WorkPackagesPostWithHttpInfo(workPackage,  notify: notify );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'WorkPackage') as WorkPackage;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WorkPackage',) as WorkPackage;
+        }
+    return Future<WorkPackage>.value(null);
   }
 
   /// List Work Package Schemas
@@ -1520,7 +1520,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: filters');
     }
 
-    final path = '/api/v3/work_packages/schemas/';
+    final path = r'/api/v3/work_packages/schemas/';
 
     Object postBody;
 
@@ -1532,7 +1532,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1569,7 +1569,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesSchemasGet(List<Map<String, Object>> filters) async {
     final response = await apiV3WorkPackagesSchemasGetWithHttpInfo(filters);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1587,7 +1587,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: identifier');
     }
 
-    final path = '/api/v3/work_packages/schemas/{identifier}'
+    final path = r'/api/v3/work_packages/schemas/{identifier}'
       .replaceAll('{' + 'identifier' + '}', identifier.toString());
 
     Object postBody;
@@ -1598,7 +1598,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1633,7 +1633,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesSchemasIdentifierGet(String identifier) async {
     final response = await apiV3WorkPackagesSchemasIdentifierGetWithHttpInfo(identifier);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1653,7 +1653,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackageId');
     }
 
-    final path = '/api/v3/work_packages/{work_package_id}/relations'
+    final path = r'/api/v3/work_packages/{work_package_id}/relations'
       .replaceAll('{' + 'work_package_id' + '}', workPackageId.toString());
 
     Object postBody;
@@ -1664,7 +1664,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1701,7 +1701,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesWorkPackageIdRelationsGet(int workPackageId) async {
     final response = await apiV3WorkPackagesWorkPackageIdRelationsGetWithHttpInfo(workPackageId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1721,7 +1721,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackageId');
     }
 
-    final path = '/api/v3/work_packages/{work_package_id}/relations'
+    final path = r'/api/v3/work_packages/{work_package_id}/relations'
       .replaceAll('{' + 'work_package_id' + '}', workPackageId.toString());
 
     Object postBody;
@@ -1732,7 +1732,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1769,7 +1769,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesWorkPackageIdRelationsPost(int workPackageId) async {
     final response = await apiV3WorkPackagesWorkPackageIdRelationsPostWithHttpInfo(workPackageId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1787,7 +1787,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackageId');
     }
 
-    final path = '/api/v3/work_packages/{work_package_id}/watchers'
+    final path = r'/api/v3/work_packages/{work_package_id}/watchers'
       .replaceAll('{' + 'work_package_id' + '}', workPackageId.toString());
 
     Object postBody;
@@ -1798,7 +1798,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1833,7 +1833,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesWorkPackageIdWatchersGet(int workPackageId) async {
     final response = await apiV3WorkPackagesWorkPackageIdWatchersGetWithHttpInfo(workPackageId);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1859,7 +1859,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/work_packages/{work_package_id}/watchers/{id}'
+    final path = r'/api/v3/work_packages/{work_package_id}/watchers/{id}'
       .replaceAll('{' + 'work_package_id' + '}', workPackageId.toString())
       .replaceAll('{' + 'id' + '}', id.toString());
 
@@ -1871,7 +1871,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1911,7 +1911,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesWorkPackageIdWatchersIdDelete(int workPackageId, int id) async {
     final response = await apiV3WorkPackagesWorkPackageIdWatchersIdDeleteWithHttpInfo(workPackageId, id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -1933,7 +1933,7 @@ class WorkPackagesApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: workPackageId');
     }
 
-    final path = '/api/v3/work_packages/{work_package_id}/watchers'
+    final path = r'/api/v3/work_packages/{work_package_id}/watchers'
       .replaceAll('{' + 'work_package_id' + '}', workPackageId.toString());
 
     Object postBody = inlineObject6;
@@ -1944,7 +1944,7 @@ class WorkPackagesApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -1983,7 +1983,7 @@ class WorkPackagesApi {
   Future<void> apiV3WorkPackagesWorkPackageIdWatchersPost(int workPackageId, { InlineObject6 inlineObject6 }) async {
     final response = await apiV3WorkPackagesWorkPackageIdWatchersPostWithHttpInfo(workPackageId,  inlineObject6: inlineObject6 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ExampleFormPost**](FormsApi.md#apiV3ExampleFormPost) | **POST** /api/v3/example/form | show or validate form
+[**apiV3ExampleFormPost**](FormsApi.md#apiv3exampleformpost) | **POST** /api/v3/example/form | show or validate form
 
 
 # **apiV3ExampleFormPost**
@@ -25,6 +25,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = FormsApi();
 final inlineObject1 = InlineObject1(); // InlineObject1 | 
@@ -48,7 +50,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

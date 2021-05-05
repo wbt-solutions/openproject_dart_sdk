@@ -42,6 +42,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ActivitiesApi();
 final id = 56; // int | Activity id
@@ -261,6 +263,13 @@ Class | Method | HTTP request | Description
 ## basicAuth
 
 - **Type**: HTTP Basic authentication
+
+## oAuth
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: /oauth/authorize
+- **Scopes**: N/A
 
 
 ## Author

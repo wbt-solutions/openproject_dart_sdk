@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3RevisionsIdGet**](RevisionsApi.md#apiV3RevisionsIdGet) | **GET** /api/v3/revisions/{id} | View revision
+[**apiV3RevisionsIdGet**](RevisionsApi.md#apiv3revisionsidget) | **GET** /api/v3/revisions/{id} | View revision
 
 
 # **apiV3RevisionsIdGet**
@@ -23,6 +23,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = RevisionsApi();
 final id = 56; // int | Revision id
@@ -46,7 +48,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

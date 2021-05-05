@@ -28,7 +28,7 @@ class CollectionsApi {
   Future<Response> apiV3ExamplesGetWithHttpInfo({ String groupBy, String showSums }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/examples';
+    final path = r'/api/v3/examples';
 
     Object postBody;
 
@@ -45,7 +45,7 @@ class CollectionsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -82,7 +82,7 @@ class CollectionsApi {
   Future<void> apiV3ExamplesGet({ String groupBy, String showSums }) async {
     final response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

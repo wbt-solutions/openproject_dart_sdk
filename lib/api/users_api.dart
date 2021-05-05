@@ -37,7 +37,7 @@ class UsersApi {
   Future<Response> apiV3UsersGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/users';
+    final path = r'/api/v3/users';
 
     Object postBody;
 
@@ -60,7 +60,7 @@ class UsersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -106,15 +106,15 @@ class UsersApi {
   Future<Users> apiV3UsersGet({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
     final response = await apiV3UsersGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Users') as Users;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Users',) as Users;
+        }
+    return Future<Users>.value(null);
   }
 
   /// Delete user
@@ -133,7 +133,7 @@ class UsersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/users/{id}'
+    final path = r'/api/v3/users/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -144,7 +144,7 @@ class UsersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -181,7 +181,7 @@ class UsersApi {
   Future<void> apiV3UsersIdDelete(int id) async {
     final response = await apiV3UsersIdDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -199,7 +199,7 @@ class UsersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/users/{id}'
+    final path = r'/api/v3/users/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -210,7 +210,7 @@ class UsersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -245,15 +245,15 @@ class UsersApi {
   Future<User> apiV3UsersIdGet(String id) async {
     final response = await apiV3UsersIdGetWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'User') as User;
-    }
-    return null;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'User',) as User;
+        }
+    return Future<User>.value(null);
   }
 
   /// Remove Lock
@@ -270,7 +270,7 @@ class UsersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/users/{id}/lock'
+    final path = r'/api/v3/users/{id}/lock'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -281,7 +281,7 @@ class UsersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -316,7 +316,7 @@ class UsersApi {
   Future<void> apiV3UsersIdLockDelete(int id) async {
     final response = await apiV3UsersIdLockDeleteWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -334,7 +334,7 @@ class UsersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/users/{id}/lock'
+    final path = r'/api/v3/users/{id}/lock'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody;
@@ -345,7 +345,7 @@ class UsersApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -380,7 +380,7 @@ class UsersApi {
   Future<void> apiV3UsersIdLockPost(int id) async {
     final response = await apiV3UsersIdLockPostWithHttpInfo(id);
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -402,7 +402,7 @@ class UsersApi {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
     }
 
-    final path = '/api/v3/users/{id}'
+    final path = r'/api/v3/users/{id}'
       .replaceAll('{' + 'id' + '}', id.toString());
 
     Object postBody = inlineObject4;
@@ -413,7 +413,7 @@ class UsersApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -452,7 +452,7 @@ class UsersApi {
   Future<void> apiV3UsersIdPatch(int id, { InlineObject4 inlineObject4 }) async {
     final response = await apiV3UsersIdPatchWithHttpInfo(id,  inlineObject4: inlineObject4 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
@@ -468,7 +468,7 @@ class UsersApi {
   Future<Response> apiV3UsersPostWithHttpInfo({ InlineObject5 inlineObject5 }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/users';
+    final path = r'/api/v3/users';
 
     Object postBody = inlineObject5;
 
@@ -478,7 +478,7 @@ class UsersApi {
 
     final contentTypes = <String>['application/json'];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -514,7 +514,7 @@ class UsersApi {
   Future<void> apiV3UsersPost({ InlineObject5 inlineObject5 }) async {
     final response = await apiV3UsersPostWithHttpInfo( inlineObject5: inlineObject5 );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

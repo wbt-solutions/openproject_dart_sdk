@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ProjectsAvailableParentProjectsGet**](ProjectsApi.md#apiV3ProjectsAvailableParentProjectsGet) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
-[**apiV3ProjectsGet**](ProjectsApi.md#apiV3ProjectsGet) | **GET** /api/v3/projects | List projects
-[**apiV3ProjectsIdDelete**](ProjectsApi.md#apiV3ProjectsIdDelete) | **DELETE** /api/v3/projects/{id} | delete project
-[**apiV3ProjectsIdGet**](ProjectsApi.md#apiV3ProjectsIdGet) | **GET** /api/v3/projects/{id} | View project
-[**apiV3ProjectsIdPatch**](ProjectsApi.md#apiV3ProjectsIdPatch) | **PATCH** /api/v3/projects/{id} | update project
-[**apiV3ProjectsPost**](ProjectsApi.md#apiV3ProjectsPost) | **POST** /api/v3/projects | create project
-[**apiV3VersionsIdProjectsGet**](ProjectsApi.md#apiV3VersionsIdProjectsGet) | **GET** /api/v3/versions/{id}/projects | List projects with version
+[**apiV3ProjectsAvailableParentProjectsGet**](ProjectsApi.md#apiv3projectsavailableparentprojectsget) | **GET** /api/v3/projects/available_parent_projects | list available parent project candidates
+[**apiV3ProjectsGet**](ProjectsApi.md#apiv3projectsget) | **GET** /api/v3/projects | List projects
+[**apiV3ProjectsIdDelete**](ProjectsApi.md#apiv3projectsiddelete) | **DELETE** /api/v3/projects/{id} | delete project
+[**apiV3ProjectsIdGet**](ProjectsApi.md#apiv3projectsidget) | **GET** /api/v3/projects/{id} | View project
+[**apiV3ProjectsIdPatch**](ProjectsApi.md#apiv3projectsidpatch) | **PATCH** /api/v3/projects/{id} | update project
+[**apiV3ProjectsPost**](ProjectsApi.md#apiv3projectspost) | **POST** /api/v3/projects | create project
+[**apiV3VersionsIdProjectsGet**](ProjectsApi.md#apiv3versionsidprojectsget) | **GET** /api/v3/versions/{id}/projects | List projects with version
 
 
 # **apiV3ProjectsAvailableParentProjectsGet**
@@ -31,6 +31,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions.
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -81,6 +83,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
@@ -107,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -129,6 +133,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final id = 56; // int | Project id
@@ -152,7 +158,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -172,6 +178,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final id = 56; // int | Project id
@@ -196,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -218,6 +226,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final id = 56; // int | Project id
@@ -244,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -266,6 +276,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final project = Project(); // Project | New project attributes
@@ -294,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 
@@ -316,6 +328,8 @@ import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
+// TODO Configure OAuth2 access token for authorization: oAuth
+//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
 final id = 56; // int | Version id
@@ -339,7 +353,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
 
 ### HTTP request headers
 

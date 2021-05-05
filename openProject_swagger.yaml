@@ -5,6 +5,7 @@ info:
   description: ''
 security:
   - basicAuth: []
+  - oAuth: []
 paths:
   /api/v3/examples:
     get:
@@ -9384,6 +9385,13 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    oAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          scopes: {}
   schemas:
     Comment:
       type: object

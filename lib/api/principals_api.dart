@@ -28,7 +28,7 @@ class PrincipalsApi {
   Future<Response> apiV3PrincipalsGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
     // Verify required params are set.
 
-    final path = '/api/v3/principals';
+    final path = r'/api/v3/principals';
 
     Object postBody;
 
@@ -42,7 +42,7 @@ class PrincipalsApi {
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth'];
+    final authNames = <String>['basicAuth', 'oAuth'];
 
     if (
       nullableContentType != null &&
@@ -79,7 +79,7 @@ class PrincipalsApi {
   Future<void> apiV3PrincipalsGet({ List<Map<String, Object>> filters }) async {
     final response = await apiV3PrincipalsGetWithHttpInfo( filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, _decodeBodyBytes(response));
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 }

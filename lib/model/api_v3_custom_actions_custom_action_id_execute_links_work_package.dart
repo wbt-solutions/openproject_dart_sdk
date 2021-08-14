@@ -47,12 +47,12 @@ class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   static List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>[]
-      : json.map((v) => ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage> mapFromJson(Map<String, dynamic> json) {
     final map = <String, ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage {
   // maps a json object with a list of ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage-objects as value to a dart map
   static Map<String, List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = ApiV3CustomActionsCustomActionIdExecuteLinksWorkPackage.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

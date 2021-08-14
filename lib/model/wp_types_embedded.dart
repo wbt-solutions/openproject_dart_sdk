@@ -47,12 +47,12 @@ class WPTypesEmbedded {
   static List<WPTypesEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <WPTypesEmbedded>[]
-      : json.map((v) => WPTypesEmbedded.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => WPTypesEmbedded.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, WPTypesEmbedded> mapFromJson(Map<String, dynamic> json) {
     final map = <String, WPTypesEmbedded>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = WPTypesEmbedded.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = WPTypesEmbedded.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class WPTypesEmbedded {
   // maps a json object with a list of WPTypesEmbedded-objects as value to a dart map
   static Map<String, List<WPTypesEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<WPTypesEmbedded>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = WPTypesEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = WPTypesEmbedded.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

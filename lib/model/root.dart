@@ -65,12 +65,12 @@ class Root {
   static List<Root> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Root>[]
-      : json.map((v) => Root.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Root.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Root> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Root>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Root.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Root.fromJson(value));
     }
     return map;
   }
@@ -78,9 +78,9 @@ class Root {
   // maps a json object with a list of Root-objects as value to a dart map
   static Map<String, List<Root>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Root>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Root.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Root.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

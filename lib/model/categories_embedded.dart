@@ -47,12 +47,12 @@ class CategoriesEmbedded {
   static List<CategoriesEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <CategoriesEmbedded>[]
-      : json.map((v) => CategoriesEmbedded.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => CategoriesEmbedded.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, CategoriesEmbedded> mapFromJson(Map<String, dynamic> json) {
     final map = <String, CategoriesEmbedded>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = CategoriesEmbedded.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = CategoriesEmbedded.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class CategoriesEmbedded {
   // maps a json object with a list of CategoriesEmbedded-objects as value to a dart map
   static Map<String, List<CategoriesEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<CategoriesEmbedded>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = CategoriesEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = CategoriesEmbedded.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

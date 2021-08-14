@@ -47,12 +47,12 @@ class TimeEntriesActivityEmbedded {
   static List<TimeEntriesActivityEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <TimeEntriesActivityEmbedded>[]
-      : json.map((v) => TimeEntriesActivityEmbedded.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => TimeEntriesActivityEmbedded.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, TimeEntriesActivityEmbedded> mapFromJson(Map<String, dynamic> json) {
     final map = <String, TimeEntriesActivityEmbedded>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = TimeEntriesActivityEmbedded.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = TimeEntriesActivityEmbedded.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class TimeEntriesActivityEmbedded {
   // maps a json object with a list of TimeEntriesActivityEmbedded-objects as value to a dart map
   static Map<String, List<TimeEntriesActivityEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<TimeEntriesActivityEmbedded>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = TimeEntriesActivityEmbedded.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = TimeEntriesActivityEmbedded.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

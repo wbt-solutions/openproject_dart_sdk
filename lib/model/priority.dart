@@ -92,12 +92,12 @@ class Priority {
   static List<Priority> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Priority>[]
-      : json.map((v) => Priority.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Priority.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Priority> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Priority>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Priority.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Priority.fromJson(value));
     }
     return map;
   }
@@ -105,9 +105,9 @@ class Priority {
   // maps a json object with a list of Priority-objects as value to a dart map
   static Map<String, List<Priority>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Priority>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Priority.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Priority.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

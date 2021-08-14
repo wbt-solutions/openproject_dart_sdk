@@ -65,12 +65,12 @@ class Description {
   static List<Description> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Description>[]
-      : json.map((v) => Description.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Description.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Description> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Description>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Description.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Description.fromJson(value));
     }
     return map;
   }
@@ -78,9 +78,9 @@ class Description {
   // maps a json object with a list of Description-objects as value to a dart map
   static Map<String, List<Description>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Description>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Description.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Description.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

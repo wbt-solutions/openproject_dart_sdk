@@ -47,12 +47,12 @@ class InlineObject2 {
   static List<InlineObject2> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <InlineObject2>[]
-      : json.map((v) => InlineObject2.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => InlineObject2.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, InlineObject2> mapFromJson(Map<String, dynamic> json) {
     final map = <String, InlineObject2>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = InlineObject2.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = InlineObject2.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class InlineObject2 {
   // maps a json object with a list of InlineObject2-objects as value to a dart map
   static Map<String, List<InlineObject2>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<InlineObject2>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = InlineObject2.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = InlineObject2.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

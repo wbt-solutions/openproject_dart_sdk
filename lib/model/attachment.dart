@@ -112,12 +112,12 @@ class Attachment {
   static List<Attachment> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Attachment>[]
-      : json.map((v) => Attachment.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Attachment.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Attachment> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Attachment>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Attachment.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Attachment.fromJson(value));
     }
     return map;
   }
@@ -125,9 +125,9 @@ class Attachment {
   // maps a json object with a list of Attachment-objects as value to a dart map
   static Map<String, List<Attachment>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Attachment>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Attachment.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Attachment.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

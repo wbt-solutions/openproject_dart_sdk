@@ -114,12 +114,12 @@ class WorkPackagePatch {
   static List<WorkPackagePatch> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <WorkPackagePatch>[]
-      : json.map((v) => WorkPackagePatch.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => WorkPackagePatch.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, WorkPackagePatch> mapFromJson(Map<String, dynamic> json) {
     final map = <String, WorkPackagePatch>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = WorkPackagePatch.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = WorkPackagePatch.fromJson(value));
     }
     return map;
   }
@@ -127,9 +127,9 @@ class WorkPackagePatch {
   // maps a json object with a list of WorkPackagePatch-objects as value to a dart map
   static Map<String, List<WorkPackagePatch>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<WorkPackagePatch>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = WorkPackagePatch.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = WorkPackagePatch.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

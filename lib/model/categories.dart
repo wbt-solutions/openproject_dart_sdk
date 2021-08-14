@@ -65,12 +65,12 @@ class Categories {
   static List<Categories> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Categories>[]
-      : json.map((v) => Categories.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Categories.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Categories> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Categories>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Categories.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Categories.fromJson(value));
     }
     return map;
   }
@@ -78,9 +78,9 @@ class Categories {
   // maps a json object with a list of Categories-objects as value to a dart map
   static Map<String, List<Categories>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Categories>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Categories.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Categories.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

@@ -56,12 +56,12 @@ class UserPreferencesLinks {
   static List<UserPreferencesLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <UserPreferencesLinks>[]
-      : json.map((v) => UserPreferencesLinks.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => UserPreferencesLinks.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, UserPreferencesLinks> mapFromJson(Map<String, dynamic> json) {
     final map = <String, UserPreferencesLinks>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = UserPreferencesLinks.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = UserPreferencesLinks.fromJson(value));
     }
     return map;
   }
@@ -69,9 +69,9 @@ class UserPreferencesLinks {
   // maps a json object with a list of UserPreferencesLinks-objects as value to a dart map
   static Map<String, List<UserPreferencesLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<UserPreferencesLinks>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = UserPreferencesLinks.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = UserPreferencesLinks.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

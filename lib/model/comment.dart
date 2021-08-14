@@ -47,12 +47,12 @@ class Comment {
   static List<Comment> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
     json == null || json.isEmpty
       ? true == emptyIsNull ? null : <Comment>[]
-      : json.map((v) => Comment.fromJson(v)).toList(growable: true == growable);
+      : json.map((dynamic value) => Comment.fromJson(value)).toList(growable: true == growable);
 
   static Map<String, Comment> mapFromJson(Map<String, dynamic> json) {
     final map = <String, Comment>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = Comment.fromJson(v));
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) => map[key] = Comment.fromJson(value));
     }
     return map;
   }
@@ -60,9 +60,9 @@ class Comment {
   // maps a json object with a list of Comment-objects as value to a dart map
   static Map<String, List<Comment>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
     final map = <String, List<Comment>>{};
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) {
-        map[key] = Comment.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+    if (json?.isNotEmpty == true) {
+      json.forEach((key, value) {
+        map[key] = Comment.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
       });
     }
     return map;

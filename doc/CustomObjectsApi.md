@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View Custom Object
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = CustomObjectsApi();
 final id = 56; // int | The custom object's identifier
 
-try { 
+try {
     api_instance.apiV3CustomObjectsIdGet(id);
 } catch (e) {
     print('Exception when calling CustomObjectsApi->apiV3CustomObjectsIdGet: $e\n');

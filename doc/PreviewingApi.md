@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Preview plain document
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = PreviewingApi();
 
-try { 
+try {
     api_instance.apiV3RenderPlainPost();
 } catch (e) {
     print('Exception when calling PreviewingApi->apiV3RenderPlainPost: $e\n');
@@ -59,7 +59,7 @@ void (empty response body)
 
 Preview Textile document
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -71,7 +71,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = PreviewingApi();
 final context = context_example; // String | API-Link to the context in which the rendering occurs, for example a specific work package.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing work package
 
-try { 
+try {
     api_instance.apiV3RenderTextilePost(context);
 } catch (e) {
     print('Exception when calling PreviewingApi->apiV3RenderTextilePost: $e\n');

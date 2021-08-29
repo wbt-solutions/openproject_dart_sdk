@@ -23,7 +23,7 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions.
   ///
   /// * [String] of_:
@@ -31,7 +31,7 @@ class ProjectsApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point.
-  Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
+  Future<Response> apiV3ProjectsAvailableParentProjectsGetWithHttpInfo({ String filters, String of_, String sortBy }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/projects/available_parent_projects';
@@ -43,7 +43,7 @@ class ProjectsApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (of_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'of', of_));
@@ -75,7 +75,7 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions.
   ///
   /// * [String] of_:
@@ -83,7 +83,7 @@ class ProjectsApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point.
-  Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ List<Map<String, Object>> filters, String of_, String sortBy }) async {
+  Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ String filters, String of_, String sortBy }) async {
     final response = await apiV3ProjectsAvailableParentProjectsGetWithHttpInfo( filters: filters, of_: of_, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -105,12 +105,12 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Response> apiV3ProjectsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Response> apiV3ProjectsGetWithHttpInfo({ String filters, String sortBy }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/projects';
@@ -122,7 +122,7 @@ class ProjectsApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -151,12 +151,12 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Projects> apiV3ProjectsGet({ List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Projects> apiV3ProjectsGet({ String filters, String sortBy }) async {
     final response = await apiV3ProjectsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -371,12 +371,12 @@ class ProjectsApi {
   /// * [Project] project (required):
   ///   New project attributes
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Response> apiV3ProjectsPostWithHttpInfo(Project project, { List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Response> apiV3ProjectsPostWithHttpInfo(Project project, { String filters, String sortBy }) async {
     // Verify required params are set.
     if (project == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: project');
@@ -391,7 +391,7 @@ class ProjectsApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -423,12 +423,12 @@ class ProjectsApi {
   /// * [Project] project (required):
   ///   New project attributes
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Project> apiV3ProjectsPost(Project project, { List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Project> apiV3ProjectsPost(Project project, { String filters, String sortBy }) async {
     final response = await apiV3ProjectsPostWithHttpInfo(project,  filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

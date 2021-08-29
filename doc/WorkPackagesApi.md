@@ -42,7 +42,7 @@ Method | HTTP request | Description
 
 Work Package Create Form
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -54,7 +54,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the project in which the work package will be created
 
-try { 
+try {
     api_instance.apiV3ProjectsIdWorkPackagesFormPost(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3ProjectsIdWorkPackagesFormPost: $e\n');
@@ -87,7 +87,7 @@ void (empty response body)
 
 List Work Packages
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -100,12 +100,12 @@ final api_instance = WorkPackagesApi();
 final id = 56; // int | Project id
 final offset = 56; // int | Page number inside the requested collection.
 final pageSize = 56; // int | Number of elements to display per page.
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 final groupBy = groupBy_example; // String | The column to group by.
 final showSums = true; // bool | Indicates whether properties should be summed up if they support it.
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsIdWorkPackagesGet(id, offset, pageSize, filters, sortBy, groupBy, showSums);
     print(result);
 } catch (e) {
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
  **id** | **int**| Project id | 
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
  **groupBy** | **String**| The column to group by. | [optional] 
  **showSums** | **bool**| Indicates whether properties should be summed up if they support it. | [optional] [default to false]
@@ -147,7 +147,7 @@ Create Work Package
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -161,7 +161,7 @@ final id = 56; // int | Project id
 final workPackage = WorkPackage(); // WorkPackage | Work package to add to the project
 final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsIdWorkPackagesPost(id, workPackage, notify);
     print(result);
 } catch (e) {
@@ -199,7 +199,7 @@ Available assignees
 
 Gets a list of users that can be assigned to work packages in the given project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -211,7 +211,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final projectId = 56; // int | Project id
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsProjectIdAvailableAssigneesGet(projectId);
     print(result);
 } catch (e) {
@@ -247,7 +247,7 @@ Available responsibles
 
 Gets a list of users that can be assigned as the responsible of a work package in the given project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -259,7 +259,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final projectId = 56; // int | Project id
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsProjectIdAvailableResponsiblesGet(projectId);
     print(result);
 } catch (e) {
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 Work Package Create Form
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -304,7 +304,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = WorkPackagesApi();
 
-try { 
+try {
     api_instance.apiV3WorkPackagesFormPost();
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesFormPost: $e\n');
@@ -334,7 +334,7 @@ void (empty response body)
 
 List Work Packages
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -351,7 +351,7 @@ final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accept
 final groupBy = groupBy_example; // String | The column to group by.
 final showSums = true; // bool | Indicates whether properties should be summed up if they support it.
 
-try { 
+try {
     final result = api_instance.apiV3WorkPackagesGet(offset, pageSize, filters, sortBy, groupBy, showSums);
     print(result);
 } catch (e) {
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 List work package activities
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -402,7 +402,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdActivitiesGet(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesGet: $e\n');
@@ -437,7 +437,7 @@ Comment work package
 
 Creates an activity for the selected work package and, on success, returns the updated activity.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -451,7 +451,7 @@ final id = 56; // int | Work package id
 final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 final comment = Comment(); // Comment | 
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdActivitiesPost(id, notify, comment);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdActivitiesPost: $e\n');
@@ -488,7 +488,7 @@ Available projects
 
 Gets a list of projects that are available as projects to which the work package can be moved.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -500,7 +500,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdAvailableProjectsGet(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableProjectsGet: $e\n');
@@ -533,7 +533,7 @@ void (empty response body)
 
 Available relation candidates
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -545,11 +545,11 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 789; // int | ID of workpackage to return
 final pageSize = 56; // int | Maximum number of candidates to list (default 10)
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
 final query = query_example; // String | Shortcut for filtering by ID or subject
 final type = type_example; // String | Type of relation to find candidates for (default \"relates\")
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdAvailableRelationCandidatesGet(id, pageSize, filters, query, type);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableRelationCandidatesGet: $e\n');
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of workpackage to return | 
  **pageSize** | **int**| Maximum number of candidates to list (default 10) | [optional] 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
  **query** | **String**| Shortcut for filtering by ID or subject | [optional] 
  **type** | **String**| Type of relation to find candidates for (default \"relates\") | [optional] 
 
@@ -588,7 +588,7 @@ Available watchers
 
 Gets a list of users that are able to be watchers of the specified work package.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -600,7 +600,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdAvailableWatchersGet(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdAvailableWatchersGet: $e\n');
@@ -635,7 +635,7 @@ Delete Work Package
 
 Deletes the work package, as well as:  * all associated time entries  * its hierarchy of child work packages
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -647,7 +647,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdDelete(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdDelete: $e\n');
@@ -680,7 +680,7 @@ void (empty response body)
 
 Work Package Edit Form
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -692,7 +692,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the work package being modified
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdFormPost(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdFormPost: $e\n');
@@ -725,7 +725,7 @@ void (empty response body)
 
 View Work Package
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -737,7 +737,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | Work package id
 
-try { 
+try {
     final result = api_instance.apiV3WorkPackagesIdGet(id);
     print(result);
 } catch (e) {
@@ -773,7 +773,7 @@ Edit Work Package
 
 When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.  Additionally to the fields the client wants to change, it is mandatory to provide the value of `lockVersion` which was received by the `GET` request this change originates from.  The value of `lockVersion` is used to implement [optimistic locking](http://en.wikipedia.org/wiki/Optimistic_concurrency_control).
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -787,7 +787,7 @@ final id = 56; // int | Work package id
 final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 final workPackage = WorkPackage(); // WorkPackage | 
 
-try { 
+try {
     final result = api_instance.apiV3WorkPackagesIdPatch(id, notify, workPackage);
     print(result);
 } catch (e) {
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 Relation create form
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -835,7 +835,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | ID of the relation being modified
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdRelationsFormPost(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRelationsFormPost: $e\n');
@@ -870,7 +870,7 @@ Revisions
 
 Gets a list of revisions that are linked to this work package, e.g., because it is referenced in the commit message of the revision. Only linked revisions from repositories are shown if the user has the view changesets permission in the defining project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -882,7 +882,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 56; // int | work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdRevisionsGet(id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesIdRevisionsGet: $e\n');
@@ -917,7 +917,7 @@ Create Work Package
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.  A project link must be set when creating work packages through this route.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -930,7 +930,7 @@ final api_instance = WorkPackagesApi();
 final workPackage = WorkPackage(); // WorkPackage | Work package to add (a project link ist requried)
 final notify = true; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
 
-try { 
+try {
     final result = api_instance.apiV3WorkPackagesPost(workPackage, notify);
     print(result);
 } catch (e) {
@@ -967,7 +967,7 @@ List Work Package Schemas
 
 List work package schemas.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -977,9 +977,9 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = WorkPackagesApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesSchemasGet(filters);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasGet: $e\n');
@@ -990,7 +990,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id | [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id | 
 
 ### Return type
 
@@ -1012,7 +1012,7 @@ void (empty response body)
 
 View Work Package Schema
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1024,7 +1024,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final identifier = identifier_example; // String | Identifier of the schema
 
-try { 
+try {
     api_instance.apiV3WorkPackagesSchemasIdentifierGet(identifier);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesSchemasIdentifierGet: $e\n');
@@ -1059,7 +1059,7 @@ List relations
 
 Lists all relations this work package is involved in.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1071,7 +1071,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesWorkPackageIdRelationsGet(workPackageId);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsGet: $e\n');
@@ -1106,7 +1106,7 @@ Create Relation
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a Relation can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1118,7 +1118,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesWorkPackageIdRelationsPost(workPackageId);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdRelationsPost: $e\n');
@@ -1151,7 +1151,7 @@ void (empty response body)
 
 List watchers
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1163,7 +1163,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersGet(workPackageId);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersGet: $e\n');
@@ -1198,7 +1198,7 @@ Remove watcher
 
 Removes the specified user from the list of watchers for the given work package.  If the request succeeds, the specified user is not watching the work package anymore.  *Note: This might also be the case, if the specified user did not watch the work package prior to the request.*
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1211,7 +1211,7 @@ final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
 final id = 56; // int | User id
 
-try { 
+try {
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersIdDelete(workPackageId, id);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersIdDelete: $e\n');
@@ -1247,7 +1247,7 @@ Add watcher
 
 Adds a watcher to the specified work package.  The request is expected to contain a single JSON object, that contains a link object under the `user` key.  The response will be user added as watcher. In case the user was already watching the work package an `HTTP 200` is returned, an `HTTP 201` if the user was added as a new watcher.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -1260,7 +1260,7 @@ final api_instance = WorkPackagesApi();
 final workPackageId = 56; // int | Work package id
 final inlineObject6 = InlineObject6(); // InlineObject6 | 
 
-try { 
+try {
     api_instance.apiV3WorkPackagesWorkPackageIdWatchersPost(workPackageId, inlineObject6);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->apiV3WorkPackagesWorkPackageIdWatchersPost: $e\n');

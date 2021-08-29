@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View root
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -28,7 +28,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = RootApi();
 
-try { 
+try {
     final result = api_instance.apiV3Get();
     print(result);
 } catch (e) {

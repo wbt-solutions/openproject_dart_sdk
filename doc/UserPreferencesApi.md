@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Show my preferences
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = UserPreferencesApi();
 
-try { 
+try {
     final result = api_instance.apiV3MyPreferencesGet();
     print(result);
 } catch (e) {
@@ -62,7 +62,7 @@ Update UserPreferences
 
 When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -74,7 +74,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UserPreferencesApi();
 final inlineObject3 = InlineObject3(); // InlineObject3 | 
 
-try { 
+try {
     api_instance.apiV3MyPreferencesPatch(inlineObject3);
 } catch (e) {
     print('Exception when calling UserPreferencesApi->apiV3MyPreferencesPatch: $e\n');

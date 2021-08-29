@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View revision
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = RevisionsApi();
 final id = 56; // int | Revision id
 
-try { 
+try {
     api_instance.apiV3RevisionsIdGet(id);
 } catch (e) {
     print('Exception when calling RevisionsApi->apiV3RevisionsIdGet: $e\n');

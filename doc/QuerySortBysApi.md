@@ -19,7 +19,7 @@ View Query Sort By
 
 Retreive an individual QuerySortBy as identified by the id parameter.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QuerySortBysApi();
 final id = id_example; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
 
-try { 
+try {
     api_instance.apiV3QueriesSortBysIdGet(id);
 } catch (e) {
     print('Exception when calling QuerySortBysApi->apiV3QueriesSortBysIdGet: $e\n');

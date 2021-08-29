@@ -29,12 +29,12 @@ class UsersApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Response> apiV3UsersGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Response> apiV3UsersGetWithHttpInfo({ int offset, int pageSize, String filters, String sortBy }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/users';
@@ -52,7 +52,7 @@ class UsersApi {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -87,12 +87,12 @@ class UsersApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Users> apiV3UsersGet({ int offset, int pageSize, List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Users> apiV3UsersGet({ int offset, int pageSize, String filters, String sortBy }) async {
     final response = await apiV3UsersGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

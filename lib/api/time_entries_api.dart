@@ -29,9 +29,9 @@ class TimeEntriesApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
-  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
+  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, String filters }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/time_entries';
@@ -49,7 +49,7 @@ class TimeEntriesApi {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
 
     final contentTypes = <String>[];
@@ -81,9 +81,9 @@ class TimeEntriesApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
-  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, List<Map<String, Object>> filters }) async {
+  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
     final response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -225,12 +225,12 @@ class TimeEntriesApi {
   /// * [TimeEntry] timeEntry (required):
   ///   New time entry
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { String filters, String sortBy }) async {
     // Verify required params are set.
     if (timeEntry == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: timeEntry');
@@ -245,7 +245,7 @@ class TimeEntriesApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -277,12 +277,12 @@ class TimeEntriesApi {
   /// * [TimeEntry] timeEntry (required):
   ///   New time entry
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { List<Map<String, Object>> filters, String sortBy }) async {
+  Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { String filters, String sortBy }) async {
     final response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

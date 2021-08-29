@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View time entries activity
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = TimeEntryActivitiesApi();
 final id = 56; // int | time entries activity id
 
-try { 
+try {
     final result = api_instance.apiV3TimeEntriesActivitiesIdGet(id);
     print(result);
 } catch (e) {

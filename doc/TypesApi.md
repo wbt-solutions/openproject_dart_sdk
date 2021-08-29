@@ -21,7 +21,7 @@ List types available in a project
 
 This endpoint lists the types that are *available* in a given project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -33,7 +33,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = TypesApi();
 final projectId = 56; // int | ID of the project whoose types will be listed
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsProjectIdTypesGet(projectId);
     print(result);
 } catch (e) {
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 List all Types
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -78,7 +78,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = TypesApi();
 
-try { 
+try {
     final result = api_instance.apiV3TypesGet();
     print(result);
 } catch (e) {
@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 
 View Type
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -121,7 +121,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = TypesApi();
 final id = 56; // int | type id
 
-try { 
+try {
     final result = api_instance.apiV3TypesIdGet(id);
     print(result);
 } catch (e) {

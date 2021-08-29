@@ -25,7 +25,7 @@ list available parent project candidates
 
 Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -35,11 +35,11 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions.
+final filters = filters_example; // String | JSON specifying filter conditions.
 final of_ = of__example; // String | The id or identifier of the project the parent candidate is determined for
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point.
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsAvailableParentProjectsGet(filters, of_, sortBy);
     print(result);
 } catch (e) {
@@ -51,7 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. | [optional] 
  **of_** | **String**| The id or identifier of the project the parent candidate is determined for | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint and allows all the filters and sortBy supported by the project list end point. | [optional] 
 
@@ -77,7 +77,7 @@ List projects
 
 Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -87,10 +87,10 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ProjectsApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsGet(filters, sortBy);
     print(result);
 } catch (e) {
@@ -102,7 +102,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] 
 
 ### Return type
@@ -127,7 +127,7 @@ delete project
 
 Deletes the project permanently. As this is a lengthy process, the actual deletion is carried out asynchronously. So the project might exist well after the request has returned successfully. To prevent unwanted changes to the project scheduled for deletion, it is archived at once.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -139,7 +139,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = ProjectsApi();
 final id = 56; // int | Project id
 
-try { 
+try {
     api_instance.apiV3ProjectsIdDelete(id);
 } catch (e) {
     print('Exception when calling ProjectsApi->apiV3ProjectsIdDelete: $e\n');
@@ -172,7 +172,7 @@ void (empty response body)
 
 View project
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -184,7 +184,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = ProjectsApi();
 final id = 56; // int | Project id
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsIdGet(id);
     print(result);
 } catch (e) {
@@ -220,7 +220,7 @@ update project
 
 Updates the given project by applying the attributes provided in the body.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -233,7 +233,7 @@ final api_instance = ProjectsApi();
 final id = 56; // int | Project id
 final project = Project(); // Project | Project changes
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsIdPatch(id, project);
     print(result);
 } catch (e) {
@@ -270,7 +270,7 @@ create project
 
 Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -281,10 +281,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = ProjectsApi();
 final project = Project(); // Project | New project attributes
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsPost(project, filters, sortBy);
     print(result);
 } catch (e) {
@@ -297,7 +297,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project** | [**Project**](Project.md)| New project attributes | 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + ancestor: filters projects by their ancestor. A project is not considered to be it's own ancestor. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured. | [optional] 
 
 ### Return type
@@ -322,7 +322,7 @@ List projects with version
 
 This endpoint lists the projects where the given version is available.  The projects returned depend on the sharing settings of the given version, but are also limited to the projects that the current user is allowed to see.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -334,7 +334,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = ProjectsApi();
 final id = 56; // int | Version id
 
-try { 
+try {
     api_instance.apiV3VersionsIdProjectsGet(id);
 } catch (e) {
     print('Exception when calling ProjectsApi->apiV3VersionsIdProjectsGet: $e\n');

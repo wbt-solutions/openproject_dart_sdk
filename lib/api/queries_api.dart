@@ -26,7 +26,7 @@ class QueriesApi {
   /// * [int] id (required):
   ///   Id of the project the default query is requested for
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -49,7 +49,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
+  Future<Response> apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -65,7 +65,7 @@ class QueriesApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
@@ -115,7 +115,7 @@ class QueriesApi {
   /// * [int] id (required):
   ///   Id of the project the default query is requested for
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -138,7 +138,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3ProjectsIdQueriesDefaultGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
+  Future<void> apiV3ProjectsIdQueriesDefaultGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
     final response = await apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -251,7 +251,7 @@ class QueriesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -277,7 +277,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3QueriesDefaultGetWithHttpInfo({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
+  Future<Response> apiV3QueriesDefaultGetWithHttpInfo({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/queries/default';
@@ -289,7 +289,7 @@ class QueriesApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
@@ -339,7 +339,7 @@ class QueriesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -365,7 +365,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3QueriesDefaultGet({ List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
+  Future<void> apiV3QueriesDefaultGet({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
     final response = await apiV3QueriesDefaultGetWithHttpInfo( filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineZoomLevel: timelineZoomLevel, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -417,9 +417,9 @@ class QueriesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  Future<Response> apiV3QueriesGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
+  Future<Response> apiV3QueriesGetWithHttpInfo({ String filters }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/queries';
@@ -431,7 +431,7 @@ class QueriesApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
 
     final contentTypes = <String>[];
@@ -457,9 +457,9 @@ class QueriesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  Future<void> apiV3QueriesGet({ List<Map<String, Object>> filters }) async {
+  Future<void> apiV3QueriesGet({ String filters }) async {
     final response = await apiV3QueriesGetWithHttpInfo( filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -534,7 +534,7 @@ class QueriesApi {
   /// * [int] id (required):
   ///   Query id
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -560,7 +560,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3QueriesIdGetWithHttpInfo(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
+  Future<Response> apiV3QueriesIdGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -576,7 +576,7 @@ class QueriesApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (offset != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
@@ -629,7 +629,7 @@ class QueriesApi {
   /// * [int] id (required):
   ///   Query id
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
   ///
   /// * [int] offset:
@@ -655,7 +655,7 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3QueriesIdGet(int id, { List<Map<String, Object>> filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
+  Future<void> apiV3QueriesIdGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
     final response = await apiV3QueriesIdGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineLabels: timelineLabels, showHierarchies: showHierarchies );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

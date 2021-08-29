@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 View String Object
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = StringObjectsApi();
 final value = value_example; // String | The string value being resolved
 
-try { 
+try {
     api_instance.apiV3StringObjectsGet(value);
 } catch (e) {
     print('Exception when calling StringObjectsApi->apiV3StringObjectsGet: $e\n');

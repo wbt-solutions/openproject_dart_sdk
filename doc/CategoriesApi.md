@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 View Category
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -30,7 +30,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = CategoriesApi();
 final id = 56; // int | category id
 
-try { 
+try {
     final result = api_instance.apiV3CategoriesIdGet(id);
     print(result);
 } catch (e) {
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 List categories of a project
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -76,7 +76,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = CategoriesApi();
 final projectId = 56; // int | ID of the project whoose categories will be listed
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
     print(result);
 } catch (e) {

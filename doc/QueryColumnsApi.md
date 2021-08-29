@@ -19,7 +19,7 @@ View Query Column
 
 Retreive an individual QueryColumn as identified by the `id` parameter.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueryColumnsApi();
 final id = id_example; // String | QueryColumn id
 
-try { 
+try {
     api_instance.apiV3QueriesColumnsIdGet(id);
 } catch (e) {
     print('Exception when calling QueryColumnsApi->apiV3QueriesColumnsIdGet: $e\n');

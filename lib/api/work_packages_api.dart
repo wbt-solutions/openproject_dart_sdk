@@ -83,7 +83,7 @@ class WorkPackagesApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
   ///
   /// * [String] sortBy:
@@ -94,7 +94,7 @@ class WorkPackagesApi {
   ///
   /// * [bool] showSums:
   ///   Indicates whether properties should be summed up if they support it.
-  Future<Response> apiV3ProjectsIdWorkPackagesGetWithHttpInfo(int id, { int offset, int pageSize, List<Map<String, Object>> filters, String sortBy, String groupBy, bool showSums }) async {
+  Future<Response> apiV3ProjectsIdWorkPackagesGetWithHttpInfo(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -116,7 +116,7 @@ class WorkPackagesApi {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -158,7 +158,7 @@ class WorkPackagesApi {
   /// * [int] pageSize:
   ///   Number of elements to display per page.
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
   ///
   /// * [String] sortBy:
@@ -169,7 +169,7 @@ class WorkPackagesApi {
   ///
   /// * [bool] showSums:
   ///   Indicates whether properties should be summed up if they support it.
-  Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, List<Map<String, Object>> filters, String sortBy, String groupBy, bool showSums }) async {
+  Future<WorkPackages> apiV3ProjectsIdWorkPackagesGet(int id, { int offset, int pageSize, String filters, String sortBy, String groupBy, bool showSums }) async {
     final response = await apiV3ProjectsIdWorkPackagesGetWithHttpInfo(id,  offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, groupBy: groupBy, showSums: showSums );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -729,7 +729,7 @@ class WorkPackagesApi {
   /// * [int] pageSize:
   ///   Maximum number of candidates to list (default 10)
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
   ///
   /// * [String] query:
@@ -737,7 +737,7 @@ class WorkPackagesApi {
   ///
   /// * [String] type:
   ///   Type of relation to find candidates for (default \"relates\")
-  Future<Response> apiV3WorkPackagesIdAvailableRelationCandidatesGetWithHttpInfo(int id, { int pageSize, List<Map<String, Object>> filters, String query, String type }) async {
+  Future<Response> apiV3WorkPackagesIdAvailableRelationCandidatesGetWithHttpInfo(int id, { int pageSize, String filters, String query, String type }) async {
     // Verify required params are set.
     if (id == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
@@ -756,7 +756,7 @@ class WorkPackagesApi {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
     }
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (query != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'query', query));
@@ -792,7 +792,7 @@ class WorkPackagesApi {
   /// * [int] pageSize:
   ///   Maximum number of candidates to list (default 10)
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint.
   ///
   /// * [String] query:
@@ -800,7 +800,7 @@ class WorkPackagesApi {
   ///
   /// * [String] type:
   ///   Type of relation to find candidates for (default \"relates\")
-  Future<void> apiV3WorkPackagesIdAvailableRelationCandidatesGet(int id, { int pageSize, List<Map<String, Object>> filters, String query, String type }) async {
+  Future<void> apiV3WorkPackagesIdAvailableRelationCandidatesGet(int id, { int pageSize, String filters, String query, String type }) async {
     final response = await apiV3WorkPackagesIdAvailableRelationCandidatesGetWithHttpInfo(id,  pageSize: pageSize, filters: filters, query: query, type: type );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1303,9 +1303,9 @@ class WorkPackagesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters (required):
+  /// * [String] filters (required):
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
-  Future<Response> apiV3WorkPackagesSchemasGetWithHttpInfo(List<Map<String, Object>> filters) async {
+  Future<Response> apiV3WorkPackagesSchemasGetWithHttpInfo(String filters) async {
     // Verify required params are set.
     if (filters == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: filters');
@@ -1319,7 +1319,7 @@ class WorkPackagesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
 
     final contentTypes = <String>[];
     final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
@@ -1344,9 +1344,9 @@ class WorkPackagesApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters (required):
+  /// * [String] filters (required):
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + id: The schema's id
-  Future<void> apiV3WorkPackagesSchemasGet(List<Map<String, Object>> filters) async {
+  Future<void> apiV3WorkPackagesSchemasGet(String filters) async {
     final response = await apiV3WorkPackagesSchemasGetWithHttpInfo(filters);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

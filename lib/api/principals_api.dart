@@ -23,9 +23,9 @@ class PrincipalsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
-  Future<Response> apiV3PrincipalsGetWithHttpInfo({ List<Map<String, Object>> filters }) async {
+  Future<Response> apiV3PrincipalsGetWithHttpInfo({ String filters }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/principals';
@@ -37,7 +37,7 @@ class PrincipalsApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
 
     final contentTypes = <String>[];
@@ -63,9 +63,9 @@ class PrincipalsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
-  Future<void> apiV3PrincipalsGet({ List<Map<String, Object>> filters }) async {
+  Future<void> apiV3PrincipalsGet({ String filters }) async {
     final response = await apiV3PrincipalsGetWithHttpInfo( filters: filters );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

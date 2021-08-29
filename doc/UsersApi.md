@@ -25,7 +25,7 @@ List Users
 
 Lists users. Only administrators have permission to do this.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -37,10 +37,10 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final offset = 56; // int | Page number inside the requested collection.
 final pageSize = 56; // int | Number of elements to display per page.
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
 
-try { 
+try {
     final result = api_instance.apiV3UsersGet(offset, pageSize, filters, sortBy);
     print(result);
 } catch (e) {
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page number inside the requested collection. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
 
 ### Return type
@@ -79,7 +79,7 @@ Delete user
 
 Permanently deletes the specified user account.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -91,7 +91,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final id = 56; // int | User id
 
-try { 
+try {
     api_instance.apiV3UsersIdDelete(id);
 } catch (e) {
     print('Exception when calling UsersApi->apiV3UsersIdDelete: $e\n');
@@ -124,7 +124,7 @@ void (empty response body)
 
 View user
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -136,7 +136,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final id = id_example; // String | User id. Use `me` to reference current user, if any.
 
-try { 
+try {
     final result = api_instance.apiV3UsersIdGet(id);
     print(result);
 } catch (e) {
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 Remove Lock
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -182,7 +182,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final id = 56; // int | User id
 
-try { 
+try {
     api_instance.apiV3UsersIdLockDelete(id);
 } catch (e) {
     print('Exception when calling UsersApi->apiV3UsersIdLockDelete: $e\n');
@@ -215,7 +215,7 @@ void (empty response body)
 
 Set Lock
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -227,7 +227,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final id = 56; // int | User id
 
-try { 
+try {
     api_instance.apiV3UsersIdLockPost(id);
 } catch (e) {
     print('Exception when calling UsersApi->apiV3UsersIdLockPost: $e\n');
@@ -262,7 +262,7 @@ Update user
 
 Updates the user's writable attributes. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -275,7 +275,7 @@ final api_instance = UsersApi();
 final id = 56; // int | User id
 final inlineObject4 = InlineObject4(); // InlineObject4 | 
 
-try { 
+try {
     api_instance.apiV3UsersIdPatch(id, inlineObject4);
 } catch (e) {
     print('Exception when calling UsersApi->apiV3UsersIdPatch: $e\n');
@@ -311,7 +311,7 @@ Create User
 
 Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes. 2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -323,7 +323,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = UsersApi();
 final inlineObject5 = InlineObject5(); // InlineObject5 | 
 
-try { 
+try {
     api_instance.apiV3UsersPost(inlineObject5);
 } catch (e) {
     print('Exception when calling UsersApi->apiV3UsersPost: $e\n');

@@ -41,7 +41,7 @@ class Comment {
   static Comment fromJson(Map<String, dynamic> json) => json == null
     ? null
     : Comment(
-        comment: json[r'comment'],
+        comment: Description.fromJson(json[r'comment']),
     );
 
   static List<Comment> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>

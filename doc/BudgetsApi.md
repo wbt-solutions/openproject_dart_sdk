@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = BudgetsApi();
 final id = 56; // int | Budget id
 
-try { 
+try {
     final result = api_instance.apiV3BudgetsIdGet(id);
     print(result);
 } catch (e) {

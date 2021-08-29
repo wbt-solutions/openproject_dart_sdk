@@ -23,12 +23,12 @@ class RelationsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Response> apiV3RelationsGetWithHttpInfo({ List<Map<String, Object>> filters, String sortBy }) async {
+  Future<Response> apiV3RelationsGetWithHttpInfo({ String filters, String sortBy }) async {
     // Verify required params are set.
 
     final path = r'/api/v3/relations';
@@ -40,7 +40,7 @@ class RelationsApi {
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('multi', 'filters', filters));
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
     }
     if (sortBy != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
@@ -69,12 +69,12 @@ class RelationsApi {
   ///
   /// Parameters:
   ///
-  /// * [List<Map<String, Object>>] filters:
+  /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<void> apiV3RelationsGet({ List<Map<String, Object>> filters, String sortBy }) async {
+  Future<void> apiV3RelationsGet({ String filters, String sortBy }) async {
     final response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

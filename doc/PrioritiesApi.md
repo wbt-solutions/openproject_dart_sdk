@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 List all Priorities
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = PrioritiesApi();
 
-try { 
+try {
     final result = api_instance.apiV3PrioritiesGet();
     print(result);
 } catch (e) {
@@ -60,7 +60,7 @@ This endpoint does not need any parameter.
 
 View Priority
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -72,7 +72,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = PrioritiesApi();
 final id = 56; // int | Priority id
 
-try { 
+try {
     final result = api_instance.apiV3PrioritiesIdGet(id);
     print(result);
 } catch (e) {

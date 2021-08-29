@@ -19,7 +19,7 @@ view the schema
 
 This is an example of how a schema might look like. Note that this endpoint does not exist in the actual implementation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -30,7 +30,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = SchemasApi();
 
-try { 
+try {
     api_instance.apiV3ExampleSchemaGet();
 } catch (e) {
     print('Exception when calling SchemasApi->apiV3ExampleSchemaGet: $e\n');

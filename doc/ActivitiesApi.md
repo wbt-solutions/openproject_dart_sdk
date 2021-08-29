@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 View activity
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -30,7 +30,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = ActivitiesApi();
 final id = 56; // int | Activity id
 
-try { 
+try {
     final result = api_instance.apiV3ActivitiesIdGet(id);
     print(result);
 } catch (e) {
@@ -66,7 +66,7 @@ Update activity
 
 Updates an activity's comment and, on success, returns the updated activity.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -79,7 +79,7 @@ final api_instance = ActivitiesApi();
 final id = 56; // int | Activity id
 final comment = Comment(); // Comment | 
 
-try { 
+try {
     api_instance.apiV3ActivitiesIdPatch(id, comment);
 } catch (e) {
     print('Exception when calling ActivitiesApi->apiV3ActivitiesIdPatch: $e\n');

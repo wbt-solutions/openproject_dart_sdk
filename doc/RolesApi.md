@@ -20,7 +20,7 @@ List roles
 
 List all defined roles. This includes built in roles like 'Anonymous' and 'Non member'.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = RolesApi();
 
-try { 
+try {
     api_instance.apiV3RolesGet();
 } catch (e) {
     print('Exception when calling RolesApi->apiV3RolesGet: $e\n');
@@ -63,7 +63,7 @@ View role
 
 Fetch an individual role.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -75,7 +75,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = RolesApi();
 final id = 56; // int | role id
 
-try { 
+try {
     api_instance.apiV3RolesIdGet(id);
 } catch (e) {
     print('Exception when calling RolesApi->apiV3RolesIdGet: $e\n');

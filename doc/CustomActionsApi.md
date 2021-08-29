@@ -20,7 +20,7 @@ Execute custom action
 
 A POST to this end point executes the custom action on the work package provided in the payload. The altered work package will be returned. In order to avoid executing  the custom action unbeknown to a change that has already taken place, the client has to provide the work package's current lockVersion.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -33,7 +33,7 @@ final api_instance = CustomActionsApi();
 final customActionId = 56; // int | The id of the custom action to execute
 final inlineObject = InlineObject(); // InlineObject | 
 
-try { 
+try {
     api_instance.apiV3CustomActionsCustomActionIdExecutePost(customActionId, inlineObject);
 } catch (e) {
     print('Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdExecutePost: $e\n');
@@ -67,7 +67,7 @@ void (empty response body)
 
 View custom action
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -79,7 +79,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = CustomActionsApi();
 final customActionId = 56; // int | The id of the custom action to fetch
 
-try { 
+try {
     api_instance.apiV3CustomActionsCustomActionIdGet(customActionId);
 } catch (e) {
     print('Exception when calling CustomActionsApi->apiV3CustomActionsCustomActionIdGet: $e\n');

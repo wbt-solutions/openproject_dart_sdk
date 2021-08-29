@@ -19,7 +19,7 @@ show or validate form
 
 This is an example of how a form might look like. Note that this endpoint does not exist in the actual implementation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = FormsApi();
 final inlineObject1 = InlineObject1(); // InlineObject1 | 
 
-try { 
+try {
     api_instance.apiV3ExampleFormPost(inlineObject1);
 } catch (e) {
     print('Exception when calling FormsApi->apiV3ExampleFormPost: $e\n');

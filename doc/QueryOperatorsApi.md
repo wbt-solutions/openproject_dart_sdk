@@ -19,7 +19,7 @@ View Query Operator
 
 Retreive an individual QueryOperator as identified by the `id` parameter.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueryOperatorsApi();
 final id = id_example; // String | QueryOperator id
 
-try { 
+try {
     api_instance.apiV3QueriesOperatorsIdGet(id);
 } catch (e) {
     print('Exception when calling QueryOperatorsApi->apiV3QueriesOperatorsIdGet: $e\n');

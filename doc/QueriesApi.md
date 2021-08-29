@@ -31,7 +31,7 @@ View default query for project
 
 Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query. The query will already be scoped for the project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -42,7 +42,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 final id = 56; // int | Id of the project the default query is requested for
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final filters = filters_example; // String | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
 final offset = 56; // int | Page number inside the queries' result collection of work packages.
 final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
@@ -51,7 +51,7 @@ final showSums = true; // bool | Indicates whether properties should be summed u
 final timelineVisible = true; // bool | Indicates whether the timeline should be shown.
 final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
-try { 
+try {
     api_instance.apiV3ProjectsIdQueriesDefaultGet(id, filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, showHierarchies);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3ProjectsIdQueriesDefaultGet: $e\n');
@@ -63,7 +63,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Id of the project the default query is requested for | 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] 
  **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
@@ -94,7 +94,7 @@ View schema for project queries
 
 Retrieve the schema for project queries.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -106,7 +106,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueriesApi();
 final id = 789; // int | ID of project to return
 
-try { 
+try {
     api_instance.apiV3ProjectsIdQueriesSchemaGet(id);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3ProjectsIdQueriesSchemaGet: $e\n');
@@ -141,7 +141,7 @@ Available projects
 
 Gets a list of projects that are available as projects a query can be assigned to.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -152,7 +152,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 
-try { 
+try {
     api_instance.apiV3QueriesAvailableProjectsGet();
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesAvailableProjectsGet: $e\n');
@@ -184,7 +184,7 @@ View default query
 
 Same as [viewing an existing, persisted Query](#queries-query-get) in its response, this resource returns an unpersisted query and by that allows to get the default query configuration. The client may also provide additional parameters which will modify the default query.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -194,7 +194,7 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QueriesApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final filters = filters_example; // String | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
 final offset = 56; // int | Page number inside the queries' result collection of work packages.
 final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
@@ -204,7 +204,7 @@ final timelineVisible = true; // bool | Indicates whether the timeline should be
 final timelineZoomLevel = timelineZoomLevel_example; // String | Indicates in what zoom level the timeline should be shown. Valid values are  `days`, `weeks`, `months`, `quarters`, and `years`.
 final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
-try { 
+try {
     api_instance.apiV3QueriesDefaultGet(filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, timelineZoomLevel, showHierarchies);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesDefaultGet: $e\n');
@@ -215,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] 
  **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
@@ -245,7 +245,7 @@ void (empty response body)
 
 Query Create Form
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -256,7 +256,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 
-try { 
+try {
     api_instance.apiV3QueriesFormPost();
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesFormPost: $e\n');
@@ -288,7 +288,7 @@ List queries
 
 Returns a collection of queries. The collection can be filtered via query parameters similar to how work packages are filtered. Please note however, that the filters are applied to the queries and not to the work packages the queries in turn might return.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -298,9 +298,9 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = QueriesApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
 
-try { 
+try {
     api_instance.apiV3QueriesGet(filters);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesGet: $e\n');
@@ -311,7 +311,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned. | [optional] 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Delete query
 
 Delete the query identified by the id parameter
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -347,7 +347,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueriesApi();
 final id = 56; // int | Query id
 
-try { 
+try {
     api_instance.apiV3QueriesIdDelete(id);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesIdDelete: $e\n');
@@ -382,7 +382,7 @@ View query
 
 Retreive an individual query as identified by the id parameter. Then end point accepts a number of parameters that can be used to override the resources' persisted parameters.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -393,7 +393,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 final id = 56; // int | Query id
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
+final filters = filters_example; // String | JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted.
 final offset = 56; // int | Page number inside the queries' result collection of work packages.
 final pageSize = 56; // int | Number of elements to display per page for the queries' result collection of work packages.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria.
@@ -403,7 +403,7 @@ final timelineVisible = true; // bool | Indicates whether the timeline should be
 final timelineLabels = timelineLabels_example; // String | Overridden labels in the timeline view
 final showHierarchies = true; // bool | Indicates whether the hierarchy mode should be enabled.
 
-try { 
+try {
     api_instance.apiV3QueriesIdGet(id, filters, offset, pageSize, sortBy, groupBy, showSums, timelineVisible, timelineLabels, showHierarchies);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesIdGet: $e\n');
@@ -415,7 +415,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Query id | 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. The filters provided as parameters are not applied to the query but are instead used to override the query's persisted filters. All filters also accepted by the work packages endpoint are accepted. | [optional] 
  **offset** | **int**| Page number inside the queries' result collection of work packages. | [optional] [default to 1]
  **pageSize** | **int**| Number of elements to display per page for the queries' result collection of work packages. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. The sort criteria is applied to the querie's result collection of work packages overriding the query's persisted sort criteria. | [optional] 
@@ -447,7 +447,7 @@ Edit Query
 
 When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. Note that it is only allowed to provide properties or links supporting the **write** operation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -460,7 +460,7 @@ final api_instance = QueriesApi();
 final id = 56; // int | Query id
 final inlineObject2 = InlineObject2(); // InlineObject2 | 
 
-try { 
+try {
     api_instance.apiV3QueriesIdPatch(id, inlineObject2);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesIdPatch: $e\n');
@@ -494,7 +494,7 @@ void (empty response body)
 
 Star query
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -506,7 +506,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueriesApi();
 final id = 56; // int | Query id
 
-try { 
+try {
     api_instance.apiV3QueriesIdStarPatch(id);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesIdStarPatch: $e\n');
@@ -539,7 +539,7 @@ void (empty response body)
 
 Unstar query
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -551,7 +551,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueriesApi();
 final id = 56; // int | Query id
 
-try { 
+try {
     api_instance.apiV3QueriesIdUnstarPatch(id);
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesIdUnstarPatch: $e\n');
@@ -586,7 +586,7 @@ Create query
 
 When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a Query can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -597,7 +597,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 
-try { 
+try {
     api_instance.apiV3QueriesPost();
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesPost: $e\n');
@@ -629,7 +629,7 @@ View schema for global queries
 
 Retrieve the schema for global queries, those, that are not assigned to a project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -640,7 +640,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueriesApi();
 
-try { 
+try {
     api_instance.apiV3QueriesSchemaGet();
 } catch (e) {
     print('Exception when calling QueriesApi->apiV3QueriesSchemaGet: $e\n');

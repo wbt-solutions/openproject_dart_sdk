@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 List all help texts
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -29,7 +29,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = HelpTextsApi();
 
-try { 
+try {
     api_instance.apiV3HelpTextsGet();
 } catch (e) {
     print('Exception when calling HelpTextsApi->apiV3HelpTextsGet: $e\n');
@@ -59,7 +59,7 @@ void (empty response body)
 
 View help text
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -71,7 +71,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = HelpTextsApi();
 final id = 56; // int | Help text id
 
-try { 
+try {
     api_instance.apiV3HelpTextsIdGet(id);
 } catch (e) {
     print('Exception when calling HelpTextsApi->apiV3HelpTextsIdGet: $e\n');

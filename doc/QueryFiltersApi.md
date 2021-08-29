@@ -19,7 +19,7 @@ View Query Filter
 
 Retreive an individual QueryFilter as identified by the id parameter.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -31,7 +31,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueryFiltersApi();
 final id = id_example; // String | QueryFilter identifier.
 
-try { 
+try {
     api_instance.apiV3QueriesFiltersIdGet(id);
 } catch (e) {
     print('Exception when calling QueryFiltersApi->apiV3QueriesFiltersIdGet: $e\n');

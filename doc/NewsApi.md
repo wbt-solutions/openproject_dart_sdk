@@ -20,7 +20,7 @@ list news
 
 Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -33,9 +33,9 @@ final api_instance = NewsApi();
 final offset = 56; // int | Page number inside the requested collection.
 final pageSize = 56; // int | Number of elements to display per page.
 final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
 
-try { 
+try {
     final result = api_instance.apiV3NewsGet(offset, pageSize, sortBy, filters);
     print(result);
 } catch (e) {
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
  **offset** | **int**| Page number inside the requested collection. | [optional] 
  **pageSize** | **int**| Number of elements to display per page. | [optional] 
  **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint. | [optional] 
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint. | [optional] 
 
 ### Return type
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 view news
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -84,7 +84,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = NewsApi();
 final id = 56; // int | news id
 
-try { 
+try {
     final result = api_instance.apiV3NewsIdGet(id);
     print(result);
 } catch (e) {

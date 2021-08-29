@@ -21,7 +21,7 @@ List versions available in a project
 
 This endpoint lists the versions that are *available* in a given project. Note that due to sharing this might be more than the versions *defined* by that project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -33,7 +33,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = VersionsApi();
 final projectId = 56; // int | ID of the project whoose versions will be listed
 
-try { 
+try {
     final result = api_instance.apiV3ProjectsProjectIdVersionsGet(projectId);
     print(result);
 } catch (e) {
@@ -69,7 +69,7 @@ List versions
 
 Returns a collection of versions. The client can choose to filter the versions similar to how work packages are filtered. In addition to the provided filters, the server will reduce the result set to only contain versions, for which the requesting client has sufficient permissions (*view_work_packages*).
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -79,9 +79,9 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = VersionsApi();
-final filters = []; // List<Map<String, Object>> | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
+final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
 
-try { 
+try {
     final result = api_instance.apiV3VersionsGet(filters);
     print(result);
 } catch (e) {
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | [**List<Map<String, Object>>**](Map<String, Object>.md)| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] [default to const []]
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*). | [optional] 
 
 ### Return type
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 View version
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -127,7 +127,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = VersionsApi();
 final id = 56; // int | version id
 
-try { 
+try {
     final result = api_instance.apiV3VersionsIdGet(id);
     print(result);
 } catch (e) {

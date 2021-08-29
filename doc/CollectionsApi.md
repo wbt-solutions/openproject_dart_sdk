@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 view aggregated result
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -30,7 +30,7 @@ final api_instance = CollectionsApi();
 final groupBy = groupBy_example; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
 final showSums = showSums_example; // String | 
 
-try { 
+try {
     api_instance.apiV3ExamplesGet(groupBy, showSums);
 } catch (e) {
     print('Exception when calling CollectionsApi->apiV3ExamplesGet: $e\n');

@@ -21,7 +21,7 @@ List Query Filter Instance Schemas for Project
 
 Returns the list of QueryFilterInstanceSchemas defined for a query of the specified project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -33,7 +33,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueryFilterInstanceSchemaApi();
 final id = 56; // int | Id of the project.
 
-try { 
+try {
     api_instance.apiV3ProjectsIdQueriesFilterInstanceSchemasGet(id);
 } catch (e) {
     print('Exception when calling QueryFilterInstanceSchemaApi->apiV3ProjectsIdQueriesFilterInstanceSchemasGet: $e\n');
@@ -68,7 +68,7 @@ List Query Filter Instance Schemas
 
 Returns the list of QueryFilterInstanceSchemas defined for a global query. That is a query not assigned to a project.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -79,7 +79,7 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = QueryFilterInstanceSchemaApi();
 
-try { 
+try {
     api_instance.apiV3QueriesFilterInstanceSchemasGet();
 } catch (e) {
     print('Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasGet: $e\n');
@@ -111,7 +111,7 @@ View Query Filter Instance Schema
 
 Retreive an individual QueryFilterInstanceSchema as identified by the id parameter.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -123,7 +123,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = QueryFilterInstanceSchemaApi();
 final identifier = identifier_example; // String | QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
 
-try { 
+try {
     api_instance.apiV3QueriesFilterInstanceSchemasIdentifierGet(identifier);
 } catch (e) {
     print('Exception when calling QueryFilterInstanceSchemaApi->apiV3QueriesFilterInstanceSchemasIdentifierGet: $e\n');

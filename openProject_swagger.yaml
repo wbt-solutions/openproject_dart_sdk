@@ -1151,7 +1151,7 @@ paths:
             + member: filters principals by the projects they are members in.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
   /api/v3/priorities:
     get:
       responses:
@@ -1545,7 +1545,7 @@ paths:
             considered to be it's own ancestor.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -1632,7 +1632,7 @@ paths:
             considered to be it's own ancestor.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -1688,7 +1688,7 @@ paths:
           description: JSON specifying filter conditions.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: of
           in: query
           description: >-
@@ -1932,7 +1932,7 @@ paths:
             the work packages endpoint are accepted.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: offset
           in: query
           description: Page number inside the queries' result collection of work packages.
@@ -2384,7 +2384,7 @@ paths:
             the work packages endpoint are accepted.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: offset
           in: query
           description: Page number inside the queries' result collection of work packages.
@@ -2603,7 +2603,7 @@ paths:
             the work packages endpoint are accepted.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: offset
           in: query
           description: Page number inside the queries' result collection of work packages.
@@ -3151,7 +3151,7 @@ paths:
             global queries are returned.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
     post:
       responses:
         '201':
@@ -4900,7 +4900,7 @@ paths:
             + type - The type of relation to filter by, e.g. "follows".
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -5751,7 +5751,7 @@ paths:
             + user: Filter time entries by users
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
     post:
       responses:
         '201':
@@ -5827,7 +5827,7 @@ paths:
             considered to be it's own ancestor.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -6571,7 +6571,7 @@ paths:
             + login: User's login
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -6839,7 +6839,7 @@ paths:
             (*none*, *descendants*, *hierarchy*, *tree*, *system*).
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
   '/api/v3/projects/{project_id}/versions':
     get:
       responses:
@@ -7337,7 +7337,7 @@ paths:
             + id: The schema's id
           required: true
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
   '/api/v3/work_packages/{id}/form':
     post:
       responses:
@@ -7920,7 +7920,7 @@ paths:
             endpoint.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: sortBy
           in: query
           description: >-
@@ -8782,7 +8782,7 @@ paths:
             endpoint.
           required: false
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
         - name: query
           in: query
           description: Shortcut for filtering by ID or subject
@@ -9372,14 +9372,13 @@ paths:
             JSON specifying filter conditions. Accepts the same format as
             returned by the queries endpoint.
           schema:
-            $ref: "#/components/schemas/Filters"
+            type: string
 components:
   requestBodies:
     Body:
       content:
         application/json:
           schema:
-            type: object
             $ref: "#/components/schemas/Comment"
   securitySchemes:
     basicAuth:
@@ -9397,7 +9396,6 @@ components:
       type: object
       properties:
         comment:
-          type: object
           $ref: "#/components/schemas/Description"
     Activity:
       type: object
@@ -10082,46 +10080,6 @@ components:
           $ref: '#/components/schemas/Project'
         author:
           $ref: '#/components/schemas/User'
-    Filters:
-      type: array
-      items:
-        type: object
-        additionalProperties:
-          type: object
-          properties:
-            filterName:
-              type: string
-            filter:
-              $ref: "#/components/schemas/Filter"
-    Filter:
-      type: object
-      properties:
-        operator:
-          type: string
-          #enum:
-          #  - =
-          #  - '!'
-          #  - '>='
-          #  - <=
-          #  - t-
-          #  - t+
-          #  - <t+
-          #  - '>t+'
-          #  - '>t-'
-          #  - <t-
-          #  - '*'
-          #  - '!*'
-          #  - '**'
-          #  - =d
-          #  - <>d
-          #  - w
-          #  - t
-          #  - '~'
-          #  - '!~'
-        values:
-          type: array
-          items:
-            type: string
     Time_entry:
       type: object
       properties:

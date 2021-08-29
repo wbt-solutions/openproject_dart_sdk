@@ -22,7 +22,7 @@ Delete attachment
 
 Permanently deletes the specified attachment.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -34,7 +34,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = AttachmentsApi();
 final id = 56; // int | Attachment id
 
-try { 
+try {
     api_instance.apiV3AttachmentsIdDelete(id);
 } catch (e) {
     print('Exception when calling AttachmentsApi->apiV3AttachmentsIdDelete: $e\n');
@@ -67,7 +67,7 @@ void (empty response body)
 
 View attachment
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -79,7 +79,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = AttachmentsApi();
 final id = 56; // int | Attachment id
 
-try { 
+try {
     final result = api_instance.apiV3AttachmentsIdGet(id);
     print(result);
 } catch (e) {
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 List attachments
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -125,7 +125,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = AttachmentsApi();
 final id = 56; // int | ID of the work package whose attachments will be listed
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdAttachmentsGet(id);
 } catch (e) {
     print('Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsGet: $e\n');
@@ -160,7 +160,7 @@ Add attachment
 
 To add an attachment to a work package, a client needs to issue a request of type `multipart/form-data` with exactly two parts.  The first part *must* be called `metadata`. Its content type is expected to be `application/json`, the body *must* be a single JSON object, containing at least the `fileName` and optionally the attachments `description`.  The second part *must* be called `file`, its content type *should* match the mime type of the file. The body *must* be the raw content of the file. Note that a `filename` must be indicated in the `Content-Disposition` of this part, however it will be ignored. Instead the `fileName` inside the JSON of the metadata part will be used.
 
-### Example 
+### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
 // TODO Configure HTTP basic authorization: basicAuth
@@ -172,7 +172,7 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = AttachmentsApi();
 final id = 56; // int | ID of the work package to receive the attachment
 
-try { 
+try {
     api_instance.apiV3WorkPackagesIdAttachmentsPost(id);
 } catch (e) {
     print('Exception when calling AttachmentsApi->apiV3WorkPackagesIdAttachmentsPost: $e\n');

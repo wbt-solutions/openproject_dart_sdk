@@ -223,8 +223,6 @@ class ApiClient {
           return Description.fromJson(value);
         case 'Digest':
           return Digest.fromJson(value);
-        case 'Filter':
-          return Filter.fromJson(value);
         case 'InlineObject':
           return InlineObject.fromJson(value);
         case 'InlineObject1':

@@ -10080,6 +10080,46 @@ components:
           $ref: '#/components/schemas/Project'
         author:
           $ref: '#/components/schemas/User'
+    Filters:
+      type: array
+      items:
+        type: object
+        additionalProperties:
+          type: object
+          properties:
+            filterName:
+              type: string
+            filter:
+              $ref: "#/components/schemas/Filter"
+    Filter:
+      type: object
+      properties:
+        operator:
+          type: string
+          #enum:
+          #  - =
+          #  - '!'
+          #  - '>='
+          #  - <=
+          #  - t-
+          #  - t+
+          #  - <t+
+          #  - '>t+'
+          #  - '>t-'
+          #  - <t-
+          #  - '*'
+          #  - '!*'
+          #  - '**'
+          #  - =d
+          #  - <>d
+          #  - w
+          #  - t
+          #  - '~'
+          #  - '!~'
+        values:
+          type: array
+          items:
+            type: string
     Time_entry:
       type: object
       properties:

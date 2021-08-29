@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
  - [Configuration](doc\/Configuration.md)
  - [Description](doc\/Description.md)
  - [Digest](doc\/Digest.md)
+ - [Filter](doc\/Filter.md)
  - [InlineObject](doc\/InlineObject.md)
  - [InlineObject1](doc\/InlineObject1.md)
  - [InlineObject2](doc\/InlineObject2.md)

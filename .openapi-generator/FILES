@@ -25,6 +25,7 @@ doc/CustomActionsApi.md
 doc/CustomObjectsApi.md
 doc/Description.md
 doc/Digest.md
+doc/Filter.md
 doc/FormsApi.md
 doc/HelpTextsApi.md
 doc/InlineObject.md
@@ -172,6 +173,7 @@ lib/model/comment.dart
 lib/model/configuration.dart
 lib/model/description.dart
 lib/model/digest.dart
+lib/model/filter.dart
 lib/model/inline_object.dart
 lib/model/inline_object1.dart
 lib/model/inline_object2.dart

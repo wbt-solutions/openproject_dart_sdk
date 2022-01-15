@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class PreviewingApi {
-  PreviewingApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  PreviewingApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -19,27 +20,28 @@ class PreviewingApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3RenderPlainPostWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/render/plain';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -60,34 +62,33 @@ class PreviewingApi {
   ///
   /// * [String] context:
   ///   API-Link to the context in which the rendering occurs, for example a specific work package.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing work package
-  Future<Response> apiV3RenderTextilePostWithHttpInfo({ String context }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3RenderTextilePostWithHttpInfo({ String? context, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/render/textile';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (context != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'context', context));
+      queryParams.addAll(_queryParams('', 'context', context));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -98,8 +99,8 @@ class PreviewingApi {
   ///
   /// * [String] context:
   ///   API-Link to the context in which the rendering occurs, for example a specific work package.  If left out only context-agnostic rendering takes place. Please note that OpenProject features textile-extensions that can only work given a context (e.g. display attached images).  **Supported contexts:**  * `/api/v3/work_packages/{id}` - an existing work package
-  Future<void> apiV3RenderTextilePost({ String context }) async {
-    final response = await apiV3RenderTextilePostWithHttpInfo( context: context );
+  Future<void> apiV3RenderTextilePost({ String? context, }) async {
+    final response = await apiV3RenderTextilePostWithHttpInfo( context: context, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

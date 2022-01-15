@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -23,49 +24,87 @@ class PrioritiesEmbedded {
 
   @override
   int get hashCode =>
-    (elements == null ? 0 : elements.hashCode);
+    // ignore: unnecessary_parenthesis
+    (elements.hashCode);
 
   @override
   String toString() => 'PrioritiesEmbedded[elements=$elements]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (elements != null) {
       json[r'elements'] = elements;
-    }
     return json;
   }
 
   /// Returns a new [PrioritiesEmbedded] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static PrioritiesEmbedded fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : PrioritiesEmbedded(
-        elements: Priority.listFromJson(json[r'elements']),
-    );
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static PrioritiesEmbedded? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<PrioritiesEmbedded> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <PrioritiesEmbedded>[]
-      : json.map((dynamic value) => PrioritiesEmbedded.fromJson(value)).toList(growable: true == growable);
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PrioritiesEmbedded[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PrioritiesEmbedded[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
 
-  static Map<String, PrioritiesEmbedded> mapFromJson(Map<String, dynamic> json) {
+      return PrioritiesEmbedded(
+        elements: Priority.listFromJson(json[r'elements']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<PrioritiesEmbedded>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <PrioritiesEmbedded>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = PrioritiesEmbedded.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, PrioritiesEmbedded> mapFromJson(dynamic json) {
     final map = <String, PrioritiesEmbedded>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = PrioritiesEmbedded.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = PrioritiesEmbedded.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of PrioritiesEmbedded-objects as value to a dart map
-  static Map<String, List<PrioritiesEmbedded>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<PrioritiesEmbedded>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<PrioritiesEmbedded>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = PrioritiesEmbedded.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = PrioritiesEmbedded.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

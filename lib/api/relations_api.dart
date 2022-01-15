@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class RelationsApi {
-  RelationsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  RelationsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -28,37 +29,36 @@ class RelationsApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Response> apiV3RelationsGetWithHttpInfo({ String filters, String sortBy }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3RelationsGetWithHttpInfo({ String? filters, String? sortBy, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
     if (sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+      queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -74,8 +74,8 @@ class RelationsApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<void> apiV3RelationsGet({ String filters, String sortBy }) async {
-    final response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy );
+  Future<void> apiV3RelationsGet({ String? filters, String? sortBy, }) async {
+    final response = await apiV3RelationsGetWithHttpInfo( filters: filters, sortBy: sortBy, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -91,34 +91,30 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation ID
-  Future<Response> apiV3RelationsIdDeleteWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3RelationsIdDeleteWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'DELETE',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -131,8 +127,8 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation ID
-  Future<void> apiV3RelationsIdDelete(int id) async {
-    final response = await apiV3RelationsIdDeleteWithHttpInfo(id);
+  Future<void> apiV3RelationsIdDelete(int id,) async {
+    final response = await apiV3RelationsIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -146,34 +142,30 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   ID of the relation being modified
-  Future<Response> apiV3RelationsIdFormPostWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3RelationsIdFormPostWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/{id}/form'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -184,8 +176,8 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   ID of the relation being modified
-  Future<void> apiV3RelationsIdFormPost(int id) async {
-    final response = await apiV3RelationsIdFormPostWithHttpInfo(id);
+  Future<void> apiV3RelationsIdFormPost(int id,) async {
+    final response = await apiV3RelationsIdFormPostWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -199,34 +191,30 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation id
-  Future<Response> apiV3RelationsIdGetWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3RelationsIdGetWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -237,8 +225,8 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation id
-  Future<void> apiV3RelationsIdGet(int id) async {
-    final response = await apiV3RelationsIdGetWithHttpInfo(id);
+  Future<void> apiV3RelationsIdGet(int id,) async {
+    final response = await apiV3RelationsIdGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -254,34 +242,30 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation ID
-  Future<Response> apiV3RelationsIdPatchWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3RelationsIdPatchWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'PATCH',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -294,8 +278,8 @@ class RelationsApi {
   ///
   /// * [int] id (required):
   ///   Relation ID
-  Future<void> apiV3RelationsIdPatch(int id) async {
-    final response = await apiV3RelationsIdPatchWithHttpInfo(id);
+  Future<void> apiV3RelationsIdPatch(int id,) async {
+    final response = await apiV3RelationsIdPatchWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -305,27 +289,28 @@ class RelationsApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3RelationsSchemaGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/schema';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -346,34 +331,30 @@ class RelationsApi {
   ///
   /// * [String] type (required):
   ///   Type of the schema
-  Future<Response> apiV3RelationsSchemaTypeGetWithHttpInfo(String type) async {
-    // Verify required params are set.
-    if (type == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: type');
-    }
-
+  Future<Response> apiV3RelationsSchemaTypeGetWithHttpInfo(String type,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/relations/schema/{type}'
-      .replaceAll('{' + 'type' + '}', type.toString());
+      .replaceAll('{type}', type);
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -384,8 +365,8 @@ class RelationsApi {
   ///
   /// * [String] type (required):
   ///   Type of the schema
-  Future<void> apiV3RelationsSchemaTypeGet(String type) async {
-    final response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type);
+  Future<void> apiV3RelationsSchemaTypeGet(String type,) async {
+    final response = await apiV3RelationsSchemaTypeGetWithHttpInfo(type,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

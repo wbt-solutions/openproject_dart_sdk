@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -23,23 +24,71 @@ class Version {
     this.links,
   });
 
-  int id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
-  String name;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? name;
 
-  Description description;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Description? description;
 
-  DateTime startDate;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? startDate;
 
-  DateTime endDate;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? endDate;
 
-  VersionStatusEnum status;
+  VersionStatusEnum? status;
 
-  DateTime createdAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? createdAt;
 
-  DateTime updatedAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? updatedAt;
 
-  VersionLinks links;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  VersionLinks? links;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Version &&
@@ -55,15 +104,16 @@ class Version {
 
   @override
   int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (startDate == null ? 0 : startDate.hashCode) +
-    (endDate == null ? 0 : endDate.hashCode) +
-    (status == null ? 0 : status.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt.hashCode) +
-    (links == null ? 0 : links.hashCode);
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (startDate == null ? 0 : startDate!.hashCode) +
+    (endDate == null ? 0 : endDate!.hashCode) +
+    (status == null ? 0 : status!.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (updatedAt == null ? 0 : updatedAt!.hashCode) +
+    (links == null ? 0 : links!.hashCode);
 
   @override
   String toString() => 'Version[id=$id, name=$name, description=$description, startDate=$startDate, endDate=$endDate, status=$status, createdAt=$createdAt, updatedAt=$updatedAt, links=$links]';
@@ -80,19 +130,19 @@ class Version {
       json[r'description'] = description;
     }
     if (startDate != null) {
-      json[r'startDate'] = _dateFormatter.format(startDate.toUtc());
+      json[r'startDate'] = _dateFormatter.format(startDate!.toUtc());
     }
     if (endDate != null) {
-      json[r'endDate'] = _dateFormatter.format(endDate.toUtc());
+      json[r'endDate'] = _dateFormatter.format(endDate!.toUtc());
     }
     if (status != null) {
       json[r'status'] = status;
     }
     if (createdAt != null) {
-      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
+      json[r'createdAt'] = createdAt!.toUtc().toIso8601String();
     }
     if (updatedAt != null) {
-      json[r'updatedAt'] = updatedAt.toUtc().toIso8601String();
+      json[r'updatedAt'] = updatedAt!.toUtc().toIso8601String();
     }
     if (links != null) {
       json[r'_links'] = links;
@@ -101,52 +151,83 @@ class Version {
   }
 
   /// Returns a new [Version] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static Version fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : Version(
-        id: json[r'id'],
-        name: json[r'name'],
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static Version? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "Version[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "Version[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return Version(
+        id: mapValueOfType<int>(json, r'id'),
+        name: mapValueOfType<String>(json, r'name'),
         description: Description.fromJson(json[r'description']),
-        startDate: json[r'startDate'] == null
-          ? null
-          : DateTime.parse(json[r'startDate']),
-        endDate: json[r'endDate'] == null
-          ? null
-          : DateTime.parse(json[r'endDate']),
+        startDate: mapDateTime(json, r'startDate', ''),
+        endDate: mapDateTime(json, r'endDate', ''),
         status: VersionStatusEnum.fromJson(json[r'status']),
-        createdAt: json[r'createdAt'] == null
-          ? null
-          : DateTime.parse(json[r'createdAt']),
-        updatedAt: json[r'updatedAt'] == null
-          ? null
-          : DateTime.parse(json[r'updatedAt']),
+        createdAt: mapDateTime(json, r'createdAt', ''),
+        updatedAt: mapDateTime(json, r'updatedAt', ''),
         links: VersionLinks.fromJson(json[r'_links']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<Version> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <Version>[]
-      : json.map((dynamic value) => Version.fromJson(value)).toList(growable: true == growable);
+  static List<Version>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <Version>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = Version.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, Version> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, Version> mapFromJson(dynamic json) {
     final map = <String, Version>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = Version.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Version.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of Version-objects as value to a dart map
-  static Map<String, List<Version>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<Version>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<Version>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = Version.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Version.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 
 
@@ -169,23 +250,28 @@ class VersionStatusEnum {
     open,
   ];
 
-  static VersionStatusEnum fromJson(dynamic value) =>
-    VersionStatusEnumTypeTransformer().decode(value);
+  static VersionStatusEnum? fromJson(dynamic value) => VersionStatusEnumTypeTransformer().decode(value);
 
-  static List<VersionStatusEnum> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <VersionStatusEnum>[]
-      : json
-          .map((value) => VersionStatusEnum.fromJson(value))
-          .toList(growable: true == growable);
+  static List<VersionStatusEnum>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <VersionStatusEnum>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = VersionStatusEnum.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 }
 
 /// Transformation class that can [encode] an instance of [VersionStatusEnum] to String,
 /// and [decode] dynamic data back to [VersionStatusEnum].
 class VersionStatusEnumTypeTransformer {
-  const VersionStatusEnumTypeTransformer._();
+  factory VersionStatusEnumTypeTransformer() => _instance ??= const VersionStatusEnumTypeTransformer._();
 
-  factory VersionStatusEnumTypeTransformer() => _instance ??= VersionStatusEnumTypeTransformer._();
+  const VersionStatusEnumTypeTransformer._();
 
   String encode(VersionStatusEnum data) => data.value;
 
@@ -197,18 +283,21 @@ class VersionStatusEnumTypeTransformer {
   ///
   /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
   /// and users are still using an old app with the old code.
-  VersionStatusEnum decode(dynamic data, {bool allowNull}) {
-    switch (data) {
-      case r'open': return VersionStatusEnum.open;
-      default:
-        if (allowNull == false) {
-          throw ArgumentError('Unknown enum value to decode: $data');
-        }
+  VersionStatusEnum? decode(dynamic data, {bool allowNull = true}) {
+    if (data != null) {
+      switch (data.toString()) {
+        case r'open': return VersionStatusEnum.open;
+        default:
+          if (!allowNull) {
+            throw ArgumentError('Unknown enum value to decode: $data');
+          }
+      }
     }
     return null;
   }
 
   /// Singleton [VersionStatusEnumTypeTransformer] instance.
-  static VersionStatusEnumTypeTransformer _instance;
+  static VersionStatusEnumTypeTransformer? _instance;
 }
+
 

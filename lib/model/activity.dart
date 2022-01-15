@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -20,17 +21,47 @@ class Activity {
     this.links,
   });
 
-  int id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
-  int version;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? version;
 
-  Description comment;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Description? comment;
 
   List<Description> details;
 
-  DateTime createdAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? createdAt;
 
-  ActivityLinks links;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  ActivityLinks? links;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Activity &&
@@ -43,12 +74,13 @@ class Activity {
 
   @override
   int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (version == null ? 0 : version.hashCode) +
-    (comment == null ? 0 : comment.hashCode) +
-    (details == null ? 0 : details.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode) +
-    (links == null ? 0 : links.hashCode);
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (version == null ? 0 : version!.hashCode) +
+    (comment == null ? 0 : comment!.hashCode) +
+    (details.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (links == null ? 0 : links!.hashCode);
 
   @override
   String toString() => 'Activity[id=$id, version=$version, comment=$comment, details=$details, createdAt=$createdAt, links=$links]';
@@ -64,11 +96,9 @@ class Activity {
     if (comment != null) {
       json[r'comment'] = comment;
     }
-    if (details != null) {
       json[r'details'] = details;
-    }
     if (createdAt != null) {
-      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
+      json[r'createdAt'] = createdAt!.toUtc().toIso8601String();
     }
     if (links != null) {
       json[r'_links'] = links;
@@ -77,42 +107,79 @@ class Activity {
   }
 
   /// Returns a new [Activity] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static Activity fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : Activity(
-        id: json[r'id'],
-        version: json[r'version'],
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static Activity? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "Activity[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "Activity[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return Activity(
+        id: mapValueOfType<int>(json, r'id'),
+        version: mapValueOfType<int>(json, r'version'),
         comment: Description.fromJson(json[r'comment']),
-        details: Description.listFromJson(json[r'details']),
-        createdAt: json[r'createdAt'] == null
-          ? null
-          : DateTime.parse(json[r'createdAt']),
+        details: Description.listFromJson(json[r'details']) ?? const [],
+        createdAt: mapDateTime(json, r'createdAt', ''),
         links: ActivityLinks.fromJson(json[r'_links']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<Activity> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <Activity>[]
-      : json.map((dynamic value) => Activity.fromJson(value)).toList(growable: true == growable);
+  static List<Activity>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <Activity>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = Activity.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, Activity> mapFromJson(dynamic json) {
     final map = <String, Activity>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = Activity.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Activity.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of Activity-objects as value to a dart map
-  static Map<String, List<Activity>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<Activity>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<Activity>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = Activity.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Activity.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

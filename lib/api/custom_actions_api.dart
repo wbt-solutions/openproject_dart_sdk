@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class CustomActionsApi {
-  CustomActionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  CustomActionsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -27,34 +28,30 @@ class CustomActionsApi {
   ///   The id of the custom action to execute
   ///
   /// * [InlineObject] inlineObject:
-  Future<Response> apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(int customActionId, { InlineObject inlineObject }) async {
-    // Verify required params are set.
-    if (customActionId == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: customActionId');
-    }
-
+  Future<Response> apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(int customActionId, { InlineObject? inlineObject, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/custom_actions/{custom_action_id}/execute'
-      .replaceAll('{' + 'custom_action_id' + '}', customActionId.toString());
+      .replaceAll('{custom_action_id}', customActionId.toString());
 
-    Object postBody = inlineObject;
+    // ignore: prefer_final_locals
+    Object? postBody = inlineObject;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>['application/json'];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>['application/json'];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -69,8 +66,8 @@ class CustomActionsApi {
   ///   The id of the custom action to execute
   ///
   /// * [InlineObject] inlineObject:
-  Future<void> apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject inlineObject }) async {
-    final response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  inlineObject: inlineObject );
+  Future<void> apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject? inlineObject, }) async {
+    final response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  inlineObject: inlineObject, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -84,34 +81,30 @@ class CustomActionsApi {
   ///
   /// * [int] customActionId (required):
   ///   The id of the custom action to fetch
-  Future<Response> apiV3CustomActionsCustomActionIdGetWithHttpInfo(int customActionId) async {
-    // Verify required params are set.
-    if (customActionId == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: customActionId');
-    }
-
+  Future<Response> apiV3CustomActionsCustomActionIdGetWithHttpInfo(int customActionId,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/custom_actions/{custom_action_id}'
-      .replaceAll('{' + 'custom_action_id' + '}', customActionId.toString());
+      .replaceAll('{custom_action_id}', customActionId.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -122,8 +115,8 @@ class CustomActionsApi {
   ///
   /// * [int] customActionId (required):
   ///   The id of the custom action to fetch
-  Future<void> apiV3CustomActionsCustomActionIdGet(int customActionId) async {
-    final response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId);
+  Future<void> apiV3CustomActionsCustomActionIdGet(int customActionId,) async {
+    final response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

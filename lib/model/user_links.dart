@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -19,15 +20,45 @@ class UserLinks {
     this.delete,
   });
 
-  Link self;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Link? self;
 
-  Link show_;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Link? show_;
 
-  Link lock;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Link? lock;
 
-  Link updateImmediately;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Link? updateImmediately;
 
-  Link delete;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Link? delete;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserLinks &&
@@ -39,11 +70,12 @@ class UserLinks {
 
   @override
   int get hashCode =>
-    (self == null ? 0 : self.hashCode) +
-    (show_ == null ? 0 : show_.hashCode) +
-    (lock == null ? 0 : lock.hashCode) +
-    (updateImmediately == null ? 0 : updateImmediately.hashCode) +
-    (delete == null ? 0 : delete.hashCode);
+    // ignore: unnecessary_parenthesis
+    (self == null ? 0 : self!.hashCode) +
+    (show_ == null ? 0 : show_!.hashCode) +
+    (lock == null ? 0 : lock!.hashCode) +
+    (updateImmediately == null ? 0 : updateImmediately!.hashCode) +
+    (delete == null ? 0 : delete!.hashCode);
 
   @override
   String toString() => 'UserLinks[self=$self, show_=$show_, lock=$lock, updateImmediately=$updateImmediately, delete=$delete]';
@@ -69,39 +101,78 @@ class UserLinks {
   }
 
   /// Returns a new [UserLinks] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static UserLinks fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : UserLinks(
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static UserLinks? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserLinks[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserLinks[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UserLinks(
         self: Link.fromJson(json[r'self']),
         show_: Link.fromJson(json[r'show']),
         lock: Link.fromJson(json[r'lock']),
         updateImmediately: Link.fromJson(json[r'updateImmediately']),
         delete: Link.fromJson(json[r'delete']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<UserLinks> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <UserLinks>[]
-      : json.map((dynamic value) => UserLinks.fromJson(value)).toList(growable: true == growable);
+  static List<UserLinks>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UserLinks>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UserLinks.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, UserLinks> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, UserLinks> mapFromJson(dynamic json) {
     final map = <String, UserLinks>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = UserLinks.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserLinks.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UserLinks-objects as value to a dart map
-  static Map<String, List<UserLinks>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<UserLinks>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UserLinks>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = UserLinks.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserLinks.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class TimeEntriesApi {
-  TimeEntriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  TimeEntriesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -31,40 +32,39 @@ class TimeEntriesApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
-  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int offset, int pageSize, String filters }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3TimeEntriesGetWithHttpInfo({ int? offset, int? pageSize, String? filters, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/time_entries';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
+      queryParams.addAll(_queryParams('', 'offset', offset));
     }
     if (pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
+      queryParams.addAll(_queryParams('', 'pageSize', pageSize));
     }
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -83,18 +83,19 @@ class TimeEntriesApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + work_package: Filter time entries by work package  + project: Filter time entries by project  + user: Filter time entries by users
-  Future<TimeEntries> apiV3TimeEntriesGet({ int offset, int pageSize, String filters }) async {
-    final response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters );
+  Future<TimeEntries?> apiV3TimeEntriesGet({ int? offset, int? pageSize, String? filters, }) async {
+    final response = await apiV3TimeEntriesGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntries',) as TimeEntries;
-        }
-    return Future<TimeEntries>.value(null);
+    
+    }
+    return null;
   }
 
   /// delete time entry
@@ -107,34 +108,30 @@ class TimeEntriesApi {
   ///
   /// * [int] id (required):
   ///   time entry id
-  Future<Response> apiV3TimeEntriesIdDeleteWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3TimeEntriesIdDeleteWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/time_entries/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'DELETE',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -147,8 +144,8 @@ class TimeEntriesApi {
   ///
   /// * [int] id (required):
   ///   time entry id
-  Future<void> apiV3TimeEntriesIdDelete(int id) async {
-    final response = await apiV3TimeEntriesIdDeleteWithHttpInfo(id);
+  Future<void> apiV3TimeEntriesIdDelete(int id,) async {
+    final response = await apiV3TimeEntriesIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -162,34 +159,30 @@ class TimeEntriesApi {
   ///
   /// * [int] id (required):
   ///   time entry id
-  Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3TimeEntriesIdGetWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/time_entries/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -200,18 +193,19 @@ class TimeEntriesApi {
   ///
   /// * [int] id (required):
   ///   time entry id
-  Future<TimeEntry> apiV3TimeEntriesIdGet(int id) async {
-    final response = await apiV3TimeEntriesIdGetWithHttpInfo(id);
+  Future<TimeEntry?> apiV3TimeEntriesIdGet(int id,) async {
+    final response = await apiV3TimeEntriesIdGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntry',) as TimeEntry;
-        }
-    return Future<TimeEntry>.value(null);
+    
+    }
+    return null;
   }
 
   /// create time entry
@@ -230,40 +224,36 @@ class TimeEntriesApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { String filters, String sortBy }) async {
-    // Verify required params are set.
-    if (timeEntry == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: timeEntry');
-    }
-
+  Future<Response> apiV3TimeEntriesPostWithHttpInfo(TimeEntry timeEntry, { String? filters, String? sortBy, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/time_entries';
 
-    Object postBody = timeEntry;
+    // ignore: prefer_final_locals
+    Object? postBody = timeEntry;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
     if (sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+      queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
 
-    final contentTypes = <String>['application/json'];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>['application/json'];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -282,17 +272,18 @@ class TimeEntriesApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Currently supported orders are: + id + name + created_on + public + latest_activity_at + required_disk_space: There might also be additional orders based on the custom fields that have been configured.
-  Future<TimeEntry> apiV3TimeEntriesPost(TimeEntry timeEntry, { String filters, String sortBy }) async {
-    final response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy );
+  Future<TimeEntry?> apiV3TimeEntriesPost(TimeEntry timeEntry, { String? filters, String? sortBy, }) async {
+    final response = await apiV3TimeEntriesPostWithHttpInfo(timeEntry,  filters: filters, sortBy: sortBy, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntry',) as TimeEntry;
-        }
-    return Future<TimeEntry>.value(null);
+    
+    }
+    return null;
   }
 }

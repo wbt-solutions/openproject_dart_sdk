@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class VersionsApi {
-  VersionsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  VersionsApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -25,34 +26,30 @@ class VersionsApi {
   ///
   /// * [int] projectId (required):
   ///   ID of the project whoose versions will be listed
-  Future<Response> apiV3ProjectsProjectIdVersionsGetWithHttpInfo(int projectId) async {
-    // Verify required params are set.
-    if (projectId == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: projectId');
-    }
-
+  Future<Response> apiV3ProjectsProjectIdVersionsGetWithHttpInfo(int projectId,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{project_id}/versions'
-      .replaceAll('{' + 'project_id' + '}', projectId.toString());
+      .replaceAll('{project_id}', projectId.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -65,18 +62,19 @@ class VersionsApi {
   ///
   /// * [int] projectId (required):
   ///   ID of the project whoose versions will be listed
-  Future<Versions> apiV3ProjectsProjectIdVersionsGet(int projectId) async {
-    final response = await apiV3ProjectsProjectIdVersionsGetWithHttpInfo(projectId);
+  Future<Versions?> apiV3ProjectsProjectIdVersionsGet(int projectId,) async {
+    final response = await apiV3ProjectsProjectIdVersionsGetWithHttpInfo(projectId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Versions',) as Versions;
-        }
-    return Future<Versions>.value(null);
+    
+    }
+    return null;
   }
 
   /// List versions
@@ -89,34 +87,33 @@ class VersionsApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
-  Future<Response> apiV3VersionsGetWithHttpInfo({ String filters }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3VersionsGetWithHttpInfo({ String? filters, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/versions';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -129,18 +126,19 @@ class VersionsApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + sharing: filters versions by how they are shared within the server (*none*, *descendants*, *hierarchy*, *tree*, *system*).
-  Future<Versions> apiV3VersionsGet({ String filters }) async {
-    final response = await apiV3VersionsGetWithHttpInfo( filters: filters );
+  Future<Versions?> apiV3VersionsGet({ String? filters, }) async {
+    final response = await apiV3VersionsGetWithHttpInfo( filters: filters, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Versions',) as Versions;
-        }
-    return Future<Versions>.value(null);
+    
+    }
+    return null;
   }
 
   /// View version
@@ -151,34 +149,30 @@ class VersionsApi {
   ///
   /// * [int] id (required):
   ///   version id
-  Future<Response> apiV3VersionsIdGetWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3VersionsIdGetWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/versions/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -189,17 +183,18 @@ class VersionsApi {
   ///
   /// * [int] id (required):
   ///   version id
-  Future<Version> apiV3VersionsIdGet(int id) async {
-    final response = await apiV3VersionsIdGetWithHttpInfo(id);
+  Future<Version?> apiV3VersionsIdGet(int id,) async {
+    final response = await apiV3VersionsIdGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Version',) as Version;
-        }
-    return Future<Version>.value(null);
+    
+    }
+    return null;
   }
 }

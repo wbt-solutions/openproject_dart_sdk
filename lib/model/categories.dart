@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -17,11 +18,29 @@ class Categories {
     this.embedded,
   });
 
-  int total;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? total;
 
-  int count;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? count;
 
-  CategoriesEmbedded embedded;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  CategoriesEmbedded? embedded;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Categories &&
@@ -31,9 +50,10 @@ class Categories {
 
   @override
   int get hashCode =>
-    (total == null ? 0 : total.hashCode) +
-    (count == null ? 0 : count.hashCode) +
-    (embedded == null ? 0 : embedded.hashCode);
+    // ignore: unnecessary_parenthesis
+    (total == null ? 0 : total!.hashCode) +
+    (count == null ? 0 : count!.hashCode) +
+    (embedded == null ? 0 : embedded!.hashCode);
 
   @override
   String toString() => 'Categories[total=$total, count=$count, embedded=$embedded]';
@@ -53,37 +73,76 @@ class Categories {
   }
 
   /// Returns a new [Categories] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static Categories fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : Categories(
-        total: json[r'total'],
-        count: json[r'count'],
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static Categories? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "Categories[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "Categories[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return Categories(
+        total: mapValueOfType<int>(json, r'total'),
+        count: mapValueOfType<int>(json, r'count'),
         embedded: CategoriesEmbedded.fromJson(json[r'_embedded']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<Categories> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <Categories>[]
-      : json.map((dynamic value) => Categories.fromJson(value)).toList(growable: true == growable);
+  static List<Categories>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <Categories>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = Categories.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, Categories> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, Categories> mapFromJson(dynamic json) {
     final map = <String, Categories>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = Categories.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Categories.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of Categories-objects as value to a dart map
-  static Map<String, List<Categories>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<Categories>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<Categories>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = Categories.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Categories.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

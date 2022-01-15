@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -18,13 +19,37 @@ class Statuses {
     this.links,
   });
 
-  int total;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? total;
 
-  int count;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? count;
 
-  StatusesEmbedded embedded;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  StatusesEmbedded? embedded;
 
-  StatusesLinks links;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  StatusesLinks? links;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Statuses &&
@@ -35,10 +60,11 @@ class Statuses {
 
   @override
   int get hashCode =>
-    (total == null ? 0 : total.hashCode) +
-    (count == null ? 0 : count.hashCode) +
-    (embedded == null ? 0 : embedded.hashCode) +
-    (links == null ? 0 : links.hashCode);
+    // ignore: unnecessary_parenthesis
+    (total == null ? 0 : total!.hashCode) +
+    (count == null ? 0 : count!.hashCode) +
+    (embedded == null ? 0 : embedded!.hashCode) +
+    (links == null ? 0 : links!.hashCode);
 
   @override
   String toString() => 'Statuses[total=$total, count=$count, embedded=$embedded, links=$links]';
@@ -61,38 +87,77 @@ class Statuses {
   }
 
   /// Returns a new [Statuses] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static Statuses fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : Statuses(
-        total: json[r'total'],
-        count: json[r'count'],
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static Statuses? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "Statuses[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "Statuses[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return Statuses(
+        total: mapValueOfType<int>(json, r'total'),
+        count: mapValueOfType<int>(json, r'count'),
         embedded: StatusesEmbedded.fromJson(json[r'_embedded']),
         links: StatusesLinks.fromJson(json[r'_links']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<Statuses> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <Statuses>[]
-      : json.map((dynamic value) => Statuses.fromJson(value)).toList(growable: true == growable);
+  static List<Statuses>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <Statuses>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = Statuses.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, Statuses> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, Statuses> mapFromJson(dynamic json) {
     final map = <String, Statuses>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = Statuses.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Statuses.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of Statuses-objects as value to a dart map
-  static Map<String, List<Statuses>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<Statuses>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<Statuses>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = Statuses.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = Statuses.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

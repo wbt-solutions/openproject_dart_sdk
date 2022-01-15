@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -23,23 +24,65 @@ class WPType {
     this.links,
   });
 
-  int id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
-  String name;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? name;
 
-  String color;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? color;
 
-  int position;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? position;
 
   bool isDefault;
 
   bool isMilestone;
 
-  DateTime createdAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? createdAt;
 
-  DateTime updatedAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? updatedAt;
 
-  WPTypeLinks links;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  WPTypeLinks? links;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is WPType &&
@@ -55,15 +98,16 @@ class WPType {
 
   @override
   int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (color == null ? 0 : color.hashCode) +
-    (position == null ? 0 : position.hashCode) +
-    (isDefault == null ? 0 : isDefault.hashCode) +
-    (isMilestone == null ? 0 : isMilestone.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt.hashCode) +
-    (links == null ? 0 : links.hashCode);
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (color == null ? 0 : color!.hashCode) +
+    (position == null ? 0 : position!.hashCode) +
+    (isDefault.hashCode) +
+    (isMilestone.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (updatedAt == null ? 0 : updatedAt!.hashCode) +
+    (links == null ? 0 : links!.hashCode);
 
   @override
   String toString() => 'WPType[id=$id, name=$name, color=$color, position=$position, isDefault=$isDefault, isMilestone=$isMilestone, createdAt=$createdAt, updatedAt=$updatedAt, links=$links]';
@@ -82,17 +126,13 @@ class WPType {
     if (position != null) {
       json[r'position'] = position;
     }
-    if (isDefault != null) {
       json[r'isDefault'] = isDefault;
-    }
-    if (isMilestone != null) {
       json[r'isMilestone'] = isMilestone;
-    }
     if (createdAt != null) {
-      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
+      json[r'createdAt'] = createdAt!.toUtc().toIso8601String();
     }
     if (updatedAt != null) {
-      json[r'updatedAt'] = updatedAt.toUtc().toIso8601String();
+      json[r'updatedAt'] = updatedAt!.toUtc().toIso8601String();
     }
     if (links != null) {
       json[r'_links'] = links;
@@ -101,47 +141,82 @@ class WPType {
   }
 
   /// Returns a new [WPType] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static WPType fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : WPType(
-        id: json[r'id'],
-        name: json[r'name'],
-        color: json[r'color'],
-        position: json[r'position'],
-        isDefault: json[r'isDefault'],
-        isMilestone: json[r'isMilestone'],
-        createdAt: json[r'createdAt'] == null
-          ? null
-          : DateTime.parse(json[r'createdAt']),
-        updatedAt: json[r'updatedAt'] == null
-          ? null
-          : DateTime.parse(json[r'updatedAt']),
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static WPType? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "WPType[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "WPType[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return WPType(
+        id: mapValueOfType<int>(json, r'id'),
+        name: mapValueOfType<String>(json, r'name'),
+        color: mapValueOfType<String>(json, r'color'),
+        position: mapValueOfType<int>(json, r'position'),
+        isDefault: mapValueOfType<bool>(json, r'isDefault') ?? false,
+        isMilestone: mapValueOfType<bool>(json, r'isMilestone') ?? false,
+        createdAt: mapDateTime(json, r'createdAt', ''),
+        updatedAt: mapDateTime(json, r'updatedAt', ''),
         links: WPTypeLinks.fromJson(json[r'_links']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<WPType> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <WPType>[]
-      : json.map((dynamic value) => WPType.fromJson(value)).toList(growable: true == growable);
+  static List<WPType>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <WPType>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = WPType.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, WPType> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, WPType> mapFromJson(dynamic json) {
     final map = <String, WPType>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = WPType.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = WPType.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of WPType-objects as value to a dart map
-  static Map<String, List<WPType>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<WPType>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<WPType>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = WPType.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = WPType.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

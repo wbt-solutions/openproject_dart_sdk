@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class QueryFilterInstanceSchemaApi {
-  QueryFilterInstanceSchemaApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  QueryFilterInstanceSchemaApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -25,34 +26,30 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// * [int] id (required):
   ///   Id of the project.
-  Future<Response> apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}/queries/filter_instance_schemas'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -65,8 +62,8 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// * [int] id (required):
   ///   Id of the project.
-  Future<void> apiV3ProjectsIdQueriesFilterInstanceSchemasGet(int id) async {
-    final response = await apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(id);
+  Future<void> apiV3ProjectsIdQueriesFilterInstanceSchemasGet(int id,) async {
+    final response = await apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -78,27 +75,28 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesFilterInstanceSchemasGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/filter_instance_schemas';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -123,34 +121,30 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// * [String] identifier (required):
   ///   QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
-  Future<Response> apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(String identifier) async {
-    // Verify required params are set.
-    if (identifier == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: identifier');
-    }
-
+  Future<Response> apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(String identifier,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/filter_instance_schemas/{identifier}'
-      .replaceAll('{' + 'identifier' + '}', identifier.toString());
+      .replaceAll('{identifier}', identifier);
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -163,8 +157,8 @@ class QueryFilterInstanceSchemaApi {
   ///
   /// * [String] identifier (required):
   ///   QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
-  Future<void> apiV3QueriesFilterInstanceSchemasIdentifierGet(String identifier) async {
-    final response = await apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(identifier);
+  Future<void> apiV3QueriesFilterInstanceSchemasIdentifierGet(String identifier,) async {
+    final response = await apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(identifier,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

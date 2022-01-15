@@ -1,17 +1,18 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
 
 
 class QueriesApi {
-  QueriesApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  QueriesApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -49,59 +50,55 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(int id, { String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, bool? showHierarchies, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}/queries/default'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
     if (offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
+      queryParams.addAll(_queryParams('', 'offset', offset));
     }
     if (pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
+      queryParams.addAll(_queryParams('', 'pageSize', pageSize));
     }
     if (sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+      queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
     if (groupBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'groupBy', groupBy));
+      queryParams.addAll(_queryParams('', 'groupBy', groupBy));
     }
     if (showSums != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showSums', showSums));
+      queryParams.addAll(_queryParams('', 'showSums', showSums));
     }
     if (timelineVisible != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'timelineVisible', timelineVisible));
+      queryParams.addAll(_queryParams('', 'timelineVisible', timelineVisible));
     }
     if (showHierarchies != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showHierarchies', showHierarchies));
+      queryParams.addAll(_queryParams('', 'showHierarchies', showHierarchies));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -138,8 +135,8 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3ProjectsIdQueriesDefaultGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, bool showHierarchies }) async {
-    final response = await apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, showHierarchies: showHierarchies );
+  Future<void> apiV3ProjectsIdQueriesDefaultGet(int id, { String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, bool? showHierarchies, }) async {
+    final response = await apiV3ProjectsIdQueriesDefaultGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, showHierarchies: showHierarchies, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -155,34 +152,30 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   ID of project to return
-  Future<Response> apiV3ProjectsIdQueriesSchemaGetWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3ProjectsIdQueriesSchemaGetWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}/queries/schema'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -195,8 +188,8 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   ID of project to return
-  Future<void> apiV3ProjectsIdQueriesSchemaGet(int id) async {
-    final response = await apiV3ProjectsIdQueriesSchemaGetWithHttpInfo(id);
+  Future<void> apiV3ProjectsIdQueriesSchemaGet(int id,) async {
+    final response = await apiV3ProjectsIdQueriesSchemaGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -208,27 +201,28 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesAvailableProjectsGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/available_projects';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -277,58 +271,57 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3QueriesDefaultGetWithHttpInfo({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3QueriesDefaultGetWithHttpInfo({ String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, String? timelineZoomLevel, bool? showHierarchies, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/default';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
     if (offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
+      queryParams.addAll(_queryParams('', 'offset', offset));
     }
     if (pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
+      queryParams.addAll(_queryParams('', 'pageSize', pageSize));
     }
     if (sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+      queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
     if (groupBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'groupBy', groupBy));
+      queryParams.addAll(_queryParams('', 'groupBy', groupBy));
     }
     if (showSums != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showSums', showSums));
+      queryParams.addAll(_queryParams('', 'showSums', showSums));
     }
     if (timelineVisible != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'timelineVisible', timelineVisible));
+      queryParams.addAll(_queryParams('', 'timelineVisible', timelineVisible));
     }
     if (timelineZoomLevel != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'timelineZoomLevel', timelineZoomLevel));
+      queryParams.addAll(_queryParams('', 'timelineZoomLevel', timelineZoomLevel));
     }
     if (showHierarchies != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showHierarchies', showHierarchies));
+      queryParams.addAll(_queryParams('', 'showHierarchies', showHierarchies));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -365,8 +358,8 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3QueriesDefaultGet({ String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineZoomLevel, bool showHierarchies }) async {
-    final response = await apiV3QueriesDefaultGetWithHttpInfo( filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineZoomLevel: timelineZoomLevel, showHierarchies: showHierarchies );
+  Future<void> apiV3QueriesDefaultGet({ String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, String? timelineZoomLevel, bool? showHierarchies, }) async {
+    final response = await apiV3QueriesDefaultGetWithHttpInfo( filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineZoomLevel: timelineZoomLevel, showHierarchies: showHierarchies, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -376,27 +369,28 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesFormPostWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/form';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -419,34 +413,33 @@ class QueriesApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  Future<Response> apiV3QueriesGetWithHttpInfo({ String filters }) async {
-    // Verify required params are set.
-
+  Future<Response> apiV3QueriesGetWithHttpInfo({ String? filters, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -459,8 +452,8 @@ class QueriesApi {
   ///
   /// * [String] filters:
   ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + project: filters queries by the project they are assigned to. If the project filter is passed with the `!*` (not any) operator, global queries are returned.
-  Future<void> apiV3QueriesGet({ String filters }) async {
-    final response = await apiV3QueriesGetWithHttpInfo( filters: filters );
+  Future<void> apiV3QueriesGet({ String? filters, }) async {
+    final response = await apiV3QueriesGetWithHttpInfo( filters: filters, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -476,34 +469,30 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<Response> apiV3QueriesIdDeleteWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3QueriesIdDeleteWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'DELETE',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -516,8 +505,8 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<void> apiV3QueriesIdDelete(int id) async {
-    final response = await apiV3QueriesIdDeleteWithHttpInfo(id);
+  Future<void> apiV3QueriesIdDelete(int id,) async {
+    final response = await apiV3QueriesIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -560,62 +549,58 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<Response> apiV3QueriesIdGetWithHttpInfo(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3QueriesIdGetWithHttpInfo(int id, { String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, String? timelineLabels, bool? showHierarchies, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
     if (filters != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'filters', filters));
+      queryParams.addAll(_queryParams('', 'filters', filters));
     }
     if (offset != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'offset', offset));
+      queryParams.addAll(_queryParams('', 'offset', offset));
     }
     if (pageSize != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'pageSize', pageSize));
+      queryParams.addAll(_queryParams('', 'pageSize', pageSize));
     }
     if (sortBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'sortBy', sortBy));
+      queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
     if (groupBy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'groupBy', groupBy));
+      queryParams.addAll(_queryParams('', 'groupBy', groupBy));
     }
     if (showSums != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showSums', showSums));
+      queryParams.addAll(_queryParams('', 'showSums', showSums));
     }
     if (timelineVisible != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'timelineVisible', timelineVisible));
+      queryParams.addAll(_queryParams('', 'timelineVisible', timelineVisible));
     }
     if (timelineLabels != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'timelineLabels', timelineLabels));
+      queryParams.addAll(_queryParams('', 'timelineLabels', timelineLabels));
     }
     if (showHierarchies != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'showHierarchies', showHierarchies));
+      queryParams.addAll(_queryParams('', 'showHierarchies', showHierarchies));
     }
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -655,8 +640,8 @@ class QueriesApi {
   ///
   /// * [bool] showHierarchies:
   ///   Indicates whether the hierarchy mode should be enabled.
-  Future<void> apiV3QueriesIdGet(int id, { String filters, int offset, int pageSize, String sortBy, String groupBy, bool showSums, bool timelineVisible, String timelineLabels, bool showHierarchies }) async {
-    final response = await apiV3QueriesIdGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineLabels: timelineLabels, showHierarchies: showHierarchies );
+  Future<void> apiV3QueriesIdGet(int id, { String? filters, int? offset, int? pageSize, String? sortBy, String? groupBy, bool? showSums, bool? timelineVisible, String? timelineLabels, bool? showHierarchies, }) async {
+    final response = await apiV3QueriesIdGetWithHttpInfo(id,  filters: filters, offset: offset, pageSize: pageSize, sortBy: sortBy, groupBy: groupBy, showSums: showSums, timelineVisible: timelineVisible, timelineLabels: timelineLabels, showHierarchies: showHierarchies, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -674,34 +659,30 @@ class QueriesApi {
   ///   Query id
   ///
   /// * [InlineObject2] inlineObject2:
-  Future<Response> apiV3QueriesIdPatchWithHttpInfo(int id, { InlineObject2 inlineObject2 }) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3QueriesIdPatchWithHttpInfo(int id, { InlineObject2? inlineObject2, }) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/{id}'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody = inlineObject2;
+    // ignore: prefer_final_locals
+    Object? postBody = inlineObject2;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>['application/json'];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>['application/json'];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'PATCH',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -716,8 +697,8 @@ class QueriesApi {
   ///   Query id
   ///
   /// * [InlineObject2] inlineObject2:
-  Future<void> apiV3QueriesIdPatch(int id, { InlineObject2 inlineObject2 }) async {
-    final response = await apiV3QueriesIdPatchWithHttpInfo(id,  inlineObject2: inlineObject2 );
+  Future<void> apiV3QueriesIdPatch(int id, { InlineObject2? inlineObject2, }) async {
+    final response = await apiV3QueriesIdPatchWithHttpInfo(id,  inlineObject2: inlineObject2, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -731,34 +712,30 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<Response> apiV3QueriesIdStarPatchWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3QueriesIdStarPatchWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/{id}/star'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'PATCH',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -769,8 +746,8 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<void> apiV3QueriesIdStarPatch(int id) async {
-    final response = await apiV3QueriesIdStarPatchWithHttpInfo(id);
+  Future<void> apiV3QueriesIdStarPatch(int id,) async {
+    final response = await apiV3QueriesIdStarPatchWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -784,34 +761,30 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<Response> apiV3QueriesIdUnstarPatchWithHttpInfo(int id) async {
-    // Verify required params are set.
-    if (id == null) {
-     throw ApiException(HttpStatus.badRequest, 'Missing required param: id');
-    }
-
+  Future<Response> apiV3QueriesIdUnstarPatchWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/{id}/unstar'
-      .replaceAll('{' + 'id' + '}', id.toString());
+      .replaceAll('{id}', id.toString());
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'PATCH',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -822,8 +795,8 @@ class QueriesApi {
   ///
   /// * [int] id (required):
   ///   Query id
-  Future<void> apiV3QueriesIdUnstarPatch(int id) async {
-    final response = await apiV3QueriesIdUnstarPatchWithHttpInfo(id);
+  Future<void> apiV3QueriesIdUnstarPatch(int id,) async {
+    final response = await apiV3QueriesIdUnstarPatchWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -835,27 +808,28 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesPostWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'POST',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }
@@ -876,27 +850,28 @@ class QueriesApi {
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> apiV3QueriesSchemaGetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/schema';
 
-    Object postBody;
+    // ignore: prefer_final_locals
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    final contentTypes = <String>[];
-    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
-    final authNames = <String>['basicAuth', 'oAuth'];
+    const authNames = <String>['basicAuth', 'oAuth'];
+    const contentTypes = <String>[];
 
 
-    return await apiClient.invokeAPI(
+    return apiClient.invokeAPI(
       path,
       'GET',
       queryParams,
       postBody,
       headerParams,
       formParams,
-      nullableContentType,
+      contentTypes.isEmpty ? null : contentTypes.first,
       authNames,
     );
   }

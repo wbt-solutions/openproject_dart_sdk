@@ -1,10 +1,11 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
 part of openproject_dart_sdk.api;
@@ -27,31 +28,109 @@ class WorkPackage {
     this.links,
   });
 
-  int id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
-  int lockVersion;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? lockVersion;
 
-  int percentageDone;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? percentageDone;
 
-  String subject;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? subject;
 
-  Description description;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Description? description;
 
-  DateTime startDate;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? startDate;
 
-  DateTime dueDate;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? dueDate;
 
-  DateTime date;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? date;
 
-  DateTime createdAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? createdAt;
 
-  DateTime updatedAt;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? updatedAt;
 
-  String estimatedTime;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? estimatedTime;
 
-  WorkPackageEmbedded embedded;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  WorkPackageEmbedded? embedded;
 
-  WorkPackageLinks links;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  WorkPackageLinks? links;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is WorkPackage &&
@@ -71,19 +150,20 @@ class WorkPackage {
 
   @override
   int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (lockVersion == null ? 0 : lockVersion.hashCode) +
-    (percentageDone == null ? 0 : percentageDone.hashCode) +
-    (subject == null ? 0 : subject.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (startDate == null ? 0 : startDate.hashCode) +
-    (dueDate == null ? 0 : dueDate.hashCode) +
-    (date == null ? 0 : date.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt.hashCode) +
-    (estimatedTime == null ? 0 : estimatedTime.hashCode) +
-    (embedded == null ? 0 : embedded.hashCode) +
-    (links == null ? 0 : links.hashCode);
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (lockVersion == null ? 0 : lockVersion!.hashCode) +
+    (percentageDone == null ? 0 : percentageDone!.hashCode) +
+    (subject == null ? 0 : subject!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (startDate == null ? 0 : startDate!.hashCode) +
+    (dueDate == null ? 0 : dueDate!.hashCode) +
+    (date == null ? 0 : date!.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (updatedAt == null ? 0 : updatedAt!.hashCode) +
+    (estimatedTime == null ? 0 : estimatedTime!.hashCode) +
+    (embedded == null ? 0 : embedded!.hashCode) +
+    (links == null ? 0 : links!.hashCode);
 
   @override
   String toString() => 'WorkPackage[id=$id, lockVersion=$lockVersion, percentageDone=$percentageDone, subject=$subject, description=$description, startDate=$startDate, dueDate=$dueDate, date=$date, createdAt=$createdAt, updatedAt=$updatedAt, estimatedTime=$estimatedTime, embedded=$embedded, links=$links]';
@@ -106,19 +186,19 @@ class WorkPackage {
       json[r'description'] = description;
     }
     if (startDate != null) {
-      json[r'startDate'] = _dateFormatter.format(startDate.toUtc());
+      json[r'startDate'] = _dateFormatter.format(startDate!.toUtc());
     }
     if (dueDate != null) {
-      json[r'dueDate'] = _dateFormatter.format(dueDate.toUtc());
+      json[r'dueDate'] = _dateFormatter.format(dueDate!.toUtc());
     }
     if (date != null) {
-      json[r'date'] = _dateFormatter.format(date.toUtc());
+      json[r'date'] = _dateFormatter.format(date!.toUtc());
     }
     if (createdAt != null) {
-      json[r'createdAt'] = createdAt.toUtc().toIso8601String();
+      json[r'createdAt'] = createdAt!.toUtc().toIso8601String();
     }
     if (updatedAt != null) {
-      json[r'updatedAt'] = updatedAt.toUtc().toIso8601String();
+      json[r'updatedAt'] = updatedAt!.toUtc().toIso8601String();
     }
     if (estimatedTime != null) {
       json[r'estimatedTime'] = estimatedTime;
@@ -133,57 +213,86 @@ class WorkPackage {
   }
 
   /// Returns a new [WorkPackage] instance and imports its values from
-  /// [json] if it's non-null, null if [json] is null.
-  static WorkPackage fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : WorkPackage(
-        id: json[r'id'],
-        lockVersion: json[r'lockVersion'],
-        percentageDone: json[r'percentageDone'],
-        subject: json[r'subject'],
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static WorkPackage? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "WorkPackage[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "WorkPackage[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return WorkPackage(
+        id: mapValueOfType<int>(json, r'id'),
+        lockVersion: mapValueOfType<int>(json, r'lockVersion'),
+        percentageDone: mapValueOfType<int>(json, r'percentageDone'),
+        subject: mapValueOfType<String>(json, r'subject'),
         description: Description.fromJson(json[r'description']),
-        startDate: json[r'startDate'] == null
-          ? null
-          : DateTime.parse(json[r'startDate']),
-        dueDate: json[r'dueDate'] == null
-          ? null
-          : DateTime.parse(json[r'dueDate']),
-        date: json[r'date'] == null
-          ? null
-          : DateTime.parse(json[r'date']),
-        createdAt: json[r'createdAt'] == null
-          ? null
-          : DateTime.parse(json[r'createdAt']),
-        updatedAt: json[r'updatedAt'] == null
-          ? null
-          : DateTime.parse(json[r'updatedAt']),
-        estimatedTime: json[r'estimatedTime'],
+        startDate: mapDateTime(json, r'startDate', ''),
+        dueDate: mapDateTime(json, r'dueDate', ''),
+        date: mapDateTime(json, r'date', ''),
+        createdAt: mapDateTime(json, r'createdAt', ''),
+        updatedAt: mapDateTime(json, r'updatedAt', ''),
+        estimatedTime: mapValueOfType<String>(json, r'estimatedTime'),
         embedded: WorkPackageEmbedded.fromJson(json[r'_embedded']),
         links: WorkPackageLinks.fromJson(json[r'_links']),
-    );
+      );
+    }
+    return null;
+  }
 
-  static List<WorkPackage> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <WorkPackage>[]
-      : json.map((dynamic value) => WorkPackage.fromJson(value)).toList(growable: true == growable);
+  static List<WorkPackage>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <WorkPackage>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = WorkPackage.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
-  static Map<String, WorkPackage> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, WorkPackage> mapFromJson(dynamic json) {
     final map = <String, WorkPackage>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) => map[key] = WorkPackage.fromJson(value));
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = WorkPackage.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of WorkPackage-objects as value to a dart map
-  static Map<String, List<WorkPackage>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<WorkPackage>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<WorkPackage>>{};
-    if (json?.isNotEmpty == true) {
-      json.forEach((key, value) {
-        map[key] = WorkPackage.listFromJson(value, emptyIsNull: emptyIsNull, growable: growable,);
-      });
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = WorkPackage.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

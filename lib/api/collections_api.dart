@@ -18,15 +18,18 @@ class CollectionsApi {
 
   /// view aggregated result
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [String] groupBy:
-  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
   ///
-  /// * [String] showSums:
-  Future<Response> apiV3ExamplesGetWithHttpInfo({ String? groupBy, String? showSums, }) async {
+  /// * [bool] showSums:
+  ///   
+  Future<Response> viewAggregatedResultWithHttpInfo({ String? groupBy, bool? showSums, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/examples';
 
@@ -44,7 +47,6 @@ class CollectionsApi {
       queryParams.addAll(_queryParams('', 'showSums', showSums));
     }
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -56,20 +58,22 @@ class CollectionsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// view aggregated result
   ///
+  /// 
+  ///
   /// Parameters:
   ///
   /// * [String] groupBy:
-  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
+  ///   The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
   ///
-  /// * [String] showSums:
-  Future<void> apiV3ExamplesGet({ String? groupBy, String? showSums, }) async {
-    final response = await apiV3ExamplesGetWithHttpInfo( groupBy: groupBy, showSums: showSums, );
+  /// * [bool] showSums:
+  ///   
+  Future<void> viewAggregatedResult({ String? groupBy, bool? showSums, }) async {
+    final response = await viewAggregatedResultWithHttpInfo( groupBy: groupBy, showSums: showSums, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

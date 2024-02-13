@@ -5,16 +5,16 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3RolesGet**](RolesApi.md#apiv3rolesget) | **GET** /api/v3/roles | List roles
-[**apiV3RolesIdGet**](RolesApi.md#apiv3rolesidget) | **GET** /api/v3/roles/{id} | View role
+[**listRoles**](RolesApi.md#listroles) | **GET** /api/v3/roles | List roles
+[**viewRole**](RolesApi.md#viewrole) | **GET** /api/v3/roles/{id} | View role
 
 
-# **apiV3RolesGet**
-> apiV3RolesGet()
+# **listRoles**
+> Object listRoles(filters)
 
 List roles
 
@@ -23,31 +23,34 @@ List all defined roles. This includes built in roles like 'Anonymous' and 'Non m
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RolesApi();
+final filters = [{ "unit": { "operator": "=", "values": ["system"] }" }]; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + grantable: filters roles based on whether they are selectable for a membership  + unit: filters roles based on the unit ('project' or 'system') for which they are selectable for a membership
 
 try {
-    api_instance.apiV3RolesGet();
+    final result = api_instance.listRoles(filters);
+    print(result);
 } catch (e) {
-    print('Exception when calling RolesApi->apiV3RolesGet: $e\n');
+    print('Exception when calling RolesApi->listRoles: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + grantable: filters roles based on whether they are selectable for a membership  + unit: filters roles based on the unit ('project' or 'system') for which they are selectable for a membership | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -56,8 +59,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3RolesIdGet**
-> apiV3RolesIdGet(id)
+# **viewRole**
+> RoleModel viewRole(id)
 
 View role
 
@@ -66,19 +69,18 @@ Fetch an individual role.
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RolesApi();
-final id = 56; // int | role id
+final id = 1; // int | Role id
 
 try {
-    api_instance.apiV3RolesIdGet(id);
+    final result = api_instance.viewRole(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling RolesApi->apiV3RolesIdGet: $e\n');
+    print('Exception when calling RolesApi->viewRole: $e\n');
 }
 ```
 
@@ -86,15 +88,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| role id | 
+ **id** | **int**| Role id | 
 
 ### Return type
 
-void (empty response body)
+[**RoleModel**](RoleModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

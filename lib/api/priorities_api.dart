@@ -18,8 +18,10 @@ class PrioritiesApi {
 
   /// List all Priorities
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3PrioritiesGetWithHttpInfo() async {
+  Future<Response> listAllPrioritiesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/priorities';
 
@@ -30,7 +32,6 @@ class PrioritiesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -42,13 +43,14 @@ class PrioritiesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// List all Priorities
-  Future<Priorities?> apiV3PrioritiesGet() async {
-    final response = await apiV3PrioritiesGetWithHttpInfo();
+  ///
+  /// 
+  Future<Object?> listAllPriorities() async {
+    final response = await listAllPrioritiesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -56,7 +58,7 @@ class PrioritiesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Priorities',) as Priorities;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
     
     }
     return null;
@@ -64,13 +66,15 @@ class PrioritiesApi {
 
   /// View Priority
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   Priority id
-  Future<Response> apiV3PrioritiesIdGetWithHttpInfo(int id,) async {
+  Future<Response> viewPriorityWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/priorities/{id}'
       .replaceAll('{id}', id.toString());
@@ -82,7 +86,6 @@ class PrioritiesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -94,18 +97,19 @@ class PrioritiesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Priority
   ///
+  /// 
+  ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   Priority id
-  Future<Priority?> apiV3PrioritiesIdGet(int id,) async {
-    final response = await apiV3PrioritiesIdGetWithHttpInfo(id,);
+  Future<PriorityModel?> viewPriority(int id,) async {
+    final response = await viewPriorityWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -113,7 +117,7 @@ class PrioritiesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Priority',) as Priority;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PriorityModel',) as PriorityModel;
     
     }
     return null;

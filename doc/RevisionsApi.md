@@ -5,34 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3RevisionsIdGet**](RevisionsApi.md#apiv3revisionsidget) | **GET** /api/v3/revisions/{id} | View revision
+[**viewRevision**](RevisionsApi.md#viewrevision) | **GET** /api/v3/revisions/{id} | View revision
 
 
-# **apiV3RevisionsIdGet**
-> apiV3RevisionsIdGet(id)
+# **viewRevision**
+> RevisionModel viewRevision(id)
 
 View revision
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RevisionsApi();
-final id = 56; // int | Revision id
+final id = 1; // int | Revision id
 
 try {
-    api_instance.apiV3RevisionsIdGet(id);
+    final result = api_instance.viewRevision(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling RevisionsApi->apiV3RevisionsIdGet: $e\n');
+    print('Exception when calling RevisionsApi->viewRevision: $e\n');
 }
 ```
 
@@ -44,11 +45,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**RevisionModel**](RevisionModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

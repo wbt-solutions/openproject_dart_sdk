@@ -5,34 +5,34 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3Get**](RootApi.md#apiv3get) | **GET** /api/v3 | View root
+[**viewRoot**](RootApi.md#viewroot) | **GET** /api/v3 | View root
 
 
-# **apiV3Get**
-> Root apiV3Get()
+# **viewRoot**
+> RootModel viewRoot()
 
 View root
+
+Returns the root resource, containing basic information about the server instance and a collection of useful links.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RootApi();
 
 try {
-    final result = api_instance.apiV3Get();
+    final result = api_instance.viewRoot();
     print(result);
 } catch (e) {
-    print('Exception when calling RootApi->apiV3Get: $e\n');
+    print('Exception when calling RootApi->viewRoot: $e\n');
 }
 ```
 
@@ -41,16 +41,16 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Root**](Root.md)
+[**RootModel**](RootModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,23 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for StatusesApi
 void main() {
-  var instance = StatusesApi();
+  // final instance = StatusesApi();
 
   group('tests for StatusesApi', () {
     // List all Statuses
     //
-    //Future<Statuses> apiV3StatusesGet() async 
-    test('test apiV3StatusesGet', () async {
+    // 
+    //
+    //Future<StatusCollectionModel> listAllStatuses() async
+    test('test listAllStatuses', () async {
       // TODO
     });
 
     // View Status
     //
-    //Future<Status> apiV3StatusesIdGet(int id) async 
-    test('test apiV3StatusesIdGet', () async {
+    // 
+    //
+    //Future<StatusModel> viewStatus(int id) async
+    test('test viewStatus', () async {
       // TODO
     });
 

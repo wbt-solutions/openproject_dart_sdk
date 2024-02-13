@@ -13,20 +13,19 @@ part of openproject_dart_sdk.api;
 class Link {
   /// Returns a new [Link] instance.
   Link({
-    this.href,
+    required this.href,
     this.title,
-    this.method,
+    this.templated = false,
+    this.method = 'GET',
+    this.payload,
+    this.identifier,
     this.type,
   });
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? href;
+  /// URL to the referenced resource (might be relative)
+  Object? href;
 
+  /// Representative label for the resource
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -35,8 +34,31 @@ class Link {
   ///
   String? title;
 
-  LinkMethodEnum? method;
+  /// If true the href contains parts that need to be replaced by the client
+  bool templated;
 
+  /// The HTTP verb to use when requesting the resource
+  String method;
+
+  /// The payload to send in the request to achieve the desired result
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Object? payload;
+
+  /// An optional unique identifier to the link object
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? identifier;
+
+  /// The MIME-Type of the returned resource.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -47,35 +69,56 @@ class Link {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Link &&
-     other.href == href &&
-     other.title == title &&
-     other.method == method &&
-     other.type == type;
+    other.href == href &&
+    other.title == title &&
+    other.templated == templated &&
+    other.method == method &&
+    other.payload == payload &&
+    other.identifier == identifier &&
+    other.type == type;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (href == null ? 0 : href!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
-    (method == null ? 0 : method!.hashCode) +
+    (templated.hashCode) +
+    (method.hashCode) +
+    (payload == null ? 0 : payload!.hashCode) +
+    (identifier == null ? 0 : identifier!.hashCode) +
     (type == null ? 0 : type!.hashCode);
 
   @override
-  String toString() => 'Link[href=$href, title=$title, method=$method, type=$type]';
+  String toString() => 'Link[href=$href, title=$title, templated=$templated, method=$method, payload=$payload, identifier=$identifier, type=$type]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (href != null) {
-      json[r'href'] = href;
+    if (this.href != null) {
+      json[r'href'] = this.href;
+    } else {
+      json[r'href'] = null;
     }
-    if (title != null) {
-      json[r'title'] = title;
+    if (this.title != null) {
+      json[r'title'] = this.title;
+    } else {
+      json[r'title'] = null;
     }
-    if (method != null) {
-      json[r'method'] = method;
+      json[r'templated'] = this.templated;
+      json[r'method'] = this.method;
+    if (this.payload != null) {
+      json[r'payload'] = this.payload;
+    } else {
+      json[r'payload'] = null;
     }
-    if (type != null) {
-      json[r'type'] = type;
+    if (this.identifier != null) {
+      json[r'identifier'] = this.identifier;
+    } else {
+      json[r'identifier'] = null;
+    }
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
     return json;
   }
@@ -99,16 +142,19 @@ class Link {
       }());
 
       return Link(
-        href: mapValueOfType<String>(json, r'href'),
+        href: mapValueOfType<Object>(json, r'href'),
         title: mapValueOfType<String>(json, r'title'),
-        method: LinkMethodEnum.fromJson(json[r'method']),
+        templated: mapValueOfType<bool>(json, r'templated') ?? false,
+        method: mapValueOfType<String>(json, r'method') ?? 'GET',
+        payload: mapValueOfType<Object>(json, r'payload'),
+        identifier: mapValueOfType<String>(json, r'identifier'),
         type: mapValueOfType<String>(json, r'type'),
       );
     }
     return null;
   }
 
-  static List<Link>? listFromJson(dynamic json, {bool growable = false,}) {
+  static List<Link> listFromJson(dynamic json, {bool growable = false,}) {
     final result = <Link>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -139,12 +185,10 @@ class Link {
   static Map<String, List<Link>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<Link>>{};
     if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      // ignore: parameter_assignments
+      json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        final value = Link.listFromJson(entry.value, growable: growable,);
-        if (value != null) {
-          map[entry.key] = value;
-        }
+        map[entry.key] = Link.listFromJson(entry.value, growable: growable,);
       }
     }
     return map;
@@ -152,83 +196,7 @@ class Link {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'href',
   };
 }
-
-
-class LinkMethodEnum {
-  /// Instantiate a new enum with the provided [value].
-  const LinkMethodEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final String value;
-
-  @override
-  String toString() => value;
-
-  String toJson() => value;
-
-  static const patch_ = LinkMethodEnum._(r'patch');
-  static const post = LinkMethodEnum._(r'post');
-  static const get_ = LinkMethodEnum._(r'get');
-
-  /// List of all possible values in this [enum][LinkMethodEnum].
-  static const values = <LinkMethodEnum>[
-    patch_,
-    post,
-    get_,
-  ];
-
-  static LinkMethodEnum? fromJson(dynamic value) => LinkMethodEnumTypeTransformer().decode(value);
-
-  static List<LinkMethodEnum>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <LinkMethodEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = LinkMethodEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-}
-
-/// Transformation class that can [encode] an instance of [LinkMethodEnum] to String,
-/// and [decode] dynamic data back to [LinkMethodEnum].
-class LinkMethodEnumTypeTransformer {
-  factory LinkMethodEnumTypeTransformer() => _instance ??= const LinkMethodEnumTypeTransformer._();
-
-  const LinkMethodEnumTypeTransformer._();
-
-  String encode(LinkMethodEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a LinkMethodEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  LinkMethodEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data.toString()) {
-        case r'patch': return LinkMethodEnum.patch_;
-        case r'post': return LinkMethodEnum.post;
-        case r'get': return LinkMethodEnum.get_;
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
-
-  /// Singleton [LinkMethodEnumTypeTransformer] instance.
-  static LinkMethodEnumTypeTransformer? _instance;
-}
-
 

@@ -5,62 +5,16 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ActivitiesIdGet**](ActivitiesApi.md#apiv3activitiesidget) | **GET** /api/v3/activities/{id} | View activity
-[**apiV3ActivitiesIdPatch**](ActivitiesApi.md#apiv3activitiesidpatch) | **PATCH** /api/v3/activities/{id} | Update activity
+[**updateActivity**](ActivitiesApi.md#updateactivity) | **PATCH** /api/v3/activities/{id} | Update activity
+[**viewActivity**](ActivitiesApi.md#viewactivity) | **GET** /api/v3/activities/{id} | View activity
 
 
-# **apiV3ActivitiesIdGet**
-> Activity apiV3ActivitiesIdGet(id)
-
-View activity
-
-### Example
-```dart
-import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = ActivitiesApi();
-final id = 56; // int | Activity id
-
-try {
-    final result = api_instance.apiV3ActivitiesIdGet(id);
-    print(result);
-} catch (e) {
-    print('Exception when calling ActivitiesApi->apiV3ActivitiesIdGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Activity id | 
-
-### Return type
-
-[**Activity**](Activity.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiV3ActivitiesIdPatch**
-> apiV3ActivitiesIdPatch(id, comment)
+# **updateActivity**
+> ActivityModel updateActivity(id, updateActivityRequest)
 
 Update activity
 
@@ -69,20 +23,19 @@ Updates an activity's comment and, on success, returns the updated activity.
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = ActivitiesApi();
-final id = 56; // int | Activity id
-final comment = Comment(); // Comment | 
+final id = 1; // int | Activity id
+final updateActivityRequest = UpdateActivityRequest(); // UpdateActivityRequest | 
 
 try {
-    api_instance.apiV3ActivitiesIdPatch(id, comment);
+    final result = api_instance.updateActivity(id, updateActivityRequest);
+    print(result);
 } catch (e) {
-    print('Exception when calling ActivitiesApi->apiV3ActivitiesIdPatch: $e\n');
+    print('Exception when calling ActivitiesApi->updateActivity: $e\n');
 }
 ```
 
@@ -91,19 +44,65 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Activity id | 
- **comment** | [**Comment**](Comment.md)|  | [optional] 
+ **updateActivityRequest** | [**UpdateActivityRequest**](UpdateActivityRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**ActivityModel**](ActivityModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/hal+json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **viewActivity**
+> ActivityModel viewActivity(id)
+
+View activity
+
+
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = ActivitiesApi();
+final id = 1; // int | Activity id
+
+try {
+    final result = api_instance.viewActivity(id);
+    print(result);
+} catch (e) {
+    print('Exception when calling ActivitiesApi->viewActivity: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Activity id | 
+
+### Return type
+
+[**ActivityModel**](ActivityModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

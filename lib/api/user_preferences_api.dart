@@ -18,8 +18,10 @@ class UserPreferencesApi {
 
   /// Show my preferences
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3MyPreferencesGetWithHttpInfo() async {
+  Future<Response> showMyPreferencesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/my_preferences';
 
@@ -30,7 +32,6 @@ class UserPreferencesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -42,13 +43,14 @@ class UserPreferencesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// Show my preferences
-  Future<UserPreferences?> apiV3MyPreferencesGet() async {
-    final response = await apiV3MyPreferencesGetWithHttpInfo();
+  ///
+  /// 
+  Future<Object?> showMyPreferences() async {
+    final response = await showMyPreferencesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -56,13 +58,13 @@ class UserPreferencesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserPreferences',) as UserPreferences;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
     
     }
     return null;
   }
 
-  /// Update UserPreferences
+  /// Update my preferences
   ///
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
   ///
@@ -70,19 +72,18 @@ class UserPreferencesApi {
   ///
   /// Parameters:
   ///
-  /// * [InlineObject3] inlineObject3:
-  Future<Response> apiV3MyPreferencesPatchWithHttpInfo({ InlineObject3? inlineObject3, }) async {
+  /// * [UpdateUserPreferencesRequest] updateUserPreferencesRequest:
+  Future<Response> updateUserPreferencesWithHttpInfo({ UpdateUserPreferencesRequest? updateUserPreferencesRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/my_preferences';
 
     // ignore: prefer_final_locals
-    Object? postBody = inlineObject3;
+    Object? postBody = updateUserPreferencesRequest;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>['application/json'];
 
 
@@ -94,21 +95,28 @@ class UserPreferencesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// Update UserPreferences
+  /// Update my preferences
   ///
   /// When calling this endpoint the client provides a single object, containing the properties that it wants to change, in the body.
   ///
   /// Parameters:
   ///
-  /// * [InlineObject3] inlineObject3:
-  Future<void> apiV3MyPreferencesPatch({ InlineObject3? inlineObject3, }) async {
-    final response = await apiV3MyPreferencesPatchWithHttpInfo( inlineObject3: inlineObject3, );
+  /// * [UpdateUserPreferencesRequest] updateUserPreferencesRequest:
+  Future<Object?> updateUserPreferences({ UpdateUserPreferencesRequest? updateUserPreferencesRequest, }) async {
+    final response = await updateUserPreferencesWithHttpInfo( updateUserPreferencesRequest: updateUserPreferencesRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
   }
 }

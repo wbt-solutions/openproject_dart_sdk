@@ -1,23 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for PrioritiesApi
 void main() {
-  var instance = PrioritiesApi();
+  // final instance = PrioritiesApi();
 
   group('tests for PrioritiesApi', () {
     // List all Priorities
     //
-    //Future<Priorities> apiV3PrioritiesGet() async 
-    test('test apiV3PrioritiesGet', () async {
+    // 
+    //
+    //Future<Object> listAllPriorities() async
+    test('test listAllPriorities', () async {
       // TODO
     });
 
     // View Priority
     //
-    //Future<Priority> apiV3PrioritiesIdGet(int id) async 
-    test('test apiV3PrioritiesIdGet', () async {
+    // 
+    //
+    //Future<PriorityModel> viewPriority(int id) async
+    test('test viewPriority', () async {
       // TODO
     });
 

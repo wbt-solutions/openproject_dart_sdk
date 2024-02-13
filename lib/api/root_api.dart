@@ -18,8 +18,10 @@ class RootApi {
 
   /// View root
   ///
+  /// Returns the root resource, containing basic information about the server instance and a collection of useful links.
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3GetWithHttpInfo() async {
+  Future<Response> viewRootWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3';
 
@@ -30,7 +32,6 @@ class RootApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -42,13 +43,14 @@ class RootApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View root
-  Future<Root?> apiV3Get() async {
-    final response = await apiV3GetWithHttpInfo();
+  ///
+  /// Returns the root resource, containing basic information about the server instance and a collection of useful links.
+  Future<RootModel?> viewRoot() async {
+    final response = await viewRootWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -56,7 +58,7 @@ class RootApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Root',) as Root;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RootModel',) as RootModel;
     
     }
     return null;

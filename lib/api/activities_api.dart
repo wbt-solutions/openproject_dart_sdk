@@ -16,63 +16,6 @@ class ActivitiesApi {
 
   final ApiClient apiClient;
 
-  /// View activity
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   Activity id
-  Future<Response> apiV3ActivitiesIdGetWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/activities/{id}'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// View activity
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   Activity id
-  Future<Activity?> apiV3ActivitiesIdGet(int id,) async {
-    final response = await apiV3ActivitiesIdGetWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Activity',) as Activity;
-    
-    }
-    return null;
-  }
-
   /// Update activity
   ///
   /// Updates an activity's comment and, on success, returns the updated activity.
@@ -84,20 +27,19 @@ class ActivitiesApi {
   /// * [int] id (required):
   ///   Activity id
   ///
-  /// * [Comment] comment:
-  Future<Response> apiV3ActivitiesIdPatchWithHttpInfo(int id, { Comment? comment, }) async {
+  /// * [UpdateActivityRequest] updateActivityRequest:
+  Future<Response> updateActivityWithHttpInfo(int id, { UpdateActivityRequest? updateActivityRequest, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/activities/{id}'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody = comment;
+    Object? postBody = updateActivityRequest;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>['application/json'];
 
 
@@ -109,7 +51,6 @@ class ActivitiesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -122,11 +63,78 @@ class ActivitiesApi {
   /// * [int] id (required):
   ///   Activity id
   ///
-  /// * [Comment] comment:
-  Future<void> apiV3ActivitiesIdPatch(int id, { Comment? comment, }) async {
-    final response = await apiV3ActivitiesIdPatchWithHttpInfo(id,  comment: comment, );
+  /// * [UpdateActivityRequest] updateActivityRequest:
+  Future<ActivityModel?> updateActivity(int id, { UpdateActivityRequest? updateActivityRequest, }) async {
+    final response = await updateActivityWithHttpInfo(id,  updateActivityRequest: updateActivityRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ActivityModel',) as ActivityModel;
+    
+    }
+    return null;
+  }
+
+  /// View activity
+  ///
+  /// 
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   Activity id
+  Future<Response> viewActivityWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/activities/{id}'
+      .replaceAll('{id}', id.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// View activity
+  ///
+  /// 
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   Activity id
+  Future<ActivityModel?> viewActivity(int id,) async {
+    final response = await viewActivityWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ActivityModel',) as ActivityModel;
+    
+    }
+    return null;
   }
 }

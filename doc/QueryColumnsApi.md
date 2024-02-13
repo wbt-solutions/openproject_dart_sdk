@@ -5,36 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3QueriesColumnsIdGet**](QueryColumnsApi.md#apiv3queriescolumnsidget) | **GET** /api/v3/queries/columns/{id} | View Query Column
+[**viewQueryColumn**](QueryColumnsApi.md#viewquerycolumn) | **GET** /api/v3/queries/columns/{id} | View Query Column
 
 
-# **apiV3QueriesColumnsIdGet**
-> apiV3QueriesColumnsIdGet(id)
+# **viewQueryColumn**
+> QueryColumnModel viewQueryColumn(id)
 
 View Query Column
 
-Retreive an individual QueryColumn as identified by the `id` parameter.
+Retrieve an individual QueryColumn as identified by the `id` parameter.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = QueryColumnsApi();
-final id = id_example; // String | QueryColumn id
+final id = priority; // String | QueryColumn id
 
 try {
-    api_instance.apiV3QueriesColumnsIdGet(id);
+    final result = api_instance.viewQueryColumn(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling QueryColumnsApi->apiV3QueriesColumnsIdGet: $e\n');
+    print('Exception when calling QueryColumnsApi->viewQueryColumn: $e\n');
 }
 ```
 
@@ -46,11 +45,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**QueryColumnModel**](QueryColumnModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

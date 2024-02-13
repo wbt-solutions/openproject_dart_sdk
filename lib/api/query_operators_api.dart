@@ -18,7 +18,7 @@ class QueryOperatorsApi {
 
   /// View Query Operator
   ///
-  /// Retreive an individual QueryOperator as identified by the `id` parameter.
+  /// Retrieve an individual QueryOperator as identified by the `id` parameter.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -26,7 +26,7 @@ class QueryOperatorsApi {
   ///
   /// * [String] id (required):
   ///   QueryOperator id
-  Future<Response> apiV3QueriesOperatorsIdGetWithHttpInfo(String id,) async {
+  Future<Response> viewQueryOperatorWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/operators/{id}'
       .replaceAll('{id}', id);
@@ -38,7 +38,6 @@ class QueryOperatorsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -50,22 +49,29 @@ class QueryOperatorsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Query Operator
   ///
-  /// Retreive an individual QueryOperator as identified by the `id` parameter.
+  /// Retrieve an individual QueryOperator as identified by the `id` parameter.
   ///
   /// Parameters:
   ///
   /// * [String] id (required):
   ///   QueryOperator id
-  Future<void> apiV3QueriesOperatorsIdGet(String id,) async {
-    final response = await apiV3QueriesOperatorsIdGetWithHttpInfo(id,);
+  Future<QueryOperatorModel?> viewQueryOperator(String id,) async {
+    final response = await viewQueryOperatorWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'QueryOperatorModel',) as QueryOperatorModel;
+    
+    }
+    return null;
   }
 }

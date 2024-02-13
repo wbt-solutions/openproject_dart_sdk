@@ -5,70 +5,21 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3RelationsGet**](RelationsApi.md#apiv3relationsget) | **GET** /api/v3/relations | List Relations
-[**apiV3RelationsIdDelete**](RelationsApi.md#apiv3relationsiddelete) | **DELETE** /api/v3/relations/{id} | Delete Relation
-[**apiV3RelationsIdFormPost**](RelationsApi.md#apiv3relationsidformpost) | **POST** /api/v3/relations/{id}/form | Relation edit form
-[**apiV3RelationsIdGet**](RelationsApi.md#apiv3relationsidget) | **GET** /api/v3/relations/{id} | View Relation
-[**apiV3RelationsIdPatch**](RelationsApi.md#apiv3relationsidpatch) | **PATCH** /api/v3/relations/{id} | Edit Relation
-[**apiV3RelationsSchemaGet**](RelationsApi.md#apiv3relationsschemaget) | **GET** /api/v3/relations/schema | View relation schema
-[**apiV3RelationsSchemaTypeGet**](RelationsApi.md#apiv3relationsschematypeget) | **GET** /api/v3/relations/schema/{type} | View relation schema for type
+[**deleteRelation**](RelationsApi.md#deleterelation) | **DELETE** /api/v3/relations/{id} | Delete Relation
+[**editRelation**](RelationsApi.md#editrelation) | **PATCH** /api/v3/relations/{id} | Edit Relation
+[**listRelations**](RelationsApi.md#listrelations) | **GET** /api/v3/relations | List Relations
+[**relationEditForm**](RelationsApi.md#relationeditform) | **POST** /api/v3/relations/{id}/form | Relation edit form
+[**viewRelation**](RelationsApi.md#viewrelation) | **GET** /api/v3/relations/{id} | View Relation
+[**viewRelationSchema**](RelationsApi.md#viewrelationschema) | **GET** /api/v3/relations/schema | View relation schema
+[**viewRelationSchemaForType**](RelationsApi.md#viewrelationschemafortype) | **GET** /api/v3/relations/schema/{type} | View relation schema for type
 
 
-# **apiV3RelationsGet**
-> apiV3RelationsGet(filters, sortBy)
-
-List Relations
-
-Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
-
-### Example
-```dart
-import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = RelationsApi();
-final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
-final sortBy = sortBy_example; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-
-try {
-    api_instance.apiV3RelationsGet(filters, sortBy);
-} catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\". | [optional] 
- **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint. | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiV3RelationsIdDelete**
-> apiV3RelationsIdDelete(id)
+# **deleteRelation**
+> deleteRelation(id)
 
 Delete Relation
 
@@ -77,19 +28,17 @@ Deletes the relation.
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RelationsApi();
-final id = 56; // int | Relation ID
+final id = 1; // int | Relation ID
 
 try {
-    api_instance.apiV3RelationsIdDelete(id);
+    api_instance.deleteRelation(id);
 } catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsIdDelete: $e\n');
+    print('Exception when calling RelationsApi->deleteRelation: $e\n');
 }
 ```
 
@@ -105,7 +54,101 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **editRelation**
+> RelationModel editRelation(id)
+
+Edit Relation
+
+When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. It is only allowed to provide properties or links supporting the **write** operation.  Note that changing the `type` of a relation invariably also changes the respective `reverseType` as well as the \"name\" of it. The returned Relation object will reflect that change. For instance if you change a Relation's `type` to \"follows\" then the `reverseType` will be changed to `precedes`.
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = RelationsApi();
+final id = 1; // int | Relation ID
+
+try {
+    final result = api_instance.editRelation(id);
+    print(result);
+} catch (e) {
+    print('Exception when calling RelationsApi->editRelation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Relation ID | 
+
+### Return type
+
+[**RelationModel**](RelationModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listRelations**
+> Object listRelations(filters, sortBy)
+
+List Relations
+
+Lists all relations according to the given (optional, logically conjunctive) filters and ordered by ID. The response only includes relations between work packages which the user is allowed to see.
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = RelationsApi();
+final filters = [{ "from": { "operator": "=", "values": 42 }" }]; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\".
+final sortBy = [["type", "asc"]]; // String | JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
+
+try {
+    final result = api_instance.listRelations(filters, sortBy);
+    print(result);
+} catch (e) {
+    print('Exception when calling RelationsApi->listRelations: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Valid fields to filter by are:  + id - ID of relation  + from - ID of work package from which the filtered relations emanates.  + to - ID of work package to which this related points.  + involved - ID of either the `from` or the `to` work package.  + type - The type of relation to filter by, e.g. \"follows\". | [optional] 
+ **sortBy** | **String**| JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. | [optional] 
+
+### Return type
+
+[**Object**](Object.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -114,27 +157,28 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3RelationsIdFormPost**
-> apiV3RelationsIdFormPost(id)
+# **relationEditForm**
+> Object relationEditForm(id)
 
 Relation edit form
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RelationsApi();
-final id = 56; // int | ID of the relation being modified
+final id = 1; // int | ID of the relation being modified
 
 try {
-    api_instance.apiV3RelationsIdFormPost(id);
+    final result = api_instance.relationEditForm(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsIdFormPost: $e\n');
+    print('Exception when calling RelationsApi->relationEditForm: $e\n');
 }
 ```
 
@@ -146,11 +190,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -159,27 +203,28 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3RelationsIdGet**
-> apiV3RelationsIdGet(id)
+# **viewRelation**
+> RelationModel viewRelation(id)
 
 View Relation
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RelationsApi();
-final id = 56; // int | Relation id
+final id = 1; // int | Relation id
 
 try {
-    api_instance.apiV3RelationsIdGet(id);
+    final result = api_instance.viewRelation(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsIdGet: $e\n');
+    print('Exception when calling RelationsApi->viewRelation: $e\n');
 }
 ```
 
@@ -191,11 +236,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**RelationModel**](RelationModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -204,73 +249,27 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3RelationsIdPatch**
-> apiV3RelationsIdPatch(id)
-
-Edit Relation
-
-When calling this endpoint the client provides a single object, containing the properties and links that it wants to change, in the body. It is only allowed to provide properties or links supporting the **write** operation.  Note that changing the `type` of a relation invariably also changes the respective `reverseType` as well as the \"name\" of it. The returned Relation object will reflect that change. For instance if you change a Relation's `type` to \"follows\" then the `reverseType` will be changed to `precedes`.
-
-### Example
-```dart
-import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = RelationsApi();
-final id = 56; // int | Relation ID
-
-try {
-    api_instance.apiV3RelationsIdPatch(id);
-} catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsIdPatch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Relation ID | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiV3RelationsSchemaGet**
-> apiV3RelationsSchemaGet()
+# **viewRelationSchema**
+> Object viewRelationSchema()
 
 View relation schema
 
+
+
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RelationsApi();
 
 try {
-    api_instance.apiV3RelationsSchemaGet();
+    final result = api_instance.viewRelationSchema();
+    print(result);
 } catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsSchemaGet: $e\n');
+    print('Exception when calling RelationsApi->viewRelationSchema: $e\n');
 }
 ```
 
@@ -279,11 +278,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -292,27 +291,28 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3RelationsSchemaTypeGet**
-> apiV3RelationsSchemaTypeGet(type)
+# **viewRelationSchemaForType**
+> Object viewRelationSchemaForType(type)
 
 View relation schema for type
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = RelationsApi();
-final type = type_example; // String | Type of the schema
+final type = follows; // String | Type of the schema
 
 try {
-    api_instance.apiV3RelationsSchemaTypeGet(type);
+    final result = api_instance.viewRelationSchemaForType(type);
+    print(result);
 } catch (e) {
-    print('Exception when calling RelationsApi->apiV3RelationsSchemaTypeGet: $e\n');
+    print('Exception when calling RelationsApi->viewRelationSchemaForType: $e\n');
 }
 ```
 
@@ -324,11 +324,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

@@ -5,35 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3StatusesGet**](StatusesApi.md#apiv3statusesget) | **GET** /api/v3/statuses | List all Statuses
-[**apiV3StatusesIdGet**](StatusesApi.md#apiv3statusesidget) | **GET** /api/v3/statuses/{id} | View Status
+[**listAllStatuses**](StatusesApi.md#listallstatuses) | **GET** /api/v3/statuses | List all Statuses
+[**viewStatus**](StatusesApi.md#viewstatus) | **GET** /api/v3/statuses/{id} | View Status
 
 
-# **apiV3StatusesGet**
-> Statuses apiV3StatusesGet()
+# **listAllStatuses**
+> StatusCollectionModel listAllStatuses()
 
 List all Statuses
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = StatusesApi();
 
 try {
-    final result = api_instance.apiV3StatusesGet();
+    final result = api_instance.listAllStatuses();
     print(result);
 } catch (e) {
-    print('Exception when calling StatusesApi->apiV3StatusesGet: $e\n');
+    print('Exception when calling StatusesApi->listAllStatuses: $e\n');
 }
 ```
 
@@ -42,11 +42,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Statuses**](Statuses.md)
+[**StatusCollectionModel**](StatusCollectionModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -55,28 +55,28 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3StatusesIdGet**
-> Status apiV3StatusesIdGet(id)
+# **viewStatus**
+> StatusModel viewStatus(id)
 
 View Status
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = StatusesApi();
-final id = 56; // int | status id
+final id = 1; // int | Status id
 
 try {
-    final result = api_instance.apiV3StatusesIdGet(id);
+    final result = api_instance.viewStatus(id);
     print(result);
 } catch (e) {
-    print('Exception when calling StatusesApi->apiV3StatusesIdGet: $e\n');
+    print('Exception when calling StatusesApi->viewStatus: $e\n');
 }
 ```
 
@@ -84,15 +84,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| status id | 
+ **id** | **int**| Status id | 
 
 ### Return type
 
-[**Status**](Status.md)
+[**StatusModel**](StatusModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

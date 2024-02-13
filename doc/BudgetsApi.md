@@ -5,35 +5,36 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3BudgetsIdGet**](BudgetsApi.md#apiv3budgetsidget) | **GET** /api/v3/budgets/{id} | 
+[**viewBudget**](BudgetsApi.md#viewbudget) | **GET** /api/v3/budgets/{id} | view Budget
+[**viewBudgetsOfAProject**](BudgetsApi.md#viewbudgetsofaproject) | **GET** /api/v3/projects/{id}/budgets | view Budgets of a Project
 
 
-# **apiV3BudgetsIdGet**
-> Budget apiV3BudgetsIdGet(id)
+# **viewBudget**
+> BudgetModel viewBudget(id)
+
+view Budget
 
 
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = BudgetsApi();
-final id = 56; // int | Budget id
+final id = 1; // int | Budget id
 
 try {
-    final result = api_instance.apiV3BudgetsIdGet(id);
+    final result = api_instance.viewBudget(id);
     print(result);
 } catch (e) {
-    print('Exception when calling BudgetsApi->apiV3BudgetsIdGet: $e\n');
+    print('Exception when calling BudgetsApi->viewBudget: $e\n');
 }
 ```
 
@@ -45,16 +46,62 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Budget**](Budget.md)
+[**BudgetModel**](BudgetModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **viewBudgetsOfAProject**
+> Object viewBudgetsOfAProject(id)
+
+view Budgets of a Project
+
+
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = BudgetsApi();
+final id = 1; // int | Project id
+
+try {
+    final result = api_instance.viewBudgetsOfAProject(id);
+    print(result);
+} catch (e) {
+    print('Exception when calling BudgetsApi->viewBudgetsOfAProject: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Project id | 
+
+### Return type
+
+[**Object**](Object.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

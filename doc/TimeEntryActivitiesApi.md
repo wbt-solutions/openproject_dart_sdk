@@ -5,35 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3TimeEntriesActivitiesIdGet**](TimeEntryActivitiesApi.md#apiv3timeentriesactivitiesidget) | **GET** /api/v3/time_entries/activities/{id} | View time entries activity
+[**getTimeEntriesActivity**](TimeEntryActivitiesApi.md#gettimeentriesactivity) | **GET** /api/v3/time_entries/activity/{id} | View time entries activity
 
 
-# **apiV3TimeEntriesActivitiesIdGet**
-> TimeEntriesActivity apiV3TimeEntriesActivitiesIdGet(id)
+# **getTimeEntriesActivity**
+> TimeEntryActivityModel getTimeEntriesActivity(id)
 
 View time entries activity
+
+Fetches the time entry activity resource by the given id.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = TimeEntryActivitiesApi();
-final id = 56; // int | time entries activity id
+final id = 1; // int | Time entries activity id
 
 try {
-    final result = api_instance.apiV3TimeEntriesActivitiesIdGet(id);
+    final result = api_instance.getTimeEntriesActivity(id);
     print(result);
 } catch (e) {
-    print('Exception when calling TimeEntryActivitiesApi->apiV3TimeEntriesActivitiesIdGet: $e\n');
+    print('Exception when calling TimeEntryActivitiesApi->getTimeEntriesActivity: $e\n');
 }
 ```
 
@@ -41,15 +41,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| time entries activity id | 
+ **id** | **int**| Time entries activity id | 
 
 ### Return type
 
-[**TimeEntriesActivity**](TimeEntriesActivity.md)
+[**TimeEntryActivityModel**](TimeEntryActivityModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

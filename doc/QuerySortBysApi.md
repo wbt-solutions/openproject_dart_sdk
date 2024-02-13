@@ -5,36 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3QueriesSortBysIdGet**](QuerySortBysApi.md#apiv3queriessortbysidget) | **GET** /api/v3/queries/sort_bys/{id} | View Query Sort By
+[**viewQuerySortBy**](QuerySortBysApi.md#viewquerysortby) | **GET** /api/v3/queries/sort_bys/{id} | View Query Sort By
 
 
-# **apiV3QueriesSortBysIdGet**
-> apiV3QueriesSortBysIdGet(id)
+# **viewQuerySortBy**
+> QuerySortByModel viewQuerySortBy(id)
 
 View Query Sort By
 
-Retreive an individual QuerySortBy as identified by the id parameter.
+Retrieve an individual QuerySortBy as identified by the id parameter.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = QuerySortBysApi();
-final id = id_example; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
+final id = status-asc; // String | QuerySortBy identifier. The identifier is a combination of the column identifier and the direction.
 
 try {
-    api_instance.apiV3QueriesSortBysIdGet(id);
+    final result = api_instance.viewQuerySortBy(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling QuerySortBysApi->apiV3QueriesSortBysIdGet: $e\n');
+    print('Exception when calling QuerySortBysApi->viewQuerySortBy: $e\n');
 }
 ```
 
@@ -46,11 +45,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**QuerySortByModel**](QuerySortByModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

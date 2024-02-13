@@ -18,15 +18,17 @@ class TimeEntryActivitiesApi {
 
   /// View time entries activity
   ///
+  /// Fetches the time entry activity resource by the given id.
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   time entries activity id
-  Future<Response> apiV3TimeEntriesActivitiesIdGetWithHttpInfo(int id,) async {
+  ///   Time entries activity id
+  Future<Response> getTimeEntriesActivityWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v3/time_entries/activities/{id}'
+    final path = r'/api/v3/time_entries/activity/{id}'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
@@ -36,7 +38,6 @@ class TimeEntryActivitiesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -48,18 +49,19 @@ class TimeEntryActivitiesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View time entries activity
   ///
+  /// Fetches the time entry activity resource by the given id.
+  ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   time entries activity id
-  Future<TimeEntriesActivity?> apiV3TimeEntriesActivitiesIdGet(int id,) async {
-    final response = await apiV3TimeEntriesActivitiesIdGetWithHttpInfo(id,);
+  ///   Time entries activity id
+  Future<TimeEntryActivityModel?> getTimeEntriesActivity(int id,) async {
+    final response = await getTimeEntriesActivityWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -67,7 +69,7 @@ class TimeEntryActivitiesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntriesActivity',) as TimeEntriesActivity;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TimeEntryActivityModel',) as TimeEntryActivityModel;
     
     }
     return null;

@@ -5,35 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3PrioritiesGet**](PrioritiesApi.md#apiv3prioritiesget) | **GET** /api/v3/priorities | List all Priorities
-[**apiV3PrioritiesIdGet**](PrioritiesApi.md#apiv3prioritiesidget) | **GET** /api/v3/priorities/{id} | View Priority
+[**listAllPriorities**](PrioritiesApi.md#listallpriorities) | **GET** /api/v3/priorities | List all Priorities
+[**viewPriority**](PrioritiesApi.md#viewpriority) | **GET** /api/v3/priorities/{id} | View Priority
 
 
-# **apiV3PrioritiesGet**
-> Priorities apiV3PrioritiesGet()
+# **listAllPriorities**
+> Object listAllPriorities()
 
 List all Priorities
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = PrioritiesApi();
 
 try {
-    final result = api_instance.apiV3PrioritiesGet();
+    final result = api_instance.listAllPriorities();
     print(result);
 } catch (e) {
-    print('Exception when calling PrioritiesApi->apiV3PrioritiesGet: $e\n');
+    print('Exception when calling PrioritiesApi->listAllPriorities: $e\n');
 }
 ```
 
@@ -42,11 +42,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Priorities**](Priorities.md)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -55,28 +55,28 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3PrioritiesIdGet**
-> Priority apiV3PrioritiesIdGet(id)
+# **viewPriority**
+> PriorityModel viewPriority(id)
 
 View Priority
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = PrioritiesApi();
-final id = 56; // int | Priority id
+final id = 1; // int | Priority id
 
 try {
-    final result = api_instance.apiV3PrioritiesIdGet(id);
+    final result = api_instance.viewPriority(id);
     print(result);
 } catch (e) {
-    print('Exception when calling PrioritiesApi->apiV3PrioritiesIdGet: $e\n');
+    print('Exception when calling PrioritiesApi->viewPriority: $e\n');
 }
 ```
 
@@ -88,11 +88,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Priority**](Priority.md)
+[**PriorityModel**](PriorityModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

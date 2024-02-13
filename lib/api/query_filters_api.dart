@@ -18,15 +18,15 @@ class QueryFiltersApi {
 
   /// View Query Filter
   ///
-  /// Retreive an individual QueryFilter as identified by the id parameter.
+  /// Retrieve an individual QueryFilter as identified by the id parameter.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [String] id (required):
-  ///   QueryFilter identifier.
-  Future<Response> apiV3QueriesFiltersIdGetWithHttpInfo(String id,) async {
+  ///   QueryFilter identifier
+  Future<Response> viewQueryFilterWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/filters/{id}'
       .replaceAll('{id}', id);
@@ -38,7 +38,6 @@ class QueryFiltersApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -50,22 +49,29 @@ class QueryFiltersApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Query Filter
   ///
-  /// Retreive an individual QueryFilter as identified by the id parameter.
+  /// Retrieve an individual QueryFilter as identified by the id parameter.
   ///
   /// Parameters:
   ///
   /// * [String] id (required):
-  ///   QueryFilter identifier.
-  Future<void> apiV3QueriesFiltersIdGet(String id,) async {
-    final response = await apiV3QueriesFiltersIdGetWithHttpInfo(id,);
+  ///   QueryFilter identifier
+  Future<QueryFilterModel?> viewQueryFilter(String id,) async {
+    final response = await viewQueryFilterWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'QueryFilterModel',) as QueryFilterModel;
+    
+    }
+    return null;
   }
 }

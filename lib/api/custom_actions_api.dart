@@ -24,23 +24,22 @@ class CustomActionsApi {
   ///
   /// Parameters:
   ///
-  /// * [int] customActionId (required):
+  /// * [int] id (required):
   ///   The id of the custom action to execute
   ///
-  /// * [InlineObject] inlineObject:
-  Future<Response> apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(int customActionId, { InlineObject? inlineObject, }) async {
+  /// * [ExecuteCustomActionRequest] executeCustomActionRequest:
+  Future<Response> executeCustomActionWithHttpInfo(int id, { ExecuteCustomActionRequest? executeCustomActionRequest, }) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v3/custom_actions/{custom_action_id}/execute'
-      .replaceAll('{custom_action_id}', customActionId.toString());
+    final path = r'/api/v3/custom_actions/{id}/execute'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody = inlineObject;
+    Object? postBody = executeCustomActionRequest;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>['application/json'];
 
 
@@ -52,7 +51,6 @@ class CustomActionsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -62,29 +60,31 @@ class CustomActionsApi {
   ///
   /// Parameters:
   ///
-  /// * [int] customActionId (required):
+  /// * [int] id (required):
   ///   The id of the custom action to execute
   ///
-  /// * [InlineObject] inlineObject:
-  Future<void> apiV3CustomActionsCustomActionIdExecutePost(int customActionId, { InlineObject? inlineObject, }) async {
-    final response = await apiV3CustomActionsCustomActionIdExecutePostWithHttpInfo(customActionId,  inlineObject: inlineObject, );
+  /// * [ExecuteCustomActionRequest] executeCustomActionRequest:
+  Future<void> executeCustomAction(int id, { ExecuteCustomActionRequest? executeCustomActionRequest, }) async {
+    final response = await executeCustomActionWithHttpInfo(id,  executeCustomActionRequest: executeCustomActionRequest, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
-  /// View custom action
+  /// Get a custom action
+  ///
+  /// Retrieves a custom action by id.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
-  /// * [int] customActionId (required):
+  /// * [int] id (required):
   ///   The id of the custom action to fetch
-  Future<Response> apiV3CustomActionsCustomActionIdGetWithHttpInfo(int customActionId,) async {
+  Future<Response> getCustomActionWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v3/custom_actions/{custom_action_id}'
-      .replaceAll('{custom_action_id}', customActionId.toString());
+    final path = r'/api/v3/custom_actions/{id}'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -93,7 +93,6 @@ class CustomActionsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -105,20 +104,29 @@ class CustomActionsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// View custom action
+  /// Get a custom action
+  ///
+  /// Retrieves a custom action by id.
   ///
   /// Parameters:
   ///
-  /// * [int] customActionId (required):
+  /// * [int] id (required):
   ///   The id of the custom action to fetch
-  Future<void> apiV3CustomActionsCustomActionIdGet(int customActionId,) async {
-    final response = await apiV3CustomActionsCustomActionIdGetWithHttpInfo(customActionId,);
+  Future<CustomActionModel?> getCustomAction(int id,) async {
+    final response = await getCustomActionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'CustomActionModel',) as CustomActionModel;
+    
+    }
+    return null;
   }
 }

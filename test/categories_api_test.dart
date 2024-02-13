@@ -1,23 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for CategoriesApi
 void main() {
-  var instance = CategoriesApi();
+  // final instance = CategoriesApi();
 
   group('tests for CategoriesApi', () {
-    // View Category
+    // List categories of a project
     //
-    //Future<Category> apiV3CategoriesIdGet(int id) async 
-    test('test apiV3CategoriesIdGet', () async {
+    // 
+    //
+    //Future<Object> listCategoriesOfAProject(int id) async
+    test('test listCategoriesOfAProject', () async {
       // TODO
     });
 
-    // List categories of a project
+    // View Category
     //
-    //Future<Categories> apiV3ProjectsProjectIdCategoriesGet(int projectId) async 
-    test('test apiV3ProjectsProjectIdCategoriesGet', () async {
+    // 
+    //
+    //Future<CategoryModel> viewCategory(int id) async
+    test('test viewCategory', () async {
       // TODO
     });
 

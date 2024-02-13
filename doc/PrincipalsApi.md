@@ -5,15 +5,15 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3PrincipalsGet**](PrincipalsApi.md#apiv3principalsget) | **GET** /api/v3/principals | List principals
+[**listPrincipals**](PrincipalsApi.md#listprincipals) | **GET** /api/v3/principals | List principals
 
 
-# **apiV3PrincipalsGet**
-> apiV3PrincipalsGet(filters)
+# **listPrincipals**
+> Object listPrincipals(filters, select)
 
 List principals
 
@@ -22,19 +22,19 @@ List all principals. The client can choose to filter the principals similar to h
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = PrincipalsApi();
-final filters = filters_example; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
+final filters = [{ "type": { "operator": "=", "values": ["User"] } }]; // String | JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*, *PlaceholderUser*).  + member: filters principals by the projects they are members in.  + name: filters principals by the user or group name.  + any_name_attribute: filters principals by the user or group first- and last name, email or login.  + status: filters principals by their status number (active = *1*, registered = *2*, locked = *3*, invited = *4*)
+final select = total,elements/name,elements/self,self; // String | Comma separated list of properties to include.
 
 try {
-    api_instance.apiV3PrincipalsGet(filters);
+    final result = api_instance.listPrincipals(filters, select);
+    print(result);
 } catch (e) {
-    print('Exception when calling PrincipalsApi->apiV3PrincipalsGet: $e\n');
+    print('Exception when calling PrincipalsApi->listPrincipals: $e\n');
 }
 ```
 
@@ -42,15 +42,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in. | [optional] 
+ **filters** | **String**| JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*, *PlaceholderUser*).  + member: filters principals by the projects they are members in.  + name: filters principals by the user or group name.  + any_name_attribute: filters principals by the user or group first- and last name, email or login.  + status: filters principals by their status number (active = *1*, registered = *2*, locked = *3*, invited = *4*) | [optional] 
+ **select** | **String**| Comma separated list of properties to include. | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

@@ -5,36 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3QueriesOperatorsIdGet**](QueryOperatorsApi.md#apiv3queriesoperatorsidget) | **GET** /api/v3/queries/operators/{id} | View Query Operator
+[**viewQueryOperator**](QueryOperatorsApi.md#viewqueryoperator) | **GET** /api/v3/queries/operators/{id} | View Query Operator
 
 
-# **apiV3QueriesOperatorsIdGet**
-> apiV3QueriesOperatorsIdGet(id)
+# **viewQueryOperator**
+> QueryOperatorModel viewQueryOperator(id)
 
 View Query Operator
 
-Retreive an individual QueryOperator as identified by the `id` parameter.
+Retrieve an individual QueryOperator as identified by the `id` parameter.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = QueryOperatorsApi();
-final id = id_example; // String | QueryOperator id
+final id = !; // String | QueryOperator id
 
 try {
-    api_instance.apiV3QueriesOperatorsIdGet(id);
+    final result = api_instance.viewQueryOperator(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling QueryOperatorsApi->apiV3QueriesOperatorsIdGet: $e\n');
+    print('Exception when calling QueryOperatorsApi->viewQueryOperator: $e\n');
 }
 ```
 
@@ -46,11 +45,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**QueryOperatorModel**](QueryOperatorModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

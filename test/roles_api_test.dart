@@ -1,18 +1,28 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for RolesApi
 void main() {
-  var instance = RolesApi();
+  // final instance = RolesApi();
 
   group('tests for RolesApi', () {
     // List roles
     //
     // List all defined roles. This includes built in roles like 'Anonymous' and 'Non member'.
     //
-    //Future apiV3RolesGet() async 
-    test('test apiV3RolesGet', () async {
+    //Future<Object> listRoles({ String filters }) async
+    test('test listRoles', () async {
       // TODO
     });
 
@@ -20,8 +30,8 @@ void main() {
     //
     // Fetch an individual role.
     //
-    //Future apiV3RolesIdGet(int id) async 
-    test('test apiV3RolesIdGet', () async {
+    //Future<RoleModel> viewRole(int id) async
+    test('test viewRole', () async {
       // TODO
     });
 

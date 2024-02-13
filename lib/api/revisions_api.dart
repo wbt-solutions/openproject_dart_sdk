@@ -18,13 +18,15 @@ class RevisionsApi {
 
   /// View revision
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   Revision id
-  Future<Response> apiV3RevisionsIdGetWithHttpInfo(int id,) async {
+  Future<Response> viewRevisionWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/revisions/{id}'
       .replaceAll('{id}', id.toString());
@@ -36,7 +38,6 @@ class RevisionsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -48,20 +49,29 @@ class RevisionsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View revision
   ///
+  /// 
+  ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   Revision id
-  Future<void> apiV3RevisionsIdGet(int id,) async {
-    final response = await apiV3RevisionsIdGetWithHttpInfo(id,);
+  Future<RevisionModel?> viewRevision(int id,) async {
+    final response = await viewRevisionWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RevisionModel',) as RevisionModel;
+    
+    }
+    return null;
   }
 }

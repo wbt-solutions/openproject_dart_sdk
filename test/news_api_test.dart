@@ -1,25 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for NewsApi
 void main() {
-  var instance = NewsApi();
+  // final instance = NewsApi();
 
   group('tests for NewsApi', () {
-    // list news
+    // List News
     //
-    // Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
+    // Lists news. The news returned depend on the provided parameters and also on the requesting user's permissions.
     //
-    //Future<NewsList> apiV3NewsGet({ int offset, int pageSize, String sortBy, String filters }) async 
-    test('test apiV3NewsGet', () async {
+    //Future<Object> listNews({ int offset, int pageSize, String sortBy, String filters }) async
+    test('test listNews', () async {
       // TODO
     });
 
-    // view news
+    // View news
     //
-    //Future<News> apiV3NewsIdGet(int id) async 
-    test('test apiV3NewsIdGet', () async {
+    // 
+    //
+    //Future<NewsModel> viewNews(int id) async
+    test('test viewNews', () async {
       // TODO
     });
 

@@ -16,6 +16,54 @@ class QueryFilterInstanceSchemaApi {
 
   final ApiClient apiClient;
 
+  /// List Query Filter Instance Schemas
+  ///
+  /// Returns the list of QueryFilterInstanceSchemas defined for a global query. That is a query not assigned to a project.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> listQueryFilterInstanceSchemasWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/queries/filter_instance_schemas';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// List Query Filter Instance Schemas
+  ///
+  /// Returns the list of QueryFilterInstanceSchemas defined for a global query. That is a query not assigned to a project.
+  Future<Object?> listQueryFilterInstanceSchemas() async {
+    final response = await listQueryFilterInstanceSchemasWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
+  }
+
   /// List Query Filter Instance Schemas for Project
   ///
   /// Returns the list of QueryFilterInstanceSchemas defined for a query of the specified project.
@@ -25,8 +73,8 @@ class QueryFilterInstanceSchemaApi {
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   Id of the project.
-  Future<Response> apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(int id,) async {
+  ///   Project id
+  Future<Response> listQueryFilterInstanceSchemasForProjectWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}/queries/filter_instance_schemas'
       .replaceAll('{id}', id.toString());
@@ -38,7 +86,6 @@ class QueryFilterInstanceSchemaApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -50,7 +97,6 @@ class QueryFilterInstanceSchemaApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -61,22 +107,36 @@ class QueryFilterInstanceSchemaApi {
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   Id of the project.
-  Future<void> apiV3ProjectsIdQueriesFilterInstanceSchemasGet(int id,) async {
-    final response = await apiV3ProjectsIdQueriesFilterInstanceSchemasGetWithHttpInfo(id,);
+  ///   Project id
+  Future<Object?> listQueryFilterInstanceSchemasForProject(int id,) async {
+    final response = await listQueryFilterInstanceSchemasForProjectWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
   }
 
-  /// List Query Filter Instance Schemas
+  /// View Query Filter Instance Schema
   ///
-  /// Returns the list of QueryFilterInstanceSchemas defined for a global query. That is a query not assigned to a project.
+  /// Retrieve an individual QueryFilterInstanceSchema as identified by the id parameter.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3QueriesFilterInstanceSchemasGetWithHttpInfo() async {
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
+  Future<Response> viewQueryFilterInstanceSchemaWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v3/queries/filter_instance_schemas';
+    final path = r'/api/v3/queries/filter_instance_schemas/{id}'
+      .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -85,7 +145,6 @@ class QueryFilterInstanceSchemaApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -97,70 +156,29 @@ class QueryFilterInstanceSchemaApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// List Query Filter Instance Schemas
-  ///
-  /// Returns the list of QueryFilterInstanceSchemas defined for a global query. That is a query not assigned to a project.
-  Future<void> apiV3QueriesFilterInstanceSchemasGet() async {
-    final response = await apiV3QueriesFilterInstanceSchemasGetWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// View Query Filter Instance Schema
-  ///
-  /// Retreive an individual QueryFilterInstanceSchema as identified by the id parameter.
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [String] identifier (required):
-  ///   QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
-  Future<Response> apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(String identifier,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/queries/filter_instance_schemas/{identifier}'
-      .replaceAll('{identifier}', identifier);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Query Filter Instance Schema
   ///
-  /// Retreive an individual QueryFilterInstanceSchema as identified by the id parameter.
+  /// Retrieve an individual QueryFilterInstanceSchema as identified by the id parameter.
   ///
   /// Parameters:
   ///
-  /// * [String] identifier (required):
+  /// * [String] id (required):
   ///   QueryFilterInstanceSchema identifier. The identifier is the filter identifier.
-  Future<void> apiV3QueriesFilterInstanceSchemasIdentifierGet(String identifier,) async {
-    final response = await apiV3QueriesFilterInstanceSchemasIdentifierGetWithHttpInfo(identifier,);
+  Future<QueryFilterInstanceSchemaModel?> viewQueryFilterInstanceSchema(String id,) async {
+    final response = await viewQueryFilterInstanceSchemaWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'QueryFilterInstanceSchemaModel',) as QueryFilterInstanceSchemaModel;
+    
+    }
+    return null;
   }
 }

@@ -18,8 +18,10 @@ class StatusesApi {
 
   /// List all Statuses
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3StatusesGetWithHttpInfo() async {
+  Future<Response> listAllStatusesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/statuses';
 
@@ -30,7 +32,6 @@ class StatusesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -42,13 +43,14 @@ class StatusesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// List all Statuses
-  Future<Statuses?> apiV3StatusesGet() async {
-    final response = await apiV3StatusesGetWithHttpInfo();
+  ///
+  /// 
+  Future<StatusCollectionModel?> listAllStatuses() async {
+    final response = await listAllStatusesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -56,7 +58,7 @@ class StatusesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Statuses',) as Statuses;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StatusCollectionModel',) as StatusCollectionModel;
     
     }
     return null;
@@ -64,13 +66,15 @@ class StatusesApi {
 
   /// View Status
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   status id
-  Future<Response> apiV3StatusesIdGetWithHttpInfo(int id,) async {
+  ///   Status id
+  Future<Response> viewStatusWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/statuses/{id}'
       .replaceAll('{id}', id.toString());
@@ -82,7 +86,6 @@ class StatusesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -94,18 +97,19 @@ class StatusesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Status
   ///
+  /// 
+  ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   status id
-  Future<Status?> apiV3StatusesIdGet(int id,) async {
-    final response = await apiV3StatusesIdGetWithHttpInfo(id,);
+  ///   Status id
+  Future<StatusModel?> viewStatus(int id,) async {
+    final response = await viewStatusWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -113,7 +117,7 @@ class StatusesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Status',) as Status;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StatusModel',) as StatusModel;
     
     }
     return null;

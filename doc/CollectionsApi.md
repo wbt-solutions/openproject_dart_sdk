@@ -5,35 +5,35 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ExamplesGet**](CollectionsApi.md#apiv3examplesget) | **GET** /api/v3/examples | view aggregated result
+[**viewAggregatedResult**](CollectionsApi.md#viewaggregatedresult) | **GET** /api/v3/examples | view aggregated result
 
 
-# **apiV3ExamplesGet**
-> apiV3ExamplesGet(groupBy, showSums)
+# **viewAggregatedResult**
+> viewAggregatedResult(groupBy, showSums)
 
 view aggregated result
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = CollectionsApi();
-final groupBy = groupBy_example; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint.
-final showSums = showSums_example; // String | 
+final groupBy = status; // String | The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
+final showSums = true; // bool | 
 
 try {
-    api_instance.apiV3ExamplesGet(groupBy, showSums);
+    api_instance.viewAggregatedResult(groupBy, showSums);
 } catch (e) {
-    print('Exception when calling CollectionsApi->apiV3ExamplesGet: $e\n');
+    print('Exception when calling CollectionsApi->viewAggregatedResult: $e\n');
 }
 ```
 
@@ -41,8 +41,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupBy** | **String**| The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](#queries) endpoint. | [optional] 
- **showSums** | **String**|  | [optional] [default to 'false']
+ **groupBy** | **String**| The column to group by. Note: Aggregation is as of now only supported by the work package collection. You can pass any column name as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. | [optional] 
+ **showSums** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
@@ -50,7 +50,7 @@ void (empty response body)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

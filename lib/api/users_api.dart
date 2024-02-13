@@ -16,9 +16,116 @@ class UsersApi {
 
   final ApiClient apiClient;
 
+  /// Create User
+  ///
+  /// Creates a new user. Only administrators and users with manage_user global permission are allowed to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes.  2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [UserCreateModel] userCreateModel:
+  Future<Response> createUserWithHttpInfo({ UserCreateModel? userCreateModel, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/users';
+
+    // ignore: prefer_final_locals
+    Object? postBody = userCreateModel;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Create User
+  ///
+  /// Creates a new user. Only administrators and users with manage_user global permission are allowed to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes.  2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
+  ///
+  /// Parameters:
+  ///
+  /// * [UserCreateModel] userCreateModel:
+  Future<UserModel?> createUser({ UserCreateModel? userCreateModel, }) async {
+    final response = await createUserWithHttpInfo( userCreateModel: userCreateModel, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserModel',) as UserModel;
+    
+    }
+    return null;
+  }
+
+  /// Delete user
+  ///
+  /// Permanently deletes the specified user account.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   User id
+  Future<Response> deleteUserWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/users/{id}'
+      .replaceAll('{id}', id.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Delete user
+  ///
+  /// Permanently deletes the specified user account.
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   User id
+  Future<void> deleteUser(int id,) async {
+    final response = await deleteUserWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
   /// List Users
   ///
-  /// Lists users. Only administrators have permission to do this.
+  /// Lists users. Only administrators or users with any of the following can access this resource: 'manage_members', 'manage_user', 'share_work_packages'.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -31,11 +138,14 @@ class UsersApi {
   ///   Number of elements to display per page.
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
   ///
   /// * [String] sortBy:
-  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Response> apiV3UsersGetWithHttpInfo({ int? offset, int? pageSize, String? filters, String? sortBy, }) async {
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
+  ///
+  /// * [String] select:
+  ///   Comma separated list of properties to include.
+  Future<Response> listUsersWithHttpInfo({ int? offset, int? pageSize, String? filters, String? sortBy, String? select, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/users';
 
@@ -58,8 +168,10 @@ class UsersApi {
     if (sortBy != null) {
       queryParams.addAll(_queryParams('', 'sortBy', sortBy));
     }
+    if (select != null) {
+      queryParams.addAll(_queryParams('', 'select', select));
+    }
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -71,13 +183,12 @@ class UsersApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// List Users
   ///
-  /// Lists users. Only administrators have permission to do this.
+  /// Lists users. Only administrators or users with any of the following can access this resource: 'manage_members', 'manage_user', 'share_work_packages'.
   ///
   /// Parameters:
   ///
@@ -88,12 +199,15 @@ class UsersApi {
   ///   Number of elements to display per page.
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + status: Status the user has  + group: Name of the group in which to-be-listed users are members.  + name: Filter users in whose first or last names, or email addresses the given string occurs.  + login: User's login
   ///
   /// * [String] sortBy:
-  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](#queries) endpoint.
-  Future<Users?> apiV3UsersGet({ int? offset, int? pageSize, String? filters, String? sortBy, }) async {
-    final response = await apiV3UsersGetWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, );
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint.
+  ///
+  /// * [String] select:
+  ///   Comma separated list of properties to include.
+  Future<UserCollectionModel?> listUsers({ int? offset, int? pageSize, String? filters, String? sortBy, String? select, }) async {
+    final response = await listUsersWithHttpInfo( offset: offset, pageSize: pageSize, filters: filters, sortBy: sortBy, select: select, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -101,15 +215,13 @@ class UsersApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Users',) as Users;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserCollectionModel',) as UserCollectionModel;
     
     }
     return null;
   }
 
-  /// Delete user
-  ///
-  /// Permanently deletes the specified user account.
+  /// Lock user
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -117,115 +229,7 @@ class UsersApi {
   ///
   /// * [int] id (required):
   ///   User id
-  Future<Response> apiV3UsersIdDeleteWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/users/{id}'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Delete user
-  ///
-  /// Permanently deletes the specified user account.
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   User id
-  Future<void> apiV3UsersIdDelete(int id,) async {
-    final response = await apiV3UsersIdDeleteWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// View user
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  ///   User id. Use `me` to reference current user, if any.
-  Future<Response> apiV3UsersIdGetWithHttpInfo(String id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/users/{id}'
-      .replaceAll('{id}', id);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// View user
-  ///
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  ///   User id. Use `me` to reference current user, if any.
-  Future<User?> apiV3UsersIdGet(String id,) async {
-    final response = await apiV3UsersIdGetWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'User',) as User;
-    
-    }
-    return null;
-  }
-
-  /// Remove Lock
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   User id
-  Future<Response> apiV3UsersIdLockDeleteWithHttpInfo(int id,) async {
+  Future<Response> lockUserWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/users/{id}/lock'
       .replaceAll('{id}', id.toString());
@@ -237,56 +241,6 @@ class UsersApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// Remove Lock
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   User id
-  Future<void> apiV3UsersIdLockDelete(int id,) async {
-    final response = await apiV3UsersIdLockDeleteWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
-  /// Set Lock
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   User id
-  Future<Response> apiV3UsersIdLockPostWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/users/{id}/lock'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -298,21 +252,83 @@ class UsersApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// Set Lock
+  /// Lock user
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   User id
-  Future<void> apiV3UsersIdLockPost(int id,) async {
-    final response = await apiV3UsersIdLockPostWithHttpInfo(id,);
+  Future<UserModel?> lockUser(int id,) async {
+    final response = await lockUserWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserModel',) as UserModel;
+    
+    }
+    return null;
+  }
+
+  /// Unlock user
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   User id
+  Future<Response> unlockUserWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/users/{id}/lock'
+      .replaceAll('{id}', id.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Unlock user
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   User id
+  Future<UserModel?> unlockUser(int id,) async {
+    final response = await unlockUserWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserModel',) as UserModel;
+    
+    }
+    return null;
   }
 
   /// Update user
@@ -326,20 +342,19 @@ class UsersApi {
   /// * [int] id (required):
   ///   User id
   ///
-  /// * [InlineObject4] inlineObject4:
-  Future<Response> apiV3UsersIdPatchWithHttpInfo(int id, { InlineObject4? inlineObject4, }) async {
+  /// * [UserCreateModel] userCreateModel:
+  Future<Response> updateUserWithHttpInfo(int id, { UserCreateModel? userCreateModel, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/users/{id}'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody = inlineObject4;
+    Object? postBody = userCreateModel;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>['application/json'];
 
 
@@ -351,7 +366,6 @@ class UsersApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -364,36 +378,45 @@ class UsersApi {
   /// * [int] id (required):
   ///   User id
   ///
-  /// * [InlineObject4] inlineObject4:
-  Future<void> apiV3UsersIdPatch(int id, { InlineObject4? inlineObject4, }) async {
-    final response = await apiV3UsersIdPatchWithHttpInfo(id,  inlineObject4: inlineObject4, );
+  /// * [UserCreateModel] userCreateModel:
+  Future<UserModel?> updateUser(int id, { UserCreateModel? userCreateModel, }) async {
+    final response = await updateUserWithHttpInfo(id,  userCreateModel: userCreateModel, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserModel',) as UserModel;
+    
+    }
+    return null;
   }
 
-  /// Create User
+  /// User update form
   ///
-  /// Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes. 2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
+  /// 
   ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
-  /// * [InlineObject5] inlineObject5:
-  Future<Response> apiV3UsersPostWithHttpInfo({ InlineObject5? inlineObject5, }) async {
+  /// * [int] id (required):
+  ///   User id
+  Future<Response> userUpdateFormWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v3/users';
+    final path = r'/api/v3/users/{id}/form'
+      .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody = inlineObject5;
+    Object? postBody;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>['application/json'];
+    const contentTypes = <String>[];
 
 
     return apiClient.invokeAPI(
@@ -404,21 +427,128 @@ class UsersApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// Create User
+  /// User update form
   ///
-  /// Creates a new user. Only administrators have permission to do so. When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body.  Valid values for `status`:  1) \"active\" - In this case a password has to be provided in addition to the other attributes. 2) \"invited\" - In this case nothing but the email address is required. The rest is optional. An invitation will be sent to the user.
+  /// 
   ///
   /// Parameters:
   ///
-  /// * [InlineObject5] inlineObject5:
-  Future<void> apiV3UsersPost({ InlineObject5? inlineObject5, }) async {
-    final response = await apiV3UsersPostWithHttpInfo( inlineObject5: inlineObject5, );
+  /// * [int] id (required):
+  ///   User id
+  Future<void> userUpdateForm(int id,) async {
+    final response = await userUpdateFormWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+  }
+
+  /// View user
+  ///
+  /// 
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   User id. Use `me` to reference current user, if any.
+  Future<Response> viewUserWithHttpInfo(String id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/users/{id}'
+      .replaceAll('{id}', id);
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// View user
+  ///
+  /// 
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   User id. Use `me` to reference current user, if any.
+  Future<UserModel?> viewUser(String id,) async {
+    final response = await viewUserWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserModel',) as UserModel;
+    
+    }
+    return null;
+  }
+
+  /// View user schema
+  ///
+  /// The schema response use two exemplary custom fields that extend the schema response. Depending on your instance and custom field configuration, the response will look somewhat different.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> viewUserSchemaWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/users/schema';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// View user schema
+  ///
+  /// The schema response use two exemplary custom fields that extend the schema response. Depending on your instance and custom field configuration, the response will look somewhat different.
+  Future<Object?> viewUserSchema() async {
+    final response = await viewUserSchemaWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
   }
 }

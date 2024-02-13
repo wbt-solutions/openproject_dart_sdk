@@ -16,9 +16,9 @@ class NewsApi {
 
   final ApiClient apiClient;
 
-  /// list news
+  /// List News
   ///
-  /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
+  /// Lists news. The news returned depend on the provided parameters and also on the requesting user's permissions.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -31,11 +31,11 @@ class NewsApi {
   ///   Number of elements to display per page.
   ///
   /// * [String] sortBy:
-  ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported sorts are:  + id: Sort by primary key  + created_at: Sort by news creation datetime
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
-  Future<Response> apiV3NewsGetWithHttpInfo({ int? offset, int? pageSize, String? sortBy, String? filters, }) async {
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + project_id: Filter news by project
+  Future<Response> listNewsWithHttpInfo({ int? offset, int? pageSize, String? sortBy, String? filters, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/news';
 
@@ -59,7 +59,6 @@ class NewsApi {
       queryParams.addAll(_queryParams('', 'filters', filters));
     }
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -71,13 +70,12 @@ class NewsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// list news
+  /// List News
   ///
-  /// Lists news. The news returned depend on the provided parameters and also on the requesting user’s permissions.
+  /// Lists news. The news returned depend on the provided parameters and also on the requesting user's permissions.
   ///
   /// Parameters:
   ///
@@ -88,12 +86,12 @@ class NewsApi {
   ///   Number of elements to display per page.
   ///
   /// * [String] sortBy:
-  ///   JSON specifying sort criteria. Accepts the same format as returned by the queries endpoint.
+  ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported sorts are:  + id: Sort by primary key  + created_at: Sort by news creation datetime
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the queries endpoint.
-  Future<NewsList?> apiV3NewsGet({ int? offset, int? pageSize, String? sortBy, String? filters, }) async {
-    final response = await apiV3NewsGetWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters, );
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + project_id: Filter news by project
+  Future<Object?> listNews({ int? offset, int? pageSize, String? sortBy, String? filters, }) async {
+    final response = await listNewsWithHttpInfo( offset: offset, pageSize: pageSize, sortBy: sortBy, filters: filters, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -101,13 +99,15 @@ class NewsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NewsList',) as NewsList;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
     
     }
     return null;
   }
 
-  /// view news
+  /// View news
+  ///
+  /// 
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -115,7 +115,7 @@ class NewsApi {
   ///
   /// * [int] id (required):
   ///   news id
-  Future<Response> apiV3NewsIdGetWithHttpInfo(int id,) async {
+  Future<Response> viewNewsWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/news/{id}'
       .replaceAll('{id}', id.toString());
@@ -127,7 +127,6 @@ class NewsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -139,18 +138,19 @@ class NewsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
-  /// view news
+  /// View news
+  ///
+  /// 
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
   ///   news id
-  Future<News?> apiV3NewsIdGet(int id,) async {
-    final response = await apiV3NewsIdGetWithHttpInfo(id,);
+  Future<NewsModel?> viewNews(int id,) async {
+    final response = await viewNewsWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -158,7 +158,7 @@ class NewsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'News',) as News;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NewsModel',) as NewsModel;
     
     }
     return null;

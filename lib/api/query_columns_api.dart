@@ -18,7 +18,7 @@ class QueryColumnsApi {
 
   /// View Query Column
   ///
-  /// Retreive an individual QueryColumn as identified by the `id` parameter.
+  /// Retrieve an individual QueryColumn as identified by the `id` parameter.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -26,7 +26,7 @@ class QueryColumnsApi {
   ///
   /// * [String] id (required):
   ///   QueryColumn id
-  Future<Response> apiV3QueriesColumnsIdGetWithHttpInfo(String id,) async {
+  Future<Response> viewQueryColumnWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/queries/columns/{id}'
       .replaceAll('{id}', id);
@@ -38,7 +38,6 @@ class QueryColumnsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -50,22 +49,29 @@ class QueryColumnsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Query Column
   ///
-  /// Retreive an individual QueryColumn as identified by the `id` parameter.
+  /// Retrieve an individual QueryColumn as identified by the `id` parameter.
   ///
   /// Parameters:
   ///
   /// * [String] id (required):
   ///   QueryColumn id
-  Future<void> apiV3QueriesColumnsIdGet(String id,) async {
-    final response = await apiV3QueriesColumnsIdGetWithHttpInfo(id,);
+  Future<QueryColumnModel?> viewQueryColumn(String id,) async {
+    final response = await viewQueryColumnWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'QueryColumnModel',) as QueryColumnModel;
+    
+    }
+    return null;
   }
 }

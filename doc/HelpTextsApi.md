@@ -5,76 +5,36 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3HelpTextsGet**](HelpTextsApi.md#apiv3helptextsget) | **GET** /api/v3/help_texts | List all help texts
-[**apiV3HelpTextsIdGet**](HelpTextsApi.md#apiv3helptextsidget) | **GET** /api/v3/help_texts/{id} | View help text
+[**getHelpText**](HelpTextsApi.md#gethelptext) | **GET** /api/v3/help_texts/{id} | Get help text
+[**listHelpTexts**](HelpTextsApi.md#listhelptexts) | **GET** /api/v3/help_texts | List help texts
 
 
-# **apiV3HelpTextsGet**
-> apiV3HelpTextsGet()
+# **getHelpText**
+> HelpTextModel getHelpText(id)
 
-List all help texts
+Get help text
 
-### Example
-```dart
-import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = HelpTextsApi();
-
-try {
-    api_instance.apiV3HelpTextsGet();
-} catch (e) {
-    print('Exception when calling HelpTextsApi->apiV3HelpTextsGet: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiV3HelpTextsIdGet**
-> apiV3HelpTextsIdGet(id)
-
-View help text
+Fetches the help text from the given id.
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = HelpTextsApi();
-final id = 56; // int | Help text id
+final id = 1; // int | Help text id
 
 try {
-    api_instance.apiV3HelpTextsIdGet(id);
+    final result = api_instance.getHelpText(id);
+    print(result);
 } catch (e) {
-    print('Exception when calling HelpTextsApi->apiV3HelpTextsIdGet: $e\n');
+    print('Exception when calling HelpTextsApi->getHelpText: $e\n');
 }
 ```
 
@@ -86,16 +46,58 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**HelpTextModel**](HelpTextModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listHelpTexts**
+> HelpTextCollectionModel listHelpTexts()
+
+List help texts
+
+List the complete collection of help texts.
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = HelpTextsApi();
+
+try {
+    final result = api_instance.listHelpTexts();
+    print(result);
+} catch (e) {
+    print('Exception when calling HelpTextsApi->listHelpTexts: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**HelpTextCollectionModel**](HelpTextCollectionModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

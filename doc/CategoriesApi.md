@@ -5,36 +5,36 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3CategoriesIdGet**](CategoriesApi.md#apiv3categoriesidget) | **GET** /api/v3/categories/{id} | View Category
-[**apiV3ProjectsProjectIdCategoriesGet**](CategoriesApi.md#apiv3projectsprojectidcategoriesget) | **GET** /api/v3/projects/{project_id}/categories | List categories of a project
+[**listCategoriesOfAProject**](CategoriesApi.md#listcategoriesofaproject) | **GET** /api/v3/projects/{id}/categories | List categories of a project
+[**viewCategory**](CategoriesApi.md#viewcategory) | **GET** /api/v3/categories/{id} | View Category
 
 
-# **apiV3CategoriesIdGet**
-> Category apiV3CategoriesIdGet(id)
+# **listCategoriesOfAProject**
+> Object listCategoriesOfAProject(id)
 
-View Category
+List categories of a project
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = CategoriesApi();
-final id = 56; // int | category id
+final id = 1; // int | ID of the project whose categories will be listed
 
 try {
-    final result = api_instance.apiV3CategoriesIdGet(id);
+    final result = api_instance.listCategoriesOfAProject(id);
     print(result);
 } catch (e) {
-    print('Exception when calling CategoriesApi->apiV3CategoriesIdGet: $e\n');
+    print('Exception when calling CategoriesApi->listCategoriesOfAProject: $e\n');
 }
 ```
 
@@ -42,15 +42,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| category id | 
+ **id** | **int**| ID of the project whose categories will be listed | 
 
 ### Return type
 
-[**Category**](Category.md)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -59,28 +59,28 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiV3ProjectsProjectIdCategoriesGet**
-> Categories apiV3ProjectsProjectIdCategoriesGet(projectId)
+# **viewCategory**
+> CategoryModel viewCategory(id)
 
-List categories of a project
+View Category
+
+
 
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = CategoriesApi();
-final projectId = 56; // int | ID of the project whoose categories will be listed
+final id = 1; // int | Category id
 
 try {
-    final result = api_instance.apiV3ProjectsProjectIdCategoriesGet(projectId);
+    final result = api_instance.viewCategory(id);
     print(result);
 } catch (e) {
-    print('Exception when calling CategoriesApi->apiV3ProjectsProjectIdCategoriesGet: $e\n');
+    print('Exception when calling CategoriesApi->viewCategory: $e\n');
 }
 ```
 
@@ -88,15 +88,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **int**| ID of the project whoose categories will be listed | 
+ **id** | **int**| Category id | 
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryModel**](CategoryModel.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

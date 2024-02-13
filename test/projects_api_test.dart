@@ -1,18 +1,55 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for ProjectsApi
 void main() {
-  var instance = ProjectsApi();
+  // final instance = ProjectsApi();
 
   group('tests for ProjectsApi', () {
-    // list available parent project candidates
+    // Create project
     //
-    // Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it’s children.
+    // Creates a new project, applying the attributes provided in the body.  You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
     //
-    //Future<Projects> apiV3ProjectsAvailableParentProjectsGet({ List<Map<String, Object>> filters, String of_, String sortBy }) async 
-    test('test apiV3ProjectsAvailableParentProjectsGet', () async {
+    //Future<ProjectModel> createProject({ Object body }) async
+    test('test createProject', () async {
+      // TODO
+    });
+
+    // Create project copy
+    //
+    // 
+    //
+    //Future createProjectCopy(int id) async
+    test('test createProjectCopy', () async {
+      // TODO
+    });
+
+    // Delete Project
+    //
+    // Deletes the project permanently. As this is a lengthy process, the actual deletion is carried out asynchronously. So the project might exist well after the request has returned successfully. To prevent unwanted changes to the project scheduled for deletion, it is archived at once.
+    //
+    //Future deleteProject(int id) async
+    test('test deleteProject', () async {
+      // TODO
+    });
+
+    // List available parent project candidates
+    //
+    // Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it's children.  To specify the project for which a parent is queried for, the `of` parameter can be provided. If no `of` parameter is provided, a new project is assumed. Then, the check for the hierarchy is omitted as a new project cannot be part of a hierarchy yet.  Candidates can be filtered. Most commonly one will want to filter by name or identifier. You can do this through the `filters` parameter which works just like the work package index.  For instance to find all parent candidates with \"rollout\" in their name:  ``` ?filters=[{\"name_and_identifier\":{\"operator\":\"~\",\"values\":[\"rollout\"]}}] ```
+    //
+    //Future<Object> listAvailableParentProjectCandidates({ String filters, String of_, String sortBy }) async
+    test('test listAvailableParentProjectCandidates', () async {
       // TODO
     });
 
@@ -20,51 +57,80 @@ void main() {
     //
     // Returns a collection of projects. The collection can be filtered via query parameters similar to how work packages are filtered. In addition to the provided filter, the result set is always limited to only contain projects the client is allowed to see.
     //
-    //Future<Projects> apiV3ProjectsGet({ List<Map<String, Object>> filters, String sortBy }) async 
-    test('test apiV3ProjectsGet', () async {
+    //Future<ProjectCollectionModel> listProjects({ String filters, String sortBy, String select }) async
+    test('test listProjects', () async {
       // TODO
     });
 
-    // delete project
+    // List projects having version
     //
-    // Deletes the project permanently. As this is a lengthy process, the actual deletion is carried out asynchronously. So the project might exist well after the request has returned successfully. To prevent unwanted changes to the project scheduled for deletion, it is archived at once.
+    // This endpoint lists the projects where the given version is available.  The projects returned depend on the sharing settings of the given version, but are also limited to the projects that the current user is allowed to see.
     //
-    //Future apiV3ProjectsIdDelete(int id) async 
-    test('test apiV3ProjectsIdDelete', () async {
+    //Future<Object> listProjectsWithVersion(int id) async
+    test('test listProjectsWithVersion', () async {
+      // TODO
+    });
+
+    // Project copy form
+    //
+    // 
+    //
+    //Future projectCopyForm(int id) async
+    test('test projectCopyForm', () async {
+      // TODO
+    });
+
+    // Project create form
+    //
+    // 
+    //
+    //Future<Object> projectCreateForm({ Object body }) async
+    test('test projectCreateForm', () async {
+      // TODO
+    });
+
+    // Project update form
+    //
+    // 
+    //
+    //Future projectUpdateForm(int id, { Object body }) async
+    test('test projectUpdateForm', () async {
+      // TODO
+    });
+
+    // Update Project
+    //
+    // Updates the given project by applying the attributes provided in the body.
+    //
+    //Future<ProjectModel> updateProject(int id, { Object body }) async
+    test('test updateProject', () async {
       // TODO
     });
 
     // View project
     //
-    //Future<Project> apiV3ProjectsIdGet(int id) async 
-    test('test apiV3ProjectsIdGet', () async {
+    // 
+    //
+    //Future<ProjectModel> viewProject(int id) async
+    test('test viewProject', () async {
       // TODO
     });
 
-    // update project
+    // View project schema
     //
-    // Updates the given project by applying the attributes provided in the body.
+    // 
     //
-    //Future<Project> apiV3ProjectsIdPatch(int id, Project project) async 
-    test('test apiV3ProjectsIdPatch', () async {
+    //Future<Object> viewProjectSchema() async
+    test('test viewProjectSchema', () async {
       // TODO
     });
 
-    // create project
+    // View project status
     //
-    // Creates a new project, applying the attributes provided in the body. You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
+    // 
     //
-    //Future<Project> apiV3ProjectsPost(Project project, { String filters, String sortBy }) async 
-    test('test apiV3ProjectsPost', () async {
-      // TODO
-    });
-
-    // List projects with version
-    //
-    // This endpoint lists the projects where the given version is available.  The projects returned depend on the sharing settings of the given version, but are also limited to the projects that the current user is allowed to see.
-    //
-    //Future apiV3VersionsIdProjectsGet(int id) async 
-    test('test apiV3VersionsIdProjectsGet', () async {
+    //Future<Object> viewProjectStatus(String id) async
+    test('test viewProjectStatus', () async {
       // TODO
     });
 

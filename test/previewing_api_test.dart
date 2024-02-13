@@ -1,23 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for PreviewingApi
 void main() {
-  var instance = PreviewingApi();
+  // final instance = PreviewingApi();
 
   group('tests for PreviewingApi', () {
-    // Preview plain document
+    // Preview Markdown document
     //
-    //Future apiV3RenderPlainPost() async 
-    test('test apiV3RenderPlainPost', () async {
+    // 
+    //
+    //Future<String> previewMarkdownDocument({ String context }) async
+    test('test previewMarkdownDocument', () async {
       // TODO
     });
 
-    // Preview Textile document
+    // Preview plain document
     //
-    //Future apiV3RenderTextilePost({ String context }) async 
-    test('test apiV3RenderTextilePost', () async {
+    // 
+    //
+    //Future<String> previewPlainDocument() async
+    test('test previewPlainDocument', () async {
       // TODO
     });
 

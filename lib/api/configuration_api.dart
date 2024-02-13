@@ -18,8 +18,10 @@ class ConfigurationApi {
 
   /// View configuration
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3ConfigurationGetWithHttpInfo() async {
+  Future<Response> viewConfigurationWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/configuration';
 
@@ -30,7 +32,6 @@ class ConfigurationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -42,13 +43,14 @@ class ConfigurationApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View configuration
-  Future<Configuration?> apiV3ConfigurationGet() async {
-    final response = await apiV3ConfigurationGetWithHttpInfo();
+  ///
+  /// 
+  Future<ConfigurationModel?> viewConfiguration() async {
+    final response = await viewConfigurationWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -56,7 +58,7 @@ class ConfigurationApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Configuration',) as Configuration;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ConfigurationModel',) as ConfigurationModel;
     
     }
     return null;

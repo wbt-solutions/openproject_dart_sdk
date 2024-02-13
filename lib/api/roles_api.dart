@@ -21,7 +21,12 @@ class RolesApi {
   /// List all defined roles. This includes built in roles like 'Anonymous' and 'Non member'.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3RolesGetWithHttpInfo() async {
+  ///
+  /// Parameters:
+  ///
+  /// * [String] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + grantable: filters roles based on whether they are selectable for a membership  + unit: filters roles based on the unit ('project' or 'system') for which they are selectable for a membership
+  Future<Response> listRolesWithHttpInfo({ String? filters, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/roles';
 
@@ -32,7 +37,10 @@ class RolesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
+    if (filters != null) {
+      queryParams.addAll(_queryParams('', 'filters', filters));
+    }
+
     const contentTypes = <String>[];
 
 
@@ -44,18 +52,30 @@ class RolesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// List roles
   ///
   /// List all defined roles. This includes built in roles like 'Anonymous' and 'Non member'.
-  Future<void> apiV3RolesGet() async {
-    final response = await apiV3RolesGetWithHttpInfo();
+  ///
+  /// Parameters:
+  ///
+  /// * [String] filters:
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + grantable: filters roles based on whether they are selectable for a membership  + unit: filters roles based on the unit ('project' or 'system') for which they are selectable for a membership
+  Future<Object?> listRoles({ String? filters, }) async {
+    final response = await listRolesWithHttpInfo( filters: filters, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
   }
 
   /// View role
@@ -67,8 +87,8 @@ class RolesApi {
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   role id
-  Future<Response> apiV3RolesIdGetWithHttpInfo(int id,) async {
+  ///   Role id
+  Future<Response> viewRoleWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/roles/{id}'
       .replaceAll('{id}', id.toString());
@@ -80,7 +100,6 @@ class RolesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -92,7 +111,6 @@ class RolesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -103,11 +121,19 @@ class RolesApi {
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   role id
-  Future<void> apiV3RolesIdGet(int id,) async {
-    final response = await apiV3RolesIdGetWithHttpInfo(id,);
+  ///   Role id
+  Future<RoleModel?> viewRole(int id,) async {
+    final response = await viewRoleWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RoleModel',) as RoleModel;
+    
+    }
+    return null;
   }
 }

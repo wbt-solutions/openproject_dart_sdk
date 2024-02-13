@@ -1,23 +1,37 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.12
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:openproject_dart_sdk/api.dart';
 import 'package:test/test.dart';
 
 
 /// tests for HelpTextsApi
 void main() {
-  var instance = HelpTextsApi();
+  // final instance = HelpTextsApi();
 
   group('tests for HelpTextsApi', () {
-    // List all help texts
+    // Get help text
     //
-    //Future apiV3HelpTextsGet() async 
-    test('test apiV3HelpTextsGet', () async {
+    // Fetches the help text from the given id.
+    //
+    //Future<HelpTextModel> getHelpText(int id) async
+    test('test getHelpText', () async {
       // TODO
     });
 
-    // View help text
+    // List help texts
     //
-    //Future apiV3HelpTextsIdGet(int id) async 
-    test('test apiV3HelpTextsIdGet', () async {
+    // List the complete collection of help texts.
+    //
+    //Future<HelpTextCollectionModel> listHelpTexts() async
+    test('test listHelpTexts', () async {
       // TODO
     });
 

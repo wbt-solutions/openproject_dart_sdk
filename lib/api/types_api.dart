@@ -16,71 +16,12 @@ class TypesApi {
 
   final ApiClient apiClient;
 
-  /// List types available in a project
-  ///
-  /// This endpoint lists the types that are *available* in a given project.
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] projectId (required):
-  ///   ID of the project whoose types will be listed
-  Future<Response> apiV3ProjectsProjectIdTypesGetWithHttpInfo(int projectId,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/projects/{project_id}/types'
-      .replaceAll('{project_id}', projectId.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['basicAuth', 'oAuth'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
-    );
-  }
-
-  /// List types available in a project
-  ///
-  /// This endpoint lists the types that are *available* in a given project.
-  ///
-  /// Parameters:
-  ///
-  /// * [int] projectId (required):
-  ///   ID of the project whoose types will be listed
-  Future<WPTypes?> apiV3ProjectsProjectIdTypesGet(int projectId,) async {
-    final response = await apiV3ProjectsProjectIdTypesGetWithHttpInfo(projectId,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WPTypes',) as WPTypes;
-    
-    }
-    return null;
-  }
-
   /// List all Types
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> apiV3TypesGetWithHttpInfo() async {
+  Future<Response> listAllTypesWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/types';
 
@@ -91,7 +32,6 @@ class TypesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -103,13 +43,14 @@ class TypesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// List all Types
-  Future<WPTypes?> apiV3TypesGet() async {
-    final response = await apiV3TypesGetWithHttpInfo();
+  ///
+  /// 
+  Future<Object?> listAllTypes() async {
+    final response = await listAllTypesWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -117,7 +58,66 @@ class TypesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WPTypes',) as WPTypes;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
+  }
+
+  /// List types available in a project
+  ///
+  /// This endpoint lists the types that are *available* in a given project.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   ID of the project whose types will be listed
+  Future<Response> listTypesAvailableInAProjectWithHttpInfo(int id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/v3/projects/{id}/types'
+      .replaceAll('{id}', id.toString());
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// List types available in a project
+  ///
+  /// This endpoint lists the types that are *available* in a given project.
+  ///
+  /// Parameters:
+  ///
+  /// * [int] id (required):
+  ///   ID of the project whose types will be listed
+  Future<Object?> listTypesAvailableInAProject(int id,) async {
+    final response = await listTypesAvailableInAProjectWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
     
     }
     return null;
@@ -125,13 +125,15 @@ class TypesApi {
 
   /// View Type
   ///
+  /// 
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   type id
-  Future<Response> apiV3TypesIdGetWithHttpInfo(int id,) async {
+  ///   Type id
+  Future<Response> viewTypeWithHttpInfo(int id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/types/{id}'
       .replaceAll('{id}', id.toString());
@@ -143,7 +145,6 @@ class TypesApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -155,18 +156,19 @@ class TypesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
   /// View Type
   ///
+  /// 
+  ///
   /// Parameters:
   ///
   /// * [int] id (required):
-  ///   type id
-  Future<WPType?> apiV3TypesIdGet(int id,) async {
-    final response = await apiV3TypesIdGetWithHttpInfo(id,);
+  ///   Type id
+  Future<TypeModel?> viewType(int id,) async {
+    final response = await viewTypeWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -174,7 +176,7 @@ class TypesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WPType',) as WPType;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TypeModel',) as TypeModel;
     
     }
     return null;

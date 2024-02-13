@@ -5,15 +5,15 @@
 import 'package:openproject_dart_sdk/api.dart';
 ```
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiV3ExampleFormPost**](FormsApi.md#apiv3exampleformpost) | **POST** /api/v3/example/form | show or validate form
+[**showOrValidateForm**](FormsApi.md#showorvalidateform) | **POST** /api/v3/example/form | show or validate form
 
 
-# **apiV3ExampleFormPost**
-> apiV3ExampleFormPost(inlineObject1)
+# **showOrValidateForm**
+> Object showOrValidateForm(showOrValidateFormRequest)
 
 show or validate form
 
@@ -22,19 +22,18 @@ This is an example of how a form might look like. Note that this endpoint does n
 ### Example
 ```dart
 import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: basicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('basicAuth').password = 'YOUR_PASSWORD';
-// TODO Configure OAuth2 access token for authorization: oAuth
-//defaultApiClient.getAuthentication<OAuth>('oAuth').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = FormsApi();
-final inlineObject1 = InlineObject1(); // InlineObject1 | 
+final showOrValidateFormRequest = ShowOrValidateFormRequest(); // ShowOrValidateFormRequest | 
 
 try {
-    api_instance.apiV3ExampleFormPost(inlineObject1);
+    final result = api_instance.showOrValidateForm(showOrValidateFormRequest);
+    print(result);
 } catch (e) {
-    print('Exception when calling FormsApi->apiV3ExampleFormPost: $e\n');
+    print('Exception when calling FormsApi->showOrValidateForm: $e\n');
 }
 ```
 
@@ -42,20 +41,20 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject1** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
+ **showOrValidateFormRequest** | [**ShowOrValidateFormRequest**](ShowOrValidateFormRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**Object**](Object.md)
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [oAuth](../README.md#oAuth)
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json
+ - **Accept**: application/hal+json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

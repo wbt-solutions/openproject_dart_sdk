@@ -25,8 +25,11 @@ class PrincipalsApi {
   /// Parameters:
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
-  Future<Response> apiV3PrincipalsGetWithHttpInfo({ String? filters, }) async {
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*, *PlaceholderUser*).  + member: filters principals by the projects they are members in.  + name: filters principals by the user or group name.  + any_name_attribute: filters principals by the user or group first- and last name, email or login.  + status: filters principals by their status number (active = *1*, registered = *2*, locked = *3*, invited = *4*)
+  ///
+  /// * [String] select:
+  ///   Comma separated list of properties to include.
+  Future<Response> listPrincipalsWithHttpInfo({ String? filters, String? select, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/principals';
 
@@ -40,8 +43,10 @@ class PrincipalsApi {
     if (filters != null) {
       queryParams.addAll(_queryParams('', 'filters', filters));
     }
+    if (select != null) {
+      queryParams.addAll(_queryParams('', 'select', select));
+    }
 
-    const authNames = <String>['basicAuth', 'oAuth'];
     const contentTypes = <String>[];
 
 
@@ -53,7 +58,6 @@ class PrincipalsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
-      authNames,
     );
   }
 
@@ -64,11 +68,22 @@ class PrincipalsApi {
   /// Parameters:
   ///
   /// * [String] filters:
-  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](#queries) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*).  + member: filters principals by the projects they are members in.
-  Future<void> apiV3PrincipalsGet({ String? filters, }) async {
-    final response = await apiV3PrincipalsGetWithHttpInfo( filters: filters, );
+  ///   JSON specifying filter conditions. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint. Currently supported filters are:  + type: filters principals by their type (*User*, *Group*, *PlaceholderUser*).  + member: filters principals by the projects they are members in.  + name: filters principals by the user or group name.  + any_name_attribute: filters principals by the user or group first- and last name, email or login.  + status: filters principals by their status number (active = *1*, registered = *2*, locked = *3*, invited = *4*)
+  ///
+  /// * [String] select:
+  ///   Comma separated list of properties to include.
+  Future<Object?> listPrincipals({ String? filters, String? select, }) async {
+    final response = await listPrincipalsWithHttpInfo( filters: filters, select: select, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+    
+    }
+    return null;
   }
 }

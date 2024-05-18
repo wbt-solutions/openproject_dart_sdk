@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -46,9 +46,9 @@ void main() {
       // TODO
     });
 
-    // The delay in days between closing of `from` and start of `to`
-    // int delayStar
-    test('to test the property `delayStar`', () async {
+    // The lag in days between closing of `from` and start of `to`
+    // int lagStar
+    test('to test the property `lagStar`', () async {
       // TODO
     });
 

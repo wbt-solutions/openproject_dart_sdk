@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **spentTime** | **String** | The time booked for this work package by users working on it  # Conditions  **Permission** view time entries | [optional] [readonly] 
 **percentageDone** | **int** | Amount of total completion for a work package | [optional] 
 **derivedPercentageDone** | **int** | Amount of total completion for a work package derived from itself and its descendant work packages | [optional] [readonly] 
-**createdAt** | [**DateTime**](DateTime.md) | Time of creation | [optional] [readonly] 
-**updatedAt** | [**DateTime**](DateTime.md) | Time of the most recent change to the work package | [optional] [readonly] 
+**createdAt** | [**DateTime**](DateTime.md) | Time of creation. Can be writable by admins with the `apiv3_write_readonly_attributes` setting enabled. | [optional] [readonly] 
+**updatedAt** | [**DateTime**](DateTime.md) | Time of the most recent change to the work package. | [optional] [readonly] 
 **links** | [**WorkPackageModelLinks**](WorkPackageModelLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

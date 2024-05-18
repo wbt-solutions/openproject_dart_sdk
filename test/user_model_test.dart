@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -21,69 +21,15 @@ void main() {
       // TODO
     });
 
-    // User's id
+    // The principal's unique identifier.
     // int id
     test('to test the property `id`', () async {
       // TODO
     });
 
-    // User's login name  # Conditions  **Permission**: Administrator, manage_user global permission
-    // String login
-    test('to test the property `login`', () async {
-      // TODO
-    });
-
-    // User's first name  # Conditions  **Permission**: Administrator, manage_user global permission
-    // String firstName
-    test('to test the property `firstName`', () async {
-      // TODO
-    });
-
-    // User's last name  # Conditions  **Permission**: Administrator, manage_user global permission
-    // String lastName
-    test('to test the property `lastName`', () async {
-      // TODO
-    });
-
-    // User's full name, formatting depends on instance settings
+    // The principal's display name, layout depends on instance settings.
     // String name
     test('to test the property `name`', () async {
-      // TODO
-    });
-
-    // User's email address  # Conditions  E-Mail address not hidden, **Permission**: Administrator, manage_user global permission
-    // String email
-    test('to test the property `email`', () async {
-      // TODO
-    });
-
-    // Flag indicating whether or not the user is an admin  # Conditions  **Permission**: Administrator
-    // bool admin
-    test('to test the property `admin`', () async {
-      // TODO
-    });
-
-    // URL to user's avatar
-    // String avatar
-    test('to test the property `avatar`', () async {
-      // TODO
-    });
-
-    // The current activation status of the user (see below)
-    // String status
-    test('to test the property `status`', () async {
-      // TODO
-    });
-
-    // User's language | ISO 639-1 format  # Conditions  **Permission**: Administrator, manage_user global permission
-    // String language
-    test('to test the property `language`', () async {
-      // TODO
-    });
-
-    // User's identity_url for OmniAuth authentication  # Conditions  **Permission**: Administrator
-    // Object identityUrl
-    test('to test the property `identityUrl`', () async {
       // TODO
     });
 
@@ -99,8 +45,62 @@ void main() {
       // TODO
     });
 
-    // UserModelLinks links
+    // UserModelAllOfLinks links
     test('to test the property `links`', () async {
+      // TODO
+    });
+
+    // URL to user's avatar
+    // String avatar
+    test('to test the property `avatar`', () async {
+      // TODO
+    });
+
+    // The user's login name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // String login
+    test('to test the property `login`', () async {
+      // TODO
+    });
+
+    // The user's first name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // String firstName
+    test('to test the property `firstName`', () async {
+      // TODO
+    });
+
+    // The user's last name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // String lastName
+    test('to test the property `lastName`', () async {
+      // TODO
+    });
+
+    // The user's email address  # Conditions  - E-Mail address not hidden - User is not a new record - User is self, or `create_user` or `manage_user` permission globally
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
+    // Flag indicating whether or not the user is an admin  # Conditions  - `admin`
+    // bool admin
+    test('to test the property `admin`', () async {
+      // TODO
+    });
+
+    // The current activation status of the user.  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // String status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // User's language | ISO 639-1 format  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // String language
+    test('to test the property `language`', () async {
+      // TODO
+    });
+
+    // User's identity_url for OmniAuth authentication.  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+    // Object identityUrl
+    test('to test the property `identityUrl`', () async {
       // TODO
     });
 

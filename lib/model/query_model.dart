@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -20,7 +20,7 @@ class QueryModel {
     this.timelineVisible,
     this.timelineLabels = const [],
     this.timelineZoomLevel,
-    this.timestamps,
+    this.timestamps = const [],
     this.highlightingMode,
     this.showHierarchies,
     this.hidden,
@@ -83,13 +83,7 @@ class QueryModel {
   String? timelineZoomLevel;
 
   /// Timestamps to filter by when showing changed attributes on work packages.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  List? timestamps;
+  List<String> timestamps;
 
   /// Which highlighting mode should the table have?
   ///
@@ -159,7 +153,7 @@ class QueryModel {
     other.timelineVisible == timelineVisible &&
     _deepEquality.equals(other.timelineLabels, timelineLabels) &&
     other.timelineZoomLevel == timelineZoomLevel &&
-    other.timestamps == timestamps &&
+    _deepEquality.equals(other.timestamps, timestamps) &&
     other.highlightingMode == highlightingMode &&
     other.showHierarchies == showHierarchies &&
     other.hidden == hidden &&
@@ -179,7 +173,7 @@ class QueryModel {
     (timelineVisible == null ? 0 : timelineVisible!.hashCode) +
     (timelineLabels.hashCode) +
     (timelineZoomLevel == null ? 0 : timelineZoomLevel!.hashCode) +
-    (timestamps == null ? 0 : timestamps!.hashCode) +
+    (timestamps.hashCode) +
     (highlightingMode == null ? 0 : highlightingMode!.hashCode) +
     (showHierarchies == null ? 0 : showHierarchies!.hashCode) +
     (hidden == null ? 0 : hidden!.hashCode) +
@@ -221,11 +215,7 @@ class QueryModel {
     } else {
       json[r'timelineZoomLevel'] = null;
     }
-    if (this.timestamps != null) {
       json[r'timestamps'] = this.timestamps;
-    } else {
-      json[r'timestamps'] = null;
-    }
     if (this.highlightingMode != null) {
       json[r'highlightingMode'] = this.highlightingMode;
     } else {
@@ -289,7 +279,9 @@ class QueryModel {
             ? (json[r'timelineLabels'] as Iterable).cast<String>().toList(growable: false)
             : const [],
         timelineZoomLevel: mapValueOfType<String>(json, r'timelineZoomLevel'),
-        //timestamps: List.fromJson(json[r'timestamps']),
+        timestamps: json[r'timestamps'] is Iterable
+            ? (json[r'timestamps'] as Iterable).cast<String>().toList(growable: false)
+            : const [],
         highlightingMode: mapValueOfType<String>(json, r'highlightingMode'),
         showHierarchies: mapValueOfType<bool>(json, r'showHierarchies'),
         hidden: mapValueOfType<bool>(json, r'hidden'),

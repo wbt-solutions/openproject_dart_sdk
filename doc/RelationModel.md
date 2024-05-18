@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **type** | **String** | Which kind of relation (blocks, precedes, etc.) | [optional] 
 **reverseType** | **String** | The kind of relation from the other WP's perspective | [optional] [readonly] 
 **description** | **String** | Short text further describing the relation | [optional] 
-**delayStar** | **int** | The delay in days between closing of `from` and start of `to` | [optional] 
+**lagStar** | **int** | The lag in days between closing of `from` and start of `to` | [optional] 
 **links** | [**RelationModelLinks**](RelationModelLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

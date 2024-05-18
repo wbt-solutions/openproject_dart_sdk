@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -35,15 +35,6 @@ void main() {
       // TODO
     });
 
-    // Available responsibles
-    //
-    // Gets a list of users that can be assigned as the responsible of a work package in the given project.
-    //
-    //Future<Object> availableResponsibles(int id) async
-    test('test availableResponsibles', () async {
-      // TODO
-    });
-
     // Available watchers
     //
     // Gets a list of users that are able to be watchers of the specified work package.
@@ -66,7 +57,7 @@ void main() {
     //
     // When calling this endpoint the client provides a single object, containing at least the properties and links that are required, in the body. The required fields of a WorkPackage can be found in its schema, which is embedded in the respective form. Note that it is only allowed to provide properties or links supporting the write operation.
     //
-    //Future<WorkPackageModel> createProjectWorkPackage(int id, { bool notify }) async
+    //Future<WorkPackageModel> createProjectWorkPackage(int id, { bool notify, WorkPackageModel workPackageModel }) async
     test('test createProjectWorkPackage', () async {
       // TODO
     });
@@ -183,7 +174,7 @@ void main() {
     //
     // Gets a list of users that can be assigned to work packages in the given project.
     //
-    //Future<Object> projectAvailableAssignees(int id) async
+    //Future<AvailableAssigneesModel> projectAvailableAssignees(int id) async
     test('test projectAvailableAssignees', () async {
       // TODO
     });
@@ -237,7 +228,7 @@ void main() {
     //
     // Gets a list of users that can be assigned to the given work package.
     //
-    //Future<Object> workPackageAvailableAssignees(int id) async
+    //Future<AvailableAssigneesModel> workPackageAvailableAssignees(int id) async
     test('test workPackageAvailableAssignees', () async {
       // TODO
     });

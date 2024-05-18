@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -15,99 +15,30 @@ class UserModel {
   UserModel({
     required this.type,
     required this.id,
-    this.login,
-    this.firstName,
-    this.lastName,
     required this.name,
-    this.email,
-    this.admin,
-    required this.avatar,
-    this.status,
-    this.language,
-    this.identityUrl,
     this.createdAt,
     this.updatedAt,
     required this.links,
+    required this.avatar,
+    this.login,
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.admin,
+    this.status,
+    this.language,
+    this.identityUrl,
   });
 
   UserModelTypeEnum type;
 
-  /// User's id
+  /// The principal's unique identifier.
   ///
-  /// Minimum value: 0
+  /// Minimum value: 1
   int id;
 
-  /// User's login name  # Conditions  **Permission**: Administrator, manage_user global permission
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? login;
-
-  /// User's first name  # Conditions  **Permission**: Administrator, manage_user global permission
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? firstName;
-
-  /// User's last name  # Conditions  **Permission**: Administrator, manage_user global permission
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? lastName;
-
-  /// User's full name, formatting depends on instance settings
+  /// The principal's display name, layout depends on instance settings.
   String name;
-
-  /// User's email address  # Conditions  E-Mail address not hidden, **Permission**: Administrator, manage_user global permission
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? email;
-
-  /// Flag indicating whether or not the user is an admin  # Conditions  **Permission**: Administrator
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  bool? admin;
-
-  /// URL to user's avatar
-  String avatar;
-
-  /// The current activation status of the user (see below)
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? status;
-
-  /// User's language | ISO 639-1 format  # Conditions  **Permission**: Administrator, manage_user global permission
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? language;
-
-  /// User's identity_url for OmniAuth authentication  # Conditions  **Permission**: Administrator
-  Object? identityUrl;
 
   /// Time of creation
   ///
@@ -127,52 +58,134 @@ class UserModel {
   ///
   DateTime? updatedAt;
 
-  UserModelLinks links;
+  UserModelAllOfLinks links;
+
+  /// URL to user's avatar
+  String avatar;
+
+  /// The user's login name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? login;
+
+  /// The user's first name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? firstName;
+
+  /// The user's last name  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? lastName;
+
+  /// The user's email address  # Conditions  - E-Mail address not hidden - User is not a new record - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? email;
+
+  /// Flag indicating whether or not the user is an admin  # Conditions  - `admin`
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? admin;
+
+  /// The current activation status of the user.  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? status;
+
+  /// User's language | ISO 639-1 format  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? language;
+
+  /// User's identity_url for OmniAuth authentication.  # Conditions  - User is self, or `create_user` or `manage_user` permission globally
+  Object? identityUrl;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserModel &&
     other.type == type &&
     other.id == id &&
+    other.name == name &&
+    other.createdAt == createdAt &&
+    other.updatedAt == updatedAt &&
+    other.links == links &&
+    other.avatar == avatar &&
     other.login == login &&
     other.firstName == firstName &&
     other.lastName == lastName &&
-    other.name == name &&
     other.email == email &&
     other.admin == admin &&
-    other.avatar == avatar &&
     other.status == status &&
     other.language == language &&
-    other.identityUrl == identityUrl &&
-    other.createdAt == createdAt &&
-    other.updatedAt == updatedAt &&
-    other.links == links;
+    other.identityUrl == identityUrl;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (type.hashCode) +
     (id.hashCode) +
+    (name.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (updatedAt == null ? 0 : updatedAt!.hashCode) +
+    (links.hashCode) +
+    (avatar.hashCode) +
     (login == null ? 0 : login!.hashCode) +
     (firstName == null ? 0 : firstName!.hashCode) +
     (lastName == null ? 0 : lastName!.hashCode) +
-    (name.hashCode) +
     (email == null ? 0 : email!.hashCode) +
     (admin == null ? 0 : admin!.hashCode) +
-    (avatar.hashCode) +
     (status == null ? 0 : status!.hashCode) +
     (language == null ? 0 : language!.hashCode) +
-    (identityUrl == null ? 0 : identityUrl!.hashCode) +
-    (createdAt == null ? 0 : createdAt!.hashCode) +
-    (updatedAt == null ? 0 : updatedAt!.hashCode) +
-    (links.hashCode);
+    (identityUrl == null ? 0 : identityUrl!.hashCode);
 
   @override
-  String toString() => 'UserModel[type=$type, id=$id, login=$login, firstName=$firstName, lastName=$lastName, name=$name, email=$email, admin=$admin, avatar=$avatar, status=$status, language=$language, identityUrl=$identityUrl, createdAt=$createdAt, updatedAt=$updatedAt, links=$links]';
+  String toString() => 'UserModel[type=$type, id=$id, name=$name, createdAt=$createdAt, updatedAt=$updatedAt, links=$links, avatar=$avatar, login=$login, firstName=$firstName, lastName=$lastName, email=$email, admin=$admin, status=$status, language=$language, identityUrl=$identityUrl]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'_type'] = this.type;
       json[r'id'] = this.id;
+      json[r'name'] = this.name;
+    if (this.createdAt != null) {
+      json[r'createdAt'] = this.createdAt!.toUtc().toIso8601String();
+    } else {
+      json[r'createdAt'] = null;
+    }
+    if (this.updatedAt != null) {
+      json[r'updatedAt'] = this.updatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'updatedAt'] = null;
+    }
+      json[r'_links'] = this.links;
+      json[r'avatar'] = this.avatar;
     if (this.login != null) {
       json[r'login'] = this.login;
     } else {
@@ -188,7 +201,6 @@ class UserModel {
     } else {
       json[r'lastName'] = null;
     }
-      json[r'name'] = this.name;
     if (this.email != null) {
       json[r'email'] = this.email;
     } else {
@@ -199,7 +211,6 @@ class UserModel {
     } else {
       json[r'admin'] = null;
     }
-      json[r'avatar'] = this.avatar;
     if (this.status != null) {
       json[r'status'] = this.status;
     } else {
@@ -215,17 +226,6 @@ class UserModel {
     } else {
       json[r'identityUrl'] = null;
     }
-    if (this.createdAt != null) {
-      json[r'createdAt'] = this.createdAt!.toUtc().toIso8601String();
-    } else {
-      json[r'createdAt'] = null;
-    }
-    if (this.updatedAt != null) {
-      json[r'updatedAt'] = this.updatedAt!.toUtc().toIso8601String();
-    } else {
-      json[r'updatedAt'] = null;
-    }
-      json[r'_links'] = this.links;
     return json;
   }
 
@@ -250,19 +250,19 @@ class UserModel {
       return UserModel(
         type: UserModelTypeEnum.fromJson(json[r'_type'])!,
         id: mapValueOfType<int>(json, r'id')!,
+        name: mapValueOfType<String>(json, r'name')!,
+        createdAt: mapDateTime(json, r'createdAt', r''),
+        updatedAt: mapDateTime(json, r'updatedAt', r''),
+        links: UserModelAllOfLinks.fromJson(json[r'_links'])!,
+        avatar: mapValueOfType<String>(json, r'avatar')!,
         login: mapValueOfType<String>(json, r'login'),
         firstName: mapValueOfType<String>(json, r'firstName'),
         lastName: mapValueOfType<String>(json, r'lastName'),
-        name: mapValueOfType<String>(json, r'name')!,
         email: mapValueOfType<String>(json, r'email'),
         admin: mapValueOfType<bool>(json, r'admin'),
-        avatar: mapValueOfType<String>(json, r'avatar')!,
         status: mapValueOfType<String>(json, r'status'),
         language: mapValueOfType<String>(json, r'language'),
         identityUrl: mapValueOfType<Object>(json, r'identityUrl'),
-        createdAt: mapDateTime(json, r'createdAt', r''),
-        updatedAt: mapDateTime(json, r'updatedAt', r''),
-        links: UserModelLinks.fromJson(json[r'_links'])!,
       );
     }
     return null;
@@ -313,8 +313,8 @@ class UserModel {
     '_type',
     'id',
     'name',
-    'avatar',
     '_links',
+    'avatar',
   };
 }
 

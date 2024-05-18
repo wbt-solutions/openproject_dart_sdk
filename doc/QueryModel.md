@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **timelineVisible** | **bool** | Should the timeline mode be shown? | [optional] [readonly] 
 **timelineLabels** | **List<String>** | Which labels are shown in the timeline, empty when default | [optional] [readonly] [default to const []]
 **timelineZoomLevel** | **String** | Which zoom level should the timeline be rendered in? | [optional] [readonly] 
-**timestamps** | [**List**](List.md) | Timestamps to filter by when showing changed attributes on work packages. | [optional] 
+**timestamps** | **List<String>** | Timestamps to filter by when showing changed attributes on work packages. | [optional] [default to const []]
 **highlightingMode** | **String** | Which highlighting mode should the table have? | [optional] [readonly] 
 **showHierarchies** | **bool** | Should the hierarchy mode be enabled? | [optional] [readonly] 
 **hidden** | **bool** | Should the query be hidden from the query list? | [optional] [readonly] 

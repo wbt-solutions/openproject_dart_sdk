@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **listCategoriesOfAProject**
-> Object listCategoriesOfAProject(id)
+> CategoriesByProjectModel listCategoriesOfAProject(id)
 
 List categories of a project
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**CategoriesByProjectModel**](CategoriesByProjectModel.md)
 
 ### Authorization
 

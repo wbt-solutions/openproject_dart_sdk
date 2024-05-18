@@ -116,7 +116,7 @@ void (empty response body)
 
 List Users
 
-Lists users. Only administrators or users with any of the following can access this resource: 'manage_members', 'manage_user', 'share_work_packages'.
+Lists users. Only administrators or users with any of the following can access this resource:  - `manage_members` - `manage_user` - `share_work_packages`
 
 ### Example
 ```dart

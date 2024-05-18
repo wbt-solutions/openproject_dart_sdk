@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -18,7 +18,7 @@ class RelationModel {
     this.type,
     this.reverseType,
     this.description,
-    this.delayStar,
+    this.lagStar,
     this.links,
   });
 
@@ -67,7 +67,7 @@ class RelationModel {
   ///
   String? description;
 
-  /// The delay in days between closing of `from` and start of `to`
+  /// The lag in days between closing of `from` and start of `to`
   ///
   /// Minimum value: 0
   ///
@@ -76,7 +76,7 @@ class RelationModel {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? delayStar;
+  int? lagStar;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -93,7 +93,7 @@ class RelationModel {
     other.type == type &&
     other.reverseType == reverseType &&
     other.description == description &&
-    other.delayStar == delayStar &&
+    other.lagStar == lagStar &&
     other.links == links;
 
   @override
@@ -104,11 +104,11 @@ class RelationModel {
     (type == null ? 0 : type!.hashCode) +
     (reverseType == null ? 0 : reverseType!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
-    (delayStar == null ? 0 : delayStar!.hashCode) +
+    (lagStar == null ? 0 : lagStar!.hashCode) +
     (links == null ? 0 : links!.hashCode);
 
   @override
-  String toString() => 'RelationModel[id=$id, name=$name, type=$type, reverseType=$reverseType, description=$description, delayStar=$delayStar, links=$links]';
+  String toString() => 'RelationModel[id=$id, name=$name, type=$type, reverseType=$reverseType, description=$description, lagStar=$lagStar, links=$links]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -137,10 +137,10 @@ class RelationModel {
     } else {
       json[r'description'] = null;
     }
-    if (this.delayStar != null) {
-      json[r'delay*'] = this.delayStar;
+    if (this.lagStar != null) {
+      json[r'lag*'] = this.lagStar;
     } else {
-      json[r'delay*'] = null;
+      json[r'lag*'] = null;
     }
     if (this.links != null) {
       json[r'_links'] = this.links;
@@ -174,7 +174,7 @@ class RelationModel {
         type: mapValueOfType<String>(json, r'type'),
         reverseType: mapValueOfType<String>(json, r'reverseType'),
         description: mapValueOfType<String>(json, r'description'),
-        delayStar: mapValueOfType<int>(json, r'delay*'),
+        lagStar: mapValueOfType<int>(json, r'lag*'),
         links: RelationModelLinks.fromJson(json[r'_links']),
       );
     }

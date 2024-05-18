@@ -8,7 +8,7 @@ import 'package:openproject_dart_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**base** | [**ErrorResponse**](ErrorResponse.md) |  | [optional] 
+**base_** | [**ErrorResponse**](ErrorResponse.md) |  | [optional] 
 **principal** | [**ErrorResponse**](ErrorResponse.md) |  | [optional] 
 **roles** | [**ErrorResponse**](ErrorResponse.md) |  | [optional] 
 

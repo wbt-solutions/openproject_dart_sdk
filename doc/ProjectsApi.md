@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **createProject**
-> ProjectModel createProject(body)
+> ProjectModel createProject(projectModel)
 
 Create project
 
@@ -39,10 +39,10 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = ProjectsApi();
-final body = Object(); // Object | 
+final projectModel = ProjectModel(); // ProjectModel | 
 
 try {
-    final result = api_instance.createProject(body);
+    final result = api_instance.createProject(projectModel);
     print(result);
 } catch (e) {
     print('Exception when calling ProjectsApi->createProject: $e\n');
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **projectModel** | [**ProjectModel**](ProjectModel.md)|  | [optional] 
 
 ### Return type
 
@@ -161,7 +161,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listAvailableParentProjectCandidates**
-> Object listAvailableParentProjectCandidates(filters, of_, sortBy)
+> ListAvailableParentProjectCandidatesModel listAvailableParentProjectCandidates(filters, of_, sortBy)
 
 List available parent project candidates
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**ListAvailableParentProjectCandidatesModel**](ListAvailableParentProjectCandidatesModel.md)
 
 ### Authorization
 
@@ -445,7 +445,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateProject**
-> ProjectModel updateProject(id, body)
+> ProjectModel updateProject(id, projectModel)
 
 Update Project
 
@@ -460,10 +460,10 @@ import 'package:openproject_dart_sdk/api.dart';
 
 final api_instance = ProjectsApi();
 final id = 1; // int | Project id
-final body = Object(); // Object | 
+final projectModel = ProjectModel(); // ProjectModel | 
 
 try {
-    final result = api_instance.updateProject(id, body);
+    final result = api_instance.updateProject(id, projectModel);
     print(result);
 } catch (e) {
     print('Exception when calling ProjectsApi->updateProject: $e\n');
@@ -475,7 +475,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Project id | 
- **body** | **Object**|  | [optional] 
+ **projectModel** | [**ProjectModel**](ProjectModel.md)|  | [optional] 
 
 ### Return type
 

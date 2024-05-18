@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -13,7 +13,7 @@ part of openproject_dart_sdk.api;
 class MembershipFormModelEmbeddedValidationError {
   /// Returns a new [MembershipFormModelEmbeddedValidationError] instance.
   MembershipFormModelEmbeddedValidationError({
-    this.base,
+    this.base_,
     this.principal,
     this.roles,
   });
@@ -24,7 +24,7 @@ class MembershipFormModelEmbeddedValidationError {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  ErrorResponse? base;
+  ErrorResponse? base_;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -44,24 +44,24 @@ class MembershipFormModelEmbeddedValidationError {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is MembershipFormModelEmbeddedValidationError &&
-    other.base == base &&
+    other.base_ == base_ &&
     other.principal == principal &&
     other.roles == roles;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (base == null ? 0 : base!.hashCode) +
+    (base_ == null ? 0 : base_!.hashCode) +
     (principal == null ? 0 : principal!.hashCode) +
     (roles == null ? 0 : roles!.hashCode);
 
   @override
-  String toString() => 'MembershipFormModelEmbeddedValidationError[base=$base, principal=$principal, roles=$roles]';
+  String toString() => 'MembershipFormModelEmbeddedValidationError[base_=$base_, principal=$principal, roles=$roles]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.base != null) {
-      json[r'base'] = this.base;
+    if (this.base_ != null) {
+      json[r'base'] = this.base_;
     } else {
       json[r'base'] = null;
     }
@@ -97,7 +97,7 @@ class MembershipFormModelEmbeddedValidationError {
       }());
 
       return MembershipFormModelEmbeddedValidationError(
-        base: ErrorResponse.fromJson(json[r'base']),
+        base_: ErrorResponse.fromJson(json[r'base']),
         principal: ErrorResponse.fromJson(json[r'principal']),
         roles: ErrorResponse.fromJson(json[r'roles']),
       );

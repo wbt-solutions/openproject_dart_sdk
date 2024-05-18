@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -21,7 +21,7 @@ void main() {
     //
     // Creates a new project, applying the attributes provided in the body.  You can use the form and schema to be retrieve the valid attribute values and by that be guided towards successful creation.
     //
-    //Future<ProjectModel> createProject({ Object body }) async
+    //Future<ProjectModel> createProject({ ProjectModel projectModel }) async
     test('test createProject', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Lists projects which can become parent to another project. Only sound candidates are returned. For instance a project cannot become parent of itself or it's children.  To specify the project for which a parent is queried for, the `of` parameter can be provided. If no `of` parameter is provided, a new project is assumed. Then, the check for the hierarchy is omitted as a new project cannot be part of a hierarchy yet.  Candidates can be filtered. Most commonly one will want to filter by name or identifier. You can do this through the `filters` parameter which works just like the work package index.  For instance to find all parent candidates with \"rollout\" in their name:  ``` ?filters=[{\"name_and_identifier\":{\"operator\":\"~\",\"values\":[\"rollout\"]}}] ```
     //
-    //Future<Object> listAvailableParentProjectCandidates({ String filters, String of_, String sortBy }) async
+    //Future<ListAvailableParentProjectCandidatesModel> listAvailableParentProjectCandidates({ String filters, String of_, String sortBy }) async
     test('test listAvailableParentProjectCandidates', () async {
       // TODO
     });
@@ -102,7 +102,7 @@ void main() {
     //
     // Updates the given project by applying the attributes provided in the body.
     //
-    //Future<ProjectModel> updateProject(int id, { Object body }) async
+    //Future<ProjectModel> updateProject(int id, { ProjectModel projectModel }) async
     test('test updateProject', () async {
       // TODO
     });

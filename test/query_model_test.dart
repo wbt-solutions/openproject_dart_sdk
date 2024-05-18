@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -59,7 +59,7 @@ void main() {
     });
 
     // Timestamps to filter by when showing changed attributes on work packages.
-    // List timestamps
+    // List<String> timestamps (default value: const [])
     test('to test the property `timestamps`', () async {
       // TODO
     });

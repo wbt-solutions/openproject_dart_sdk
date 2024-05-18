@@ -9,16 +9,63 @@ All URIs are relative to *https://qa.openproject-edge.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addAttachmentToMeeting**](AttachmentsApi.md#addattachmenttomeeting) | **POST** /api/v3/meetings/{id}/attachments | Add attachment to meeting
 [**addAttachmentToPost**](AttachmentsApi.md#addattachmenttopost) | **POST** /api/v3/posts/{id}/attachments | Add attachment to post
 [**addAttachmentToWikiPage**](AttachmentsApi.md#addattachmenttowikipage) | **POST** /api/v3/wiki_pages/{id}/attachments | Add attachment to wiki page
 [**createAttachment**](AttachmentsApi.md#createattachment) | **POST** /api/v3/attachments | Create Attachment
 [**createWorkPackageAttachment**](AttachmentsApi.md#createworkpackageattachment) | **POST** /api/v3/work_packages/{id}/attachments | Create work package attachment
 [**deleteAttachment**](AttachmentsApi.md#deleteattachment) | **DELETE** /api/v3/attachments/{id} | Delete attachment
+[**listAttachmentsByMeeting**](AttachmentsApi.md#listattachmentsbymeeting) | **GET** /api/v3/meetings/{id}/attachments | List attachments by meeting
 [**listAttachmentsByPost**](AttachmentsApi.md#listattachmentsbypost) | **GET** /api/v3/posts/{id}/attachments | List attachments by post
 [**listAttachmentsByWikiPage**](AttachmentsApi.md#listattachmentsbywikipage) | **GET** /api/v3/wiki_pages/{id}/attachments | List attachments by wiki page
 [**listWorkPackageAttachments**](AttachmentsApi.md#listworkpackageattachments) | **GET** /api/v3/work_packages/{id}/attachments | List attachments by work package
 [**viewAttachment**](AttachmentsApi.md#viewattachment) | **GET** /api/v3/attachments/{id} | View attachment
 
+
+# **addAttachmentToMeeting**
+> addAttachmentToMeeting(id)
+
+Add attachment to meeting
+
+Adds an attachment with the meeting as it's container.
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = AttachmentsApi();
+final id = 1; // int | ID of the meeting to receive the attachment
+
+try {
+    api_instance.addAttachmentToMeeting(id);
+} catch (e) {
+    print('Exception when calling AttachmentsApi->addAttachmentToMeeting: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| ID of the meeting to receive the attachment | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addAttachmentToPost**
 > addAttachmentToPost(id)
@@ -240,6 +287,52 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/hal+json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listAttachmentsByMeeting**
+> AttachmentsModel listAttachmentsByMeeting(id)
+
+List attachments by meeting
+
+
+
+### Example
+```dart
+import 'package:openproject_dart_sdk/api.dart';
+// TODO Configure HTTP basic authorization: BasicAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
+
+final api_instance = AttachmentsApi();
+final id = 1; // int | ID of the meeting whose attachments will be listed
+
+try {
+    final result = api_instance.listAttachmentsByMeeting(id);
+    print(result);
+} catch (e) {
+    print('Exception when calling AttachmentsApi->listAttachmentsByMeeting: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| ID of the meeting whose attachments will be listed | 
+
+### Return type
+
+[**AttachmentsModel**](AttachmentsModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -57,7 +57,7 @@ void main() {
     //
     // This endpoint lists the versions that are *available* in a given project. Note that due to sharing this might be more than the versions *defined* by that project.
     //
-    //Future<Object> listVersionsAvailableInAProject(int id) async
+    //Future<VersionsByProjectModel> listVersionsAvailableInAProject(int id) async
     test('test listVersionsAvailableInAProject', () async {
       // TODO
     });

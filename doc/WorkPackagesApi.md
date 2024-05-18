@@ -11,7 +11,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addWatcher**](WorkPackagesApi.md#addwatcher) | **POST** /api/v3/work_packages/{id}/watchers | Add watcher
 [**availableProjectsForWorkPackage**](WorkPackagesApi.md#availableprojectsforworkpackage) | **GET** /api/v3/work_packages/{id}/available_projects | Available projects for work package
-[**availableResponsibles**](WorkPackagesApi.md#availableresponsibles) | **GET** /api/v3/projects/{id}/available_responsibles | Available responsibles
 [**availableWatchers**](WorkPackagesApi.md#availablewatchers) | **GET** /api/v3/work_packages/{id}/available_watchers | Available watchers
 [**commentWorkPackage**](WorkPackagesApi.md#commentworkpackage) | **POST** /api/v3/work_packages/{id}/activities | Comment work package
 [**createProjectWorkPackage**](WorkPackagesApi.md#createprojectworkpackage) | **POST** /api/v3/projects/{id}/work_packages | Create work package in project
@@ -132,52 +131,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **availableResponsibles**
-> Object availableResponsibles(id)
-
-Available responsibles
-
-Gets a list of users that can be assigned as the responsible of a work package in the given project.
-
-### Example
-```dart
-import 'package:openproject_dart_sdk/api.dart';
-// TODO Configure HTTP basic authorization: BasicAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
-
-final api_instance = WorkPackagesApi();
-final id = 1; // int | Project id
-
-try {
-    final result = api_instance.availableResponsibles(id);
-    print(result);
-} catch (e) {
-    print('Exception when calling WorkPackagesApi->availableResponsibles: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| Project id | 
-
-### Return type
-
-[**Object**](Object.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **availableWatchers**
 > Object availableWatchers(id)
 
@@ -274,7 +227,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createProjectWorkPackage**
-> WorkPackageModel createProjectWorkPackage(id, notify)
+> WorkPackageModel createProjectWorkPackage(id, notify, workPackageModel)
 
 Create work package in project
 
@@ -290,9 +243,10 @@ import 'package:openproject_dart_sdk/api.dart';
 final api_instance = WorkPackagesApi();
 final id = 1; // int | Project id
 final notify = false; // bool | Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
+final workPackageModel = WorkPackageModel(); // WorkPackageModel | 
 
 try {
-    final result = api_instance.createProjectWorkPackage(id, notify);
+    final result = api_instance.createProjectWorkPackage(id, notify, workPackageModel);
     print(result);
 } catch (e) {
     print('Exception when calling WorkPackagesApi->createProjectWorkPackage: $e\n');
@@ -305,6 +259,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Project id | 
  **notify** | **bool**| Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user. | [optional] [default to true]
+ **workPackageModel** | [**WorkPackageModel**](WorkPackageModel.md)|  | [optional] 
 
 ### Return type
 
@@ -316,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/hal+json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -915,7 +870,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projectAvailableAssignees**
-> Object projectAvailableAssignees(id)
+> AvailableAssigneesModel projectAvailableAssignees(id)
 
 Project Available assignees
 
@@ -947,7 +902,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**AvailableAssigneesModel**](AvailableAssigneesModel.md)
 
 ### Authorization
 
@@ -1197,7 +1152,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workPackageAvailableAssignees**
-> Object workPackageAvailableAssignees(id)
+> AvailableAssigneesModel workPackageAvailableAssignees(id)
 
 Work Package Available assignees
 
@@ -1229,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**AvailableAssigneesModel**](AvailableAssigneesModel.md)
 
 ### Authorization
 

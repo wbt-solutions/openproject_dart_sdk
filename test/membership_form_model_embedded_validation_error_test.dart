@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -16,8 +16,8 @@ void main() {
   // final instance = MembershipFormModelEmbeddedValidationError();
 
   group('test MembershipFormModelEmbeddedValidationError', () {
-    // ErrorResponse base
-    test('to test the property `base`', () async {
+    // ErrorResponse base_
+    test('to test the property `base_`', () async {
       // TODO
     });
 

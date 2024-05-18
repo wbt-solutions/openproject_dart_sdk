@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -30,7 +30,7 @@ void main() {
     //
     // This endpoint lists the types that are *available* in a given project.
     //
-    //Future<Object> listTypesAvailableInAProject(int id) async
+    //Future<TypesByProjectModel> listTypesAvailableInAProject(int id) async
     test('test listTypesAvailableInAProject', () async {
       // TODO
     });

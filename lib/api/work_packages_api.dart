@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -117,65 +117,6 @@ class WorkPackagesApi {
   ///   work package id
   Future<Object?> availableProjectsForWorkPackage(int id,) async {
     final response = await availableProjectsForWorkPackageWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
-    
-    }
-    return null;
-  }
-
-  /// Available responsibles
-  ///
-  /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   Project id
-  Future<Response> availableResponsiblesWithHttpInfo(int id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/v3/projects/{id}/available_responsibles'
-      .replaceAll('{id}', id.toString());
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Available responsibles
-  ///
-  /// Gets a list of users that can be assigned as the responsible of a work package in the given project.
-  ///
-  /// Parameters:
-  ///
-  /// * [int] id (required):
-  ///   Project id
-  Future<Object?> availableResponsibles(int id,) async {
-    final response = await availableResponsiblesWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -326,13 +267,15 @@ class WorkPackagesApi {
   ///
   /// * [bool] notify:
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-  Future<Response> createProjectWorkPackageWithHttpInfo(int id, { bool? notify, }) async {
+  ///
+  /// * [WorkPackageModel] workPackageModel:
+  Future<Response> createProjectWorkPackageWithHttpInfo(int id, { bool? notify, WorkPackageModel? workPackageModel, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}/work_packages'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody;
+    Object? postBody = workPackageModel;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -342,7 +285,7 @@ class WorkPackagesApi {
       queryParams.addAll(_queryParams('', 'notify', notify));
     }
 
-    const contentTypes = <String>[];
+    const contentTypes = <String>['application/json'];
 
 
     return apiClient.invokeAPI(
@@ -367,8 +310,10 @@ class WorkPackagesApi {
   ///
   /// * [bool] notify:
   ///   Indicates whether change notifications (e.g. via E-Mail) should be sent. Note that this controls notifications for all users interested in changes to the work package (e.g. watchers, author and assignee), not just the current user.
-  Future<WorkPackageModel?> createProjectWorkPackage(int id, { bool? notify, }) async {
-    final response = await createProjectWorkPackageWithHttpInfo(id,  notify: notify, );
+  ///
+  /// * [WorkPackageModel] workPackageModel:
+  Future<WorkPackageModel?> createProjectWorkPackage(int id, { bool? notify, WorkPackageModel? workPackageModel, }) async {
+    final response = await createProjectWorkPackageWithHttpInfo(id,  notify: notify, workPackageModel: workPackageModel, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1308,7 +1253,7 @@ class WorkPackagesApi {
   ///
   /// * [int] id (required):
   ///   Project id
-  Future<Object?> projectAvailableAssignees(int id,) async {
+  Future<AvailableAssigneesModel?> projectAvailableAssignees(int id,) async {
     final response = await projectAvailableAssigneesWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1317,7 +1262,7 @@ class WorkPackagesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AvailableAssigneesModel',) as AvailableAssigneesModel;
     
     }
     return null;
@@ -1677,7 +1622,7 @@ class WorkPackagesApi {
   ///
   /// * [int] id (required):
   ///   Work package id
-  Future<Object?> workPackageAvailableAssignees(int id,) async {
+  Future<AvailableAssigneesModel?> workPackageAvailableAssignees(int id,) async {
     final response = await workPackageAvailableAssigneesWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1686,7 +1631,7 @@ class WorkPackagesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AvailableAssigneesModel',) as AvailableAssigneesModel;
     
     }
     return null;

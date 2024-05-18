@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -69,18 +69,22 @@ class TimeEntriesApi {
   /// Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries' attributes and are accepted by the endpoint.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> createTimeEntryWithHttpInfo() async {
+  ///
+  /// Parameters:
+  ///
+  /// * [TimeEntryModel] timeEntryModel:
+  Future<Response> createTimeEntryWithHttpInfo({ TimeEntryModel? timeEntryModel, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/time_entries';
 
     // ignore: prefer_final_locals
-    Object? postBody;
+    Object? postBody = timeEntryModel;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const contentTypes = <String>[];
+    const contentTypes = <String>['application/json'];
 
 
     return apiClient.invokeAPI(
@@ -97,8 +101,12 @@ class TimeEntriesApi {
   /// Create time entry
   ///
   /// Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries' attributes and are accepted by the endpoint.
-  Future<TimeEntryModel?> createTimeEntry() async {
-    final response = await createTimeEntryWithHttpInfo();
+  ///
+  /// Parameters:
+  ///
+  /// * [TimeEntryModel] timeEntryModel:
+  Future<TimeEntryModel?> createTimeEntry({ TimeEntryModel? timeEntryModel, }) async {
+    final response = await createTimeEntryWithHttpInfo( timeEntryModel: timeEntryModel, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

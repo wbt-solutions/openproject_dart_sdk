@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -13,28 +13,26 @@ part of openproject_dart_sdk.api;
 class GroupModel {
   /// Returns a new [GroupModel] instance.
   GroupModel({
+    required this.type,
     required this.id,
-    this.name,
+    required this.name,
     this.createdAt,
     this.updatedAt,
     required this.links,
+    required this.embedded,
   });
 
-  /// The group id
+  GroupModelTypeEnum type;
+
+  /// The principal's unique identifier.
   ///
   /// Minimum value: 1
   int id;
 
-  /// Group's full name, formatting depends on instance settings  # Conditions - admin
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? name;
+  /// The principal's display name, layout depends on instance settings.
+  String name;
 
-  /// Time of creation  # Conditions - admin
+  /// Time of creation
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -43,7 +41,7 @@ class GroupModel {
   ///
   DateTime? createdAt;
 
-  /// Time of the most recent change to the user
+  /// Time of the most recent change to the principal
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -52,36 +50,39 @@ class GroupModel {
   ///
   DateTime? updatedAt;
 
-  GroupModelLinks links;
+  GroupModelAllOfLinks links;
+
+  GroupModelAllOfEmbedded embedded;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is GroupModel &&
+    other.type == type &&
     other.id == id &&
     other.name == name &&
     other.createdAt == createdAt &&
     other.updatedAt == updatedAt &&
-    other.links == links;
+    other.links == links &&
+    other.embedded == embedded;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (type.hashCode) +
     (id.hashCode) +
-    (name == null ? 0 : name!.hashCode) +
+    (name.hashCode) +
     (createdAt == null ? 0 : createdAt!.hashCode) +
     (updatedAt == null ? 0 : updatedAt!.hashCode) +
-    (links.hashCode);
+    (links.hashCode) +
+    (embedded.hashCode);
 
   @override
-  String toString() => 'GroupModel[id=$id, name=$name, createdAt=$createdAt, updatedAt=$updatedAt, links=$links]';
+  String toString() => 'GroupModel[type=$type, id=$id, name=$name, createdAt=$createdAt, updatedAt=$updatedAt, links=$links, embedded=$embedded]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+      json[r'_type'] = this.type;
       json[r'id'] = this.id;
-    if (this.name != null) {
       json[r'name'] = this.name;
-    } else {
-      json[r'name'] = null;
-    }
     if (this.createdAt != null) {
       json[r'createdAt'] = this.createdAt!.toUtc().toIso8601String();
     } else {
@@ -93,6 +94,7 @@ class GroupModel {
       json[r'updatedAt'] = null;
     }
       json[r'_links'] = this.links;
+      json[r'_embedded'] = this.embedded;
     return json;
   }
 
@@ -115,11 +117,13 @@ class GroupModel {
       }());
 
       return GroupModel(
+        type: GroupModelTypeEnum.fromJson(json[r'_type'])!,
         id: mapValueOfType<int>(json, r'id')!,
-        name: mapValueOfType<String>(json, r'name'),
+        name: mapValueOfType<String>(json, r'name')!,
         createdAt: mapDateTime(json, r'createdAt', r''),
         updatedAt: mapDateTime(json, r'updatedAt', r''),
-        links: GroupModelLinks.fromJson(json[r'_links'])!,
+        links: GroupModelAllOfLinks.fromJson(json[r'_links'])!,
+        embedded: GroupModelAllOfEmbedded.fromJson(json[r'_embedded'])!,
       );
     }
     return null;
@@ -167,8 +171,82 @@ class GroupModel {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    '_type',
     'id',
+    'name',
     '_links',
+    '_embedded',
   };
 }
+
+
+class GroupModelTypeEnum {
+  /// Instantiate a new enum with the provided [value].
+  const GroupModelTypeEnum._(this.value);
+
+  /// The underlying value of this enum member.
+  final String value;
+
+  @override
+  String toString() => value;
+
+  String toJson() => value;
+
+  static const group = GroupModelTypeEnum._(r'Group');
+
+  /// List of all possible values in this [enum][GroupModelTypeEnum].
+  static const values = <GroupModelTypeEnum>[
+    group,
+  ];
+
+  static GroupModelTypeEnum? fromJson(dynamic value) => GroupModelTypeEnumTypeTransformer().decode(value);
+
+  static List<GroupModelTypeEnum> listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <GroupModelTypeEnum>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = GroupModelTypeEnum.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+}
+
+/// Transformation class that can [encode] an instance of [GroupModelTypeEnum] to String,
+/// and [decode] dynamic data back to [GroupModelTypeEnum].
+class GroupModelTypeEnumTypeTransformer {
+  factory GroupModelTypeEnumTypeTransformer() => _instance ??= const GroupModelTypeEnumTypeTransformer._();
+
+  const GroupModelTypeEnumTypeTransformer._();
+
+  String encode(GroupModelTypeEnum data) => data.value;
+
+  /// Decodes a [dynamic value][data] to a GroupModelTypeEnum.
+  ///
+  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
+  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
+  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
+  ///
+  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
+  /// and users are still using an old app with the old code.
+  GroupModelTypeEnum? decode(dynamic data, {bool allowNull = true}) {
+    if (data != null) {
+      switch (data) {
+        case r'Group': return GroupModelTypeEnum.group;
+        default:
+          if (!allowNull) {
+            throw ArgumentError('Unknown enum value to decode: $data');
+          }
+      }
+    }
+    return null;
+  }
+
+  /// Singleton [GroupModelTypeEnumTypeTransformer] instance.
+  static GroupModelTypeEnumTypeTransformer? _instance;
+}
+
 

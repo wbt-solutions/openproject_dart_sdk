@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -17,6 +17,15 @@ void main() {
   // final instance = AttachmentsApi();
 
   group('tests for AttachmentsApi', () {
+    // Add attachment to meeting
+    //
+    // Adds an attachment with the meeting as it's container.
+    //
+    //Future addAttachmentToMeeting(int id) async
+    test('test addAttachmentToMeeting', () async {
+      // TODO
+    });
+
     // Add attachment to post
     //
     // Adds an attachment with the post as it's container.
@@ -59,6 +68,15 @@ void main() {
     //
     //Future deleteAttachment(int id) async
     test('test deleteAttachment', () async {
+      // TODO
+    });
+
+    // List attachments by meeting
+    //
+    // 
+    //
+    //Future<AttachmentsModel> listAttachmentsByMeeting(int id) async
+    test('test listAttachmentsByMeeting', () async {
       // TODO
     });
 

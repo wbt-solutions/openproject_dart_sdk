@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **listAllPriorities**
-> Object listAllPriorities()
+> PriorityCollectionModel listAllPriorities()
 
 List all Priorities
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Object**](Object.md)
+[**PriorityCollectionModel**](PriorityCollectionModel.md)
 
 ### Authorization
 

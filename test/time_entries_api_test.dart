@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -30,7 +30,7 @@ void main() {
     //
     // Creates a new time entry applying the attributes provided in the body. Please note that while there is a fixed set of attributes, custom fields can extend a time entries' attributes and are accepted by the endpoint.
     //
-    //Future<TimeEntryModel> createTimeEntry() async
+    //Future<TimeEntryModel> createTimeEntry({ TimeEntryModel timeEntryModel }) async
     test('test createTimeEntry', () async {
       // TODO
     });

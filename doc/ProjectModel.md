@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **statusExplanation** | [**ProjectModelStatusExplanation**](ProjectModelStatusExplanation.md) |  | [optional] 
 **public** | **bool** | Indicates whether the project is accessible for everybody | [optional] 
 **description** | [**Formattable**](Formattable.md) |  | [optional] 
-**createdAt** | [**DateTime**](DateTime.md) | Time of creation | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) | Time of creation. Can be writable by admins with the `apiv3_write_readonly_attributes` setting enabled. | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) | Time of the most recent change to the project | [optional] 
 **links** | [**ProjectModelLinks**](ProjectModelLinks.md) |  | [optional] 
 

@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -24,13 +24,13 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [Object] body:
-  Future<Response> createProjectWithHttpInfo({ Object? body, }) async {
+  /// * [ProjectModel] projectModel:
+  Future<Response> createProjectWithHttpInfo({ ProjectModel? projectModel, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/projects';
 
     // ignore: prefer_final_locals
-    Object? postBody = body;
+    Object? postBody = projectModel;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -56,9 +56,9 @@ class ProjectsApi {
   ///
   /// Parameters:
   ///
-  /// * [Object] body:
-  Future<ProjectModel?> createProject({ Object? body, }) async {
-    final response = await createProjectWithHttpInfo( body: body, );
+  /// * [ProjectModel] projectModel:
+  Future<ProjectModel?> createProject({ ProjectModel? projectModel, }) async {
+    final response = await createProjectWithHttpInfo( projectModel: projectModel, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -239,7 +239,7 @@ class ProjectsApi {
   ///
   /// * [String] sortBy:
   ///   JSON specifying sort criteria. Accepts the same format as returned by the [queries](https://www.openproject.org/docs/api/endpoints/queries/) endpoint and allows all the filters and sortBy supported by the project list end point.
-  Future<Object?> listAvailableParentProjectCandidates({ String? filters, String? of_, String? sortBy, }) async {
+  Future<ListAvailableParentProjectCandidatesModel?> listAvailableParentProjectCandidates({ String? filters, String? of_, String? sortBy, }) async {
     final response = await listAvailableParentProjectCandidatesWithHttpInfo( filters: filters, of_: of_, sortBy: sortBy, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -248,7 +248,7 @@ class ProjectsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ListAvailableParentProjectCandidatesModel',) as ListAvailableParentProjectCandidatesModel;
     
     }
     return null;
@@ -566,14 +566,14 @@ class ProjectsApi {
   /// * [int] id (required):
   ///   Project id
   ///
-  /// * [Object] body:
-  Future<Response> updateProjectWithHttpInfo(int id, { Object? body, }) async {
+  /// * [ProjectModel] projectModel:
+  Future<Response> updateProjectWithHttpInfo(int id, { ProjectModel? projectModel, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v3/projects/{id}'
       .replaceAll('{id}', id.toString());
 
     // ignore: prefer_final_locals
-    Object? postBody = body;
+    Object? postBody = projectModel;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -602,9 +602,9 @@ class ProjectsApi {
   /// * [int] id (required):
   ///   Project id
   ///
-  /// * [Object] body:
-  Future<ProjectModel?> updateProject(int id, { Object? body, }) async {
-    final response = await updateProjectWithHttpInfo(id,  body: body, );
+  /// * [ProjectModel] projectModel:
+  Future<ProjectModel?> updateProject(int id, { ProjectModel? projectModel, }) async {
+    final response = await updateProjectWithHttpInfo(id,  projectModel: projectModel, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

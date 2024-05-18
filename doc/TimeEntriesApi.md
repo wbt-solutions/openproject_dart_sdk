@@ -63,7 +63,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createTimeEntry**
-> TimeEntryModel createTimeEntry()
+> TimeEntryModel createTimeEntry(timeEntryModel)
 
 Create time entry
 
@@ -77,9 +77,10 @@ import 'package:openproject_dart_sdk/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('BasicAuth').password = 'YOUR_PASSWORD';
 
 final api_instance = TimeEntriesApi();
+final timeEntryModel = TimeEntryModel(); // TimeEntryModel | 
 
 try {
-    final result = api_instance.createTimeEntry();
+    final result = api_instance.createTimeEntry(timeEntryModel);
     print(result);
 } catch (e) {
     print('Exception when calling TimeEntriesApi->createTimeEntry: $e\n');
@@ -87,7 +88,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **timeEntryModel** | [**TimeEntryModel**](TimeEntryModel.md)|  | [optional] 
 
 ### Return type
 
@@ -99,7 +103,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/hal+json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

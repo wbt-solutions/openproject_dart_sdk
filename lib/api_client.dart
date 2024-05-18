@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -214,12 +214,32 @@ class ApiClient {
           return AttachmentsModelAllOfLinks.fromJson(value);
         case 'AttachmentsModelAllOfLinksSelf':
           return AttachmentsModelAllOfLinksSelf.fromJson(value);
+        case 'AvailableAssigneesModel':
+          return AvailableAssigneesModel.fromJson(value);
+        case 'AvailableAssigneesModelAllOfEmbedded':
+          return AvailableAssigneesModelAllOfEmbedded.fromJson(value);
+        case 'AvailableAssigneesModelAllOfEmbeddedElements':
+          return AvailableAssigneesModelAllOfEmbeddedElements.fromJson(value);
+        case 'AvailableAssigneesModelAllOfLinks':
+          return AvailableAssigneesModelAllOfLinks.fromJson(value);
+        case 'AvailableAssigneesModelAllOfLinksSelf':
+          return AvailableAssigneesModelAllOfLinksSelf.fromJson(value);
         case 'BudgetModel':
           return BudgetModel.fromJson(value);
         case 'BudgetModelLinks':
           return BudgetModelLinks.fromJson(value);
         case 'BudgetModelLinksSelf':
           return BudgetModelLinksSelf.fromJson(value);
+        case 'CategoriesByProjectModel':
+          return CategoriesByProjectModel.fromJson(value);
+        case 'CategoriesByProjectModelAllOfEmbedded':
+          return CategoriesByProjectModelAllOfEmbedded.fromJson(value);
+        case 'CategoriesByProjectModelAllOfEmbeddedElements':
+          return CategoriesByProjectModelAllOfEmbeddedElements.fromJson(value);
+        case 'CategoriesByProjectModelAllOfLinks':
+          return CategoriesByProjectModelAllOfLinks.fromJson(value);
+        case 'CategoriesByProjectModelAllOfLinksSelf':
+          return CategoriesByProjectModelAllOfLinksSelf.fromJson(value);
         case 'CategoryModel':
           return CategoryModel.fromJson(value);
         case 'CategoryModelLinks':
@@ -388,18 +408,16 @@ class ApiClient {
           return GroupCollectionModelAllOfLinksSelf.fromJson(value);
         case 'GroupModel':
           return GroupModel.fromJson(value);
-        case 'GroupModelLinks':
-          return GroupModelLinks.fromJson(value);
-        case 'GroupModelLinksDelete':
-          return GroupModelLinksDelete.fromJson(value);
-        case 'GroupModelLinksMembersInner':
-          return GroupModelLinksMembersInner.fromJson(value);
-        case 'GroupModelLinksMemberships':
-          return GroupModelLinksMemberships.fromJson(value);
-        case 'GroupModelLinksSelf':
-          return GroupModelLinksSelf.fromJson(value);
-        case 'GroupModelLinksUpdateImmediately':
-          return GroupModelLinksUpdateImmediately.fromJson(value);
+        case 'GroupModelAllOfEmbedded':
+          return GroupModelAllOfEmbedded.fromJson(value);
+        case 'GroupModelAllOfLinks':
+          return GroupModelAllOfLinks.fromJson(value);
+        case 'GroupModelAllOfLinksDelete':
+          return GroupModelAllOfLinksDelete.fromJson(value);
+        case 'GroupModelAllOfLinksMembers':
+          return GroupModelAllOfLinksMembers.fromJson(value);
+        case 'GroupModelAllOfLinksUpdateImmediately':
+          return GroupModelAllOfLinksUpdateImmediately.fromJson(value);
         case 'GroupWriteModel':
           return GroupWriteModel.fromJson(value);
         case 'GroupWriteModelLinks':
@@ -428,6 +446,30 @@ class ApiClient {
           return HelpTextModelLinksSelf.fromJson(value);
         case 'Link':
           return Link.fromJson(value);
+        case 'ListAvailableParentProjectCandidatesModel':
+          return ListAvailableParentProjectCandidatesModel.fromJson(value);
+        case 'ListAvailableParentProjectCandidatesModelAllOfEmbedded':
+          return ListAvailableParentProjectCandidatesModelAllOfEmbedded.fromJson(value);
+        case 'ListAvailableParentProjectCandidatesModelAllOfEmbeddedElements':
+          return ListAvailableParentProjectCandidatesModelAllOfEmbeddedElements.fromJson(value);
+        case 'ListAvailableParentProjectCandidatesModelAllOfLinks':
+          return ListAvailableParentProjectCandidatesModelAllOfLinks.fromJson(value);
+        case 'ListAvailableParentProjectCandidatesModelAllOfLinksSelf':
+          return ListAvailableParentProjectCandidatesModelAllOfLinksSelf.fromJson(value);
+        case 'MeetingModel':
+          return MeetingModel.fromJson(value);
+        case 'MeetingModelLinks':
+          return MeetingModelLinks.fromJson(value);
+        case 'MeetingModelLinksAddAttachment':
+          return MeetingModelLinksAddAttachment.fromJson(value);
+        case 'MeetingModelLinksAttachments':
+          return MeetingModelLinksAttachments.fromJson(value);
+        case 'MeetingModelLinksAuthor':
+          return MeetingModelLinksAuthor.fromJson(value);
+        case 'MeetingModelLinksProject':
+          return MeetingModelLinksProject.fromJson(value);
+        case 'MeetingModelLinksSelf':
+          return MeetingModelLinksSelf.fromJson(value);
         case 'MembershipCollectionModel':
           return MembershipCollectionModel.fromJson(value);
         case 'MembershipCollectionModelAllOfEmbedded':
@@ -574,12 +616,60 @@ class ApiClient {
           return PaginatedCollectionModelAllOfLinksChangeSize.fromJson(value);
         case 'PaginatedCollectionModelAllOfLinksJumpTo':
           return PaginatedCollectionModelAllOfLinksJumpTo.fromJson(value);
+        case 'PlaceholderUserCollectionModel':
+          return PlaceholderUserCollectionModel.fromJson(value);
+        case 'PlaceholderUserCollectionModelAllOfEmbedded':
+          return PlaceholderUserCollectionModelAllOfEmbedded.fromJson(value);
+        case 'PlaceholderUserCollectionModelAllOfLinks':
+          return PlaceholderUserCollectionModelAllOfLinks.fromJson(value);
+        case 'PlaceholderUserCollectionModelAllOfLinksSelf':
+          return PlaceholderUserCollectionModelAllOfLinksSelf.fromJson(value);
+        case 'PlaceholderUserCreateModel':
+          return PlaceholderUserCreateModel.fromJson(value);
+        case 'PlaceholderUserModel':
+          return PlaceholderUserModel.fromJson(value);
+        case 'PlaceholderUserModelAllOfLinks':
+          return PlaceholderUserModelAllOfLinks.fromJson(value);
+        case 'PlaceholderUserModelAllOfLinksDelete':
+          return PlaceholderUserModelAllOfLinksDelete.fromJson(value);
+        case 'PlaceholderUserModelAllOfLinksShowUser':
+          return PlaceholderUserModelAllOfLinksShowUser.fromJson(value);
+        case 'PlaceholderUserModelAllOfLinksUpdateImmediately':
+          return PlaceholderUserModelAllOfLinksUpdateImmediately.fromJson(value);
         case 'PostModel':
           return PostModel.fromJson(value);
         case 'PostModelLinks':
           return PostModelLinks.fromJson(value);
         case 'PostModelLinksAddAttachment':
           return PostModelLinksAddAttachment.fromJson(value);
+        case 'PrincipalCollectionModel':
+          return PrincipalCollectionModel.fromJson(value);
+        case 'PrincipalCollectionModelAllOfEmbedded':
+          return PrincipalCollectionModelAllOfEmbedded.fromJson(value);
+        case 'PrincipalCollectionModelAllOfEmbeddedElements':
+          return PrincipalCollectionModelAllOfEmbeddedElements.fromJson(value);
+        case 'PrincipalCollectionModelAllOfLinks':
+          return PrincipalCollectionModelAllOfLinks.fromJson(value);
+        case 'PrincipalCollectionModelAllOfLinksSelf':
+          return PrincipalCollectionModelAllOfLinksSelf.fromJson(value);
+        case 'PrincipalModel':
+          return PrincipalModel.fromJson(value);
+        case 'PrincipalModelLinks':
+          return PrincipalModelLinks.fromJson(value);
+        case 'PrincipalModelLinksMemberships':
+          return PrincipalModelLinksMemberships.fromJson(value);
+        case 'PrincipalModelLinksSelf':
+          return PrincipalModelLinksSelf.fromJson(value);
+        case 'PriorityCollectionModel':
+          return PriorityCollectionModel.fromJson(value);
+        case 'PriorityCollectionModelAllOfEmbedded':
+          return PriorityCollectionModelAllOfEmbedded.fromJson(value);
+        case 'PriorityCollectionModelAllOfLinks':
+          return PriorityCollectionModelAllOfLinks.fromJson(value);
+        case 'PriorityCollectionModelAllOfLinksSelf':
+          return PriorityCollectionModelAllOfLinksSelf.fromJson(value);
+        case 'PriorityCollectionModelAllOfLinksSelfAllOfSelf':
+          return PriorityCollectionModelAllOfLinksSelfAllOfSelf.fromJson(value);
         case 'PriorityModel':
           return PriorityModel.fromJson(value);
         case 'PriorityModelLinks':
@@ -886,6 +976,16 @@ class ApiClient {
           return TypeModelLinks.fromJson(value);
         case 'TypeModelLinksSelf':
           return TypeModelLinksSelf.fromJson(value);
+        case 'TypesByProjectModel':
+          return TypesByProjectModel.fromJson(value);
+        case 'TypesByProjectModelAllOfEmbedded':
+          return TypesByProjectModelAllOfEmbedded.fromJson(value);
+        case 'TypesByProjectModelAllOfEmbeddedElements':
+          return TypesByProjectModelAllOfEmbeddedElements.fromJson(value);
+        case 'TypesByProjectModelAllOfLinks':
+          return TypesByProjectModelAllOfLinks.fromJson(value);
+        case 'TypesByProjectModelAllOfLinksSelf':
+          return TypesByProjectModelAllOfLinksSelf.fromJson(value);
         case 'UpdateActivityRequest':
           return UpdateActivityRequest.fromJson(value);
         case 'UpdateActivityRequestComment':
@@ -904,22 +1004,20 @@ class ApiClient {
           return UserCreateModel.fromJson(value);
         case 'UserModel':
           return UserModel.fromJson(value);
-        case 'UserModelLinks':
-          return UserModelLinks.fromJson(value);
-        case 'UserModelLinksDelete':
-          return UserModelLinksDelete.fromJson(value);
-        case 'UserModelLinksLock':
-          return UserModelLinksLock.fromJson(value);
-        case 'UserModelLinksMemberships':
-          return UserModelLinksMemberships.fromJson(value);
-        case 'UserModelLinksSelf':
-          return UserModelLinksSelf.fromJson(value);
-        case 'UserModelLinksShowUser':
-          return UserModelLinksShowUser.fromJson(value);
-        case 'UserModelLinksUnlock':
-          return UserModelLinksUnlock.fromJson(value);
-        case 'UserModelLinksUpdateImmediately':
-          return UserModelLinksUpdateImmediately.fromJson(value);
+        case 'UserModelAllOfLinks':
+          return UserModelAllOfLinks.fromJson(value);
+        case 'UserModelAllOfLinksAuthSource':
+          return UserModelAllOfLinksAuthSource.fromJson(value);
+        case 'UserModelAllOfLinksDelete':
+          return UserModelAllOfLinksDelete.fromJson(value);
+        case 'UserModelAllOfLinksLock':
+          return UserModelAllOfLinksLock.fromJson(value);
+        case 'UserModelAllOfLinksShowUser':
+          return UserModelAllOfLinksShowUser.fromJson(value);
+        case 'UserModelAllOfLinksUnlock':
+          return UserModelAllOfLinksUnlock.fromJson(value);
+        case 'UserModelAllOfLinksUpdateImmediately':
+          return UserModelAllOfLinksUpdateImmediately.fromJson(value);
         case 'ValuesPropertyModel':
           return ValuesPropertyModel.fromJson(value);
         case 'ValuesPropertyModelLinks':
@@ -942,6 +1040,16 @@ class ApiClient {
           return VersionModelLinksUpdate.fromJson(value);
         case 'VersionModelLinksUpdateImmediately':
           return VersionModelLinksUpdateImmediately.fromJson(value);
+        case 'VersionsByProjectModel':
+          return VersionsByProjectModel.fromJson(value);
+        case 'VersionsByProjectModelAllOfEmbedded':
+          return VersionsByProjectModelAllOfEmbedded.fromJson(value);
+        case 'VersionsByProjectModelAllOfEmbeddedElements':
+          return VersionsByProjectModelAllOfEmbeddedElements.fromJson(value);
+        case 'VersionsByProjectModelAllOfLinks':
+          return VersionsByProjectModelAllOfLinks.fromJson(value);
+        case 'VersionsByProjectModelAllOfLinksSelf':
+          return VersionsByProjectModelAllOfLinksSelf.fromJson(value);
         case 'WatchersModel':
           return WatchersModel.fromJson(value);
         case 'WatchersModelAllOfEmbedded':

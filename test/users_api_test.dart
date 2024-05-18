@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -37,7 +37,7 @@ void main() {
 
     // List Users
     //
-    // Lists users. Only administrators or users with any of the following can access this resource: 'manage_members', 'manage_user', 'share_work_packages'.
+    // Lists users. Only administrators or users with any of the following can access this resource:  - `manage_members` - `manage_user` - `share_work_packages`
     //
     //Future<UserCollectionModel> listUsers({ int offset, int pageSize, String filters, String sortBy, String select }) async
     test('test listUsers', () async {

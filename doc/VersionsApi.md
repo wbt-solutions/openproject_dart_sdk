@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listVersionsAvailableInAProject**
-> Object listVersionsAvailableInAProject(id)
+> VersionsByProjectModel listVersionsAvailableInAProject(id)
 
 List versions available in a project
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**VersionsByProjectModel**](VersionsByProjectModel.md)
 
 ### Authorization
 
